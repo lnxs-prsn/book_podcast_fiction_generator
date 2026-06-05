@@ -140,6 +140,27 @@ It will go through every PDF in order. Chapters that have already been processed
 
 When finished, a summary file is written to `data/output/run_summary.txt` showing which chapters succeeded and which (if any) failed.
 
+**If you want to reprocess chapters that already have a script** (for example, you changed the mode or want a fresh take), add `--force`:
+
+```bash
+OPENROUTER_API_KEY=<your-openrouter-key> WAVESPEED_API_KEY=<your-wavespeed-key> \
+  uv run python run_book.py --llm --force
+```
+
+**Real world mode for the whole book** — apply the same event context to every chapter:
+
+```bash
+# Inline event text
+OPENROUTER_API_KEY=... WAVESPEED_API_KEY=... \
+  uv run python run_book.py --llm --mode realworld \
+  --context "The EU just passed new AI regulations"
+
+# Or from a file
+OPENROUTER_API_KEY=... WAVESPEED_API_KEY=... \
+  uv run python run_book.py --llm --mode realworld \
+  --context-file /home/mr/Desktop/event.txt
+```
+
 ---
 
 ## Choosing a format (optional)
@@ -152,6 +173,9 @@ The default format is two people — a host and an expert — having a deep conv
 | `4person` | Four voices debating and discussing the content |
 | `code` | Two voices focused on understanding the code and *why* it was written that way |
 | `realworld` | The chapter connected to something happening in the world right now |
+| `fiction_meta` | Two voices commenting on a fiction chapter from a novel pipeline |
+
+> **Note:** `fiction_meta` is only available for single chapters (`run_chapter.py`), not the batch book runner.
 
 **Example — 4 person format:**
 
@@ -160,13 +184,35 @@ OPENROUTER_API_KEY=... WAVESPEED_API_KEY=... \
   uv run python run_chapter.py ../data/chapters/01_chapter.pdf --llm --mode 4person
 ```
 
-**Example — real world mode** (you tell it what is happening in the world):
+**Example — real world mode, typing the event directly:**
 
 ```bash
 OPENROUTER_API_KEY=... WAVESPEED_API_KEY=... \
   uv run python run_chapter.py ../data/chapters/01_chapter.pdf --llm --mode realworld \
   --context "The EU just passed new regulations requiring AI transparency in hiring decisions"
 ```
+
+**Example — real world mode, loading the event from a text file:**
+
+If your event description is long, save it to a `.txt` file (e.g. `event.txt` on your desktop) and point to it instead:
+
+```bash
+OPENROUTER_API_KEY=... WAVESPEED_API_KEY=... \
+  uv run python run_chapter.py ../data/chapters/01_chapter.pdf --llm --mode realworld \
+  --context-file /home/mr/Desktop/event.txt
+```
+
+**Example — fiction meta mode:**
+
+This mode requires a matching fiction chapter file produced by the fiction pipeline. Point `--fiction-dir` at the folder containing those files:
+
+```bash
+OPENROUTER_API_KEY=... WAVESPEED_API_KEY=... \
+  uv run python run_chapter.py ../data/chapters/01_chapter.pdf --llm --mode fiction_meta \
+  --fiction-dir ../data/fiction_output/
+```
+
+The tool automatically matches the chapter number from the PDF filename to the correct fiction file in that folder.
 
 ---
 
@@ -228,9 +274,36 @@ OPENROUTER_API_KEY=YOUR_KEY WAVESPEED_API_KEY=YOUR_KEY \
 OPENROUTER_API_KEY=YOUR_KEY \
   uv run python run_chapter.py ../data/chapters/YOUR_FILE.pdf --llm --skip-audio
 
+# One chapter — choose a format
+OPENROUTER_API_KEY=YOUR_KEY WAVESPEED_API_KEY=YOUR_KEY \
+  uv run python run_chapter.py ../data/chapters/YOUR_FILE.pdf --llm --mode 4person
+
+# One chapter — real world mode (inline event)
+OPENROUTER_API_KEY=YOUR_KEY WAVESPEED_API_KEY=YOUR_KEY \
+  uv run python run_chapter.py ../data/chapters/YOUR_FILE.pdf --llm --mode realworld \
+  --context "YOUR EVENT TEXT HERE"
+
+# One chapter — real world mode (event from file)
+OPENROUTER_API_KEY=YOUR_KEY WAVESPEED_API_KEY=YOUR_KEY \
+  uv run python run_chapter.py ../data/chapters/YOUR_FILE.pdf --llm --mode realworld \
+  --context-file /path/to/event.txt
+
+# One chapter — fiction meta mode
+OPENROUTER_API_KEY=YOUR_KEY WAVESPEED_API_KEY=YOUR_KEY \
+  uv run python run_chapter.py ../data/chapters/YOUR_FILE.pdf --llm --mode fiction_meta \
+  --fiction-dir ../data/fiction_output/
+
 # Whole book — full run
 OPENROUTER_API_KEY=YOUR_KEY WAVESPEED_API_KEY=YOUR_KEY \
   uv run python run_book.py --llm
+
+# Whole book — force reprocess all (even already done chapters)
+OPENROUTER_API_KEY=YOUR_KEY WAVESPEED_API_KEY=YOUR_KEY \
+  uv run python run_book.py --llm --force
+
+# Whole book — scripts only, no audio
+OPENROUTER_API_KEY=YOUR_KEY \
+  uv run python run_book.py --llm --skip-audio
 
 # Recover audio after terminal closed
 WAVESPEED_API_KEY=YOUR_KEY \
