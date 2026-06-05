@@ -147,6 +147,21 @@ OPENROUTER_API_KEY=... WAVESPEED_API_KEY=... \
 
 The chapter PDFs are saved to `data/chapters/` so you can inspect them before audio is generated.
 
+### Recommended: check the chapters before spending any credits
+
+Add `--slice-only` to slice the book and stop immediately — no AI calls, no cost. Open the files in `data/chapters/` and make sure each chapter looks right. Then run the full pipeline as a separate step:
+
+```bash
+# Step 1 — slice only, zero cost, inspect the results
+uv run python run_book.py --book /path/to/whole_book.pdf --slice-only
+
+# Step 2 — everything looks good? Now run the full pipeline
+OPENROUTER_API_KEY=<your-openrouter-key> WAVESPEED_API_KEY=<your-wavespeed-key> \
+  uv run python run_book.py --llm
+```
+
+The second command skips slicing automatically because the chapters are already there.
+
 ---
 
 ## Running it — a whole book at once (pre-split chapters)
