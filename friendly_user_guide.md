@@ -127,9 +127,31 @@ This takes roughly 10–20 minutes. Leave the terminal open while it runs.
 
 ---
 
-## Running it — a whole book at once
+## Running it — from a single whole-book PDF
 
-If you have multiple chapter PDFs in the `data/chapters/` folder, you can process them all in one go:
+If you have one big PDF of the entire book, you do not need to split it manually. Pass it with `--book` and the tool splits it into chapters automatically, then processes each one:
+
+```bash
+OPENROUTER_API_KEY=<your-openrouter-key> WAVESPEED_API_KEY=<your-wavespeed-key> \
+  uv run python run_book.py --book /path/to/whole_book.pdf --llm
+```
+
+The slicer drops front matter (cover, copyright, table of contents, preface) and keeps only the real chapters.
+
+If the table of contents in your book is not on page 8, tell it which page it is on:
+
+```bash
+OPENROUTER_API_KEY=... WAVESPEED_API_KEY=... \
+  uv run python run_book.py --book whole_book.pdf --toc-page 12 --llm
+```
+
+The chapter PDFs are saved to `data/chapters/` so you can inspect them before audio is generated.
+
+---
+
+## Running it — a whole book at once (pre-split chapters)
+
+If you have multiple chapter PDFs already in the `data/chapters/` folder, you can process them all in one go:
 
 ```bash
 OPENROUTER_API_KEY=<your-openrouter-key> WAVESPEED_API_KEY=<your-wavespeed-key> \
@@ -293,7 +315,11 @@ OPENROUTER_API_KEY=YOUR_KEY WAVESPEED_API_KEY=YOUR_KEY \
   uv run python run_chapter.py ../data/chapters/YOUR_FILE.pdf --llm --mode fiction_meta \
   --fiction-dir ../data/fiction_output/
 
-# Whole book — full run
+# Whole book — from a single PDF (auto-slice + process)
+OPENROUTER_API_KEY=YOUR_KEY WAVESPEED_API_KEY=YOUR_KEY \
+  uv run python run_book.py --book /path/to/whole_book.pdf --llm
+
+# Whole book — from pre-split chapters in data/chapters/
 OPENROUTER_API_KEY=YOUR_KEY WAVESPEED_API_KEY=YOUR_KEY \
   uv run python run_book.py --llm
 
