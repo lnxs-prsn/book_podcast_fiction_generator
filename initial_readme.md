@@ -2,7 +2,7 @@
 
 > This document is the authoritative source of truth for AI sessions and developers.
 > It describes everything: architecture, data flow, modules, config keys, CLIs, APIs.
-> Written from source code on 2026-06-06. Update it when code changes.
+> Written from source code on 2026-06-06. Audited and corrected against source on 2026-06-06. Update it when code changes.
 
 ---
 
@@ -41,11 +41,15 @@ harnessv3/
 │
 ├── src/                           ← All source code (git submodule)
 │   ├── config.json                ← LLM provider + voice config
+│   ├── pyproject.toml             ← Workspace pyproject
+│   ├── README.md                  ← Submodule README
 │   ├── run_book.py                ← Batch podcast runner (entry point)
 │   ├── run_chapter.py             ← Single-chapter podcast runner (entry point)
 │   │
 │   ├── slicer/
 │   │   └── pdf_splitter.py        ← 4-stage PDF chapter splitter
+│   │
+│   ├── pdfslicer/                 ← Alternative/legacy slicer (separate from slicer/)
 │   │
 │   ├── tts/
 │   │   ├── cli.py                 ← WaveSpeed VibeVoice TTS client
@@ -56,10 +60,15 @@ harnessv3/
 │   │   └── llm/
 │   │       ├── call_api.py        ← OpenRouter LLM call
 │   │       ├── extract_pdf.py     ← PyMuPDF text extraction
-│   │       ├── parse_output.py    ← Script parser
+│   │       ├── parse_output.py    ← Script parser / file-list extractor
 │   │       ├── save_output.py     ← Output writer
 │   │       ├── read_prompt.py     ← Prompt loader
+│   │       ├── parse_args.py      ← CLI argument parsing
+│   │       ├── test_all.py        ← Module tests
 │   │       └── main.py            ← Module entry
+│   │
+│   ├── phases/                    ← Development phase logs (phase_01/ … phase_07/ directories)
+│   │   └── structure.md
 │   │
 │   └── fiction/
 │       ├── run_simple.py          ← Standalone novel runner (simple, no gates)
@@ -68,7 +77,8 @@ harnessv3/
 │       │   ├── __init__.py
 │       │   ├── __main__.py
 │       │   ├── cli.py
-│       │   └── templates/         ← Template files copied to new seed projects
+│       │   ├── prompts/           ← LLM prompt templates (pass1_genres.txt, pass2_files.txt)
+│       │   └── templates/         ← Reference template files used as LLM context
 │       │
 │       └── pipeline/              ← novel-pipeline (full production novel writer)
 │           ├── pyproject.toml
@@ -106,8 +116,9 @@ harnessv3/
 │   ├── fiction/
 │   │   ├── fiction_pipe.md
 │   │   ├── build_specs.md
-│   │   └── directive_templates/
-│   └── ...
+│   │   ├── directive_templates/
+│   │   └── directive_templates_polya/
+│   └── ...                        (animation_design.md, claude_prompt.md, log.md, etc.)
 │
 ├── books/                         ← Source PDF books
 ├── decide_later/                  ← Staging area for undecided files
@@ -156,20 +167,23 @@ python src/run_book.py [OPTIONS]
 
 ### Script Modes
 
-| Mode | Speakers | Description |
-|------|----------|-------------|
-| `2person` | HOST (Alex) + EXPERT (Jordan) | 4000-word technical deep-dive, ~30 min |
-| `4person` | 4 voices | Debate format |
-| `code` | 2 voices | Engineering *why* focus |
-| `realworld` | 2 voices | Connects to user-supplied current event |
-| `fiction_meta` | 2 voices | Meta-commentary on fiction chapter output |
+| Mode | Speakers | Description | Batch? |
+|------|----------|-------------|--------|
+| `2person` | HOST (Alex) + EXPERT (Jordan) | 4000-word technical deep-dive, ~30 min | yes |
+| `4person` | 4 voices | Debate format | yes |
+| `code` | 2 voices | Engineering *why* focus | yes |
+| `realworld` | 2 voices | Connects to user-supplied current event | yes |
+| `fiction_meta` | 2 voices | Meta-commentary on fiction chapter output | **no** (run_chapter.py only) |
 
 ### Speaker Normalization
 
 `run_chapter.py` normalizes script speaker labels before saving:
 - `ALEX` / `JORDAN` → `Speaker 0` / `Speaker 1`
-- `HOST` / `EXPERT` → `Speaker 0` / `Speaker 1`
+- `HOST` / `EXPERT` / `GUEST` → `Speaker 0` / `Speaker 1`
+- `CRITIC` → `Speaker 2`, `NEWCOMER` → `Speaker 3`
+- Markdown-bold variants handled (`**ALEX:**`, `**Speaker 0:**`, etc.)
 - Standalone speaker label lines merged with following content line
+- Lines that don't match `Speaker N:` after normalization are **dropped** (headers, word-count notes, noise)
 
 ### Data Flow
 
@@ -227,13 +241,20 @@ Splits a whole-book PDF into individual chapter PDFs using a 4-stage TOC extract
 ```python
 from pdf_splitter import run_splitter
 run_splitter(
-    pdf_path="book.pdf",
+    input_path="book.pdf",      # NOTE: parameter is input_path, not pdf_path
     output_dir="data/chapters/",
-    toc_page=8,       # 1-indexed TOC page
+    toc_page=8,                 # 1-indexed TOC page
+    prefix="chapter",           # filename prefix (default: "chapter")
+    level=1,                    # TOC depth to extract (default: 1)
     no_ocr=False,
+    dry_run=False,
+    chapters_only=True,         # drop front matter, start at Chapter 1
     verbose=False,
+    ocr_embed=False,            # OCR-embed scanned pages into output PDFs
 )
 ```
+
+Returns `{"success": bool, "source": str, "toc": [...], "files": [...], "output_dir": str, "dry_run": bool}`.
 
 ### Output
 
@@ -268,7 +289,7 @@ python -m novel_pipeline --config config.toml [OPTIONS]
 | `--resume` | Resume from interrupted session |
 | `--auto-approve` | Skip human approval gates |
 | `--dry-run` | Test config/prompts without API calls |
-| `--chapter-start N` | Start from chapter N (requires `--auto-approve` to confirm) |
+| `--chapter-start N` | Start from chapter N; prompts for confirmation when it differs from the natural next chapter; **blocked under `--auto-approve` if it would skip gaps** |
 | `--ignore-cost-limit` | Bypass cost gates |
 
 ### Exit Codes
@@ -276,9 +297,9 @@ python -m novel_pipeline --config config.toml [OPTIONS]
 | Code | Meaning |
 |------|---------|
 | 0 | Success |
-| 1 | User abort / cost limit reached / rejection limit reached |
-| 2 | Config error |
-| 3 | API error |
+| 1 | User abort / KeyboardInterrupt / cost limit reached / rejection limit reached |
+| 2 | Config error / document load error / resume state error / promotion collision |
+| 3 | API error after retries / context overflow / unexpected error |
 
 ### config.toml Reference
 
@@ -300,15 +321,41 @@ output_dir = "./chapters"               # Where canonical chapters go
 # --- Optional with defaults ---
 context_safety_margin = 8000            # Token buffer before overflow error
 chapters_per_session = 3                # Chapters to write per invocation
-max_rejection_retries = 5              # Max rejections before session aborts
-cost_limit_usd_per_session = 5.00      # Per-session spend cap (USD)
-cost_limit_usd_total = 50.00           # Lifetime spend cap (USD)
-expected_output_tokens_chapter = 4000  # Pre-flight estimate for chapters
-expected_output_tokens_update = 2000   # Pre-flight estimate for living_doc updates
+max_rejection_retries = 5               # Max rejections before session aborts
+min_chapter_words = 1500                # Minimum word count; shorter chapters rejected
+max_retries = 3                         # API call retry attempts
+timeout_seconds = 120                   # HTTP timeout per API call
+cost_limit_usd_per_session = 5.00       # Per-session spend cap (USD)
+cost_limit_usd_total = 50.00            # Lifetime spend cap (USD)
+expected_output_tokens_chapter = 4000   # Pre-flight estimate for chapters
+expected_output_tokens_update = 2000    # Pre-flight estimate for living_doc updates
 log_path = "./pipeline.log"
 state_file_path = "./.pipeline_state.json"
 spend_file_path = "./.pipeline_spend.json"
-required_living_doc_sections = [...]   # Section headers that must exist in living_doc
+required_living_doc_sections = [...]    # Section headers that must exist in living_doc
+
+# --- Optional format overrides ---
+# static_doc_order = ["world_laws", "curriculum", "style_contract", "full_map"]
+# doc_wrap_open_format  = "=== {name_upper} ==="
+# doc_wrap_close_format = "=== END {name_upper} ==="
+# canonical_chapter_regex      = "^chapter_(\\d{2,})\\.md$"
+# canonical_chapter_name_format = "chapter_{nn:02d}.md"
+# rejected_draft_name_format   = "chapter_{nn:02d}__{ts}.md"
+# living_doc_backup_format     = "{name}.bak.{ts}"
+
+# --- Optional retry tuning ---
+# retry_backoff_seconds     = [2, 8, 32]
+# retry_jitter_seconds_max  = 2.0
+
+# --- Optional tokenizer tuning ---
+# tokenizer_encoding_fallback = "cl100k_base"
+# tokenizer_chars_per_token   = 4
+# token_count_per_message_overhead = 4
+# token_count_completion_priming   = 3
+
+# --- Optional per-call token caps ---
+# api_default_max_tokens_chapter = 4000
+# api_default_max_tokens_update  = 2000
 
 # --- Optional creativity controls ---
 # temperature = 0.7
@@ -356,10 +403,13 @@ Runs the chapter-writing loop:
 | Function | What It Does |
 |----------|-------------|
 | `load_static_docs()` | Loads template files (.md/.txt/.docx, rejects PDFs) |
+| `load_living_doc()` | Loads mutable living doc; returns empty string if missing |
 | `save_chapter_draft()` | Saves to `.rejected/chapter_NN__TIMESTAMP.md` |
 | `promote_chapter()` | Atomic move to `chapter_NN.md`; raises `PromotionCollisionError` if exists |
 | `save_living_doc()` | Atomic write + timestamped backup |
 | `validate_living_doc_structure()` | Checks required headers present and ordered |
+| `build_living_doc_diff()` | Unified diff of old vs new living doc (shown on validation failure) |
+| `find_unpromoted_drafts()` | Lists `.rejected/` drafts for a chapter number (used on resume) |
 
 #### `state.py` — State File Manager
 
@@ -368,14 +418,21 @@ State file schema (`.pipeline_state.json`):
 {
   "last_chapter_promoted": 3,
   "last_chapter_living_doc_updated": 3,
-  "last_chapter_drafted": 3,
+  "last_chapter_drafted": 3,   ← optional; omitted from file when null
   "updated_at": "2026-06-06T12:00:00Z"
 }
 ```
 
+Required keys: `last_chapter_promoted`, `last_chapter_living_doc_updated`. `last_chapter_drafted` is optional — older state files without it are accepted.
+
 Key functions:
-- `find_next_chapter_number()` — scans filesystem, returns first gap
-- `detect_resume_state()` — compares filesystem to state, offers recovery prompts
+
+- `list_canonical_chapters()` — scans output_dir, returns sorted chapter numbers
+- `find_next_chapter_number()` — returns first gap in chapter sequence
+- `compute_gaps()` — returns chapter numbers missing below the current max
+- `read_state()` — reads state file; `None` if missing, raises `ResumeStateError` on malformed JSON
+- `write_state()` — atomically writes state file
+- `detect_resume_state()` — cross-checks filesystem vs state file, returns resume dict
 - All writes: atomic via temp + `os.replace`
 
 #### `cost.py` — Spend Tracker
@@ -391,13 +448,16 @@ Spend file schema (`.pipeline_spend.json`):
 ```
 
 - `estimate_cost()` — pre-flight USD estimate
-- `track_spend()` — post-call actual recording
+- `track_spend()` — post-call actual recording; returns `{session_total, lifetime_total}`
+- `current_totals()` — read current totals without writing
+- `reset_session_spend()` — resets in-process session accumulator (used by tests)
 
 #### `tokens.py` — Token Counter
 
 - Uses `tiktoken` with per-model fallback encoding
 - Falls back to chars-per-token heuristic (default: 4) if tiktoken offline
-- Accounts for chat-template overhead (~4 tokens/message + ~3 priming)
+- Single function: `count_tokens(text, model, config)` — counts tokens in text only
+- Chat-template overhead (~4 tokens/message + ~3 priming) is applied by `session.py`, not here
 
 #### `prompts.py` — Prompt Builder
 
@@ -474,18 +534,27 @@ python -m fiction.seed_gen <source_pdf> <output_dir>
 2. User names protagonist
 3. User provides protagonist background
 4. User confirms/edits extracted concepts (minimum 5 required)
+5. User selects climax concept (must match one of the extracted concepts)
+6. User provides optional additional notes
+
+**Pass 2 — LLM file generation:**
+
+- Sends user plan + Pass 1 output + bundled templates as context
+- LLM generates the full set of world-building documents
+- Files written via `parse_output()` + `save_output()`, then `config.toml` written
 
 **Output — ready-to-run project:**
 ```
 <output_dir>/
-├── config.toml       ← Pre-populated with genre, protagonist, concepts
-└── templates/
-    ├── world_laws.md
-    ├── curriculum.md
-    ├── style_contract.md
-    ├── full_map.md
-    └── living_doc.md
+├── config.toml       ← Pre-populated (static_doc_paths point to ./ not ./templates/)
+├── world_laws.md
+├── curriculum.md
+├── style_contract.md
+├── full_map.md
+└── living_doc.md
 ```
+
+Note: template files are written directly in `<output_dir>/`, **not** in a `templates/` subdirectory. The generated `config.toml` uses `static_doc_paths = ["./world_laws.md", ...]`.
 
 Run with: `python -m novel_pipeline --config <output_dir>/config.toml`
 
@@ -512,6 +581,7 @@ Controls LLM provider and TTS voice selection for the podcast pipeline.
 {
   "api_url": "https://openrouter.ai/api/v1/chat/completions",
   "model": "openrouter/free",
+  "toc_page": null,
   "max_tokens": 8192,
   "speakers": {
     "speaker_1": "en-Alice_woman",
@@ -651,13 +721,14 @@ Development history is tracked in `src/phases/`:
 
 ```
 src/phases/
-├── phase_01.md
-├── phase_02.md
+├── structure.md       ← Overview of phase structure
+├── phase_01/          ← Each phase is a directory (not a .md file)
+├── phase_02/
 ├── ...
-└── phase_NN.md   ← Most recent
+└── phase_07/          ← Most recent (as of last audit)
 ```
 
-Each phase log documents what was built, why, and key decisions made. Read the latest before starting new work.
+Each phase directory contains markdown files documenting what was built, why, and key decisions made. Read the latest before starting new work.
 
 ---
 
