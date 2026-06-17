@@ -1,0 +1,41 @@
+model = "openrouter/free"
+context_limit = 200000
+context_safety_margin = 8000
+price_per_1m_input_tokens = 0.001
+price_per_1m_output_tokens = 0.001
+
+static_doc_paths = [
+    "./world_laws.md",
+    "./curriculum.md",
+    "./style_contract.md",
+    "./full_map.md",
+]
+
+living_doc_path = "./living_doc.md"
+output_dir = "./chapters"
+
+chapters_per_session = 3
+min_chapter_words = 800
+max_retries = 3
+timeout_seconds = 120
+
+cost_limit_usd_per_session = 5.00
+cost_limit_usd_total = 50.00
+expected_output_tokens_chapter = 4000
+expected_output_tokens_update = 2000
+
+log_path = "./pipeline.log"
+state_file_path = "./.pipeline_state.json"
+spend_file_path = "./.pipeline_spend.json"
+
+required_living_doc_sections = [
+    "=== LIVING DOCUMENT ===",
+    "--- CURRENT STATE ---",
+    "--- ACTIVE VOCABULARY ---",
+    "--- TERMS LEARNED BUT NOT YET OWNED ---",
+    "--- TERMS INTRODUCED THIS ARC ---",
+    "--- ACTIVE FORESHADOWING ---",
+    "--- PROTAGONIST LENS ---",
+    "--- NEXT CHAPTER TARGET ---",
+    "--- NOTES FOR AI ---",
+]

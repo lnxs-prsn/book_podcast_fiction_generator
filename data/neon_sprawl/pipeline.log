@@ -1,0 +1,4 @@
+{"ts": "2026-06-05T14:58:31.748570+00:00", "event": "cli_start", "config_path": "config.toml", "auto_approve": false, "dry_run": true, "resume": false, "chapter_start": null, "ignore_cost_limit": false}
+{"ts": "2026-06-05T14:58:31.750559+00:00", "event": "session_loaded_docs", "static_doc_keys": ["curriculum", "full_map", "style_contract", "world_laws"], "living_doc_chars": 3221}
+{"ts": "2026-06-05T14:58:31.751138+00:00", "event": "tiktoken_unavailable_using_heuristic", "error": "No module named 'tiktoken'", "model": "openrouter/free", "chars_per_token": 4}
+{"ts": "2026-06-05T14:58:31.753249+00:00", "event": "session_declined_at_summary"}

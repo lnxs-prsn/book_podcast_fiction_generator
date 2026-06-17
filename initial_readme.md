@@ -2,7 +2,7 @@
 
 > This document is the authoritative source of truth for AI sessions and developers.
 > It describes everything: architecture, data flow, modules, config keys, CLIs, APIs.
-> Written from source code on 2026-06-06. Audited and corrected against source on 2026-06-06. Update it when code changes.
+> Written from source code on 2026-06-06. Audited and corrected against source on 2026-06-06. Updated for Phase 7 (cleanup) on 2026-06-12. Update it when code changes.
 
 ---
 
@@ -43,8 +43,12 @@ harnessv3/
 │   ├── config.json                ← LLM provider + voice config
 │   ├── pyproject.toml             ← Workspace pyproject
 │   ├── README.md                  ← Submodule README
-│   ├── run_book.py                ← Batch podcast runner (entry point)
-│   ├── run_chapter.py             ← Single-chapter podcast runner (entry point)
+│   ├── run_book.py                ← Backward-compat shim → cli/podcast.py
+│   ├── run_chapter.py             ← Backward-compat shim → cli/podcast.py
+│   │
+│   ├── cli/
+│   │   ├── podcast.py             ← Primary podcast pipeline CLI (use this)
+│   │   └── fiction.py             ← Primary fiction pipeline CLI (use this)
 │   │
 │   ├── slicer/
 │   │   └── pdf_splitter.py        ← 4-stage PDF chapter splitter
@@ -135,24 +139,50 @@ Takes a chapter PDF → extracts text → LLM writes a podcast dialogue script �
 
 ### Entry Points
 
-**Single chapter:**
+**Invocation convention:** all Python runs require `PYTHONPATH=src` so modules resolve correctly. Do NOT add `sys.path` hacks inside scripts — use the env prefix instead:
+
 ```bash
-python src/run_chapter.py <chapter.pdf> [OPTIONS]
+PYTHONPATH=src python src/cli/podcast.py [OPTIONS]
 ```
+
+**Primary CLI:** `src/cli/podcast.py`
+
+This is the unified entry point for all podcast pipeline operations (single chapter and full book). Always prefer this over the legacy shims.
+
+```bash
+# Single chapter
+PYTHONPATH=src python src/cli/podcast.py <chapter.pdf> [OPTIONS]
+
+# Full book (slice + batch)
+PYTHONPATH=src python src/cli/podcast.py --book whole.pdf [OPTIONS]
+```
+
+**Primary fiction CLI:** `src/cli/fiction.py`
+
+Unified entry point for the fiction/novel pipeline.
+
+**Backward-compat shims** — `src/run_chapter.py` and `src/run_book.py` are thin shims that forward to `cli.podcast.main`. They exist for backward compatibility only; new code and documentation should reference `src/cli/podcast.py` directly.
+
+```python
+# Both shims contain only:
+from cli.podcast import main
+if __name__ == "__main__":
+    main()
+```
+
+**Script generation note:** LLM (OpenRouter) is the only script generation path. There is no local/offline generator mode. `OPENROUTER_API_KEY` is required for all script generation.
+
+**Single chapter options:**
 
 | Option | Default | Description |
 |--------|---------|-------------|
-| `--llm` | off | Call LLM to generate script (required for script generation) |
 | `--skip-audio` | off | Skip TTS, produce script only |
 | `--mode MODE` | `2person` | Script style (see Modes below) |
 | `--context "..."` | — | Extra context injected into prompt |
 | `--context-file file.txt` | — | Load context from file |
 | `--fiction-dir ./` | — | Path to fiction pipeline output (for `fiction_meta` mode) |
 
-**Full book (batch):**
-```bash
-python src/run_book.py [OPTIONS]
-```
+**Full book (batch) options:**
 
 | Option | Default | Description |
 |--------|---------|-------------|
@@ -160,7 +190,6 @@ python src/run_book.py [OPTIONS]
 | `--toc-page N` | — | TOC page number (required with `--book`) |
 | `--no-ocr` | off | Skip OCR fallback in slicer |
 | `--slice-only` | off | Only slice PDF, don't run podcast pipeline |
-| `--llm` | off | Call LLM for script generation |
 | `--skip-audio` | off | Skip TTS |
 | `--mode MODE` | `2person` | Script style |
 | `--force` | off | Reprocess chapters that already have output |
@@ -560,14 +589,9 @@ Run with: `python -m novel_pipeline --config <output_dir>/config.toml`
 
 ---
 
-## Pipeline E: Simple Runner (Standalone)
+## Pipeline E: Simple Runner (Removed)
 
-`src/fiction/run_simple.py` — Stateless alternative to novel-pipeline for quick runs.
-
-- No approval gates; trust-the-disk model
-- Single session = 3 chapters per pause
-- Reference docs: `pass_always.md`, `full_map.md`, `living_document.md`
-- Outputs: `chapters/`, `backups/`, `session_notes.md`, `run_log.txt`
+`src/fiction/run_simple.py` has been deleted as of Phase 7. It was a stateless alternative to novel-pipeline with no approval gates. Use `src/cli/fiction.py` or `novel_pipeline` directly.
 
 ---
 
@@ -660,10 +684,10 @@ Package management: `uv` (see `uv.lock`, `.python-version`)
 ### Run podcast for a single chapter
 
 ```bash
-cd harnessv3
+cd harnessv4
 export OPENROUTER_API_KEY=sk-...
 export WAVESPEED_API_KEY=ws-...
-python src/run_chapter.py data/chapters/01_intro.pdf --llm --mode 2person
+PYTHONPATH=src python src/cli/podcast.py data/chapters/01_intro.pdf --mode 2person
 # Script: data/output/scripts/01_intro_podcast.txt
 # Audio:  data/output/audio/01_intro/1.mp3
 ```
@@ -672,7 +696,7 @@ python src/run_chapter.py data/chapters/01_intro.pdf --llm --mode 2person
 
 ```bash
 export OPENROUTER_API_KEY=sk-...
-python src/run_book.py --book books/mybook.pdf --toc-page 5 --llm
+PYTHONPATH=src python src/cli/podcast.py --book books/mybook.pdf --toc-page 5
 ```
 
 ### Start a new pedagogical novel
