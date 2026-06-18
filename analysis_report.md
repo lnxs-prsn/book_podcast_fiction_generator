@@ -11,8 +11,8 @@
 | CRITICAL | 0 | — |
 | FALSE POSITIVE | 1 | C1: Slicer exception narrowing breaks non-LLM error handling |
 | HIGH | 0 | — |
-| RESOLVED | 6 | C2: Podcast CLI; H1: Factory verification command; H2: Stale `test_pipeline.py` move; H3: Verification grep omits podcast generator; H4: `main.py` `llm` parameter only in tests; H5: Dead tests for removed behaviors |
-| MEDIUM | 5 | `LLMError` escapes direct engine path; `seed_gen` LLMConfigError exit ambiguous; `seed_gen` import path ambiguous; `run_splitter` default unspecified; `LLMError`/`ScriptGenerationError` boundary claim overreaches |
+| RESOLVED | 9 | C2: Podcast CLI; H1: Factory verification command; H2: Stale `test_pipeline.py` move; H3: Verification grep omits podcast generator; H4: `main.py` `llm` parameter only in tests; H5: Dead tests for removed behaviors; M1: LLMError escapes engine path; M2: seed_gen exit unspecified; M5: boundary claim overclaimed |
+| MEDIUM | 2 | `seed_gen` import path ambiguous; `run_splitter` default unspecified |
 | LOW | 2 | CLI `sys.path` guards not covered by verification; Step 2 → Step 3 ordering implicit |
 
 ---
@@ -136,22 +136,42 @@ The spec's instruction to "replace the broad `except Exception` with `except LLM
 
 ### MEDIUM
 
-#### M1 — `LLMError` escapes the direct engine path
-- **What the spec says:**  
+#### ~~M1~~ — RESOLVED: `LLMError` escapes the direct engine path
+
+**Resolution:** Adding the catch inside `llm_script.py` was ruled out — it would reintroduce the `engines/` → `podcast_script_generator/` dependency that Step 3 deliberately removes. The boundary belongs at `endpoints/podcast.py`: the wiring layer already imports from both `llm/` and `podcast_script_generator/` and is the natural owner of the engine-path exception boundary. Three locations updated in `fix_specsv2.md`:
+
+- **Step 3 `src/endpoints/podcast.py`:** Added **(3)** — import `LLMError` alongside `LLMConfigError`; import `ScriptGenerationError` if not already present; wrap each per-chapter `script_engine.generate(...)` call in `try/except LLMError as e: raise ScriptGenerationError(str(e)) from e`.
+- **Scope Exclusions:** Updated the blanket "caught at the `call_api` boundary" sentence to name both boundaries: `call_api` for the `main.py` path, `endpoints/podcast.py` for the engine path.
+- **Step 7:** Same two-boundary update to the matching sentence.
+
+<details>
+<summary>Original finding (retained for reference)</summary>
+
+- **What the spec said:**  
   Scope Exclusions: "Transport errors are caught at the `call_api` boundary and re-raised as `ScriptGenerationError`; it never escapes into domain code."  
   Step 3 `src/engines/llm_script.py`: "In `generate()`, remove the lazy `call_api` import... call `self.llm.call(prompt)`."
-- **Why it is wrong:**  
-  `src/engines/llm_script.py` is domain/adapter code that calls `self.llm.call()` directly, bypassing the `call_api` boundary. A transport failure there raises `LLMError`, not `ScriptGenerationError`, so transport errors **do** escape into domain code (and are only caught later by the broad `except Exception` in `endpoints/podcast.py`). The claim that they "never escape into domain code" is overreaching.
+- **Why it was wrong:**  
+  `src/engines/llm_script.py` calls `self.llm.call()` directly with no exception boundary. A transport failure raises `LLMError`, not `ScriptGenerationError`, so transport errors escaped into the podcast execution path — the Scope Exclusions claim that they "never escape into domain code" was unenforceable without a boundary on the engine path.
 - **Conflicts with:**  
   The Scope Exclusions sentence quoted above.
 - **Dimensions:** B (exception flow), H (architecture layer compliance).
 
-#### M2 — `seed_gen` LLMConfigError handling lacks an exit decision
-- **What the spec says (Step 3, `src/fiction/seed_gen/cli.py`):**  
+</details>
+
+#### ~~M2~~ — RESOLVED: `seed_gen` LLMConfigError handling lacks an exit decision
+
+**Resolution:** `seed_gen` has no fallback path — the LLM call is the operation, not an optional stage. Added `sys.exit(1)` after the print, matching the pattern used by every other CLI entry point in the spec for fatal startup errors (`novel_pipeline/cli.py`, `cli/fiction.py`). Also added an explicit instruction to retain `import sys`: removing `sys.path.insert` would otherwise leave it as a dead import, but `sys.exit(1)` requires it.
+
+<details>
+<summary>Original finding (retained for reference)</summary>
+
+- **What the spec said (Step 3, `src/fiction/seed_gen/cli.py`):**  
   "Wrap `create_client(**resolve_from_env())` in `try/except LLMConfigError` and print a clean error message — without this, a missing API key produces a traceback instead of a user-readable message."
-- **Why it is wrong:**  
-  The spec says to print a message but does not say whether to exit or continue. If the implementer prints and continues, `call_api` will be called with `llm=None` (or an undefined variable) and raise `AttributeError`, which is not caught by the handler `(ValueError, ScriptGenerationError)`. The result is the exact traceback the spec claims to prevent.
+- **Why it was wrong:**  
+  The spec said to print a message but did not say whether to exit or continue. If the implementer printed and continued, `call_api` would be called with `client` undefined and raise `AttributeError`, not caught by the `(ValueError, ScriptGenerationError)` handler — producing the exact traceback the spec claimed to prevent.
 - **Dimensions:** B (exception flow), E (test instruction alignment).
+
+</details>
 
 #### M3 — `seed_gen` import path is ambiguous
 - **What the spec says (Step 3, `src/fiction/seed_gen/cli.py`):**  
@@ -167,12 +187,20 @@ The spec's instruction to "replace the broad `except Exception` with `except LLM
   `run_splitter` is a public API with a docstring example (`result = run_splitter("book.pdf", toc_page=10, chapters_only=True)` at line 724) and existing direct callers. If `llm` is added as a required parameter, those callers break. Because the intended behavior is graceful degradation when no client is supplied (Stage 4 skipped), the parameter should be `llm: LLMClient | None = None`. The spec does not state this.
 - **Dimensions:** G (scope completeness / backward compatibility), C (cross-reference with the docstring example).
 
-#### M5 — `LLMError`/`ScriptGenerationError` boundary claim is overclaimed
-- **What the spec says:**  
+#### ~~M5~~ — RESOLVED: `LLMError`/`ScriptGenerationError` boundary claim is overclaimed
+
+**Resolution:** Resolved as a consequence of ~~M1~~. The Scope Exclusions and Step 7 prose updates that fix M1 also correct this overclaimed invariant — both now name both exception boundaries (the `call_api` path and the engine path) instead of asserting a universal guarantee that the spec's own instructions did not enforce.
+
+<details>
+<summary>Original finding (retained for reference)</summary>
+
+- **What the spec said:**  
   Scope Exclusions: "Transport errors are caught at the `call_api` boundary and re-raised as `ScriptGenerationError`; it never escapes into domain code."
-- **Why it is wrong:**  
-  As noted in M1, the direct engine path (`src/engines/llm_script.py`) allows `LLMError` to escape. The statement is an overclaimed guarantee that the spec's own instructions do not enforce.
+- **Why it was wrong:**  
+  As noted in M1, the direct engine path (`src/engines/llm_script.py`) allowed `LLMError` to escape. The statement was an overclaimed guarantee that the spec's own instructions did not enforce.
 - **Dimensions:** A (internal contract consistency), H (architecture layer compliance).
+
+</details>
 
 ---
 
