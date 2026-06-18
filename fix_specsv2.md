@@ -55,8 +55,10 @@ class LLMTransport(Protocol):
     otherwise unchanged and the raw provider value is not modified.
 
     On failure: always raises LLMError (TransportError or RateLimitError).
-    Raw exceptions (requests.Timeout, ConnectionError, JSONDecodeError)
-    never escape to the caller.
+    No raw exception of any kind escapes to the caller — network failures,
+    HTTP status errors, JSON decode errors, and any exception raised while
+    accessing the response dict (KeyError, IndexError, TypeError, etc.) are
+    all caught and wrapped as TransportError.
     """
 
     def chat_completion(
@@ -77,7 +79,10 @@ class LLMClient(Protocol):
     control use LLMTransport.chat_completion() directly.
 
     call(prompt) -> str
-        Executes the prompt and returns the assistant text.
+        Executes the prompt and returns the assistant text, stripped of
+        leading and trailing whitespace. The underlying chat_completion
+        guarantees content is non-empty after strip(); call() applies
+        that strip() before returning so callers receive clean text.
 
     call(prompt, context=...) -> str
         For static prepend scenarios only: a shared system block, background
@@ -149,7 +154,7 @@ class OpenRouterClient:
 
 `call()` combines `context` and `prompt` as `f"{context}\n\n{prompt}"` when context is non-empty, then wraps in a single user message. The `---` separator is **not** used here — it is a podcast-domain convention assembled by the callers that need it: `call_api()` for the `main.py` → `call_api` path, and `LLMScriptEngine.generate()` for the direct engine path. `call()` receives an already-assembled prompt string and does not know or care about the separator. Callers with a natural prompt/context split (e.g. system instructions + user query) use `context` directly.
 
-**Deployment-level parameters** — set once per deployment in `.env`; transport reads the env var as a fallback when no constructor arg is passed (constructor arg → env var → hardcoded default):
+**Deployment-level parameters** — set once per deployment in `.env`; resolved by `resolve_from_env()` and passed as constructor args by the caller (constructor arg → hardcoded default). The "Env var" column documents the name `resolve_from_env()` uses to populate each constructor arg. `OpenRouterClient` has no internal env var fallbacks — all env var reading goes through `resolve_from_env()` at the call site:
 
 | Parameter | Env var | Hardcoded default |
 |-----------|---------|-------------------|
@@ -183,7 +188,7 @@ class OpenRouterClient:
 
 **On success:** Returns the raw provider JSON response dict unchanged. Callers read `choices[0]["message"]["content"]`, `usage`, `finish_reason`, etc. directly. One additional guarantee: if `chat_completion` returns, `choices[0]["message"]["content"]` is non-empty after `strip()` — the transport uses `strip()` to check for empty content and retries if the stripped result is empty, but the returned dict is otherwise unchanged; the raw provider value in `choices[0]["message"]["content"]` is not modified before being returned.
 
-**On failure:** Always raises `LLMError`. All `requests.RequestException` subclasses — `Timeout`, `ConnectionError`, `SSLError`, `TooManyRedirects`, `ChunkedEncodingError`, and any other network-level failure — are caught and wrapped. They never escape to the caller as raw exceptions.
+**On failure:** Always raises `LLMError`. No raw exception of any kind escapes to the caller. Network-level `requests.RequestException` subclasses — `Timeout`, `ConnectionError`, `SSLError`, `TooManyRedirects`, `ChunkedEncodingError`, and any other failure that is not an HTTP status code error — are caught and wrapped. `HTTPError` is not in this category — it is raised by `raise_for_status()` on a non-2xx response and is handled by the status-code logic (429 → retry, 5xx → retry, 4xx except 429 → fail-fast), not by the network-error catch. Any exception raised while accessing the response dict — `KeyError`, `IndexError`, `TypeError`, `AttributeError`, or any other built-in — is also caught and wrapped as `TransportError`; the transport's internal parsing operations never let raw exceptions reach callers.
 
 | Exception raised | Condition |
 |-----------------|-----------|
@@ -196,7 +201,7 @@ class OpenRouterClient:
 |-------------|--------|
 | HTTP 429 | Retry; honor `Retry-After` header (seconds or HTTP date), else backoff |
 | HTTP 5xx | Retry with configurable exponential backoff + optional jitter |
-| Any `requests.RequestException` | Retry with backoff — covers `Timeout`, `ConnectionError`, `SSLError`, `TooManyRedirects`, `ChunkedEncodingError`, and all other network-level failures |
+| Network-level `requests.RequestException` (not `HTTPError`) | Retry with backoff — covers `Timeout`, `ConnectionError`, `SSLError`, `TooManyRedirects`, `ChunkedEncodingError`, and all other failures that are not HTTP status code errors |
 | Empty or whitespace-only `choices[0].message.content` after `strip()` (HTTP 200) | Retry with backoff |
 
 **Fail-fast, no retry** (raises `TransportError` immediately):
@@ -205,6 +210,7 @@ class OpenRouterClient:
 |-------------|--------|
 | HTTP 4xx except 429 | Client error — retrying won't fix it. Applies to 400, 401, 403, 404, 405, 408, 422, and every other 4xx code. |
 | `json.JSONDecodeError` | Severe infrastructure malfunction — no point retrying |
+| Any exception from response parsing (`KeyError`, `IndexError`, `TypeError`, `AttributeError`, etc.) | Malformed provider response — structural issue, not retryable |
 
 ### `factory.py`
 
@@ -254,10 +260,12 @@ def resolve_from_env() -> dict:
         create_client(**{**cfg_kwargs, **resolve_from_env()})
 
     env always wins over config because resolve_from_env() is spread last.
-    All env var names for all currently registered providers are centralised
-    here — if a var is renamed, change it in one place. When a new provider
-    is added, add its env var block here alongside the existing OpenRouter
-    block; do not hardcode provider var names anywhere else.
+    All provider-specific env var names for all currently registered providers
+    are centralised here — if a var is renamed, change it in one place. When
+    a new provider is added, add its env var block here alongside the existing
+    OpenRouter block; do not hardcode provider-specific var names anywhere else.
+    Factory-selection variables (e.g. LLM_PROVIDER) are not provider-specific
+    constructor parameters and are read directly where they are used (factory.py).
     """
     result = {}
     if v := os.environ.get("OPENROUTER_API_KEY"):
@@ -292,6 +300,8 @@ def get_toc_from_llm(pdf_path: str) -> ...:
 def get_toc_from_llm(pdf_path: str, llm: LLMClient) -> ...:
     response = llm.call(prompt=prompt)
 ```
+
+> **Note:** This example shows the general DI pattern. For `src/slicer/pdf_splitter.py` specifically, the parameter is `llm: LLMClient | None` — see Step 3 for the exact signature and `None` guard. The `| None` is a slicer-specific graceful-degradation concern, not a general DI requirement.
 
 Wiring happens at the engine factory, not inside domain functions. `src/engines/factory.py` is the origin for both podcast chains — it reads `src/config.json`, constructs the client once, and passes it into the engine:
 
@@ -328,9 +338,9 @@ def default_splitter_engine() -> SplitterEngine:
 
 > **Note:** `resolve_from_env()` (from `llm.env`) is the single source of truth for all env var names. Do not hardcode `OPENROUTER_*` var names in wiring origins — import and call `resolve_from_env()` instead. Env always wins over config because `resolve_from_env()` is spread last in the dict merge. `resolve_from_env()` returns raw strings — type conversion (`int` for `max_tokens`, `float` for `retry_after_override`) happens inside `OpenRouterClient.__init__`, which is the only consumer that knows the expected types.
 >
-> **Two caller types for `api_key`:** `engines/factory.py` has a config file context — it builds a cfg dict and merges it with `resolve_from_env()`, so env wins over config. `OpenRouterClient`'s internal env var fallback is a safety net for this caller. Callers without a config file context (`slicer/pdf_splitter.py`, `fiction/seed_gen/cli.py`, `podcast_script_generator/llm/main.py`) call `create_client()` with no kwargs — for these callers the `OPENROUTER_API_KEY` env var fallback inside `OpenRouterClient` is the **intended primary path**, not a safety net. Do not add `resolve_from_env()` or config resolution to these callers; they have nothing to resolve config from.
+> **All callers use `resolve_from_env()`:** `engines/factory.py` (and the novel pipeline wiring origins) have a config file context — they build a cfg dict and spread `resolve_from_env()` last so env wins over config. Callers without a config file context (`slicer/pdf_splitter.py`, `fiction/seed_gen/cli.py`, `podcast_script_generator/llm/main.py`) call `create_client(**resolve_from_env())` directly — no cfg dict, just the env mapping. `OpenRouterClient` has no internal env var fallbacks; `resolve_from_env()` in `llm.env` is the single and only reader of env var names for all callers.
 
-`src/cli/podcast.py` is **unchanged** — it already delegates engine construction to the factory and has no LLM awareness.
+`src/cli/podcast.py` changes in one place: remove `default_splitter_engine` from the `engines.factory` import and remove the `splitter_engine=default_splitter_engine()` kwarg from the `generate_book_podcast` call. `endpoints/podcast.py` takes over lazy construction with `LLMConfigError` handling. All other behaviour is unchanged.
 
 For the novel pipeline there are two entry paths with distinct wiring origins:
 
@@ -394,11 +404,12 @@ No module-level singleton. The `LLMClient` is created at the entry point (`main(
 | `src/engines/factory.py` | **Wiring origin.** Read `src/config.json`; call `create_client(api_key=..., model=..., api_url=..., max_tokens=..., retry_after_override=...)` with all deployment parameters resolved from env and config (env wins — see DI Pattern section above); pass the returned client into `LLMScriptEngine` and `PDFSplitterEngine`. The factory is the primary resolver for every deployment parameter including `api_key` — do not rely on `OpenRouterClient`'s internal env var fallback as the primary path. Do not instantiate `OpenRouterClient` directly — provider selection is the factory's responsibility. |
 | `src/engines/llm_script.py` | Add `llm: LLMClient` to `__init__`. In `generate()`, remove the lazy `call_api` import. **Preserve the `fiction_meta` special case exactly as-is:** after the `{TECHNICAL_CONTENT}` substitution, call `self.llm.call(prompt)` with no separator — `pdf_text` is already embedded in the prompt and must not be appended again. **For all other modes**, assemble the combined prompt: `combined = f"{prompt_text}\n\n---\n\n{pdf_text}" if pdf_text else prompt_text`, then call `self.llm.call(combined)`. Applying the `---` separator in `fiction_meta` mode would duplicate the PDF content because `{TECHNICAL_CONTENT}` substitution already placed it inside the prompt string. |
 | `src/engines/pdf_splitter.py` | Add `llm: LLMClient` to `__init__`; pass `llm` through to `run_splitter`. |
-| `src/slicer/pdf_splitter.py` | Add `llm: LLMClient \| None` to `get_toc_from_llm`, `extract_toc`, and `run_splitter`; remove `sys.path.insert` block. **`get_toc_from_llm`:** add `if llm is None: return None` as the first line — when no client is available Stage 4 returns `None` immediately, allowing the pipeline to fall through to Stage 5 (`get_toc_from_content_scan`) without calling the LLM. Add `from llm.exceptions import LLMError` and replace the broad `except Exception` with `except LLMError` — `llm.call()` raises `LLMError` on transport failure; `ScriptGenerationError` is never raised here because slicer calls `llm.call()` directly, not through `call_api()`. Log the error and return `None`. **CLI `main()`:** add `from llm.exceptions import LLMConfigError` to imports. Call `create_client()` with no `api_key` arg — this caller has no config file context, so `OpenRouterClient`'s `OPENROUTER_API_KEY` env var fallback is the intended primary path. Wrap `create_client()` in `try/except LLMConfigError` — log the error and set `client = None`. Pass `client` (possibly `None`) to `run_splitter`; it threads through `extract_toc` → `get_toc_from_llm` where the `None` guard fires. Do **not** return a failure dict on `LLMConfigError` — `run_splitter` must still be called so Stages 1–3 and Stage 5 can run; only Stage 4 is skipped. |
-| `src/fiction/seed_gen/cli.py` | Remove `sys.path.insert`; import helpers via `podcast_script_generator.llm.*`. Add `from podcast_script_generator.llm.exceptions import ScriptGenerationError` and `from llm.exceptions import LLMConfigError` to imports — both are required before the handlers below compile. Replace `except (ValueError, RuntimeError)` with `except (ValueError, ScriptGenerationError)` — the new `call_api` raises `ScriptGenerationError`, not `RuntimeError`; leaving `RuntimeError` in the handler means LLM failures escape uncaught. In `main()`, call `create_client()` with no `api_key` arg — this caller has no config file context, so `OpenRouterClient`'s `OPENROUTER_API_KEY` env var fallback is the intended primary path (see DI Pattern note above). Wrap `create_client()` in `try/except LLMConfigError` and print a clean error message — without this, a missing API key produces a traceback instead of a user-readable message. |
-| `src/podcast_script_generator/llm/main.py` | Add `from llm.exceptions import LLMConfigError` to imports — without this the `except LLMConfigError` block below raises `NameError` at runtime. Create client via `create_client()` with no `api_key` arg in `main()` — this caller has no config file context, so `OpenRouterClient`'s `OPENROUTER_API_KEY` env var fallback is the intended primary path (see DI Pattern note above). Pass the client to `call_api(pdf_text, prompt_text, llm=client)`. Catch `LLMConfigError` explicitly alongside `PodcastError` — `create_client()` raises `LLMConfigError` when the API key is missing or the provider is unknown; it is not a `PodcastError` and will escape uncaught without this explicit handler. Also add `print(f"Wrote {len(files)} files to {output_dir}")` after the `save_output(files, output_dir)` call — `main()` is the entry point and owns all user-facing output; `save_output` is a library function (Section 6 of the pipeline) and must not print to stdout. Also remove the "Prints `Wrote N files to {output_dir}` on success" clause from `save_output`'s docstring in `save_output.py` — it documents a stdout side effect that never belonged in a library function and was never implemented. |
+| `src/slicer/pdf_splitter.py` | Add `llm: LLMClient \| None` to `get_toc_from_llm`, `extract_toc`, and `run_splitter`; remove `sys.path.insert` block. **`get_toc_from_llm`:** add `if llm is None: return None` as the first line — when no client is available Stage 4 returns `None` immediately, allowing the pipeline to fall through to Stage 5 (`get_toc_from_content_scan`) without calling the LLM. Add `from llm.exceptions import LLMError` and replace the broad `except Exception` with `except LLMError` — `llm.call()` raises `LLMError` on transport failure; `ScriptGenerationError` is never raised here because slicer calls `llm.call()` directly, not through `call_api()`. Log the error and return `None`. **CLI `main()`:** add `from llm.exceptions import LLMConfigError` and `from llm.env import resolve_from_env` to imports. Call `create_client(**resolve_from_env())`. Wrap `create_client(**resolve_from_env())` in `try/except LLMConfigError` — log the error and set `client = None`. Pass `client` (possibly `None`) to `run_splitter`; it threads through `extract_toc` → `get_toc_from_llm` where the `None` guard fires. Do **not** return a failure dict on `LLMConfigError` — `run_splitter` must still be called so Stages 1–3 and Stage 5 can run; only Stage 4 is skipped. |
+| `src/fiction/seed_gen/cli.py` | Remove `sys.path.insert`; import helpers via `podcast_script_generator.llm.*`. Add `from podcast_script_generator.llm.exceptions import ScriptGenerationError` and `from llm.exceptions import LLMConfigError` to imports — both are required before the handlers below compile. Replace `except (ValueError, RuntimeError)` with `except (ValueError, ScriptGenerationError)` — the new `call_api` raises `ScriptGenerationError`, not `RuntimeError`; leaving `RuntimeError` in the handler means LLM failures escape uncaught. In `main()`, add `from llm.env import resolve_from_env` to imports alongside the existing `from llm.exceptions import LLMConfigError`. Call `create_client(**resolve_from_env())`. Wrap `create_client(**resolve_from_env())` in `try/except LLMConfigError` and print a clean error message — without this, a missing API key produces a traceback instead of a user-readable message. |
+| `src/podcast_script_generator/llm/main.py` | Add `from llm.exceptions import LLMConfigError` to imports — without this the `except LLMConfigError` block below raises `NameError` at runtime. Add `from llm.env import resolve_from_env` and `from llm.protocol import LLMClient` to imports. Add `llm: LLMClient | None = None` to `main()`. When `llm is None`, create the client via `create_client(**resolve_from_env())`; otherwise use the injected client. Pass the client to `call_api(pdf_text, prompt_text, llm=client)`. Catch `LLMConfigError` explicitly alongside `PodcastError` — `create_client()` raises `LLMConfigError` when the API key is missing or the provider is unknown; it is not a `PodcastError` and will escape uncaught without this explicit handler. Also add `print(f"Wrote {len(files)} files to {output_dir}")` after the `save_output(files, output_dir)` call — `main()` is the entry point and owns all user-facing output; `save_output` is a library function (Section 6 of the pipeline) and must not print to stdout. Also remove the "Prints `Wrote N files to {output_dir}` on success" clause from `save_output`'s docstring in `save_output.py` — it documents a stdout side effect that never belonged in a library function and was never implemented. |
 | `src/tts/cli.py` | No change needed. Imports `TTSSubmissionError`, `TTSTimeoutError`, `PodcastError` from `podcast_script_generator.llm.exceptions` — those are TTS-domain exceptions kept in the podcast shim, not transport-level errors. |
-| `src/cli/podcast.py` | **No change.** Already delegates to factory; has no LLM awareness. |
+| `src/endpoints/podcast.py` | Add `from llm.exceptions import LLMConfigError` to imports. In `generate_book_podcast`: **(1)** wrap the `default_splitter_engine()` call inside the existing `if splitter_engine is None:` branch in `try/except LLMConfigError` and `return [PodcastResult(error=e)]` on failure; **(2)** after the `if not resolve_dir or not resolve_dir.exists(): return []` check and before the `pdfs = sorted(...)` call, add an early script-engine construction block: if `script_engine is None`, construct via `default_llm_script_engine(mode=mode)` wrapped in `try/except LLMConfigError` and `return [PodcastResult(error=e)]` on failure. Wrap only the constructions — not the whole function. Placement after the `resolve_dir` check is required — construction must not fire when there are no chapter PDFs to process. This ensures a missing API key in book mode produces one structured error, not N identical per-chapter errors. Requires Step 1 (`src/llm/`) to be complete before this import resolves. |
+| `src/cli/podcast.py` | Remove `default_splitter_engine` and `default_llm_script_engine` from the `engines.factory` import (line 77) — only `default_audio_engine` remains. Remove the `splitter_engine=default_splitter_engine()` kwarg from the `generate_book_podcast` call (line 97). Remove the eager `default_llm_script_engine(mode=args.mode)` construction (line 78) and replace with `script_engine = None` — the endpoint constructs it lazily. Both engine constructions move into `endpoints/podcast.py` with proper `LLMConfigError` handling. No other changes. |
 
 ### Step 4 — Update novel pipeline (DI with `LLMTransport`)
 
@@ -412,7 +423,7 @@ No module-level singleton. The `LLMClient` is created at the entry point (`main(
 | `src/cli/fiction.py` | Add `except ConfigError` **before** the existing broad `except Exception` and return exit code 2. Import `ConfigError` from `novel_pipeline.exceptions`. Without this, `ConfigError` raised by `endpoints/fiction.py` is caught by the broad handler and silently returns exit 1, breaking the documented exit-code contract. All other behaviour is unchanged. **This is the only architecture-compliant fix.** Two alternatives exist but are ruled out by the architecture: (1) an `isinstance(e, ConfigError)` check inside the broad handler works mechanically but conflates semantically distinct cases and obscures intent; (2) raising `SystemExit(2)` inside `endpoints/fiction.py` pushes exit-code policy into the endpoint layer, which is reusable and must not own CLI concerns. Exit-code translation belongs at the CLI boundary — `cli/fiction.py` is already that boundary, as demonstrated by `KeyboardInterrupt → 1` and `Exception → 1` already present there, and by `novel_pipeline/cli.py` applying the same pattern at its own boundary (`except ConfigError: return 2` at lines 87 and 126). |
 | `src/novel_pipeline/config.py` | Remove the env var override block that maps `OPENROUTER_API_KEY` → `config["api_key"]` and `OPENROUTER_MODEL` → `config["model"]`. After migration, `load_config()` is a pure TOML reader — it returns only values from the config file. Env var resolution is `resolve_from_env()`'s exclusive responsibility; the wiring origins (`novel_pipeline/cli.py` and `endpoints/fiction.py`) already spread `resolve_from_env()` last, so env always wins over TOML without any work inside `load_config()`. This block was a pre-migration holdover from when `novel_pipeline` was a standalone package with no wiring origin; it is now redundant and its presence means `OPENROUTER_API_KEY` and `OPENROUTER_MODEL` appear in two places, violating the single-source-of-truth principle established by `env.py`. |
 
-> **Note:** `src/cli/podcast.py` requires no changes — it already delegates engine construction to `factory.py`. `src/engines/factory.py` is the wiring origin and **does** change (see Step 3).
+> **Note:** `src/cli/podcast.py` changes in two places: remove both `default_splitter_engine` and `default_llm_script_engine` from the import (line 77) and remove their eager constructions at lines 78 and 97. `src/endpoints/podcast.py` becomes the error boundary for both splitter-engine and script-engine construction in book mode. `src/engines/factory.py` is the wiring origin for engine construction and **does** change (see Step 3).
 
 ### Step 5 — Remove `sys.path.insert` blocks
 - `src/slicer/pdf_splitter.py:214-216`
@@ -427,9 +438,20 @@ No module-level singleton. The `LLMClient` is created at the entry point (`main(
 
 **Pre-existing bug 2 — `save_output` stdout assertion (line 320):** The test asserts `"Wrote 2 files" in r.stdout`, but `save_output` only calls `logger.debug(...)`, which never appears on stdout by default. **Do not** add a print to `save_output` — it is a library function (Section 6 of the pipeline) and must not own user-facing output. The fix belongs in `main()` (Step 3 above): add `print(f"Wrote {len(files)} files to {output_dir}")` after the `save_output(files, output_dir)` call, and remove the "Prints..." clause from `save_output`'s docstring. The test assertion at line 320 requires no change — it runs the full pipeline via `main.main()` as a subprocess and will pass once `main()` emits the message.
 
-**DI migration:** The e2e test currently monkey-patches `call_api.call_api = lambda ...`. After migration that patch target no longer exists — `main()` constructs the client internally. Add `llm: LLMClient | None = None` to `main()` and call `create_client()` only when `llm is None`. The test then passes a fake `LLMClient` directly — no patching required.
+**DI migration:** The e2e test currently monkey-patches `call_api.call_api = lambda ...`. After migration that patch target no longer exists — `main()` constructs the client when no `llm` is injected (see Step 3). The test passes a fake `LLMClient` directly via `main(llm=fake)` — no patching required.
 
 #### `src/novel_pipeline/tests/test_pipeline.py`
+
+The test file is already at `src/novel_pipeline/tests/test_pipeline.py` — the move was completed when `novel_pipeline` was converted from a standalone package (see "What Was Wrong With v1", point 3). No move needed.
+
+Remove the vestigial block at the top of the file (just above the `from novel_pipeline import` lines):
+
+```python
+# Ensure the freshly-installed package is importable.
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+```
+
+This block inserts the `tests/` directory itself — which contains no importable modules — and was a leftover from the old standalone-package era. After removing it, delete `import sys` if it is the only remaining consumer of that import. (`from pathlib import Path` and all other imports are still used and must stay.)
 
 **Pre-migration fixes required (three tests fail today, before the transport refactor):**
 
@@ -443,7 +465,11 @@ No module-level singleton. The `LLMClient` is created at the entry point (`main(
 
 **Gap 3 — `TestRequestWrappers`:** Currently patches `novel_pipeline.requests_.call_api`. After migration `request_chapter` and `request_living_doc_update` accept `client` directly. Drop the `call_api` patch; pass a `FakeLLMTransport` directly to the wrapper functions instead. Both functions also require `timeout: float | None` — pass `timeout=None` for most tests, or a concrete `float` for any test that asserts timeout-forwarding behaviour. Omitting `timeout` raises `TypeError`.
 
-**Move** retry tests (429 backoff, network error, `Retry-After` header, body-fallback `error.metadata.retry_after_seconds`) out of `test_pipeline.py` into a new `src/llm/providers/tests/test_openrouter.py` — they test transport behaviour, not domain behaviour. Preserve the assertion that `time.sleep` is called with the correct delay value.
+**Move** retry tests (429 backoff, network error, `Retry-After` header, body-fallback `error.metadata.retry_after_seconds`, 4xx fail-fast raises `TransportError` immediately with no retry, malformed response missing `choices` structure raises `TransportError`) out of `test_pipeline.py` into a new `src/llm/providers/tests/test_openrouter.py` — they test transport behaviour, not domain behaviour. Preserve the assertion that `time.sleep` is called with the correct delay value.
+
+**Dead test 1 — `test_env_overrides` (line 627):** Delete. This test asserts that `load_config()` merges `OPENROUTER_API_KEY` and `OPENROUTER_MODEL` env vars into the returned dict. Step 4 deliberately removes that behaviour — `load_config()` becomes a pure TOML reader and env var merging moves to `resolve_from_env()` at the wiring origin. The test is a spec for a removed contract; there is no updated form worth keeping.
+
+**Dead test 2 — `test_missing_api_key_raises` (line 1005):** Delete from `test_pipeline.py`. This test calls `call_api()` with the old pre-migration signature (messages, model, cfg dict) and asserts `ConfigError` when no API key is present. After Step 4, `call_api()` accepts `client: LLMTransport` — the old signature is gone and the API key check moves to `OpenRouterClient.__init__()`. Add equivalent coverage to `src/llm/providers/tests/test_openrouter.py`: assert that `OpenRouterClient(api_key=None)` raises `LLMConfigError`. This sits naturally alongside the other transport-layer tests already planned for that file.
 
 ### Step 7 — Delete old implementations (after verification)
 - Remove the old `call_api` implementation from `src/podcast_script_generator/llm/call_api.py` — it is fully replaced by the DI version in Step 2.
@@ -467,11 +493,21 @@ No module-level singleton. The `LLMClient` is created at the entry point (`main(
 # No production path hacks remain
 grep -r "sys.path.insert" src/ | grep -v test | grep -v "__pycache__" | grep -v "ai_context.md"
 
-# No cross-domain LLM imports in domain modules
-grep -r "from podcast_script_generator.llm" src/slicer src/fiction src/engines src/tts
+# No domain module bypasses the factory (direct provider imports forbidden)
+grep -r "from llm\.providers\|import OpenRouterClient" \
+  src/slicer src/fiction src/engines src/tts src/novel_pipeline \
+  src/cli src/endpoints src/podcast_script_generator
 
-# Factory resolves correctly
-PYTHONPATH=src python -c "from llm.factory import create_client; c = create_client(); print(type(c))"
+# Factory resolves correctly: provider instantiates and satisfies LLMClient protocol
+PYTHONPATH=src python -c "
+import os; os.environ['OPENROUTER_API_KEY'] = 'test-key'
+from llm.env import resolve_from_env
+from llm.factory import create_client
+from llm.protocol import LLMClient
+c = create_client(**resolve_from_env())
+assert isinstance(c, LLMClient), type(c)
+print('factory ok')
+"
 
 # Import smoke tests
 PYTHONPATH=src python -c "from engines.llm_script import LLMScriptEngine; from slicer.pdf_splitter import get_toc_from_llm"
@@ -503,4 +539,4 @@ PYTHONPATH=src python -m pytest src/novel_pipeline/tests/test_pipeline.py
 - Do **not** re-export `LLMError` as `PodcastError`. `PodcastError(Exception)` stays as the podcast domain base unchanged. Transport errors are caught at the `call_api` boundary and re-raised as `ScriptGenerationError`.
 - `client: LLMTransport` is a **required** parameter in `run_session`, `request_chapter`, and `request_living_doc_update` — no default. Wiring is the caller's responsibility. `novel_pipeline` is no longer standalone and has no reason to construct its own transport.
 - Add `APIRateLimitError(APIResponseError)` to `novel_pipeline/exceptions.py` and re-export it in `novel_pipeline/__init__.py` alongside the existing exceptions. This is the only change to that file — the rest of the domain hierarchy (`CostLimitError`, `ContextOverflowError`, `APIResponseError`, etc.) stays exactly as-is. `APIRateLimitError` inherits from `APIResponseError` (not `PipelineError` directly) so that all existing `except APIResponseError` catch sites in `session.py` handle rate-limit exhaustion automatically — no catch-site additions required. Callers that need to distinguish rate-limit from other API errors catch `APIRateLimitError` first, before the broader `except APIResponseError`. **Exit codes:** the two CLI paths produce different codes by design — `novel_pipeline/cli.py` (direct path) maps `APIResponseError` to exit 3 and `APIRateLimitError` inherits that via the existing handler — no new handler needed there. `cli/fiction.py` (harness path) catches only `ConfigError` (exit 2) and everything else via the broad `except Exception` (exit 1) — rate-limit exhaustion exits 1 on this path, consistent with that CLI's intentional coarse exit-code contract. Do not add `except APIResponseError` to `cli/fiction.py`; that would impose `novel_pipeline/cli.py`'s granular scheme onto a boundary the spec designed differently.
-- Do **not** add config file loading to `OpenRouterClient`. Entry points own config loading; the transport accepts explicit constructor args. `OpenRouterClient` has internal env var fallbacks as a safety net for callers without config context, but `resolve_from_env()` in `env.py` is the primary env reader for all wiring origins — do not add new env var reads inside `OpenRouterClient`.
+- Do **not** add config file loading to `OpenRouterClient`. Entry points own config loading; the transport accepts explicit constructor args. `OpenRouterClient` has no internal env var fallbacks — all env var reading goes through `resolve_from_env()` at the call site for all callers. Do not add env var reads inside `OpenRouterClient`.
