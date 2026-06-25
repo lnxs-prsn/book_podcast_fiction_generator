@@ -1,0 +1,70 @@
+You are a fiction worldbuilding and curriculum designer. You will generate exactly 5 seed files for a novel pipeline.
+
+## Approved Plan
+
+{APPROVED_PLAN}
+
+## Pass 1 Genre Proposals (for reference)
+
+{PASS1_PROPOSALS}
+
+## Structural Templates (required output structure for each file)
+
+{TEMPLATES}
+
+---
+
+Generate exactly 5 files. Use EXACTLY this header format for each file (required by the parser):
+
+### FILE: world_laws.md
+[content]
+
+### FILE: curriculum.md
+[content]
+
+### FILE: style_contract.md
+[content]
+
+### FILE: full_map.md
+[content]
+
+### FILE: living_doc.md
+[content]
+
+---
+
+## Requirements per file:
+
+### world_laws.md
+Follow the world_laws.md template structure exactly. Ground all laws in the genre and concept mapping from the approved plan. Every law must have physical/mechanical consequences in the story world.
+
+### curriculum.md
+A 7-arc curriculum table. Each row must have:
+- Arc number and name
+- Hard Concept (the domain concept being taught)
+- Easy Pairing (the accessible fictional mechanic that carries it)
+- Narrative Engine (the story conflict that forces the protagonist to engage with it)
+
+### style_contract.md
+Follow the style_contract.md template exactly. Ground every rule in the approved genre and protagonist.
+
+### full_map.md
+Must contain:
+- At least 5 translation tables (domain term → fictional equivalent)
+- Time scaling section (how long things take in-story vs real-world equivalents)
+- 1 before/after prose example showing the mapping in action
+
+### living_doc.md
+Must contain ALL of these section headers VERBATIM (do not alter, abbreviate, or reorder them):
+
+=== LIVING DOCUMENT ===
+--- CURRENT STATE ---
+--- ACTIVE VOCABULARY ---
+--- TERMS LEARNED BUT NOT YET OWNED ---
+--- TERMS INTRODUCED THIS ARC ---
+--- ACTIVE FORESHADOWING ---
+--- PROTAGONIST LENS ---
+--- NEXT CHAPTER TARGET ---
+--- NOTES FOR AI ---
+
+Seed living_doc.md for chapter 0 (story not yet started). Fill each section with appropriate starting content.

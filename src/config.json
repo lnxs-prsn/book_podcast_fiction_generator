@@ -1,0 +1,14 @@
+{
+  "api_url": "https://openrouter.ai/api/v1/chat/completions",
+  "model": "openrouter/free",
+  "toc_page": null,
+  "max_tokens": 8192,
+  "speakers": {
+    "speaker_1": "en-Alice_woman",
+    "speaker_2": "en-Carter_man",
+    "speaker_3": "en-Maya_woman",
+    "speaker_4": "en-Frank_man"
+  },
+  "wavespeed_model": "microsoft/vibevoice",
+  "tts_scale": 1.3
+}

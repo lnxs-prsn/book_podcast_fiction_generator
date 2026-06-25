@@ -1,0 +1,62 @@
+{
+  "session_total": 0.026932,
+  "lifetime_total": 0.10385117499999999,
+  "session_started_at": "2026-06-05T04:05:48.076561+00:00",
+  "entries": [
+    {
+      "ts": "2026-06-05T04:05:48.076582+00:00",
+      "amount": 6e-06,
+      "note": "generate_chapter model=openrouter/free in=3919 out=1740"
+    },
+    {
+      "ts": "2026-06-20T09:27:34.347092+00:00",
+      "amount": 4e-06,
+      "note": "generate_chapter model=openrouter/free in=3791 out=646"
+    },
+    {
+      "ts": "2026-06-22T12:08:38.496364+00:00",
+      "amount": 5e-06,
+      "note": "generate_chapter model=openrouter/free in=3919 out=1160"
+    },
+    {
+      "ts": "2026-06-22T12:10:07.815810+00:00",
+      "amount": 0.013618,
+      "note": "generate_chapter model=openrouter/auto in=3805 out=751"
+    },
+    {
+      "ts": "2026-06-22T12:11:19.780821+00:00",
+      "amount": 0.01161,
+      "note": "generate_chapter model=openrouter/auto in=3805 out=500"
+    },
+    {
+      "ts": "2026-06-22T12:12:08.855081+00:00",
+      "amount": 0.012002,
+      "note": "generate_chapter model=openrouter/auto in=3805 out=549"
+    },
+    {
+      "ts": "2026-06-22T12:12:12.787618+00:00",
+      "amount": 0.014998,
+      "note": "update_living_doc model=openrouter/auto in=4363 out=784"
+    },
+    {
+      "ts": "2026-06-22T12:16:56.530536+00:00",
+      "amount": 0.012786,
+      "note": "generate_chapter model=openrouter/auto in=3805 out=647"
+    },
+    {
+      "ts": "2026-06-22T12:17:00.061007+00:00",
+      "amount": 0.01189,
+      "note": "generate_chapter model=openrouter/auto in=3805 out=535"
+    },
+    {
+      "ts": "2026-06-22T12:18:00.007761+00:00",
+      "amount": 0.01093,
+      "note": "generate_chapter model=openrouter/auto in=3805 out=415"
+    },
+    {
+      "ts": "2026-06-22T12:18:05.476332+00:00",
+      "amount": 0.016002,
+      "note": "update_living_doc model=openrouter/auto in=4229 out=943"
+    }
+  ]
+}

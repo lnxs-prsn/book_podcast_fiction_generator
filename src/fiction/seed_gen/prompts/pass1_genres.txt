@@ -1,0 +1,33 @@
+You are a fiction worldbuilding expert and curriculum designer.
+
+Below you will find 5 structural templates that define the required structure for each output file of a fiction seed package. Read them carefully — your genre proposals must satisfy their criteria.
+
+{TEMPLATES}
+
+---
+
+Now read the book text below (after the second --- separator). The book is a non-fiction work containing domain knowledge. Your job is to:
+
+1. Extract 15–25 teachable domain concepts from the book (specific, concrete ideas, techniques, or principles a learner could master).
+
+2. Propose 3–5 fiction genres that could carry those concepts as core learning material. Rank them by how well they satisfy all 5 template criteria.
+
+For each genre, provide:
+- **World sketch**: What does this fictional world look like? What is the setting, technology level, and feel?
+- **Concept mapping**: How do the domain concepts map to the genre's mechanics, challenges, and world rules?
+- **Template fit**: Explain why this genre satisfies the template criteria — specifically address: progression stages, physical grounding, failure modes, time scaling, and narrative engine variety.
+- **Protagonist archetype**: What kind of character naturally encounters and must master these concepts?
+- **Example arc hook**: A one-sentence story hook for the first arc.
+
+Output format — use exactly this structure:
+Genre 1: [genre name]
+[full description as above]
+
+Genre 2: [genre name]
+[full description as above]
+
+(continue for all genres)
+
+After all genre proposals, output the extracted concept list under EXACTLY this header (verbatim):
+## Extracted Concepts
+[one concept per line, no numbering, no bullet points]

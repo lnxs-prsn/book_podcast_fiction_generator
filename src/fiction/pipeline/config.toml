@@ -1,0 +1,153 @@
+# Example novel-pipeline config.
+#
+# Required: model, static_doc_paths, living_doc_path, output_dir, context_limit,
+#           price_per_1m_input_tokens, price_per_1m_output_tokens
+# All other keys have defaults — see novel_pipeline/config.py DEFAULTS.
+#
+# Env overrides:
+#   OPENROUTER_API_KEY  -> api_key
+#   OPENROUTER_MODEL    -> model
+
+model = "openrouter/auto"
+context_limit = 200000
+context_safety_margin = 8000
+
+# Per-million-token prices in USD. These are placeholders — set them to your
+# model's current OpenRouter prices.
+price_per_1m_input_tokens = 2.0
+price_per_1m_output_tokens = 8.0
+
+# Static template files. The stem becomes the dict key (world_laws.md ->
+# "world_laws"). Order is irrelevant here; prompt order is fixed in code
+# via `static_doc_order` (see below).
+static_doc_paths = [
+    "./templates/world_laws.md",
+    "./templates/curriculum.md",
+    "./templates/style_contract.md",
+    "./templates/full_map.md",
+]
+
+living_doc_path = "./living_doc.md"
+output_dir = "../../data/fiction/chapters"
+
+# Session shape.
+chapters_per_session = 1
+min_chapter_words = 100
+
+# Network.
+max_retries = 3
+timeout_seconds = 120
+
+# Cost gates (USD).
+cost_limit_usd_per_session = 5.00
+cost_limit_usd_total = 50.00
+
+# Expected output sizes for cost pre-flight.
+# These also drive the request's `max_tokens` (C1) unless overridden via
+# `api_default_max_tokens_chapter` / `api_default_max_tokens_update` below.
+expected_output_tokens_chapter = 4000
+expected_output_tokens_update = 2000
+
+# State and log files.
+log_path = "../../data/fiction/pipeline.log"
+state_file_path = "../../data/fiction/.pipeline_state.json"
+spend_file_path = "../../data/fiction/.pipeline_spend.json"
+
+# Required headers in the living doc. The default in code is character-
+# agnostic; specialise here with your project's exact header strings.
+required_living_doc_sections = [
+    "=== LIVING DOCUMENT ===",
+    "--- CURRENT STATE ---",
+    "--- ACTIVE VOCABULARY ---",
+    "--- TERMS LEARNED BUT NOT YET OWNED ---",
+    "--- TERMS INTRODUCED THIS ARC ---",
+    "--- ACTIVE FORESHADOWING ---",
+    "--- PROTAGONIST LENS ---",
+    "--- NEXT CHAPTER TARGET ---",
+    "--- NOTES FOR AI ---",
+]
+
+# ---------------------------------------------------------------------------
+# Advanced / formerly-hardcoded knobs (all optional; the defaults match the
+# v0.2 behaviour). Each addresses a specific audit item; see comments.
+# ---------------------------------------------------------------------------
+
+# --- Generation behaviour (C1, L1) -----------------------------------------
+
+# Creativity controls. Leave commented to use the model's default values.
+# Set to a number to include the field in the API payload.
+# temperature = 0.7
+# top_p = 1.0
+# seed = 42
+
+# Override the request's `max_tokens` independently of cost-estimation values.
+# Defaults to expected_output_tokens_chapter / expected_output_tokens_update.
+# api_default_max_tokens_chapter = 4096
+# api_default_max_tokens_update = 2048
+
+# --- Rejection loop bound (M4) ---------------------------------------------
+
+# Maximum number of regenerate-after-reject iterations before the pipeline
+# stops to prevent runaway spend. Default 5.
+max_rejection_retries = 5
+
+# --- System prompts (I1) ---------------------------------------------------
+
+# Override the two task-specific system prompts. The defaults are in
+# novel_pipeline/config.py.
+# system_prompt_generate_chapter = """
+# (your custom system prompt for chapter generation)
+# """
+# system_prompt_update_living_doc = """
+# (your custom system prompt for living-doc updates)
+# """
+
+# --- Document wrapping (I2) ------------------------------------------------
+
+# Placeholders: {name_upper}, {name_lower}
+# doc_wrap_open_format  = "=== {name_upper} ==="
+# doc_wrap_close_format = "=== END {name_upper} ==="
+
+# --- Static doc order in the prompt (I3) -----------------------------------
+
+# Order in which the static docs are concatenated into the prompt. Any docs
+# not in this list are appended afterwards in alphabetical order.
+# static_doc_order = ["world_laws", "curriculum", "style_contract", "full_map"]
+
+# --- Tokenizer (I4, H3) ----------------------------------------------------
+
+# Fallback tiktoken encoding when the per-model encoder isn't available.
+# tokenizer_encoding_fallback = "cl100k_base"
+# tokenizer_chars_per_token = 4
+
+# Token-counting overhead constants (H3). Mirrors OpenAI's chat-template
+# accounting: ~4 tokens per message + ~3 tokens to prime the completion.
+# token_count_per_message_overhead = 4
+# token_count_completion_priming = 3
+
+# --- Retry / backoff (I5, L2) ----------------------------------------------
+
+# Exponential backoff seconds used when Retry-After header is missing.
+# retry_backoff_seconds = [2, 8, 32]
+# Random jitter added to each backoff (uniform [0, max]).
+# retry_jitter_seconds_max = 2.0
+
+# --- File-naming formats (I7, I8, I9) --------------------------------------
+
+# Living-doc backup format. Placeholders: {name}, {ts}.
+# living_doc_backup_format = "{name}.bak.{ts}"
+
+# Staged-draft naming. Placeholders: {nn}, {ts}.
+# rejected_draft_name_format = "chapter_{nn:02d}__{ts}.md"
+
+# Canonical chapter regex and rendered filename format. The regex must
+# capture the integer chapter number as group 1.
+# canonical_chapter_regex = "^chapter_(\\d{2,})\\.md$"
+# canonical_chapter_name_format = "chapter_{nn:02d}.md"
+
+# --- Dry-run output (I13, M5) ---------------------------------------------
+
+# Template repeated to size the dry-run placeholder body. Sized to
+# expected_output_tokens_chapter * tokenizer_chars_per_token chars so the
+# pre-session estimate for iteration N+1 is realistic.
+# dry_run_chapter_template = "Lorem ipsum dolor sit amet. "

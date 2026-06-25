@@ -1,0 +1,43 @@
+# Secrets and environment files
+.env
+.env.local
+.env.*.local
+api_keys.txt
+
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Outputs and logs
+data/output/
+output/
+logs/
+*.log
+
+# Generated media
+chapters/
+*.pdf
+*.mp3
+*.wav
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/

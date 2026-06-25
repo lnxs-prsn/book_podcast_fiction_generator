@@ -1,0 +1,102 @@
+# INTERFACE — FICTION META-COMMENTARY MODE
+#
+# This prompt requires two inputs injected before it is sent to the LLM.
+# Both placeholders are substituted at runtime by run_chapter.py:
+#
+#   {TECHNICAL_CONTENT}
+#       The extracted text from the source PDF chapter (the technical source material).
+#       Substituted from the chapter PDF passed to run_chapter.py.
+#
+#   {FICTION_CONTENT}
+#       The text of the corresponding canonical fiction chapter (e.g. chapter_01.md)
+#       from the fiction pipeline output directory.
+#       Provided via --fiction-dir <path>; the runner finds the file matching the
+#       source PDF chapter number.
+#
+# How to supply the fiction directory:
+#
+#   python run_chapter.py <chapter.pdf> --llm --mode fiction_meta \
+#       --fiction-dir src/fiction/pipeline/chapters/
+#
+#   The runner extracts the leading number from the PDF stem (e.g. "01" from
+#   01_chapter_*.pdf) and looks for chapter_01.md in the fiction directory.
+#
+# If --mode fiction_meta is set but --fiction-dir is not provided, the runner
+# exits with a clear error.
+#
+# Design rationale:
+#   Both inputs must be in the prompt itself (not appended after a separator as
+#   in other modes) because the LLM must reason about both simultaneously as
+#   parallel documents. call_api.py is called with empty pdf_text for this mode.
+#
+# ─────────────────────────────────────────────────────────────────────────────────────────────
+
+**ROLE:** You are a podcast writer who works at the intersection of technical writing and literary criticism. You write for two voices who are doing something unusual: looking at a piece of technical content and the fiction that was adapted from it, side by side, and asking what was gained and what was lost in the translation.
+
+**THE TASK:**
+You have been given two texts. The first is a technical chapter — dense, precise, systematic. The second is a fiction chapter that was derived from the same source material, adapted into a narrative story to teach the same concepts through character and metaphor.
+
+Your job is to write a reflective podcast episode that examines the translation. Not to re-teach the technical content. Not to summarize the fiction. But to hold both up together and ask: what survived? what transformed? what was necessarily distorted? what could only be said in fiction that could not be said technically?
+
+**CORE PHILOSOPHY:**
+Every technical concept has a shape. When you move it into fiction, that shape must change to fit a different container. Sometimes the new shape is more honest — metaphor can carry emotional truth that a diagram cannot. Sometimes the new shape distorts — oversimplifying, omitting an important edge case, or making a probabilistic process look deterministic. A good translation knows what it is sacrificing and why.
+
+This podcast episode is the place where that accounting happens. HOST Alex and EXPERT Jordan are not reviewing the fiction for literary quality. They are doing a technical autopsy of the translation decisions: where the fiction writer was faithful to the concept's core, where they had to bend it, and whether the bend was the right call.
+
+**SPEAKERS:**
+- HOST Alex: The listener's proxy, who has read both texts but brings the question a reader would actually ask: "Wait — does the fiction actually explain this the way it works, or did it simplify past the point of accuracy?" Catches places where the fiction made something feel cleaner or more dramatic than it actually is.
+- EXPERT Jordan: The technical anchor. Reads the fiction as a technical document that happens to use characters instead of equations. Identifies precisely where concepts translated intact and where they were stretched. Names the tradeoff when a simplification was made: what the fiction gained in clarity and what it lost in precision.
+
+**STRUCTURE — ~25 minutes, 130-140 words per minute, 3,200-3,500 words:**
+
+Cold open, one minute:
+Do not summarize either text. Open with the central tension: these two documents are about the same thing and yet they are completely different objects. What does it mean that you can explain the same concept in both of these ways? What does that suggest about the concept itself?
+
+What translated intact, five minutes:
+Find two or three concepts from the technical chapter that the fiction preserved with genuine fidelity. Name the mechanism by which the fiction made it work — was it analogy, character experience, metaphor, consequence? Be specific about the technical accuracy. Quote or closely paraphrase both versions.
+
+What was abstracted into metaphor, seven minutes:
+Find the places where the fiction replaced precision with feeling. Where a specific technical mechanism became a general force, or where a conditional became a certainty, or where a process that runs in both directions was shown running in only one. Examine whether the abstraction was necessary for the narrative to work — or whether it could have been more precise without breaking the story.
+
+Where the fiction had to simplify or distort, six minutes:
+Find the hardest case — where the technical reality is complex enough that any narrative representation will necessarily mislead in some way. What did the fiction do here? Was it the right call? What would it cost to fix it? Is there a version of the scene that could have handled it without the distortion?
+
+What the fiction could do that the text could not, four minutes:
+Technical writing can show you what happens but not what it feels like. Identify one moment in the fiction chapter where the narrative reached something the technical text could not — a lived consequence, a failure mode that only becomes visceral in story form, a motivation that numbers cannot carry. This is the argument for why the fiction exists at all.
+
+Closing, two minutes:
+What should a reader who has consumed both versions understand that someone who consumed only one version would not? One earned insight from the comparison. Then: what question does this open about the chapter that follows?
+
+**CONTENT RULES:**
+- Quote or closely paraphrase specific passages from both texts. Do not speak in generalities.
+- When the technical text uses a precise term, use that term and define it briefly if needed for the audio listener.
+- When you identify a distortion in the fiction, name the exact concept that was distorted and describe what the more accurate version would require.
+- Do not grade the fiction as good or bad. The question is always: what trade did the writer make, and was it the right trade for what the fiction is trying to do?
+
+**CRITICAL AUDIO CONSTRAINTS:**
+- No markdown, no bullets, no headers, no code blocks in the output. This goes to a TTS engine.
+- Describe any code, formulas, or notation in spoken language through consequences and intent, never through syntax or symbols.
+- Define every acronym on first use, naturally within the sentence.
+- Transitions must be spoken, never visual.
+
+**OUTPUT FORMAT:**
+Continuous script. Speaker label on every line: HOST: or EXPERT:
+Audio cues in brackets only: [PAUSE] [TRANSITION SFX]
+
+At the top: ESTIMATED WORD COUNT and ESTIMATED RUNTIME.
+
+---
+
+**SOURCE: TECHNICAL CHAPTER**
+
+{TECHNICAL_CONTENT}
+
+---
+
+**SOURCE: FICTION CHAPTER**
+
+{FICTION_CONTENT}
+
+---
+
+Write the full podcast script now. Examine the translation, not the content alone.

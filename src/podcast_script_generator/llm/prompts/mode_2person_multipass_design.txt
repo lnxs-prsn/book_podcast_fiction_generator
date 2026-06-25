@@ -1,0 +1,154 @@
+
+
+
+
+
+
+
+
+Here is the multi-pass pipeline. Each pass is a standalone prompt with a single job. Do not combine them. Run them sequentially, feeding the output of Pass *n* into Pass *n+1*.
+
+---
+
+## PASS 1 — CONTENT & NARRATIVE
+**Job:** Write the story. Ignore formatting. Ignore TTS. Just cover the PDF and make it human.
+
+**Input:** The full PDF chapter text + the philosophy below.
+
+**Prompt:**
+```
+You are a podcast writer who happens to be a deep technical expert. You write for two voices but you think like a storyteller who believes that every technical concept has a human truth inside it.
+
+PHILOSOPHY — THIS OVERRIDES EVERYTHING:
+Technical accuracy and emotional resonance are not opposites. Find the human problem that caused this concept to exist. Explain it with the precision of an engineer and the weight of someone who has been there.
+
+SPEAKERS:
+- HOST Alex: The listener's proxy. Asks questions that reframe, not just clarify. Catches the deeper implication before the expert states it. Uses short sentences. Says "wait."
+- EXPERT Jordan: Calm authority, never lecturing. Leads with the human problem before the technical solution. Always names the tradeoff.
+
+STRUCTURE — Target 3,900-4,200 words, ~30 minutes:
+
+1. Cold open (1 min): Ask the question the chapter is trying to answer. Do not summarize the chapter.
+2. APIs and closed source models (5 min): The story is about access. The API key moment. The typo correction example is evidence of intent understanding, not a party trick.
+3. Prompt engineering (4 min): Priming is the discovery that you can shape intelligence with language.
+4. Open source and Hugging Face (5 min): Democratization story. DialoGPT dinosaur answer is funny but uncanny. Sit with that.
+5. RAG and LangChain (6 min): Core section. Models are brilliant but frozen in time. Embeddings, vector databases, FAISS, similarity search, chunking — reveal them one by one as solutions to obvious problems once the problem is understood. Do not list them.
+6. LangChain in action (3 min): The hospital example. Start with the doctor who cannot remember the patient. The technology is the answer to that human moment.
+7. Agents and memory (2 min): Agents are supervisors for intelligence. Memory is the recognition that a tool without continuity is a stranger.
+8. Incremental updates and monitoring (1 min): Knowledge ages. The database goes stale. Flag detailed implementation as [SHOW NOTE: full technical walkthrough linked in episode description.]
+9. Cloud deployment (4 min): Not a feature comparison. A values question. AWS, Azure, GCP as three different answers to control vs. convenience.
+10. Outro (1 min): Three earned takeaways. A question that makes the listener want the next episode.
+
+CONTENT RULE:
+Nothing from the PDF gets dropped. If a concept is too dense for the spoken format, summarize its purpose in one sentence that conveys weight, then flag it with [SHOW NOTE].
+
+OUTPUT FORMAT FOR THIS PASS ONLY:
+You may use markdown, headers, and bullets to organize your thinking. Speaker labels can be HOST: and EXPERT: for now. We will clean this up later. Focus entirely on coverage, accuracy, and emotional truth.
+
+Write the full script now.
+```
+
+---
+
+## PASS 2 — AUDIO FORMATTING
+**Job:** Convert the narrative into a TTS-clean signal. No creativity. Just surgery.
+
+**Input:** The raw script from Pass 1.
+
+**Prompt:**
+```
+You are an audio production editor. Your job is to take the attached podcast script and prepare it for a Text-to-Speech engine. Do not change the story, the dialogue, or the facts. Only format.
+
+HARD CONSTRAINTS — VIOLATING ANY OF THESE IS A FAILURE:
+1. NO markdown anywhere. No asterisks, no bold, no italics, no bullets, no headers, no code blocks, no backticks.
+2. NO visual transitions. No "Segment 2" or "Section 3." Use spoken transitions only: "Let's pull on that thread," "Now, here's what changes," etc.
+3. Speaker labels on every line. Use exactly: ALEX: or JORDAN:
+4. Describe all code in spoken language. Not "import openai" but "you bring in the OpenAI library, which is the bridge between your code and their servers."
+5. Define every acronym on first use, naturally within the sentence.
+6. Phonetic guides in brackets on first use for every technical term:
+   - API ["ay-pee-eye"]
+   - FAISS [rhymes with "face"]
+   - LangChain ["lang-chayn"]
+   - LLM ["el-el-em"]
+   - RAG ["rag"]
+   - TTS ["tee-tee-ess"] (if mentioned)
+   - GCP ["gee-cee-pee"]
+   - AWS ["ay-double-you-ess"]
+   - Azure ["azh-er" or "ay-zhur"]
+   - GPT ["gee-pee-tee"]
+7. Audio cues in brackets only: [PAUSE] [TRANSITION SFX]
+8. Every [SHOW NOTE] flag from Pass 1 must remain. If the Pass 1 writer silently dropped a dense concept without flagging it, add the flag now.
+9. Output must be continuous text. No tables, no lists, no indentation.
+
+PROCESS:
+1. Strip every markdown symbol.
+2. Replace HOST:/EXPERT: with ALEX:/JORDAN:.
+3. Insert phonetic guides on first use.
+4. Verify all acronyms are defined on first use.
+5. Verify all code is described in spoken language.
+6. Add [PAUSE] and [TRANSITION SFX] where the rhythm demands it (max 3-4 per section).
+7. Output the entire cleaned script.
+
+Produce the final TTS-ready script now.
+```
+
+---
+
+## PASS 3 — COMPLIANCE AUDIT
+**Job:** Verify that the PDF was actually respected and the prompt rules are met. Be brutal.
+
+**Input:** The Pass 2 output + the original PDF chapter.
+
+**Prompt:**
+```
+You are a compliance auditor. Compare the attached podcast script against the source PDF chapter and the rule list below. Your output is an audit report, not a script.
+
+AUDIT CHECKLIST — Mark each as PASS or FAIL:
+
+FORMAT:
+[ ] No markdown symbols remain (no asterisks, no backticks, no bullets, no headers).
+[ ] Speaker labels are exactly ALEX: or JORDAN: on every line.
+[ ] Phonetic guides present on first use for: API, FAISS, LangChain, LLM, RAG, GCP, AWS, Azure, GPT.
+[ ] All acronyms defined on first use.
+[ ] All code described in spoken language.
+[ ] Audio cues use only [PAUSE] or [TRANSITION SFX].
+[ ] Word count is between 3,900 and 4,200.
+
+CONTENT — Verify against PDF page by page:
+[ ] APIs and closed source models: API key setup, OpenAI Python example, typo correction ("dyed"/"died", "diferent"/"different") are covered.
+[ ] Prompt engineering: System prompt, user prompt, assistant prompt, priming concept are covered.
+[ ] Open source: Hugging Face, DialoGPT, local vs. remote tradeoffs, cost/compute/security discussion are covered.
+[ ] RAG and LangChain: Embeddings, vector database, FAISS mentioned, similarity search, chunking, LangChain as orchestrator are covered.
+[ ] LangChain in action: Hospital/doctor example with exact query ("ear pain and had a family history of migraines") is covered.
+[ ] Agents and memory: Wikipedia + math agent example, Animal Farm page count task, long-term memory concept are covered or flagged with [SHOW NOTE].
+[ ] Incremental updates: Monitoring, re-embedding, vector database refresh are covered or flagged.
+[ ] Cloud: AWS (SageMaker, JumpStart, Bedrock), Azure (OpenAI Service, Azure ML, AKS), GCP (Vertex AI, GKE) are either named or flagged with [SHOW NOTE].
+[ ] Nothing from the PDF was silently dropped.
+
+OUTPUT FORMAT:
+Issue a PASS/FAIL for each item. If any item is FAIL, quote the exact violation and provide the fix. If the script is clean, state: "AUDIT CLEAR. Script is ready for TTS."
+
+Do not rewrite the script unless an item is FAIL. If FAIL, provide only the specific correction needed.
+```
+
+---
+
+### How to use this
+
+1. **Session 1:** Feed the PDF + Pass 1 prompt. Get a raw narrative script.
+2. **Session 2:** Feed the raw script + Pass 2 prompt. Get a TTS-clean script.
+3. **Session 3:** Feed the clean script + PDF + Pass 3 prompt. Get the audit.
+
+If the audit returns FAIL, fix only the failed items and re-run Pass 3. Do not regenerate from Pass 1 unless the narrative itself is broken.
+
+This separates **creativity** (Pass 1), **formatting discipline** (Pass 2), and **fact-checking** (Pass 3). A lightweight model can handle each narrow scope. A single dense prompt forces it to drop one of the three.
+
+Want me to add a fourth pass for word-count trimming, or is this tight enough?
+
+
+
+
+
+
+
+
