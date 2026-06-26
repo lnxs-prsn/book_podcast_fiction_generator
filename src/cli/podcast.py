@@ -139,4 +139,10 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except SystemExit:
+        raise
+    except Exception as e:
+        sys.stderr.write(f"Unexpected error: {e}\n")
+        raise SystemExit(1)
