@@ -23,6 +23,7 @@ from typing import List, Tuple, Optional, Dict, Any
 from llm.exceptions import LLMConfigError
 from llm.exceptions import LLMError
 from llm.protocol import LLMClient
+from path_utils import resolve_data_root, resolve_output_path
 
 try:
     import ocrmypdf
@@ -751,7 +752,7 @@ def _ensure_searchable(pdf_path: str, is_scanned: bool) -> Tuple[str, bool]:
 def run_splitter(
     input_path: str,
     toc_page: int = DEFAULT_TOC_PAGE,
-    output_dir: str = DEFAULT_OUTPUT_DIR,
+    output_dir: Optional[str] = None,
     prefix: str = DEFAULT_PREFIX,
     level: int = DEFAULT_LEVEL,
     no_ocr: bool = False,
@@ -764,7 +765,11 @@ def run_splitter(
 ) -> Dict[str, Any]:
     """
     Orchestration-friendly entry point. Can be called directly from another Python script.
-    
+
+    ``output_dir`` defaults to ``<project_root>/split_chapters/`` when not
+    supplied, anchored to ``resolve_data_root()`` so output is always written
+    relative to the project root rather than the current working directory.
+
     Returns a dict with:
         success: bool
         source: str or None
@@ -774,6 +779,12 @@ def run_splitter(
         dry_run: bool
     """
     setup_logging(verbose)
+
+    if output_dir is None:
+        resolved_output = resolve_data_root() / DEFAULT_OUTPUT_DIR
+    else:
+        resolved_output = resolve_output_path(output_dir, allow_escape=True)
+    output_dir = str(resolved_output)
     
     if not os.path.exists(input_path):
         logging.error(f"PDF not found: {input_path}")
@@ -842,8 +853,8 @@ Python API:
     parser.add_argument("-i", "--input", required=True, help="Path to input PDF file")
     parser.add_argument("-p", "--toc-page", type=int, default=DEFAULT_TOC_PAGE,
                         help=f"Page number containing the Table of Contents (default: {DEFAULT_TOC_PAGE})")
-    parser.add_argument("-o", "--output-dir", default=DEFAULT_OUTPUT_DIR,
-                        help=f"Directory for output chapter files (default: {DEFAULT_OUTPUT_DIR})")
+    parser.add_argument("-o", "--output-dir", default=None,
+                        help=f"Directory for output chapter files (default: <project_root>/{DEFAULT_OUTPUT_DIR})")
     parser.add_argument("--prefix", default=DEFAULT_PREFIX,
                         help=f"Filename prefix for chapters (default: {DEFAULT_PREFIX})")
     parser.add_argument("--level", type=int, default=DEFAULT_LEVEL,
@@ -867,8 +878,11 @@ Python API:
     from llm.factory import create_client
 
     try:
-        client = create_client(**resolve_from_env())
-    except LLMConfigError as e:
+        timeout_str = os.environ.get("OPENROUTER_TIMEOUT_SECONDS", "120.0")
+        llm_kwargs = resolve_from_env()
+        llm_kwargs["timeout"] = float(timeout_str)
+        client = create_client(**llm_kwargs)
+    except (LLMConfigError, ValueError) as e:
         logging.error(f"LLM configuration error: {e}")
         client = None
 
