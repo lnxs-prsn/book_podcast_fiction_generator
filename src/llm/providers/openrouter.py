@@ -125,7 +125,6 @@ class OpenRouterClient:
             "Content-Type": "application/json",
         }
 
-        effective_timeout = timeout if timeout is not None else self.timeout
         last_error: Exception | None = None
         for attempt in range(self.max_retries + 1):
             try:
@@ -133,7 +132,7 @@ class OpenRouterClient:
                     self.api_url,
                     headers=headers,
                     data=json.dumps(payload),
-                    timeout=effective_timeout,
+                    timeout=timeout,
                 )
             except _NETWORK_ERRORS as e:
                 last_error = e
