@@ -135,6 +135,27 @@ mkdir -p data/chapters
 cp split_chapters/*.pdf data/chapters/
 ```
 
+### PDF Slicer: Output Directory
+
+By default the slicer writes chapter PDFs to `<project_root>/split_chapters/`, where
+`<project_root>` is resolved from the `HARNESS_ROOT` environment variable (or the parent
+of `src/` if that variable is not set). This means the output location is always
+**anchored to the project root**, not to the current working directory, so invoking the
+slicer from an arbitrary directory produces consistent paths.
+
+To write chapters to a different location pass `-o`:
+
+```bash
+PYTHONPATH=src python src/slicer/pdf_splitter.py -i book.pdf -o /some/other/dir
+```
+
+The `OPENROUTER_TIMEOUT_SECONDS` environment variable (default `120.0`) controls the
+HTTP request timeout used when the LLM is called during TOC extraction:
+
+```bash
+OPENROUTER_TIMEOUT_SECONDS=60 PYTHONPATH=src python src/slicer/pdf_splitter.py -i book.pdf
+```
+
 ### Podcast Script Modes
 
 Pass `--mode <mode>` to change the dialogue format:
