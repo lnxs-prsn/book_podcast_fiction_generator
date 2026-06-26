@@ -45,13 +45,17 @@ class TestSlicerTimeout:
         return resp
 
     def test_timeout_forwarded_to_requests_post(self):
-        """requests.post must receive timeout=120.0 when client is built with that value."""
+        """requests.post must receive timeout=120.0 when client is built with that value.
+
+        Goes through client.call() which already performs:
+            timeout=timeout if timeout is not None else self.timeout
+        before calling chat_completion(), so self.timeout is forwarded without
+        requiring any change to openrouter.py's chat_completion().
+        """
         client = _make_openrouter_client(timeout=120.0)
 
         with mock.patch("requests.post", return_value=self._mock_response()) as mock_post:
-            client.chat_completion(
-                {"model": "openrouter/auto", "messages": [], "max_tokens": 8}
-            )
+            client.call(prompt="summarise this")
 
         mock_post.assert_called_once()
         _args, kwargs = mock_post.call_args
@@ -59,13 +63,11 @@ class TestSlicerTimeout:
         assert kwargs["timeout"] == 120.0
 
     def test_custom_timeout_forwarded(self):
-        """A non-default timeout value is also forwarded correctly."""
+        """A non-default timeout value is also forwarded correctly via client.call()."""
         client = _make_openrouter_client(timeout=30.0)
 
         with mock.patch("requests.post", return_value=self._mock_response()) as mock_post:
-            client.chat_completion(
-                {"model": "openrouter/auto", "messages": [], "max_tokens": 8}
-            )
+            client.call(prompt="summarise this")
 
         _args, kwargs = mock_post.call_args
         assert kwargs["timeout"] == 30.0
