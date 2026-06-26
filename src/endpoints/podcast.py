@@ -7,10 +7,6 @@ from llm.exceptions import LLMConfigError, LLMError
 from podcast_script_generator.llm.exceptions import ScriptGenerationError
 from settings import PodcastSettings
 
-_SRC  = Path(__file__).parent.parent        # src/
-_ROOT = Path(__file__).parent.parent.parent  # harnessv4/
-
-
 def generate_chapter_podcast(
     pdf_path: Path | None = None,
     *,
@@ -23,7 +19,8 @@ def generate_chapter_podcast(
     context: str | None = None,
     fiction_dir: Path | None = None,
 ) -> PodcastResult:
-    settings = settings or PodcastSettings()
+    if settings is None:
+        raise TypeError("settings is required")
 
     try:
         if script_path is not None:
