@@ -64,4 +64,10 @@ class LLMClient(Protocol):
     exception catch LLMError and re-raise (see call_api in Step 2).
     """
 
-    def call(self, prompt: str, *, context: str = "") -> str: ...
+    def call(
+        self,
+        prompt: str,
+        *,
+        context: str = "",
+        timeout: float | None = None,
+    ) -> str: ...
