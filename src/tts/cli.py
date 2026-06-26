@@ -74,13 +74,22 @@ def build_api_payload(script: str, speakers: dict) -> dict:
     return payload
 
 
-def send_to_api(payload: dict, api_key: str, output_folder: str | None = None) -> dict:
+def send_to_api(
+    payload: dict,
+    api_key: str,
+    output_folder: str | None = None,
+    max_wait_seconds: float | None = None,
+) -> dict:
     """Submit to WaveSpeed, save request_id for recovery, poll with live progress.
 
     Saves a tts_job.json file to output_folder immediately after submission.
     If this process is killed before the download completes, run:
         python src/tts/recover.py <output_folder>/tts_job.json
     to retrieve the audio without resubmitting (and re-charging the account).
+
+    Polling stops and raises TTSTimeoutError if the job does not complete
+    within ``max_wait_seconds`` (default: WAVESPEED_MAX_WAIT_SECONDS env var
+    or 3600 seconds).
     """
     job_file = Path(output_folder) / "tts_job.json" if output_folder else None
 
@@ -109,16 +118,25 @@ def send_to_api(payload: dict, api_key: str, output_folder: str | None = None) -
         logger.info(f"TTS submitted  request_id={request_id}")
         if job_file:
             logger.info(f"Recovery file  {job_file}")
+        if max_wait_seconds is None:
+            max_wait_seconds = float(os.environ.get("WAVESPEED_MAX_WAIT_SECONDS", 3600.0))
+        deadline = time.monotonic() + max_wait_seconds
+
         logger.info("Polling for completion (status every 30s)...")
 
-        start = time.time()
+        start = time.monotonic()
         last_report = start
 
         while True:
+            if time.monotonic() >= deadline:
+                raise TTSTimeoutError(
+                    f"TTS polling exceeded max_wait_seconds={max_wait_seconds:.0f}"
+                )
+
             result = client._get_result(request_id)
             data = result.get("data", {})
             status = data.get("status")
-            elapsed = time.time() - start
+            elapsed = time.monotonic() - start
 
             if status == "completed":
                 logger.info(f"  [done] {elapsed:.0f}s")
@@ -130,9 +148,9 @@ def send_to_api(payload: dict, api_key: str, output_folder: str | None = None) -
                 error = data.get("error") or "Unknown error"
                 raise TTSSubmissionError(f"WaveSpeed job failed (id={request_id}): {error}")
 
-            if time.time() - last_report >= 30:
+            if time.monotonic() - last_report >= 30:
                 logger.debug(f"  [{elapsed:.0f}s] status={status or 'processing'}...")
-                last_report = time.time()
+                last_report = time.monotonic()
 
             time.sleep(5)
 

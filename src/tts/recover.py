@@ -24,23 +24,39 @@ from pathlib import Path
 import requests
 import wavespeed
 
+from podcast_script_generator.llm.exceptions import TTSTimeoutError
 
-def poll_and_download(request_id: str, output_folder: str, api_key: str) -> str:
+
+def poll_and_download(
+    request_id: str,
+    output_folder: str,
+    api_key: str,
+    max_wait_seconds: float | None = None,
+) -> str:
     client = wavespeed.Client(api_key=api_key)
     out_dir = Path(output_folder)
     out_dir.mkdir(parents=True, exist_ok=True)
 
+    if max_wait_seconds is None:
+        max_wait_seconds = float(os.environ.get("WAVESPEED_MAX_WAIT_SECONDS", 3600.0))
+    deadline = time.monotonic() + max_wait_seconds
+
     print(f"Recovering job  request_id={request_id}")
     print("Polling for completion (status every 30s)...")
 
-    start = time.time()
+    start = time.monotonic()
     last_report = start
 
     while True:
+        if time.monotonic() >= deadline:
+            raise TTSTimeoutError(
+                f"TTS polling exceeded max_wait_seconds={max_wait_seconds:.0f}"
+            )
+
         result = client._get_result(request_id)
         data = result.get("data", {})
         status = data.get("status")
-        elapsed = time.time() - start
+        elapsed = time.monotonic() - start
 
         if status == "completed":
             print(f"  [done] {elapsed:.0f}s")
@@ -74,9 +90,9 @@ def poll_and_download(request_id: str, output_folder: str, api_key: str) -> str:
             error = data.get("error") or "Unknown error"
             raise RuntimeError(f"Job failed (id={request_id}): {error}")
 
-        if time.time() - last_report >= 30:
+        if time.monotonic() - last_report >= 30:
             print(f"  [{elapsed:.0f}s] status={status or 'processing'}...")
-            last_report = time.time()
+            last_report = time.monotonic()
 
         time.sleep(5)
 
