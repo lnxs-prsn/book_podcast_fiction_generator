@@ -14,6 +14,6 @@ def call_api(pdf_text: str, prompt_text: str, llm: LLMClient) -> str:
     """
     combined = f"{prompt_text}\n\n---\n\n{pdf_text}" if pdf_text else prompt_text
     try:
-        return llm.call(prompt=combined)
+        return llm.call(prompt=combined, timeout=120.0)
     except LLMError as e:
         raise ScriptGenerationError(str(e)) from e

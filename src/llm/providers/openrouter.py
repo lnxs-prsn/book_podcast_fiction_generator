@@ -52,6 +52,7 @@ class OpenRouterClient:
         max_retries: int = _DEFAULT_MAX_RETRIES,
         backoff_seconds: tuple[float, ...] = _DEFAULT_BACKOFF_SECONDS,
         jitter_max: float = _DEFAULT_JITTER_MAX,
+        timeout: float | None = None,
     ) -> None:
         if api_key is None:
             raise LLMConfigError("api_key is required")
@@ -81,11 +82,18 @@ class OpenRouterClient:
         self.max_retries = int(max_retries)
         self.backoff_seconds = tuple(float(x) for x in backoff_seconds)
         self.jitter_max = float(jitter_max)
+        self.timeout = float(timeout) if timeout is not None else None
 
     # ------------------------------------------------------------------
     # LLMClient protocol
     # ------------------------------------------------------------------
-    def call(self, prompt: str, *, context: str = "") -> str:
+    def call(
+        self,
+        prompt: str,
+        *,
+        context: str = "",
+        timeout: float | None = None,
+    ) -> str:
         """High-level text-in/text-out interface."""
         if context:
             user_content = f"{context}\n\n{prompt}"
@@ -97,7 +105,7 @@ class OpenRouterClient:
             "messages": [{"role": "user", "content": user_content}],
             "max_tokens": self.max_tokens,
         }
-        response = self.chat_completion(payload)
+        response = self.chat_completion(payload, timeout=timeout if timeout is not None else self.timeout)
         content = response["choices"][0]["message"]["content"]
         # chat_completion guarantees content is non-empty after strip().
         return content.strip()

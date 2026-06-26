@@ -1,3 +1,5 @@
+import os
+
 from config import load_config
 from engines.llm_script import LLMScriptEngine
 from engines.pdf_splitter import PDFSplitterEngine
@@ -7,16 +9,36 @@ from llm.env import resolve_from_env
 from llm.factory import create_client
 
 
-def default_llm_script_engine(mode: str = "2person") -> ScriptEngine:
+def _timeout_from_env() -> float | None:
+    value = os.environ.get("OPENROUTER_TIMEOUT_SECONDS")
+    if not value:
+        return None
+    try:
+        return float(value)
+    except (TypeError, ValueError) as e:
+        raise ValueError(
+            f"OPENROUTER_TIMEOUT_SECONDS must be a float, got: {value!r}"
+        ) from e
+
+
+def _llm_client_kwargs() -> dict:
     cfg = load_config()
-    client = create_client(**{
+    kwargs = {
         "api_key": cfg.get("api_key"),
         "model": cfg.get("model"),
         "api_url": cfg.get("api_url"),
         "max_tokens": cfg.get("max_tokens"),
         "retry_after_override": cfg.get("retry_after_seconds"),
         **resolve_from_env(),  # env wins over config
-    })
+    }
+    timeout = _timeout_from_env()
+    if timeout is not None:
+        kwargs["timeout"] = timeout
+    return kwargs
+
+
+def default_llm_script_engine(mode: str = "2person") -> ScriptEngine:
+    client = create_client(**_llm_client_kwargs())
     return LLMScriptEngine(mode=mode, llm=client)
 
 
@@ -25,13 +47,5 @@ def default_audio_engine(speakers: dict | None = None) -> AudioEngine:
 
 
 def default_splitter_engine() -> SplitterEngine:
-    cfg = load_config()
-    client = create_client(**{
-        "api_key": cfg.get("api_key"),
-        "model": cfg.get("model"),
-        "api_url": cfg.get("api_url"),
-        "max_tokens": cfg.get("max_tokens"),
-        "retry_after_override": cfg.get("retry_after_seconds"),
-        **resolve_from_env(),  # env wins over config
-    })
+    client = create_client(**_llm_client_kwargs())
     return PDFSplitterEngine(llm=client)
