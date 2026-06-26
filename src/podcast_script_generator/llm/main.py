@@ -56,3 +56,6 @@ if __name__ == "__main__":
     except PodcastError as e:
         sys.stderr.write(f"Error: {e}\n")
         raise SystemExit(1)
+    except Exception as e:
+        sys.stderr.write(f"Unexpected error: {e}\n")
+        raise SystemExit(1)
