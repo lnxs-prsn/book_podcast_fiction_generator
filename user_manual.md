@@ -29,15 +29,28 @@ Audio generation (TTS) exists in the codebase but was not run (expensive API cos
 pip install pymupdf requests pdf2image pytesseract pillow
 ```
 
-**Environment variable required for all API calls:**
-```bash
-export OPENROUTER_API_KEY=<your-openrouter-api-key>
-export OPENROUTER_MODEL=openrouter/auto        # or any OpenRouter model
-export OPENROUTER_URL=https://openrouter.ai/api/v1/chat/completions
-```
+**Environment setup:**
 
-> Note: The `.env` file at project root contains stale credentials for a different provider (Aliyun/dashscope). Do NOT source it — it will override with the wrong URL.
-> The `src/config.json` also has a stale `api_url`. Always explicitly set `OPENROUTER_URL` as an env var so it wins over the config file.
+1. Copy the example file to create your local `.env`:
+   ```bash
+   cp .env.example .env
+   ```
+2. Edit `.env` and replace the placeholder values with your real API keys:
+   ```bash
+   OPENROUTER_API_KEY=your-openrouter-api-key
+   WAVESPEED_API_KEY=your-wavespeed-api-key
+   ```
+3. The application loads `.env` automatically when it starts. If you need to use a
+   different env file (for example, per-environment secrets), set `DOTENV_PATH`:
+   ```bash
+   DOTENV_PATH=/path/to/secrets.env python menu.py
+   DOTENV_PATH=/path/to/secrets.env python src/cli/podcast.py --help
+   ```
+
+> Note: The `.env` file is ignored by Git and must never be committed. If you previously
+> committed real keys, rotate them immediately in the provider dashboards.
+> The `src/config.json` default `api_url` is used only when `OPENROUTER_URL` is not set;
+> explicit env vars or values in `.env` take precedence.
 
 ---
 
