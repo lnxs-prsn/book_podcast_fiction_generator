@@ -276,7 +276,7 @@ def main() -> None:
             sys.exit(1)
 
         print("Running Pass 1: genre evaluation...")
-        pass1_response = call_api(pdf_text=book_text, prompt_text=pass1_prompt, llm=client)
+        pass1_response = call_api(pdf_text=book_text, prompt_text=pass1_prompt, llm=client, timeout=120.0)
         validate_pass1_response(pass1_response)
         print(pass1_response)
 
@@ -284,7 +284,7 @@ def main() -> None:
 
         print("\nRunning Pass 2: generating files...")
         pass2_prompt = build_pass2_prompt(user_plan, pass1_response, templates)
-        pass2_response = call_api(pdf_text="", prompt_text=pass2_prompt, llm=client)
+        pass2_response = call_api(pdf_text="", prompt_text=pass2_prompt, llm=client, timeout=120.0)
         files = parse_output(pass2_response)
         save_output(files, str(output_dir))
         write_config_toml(output_dir)
@@ -293,4 +293,7 @@ def main() -> None:
 
     except (ValueError, ScriptGenerationError) as e:
         print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)
+    except Exception as e:
+        sys.stderr.write(f"Unexpected error: {e}\n")
         sys.exit(1)
