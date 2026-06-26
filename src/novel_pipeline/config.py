@@ -109,7 +109,7 @@ DEFAULTS: dict = {
     "chapters_per_session": 3,
     "max_retries": 3,
     "timeout_seconds": 120,
-    "min_chapter_words": 100,
+    "min_chapter_words": 1500,
     "log_path": "./pipeline.log",
     "context_safety_margin": 8000,
     "cost_limit_usd_per_session": 5.00,

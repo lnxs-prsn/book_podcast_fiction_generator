@@ -602,7 +602,7 @@ price_per_1m_output_tokens = 2.0
         p.write_text(self.MIN_CONFIG, encoding="utf-8")
         cfg = load_config(str(p))
         assert cfg["model"] == "test/model"
-        assert cfg["min_chapter_words"] == 100
+        assert cfg["min_chapter_words"] == 1500
         assert cfg["chapters_per_session"] == 3
         assert cfg["state_file_path"] == "./.pipeline_state.json"  # v2
         # v0.3 defaults present:
