@@ -5,6 +5,12 @@ import sys
 import subprocess
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+# Load environment variables from a .env file at module import time.
+# DOTENV_PATH can be used to point at a specific env file.
+load_dotenv(os.environ.get("DOTENV_PATH", ".env"))
+
 PROJECT_ROOT = Path(__file__).resolve().parent
 SRC_DIR = PROJECT_ROOT / "src"
 

@@ -3,6 +3,12 @@ from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
 
+from dotenv import load_dotenv
+
+# Load environment variables from a .env file at module import time.
+# DOTENV_PATH can be used to point at a specific env file.
+load_dotenv(os.environ.get("DOTENV_PATH", ".env"))
+
 
 @dataclass
 class PodcastSettings:
@@ -16,7 +22,7 @@ class PodcastSettings:
     chapters_dir: Path | None = None
     summary_out: Path | None = None
     mode: str = "2person"
-    run_id: str = field(default_factory=lambda: datetime.now().strftime("%Y%m%d_%H%M%S"))
+    run_id: str = field(default_factory=lambda: datetime.now().strftime("%Y%m%d_%H%M%S_%f"))
 
     def __post_init__(self) -> None:
         if self.scripts_out is None:
