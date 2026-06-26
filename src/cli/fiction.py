@@ -1,4 +1,6 @@
+import os
 import sys
+from logging.handlers import RotatingFileHandler
 from pathlib import Path
 
 from novel_pipeline.exceptions import ConfigError
@@ -11,11 +13,33 @@ if str(Path(__file__).parent.parent) not in sys.path:
 
 import logging
 
+from path_utils import resolve_data_root
+
+logger = logging.getLogger(__name__)
+
+
+def _configure_logging(root: Path) -> None:
+    """Configure console + rotating-file logging driven by LOG_LEVEL env var."""
+    level_name = os.environ.get("LOG_LEVEL", "INFO").upper()
+    level = getattr(logging, level_name, logging.INFO)
+
+    log_dir = root / "logs"
+    log_dir.mkdir(parents=True, exist_ok=True)
+    log_file = log_dir / "cli-fiction.log"
+
+    logging.basicConfig(level=level, format="%(asctime)s %(levelname)s %(name)s: %(message)s")
+
+    fh = RotatingFileHandler(log_file, maxBytes=10 * 1024 * 1024, backupCount=3)
+    fh.setLevel(logging.NOTSET)
+    fh.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(name)s: %(message)s"))
+    logging.getLogger().addHandler(fh)
+
 
 def main() -> None:
     import argparse
 
-    logging.basicConfig(level=logging.INFO, format="%(message)s")
+    root: Path = resolve_data_root()
+    _configure_logging(root)
 
     parser = argparse.ArgumentParser(description="Novel fiction pipeline")
     parser.add_argument("--config", required=True, help="Path to TOML config file")
@@ -44,13 +68,13 @@ def main() -> None:
         )
         print(f"Session complete. Chapters written: {result.chapters_written}")
     except KeyboardInterrupt:
-        print("\nInterrupted. State preserved.", file=sys.stderr)
+        logger.error("Interrupted. State preserved.")
         sys.exit(1)
     except ConfigError as e:
-        print(f"Config error: {e}", file=sys.stderr)
+        logger.error("Config error: %s", e)
         sys.exit(2)
     except Exception as e:
-        print(f"Error: {e}", file=sys.stderr)
+        logger.error("Error: %s", e)
         sys.exit(1)
 
 
