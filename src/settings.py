@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 
 # Load environment variables from a .env file at module import time.
 # DOTENV_PATH can be used to point at a specific env file.
-load_dotenv(os.environ.get("DOTENV_PATH", ".env"))
+load_dotenv(os.environ.get("DOTENV_PATH") or Path(__file__).resolve().parent.parent / ".env")
 
 
 @dataclass

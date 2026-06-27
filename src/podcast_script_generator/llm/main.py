@@ -7,6 +7,7 @@ Environment:
     OPENROUTER_API_KEY  required for the API call (via llm.env.resolve_from_env).
 """
 
+import logging
 import sys
 
 from llm.env import resolve_from_env
@@ -30,6 +31,8 @@ except ImportError:
     from parse_output import parse_output
     from save_output import save_output
     from podcast_script_generator.llm.exceptions import PodcastError
+
+logger = logging.getLogger(__name__)
 
 
 def main(llm: LLMClient | None = None) -> None:
@@ -58,4 +61,5 @@ if __name__ == "__main__":
         raise SystemExit(1)
     except Exception as e:
         sys.stderr.write(f"Unexpected error: {e}\n")
+        logger.exception("Unhandled exception in main")
         raise SystemExit(1)

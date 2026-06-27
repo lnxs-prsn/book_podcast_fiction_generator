@@ -1,4 +1,5 @@
 import argparse
+import logging
 import re
 import sys
 from pathlib import Path
@@ -12,6 +13,8 @@ from podcast_script_generator.llm.exceptions import ScriptGenerationError
 from podcast_script_generator.llm.extract_pdf import extract_pdf
 from podcast_script_generator.llm.parse_output import parse_output
 from podcast_script_generator.llm.save_output import save_output
+
+logger = logging.getLogger(__name__)
 
 TEMPLATES_DIR = Path(__file__).parent / "templates"
 PROMPTS_DIR = Path(__file__).parent / "prompts"
@@ -264,6 +267,11 @@ def main() -> None:
         args = parse_args()
         output_dir = Path(args.output_dir)
         output_dir.mkdir(parents=True, exist_ok=True)
+        logging.basicConfig(
+            filename=str(output_dir / "seed_gen.log"),
+            level=logging.DEBUG,
+            format="%(asctime)s %(levelname)s %(name)s: %(message)s",
+        )
 
         templates = load_templates()
         book_text = truncate_pdf_text(extract_pdf(args.source_pdf))
@@ -296,4 +304,5 @@ def main() -> None:
         sys.exit(1)
     except Exception as e:
         sys.stderr.write(f"Unexpected error: {e}\n")
+        logger.exception("Unhandled exception in seed_gen")
         sys.exit(1)

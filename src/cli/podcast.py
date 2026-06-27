@@ -221,4 +221,5 @@ if __name__ == "__main__":
         raise
     except Exception as e:
         sys.stderr.write(f"Unexpected error: {e}\n")
+        logger.exception("Unhandled exception")
         raise SystemExit(1)

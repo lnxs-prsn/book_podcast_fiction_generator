@@ -16,6 +16,7 @@ wheels/
 .venv/
 venv/
 env/
+.env
 
 # Outputs and logs
 data/output/
