@@ -1,145 +1,140 @@
 # CHAPTER 004
 
-Aminata Diop’s desk sat three meters from the customs dockmaster’s office, angled so she could see both the inbound manifests and the clock above the loading bay. At 9:17 a.m., her supervisor dropped a single sheet on her blotter—three customs declarations stapled together under one header: *Consolidated Clearance Instruction – Vessel MV Sankofa, sailing noon.*
+The room was white. Not clean white. Not hospital white. The white of a page left too long in the sun—brittle, waiting to yellow. Wanjiku stepped inside and stopped.
 
-She picked it up. The paper was warm from his hands.
+She had not meant to stop. Her feet carried her through the door as they always did: toward the stack, the list, the pile that needed clearing. But something held her at the threshold. She looked at the room the way she looked at everything new—from the entrance, before moving.
 
-The first requirement demanded proof of origin for all perishables. The second required bonded transit documentation for non-perishable cargo moving through Senegal to landlocked Mali. The third cited a new ECOWAS clause about dual-use materials—anything that could serve civilian or military purposes—requiring pre-inspection by an approved auditor.
+Three people were already inside.
 
-They were fused into one sentence with semicolons. No line breaks. No numbering. Just a wall of text ending in bold: *All conditions must be satisfied prior to departure.*
+One stood near the far wall, arranging files into neat stacks on a metal table. He moved slowly, deliberately, placing each folder with its spine aligned, corners flush. His sleeves were rolled to the elbows. A pen tucked behind his ear. He did not look up.
 
-Aminata tapped her pen once against the page. She had cleared two hundred and thirty-seven vessels this year. She knew every form, every stamp, every loophole that wasn’t really a loophole but a rhythm the port had learned to move through. This was not a problem. It was a stack of problems pretending to be one.
+Another crouched by a low cabinet, pulling out drawers one by one, checking their contents against a clipboard. She tapped her pencil against the paper after each entry, lips moving silently as she counted. Her hair was pulled back tight. No strand out of place.
 
-She opened her ledger. She began filling out Form C-7B for perishables.
+The third was already halfway across the room, hands full of folders, sorting them into piles on the floor. Fast. Confident. He barely glanced at what he held before setting it down. He had been here less than two minutes.
+
+Wanjiku stepped fully inside. The door clicked shut behind her.
 
 ---
 
-Inside the gate, the room was small—white walls, no windows, a single steel table bolted to the floor. On it sat three folders. Each bore a different customs seal: red for perishables, blue for transit goods, black for dual-use. Aminata stepped in without pausing at the threshold. She went straight to the table.
+The fast man finished his first pass. Five piles now, radiating from his boots like spokes. He straightened, wiped his palms on his trousers, and looked at the central panel on the far wall. It remained dark.
 
-She opened the red folder first. Inside: invoices, temperature logs, phytosanitary certificates. She sorted them by date, aligned the edges, clipped duplicates. Her hands moved fast. Confident. She did not look at the other folders.
+He frowned. Walked to the nearest pile, picked up a file, opened it, flipped to the last page. Closed it. Replaced it exactly where it had been. Did the same with the next. And the next. After the seventh, he stopped. Rubbed his jaw. Looked around.
 
-The room shifted while she worked.
+The room had changed.
 
-The red folder thickened. Papers multiplied—not randomly, but in sequence. Every document now appeared in triplicate, each copy stamped with a slightly different authority: Dakar Port Authority, Ministry of Agriculture, ECOWAS Regional Inspectorate. The dates lined up perfectly. The stamps formed a gradient from light to dark ink across the stack. The pattern was clearer than before. More complete. More obvious.
+The five piles were still there—but now spaced evenly, each group forming a perfect semicircle. The folders within each pile stood upright, spines parallel, gaps between them uniform. He had not done that. He stared at the arrangement. Then at the panel. Still dark.
 
-She closed the red folder. She reached for the blue.
+He tried again. This time, he re-sorted by patient ID number, calling out digits under his breath as he worked. When he finished, the room shifted again. The piles realigned—not by his new sequence, but by the old one. The size sequence. Large files together. Medium. Small. One file sat apart, slightly askew, outside all groups. He did not look at it. He walked to the panel. Touched it. Nothing.
 
-Halfway there, her hand stopped.
+He left ten minutes later, shoulders stiff, without looking back.
 
-The black folder had not moved. It sat exactly as it had when she entered—slightly askew, its corner bent from being shoved into place. While the red and blue folders now sat flush with the table’s edge, aligned to a hair, the black one remained where someone careless had left it.
+---
 
-She frowned. She turned back to the red folder. Opened it again. Checked the stamps. Verified the sequence. Everything was in order.
+The methodical man never rushed. He began by clearing the table entirely. Wiped it with a cloth from his pocket. Laid out a grid of tape—six columns, four rows. Then he started processing every object in the room.
 
-She returned to the blue folder. Transit manifests. Waybills. Proof of bonded carrier status. She filed them into subcategories: Malian consignees, Nigerian transshippers, Ghanaian insurers. She created a new column in her mental ledger for cross-border liability thresholds.
+Files went into categories: admissions, discharge summaries, lab results, imaging reports, referral letters, administrative notes. Each category got its own column. Within each, he sorted chronologically. He labeled every row with a date range in neat block letters. When he finished, he stepped back. Crossed his arms. Nodded once.
 
-The room changed again.
+The room gleamed with order.
 
-Now all three folders stood upright in a row, spines facing her like books on a shelf. Red, blue, black. Perfectly spaced. Labels centered. Even the bent corner of the black folder had straightened itself—creased cleanly along a new fold that hadn’t been there before.
+Every surface reflected his system. Drawers hung open at precise angles. Pens lay parallel on the desk. Even the dust motes in the light seemed to align along his grid lines. He approached the central panel. Placed his palm flat against it. Waited.
 
-She looked at the black folder. She didn’t open it. Not yet. She was still working the blue.
+The panel flickered—a pale blue for half a second—then died.
 
-She drafted a provisional clearance note for the transit cargo. She signed it with her official stamp. She placed it atop the blue stack.
+He frowned. Checked his categories again. Verified dates. Re-counted files. Found no error. He touched the panel a second time. It lit briefly—three separate points glowing—but they did not connect. No hum. No shift. No closure.
+
+He packed his cloth. Closed his notebook. Left without speaking. The grid remained. Perfect. Useless.
+
+---
+
+The woman with the clipboard never touched anything without writing it down first.
+
+She began at the door and moved clockwise. Every drawer, every shelf, every loose sheet on the floor—she logged it. File number. Date. Type. Condition of binding. Presence of staples or paper clips. She noted the brand of pen on the desk, the make of the lamp, the number of screws holding the panel to the wall. She spent twenty-three minutes documenting before she even considered acting.
+
+When she finally approached the central panel, she carried her clipboard like a shield. She read aloud from it: “Panel is matte black, 60 by 40 centimeters, mounted flush, no visible seams, no buttons, no ports.” She ran her fingers along its edges. Pressed gently in the center. Nothing.
+
+She returned to her notes. Added: “No response to tactile input.” Then she began cross-referencing her inventory against hospital filing protocols, national records guidelines, and three international standards she had memorized. She filled two more pages.
+
+The room stayed still. Silent. Complete.
+
+At minute forty-one, she closed her clipboard. Looked at the panel one last time. Walked out. The room did not change. It had given her everything she asked for. She had asked for nothing it could answer.
+
+---
+
+Wanjiku had watched them all. She had not moved from near the door.
+
+Her own habit was different. At the hospital, when a fused memo landed on her desk—ten requests stapled together, signed by three different supervisors, stamped urgent in red ink—she never split it. She swallowed the whole thing. Worked through lunch. Stayed late. Got it done.
+
+That was competence. That was pride.
+
+She walked to the central panel now. It was featureless. Cold to the touch. She turned. Looked at the room.
+
+The grid from the methodical man still held. The size-sorted piles from the fast man remained, though slightly disturbed. The clipboard woman’s notes lay abandoned on a chair. And scattered among it all: files. Dozens of them. All marked with the same red stamp: **REQUEST PENDING — CONDITION UNMET**.
+
+Wanjiku picked up the nearest file. Opened it. The first page held a single paragraph:
+
+> *Patient file may be released only if (a) next of kin has submitted written consent using Form H-7b, (b) outstanding balance is below KSh 5,000, and (c) attending physician has countersigned discharge summary within last 30 days.*
+
+She read it once. Frowned. Read it again.
+
+Her eyes moved over the whole sentence. She tried to hold all three clauses at once. Her mind snagged on the balance clause—KSh 5,000 was arbitrary; some patients owed 4,999, others 10,000. She thought about Form H-7b—rarely used, often misplaced. The physician signature—sometimes delayed by bureaucracy.
+
+She set the file down. Picked up another. Same paragraph. Word for word.
+
+A third. Same.
+
+She stood still. Hands at her sides. Eyes unfocused—not on the files, but through them.
+
+Then she sat down on the edge of the metal table. The grid tape crinkled under her weight.
+
+She took a deep breath. Reached for the first file again. This time, she covered the last two clauses with her hand. Read only: *“next of kin has submitted written consent using Form H-7b.”*
+
+She looked up. Around the room.
 
 Nothing happened.
 
-The gate did not respond.
+She uncovered the second clause. Covered the first and third. Read: *“outstanding balance is below KSh 5,000.”*
 
-She waited. Thirty seconds. A minute. Still nothing. The air in the room stayed neutral—no hum, no shift in light, no pressure change. Register 1 held.
+Still nothing.
 
-She opened the black folder.
+Then she covered the first two. Read only the last: *“attending physician has countersigned discharge summary within last 30 days.”*
 
-Inside: a single sheet. Blank except for a watermark—a faint silhouette of a rifle superimposed over a wrench. Dual-use. She had seen this before. It meant delay. It meant waiting for an auditor who might not arrive for days.
+The panel glowed.
 
-She closed the folder. She looked at the three stacks. All neat. All processed. All silent.
+Not brightly. Just a soft amber pulse, like a heartbeat seen through skin.
 
-She tried combining them—stapling the clearance notes together, writing a master cover letter citing all three requirements as fulfilled.
+Wanjiku stood. Walked to the panel. Touched it.
 
-The gate remained inert.
+It opened.
 
-She rechecked the perishables. Reverified the transit bonds. Re-examined the watermark. She even flipped the black sheet over, as if the answer might be on the back.
+A drawer slid out. Inside lay a single key. She took it. The panel dimmed. The room exhaled.
 
-Nothing.
+She turned to leave. Paused. Looked back.
 
-Her hands slowed. Then stopped.
+On the dusty surface of a side table—near where the clipboard woman had sat—was a faint rectangular impression. Fresh. As if something small and square had rested there recently. Beside it, a smudged pencil mark:  
 
-She sat down on the metal stool bolted to the floor beside the table. She did not slump. She simply ceased movement.
+*Grade 2. Executor approach. Room organised by size sequence — large, medium, small files grouped, spacing even. Underlined: one file outside sequence. Solver did not look at it. Register 2 at minute 8. Register 3 at minute 10.*  
+*System builder. Room mirrored categorical grid — six columns, chronological rows. Perfect assignment. Underlined: condition not in categories. Register flicker 1/3 throughout. No true Register 2.*  
+*Information gatherer. Room gave complete inventory — all objects logged, all surfaces noted. Underlined: no question asked of data. Register 1 entire session.*  
+*Correct approach: condition read clause by clause. Hand covered extraneous text. Register 3 at minute 52. Gate closed minute 53.*
 
-The room changed.
-
-The folders collapsed inward—not physically, but visually. Their colors dimmed. The red and blue receded into the white walls, leaving only the black folder lit by a narrow beam from above, though there were no visible fixtures. The bent corner was back. The watermark glowed faintly, not brighter, but *present* in a way it hadn’t been before.
-
-She looked at it.
-
-Not as a problem to solve. Not as a formality to process. But as a thing that existed alone.
-
-She reached out. Not for the whole folder. Just for the single sheet inside.
-
-She covered the top half with her palm. Read only the bottom: *Pre-inspection required for items listed in Annex D.*
-
-She uncovered it. Covered the bottom. Read the top: *All shipments containing components matching dual-use criteria...*
-
-She uncovered it again. Then, slowly, she tore the sheet in half—not carelessly, but along the natural break between clauses.
-
-She held the top half in one hand, the bottom in the other.
-
-The gate responded before she moved.
-
-A low chime. Soft. Final.
-
-The white walls dissolved into light. The table vanished. The folders disappeared.
-
-She stood alone in empty space for three seconds.
-
-Then the gate released her.
+Wanjiku did not read it twice. She walked out.
 
 ---
 
-Back at her desk, the clock read 10:03 a.m.
+Back at the hospital, the fused memo sat on her desk. Ten requests. Three signatures. Red stamp: **URGENT — ACTION REQUIRED**.
 
-The consolidated instruction still lay before her. She picked it up. She read it again.
+She did not open the first file. She looked at the problem the way she had looked at the room. What binds this?
 
-She took a clean sheet of paper. She wrote:
+She took a blank sheet. Wrote down each requirement separately:
 
-1. Perishables: proof of origin required.  
-2. Transit cargo: bonded documentation required.  
-3. Dual-use materials: pre-inspection by approved auditor required.
+1. Supervisor A must initial Section 3.  
+2. Budget code must match current fiscal year.  
+3. Patient consent form must be notarized.  
+4. Records must be digitized before release.  
+5. …
 
-She stared at the third line.
+She crossed out all but the first. Solved it in seven minutes. Returned to the rest one by one.
 
-She crossed out the first two.
+Across the aisle, David from billing stopped mid-sentence. Watched her. His pen hovered over his ledger. The office noise dipped—just for a breath—before rising again.
 
-She called the auditor’s office. Got a voicemail. Left a message: “MV Sankofa, dual-use query, sailing noon.” She hung up.
-
-Then she opened her terminal. Pulled up the vessel manifest. Scanned for dual-use codes.
-
-Found one: industrial-grade lithium batteries—used in forklifts, also in drone power systems.
-
-She flagged it. Attached the ECOWAS clause. Submitted it as a standalone hold.
-
-Two minutes later, the system pinged. The auditor’s deputy had reviewed remotely. Approved. The hold lifted.
-
-She cleared the perishables. Cleared the transit cargo. Stamped the master manifest.
-
-At 11:48 a.m., the MV Sankofa cast off.
-
----
-
-After the last tugboat pulled away, Aminata stayed at her desk. She did not tidy her papers. She did not log off. She sat with her hands flat on the blotter, looking at the three lines she had written.
-
-She had not thought about the room. She had not remembered the folders. She had not recalled the bent corner or the glow or the silence.
-
-She had only looked at the sentence the way she now looked at everything that stalled: not as a wall, but as parts waiting to be seen alone.
-
----
-
-Under the gate’s threshold seal, a port worker sweeping the corridor found a folded page tucked into the rubber gasket. He almost missed it—thin, unmarked, the color of old newsprint.
-
-He opened it.
-
-*Grade 2. System builder approach. Room organised by the solver's method — every container classified, every label aligned, the whole condition treated as one requirement. Underlined: the condition had three clauses; the solver's method could hold only one at a time. Register 1 throughout. No Register 2.*
-
-He showed it to a colleague. They passed it around the break room. Someone took a photo. It went into a group chat titled *Port Oddities.*
-
-No one filed a report. No institution logged it. It was just another scrap from a place people didn’t talk about.
-
-Aminata never saw it.
+Wanjiku did not notice. She was already on requirement four.

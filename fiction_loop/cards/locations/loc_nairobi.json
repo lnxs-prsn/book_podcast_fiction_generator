@@ -1,0 +1,20 @@
+{
+  "id": "loc_nairobi",
+  "name": "Nairobi, Kenya",
+  "first_appeared": 4,
+  "institutional_response": {
+    "primary_body": "",
+    "approach": "",
+    "failure_mode": ""
+  },
+  "ordinary_life_texture": [
+    "Fused memos stamped URGENT — ACTION REQUIRED land on clerks' desks with multiple supervisor signatures.",
+    "A billing colleague across the aisle notices when someone stops treating the whole memo as one problem and goes still.",
+    "Office noise dips for a breath when a clerk changes register before anyone has spoken."
+  ],
+  "macro_mystery_evidence_here": [],
+  "characters_based_here": [],
+  "chapters_set_here": [
+    4
+  ]
+}

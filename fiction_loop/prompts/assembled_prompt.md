@@ -54,11 +54,12 @@ The gap between observation and meaning is the teaching moment. Do not close it.
 | More than two sentences connecting a physical experience to its label | One sentence maximum for the name attachment. |
 | A technique succeeding perfectly the first time | No operation is demonstrated on first use without prior failure. |
 
-### Writing the Mirror
+## MIRROR RULES
 
-The mirror is the hardest element to write correctly. These rules govern every scene where gate mirror behaviour appears.
+## 4B. WRITING THE MIRROR
+*The mirror is the hardest element to write correctly. These rules govern every scene where gate mirror behaviour appears.*
 
-#### The core constraint: show the arrangement, not the meaning
+### The core constraint: show the arrangement, not the meaning
 The gate's mirror is physical. It is a reorganisation of the room's contents — light, objects, surfaces, spatial relationships. The prose describes what the room looks like. It never states what the room is showing. The reader who has learned to read registers will read the mirror. The reader who has not will experience the room as strange without knowing why. Both responses are correct.
 
 **WRONG — stating the mirror's meaning:**
@@ -69,7 +70,7 @@ The gate's mirror is physical. It is a reorganisation of the room's contents —
 
 The reader asks: why is the room more organised than he left it? The mirror is operating. The prose does not answer. The reader holds the question.
 
-#### The mirror shifts when the approach shifts
+### The mirror shifts when the approach shifts
 When a solver changes wrong approach — or sits down — the room changes. This change is described physically. It is never attributed to the gate explicitly in early arcs. Later arcs may allow characters to notice the correlation without stating what it means.
 
 **Early arc (Arc 1-2) — no attribution:**
@@ -78,16 +79,16 @@ When a solver changes wrong approach — or sits down — the room changes. This
 **Later arc (Arc 4-5) — noticed but not named:**
 *"He sat down. The room shifted — he had learned to expect this, though he could not have said when he had learned it. Something moved to the foreground. He looked at it the way he had learned to look: not at what it was, but at why it was now visible."*
 
-#### The mirror content must match the wrong approach type precisely
+### The mirror content must match the wrong approach type precisely
 Every wrong approach type has a specific mirror content (see world_rules.md Section 5). The prose must render that specific content — not a generic "the room shifted." The executor's mirror emphasises the obvious pattern. The information gatherer's mirror gives completeness. These are different rooms. Write them as different rooms.
 
-#### The mirror in the sitting down is the pivot
+### The mirror in the sitting down is the pivot
 The most important mirror moment is during the sitting down. This is when the mirror becomes readable — because the wrong approach has stopped and the solver is looking at the room rather than acting on it. The prose must show the solver's gaze changing: from operational (looking for what to do next) to structural (looking at what is there).
 
 **The gaze change:**
 *"She stopped sorting. She put the last box down. She looked at the room — not at the boxes but at the room. The way it was arranged. Who had arranged it like that. She had not. Or she had, and had not noticed. She looked at the part she had not touched."*
 
-#### Mystery person mirror notation
+### Mystery person mirror notation
 The mystery person reads mirror content directly. Their notebook records what the room showed, not what the solver did.
 
 **Notebook format:**
@@ -100,7 +101,9 @@ The mystery person reads mirror content directly. Their notebook records what th
 **Example:**
 *Grade 2. Specialist approach. Room organised by domain category — all chemical markers grouped, all mechanical elements grouped. Domain boundary visible as gap between groups. Underlined: gap between groups contained the unknown. Solver did not look at the gap. Register 2 at minute 31. Register 3 at minute 34. Three minutes from sitting down to right question.*
 
-### The Mystery Person
+## MYSTERY PERSON VOICE RULES
+
+## 5. THE MYSTERY PERSON — VOICE RULES
 
 The mystery person is never explained through their own words. They are described through what they do, where they go, what they notice. Their observations are precise. Their conclusions are never stated.
 
@@ -165,103 +168,116 @@ The gate enters Register 3 before the solver acts on the right question. The gat
 **Rule 12: The mirror is always operating. It is never explained by the gate.**
 The gate reorganises itself to reflect the solver's current mental frame at all times. It does not label what it is showing. It does not indicate that it is showing anything. A solver who cannot read the mirror experiences the gate as inert or arbitrary. A solver who can read it has been given the question by the gate itself. The mirror requires the same mental operations to read as the gate requires to close — a solver without working backwards cannot read a Grade 4 mirror. Violation: the gate indicates, labels, or draws attention to what it is reflecting. The mirror shows. It does not point.
 
-### Wrong Approach Mirror Behaviour
-
-For this chapter, render these rows precisely:
-
-| The executor (acts immediately on obvious pattern) | Register 1 holds. Contact produces no response. | Room arranges itself around the obvious pattern the executor is following. That pattern is emphasised, clarified, made almost legible — and still the gate does not move. | The room is showing you what you assumed. The assumption is not wrong in itself. It is wrong as the frame. Something outside the pattern is not receding — it is waiting. |
-
-| The system builder (applies method regardless of fit) | Register flickers between 1 and false 3. Parts light, nothing integrates. | Room mirrors the method's structure: every element processed, categorised, assigned. The categorisation is perfect. The gate does not care about the categorisation. | You have organised the room according to your method. The room is organised. The gate is elsewhere. |
-
-| The information gatherer (catalogues everything, asks nothing) | Register 1, undisturbed. As if solver not yet present. | Room gives everything asked for. Complete. Still. The mirror is a perfect catalogue. | The room has answered every question you asked. You have not asked the question the room is waiting for. The mirror shows completeness. Completeness is not the same as the right question. |
-
 ## THIS CHAPTER
 
 **Chapter type:** new_focal_character
 **Chapter number:** 004
 
 **Focal character:**
-Aminata Diop, shipping documentation clerk at the Port of Dakar, Dakar, Senegal. Ordinary situation: a consolidation brief has landed on her desk — three separate customs requirements fused into one instruction from her supervisor, who wants it cleared before the noon sailing.
+Wanjiku Mwangi, a medical records clerk at a public hospital in Nairobi. She is ordinary, competent, and gate-clearing is not her work. Current situation: a backlog of patient-file requests has landed on her desk fused into one impossible-looking memo — every requirement seems to demand attention at once, and her habit is to swallow the whole brief and work until it is done. She has never been inside a gate. She does not know she is about to be pulled into one.
 
 **Cast (owner rules D6/D7/F15) — BEAT QUOTA by arc (curriculum §9, reader progression):**
-Arc 1-2: THREE wrong-approach solvers, EACH a full dramatized scene (approach shown feeling competent → its specific mirror shift → its specific physical failure).
+Arc 1 requires EXACTLY THREE wrong-approach solvers, EACH a full dramatized scene (approach shown feeling competent → its specific mirror shift → its specific physical failure). This is a hard structural requirement; an under-populated gate collapses the productive-failure structure and the chapter fails.
 
-Lead wrong approach = the system builder (pointer.failure_mode_to_show). Supporting wrong approaches = the executor and the information gatherer, selected from the operation's failure pool in least-recently-shown global order.
+The three required wrong-approach scenes for Chapter 004 are:
+1. **The system builder** (lead failure mode from next_chapter_pointer.failure_mode_to_show).
+2. **The executor** (next from op_separate_condition.failure_modes_not_yet_shown, least-recently-shown globally after the lead).
+3. **The information gatherer** (remaining from op_separate_condition.failure_modes_not_yet_shown).
 
-The gate shows multiple solvers. AT LEAST ONE must be a fully improvised newcomer.
+Each of these is a SEPARATE PERSON with a SEPARATE SCENE. Do not collapse two failure modes into one solver. Do not let a single solver switch from one wrong approach to another and count as two scenes. Do not merge the mirror behaviours of two approaches into one room state. Three solvers, three distinct behaviours, three distinct mirror signatures, three distinct failures — then the focal solver's sitting down and correct approach.
 
-No secondary touches this chapter; no returning carriers to centre.
+Global recency note for selection: the system builder was last shown in Chapter 001 (most distant); the executor and the information gatherer were both last shown in Chapter 003 (most recent). The chapter uses all three because the operation's failure pool contains exactly these three types.
 
-**Secondary touches:** none.
+At least one solver in the gate room must be a fully improvised newcomer. The focal character Wanjiku qualifies as the newcomer.
 
-**Echo touch:** none.
+**Secondary touches (from pointer.secondary_touches, max 2):** none.
+
+**Echo touch (from pointer.echo_touch, or none):** none.
 
 **Gate this chapter:**
-- **Grade:** 2 (Arc 1 gate-grade band is 1–2; the operation's own difficulty_rating is 3 and is ignored here per curriculum).
-- **Problem structure:** condition — compound. Several clauses fused into what reads as one requirement; taken whole, it stalls.
-- **Wrong approaches:**
-  - INTERNAL LABEL (never in prose): the executor — behaviour to show: acts immediately on the most obvious pattern without naming the unknown; fast movement, confident handling of objects, no pause at the entrance. Mirror: room arranges itself around the obvious pattern, emphasises it, makes it almost legible; one element outside the pattern does not recede.
-  - INTERNAL LABEL (never in prose): the system builder — behaviour to show: has a method and applies it regardless of fit; methodical, thorough, unhurried, creates visible order from chaos. Mirror: room mirrors the method's structure — every element processed, categorised, assigned; categorisation is perfect; the gate does not care about the categorisation.
-  - INTERNAL LABEL (never in prose): the information gatherer — behaviour to show: collects all available data meticulously before acting, never asks what the data is for; clipboard, notes, systematic audit, complete documentation. Mirror: room gives everything asked for, complete and still; the catalogue itself is the mirror.
-- **Correct approach that closes gate:** Split the condition into clauses; test each alone; find which one actually binds.
+- **Grade:** 2 (within Arc 1 Gate Grade range 1–2).
+- **Problem structure:** The unknown is clear; the data is clear; the condition is compound — several clauses fused into what reads as a single requirement. Taken whole, the condition stalls. The gate is solvable only when the condition is split and each clause is tested alone.
+- **Wrong approaches — three required scenes:**
+
+  **INTERNAL LABEL (never in prose): the executor**
+  - **Behaviour to show:** Acts immediately on the most obvious pattern without naming the unknown. Fast movement, confident handling of objects, no pause at the entrance. Looks like competence, decisiveness, experience.
+  - **Gate signature:** Register 1 holds. Contact produces no response.
+  - **Mirror content:** Room arranges itself around the obvious pattern the executor is following. That pattern is emphasised, clarified, made almost legible — and still the gate does not move. One element outside the pattern is not receding.
+  - **Failure:** The executor solves the pattern they saw and the gate stays open.
+
+  **INTERNAL LABEL (never in prose): the system builder**
+  - **Behaviour to show:** Has a method and applies it regardless of whether it fits this problem. Methodical, thorough, unhurried. Creates order from chaos visibly. Pedantry as confident failure.
+  - **Gate signature:** Register flickers between 1 and false 3. Parts light, nothing integrates.
+  - **Mirror content:** Room mirrors the method's structure: every element processed, categorised, assigned. The categorisation is perfect. The gate is elsewhere.
+  - **Failure:** The room is perfectly organised by the builder's system and the gate stays open.
+
+  **INTERNAL LABEL (never in prose): the information gatherer**
+  - **Behaviour to show:** Collects all available data meticulously before acting. Never asks what the data is for. Clipboard, notes, systematic audit, complete documentation.
+  - **Gate signature:** Register 1, undisturbed. As if the solver is not yet present.
+  - **Mirror content:** Room gives everything asked for. Complete. Still. The catalogue is the mirror.
+  - **Failure:** The catalogue is exhaustive and the gate stays open.
+
+- **Correct approach that closes the gate:** Split the compound condition into clauses; test each clause alone; find which clause actually binds. The focal solver visibly performs the physical anchor: reading the condition clause by clause, pausing between clauses, covering part of it with a hand to see one part alone.
 
 **Operation being taught:**
-- **Operation name:** Separate the parts of the condition
-- **Touch number:** 1 (current_touch 0 + 1)
-- **Name due:** false — experience only. NO operation name appears anywhere in the chapter.
-- **Delivery channel:** character action (the physical anchor is shown; nothing is named).
+- **Operation name (internal brief use only — NOT in prose):** Separate the parts of the condition
+- **Touch number:** 1
+- **Name due:** false
 - **Physical anchor:** Reading the condition clause by clause, a pause between clauses; covering part of it with a hand to see one part alone.
-- **Problem structure + correct approach:** Unknown is clear. Data is clear. Condition is compound — several clauses fused into what reads as one requirement; taken whole, it stalls. Correct approach: split the condition into clauses; test each alone; find which one actually binds. Dress this shape in the concrete objects, city, and character of this chapter. The shape itself never varies.
+- **Problem structure + correct approach:** The condition is compound — several clauses fused into one requirement. The solver must split it into clauses, test each alone, and find which one actually binds. Dress this in the room's concrete objects, Nairobi textures, and Wanjiku's hospital-clerk habits; the shape itself never varies.
+- **Delivery channel:** character action (the name is not attached this chapter).
+- **Forbidden in prose:** the operation name "Separate the parts of the condition" must not appear anywhere in the chapter, because name_due is false. The word "operation" and any "X is/was the Y of Z" definition shape are also forbidden.
 
-**Operations to use naturally:**
-None — new focal character; no owned operations yet.
+**Operations to use naturally (no re-explanation):**
+- **Identify unknown / data / condition** — physical anchor: Standing still at the entrance; naming aloud, to no one, what is wanted, what is given, what binds them — sometimes counted on three fingers. This operation is owned; use it naturally or not at all. Do not re-explain it.
 
 **Ordinary life echo:**
-- **Context:** workplace (selected from contexts_not_yet_demonstrated for op_separate_condition; preferred_context available).
-- **Real-world problem with the same structure:** A project stalled because the whole brief is being treated as a single unit. The solver writes down each requirement separately. Crosses out all but one. Solves that one. Returns to the rest.
-- **Timing:** must appear in the same chapter as the gate closes.
-- **ISOLATION RULE — copy verbatim:** Write the echo scene as if the gate chapter did not exist. The character does not remember, mention, or think about the gate, the room, or that day. The structural resemblance is visible to the reader alone. No sentence may state what the experience meant.
+- **Domain:** workplace (selected from process_state.json contexts_not_yet_demonstrated, preferred_context first).
+- **Real-world problem with the same structure:** A project at the hospital stalled because the whole brief is being treated as a single unit. Wanjiku writes down each requirement separately, crosses out all but one, solves that one, then returns to the rest.
+- **Constraint:** The echo must appear in the same chapter as the gate closes.
+- **ISOLATION RULE — copy verbatim into the brief:** "Write the echo scene as if the gate chapter did not exist. The character does not remember, mention, or think about the gate, the room, or that day. The structural resemblance is visible to the reader alone. No sentence may state what the experience meant."
 
 **Anchor character appearance:**
-- **Yes.** Anchor appears on every gate chapter per owner rule D3.
-- **Observable presentation (FIXED CANON):** an unremarkable man in a grey coat, carrying a small black notebook. Never described in more detail, never named, never aged.
-- **Manifestation:** already gone, traces left — a notebook page is found tucked under the gate's threshold seal, written in the same concise notation as the Lagos and Accra observations.
-- **Notebook entry (observational only, §5 notebook format):** Grade 2. System builder approach. Room organised by the solver's method — every container classified, every label aligned, the whole condition treated as one requirement. Underlined: the condition had three clauses; the solver's method could hold only one at a time. Register 1 throughout. No Register 2.
-- **Continuity:** last observable appearance was chapter 003 at the Achimota depot, manifestation bystander_mention. This chapter's trace continues the pattern of minute, precise notation left where a solver would not think to look.
+- **Yes.** This is a gate chapter; the grey-coat man appears in every gate chapter per owner rule D3.
+- **Observable presentation — FIXED CANON since chapter 001:** an unremarkable man in a grey coat, carrying a small black notebook. Never described in more detail, never named, never aged.
+- **Manifestation for this chapter:** already gone, traces left. Do not use "bystander_mention" (Chapter 003), "notebook_page" (Chapter 002), or "seen" (Chapter 001). Use a new form: the grey-coat man has already passed through the area and left a physical trace — for example, a fresh notebook page, a smudged pencil mark, or the faint impression of a small black notebook on a dusty surface.
+- **If seen or notebook/trace:** record what they observe in the §5 notebook format only — precise, physical, no interiority. The trace should note Grade 2, the three approach types, the mirror content for each, the gap, and register timings.
+- **Continuity pull from observable_log:** The last three manifestations were: Chapter 001 — seen directly (Lagos); Chapter 002 — notebook page found (Achimota depot); Chapter 003 — mentioned by a bystander (Achimota depot). This chapter's trace-left manifestation must differ from all three.
 
 **Failure mode to demonstrate:**
-- INTERNAL LABEL (never in prose): the system builder
-- Behaviour to show: has a method and applies it regardless of fit; methodical, thorough, unhurried, creates visible order from chaos.
-- Must appear before the correct approach.
+- **INTERNAL LABEL (never in prose):** the system builder
+- Must appear before the correct approach and must be one of the three fully dramatized wrong-approach scenes.
 
 **Macro mystery:**
-- **Evidence to plant:** A third notebook page in the same concise notation is recovered from the Dakar gate site, recording the system builder approach and the fact that the compound condition was treated as a single instruction. The page is the first to note a condition's clauses explicitly, suggesting the observer reads structure, not just solver behaviour.
-- **How it appears:** found by a port worker after the gate closes, photographed by a bystander, passed around informally; no institution confirms it.
+- **Evidence to plant:** The anchor's trace records three distinct wrong approaches inside a single Grade 2 gate and notes the exact minute the condition was read clause by clause. Present this without explanation. The reader sees only the trace's precise notation; no character interprets what it means for the gates overall.
 
 **Emotional beat:**
-Before the gate: Aminata is competent, methodical, proud of her thoroughness; her thoroughness is what the port relies on. The gate confronts her with a condition her thoroughness cannot process whole.
-After the gate: the same thoroughness, but now clause by clause; the consolidation brief that stalled her is now three separate sentences, and only one of them needs to be solved first.
+Wanjiku's professional pride is in getting the whole job done at once. The gate punishes that habit directly. Her arc this chapter moves from confident bulk-handling, through irritation at the room's stillness, to the involuntary pause that lets her read one clause alone.
 
 **Foreshadowing:**
-None required for this chapter.
+Optional / none required.
 
 ## CONSTRAINTS
-- Do not name the operation before the character has suffered its absence
-- Do not close the gap between observation and meaning
-- The anchor character's hidden coherence is never surfaced
-- Failure before success always
-- Ordinary life echo must feel inevitable not surprising
-- Chapter ends when the gate closes and the ordinary life echo lands
-- Target length: 1800-2600 words; complete beats matter more than count; never pad
+- Do not name the operation before the character has suffered its absence.
+- Do not close the gap between observation and meaning.
+- The anchor character's hidden coherence is never surfaced.
+- Failure before success always.
+- Ordinary life echo must feel inevitable not surprising.
+- Chapter ends when the gate closes and the ordinary life echo lands.
+- Target length: 1800–2600 words; complete beats matter more than count; never pad.
 
 ## HARD RULES — a violation of any rule fails the chapter
 
-1. FORBIDDEN STRINGS: these internal planning labels must not appear anywhere in the prose: "the executor", "the system builder", "the information gatherer". Show the behavior. Never the label.
-2. ECHO ISOLATION: in the ordinary-life scene the character does not remember, mention, or think about the gate, the room, or that day. Write it as if the gate scene did not exist. The reader alone sees the connection.
-3. NO LESSON SENTENCES: never write a sentence whose job is to state what an experience meant or what the method is. [If name_due: the ONE exception — the name is attached in AT MOST two sentences, after the echo, using the delivery vehicle named in this brief. The word "operation" and any definition shape ("X is/was the Y of Z") are forbidden in those sentences.] [If not name_due: no operation name appears at all.]
-4. THE MIRROR SHOWS, NEVER POINTS: describe the room's arrangement; never state what it reflects or that it reflects anything. The gate NEVER displays words, labels, or instructions that name or hint at the operation — gates do not explain themselves; a panel may light, shift, or open, never speak.
-5. THE OBSERVER: exterior only — position, actions, notebook. No thoughts, no motives, no explanation of who they are.
+1. **FORBIDDEN STRINGS:** these internal planning labels must not appear anywhere in the prose: "the executor", "the system builder", "the information gatherer". Show the behavior. Never the label.
+2. **ECHO ISOLATION:** in the ordinary-life scene the character does not remember, mention, or think about the gate, the room, or that day. Write it as if the gate scene did not exist. The reader alone sees the connection.
+3. **NO LESSON SENTENCES:** never write a sentence whose job is to state what an experience meant or what the method is. This chapter is not name_due: no operation name appears at all.
+4. **THE MIRROR SHOWS, NEVER POINTS:** describe the room's arrangement; never state what it reflects or that it reflects anything. The gate NEVER displays words, labels, or instructions that name or hint at the operation — gates do not explain themselves; a panel may light, shift, or open, never speak.
+5. **THE OBSERVER:** exterior only — position, actions, notebook. No thoughts, no motives, no explanation of who they are.
 6. Never address the reader. The word "you" appears only inside dialogue.
-7. NO REFLECTIVE CODA: after the name attachment (or, if no name is due, after the final anchor beat), the chapter ends within TWO sentences. Reflection is where lesson sentences breed. (The in-gate "looking back" beat — a solver lingering after closure — is a SCENE and is allowed; this rule governs only the tail after the echo/name.)
+7. **THE CAST QUOTA IS A HARD REQUIREMENT:** this chapter requires EXACTLY THREE (3) wrong-approach solver scenes: the executor / the system builder / the information gatherer. EACH requires a full dramatized scene (approach feels competent → its mirror shift → its specific failure). The labels are internal (rule 1): show each behavior, never the label. Before returning, COUNT your fully dramatized wrong-approach scenes; a chapter with fewer scenes than the quota FAILS regardless of word count.
+8. **THE OBSERVER APPEARS:** the grey-coat man is present in some form in every gate chapter (seen / traces / mentioned / a notebook page). Omitting him fails the chapter.
+9. **THE ECHO EXISTS:** the ordinary-life scene is present and complete. A chapter without it fails.
+10. **THE GESTURE APPEARS:** the focal solver visibly performs this brief's physical anchor gesture at the turning point.
+11. **NO REFLECTIVE CODA:** after the name attachment (or, if no name is due, after the final anchor beat), the chapter ends within TWO sentences. Reflection is where lesson sentences breed. (The in-gate "looking back" beat — a solver lingering after closure — is a SCENE and is allowed; this rule governs only the tail after the echo/name.)
 
-Before finishing: re-read your draft against rules 1–7, fix every violation, then output only the corrected chapter.
+Before finishing: re-read your draft against rules 1–11, fix every violation, then output only the corrected chapter.

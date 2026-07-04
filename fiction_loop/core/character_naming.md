@@ -46,3 +46,5 @@ may modify; the RULES section is owner-maintained.
 | Kwabena Asante | 003 | char_002 |
 | Kojo Acheampong | 003 | char_003a |
 | Akosua Osei | 003 | char_003b |
+| Wanjiku Mwangi | 004 | char_004 |
+| David | 004 |  |

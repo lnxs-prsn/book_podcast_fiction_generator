@@ -1,0 +1,29 @@
+{
+  "id": "char_004",
+  "name": "Wanjiku Mwangi",
+  "age": null,
+  "occupation": "medical records clerk at a public hospital in Nairobi",
+  "location_id": "loc_nairobi",
+  "first_appeared": 4,
+  "gate_history": [
+    {
+      "gate_id": "G-004",
+      "grade": 2,
+      "operation_encountered": "op_separate_condition",
+      "approach_taken": "none — applied correctly",
+      "understood": true,
+      "looked_back": true,
+      "transferred_to_life": true
+    }
+  ],
+  "comprehension_state": {
+    "op_separate_condition": "encountered"
+  },
+  "still_gets_wrong": [],
+  "ordinary_life_state": "Back at her hospital desk, Wanjiku faces a fused memo with ten requests and three signatures, then rewrites each requirement separately and solves them one by one.",
+  "life_progression": [],
+  "ordinary_life_transfers": [],
+  "anchor_observed": false,
+  "last_seen": 4,
+  "next_planned_appearance": null
+}

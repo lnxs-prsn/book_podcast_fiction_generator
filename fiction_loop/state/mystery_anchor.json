@@ -17,6 +17,12 @@
       "observation": "Grade 2. Executor approach. Room emphasised sequential testing — jars aligned, labels clarified, spacing even. Underlined: chalkboard condition ignored. Register 2 at minute 8. Register 3 at minute 14.\n\nInformation gatherer approach. Room gave complete catalogue — no movement, no shift. Underlined: no question of purpose. Register 1 throughout.\n\nCorrect approach: threshold naming. Wanted/given/binding spoken before entry. Register 3 confirmed at utterance. Gate closed minute 19.",
       "location": "loc_accra",
       "manifestation": "bystander_mention"
+    },
+    {
+      "chapter": "004",
+      "observation": "Grade 2. Executor approach. Room organised by size sequence — large, medium, small files grouped, spacing even. Underlined: one file outside sequence. Solver did not look at it. Register 2 at minute 8. Register 3 at minute 10.\nSystem builder. Room mirrored categorical grid — six columns, chronological rows. Perfect assignment. Underlined: condition not in categories. Register flicker 1/3 throughout. No true Register 2.\nInformation gatherer. Room gave complete inventory — all objects logged, all surfaces noted. Underlined: no question asked of data. Register 1 entire session.\nCorrect approach: condition read clause by clause. Hand covered extraneous text. Register 3 at minute 52. Gate closed minute 53.",
+      "location": "loc_nairobi",
+      "manifestation": "traces"
     }
   ],
   "reader_can_suspect": [
@@ -31,6 +37,10 @@
     {
       "chapter": "003",
       "suspicion": "The anchor is now observing solvers both inside and outside gates, tracking post-gate behavior and social echoes with precise notation that explicitly identifies 'threshold naming' as the correct approach."
+    },
+    {
+      "chapter": "004",
+      "suspicion": "The anchor now leaves physical traces inside gates that document multiple wrong approaches and the correct clause-by-clause condition separation in real time."
     }
   ],
   "hidden_coherence": {

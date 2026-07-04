@@ -1,104 +1,109 @@
 # CHAPTER 004
 
-The gate stood in Bay 17, behind stacked containers marked for refrigerated transit. Aminata Diop walked toward it without slowing. She had handled Grade 1 gates before — routine customs snarls, mislabeled manifests, mismatched seals. This one was flagged Grade 2, but her supervisor had said, “It’s just paperwork fused wrong. You’ll sort it.”
+Wanjiru Muthoni stood at the entrance to the gate and did not look at it. She stepped in.
 
-She stepped through.
+The room was small. Concrete floor. White walls. A single table in the center held three metal boxes. Each box had a latch, no lock. Beside the table, a clipboard with a sheet of paper clipped to it. The paper bore one sentence:
 
-The room was small. Concrete floor. Fluorescent light flickering once, then steady. Three panels on the far wall, each with a slot for a document. A single chair in the center. On the chair: a single sheet of paper.
+*Deliver only if temperature-controlled transport was used, documentation is complete, and recipient signature matches the master list.*
 
-She picked it up.
+She read it once. She moved to the first box. Opened it. Inside: a stack of shipping manifests. She flipped through them quickly. All stamped. All signed. She set the box aside.
 
-> **Consolidation Requirement:** All inbound perishables must be accompanied by (a) a phytosanitary certificate issued within 72 hours of departure, (b) a temperature log signed by the vessel’s chief engineer, and (c) a declaration of origin stamped by the exporting nation’s chamber of commerce. Failure to present all three will result in automatic rejection at dockside inspection.
+Second box: temperature logs. Printed strips from calibrated recorders. Dates matched the delivery window. She stacked them neatly next to the manifests.
 
-She read it once. Then again. The words were clear. The requirement was compound. She knew that. But the gate would not open unless the condition was satisfied. And the condition demanded all three.
+Third box: signature cards. She pulled them out one by one, comparing each to a laminated sheet taped to the underside of the clipboard. Most matched. Two did not. She set those two apart.
 
-She moved fast.
+She reassembled the boxes. Closed the latches. Stepped back.
 
-She pulled her own clipboard from her satchel. Opened to a fresh page. Wrote: *Phytosanitary – 72h*. Under it: *Temp log – engineer sig*. Under that: *Origin decl – chamber stamp*. She checked her watch. 10:17 a.m. The noon sailing loomed.
+Nothing happened.
 
-She turned to the first panel. Slid in a blank form. Nothing happened. She tried a sample phytosanitary cert she carried for reference. The panel stayed dark.
+She checked the clipboard again. Read the sentence aloud. “Temperature-controlled transport was used, documentation is complete, and recipient signature matches the master list.”
 
-She went to the second. Tried a mock temperature log. No response.
+She opened the boxes again. Rechecked every manifest. Verified every log timestamp. Compared every signature twice. She found no errors. She closed the boxes again.
 
-Third panel. Chamber of commerce stamp imprint. Still nothing.
+The room stayed still.
 
-She stepped back. Frowned. Took the original sheet. Read it again. Maybe the order mattered? She tried inserting the documents in sequence: phytosanitary first, then temp log, then origin. Each time, she waited. Each time, silence.
+She looked at the clipboard. The sentence had not changed. She tapped her pen against it. Frowned. Tried rearranging the boxes—manifests on top, then logs, then signatures. Still nothing.
 
-She tried all three at once—jammed into their slots together. The panels remained inert.
+She glanced at the door behind her. It remained closed. No sound came from outside. No clock on the wall. She estimated twenty minutes had passed.
 
-She sat down.
+She sat down on the floor beside the table. Crossed her legs. Rested her hands on her knees. Looked at the room—not at the boxes, not at the clipboard, but at the whole arrangement.
 
-Not to rest. To think.
+The light shifted. Not much. Just enough. The white walls seemed brighter near the third box. The shadows under the table deepened. The clipboard lay flat, but the paper curled slightly at the bottom edge, as if something underneath wanted out.
 
-The room changed.
+She reached for the clipboard. Lifted it. Nothing beneath. She turned the paper over. Blank.
 
-The light shifted—not brighter, not dimmer, but angled differently, as if the source had moved. The chair felt colder. The paper on her lap seemed heavier. She looked up.
+She looked at the sentence again. Read it slowly.
 
-The three panels were no longer identical. The left one now had a faint green tint. The center, blue. The right, amber. She hadn’t noticed color before.
+*Deliver only if temperature-controlled transport was used,*  
+*documentation is complete,*  
+*and recipient signature matches the master list.*
 
-She stood. Walked to the left panel. Touched it. Cold metal. She pulled out her reference phytosanitary cert again. Held it near the slot. Waited.
+She covered the last two lines with her hand. Read only the first clause.
 
-Nothing.
+She opened the second box. Pulled out one temperature log. Held it up. Waited.
 
-She turned away. Looked at the whole wall. Not at the panels, but at the space between them. At how they were spaced. At what connected them.
+A panel in the far wall clicked open. A narrow drawer slid out. Empty.
 
-The requirement said *all three*. But maybe that wasn’t true.
+She uncovered the second line. Covered the first and third. Read: *documentation is complete.*
 
-She covered the bottom two lines of the sheet with her hand. Left only: *All inbound perishables must be accompanied by (a) a phytosanitary certificate issued within 72 hours of departure.*
+She opened the first box. Took one manifest. Held it up.
 
-She walked to the left panel. Slid in the cert.
+The drawer clicked shut.
 
-The green panel lit.
+She uncovered the third line. Covered the first two. Read: *recipient signature matches the master list.*
 
-A soft click. The gate’s inner seal released.
+She picked up one of the mismatched signature cards. Held it up.
 
-She uncovered the next line. Covered the others. *…(b) a temperature log signed by the vessel’s chief engineer.*
+The drawer clicked open again. This time, it held a key.
 
-She inserted the mock log into the center slot.
+She took the key. Walked to the door. Turned it in the lock. The door opened.
 
-Blue light. Another click.
+Outside, Nairobi heat pressed against her skin. Traffic hummed two blocks away. She stepped out. The gate sealed behind her with a soft hiss.
 
-She did the same for the third. Amber glowed. Third click.
+Across the street, a man in a grey coat closed a small black notebook. He had watched the system builder—the one before Wanjiru—spend forty-three minutes sorting every item into labeled trays, cross-referencing each against a self-made index, arranging the room into perfect taxonomic order. The gate had mirrored his method exactly: trays aligned, labels crisp, categories exhaustive. One clause on the clipboard—*recipient signature matches the master list*—had remained untouched throughout, sitting outside every category he built. The man had noted it.
 
-The gate opened.
+Now he watched Wanjiru walk away without looking back. He turned to a woman selling roasted maize at the corner.
 
-She stepped through. The outer door hissed shut behind her. Bay 17 returned to ordinary noise—cranes groaning, radios crackling, diesel engines idling.
+“Did she come out calm?” he asked.
 
-She walked back to her office without looking back.
+The vendor shrugged. “Quiet. Like she remembered something.”
 
----
-
-At her desk, the consolidation brief waited. Same wording. Same fused instruction. Her supervisor had circled it in red: *Clear before noon.*
-
-She did not open the first file.
-
-She placed her hands flat on the desk. Looked at the brief the way she had looked at the room.
-
-She took a pen. Drew a line under the first clause.  
-*All inbound perishables must be accompanied by (a) a phytosanitary certificate issued within 72 hours of departure.*
-
-She crossed out the rest with a single stroke.
-
-She opened only the phytosanitary folder. Checked the timestamp on the cert from the *MV Senegal Star*. Issued 68 hours ago. Valid.
-
-She marked it cleared.
-
-Then she uncrossed the second clause. Handled it alone. Found the engineer’s signature missing from the temp log. Called the ship’s agent. Got a scanned copy in four minutes.
-
-Third clause last. The chamber stamp was smudged. She requested a replacement via secure fax. Received it by 11:42.
-
-At 11:53, she stamped the entire brief *APPROVED* and slid it into the outbound tray.
-
-Her supervisor, passing by, stopped. Looked at the tray. Looked at her.
-
-“You split it,” he said.
-
-She nodded.
-
-He stood still for a moment. Then walked on.
+He nodded. Walked east.
 
 ---
 
-Under the gate’s threshold seal, a port worker sweeping later found a folded page. Thin paper. Black ink. Precise script.
+Back at the depot, Wanjiru faced her supervisor’s checklist. Three days until audit. The top item read:
 
-*Grade 2. System builder approach. Room organised by the solver's method — every container classified, every label aligned, the whole condition treated as one requirement. Underlined: the condition had three clauses; the solver's method could hold only one at a time. Register 1 throughout. No Register 2.*
+*Verify that all Q3 deliveries were processed with correct PO reference, received within 48 hours of dispatch, and reconciled against inventory count.*
+
+She stared at it. Her stomach tightened. She had tried to process the whole line at once for two days. Every attempt stalled. She kept circling back to the same dead end.
+
+She took a fresh sheet of paper. Wrote the sentence at the top. Then drew two lines beneath it, splitting it into three separate statements.
+
+1. *All Q3 deliveries were processed with correct PO reference.*  
+2. *All Q3 deliveries were received within 48 hours of dispatch.*  
+3. *All Q3 deliveries were reconciled against inventory count.*
+
+She covered lines 2 and 3 with her hand. Read only line 1.
+
+She pulled the purchase order ledger. Scanned the Q3 entries. Found three mismatches. Corrected them. Marked them done.
+
+Uncovered line 2. Covered 1 and 3. Checked dispatch timestamps against receiving logs. Two late arrivals. Flagged them for exception report.
+
+Uncovered line 3. Covered the others. Ran the inventory reconciliation script. One batch discrepancy. Traced it to a mislabeled shelf. Fixed it.
+
+By four o’clock, the entire checklist was cleared. She handed the completed file to her supervisor.
+
+“You sorted it fast,” he said.
+
+“I broke it down,” she said.
+
+He nodded, already turning to the next stack.
+
+Wanjiru washed her hands at the sink in the staff room. Water ran clear. She dried them on her uniform. Looked at the clock. Sixteen minutes past four.
+
+She walked back to her desk. Sat down. Placed her palms flat on the surface. Looked at the next problem—not at the details, but at the shape of it.
+
+A junior clerk paused mid-step nearby. Stopped talking. Watched her for a beat too long.
+
+Then kept walking.

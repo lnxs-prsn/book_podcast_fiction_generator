@@ -4,15 +4,15 @@
   "focal_character": {
     "id": "char_004",
     "is_new": true,
-    "name": "Aminata Diop",
-    "occupation": "shipping documentation clerk",
-    "city": "Dakar",
+    "name": "Wanjiku Mwangi",
+    "occupation": "medical records clerk at a public hospital in Nairobi",
+    "city": "Nairobi, Kenya",
     "age": null,
     "gate_visited": {
       "gate_id": "G-004",
       "grade": 2,
       "operation_encountered": "op_separate_condition",
-      "approach_taken": "the system builder",
+      "approach_taken": "none — applied correctly",
       "understood": true,
       "looked_back": true,
       "transferred_to_life": true
@@ -20,59 +20,59 @@
     "comprehension_changes": {
       "op_separate_condition": "encountered"
     },
-    "ordinary_life_state": "Aminata Diop is back at her desk at the Port of Dakar after the MV Sankofa has sailed, looking at the three requirements she wrote out separately from the consolidated instruction.",
+    "ordinary_life_state": "Back at her hospital desk, Wanjiku faces a fused memo with ten requests and three signatures, then rewrites each requirement separately and solves them one by one.",
     "life_progression_shown": null
   },
   "other_entrants": [],
   "secondary_touch_updates": [],
   "names_used_this_chapter": [
-    "Aminata Diop"
+    "Wanjiku Mwangi",
+    "David"
   ],
   "gate_details": {
     "problem_structure": {
-      "unknown": "which clause of the compound customs condition actually binds and must be solved first",
+      "unknown": "which of the three clauses in the compound patient-file release condition actually binds",
       "data": [
-        "three folders sealed red for perishables, blue for transit goods, and black for dual-use materials",
-        "invoices, temperature logs, and phytosanitary certificates for perishables",
-        "transit manifests, waybills, and proof of bonded carrier status",
-        "a single dual-use sheet watermarked with a rifle over a wrench"
+        "files stamped REQUEST PENDING — CONDITION UNMET",
+        "the compound release paragraph with three clauses",
+        "the featureless central panel on the far wall",
+        "the abandoned wrong-approach arrangements: size-sorted piles, categorical grid, and inventory notes"
       ],
-      "condition": "the consolidated instruction fuses three separate customs requirements into one sentence and demands all conditions be satisfied before the noon sailing"
+      "condition": "a patient file may be released only if next-of-kin consent, a low balance, and a physician countersignature all hold"
     },
-    "correct_approach": "Stop treating the instruction as a single requirement; tear the compound condition along its natural clause boundaries, set aside the parts that do not bind, and test each clause alone to find which one actually stalls the clearance."
+    "correct_approach": "Wanjiku split the compound condition into individual clauses, tested each one alone by covering the others with her hand, identified the binding clause, and touched the panel; the gate opened."
   },
   "process_updates": {
     "operation": "op_separate_condition",
     "new_touch": 1,
     "failure_modes_shown_this_chapter": [
-      "the system builder"
+      "the executor",
+      "the system builder",
+      "the information gatherer"
     ],
     "name_attached_this_chapter": false,
     "context_demonstrated": "workplace",
     "transferred": true
   },
   "location_updates": {
-    "location_id": "loc_dakar",
+    "location_id": "loc_nairobi",
     "new_chapter_added": "004",
     "new_texture": [
-      "Supervisors drop consolidated clearance instructions directly on clerks' blotters with a noon sailing deadline.",
-      "The port uses Form C-7B for perishable cargo clearances.",
-      "Bonded transit documentation is required for non-perishable cargo moving through Senegal to landlocked Mali.",
-      "A new ECOWAS clause requires pre-inspection by an approved auditor for dual-use materials.",
-      "Industrial-grade lithium batteries used in forklifts also appear in drone power systems and trigger dual-use holds.",
-      "Auditors' deputies can review flagged dual-use holds remotely and lift them within minutes."
+      "Fused memos stamped URGENT — ACTION REQUIRED land on clerks' desks with multiple supervisor signatures.",
+      "A billing colleague across the aisle notices when someone stops treating the whole memo as one problem and goes still.",
+      "Office noise dips for a breath when a clerk changes register before anyone has spoken."
     ]
   },
   "anchor_update": {
     "appeared": true,
-    "manifestation": "notebook_page",
-    "observation": "Grade 2. System builder approach. Room organised by the solver's method — every container classified, every label aligned, the whole condition treated as one requirement. Underlined: the condition had three clauses; the solver's method could hold only one at a time. Register 1 throughout. No Register 2.",
-    "location": "loc_dakar",
-    "reader_can_suspect_update": "The anchor now leaves physical traces inside or near gates—pages that describe the mirror content and register behavior with increasing precision. Their notation explicitly identifies 'the condition had three clauses; the solver's method could hold only one at a time,' confirming they understand decomposition as the missing operation."
+    "manifestation": "traces",
+    "observation": "Grade 2. Executor approach. Room organised by size sequence — large, medium, small files grouped, spacing even. Underlined: one file outside sequence. Solver did not look at it. Register 2 at minute 8. Register 3 at minute 10.\nSystem builder. Room mirrored categorical grid — six columns, chronological rows. Perfect assignment. Underlined: condition not in categories. Register flicker 1/3 throughout. No true Register 2.\nInformation gatherer. Room gave complete inventory — all objects logged, all surfaces noted. Underlined: no question asked of data. Register 1 entire session.\nCorrect approach: condition read clause by clause. Hand covered extraneous text. Register 3 at minute 52. Gate closed minute 53.",
+    "location": "loc_nairobi",
+    "reader_can_suspect_update": "The anchor now leaves physical traces inside gates that document multiple wrong approaches and the correct clause-by-clause condition separation in real time."
   },
   "macro_mystery_update": {
     "evidence_planted": true,
-    "evidence": "A folded notebook page in the same concise notation as the Lagos and Accra observations is found tucked under the Dakar gate's threshold seal, recording the system builder approach and explicitly noting that the compound condition had three clauses while the solver's method could hold only one at a time."
+    "evidence": "A trace inside the gate room records three different solver approaches, the gap each missed, and the exact minute the condition was read clause by clause."
   },
   "next_chapter_pointer": {
     "chapter": "005",
@@ -81,7 +81,7 @@
     "operation_due": "op_look_at_unknown",
     "touch_due": 1,
     "name_due": false,
-    "failure_mode_to_show": "the executor",
+    "failure_mode_to_show": "the system builder",
     "secondary_touches": [],
     "echo_touch": null,
     "anchor_appears": true

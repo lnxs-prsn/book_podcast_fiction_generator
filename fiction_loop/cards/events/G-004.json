@@ -1,0 +1,31 @@
+{
+  "id": "G-004",
+  "type": "gate",
+  "grade": 2,
+  "location_id": "loc_nairobi",
+  "chapter_opened": 4,
+  "chapter_closed": 0,
+  "status": "open",
+  "problem_structure": {
+    "unknown": "which of the three clauses in the compound patient-file release condition actually binds",
+    "data": [
+      "files stamped REQUEST PENDING — CONDITION UNMET",
+      "the compound release paragraph with three clauses",
+      "the featureless central panel on the far wall",
+      "the abandoned wrong-approach arrangements: size-sorted piles, categorical grid, and inventory notes"
+    ],
+    "condition": "a patient file may be released only if next-of-kin consent, a low balance, and a physician countersignature all hold"
+  },
+  "wrong_approaches_demonstrated": [
+    "the executor",
+    "the system builder",
+    "the information gatherer"
+  ],
+  "correct_approach": "Wanjiku split the compound condition into individual clauses, tested each one alone by covering the others with her hand, identified the binding clause, and touched the panel; the gate opened.",
+  "characters_entered": [
+    "char_004"
+  ],
+  "operation_taught": "op_separate_condition",
+  "anchor_present": true,
+  "notes": ""
+}
