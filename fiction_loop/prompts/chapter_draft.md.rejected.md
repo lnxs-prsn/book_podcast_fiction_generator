@@ -1,119 +1,104 @@
-# CHAPTER 003
+# CHAPTER 004
 
-Kwabena Asante stood at the gate entrance. He did not step in. He looked.
+The gate stood in Bay 17, behind stacked containers marked for refrigerated transit. Aminata Diop walked toward it without slowing. She had handled Grade 1 gates before — routine customs snarls, mislabeled manifests, mismatched seals. This one was flagged Grade 2, but her supervisor had said, “It’s just paperwork fused wrong. You’ll sort it.”
 
-The room was small. White walls. A table in the center. On it: six metal boxes, each with a dial on top. The dials were set to numbers between one and ten. Wires ran from each box to a panel on the far wall. The panel had six slots, each labeled with a letter—A through F. No instructions. No signs.
+She stepped through.
 
-Kojo Acheampong walked past him without stopping. “Simple,” he said. He went straight to the table. He picked up the first box. Checked its dial. Carried it to slot A. Plugged it in. Moved to the next.
+The room was small. Concrete floor. Fluorescent light flickering once, then steady. Three panels on the far wall, each with a slot for a document. A single chair in the center. On the chair: a single sheet of paper.
 
-Kwabena watched. Kojo worked fast. Confident. He matched box to slot by dial number—lowest to highest. Box with dial 2 went to A, 3 to B, 4 to C. He didn’t look at the labels. He didn’t look at the wires. He just moved.
+She picked it up.
 
-The gate held. Register 1. Inert.
+> **Consolidation Requirement:** All inbound perishables must be accompanied by (a) a phytosanitary certificate issued within 72 hours of departure, (b) a temperature log signed by the vessel’s chief engineer, and (c) a declaration of origin stamped by the exporting nation’s chamber of commerce. Failure to present all three will result in automatic rejection at dockside inspection.
 
-Kwabena remembered doing the same thing once. Acting before looking. It had taken him twenty-three minutes to stop.
+She read it once. Then again. The words were clear. The requirement was compound. She knew that. But the gate would not open unless the condition was satisfied. And the condition demanded all three.
 
-Now Akosua Osei entered. She carried a clipboard. She wore rubber boots and smelled of fish brine. She stopped just inside the threshold. She did not touch anything. She pulled a pen from her pocket and began writing.
+She moved fast.
 
-She noted the dimensions of the room. The height of the ceiling. The number of light fixtures. She listed each box: weight (estimated), material (steel), dial range (1–10), wire length (approx. 1.2 meters). She drew a sketch of the panel. She labeled every slot. She wrote down the time—10:47 a.m.—and the temperature—28°C.
+She pulled her own clipboard from her satchel. Opened to a fresh page. Wrote: *Phytosanitary – 72h*. Under it: *Temp log – engineer sig*. Under that: *Origin decl – chamber stamp*. She checked her watch. 10:17 a.m. The noon sailing loomed.
 
-She spent twelve minutes cataloguing. She did not ask what the boxes were for. She did not wonder why the dials mattered. She gathered everything. She assumed the answer would appear once she had enough.
+She turned to the first panel. Slid in a blank form. Nothing happened. She tried a sample phytosanitary cert she carried for reference. The panel stayed dark.
 
-The room stayed still. Register 1. Undisturbed. As if she were not there.
+She went to the second. Tried a mock temperature log. No response.
 
-Kwabena stepped back out into the corridor. He leaned against the cool concrete wall. He closed his eyes. Not to rest. To remember how it felt when he finally asked the right question.
+Third panel. Chamber of commerce stamp imprint. Still nothing.
 
-Inside, Kojo finished arranging the boxes. He stepped back. Waited. Nothing happened. He frowned. He unplugged box D. Swapped it with E. Tried again. Still nothing.
+She stepped back. Frowned. Took the original sheet. Read it again. Maybe the order mattered? She tried inserting the documents in sequence: phytosanitary first, then temp log, then origin. Each time, she waited. Each time, silence.
 
-Akosua flipped a page on her clipboard. She began measuring the distance between slots on the panel. She used a cloth tape measure pulled from her apron pocket.
+She tried all three at once—jammed into their slots together. The panels remained inert.
 
-Kwabena opened his eyes. He walked back to the entrance. He looked at the room again—not at the boxes, not at the panel, but at the whole arrangement.
+She sat down.
 
-What is wanted?  
-What is given?  
-What binds them?
+Not to rest. To think.
 
-He said it aloud. Quietly. To no one.
+The room changed.
 
-He counted on three fingers.
+The light shifted—not brighter, not dimmer, but angled differently, as if the source had moved. The chair felt colder. The paper on her lap seemed heavier. She looked up.
 
-Then he entered.
+The three panels were no longer identical. The left one now had a faint green tint. The center, blue. The right, amber. She hadn’t noticed color before.
 
-He did not touch the boxes. He walked to the panel. He read the labels: A, B, C, D, E, F. He turned. He looked at the dials. He saw something Kojo had missed. Something Akosua had recorded but not questioned.
+She stood. Walked to the left panel. Touched it. Cold metal. She pulled out her reference phytosanitary cert again. Held it near the slot. Waited.
 
-The dials were not random. They were paired. Two boxes showed 3. Two showed 7. One showed 5. One showed 9.
+Nothing.
 
-He looked at the panel again. The slots were not just letters. Beneath each, almost invisible, was a tiny symbol: a wave, a dot, a line, another wave, a dot, a line.
+She turned away. Looked at the whole wall. Not at the panels, but at the space between them. At how they were spaced. At what connected them.
 
-He matched symbol to symbol. Not number to number. Not position to position.
+The requirement said *all three*. But maybe that wasn’t true.
 
-He moved the first box—the one with dial 3 and a wave symbol under its base—to slot A. It clicked softly. The light above the panel flickered green.
+She covered the bottom two lines of the sheet with her hand. Left only: *All inbound perishables must be accompanied by (a) a phytosanitary certificate issued within 72 hours of departure.*
 
-He placed the second wave box—dial 7—in slot D. Another click. Another green light.
+She walked to the left panel. Slid in the cert.
 
-Dot boxes went to B and E. Line boxes to C and F.
+The green panel lit.
 
-The gate shifted. Register 3. Before he plugged in the last box.
+A soft click. The gate’s inner seal released.
 
-He plugged it in. The panel lit fully. A low hum filled the room. The door behind him unlocked.
+She uncovered the next line. Covered the others. *…(b) a temperature log signed by the vessel’s chief engineer.*
 
-He stepped out.
+She inserted the mock log into the center slot.
 
-In the corridor, a man in a grey coat stood near the stairwell. He held a small black notebook. He wrote something quickly, then closed it. He did not look at Kwabena. He walked away.
+Blue light. Another click.
 
-A depot worker passing by muttered, “That man again. Asked me this morning if anyone had gone into Gate Three. Like he was keeping count.”
+She did the same for the third. Amber glowed. Third click.
 
-Kwabena did not reply. He walked toward the dispatch office.
+The gate opened.
 
-***
+She stepped through. The outer door hissed shut behind her. Bay 17 returned to ordinary noise—cranes groaning, radios crackling, diesel engines idling.
 
-The depot office was loud. Radios crackled. Phones rang. Paper shuffled. Three people stood around Kwabena’s desk, talking over each other.
+She walked back to her office without looking back.
 
-“We’ve checked every manifest from Tuesday,” said Nana, the shift supervisor. “No record of Bus 47 being assigned to Takoradi.”
+---
 
-“But the driver says he was told to go,” said Yaw, the logistics clerk. “And the ticket master says passengers boarded.”
+At her desk, the consolidation brief waited. Same wording. Same fused instruction. Her supervisor had circled it in red: *Clear before noon.*
 
-“Then where’s the paperwork?” Nana snapped. “If it left without a manifest, we’re liable.”
+She did not open the first file.
 
-Yaw spread his hands. “I’ve pulled every file. Cross-referenced crew logs, fuel receipts, maintenance checks. Nothing shows Bus 47 leaving Achimota that day.”
+She placed her hands flat on the desk. Looked at the brief the way she had looked at the room.
 
-They turned as Kwabena entered. Nana gestured at the stack of folders on his desk. “You’re good at finding gaps. Take a look.”
+She took a pen. Drew a line under the first clause.  
+*All inbound perishables must be accompanied by (a) a phytosanitary certificate issued within 72 hours of departure.*
 
-Kwabena did not sit. He did not open the first file. He looked at the problem the way he had looked at the room.
+She crossed out the rest with a single stroke.
 
-“What are we actually trying to find?” he asked.
+She opened only the phytosanitary folder. Checked the timestamp on the cert from the *MV Senegal Star*. Issued 68 hours ago. Valid.
 
-Silence fell.
+She marked it cleared.
 
-Nana blinked. Yaw stopped mid-gesture. Even the radio seemed to lower its static.
+Then she uncrossed the second clause. Handled it alone. Found the engineer’s signature missing from the temp log. Called the ship’s agent. Got a scanned copy in four minutes.
 
-“We’re trying to find the manifest,” Nana said slowly.
+Third clause last. The chamber stamp was smudged. She requested a replacement via secure fax. Received it by 11:42.
 
-“Are we?” Kwabena asked. “Or are we trying to prove the bus left?”
+At 11:53, she stamped the entire brief *APPROVED* and slid it into the outbound tray.
 
-Yaw frowned. “Same thing.”
+Her supervisor, passing by, stopped. Looked at the tray. Looked at her.
 
-“Not if the manifest wasn’t made,” Kwabena said. “What if the bus left, but no one filed the departure slip? Then the manifest doesn’t exist. But the trip did.”
+“You split it,” he said.
 
-Nana went very still.
+She nodded.
 
-Kwabena sat. He opened the crew log for Tuesday. He skipped the manifests. He found the driver’s sign-in sheet. Bus 47’s driver had clocked out two hours later than usual. Enough time for a round trip to Takoradi.
+He stood still for a moment. Then walked on.
 
-He checked the fuel log. An extra 80 liters drawn that morning—exactly what Bus 47 would need.
+---
 
-He looked up. “The bus left. Someone forgot to file the departure. Check the ticket stubs. If they match the passenger count the driver reported, we close the loop.”
+Under the gate’s threshold seal, a port worker sweeping later found a folded page. Thin paper. Black ink. Precise script.
 
-Yaw stared. “I didn’t think to look at clock-out times.”
-
-Nana exhaled. “We were looking for a document that never existed.”
-
-Kwabena nodded. He closed the log. His hands rested flat on the desk.
-
-Later, alone, he thought about the gate. Not the room. Not the boxes. Just the moment before he moved.
-
-He reached for the language of his work. Routes. Depots. Schedules.
-
-It wasn’t about sorting. It wasn’t about collecting. It was about knowing what you were looking for before you started looking.
-
-He called it route clarity. You couldn’t assign a bus if you didn’t know the destination, the load, and the rules that tied them together.
-
-That was all it was.
+*Grade 2. System builder approach. Room organised by the solver's method — every container classified, every label aligned, the whole condition treated as one requirement. Underlined: the condition had three clauses; the solver's method could hold only one at a time. Register 1 throughout. No Register 2.*

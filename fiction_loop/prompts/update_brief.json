@@ -1,101 +1,87 @@
 {
-  "chapter": "003",
-  "chapter_type": "return_to_character",
+  "chapter": "004",
+  "chapter_type": "new_focal_character",
   "focal_character": {
-    "id": "char_002",
-    "is_new": false,
-    "name": "Kwabena Asante",
-    "occupation": "bus depot scheduler",
-    "city": "Accra",
+    "id": "char_004",
+    "is_new": true,
+    "name": "Aminata Diop",
+    "occupation": "shipping documentation clerk",
+    "city": "Dakar",
     "age": null,
     "gate_visited": {
-      "gate_id": "G-003",
+      "gate_id": "G-004",
       "grade": 2,
-      "operation_encountered": "op_identify_unknown",
-      "approach_taken": "none — applied correctly",
+      "operation_encountered": "op_separate_condition",
+      "approach_taken": "the system builder",
       "understood": true,
       "looked_back": true,
       "transferred_to_life": true
     },
     "comprehension_changes": {
-      "op_identify_unknown": "understood"
+      "op_separate_condition": "encountered"
     },
-    "ordinary_life_state": "Kwabena sits at his larger desk near the supervisor's office at the Achimota depot, where clerks bring him a routing discrepancy and he resolves it by asking what they are actually trying to find.",
-    "life_progression_shown": true
+    "ordinary_life_state": "Aminata Diop is back at her desk at the Port of Dakar after the MV Sankofa has sailed, looking at the three requirements she wrote out separately from the consolidated instruction.",
+    "life_progression_shown": null
   },
-  "other_entrants": [
-    {
-      "id": "char_003a",
-      "name": "Kojo Acheampong",
-      "is_new": true,
-      "approach_taken": "the executor",
-      "operations_applied": []
-    },
-    {
-      "id": "char_003b",
-      "name": "Akosua Osei",
-      "is_new": true,
-      "approach_taken": "the information gatherer",
-      "operations_applied": []
-    }
-  ],
+  "other_entrants": [],
   "secondary_touch_updates": [],
   "names_used_this_chapter": [
-    "Kwabena Asante",
-    "Kojo Acheampong",
-    "Akosua Osei"
+    "Aminata Diop"
   ],
   "gate_details": {
     "problem_structure": {
-      "unknown": "which jar contains the key that opens the sealed exit",
+      "unknown": "which clause of the compound customs condition actually binds and must be solved first",
       "data": [
-        "six glass jars filled with different coloured liquids",
-        "a chalkboard reading 'One jar contains the key. The rest will dissolve your gloves.'"
+        "three folders sealed red for perishables, blue for transit goods, and black for dual-use materials",
+        "invoices, temperature logs, and phytosanitary certificates for perishables",
+        "transit manifests, waybills, and proof of bonded carrier status",
+        "a single dual-use sheet watermarked with a rifle over a wrench"
       ],
-      "condition": "only one jar contains a key; the liquids in the other jars dissolve gloves"
+      "condition": "the consolidated instruction fuses three separate customs requirements into one sentence and demands all conditions be satisfied before the noon sailing"
     },
-    "correct_approach": "Stop at the entrance and name aloud what is wanted, what is given, and what binds them before touching anything; the key is literally contained inside one jar, not a property of the liquid."
+    "correct_approach": "Stop treating the instruction as a single requirement; tear the compound condition along its natural clause boundaries, set aside the parts that do not bind, and test each clause alone to find which one actually stalls the clearance."
   },
   "process_updates": {
-    "operation": "op_identify_unknown",
-    "new_touch": 2,
+    "operation": "op_separate_condition",
+    "new_touch": 1,
     "failure_modes_shown_this_chapter": [
-      "the executor",
-      "the information gatherer"
+      "the system builder"
     ],
-    "name_attached_this_chapter": true,
-    "context_demonstrated": "professional",
+    "name_attached_this_chapter": false,
+    "context_demonstrated": "workplace",
     "transferred": true
   },
   "location_updates": {
-    "location_id": "loc_accra",
-    "new_chapter_added": "003",
+    "location_id": "loc_dakar",
+    "new_chapter_added": "004",
     "new_texture": [
-      "Kwabena now sits at a larger desk near the supervisor's office, with people bringing problems to him.",
-      "Three clerks huddle over printouts while one shuffles papers, one taps a calculator, and one calls dispatchers on a rising radio voice.",
-      "The master manifest is opened to resolve a duplicate route entry from a corrupted upload.",
-      "The wall fan in the depot office seems to slow when Kwabena asks the right question."
+      "Supervisors drop consolidated clearance instructions directly on clerks' blotters with a noon sailing deadline.",
+      "The port uses Form C-7B for perishable cargo clearances.",
+      "Bonded transit documentation is required for non-perishable cargo moving through Senegal to landlocked Mali.",
+      "A new ECOWAS clause requires pre-inspection by an approved auditor for dual-use materials.",
+      "Industrial-grade lithium batteries used in forklifts also appear in drone power systems and trigger dual-use holds.",
+      "Auditors' deputies can review flagged dual-use holds remotely and lift them within minutes."
     ]
   },
   "anchor_update": {
     "appeared": true,
-    "manifestation": "bystander_mention",
-    "observation": "Grade 2. Executor approach. Room emphasised sequential testing — jars aligned, labels clarified, spacing even. Underlined: chalkboard condition ignored. Register 2 at minute 8. Register 3 at minute 14.\n\nInformation gatherer approach. Room gave complete catalogue — no movement, no shift. Underlined: no question of purpose. Register 1 throughout.\n\nCorrect approach: threshold naming. Wanted/given/binding spoken before entry. Register 3 confirmed at utterance. Gate closed minute 19.",
-    "location": "loc_accra",
-    "reader_can_suspect_update": "The anchor is now observing solvers both inside and outside gates, tracking post-gate behavior and social echoes with precise notation that explicitly identifies 'threshold naming' as the correct approach."
+    "manifestation": "notebook_page",
+    "observation": "Grade 2. System builder approach. Room organised by the solver's method — every container classified, every label aligned, the whole condition treated as one requirement. Underlined: the condition had three clauses; the solver's method could hold only one at a time. Register 1 throughout. No Register 2.",
+    "location": "loc_dakar",
+    "reader_can_suspect_update": "The anchor now leaves physical traces inside or near gates—pages that describe the mirror content and register behavior with increasing precision. Their notation explicitly identifies 'the condition had three clauses; the solver's method could hold only one at a time,' confirming they understand decomposition as the missing operation."
   },
   "macro_mystery_update": {
-    "evidence_planted": false,
-    "evidence": "none"
+    "evidence_planted": true,
+    "evidence": "A folded notebook page in the same concise notation as the Lagos and Accra observations is found tucked under the Dakar gate's threshold seal, recording the system builder approach and explicitly noting that the compound condition had three clauses while the solver's method could hold only one at a time."
   },
   "next_chapter_pointer": {
-    "chapter": "004",
+    "chapter": "005",
     "type": "new_focal_character",
     "char_id": null,
-    "operation_due": "op_separate_condition",
+    "operation_due": "op_look_at_unknown",
     "touch_due": 1,
     "name_due": false,
-    "failure_mode_to_show": "the system builder",
+    "failure_mode_to_show": "the executor",
     "secondary_touches": [],
     "echo_touch": null,
     "anchor_appears": true

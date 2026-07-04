@@ -23,11 +23,11 @@ Everything else is automatic.
 | Field | Value |
 |---|---|
 | Story title | The Sankofa Gates |
-| Last updated | After Chapter 4 |
-| Last chapter completed | 4 |
-| Current arc | Arc 2 — Gate Grade 2 |
-| Active focal characters | Aminata Diop |
-| Mystery person last appeared | Chapter 4 (Notebook page found under gate threshold) |
+| Last updated | After Chapter 3 |
+| Last chapter completed | 3 |
+| Current arc | Arc 1 — Gate Grade 1-2 |
+| Active focal characters | Kwabena Asante |
+| Mystery person last appeared | Chapter 3 (Outside Achimota depot / Notebook entry observed) |
 | Macro mystery evidence count | 3 |
 
 ---
@@ -37,17 +37,17 @@ Everything else is automatic.
 
 | Operation | Touch | Last Context | Next Due |
 |---|---|---|---|
-| Identify unknown / data / condition | 2 | Gate (Grade 2) / Workplace | Chapter 5 — Touch 3 |
-| What is missing (absence over presence) | 1N | Gate (Grade 1) / Domestic | Chapter 4 — Touch 2 |
-| Separate parts of condition | 1 | Gate (Grade 2) / Workplace | Chapter 5 — Touch 2 |
-| Look at the unknown | 1 | Gate (Grade 2) / Workplace | Chapter 5 — Touch 2 |
-| Did you use all the data? | 0 | — | Chapter 5 — Touch 1N |
-| Can you check the result? | 0 | — | Chapter 5 — Touch 1N |
+| Identify unknown / data / condition | 2 | Gate (Grade 2) / Workplace | Chapter 4 — Touch 3 |
+| What is missing (absence over presence) | 1N | Gate (Grade 1) / Domestic | Chapter 3 — Touch 2 |
+| Separate parts of condition | 1 | Gate (Grade 2) / Workplace | Chapter 4 — Touch 2 |
+| Look at the unknown | 1 | Gate (Grade 2) / Workplace | Chapter 4 — Touch 2 |
+| Did you use all the data? | 0 | — | Chapter 4 — Touch 1N |
+| Can you check the result? | 0 | — | Chapter 4 — Touch 1N |
 | Can you derive the result differently? | 0 | — | Arc 3 |
-| Do you know a related problem? | 1 | Gate (Grade 2) / Workplace | Chapter 5 — Touch 1N |
-| Here is a problem related to yours | 0 | — | Chapter 5 — Touch 1N |
+| Do you know a related problem? | 1 | Gate (Grade 2) / Workplace | Chapter 4 — Touch 1N |
+| Here is a problem related to yours | 0 | — | Chapter 4 — Touch 1N |
 | Analogy — simpler analogous problem | 0 | — | Arc 3 |
-| Looking back / transfer | 1 | Gate (Grade 2) / Workplace | Chapter 5 — Touch 2 |
+| Looking back / transfer | 1 | Gate (Grade 2) / Workplace | Chapter 4 — Touch 2 |
 | Decompose condition | 0 | — | Arc 3 |
 | Introduce auxiliary elements | 0 | — | Arc 3 |
 | Can you use the result? | 0 | — | Arc 4 |
@@ -61,7 +61,7 @@ Everything else is automatic.
 | Heuristic vs proof | 0 | — | Arc 7 |
 | Subconscious work | 0 | — | Arc 7 |
 | Auxiliary problem chains | 0 | — | Arc 8 |
-| The sitting down (physical marker) | 3 | Gate (Grade 2) | Chapter 5 — Touch 3 |
+| The sitting down (physical marker) | 2 | Gate (Grade 2) | Chapter 4 — Touch 3 |
 
 ---
 
@@ -98,34 +98,32 @@ Everything else is automatic.
 | char_001 | Yejide Adeyemi | Fabric Checker / Seamstress | Lagos | 1 (Touch 1/1N) | Chapter 1 |
 | char_002 | Kwabena Asante | Dispatch Clerk (Promoted) | Accra | 2 (Touch 2) | Chapter 3 |
 | char_002a | Ama Serwah | Plantain Seller | Accra | 1 (Touch 1) | Chapter 2 |
-| char_004 | Aminata Diop | Customs Clearance Officer | Dakar | 1 (Touch 1) | Chapter 4 |
 
 ---
 
 ## MYSTERY PERSON THREAD
 *Observable log summary. Full detail in /state/mystery_anchor.json.*
 
-Appearances: 4  
-Last location: Under gate threshold at Dakar port / Notebook page recovered by port worker  
-Reader can suspect: The anchor now leaves physical traces inside or near gates—pages that describe the mirror content and register behavior with increasing precision. Their notation explicitly identifies "the condition had three clauses; the solver's method could hold only one at a time," confirming they understand decomposition as the missing operation.
+Appearances: 3
+Last location: Outside Achimota depot / Observed speaking to cleaner, recording notebook entry
+Reader can suspect: The anchor is now observing both inside and outside gates, tracking not just mirror content but also post-gate behavior and social echoes. Their notation has become more precise, explicitly identifying "threshold naming" as the correct approach and logging register transitions by minute.
 
 ---
 
 ## MACRO MYSTERY EVIDENCE
 *What the reader can suspect but not confirm.*
 
-Evidence count: 3  
-Current state: The notebook page found under the gate explicitly diagnoses the system builder’s failure as an inability to handle compound conditions—a structural limitation of the approach, not the solver. This reinforces that gates are diagnostic mirrors reflecting mental frames, not tests of effort or knowledge. The anchor’s growing precision suggests they are assembling a taxonomy of wrong approaches across gate grades.
+Evidence count: 3
+Current state: The anchor’s notebook entry confirms they are now tracking multiple wrong approaches within a single gate (executor and information gatherer) and noting the exact moment the right question forms ("threshold naming"). This suggests the anchor understands that the core failure is not action but misidentification of the problem structure—reinforcing that gates are diagnostic mirrors, not tests.
 
 ---
 
 ## ACTIVE FORESHADOWING
 
-- The anchor’s notebook now uses institutional language (“solver’s method could hold only one at a time”)—suggesting they may have guild or academic background.
-- Aminata’s ordinary-life solution involved isolating the dual-use clause and submitting it *as a standalone hold*, demonstrating decomposition without naming it.
-- The gate’s mirror for the system builder showed perfect categorization—but the categorization itself became the barrier, as it treated the compound condition as unified.
-- The phrase “not as a wall, but as parts waiting to be seen alone” echoes Kwabena’s earlier “checking the frame,” showing transfer of process language across solvers.
-- The auditor’s remote approval within two minutes implies that once the real problem is isolated, resolution is fast—mirroring the gate’s quiet closure.
+- The anchor now observes ordinary life echoes directly, questioning witnesses about solver demeanor after exit ("came out calm").
+- Kwabena’s internal monologue explicitly names the operation for the first time: “Before acting, name what you seek. Name what you have. Name what ties them.”
+- The gate’s mirror for the information gatherer showed *no change*—highlighting that completeness without purpose produces no feedback.
+- The chalkboard condition (“contains the key”) was literal, not metaphorical—emphasizing that gates respond to precise reading of the condition, not interpretation.
 
 ---
 
@@ -133,7 +131,7 @@ Current state: The notebook page found under the gate explicitly diagnoses the s
 
 | Field | Value |
 |---|---|
-| Chapter | 005 |
+| Chapter | 004 |
 | Type | new_focal_character |
 | City | [ To be determined by Orchestrator — African city, contemporary ] |
 | Gate grade | [ To be determined ] |
@@ -153,7 +151,7 @@ Current state: The notebook page found under the gate explicitly diagnoses the s
 
 ## NOTES FOR AI — CURRENT SESSION
 
-- African names only. No Arabic names. (Yejide, Fadeke, Kwabena, Ama, Owusu, Mensah, Esi, Aminata established. Continue this rule).
+- African names only. No Arabic names. (Yejide, Fadeke, Kwabena, Ama, Owusu, Mensah, Esi established. Continue this rule).
 - The wrong approaches must feel competent and reasonable before they fail.
 - Gate register and mirror behaviour must be shown for all wrong approaches.
 - Mirror prose rule: describe the room's arrangement. Never state what it is showing.
@@ -164,7 +162,7 @@ Current state: The notebook page found under the gate explicitly diagnoses the s
 - Mystery person notebook format: Gate grade. Approach type. Mirror content (one precise physical description). Underlined: the gap the mirror showed. Register log time-stamped. Nothing else.
 - Ordinary life echo: same question applied to ordinary problem. Never labelled as connected. At least one other person goes still or conversation changes register.
 - Chapter length: 2000-3000 words.
-- Chapter 4 completed Arc 1’s core operations and introduced Arc 2’s first wrong approach (system builder). Chapter 5 must introduce the remaining Arc 2 wrong approaches: confident specialist and hypothesis tester, with “related problem” as the hard operation.
-- Aminata’s decomposition shows institutional recognition is possible outside formal promotion—her action was procedural, not personal.
-- The anchor’s notebook page being found but not reported signals that macro-mystery evidence is accumulating in informal channels, not official ones.
+- Chapter 3 completed Arc 1’s core operations. Chapter 4 must introduce Arc 2 operations: confident specialist and hypothesis tester as wrong approaches, with “related problem” as the hard operation.
+- Kwabena’s promotion shows institutional recognition of process-based problem-solving.
+- The anchor’s observation of the ordinary life echo (“came out calm”) signals they are now tracking transfer beyond the gate.
 - The phrase “checking the frame” is now in-world terminology for “identify unknown/data/condition.”

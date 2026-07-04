@@ -1,0 +1,23 @@
+{
+  "id": "loc_dakar",
+  "name": "Dakar, Senegal",
+  "first_appeared": 4,
+  "institutional_response": {
+    "primary_body": "",
+    "approach": "",
+    "failure_mode": ""
+  },
+  "ordinary_life_texture": [
+    "Supervisors drop consolidated clearance instructions directly on clerks' blotters with a noon sailing deadline.",
+    "The port uses Form C-7B for perishable cargo clearances.",
+    "Bonded transit documentation is required for non-perishable cargo moving through Senegal to landlocked Mali.",
+    "A new ECOWAS clause requires pre-inspection by an approved auditor for dual-use materials.",
+    "Industrial-grade lithium batteries used in forklifts also appear in drone power systems and trigger dual-use holds.",
+    "Auditors' deputies can review flagged dual-use holds remotely and lift them within minutes."
+  ],
+  "macro_mystery_evidence_here": [],
+  "characters_based_here": [],
+  "chapters_set_here": [
+    4
+  ]
+}

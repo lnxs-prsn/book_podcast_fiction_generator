@@ -94,7 +94,9 @@ fiction_loop/cards/concept/[operation_id].json (physical_anchor, canonical_probl
    ("X is/was the Y of Z") are forbidden in those sentences.] [If not name_due:
    no operation name appears at all.]
 4. THE MIRROR SHOWS, NEVER POINTS: describe the room's arrangement; never state
-   what it reflects or that it reflects anything.
+   what it reflects or that it reflects anything. The gate NEVER displays words,
+   labels, or instructions that name or hint at the operation — gates do not
+   explain themselves; a panel may light, shift, or open, never speak.
 5. THE OBSERVER: exterior only — position, actions, notebook. No thoughts, no
    motives, no explanation of who they are.
 6. Never address the reader. The word "you" appears only inside dialogue.
@@ -141,7 +143,15 @@ then output only the corrected chapter.
 [If returning: paste name, occupation, ordinary_life_state, gate_history summary, still_gets_wrong from character card; paste city from the location card fetched via the character's location_id]
 [If returning — LIFE PROGRESSION (owner rule F14): paste the character's PREVIOUS ordinary_life_state and instruct: this character's life has visibly moved forward since (promotion, grades, resolved conflict). Show the progress. Never attribute it to the gate — the reader makes the connection.]
 
-**Cast (owner rules D6/D7/F15):**
+**Cast (owner rules D6/D7/F15) — BEAT QUOTA by arc (curriculum §9, reader progression):**
+[Arc 1-2: THREE wrong-approach solvers, EACH a full dramatized scene (approach shown
+ feeling competent → its specific mirror shift → its specific physical failure).
+ Arc 3-4: two full scenes, a third may be compressed. Arc 5-6: one full, others
+ implied. Arc 7+: compressed forms. State the quota EXPLICITLY in the brief —
+ an under-populated gate collapses the productive-failure structure and the
+ chapter comes out hundreds of words short.]
+[Lead wrong approach = pointer.failure_mode_to_show; the others from the operation's
+ failure pool (or arc pool), preferring types least recently shown globally.]
 [The gate shows multiple solvers. AT LEAST ONE must be a fully improvised newcomer.]
 [For each secondary touch (below): its carrier — a returning character who owns the operation, or an "experienced stranger": a newcomer whose off-page gate history lets them apply it credibly.]
 [Name only solvers who matter — every named solver enters the permanent record.]

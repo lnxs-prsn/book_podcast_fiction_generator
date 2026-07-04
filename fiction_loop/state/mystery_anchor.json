@@ -17,6 +17,12 @@
       "observation": "Grade 2. Executor approach. Room emphasised sequential testing — jars aligned, labels clarified, spacing even. Underlined: chalkboard condition ignored. Register 2 at minute 8. Register 3 at minute 14.\n\nInformation gatherer approach. Room gave complete catalogue — no movement, no shift. Underlined: no question of purpose. Register 1 throughout.\n\nCorrect approach: threshold naming. Wanted/given/binding spoken before entry. Register 3 confirmed at utterance. Gate closed minute 19.",
       "location": "loc_accra",
       "manifestation": "bystander_mention"
+    },
+    {
+      "chapter": "004",
+      "observation": "Grade 2. System builder approach. Room organised by the solver's method — every container classified, every label aligned, the whole condition treated as one requirement. Underlined: the condition had three clauses; the solver's method could hold only one at a time. Register 1 throughout. No Register 2.",
+      "location": "loc_dakar",
+      "manifestation": "notebook_page"
     }
   ],
   "reader_can_suspect": [
@@ -31,6 +37,10 @@
     {
       "chapter": "003",
       "suspicion": "The anchor is now observing solvers both inside and outside gates, tracking post-gate behavior and social echoes with precise notation that explicitly identifies 'threshold naming' as the correct approach."
+    },
+    {
+      "chapter": "004",
+      "suspicion": "The anchor now leaves physical traces inside or near gates—pages that describe the mirror content and register behavior with increasing precision. Their notation explicitly identifies 'the condition had three clauses; the solver's method could hold only one at a time,' confirming they understand decomposition as the missing operation."
     }
   ],
   "hidden_coherence": {
