@@ -100,13 +100,25 @@ fiction_loop/cards/concept/[operation_id].json (physical_anchor, canonical_probl
 5. THE OBSERVER: exterior only — position, actions, notebook. No thoughts, no
    motives, no explanation of who they are.
 6. Never address the reader. The word "you" appears only inside dialogue.
-7. NO REFLECTIVE CODA: after the name attachment (or, if no name is due, after the
+7. THE CAST QUOTA IS A HARD REQUIREMENT: this brief names a number of wrong-approach
+   solvers, EACH requiring a full dramatized scene (approach feels competent → its
+   mirror shift → its specific failure). A chapter with fewer solver-scenes than the
+   quota FAILS regardless of word count. [Assembler: fill in the arc's number here.]
+8. THE OBSERVER APPEARS: the grey-coat man is present in some form in every gate
+   chapter (seen / traces / mentioned / a notebook page). Omitting him fails the
+   chapter.
+9. THE ECHO EXISTS: the ordinary-life scene is present and complete. A chapter
+   without it fails.
+10. THE GESTURE APPEARS: the focal solver visibly performs this brief's physical
+   anchor gesture at the turning point. [If returning focal: their life shows
+   nameable forward movement since last time — never credited to the gate.]
+11. NO REFLECTIVE CODA: after the name attachment (or, if no name is due, after the
    final anchor beat), the chapter ends within TWO sentences. Reflection is where
    lesson sentences breed. (The in-gate "looking back" beat — a solver lingering
    after closure — is a SCENE and is allowed; this rule governs only the tail
    after the echo/name.)
 
-Before finishing: re-read your draft against rules 1–7, fix every violation,
+Before finishing: re-read your draft against rules 1–11, fix every violation,
 then output only the corrected chapter.
 ```
 

@@ -236,6 +236,14 @@ The Orchestrator touches none of these files. It coordinates by telling each sub
     Do not return any field values or prose.
     -------
 
+11.5. Run bash — STRUCTURAL GATE (deterministic, pre-state-mutation):
+    python3 fiction_loop/tools/structural_gate.py
+    Exit 0 → proceed to step 12.
+    Exit 1 → STOP before the Updater and report its output verbatim to the user
+    (cast quota / anchor presence / echo presence / F14 progression / F15 newcomer).
+    State has not been touched; per the STAGED UNDO ladder a fix costs only
+    "redo generation" or "redo from brief". Await the user's answer.
+
 12. SPAWN Updater subagent with this prompt:
     -------
     You are the Updater. Read your spec at fiction_loop/agents/updater.md.
@@ -303,6 +311,22 @@ analyst
   → Print its output verbatim. Deterministic situation analysis from the pipeline's
     logs — it identifies, it never fixes. Run it on ANY BLOCKED before reporting
     (see agent_conduct.md §1).
+
+redo generation
+  → Use when: the draft is bad but the brief is fine, and step 12 has NOT run.
+  → Re-run step 8 only (assembled_prompt.md is intact on disk). Fresh retry budget.
+  → Cost: one API call. No git involved — nothing was mutated.
+
+redo from brief
+  → Use when: the brief itself was wrong, and step 12 has NOT run.
+  → Re-run steps 7 → 7.5 → 8. Cost: one subagent + one API call.
+
+undo state application
+  → Use when: step 12 (Updater) ran but step 13.5 (commit) has NOT.
+  → Run bash: git restore --source=HEAD -- fiction_loop/state fiction_loop/cards \
+      fiction_loop/core/character_naming.md fiction_loop/core/living_document.md
+    (returns all state to the chapter's baseline commit; prose and prompt artifacts
+     stay on disk). Resume from step 11.5 or 12.
 
 redo last chapter
   → Fully mechanical — no judgment calls, no state surgery (agent_conduct rules apply:
