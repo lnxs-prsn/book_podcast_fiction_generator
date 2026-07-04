@@ -169,6 +169,10 @@ STEP 7 — master_state.json
   Append macro_mystery_update if applicable (from STEP 6)
   IF anchor_update.appeared = true: set anchor_summary to one line —
     "Last appeared ch. [NNN] ([manifestation]); [K] total appearances."
+  IF update_brief.process_updates.lead_failure_mode exists and != "none":
+    Append { "chapter": "[NNN]", "lead": [lead_failure_mode] } to
+    failure_mode_lead_history (create the array if absent) — the Extractor's
+    failure_mode_to_show selection reads this (least-recently-led rotation)
   Write next_chapter_pointer from update_brief.next_chapter_pointer
   Write updated master_state.json
 

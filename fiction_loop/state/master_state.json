@@ -16,6 +16,12 @@
     }
   },
   "failure_modes_not_yet_shown": [],
+  "failure_mode_lead_history": [
+    { "chapter": "001", "lead": "the executor" },
+    { "chapter": "002", "lead": "the executor" },
+    { "chapter": "003", "lead": "the executor" },
+    { "chapter": "004", "lead": "the system builder" }
+  ],
   "population_index": [
     {
       "id": "char_001",
@@ -76,7 +82,7 @@
     "operation_due": "op_look_at_unknown",
     "touch_due": 1,
     "name_due": false,
-    "failure_mode_to_show": "the system builder",
+    "failure_mode_to_show": "the information gatherer",
     "secondary_touches": [],
     "echo_touch": null,
     "anchor_appears": true

@@ -215,6 +215,12 @@ failure_modes_shown_this_chapter
   → Use the exact name as it appears in process_state (e.g. "the executor")
   → List, not a single value
 
+lead_failure_mode
+  → This chapter's FEATURED wrong approach: copy master_state.json
+    next_chapter_pointer.failure_mode_to_show verbatim (that pointer steered THIS
+    chapter; the Updater archives the value to failure_mode_lead_history)
+  → "none" if that pointer field is "none" or null
+
 name_attached_this_chapter
   → true if the prose attaches the operation's name (the one-sentence narrator label
     per style_contract.md §3/§4) this chapter
@@ -329,11 +335,19 @@ name_due     → true iff touch_due == operations.[operation_due].name_at_touch
                AND name_attached is still false
 failure_mode_to_show
   → From process_state.operations.[operation_due].failure_modes_not_yet_shown,
-    picking the entry LEAST RECENTLY shown across ALL operations (scan every
-    operation's teaching_history/failure_modes_shown by chapter) — never simply
-    [0]. Per-op pools all start with the same first entry, so [0] repeats the
-    same wrong approach chapter after chapter (executor led ch1-ch3) — a
-    cross-chapter formula the per-op checks cannot see (owner rule D4).
+    picking the entry LEAST RECENTLY LED: the type whose latest chapter in
+    master_state.json failure_mode_lead_history is OLDEST — and a type absent
+    from that history entirely ranks first of all. Tiebreak: least recently
+    SHOWN across all operations (scan teaching_history/failure_modes_shown by
+    chapter). Never simply [0].
+  → WHY LED, NOT SHOWN (owner ruling 2026-07-04): in arcs where the scene quota
+    equals the pool size (arc 1: 3 of 3), every chapter shows every type — 
+    shown-recency is then a permanent three-way tie and the lead can silently
+    repeat (executor led ch1–3; the system builder nearly led ch4–5 back to
+    back). The LEAD is what the reader experiences as the chapter's featured
+    failure — the anchor observes it, the notebook entry names it — so rotation
+    must track leads (owner rule D4, anti-formula). A useful side effect: a
+    newly introduced arc type has never led, so it is auto-featured on arrival.
   → "none" if operation_due is null or list is empty
 secondary_touches
   → from decision logic (up to 2; empty list for anchor_interlude/arc_transition)

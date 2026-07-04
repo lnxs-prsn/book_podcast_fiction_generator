@@ -20,7 +20,9 @@ before merging.
 | `cards/events/*.json.wrong_approaches_demonstrated` | Extractor SECTION: process_updates (`failure_modes_shown_this_chapter`) → Updater STEP 3 | Consistency Checker (C1), Assembler (`failure_modes_not_yet_shown` selection) |
 | `cards/events/*.json.correct_approach` | Extractor SECTION: gate_details → Updater STEP 3 | *(no current reader — see note below)* |
 | `cards/events/*.json.characters_entered` | Updater STEP 3 (`[focal_character.id]`, single character only) | *(no current reader)* |
-| `next_chapter_pointer.failure_mode_to_show` | Extractor (DECISION LOGIC) → Updater STEP 7 | Consistency Checker (V1, C1) |
+| `next_chapter_pointer.failure_mode_to_show` | Extractor (least-recently-LED selection vs `failure_mode_lead_history`; shown-recency tiebreak) → Updater STEP 7 | Consistency Checker (V1, C1); Assembler ("Lead wrong approach" — the featured type the anchor observes); Extractor next chapter (copies it into `lead_failure_mode`) |
+| `update_brief.json.process_updates.lead_failure_mode` | Extractor (verbatim copy of the pointer that steered this chapter) | Updater STEP 7 (archives to `failure_mode_lead_history`) |
+| `master_state.json.failure_mode_lead_history` | Updater STEP 7 (append per gate chapter; seeded ch 001–004 by hand 2026-07-04) | Extractor (`failure_mode_to_show` selection — least recently led). Exists because shown-recency saturates when arc quota = pool size (arc 1: 3 of 3 → permanent tie; executor led ch 1–3 undetected) |
 | `chapter_type_contract.md` | (static, hand-authored) | Extractor, Updater, Consistency Checker (branch guards) |
 
 ## Known orphans / open items
