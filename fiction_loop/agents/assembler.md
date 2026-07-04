@@ -100,10 +100,15 @@ fiction_loop/cards/concept/[operation_id].json (physical_anchor, canonical_probl
 5. THE OBSERVER: exterior only — position, actions, notebook. No thoughts, no
    motives, no explanation of who they are.
 6. Never address the reader. The word "you" appears only inside dialogue.
-7. THE CAST QUOTA IS A HARD REQUIREMENT: this brief names a number of wrong-approach
-   solvers, EACH requiring a full dramatized scene (approach feels competent → its
-   mirror shift → its specific failure). A chapter with fewer solver-scenes than the
-   quota FAILS regardless of word count. [Assembler: fill in the arc's number here.]
+7. THE CAST QUOTA IS A HARD REQUIREMENT: [Assembler: state the arc's QUOTA here —
+   the NUMBER of wrong-approach solvers from the BEAT QUOTA table, spelled out, then
+   the internal label of each required wrong approach; e.g. "this chapter requires
+   EXACTLY THREE (3) wrong-approach solver scenes: the executor / the system builder /
+   the information gatherer". Never write the arc number here — the quota count only.]
+   EACH requires a full dramatized scene (approach feels competent → its mirror shift →
+   its specific failure). The labels are internal (rule 1): show each behavior, never
+   the label. Before returning, COUNT your fully dramatized wrong-approach scenes; a
+   chapter with fewer scenes than the quota FAILS regardless of word count.
 8. THE OBSERVER APPEARS: the grey-coat man is present in some form in every gate
    chapter (seen / traces / mentioned / a notebook page). Omitting him fails the
    chapter.

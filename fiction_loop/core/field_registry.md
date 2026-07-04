@@ -11,7 +11,10 @@ before merging.
 
 | Field / document | Producer | Consumer |
 |---|---|---|
-| `living_document.md` (whole doc) | `refresh_living_doc.py` (Orchestrator step 10) | Extractor (`extractor.md` SECTION: reader_can_suspect_update) |
+| `living_document.md` (whole doc) | `refresh_living_doc.py` (Orchestrator step 10) | Extractor (`extractor.md` SECTION: reader_can_suspect_update); **Assembler (step 7 read list — canon context for every chapter)**; Orchestrator user command `show living document`. NOTE: because the Assembler eats it, a refresh from a draft later rejected by the structural gate pollutes the next chapter's prompt — restore from the newest `.bak` (or `git restore`) before any redo |
+| arc cast quota (wrong-approach scenes per gate chapter) | `concept_curriculum.md` §9 (declared source of truth) | THREE copies that must change together: assembler.md BEAT QUOTA table + HARD RULE 7 fill-in; `structural_gate.py` `QUOTA_BY_ARC`. Tuning §9 without the copies makes the gate fail chapters the prompt correctly ordered |
+| `update_brief.json.process_updates.failure_modes_shown_this_chapter` | Extractor (labels scenes from prose — see open item on "shown") | `structural_gate.py` step 11.5 (counts against arc quota); Updater STEP 3 (→ event card `wrong_approaches_demonstrated`); downstream recency rotation (Assembler picks least-recently-shown) |
+| `update_brief.json` gate-consumed booleans (`anchor_update.appeared`, `process_updates.context_demonstrated`, `focal_character.is_new`, `focal_character.life_progression_shown`, `other_entrants[].is_new`) | Extractor | `structural_gate.py` step 11.5 (rules D3/F16, echo, F14, F15) + Updater |
 | `mystery_anchor.json.reader_can_suspect` | Extractor (diffs living_document.md) → Updater STEP 5 | Assembler (gate/anchor prompt content), Consistency Checker (A2) |
 | `cards/events/*.json.problem_structure` | Extractor SECTION: gate_details → Updater STEP 3 | Assembler ("Gate this chapter" section derives from operation, but closed-gate history is read via `problem_structure` on archived event cards for continuity) |
 | `cards/events/*.json.wrong_approaches_demonstrated` | Extractor SECTION: process_updates (`failure_modes_shown_this_chapter`) → Updater STEP 3 | Consistency Checker (C1), Assembler (`failure_modes_not_yet_shown` selection) |
@@ -22,6 +25,19 @@ before merging.
 
 ## Known orphans / open items
 
+- **"Shown" is undefined for `failure_modes_shown_this_chapter`** (found 2026-07-04,
+  ch4 v2): the structural gate counts the Extractor's *labels*, not scenes. A solver
+  whose behavior blends two approach types gets ONE label (ch4 v2's first solver blended
+  executor + system-builder → labeled system builder only), so 3 written scenes can
+  count as 2 (false FAIL), and a mislabel corrupts the least-recently-shown rotation
+  that selects future chapters' failure modes. Arc 3–4's "third scene may be compressed"
+  sharpens the question. Needs one written definition (in extractor.md + gate) of what
+  counts as a shown failure mode — at latest before arc 3.
+- **F14 gate check is null-blind** (found 2026-07-04): `structural_gate.py` fires only
+  on `life_progression_shown is False`. The Extractor currently emits `null` (ch4 brief).
+  Required semantics, not yet written into extractor.md: for a RETURNING focal the
+  Extractor must emit `true`/`false` (never null); `null` is only valid when
+  `is_new: true`. Until then a returning focal with no progression slips the gate.
 - **`correct_approach`** — RESOLVED (owner decision D6, 2026-07-02, see
   `../human_decision.md`): keep the field and wire its consumer — the Assembler reads
   it for return-to-character continuity. Not yet implemented; tracked as part of
