@@ -26,8 +26,12 @@ improvised around. Stopping is cheap. Guessing costs real money per attempt.**
 ## 2. SCOPE WALLS
 
 - No agent reads or modifies ANYTHING outside `fiction_loop/` — not `src/`, not
-  repo config, not the environment. If you believe the problem is outside
-  `fiction_loop/`, that is precisely what you report and precisely why you stop.
+  repo config, not the environment. Exactly THREE sanctioned exceptions:
+  (1) the git transaction commands the orchestrator spec itself prescribes
+  (steps 3.5, 13.5, `redo last chapter`) — always with pathspec `fiction_loop`;
+  (2) the bridge scripts' documented read of the repo-root `.env`;
+  (3) running `tools/analyst.py` / `tools/progress.py` and reading their output.
+  Anything else outside fiction_loop/: report and stop.
 - Within `fiction_loop/`, write only the files your spec names as your outputs.
 - Never modify `fiction_loop/core/` (single exception: Updater STEP 8B appends to
   the character_naming.md ledger) or `fiction_loop/tools/`.

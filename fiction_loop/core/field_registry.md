@@ -47,3 +47,28 @@ before merging.
   name-keyed lookup works. Note: Section 4 still has one merged row (Generalisation /
   Inventor's Paradox) — harmless today since nothing does a name-keyed lookup on §4,
   but recorded here in case that changes.
+
+
+## RULE-CHANGE AUDIT — behavioral rules have consumers too
+
+Schema fields aren't the only things with producers and consumers: BEHAVIORAL RULES
+(checks, scope walls, cadence policies, delivery channels) are consumed by other
+documents' instructions. When a rule changes, its old semantics can survive in a
+consumer and silently contradict the new rule.
+
+**The procedure, after ANY rule change:** ask "who consumed the old rule?" —
+grep the rule's key phrases across agents/, core/, tools/, RUN.md; for every hit,
+either update it or record here why it's exempt. Do this in the same sitting as the
+rule change — the bug class is born precisely in the gap between "rule changed" and
+"consumers audited later".
+
+**Case law (all found in one self-audit, 2026-07-04 — all were fixes made in
+response-mode where the audit step was skipped):**
+1. C3 inverted (anchor must appear) → assembler step 7 still said "anchor too
+   frequent: set to No" — would have deleted the anchor from a gate chapter.
+2. Scope wall declared ("nothing outside fiction_loop/") → later-added git commit
+   steps and .env reads violated it — a rule-literal agent would refuse to commit.
+3. Extractor's curriculum read removed → its role as the wrong-approach NAME
+   dictionary went with it — invented labels would break C1 string matching.
+4. Orchestrator "reads exactly one file" claim went stale as conduct/analyst reads
+   were added.

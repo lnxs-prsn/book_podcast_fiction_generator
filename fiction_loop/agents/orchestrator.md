@@ -8,7 +8,7 @@
 
 ## CONTEXT BUDGET
 
-The Orchestrator reads exactly one file into its own context per loop: `fiction_loop/state/master_state.json`.
+The Orchestrator reads into its own context per loop ONLY: `fiction_loop/state/master_state.json`, plus `core/agent_conduct.md` once at session start, plus tool output (analyst/progress) when invoked. Never content files.
 
 All other data moves between agents through files in `fiction_loop/prompts/`. The Orchestrator passes file paths to subagents and receives one compact return line from each. It never reads the contents of those files.
 

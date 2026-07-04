@@ -51,8 +51,8 @@ Stress-test candidate genres against Stage-2 requirements; most die on (1) or (5
 (domain-expertise import; sealed worlds). Derive the surviving skeleton, pick the skin
 with the most free infrastructure, then INVENT the externalization mechanism (the
 mirror-equivalent — never supplied by any genre catalog; always custom).
-*Worked example: gates + the mirror/register mechanic; the derivation table lives in
-the 2026-07-03 conversation and should be lifted into a `genre_derivation` reference.*
+*Worked example: gates + the mirror/register mechanic. The full method + kill-table +
+worked outputs: `specs/genre_derivation.md` (lifted 2026-07-04).*
 
 ### Stage 4 — Template generation
 Draft the full template set, correspondence map FIRST (its audit governs the rest):
@@ -98,6 +98,15 @@ mode; corrections keep them in reader-mode. Therefore:
    menace" / silence (= consent). The system re-derives dependents and updates the
    ledger. A user who wants "just fiction" touches nothing and gets a coherent
    all-defaults book.
+5. **Correction propagation IS an automated rule-change audit.** Every correction
+   changes a rule/template that other artifacts consume. The factory must maintain a
+   CONSUMER MAP per template section (who reads this rule: which agent specs, which
+   checks, which card fields) and, on any correction, enumerate consumers →
+   re-derive or explicitly exempt each — never apply a rule change point-wise.
+   This is the machinery form of the manual habit recorded in
+   `fiction_loop/core/field_registry.md` § RULE-CHANGE AUDIT, with four incidents of
+   case law showing why point-wise edits fail even when the editor knows better
+   (speed skips the audit; machinery can't).
 
 ### Stage 7 — Init & run
 init_state.py generalized to read the Stage-4 operation manifest instead of embedded
@@ -110,12 +119,13 @@ tables → process_state, concept cards, registry. Then the existing loop (RUN.m
 | Item | Notes |
 |---|---|
 | Stage-1 intake agent spec + knowledge-type rubric | new |
-| genre_derivation reference doc (requirements table + candidate stress-test method) | lift from 2026-07-03 conversation |
+| genre_derivation reference doc | DONE — specs/genre_derivation.md |
 | Meta-templates: required sections/contracts per core doc | derive from the Sankofa docs' structure |
 | Fidelity checker agent (claim → quote or flag) | new; simple |
 | Cross-model logic reviewer harness | new; simple |
 | Taste-flight generator (render divergent options as samples) | new |
 | Decisions ledger format + propagation rules | generalize human_decision.md |
+| Consumer map per template section (rule → its consumers) + propagation enforcement | new; the case law is in core/field_registry.md §RULE-CHANGE AUDIT |
 | init_state.py: split OPERATIONS/PREREQS into a manifest file it loads | small refactor |
 | Thing-fiction pedagogy pack (v2) | promote novel_pipeline patterns into the chassis |
 

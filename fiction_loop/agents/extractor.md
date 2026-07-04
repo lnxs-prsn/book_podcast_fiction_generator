@@ -87,6 +87,16 @@ gate_visited.approach_taken
     apply the operation without a wrong approach (the expected shape of a
     touch-2+ return: newcomers in other_entrants carry the failure modes).
     Do not write UNDETERMINED for this case.
+  → CANONICAL NAMES (complete closed list — use these strings EXACTLY, for this
+    field, other_entrants.approach_taken, and failure_modes_shown_this_chapter;
+    never invent a variant): "the executor", "the system builder",
+    "the information gatherer", "the hypothesis tester", "the confident
+    specialist", "the force applier", "the executor on complex condition",
+    "the system builder on complex condition", "the perfectionist",
+    "the variation-tester", "the single-step auxiliary solver", "the planner
+    without synthesis", "the heuristic-only solver", "the guild verifier".
+    If the prose shows an approach genuinely outside this list, write
+    "UNDETERMINED — unlisted approach: [brief description]" — do not coin a name.
 
 gate_visited.understood
   → true if the character found the right question and the gate closed in this chapter
