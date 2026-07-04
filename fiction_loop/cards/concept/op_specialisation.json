@@ -1,0 +1,49 @@
+{
+  "id": "op_specialisation",
+  "name": "Specialisation",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 5,
+  "arc_introduced": 4,
+  "current_touch": 0,
+  "name_attached": false,
+  "name_at_touch": 1,
+  "touch_schedule": {
+    "1": 4,
+    "2": 5,
+    "3": 6
+  },
+  "touch_target": 3,
+  "prerequisite": [
+    "op_analogy"
+  ],
+  "teaching_history": [],
+  "failure_modes_shown": [],
+  "failure_modes_not_yet_shown": [
+    "the confident specialist",
+    "the force applier"
+  ],
+  "contexts_demonstrated": [],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "teaching_mentoring",
+  "transferred_to_ordinary_life": false,
+  "physical_anchor": "Crouching close to the smallest piece; the field of attention visibly contracted to one case.",
+  "canonical_problem_structure": {
+    "unknown": "General and sprawling; no purchase anywhere.",
+    "data": [
+      "Contains one simplest or extreme case that can actually be worked."
+    ],
+    "condition": "Whatever holds must hold in the simplest case — which shows the pattern or kills the approach."
+  },
+  "canonical_correct_approach": "Contract to the simplest case; solve it; use it as foothold or counterexample.",
+  "compressible_at_touch": 3
+}

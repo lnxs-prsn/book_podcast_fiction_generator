@@ -1,0 +1,123 @@
+# fiction_loop/tools/pipeline_config.toml
+# TOML config for src/novel_pipeline tools used by fiction_loop agents.
+# Paths are relative to this file's directory (fiction_loop/tools/).
+# See INTEGRATION_SPECS.md for full field documentation.
+
+# ---------------------------------------------------------------------------
+# Model (required)
+# ---------------------------------------------------------------------------
+# Model ID on your OpenAI-compatible endpoint. NOTE: environment variables
+# OVERRIDE this file (OPENROUTER_MODEL → model, OPENROUTER_URL → endpoint;
+# loaded from shell env or repo-root .env, shell wins). This line should state
+# the PRIMARY deployment truthfully — .env is for temporary overrides.
+# CAUTION: price_per_1m_* and context_limit below do NOT switch when the model
+# is overridden via env — update them when you change models for real.
+model = "qwen3.7-plus"
+
+# ---------------------------------------------------------------------------
+# Document paths (required)
+# ---------------------------------------------------------------------------
+# static_doc_paths: used by refresh_living_doc.py to build the living-doc
+# update prompt. Leave empty for invoke_writer.py (it builds messages directly).
+static_doc_paths = [
+  "../core/world_rules.md",
+  "../core/style_contract.md",
+  "../core/concept_curriculum.md",
+]
+
+static_doc_order = ["world_rules", "style_contract", "concept_curriculum"]
+
+living_doc_path = "../core/living_document.md"
+output_dir      = "../chapters"
+
+# ---------------------------------------------------------------------------
+# Context and pricing (required — set to match your model)
+# ---------------------------------------------------------------------------
+# context_limit: the model's actual maximum context window in tokens.
+# claude-sonnet-4-6 = 200000. claude-opus-4-8 = 200000. gpt-4o = 128000.
+context_limit = 200000
+
+# price_per_1m_tokens: USD per 1,000,000 tokens (from OpenRouter pricing page).
+# claude-sonnet-4-6 input=$3.00 output=$15.00
+# claude-opus-4-8   input=$15.00 output=$75.00
+price_per_1m_input_tokens  = 3.00
+price_per_1m_output_tokens = 15.00
+
+# ---------------------------------------------------------------------------
+# Output and spend tracking
+# ---------------------------------------------------------------------------
+spend_file_path = "../state/.pipeline_spend.json"
+state_file_path = "../state/.pipeline_state.json"
+log_path        = "../logs/pipeline.log"
+
+# ---------------------------------------------------------------------------
+# Chapter generation
+# ---------------------------------------------------------------------------
+# Floor recalibrated (owner, 2026-07-03): this is a TRUNCATION/REFUSAL TRIPWIRE,
+# not a length target. The style contract's lean declaratives naturally produce
+# ~1,400-word chapters (the 1.docx exemplar is 1,334). Length aspiration lives in
+# the system prompt as a TARGET (models undershoot stated minimums by ~10-20%,
+# so the target is set above the true desire).
+min_chapter_words              = 1200
+expected_output_tokens_chapter = 4000
+api_default_max_tokens_chapter = 5000
+expected_output_tokens_update  = 4000
+# Living doc grows every chapter (population index, foreshadowing, evidence log).
+# Without this, call_api caps update output at expected_output_tokens_update and
+# the refresh starts truncating -> LivingDocValidationError.
+api_default_max_tokens_update  = 8000
+
+# ---------------------------------------------------------------------------
+# Cost limits
+# ---------------------------------------------------------------------------
+cost_limit_usd_per_session = 5.00
+cost_limit_usd_total       = 50.00
+
+# ---------------------------------------------------------------------------
+# Timeouts and retries
+# ---------------------------------------------------------------------------
+# Per-HTTP-request timeout. The chapter endpoint (qwen via Aliyun) can take close
+# to 180 s per attempt; 300 gives one attempt room to finish instead of timing out
+# into a retry. Wall time is handled by background invocation (see writer.md).
+timeout_seconds       = 300
+max_retries           = 3
+retry_backoff_seconds = [2, 8, 32]
+
+# ---------------------------------------------------------------------------
+# Context safety
+# ---------------------------------------------------------------------------
+context_safety_margin = 8000
+
+# ---------------------------------------------------------------------------
+# System prompts (overrides for fiction_loop format)
+# ---------------------------------------------------------------------------
+system_prompt_generate_chapter = """
+You are a fiction-writing assistant. You receive a self-contained chapter generation prompt that includes voice rules, world rules, and a full chapter brief. Write the chapter exactly as specified. Target length: 1800–2600 words — a complete chapter that lands shorter is acceptable, but never pad to reach length; never exceed 3000. The brief ends with a HARD RULES section: after drafting, silently re-check your chapter against every hard rule and fix violations before answering. Output the chapter text only — no preamble, no commentary, no meta-discussion. Begin with the chapter heading.
+"""
+
+system_prompt_update_living_doc = """
+You are a continuity-tracking assistant for a fiction loop. You receive the fiction world documents, the current living_document.md, authoritative state JSON, and the chapter just written. Produce an updated living_document.md that reflects the new state after this chapter. Preserve ALL section headers verbatim and in the same order. Update only the content within each section. The PROCESS STATE SUMMARY, POPULATION INDEX, and NEXT CHAPTER TARGET sections must be copied from the AUTHORITATIVE STATE blocks provided — never inferred from prose; the narrative sections (mystery thread, foreshadowing, notes) are yours to update from the chapter. Output the complete updated living_document.md only — no preamble, no commentary, no diff. The document must begin with the exact line: # DOCUMENT 4: LIVING DOCUMENT
+"""
+
+# ---------------------------------------------------------------------------
+# Required living_document.md sections (validated after LLM update)
+# ---------------------------------------------------------------------------
+required_living_doc_sections = [
+  "# DOCUMENT 4: LIVING DOCUMENT",
+  "## CURRENT STATE",
+  "## PROCESS STATE SUMMARY",
+  "## FAILURE MODES NOT YET SHOWN",
+  "## POPULATION INDEX",
+  "## MYSTERY PERSON THREAD",
+  "## MACRO MYSTERY EVIDENCE",
+  "## ACTIVE FORESHADOWING",
+  "## NEXT CHAPTER TARGET",
+  "## NOTES FOR AI — CURRENT SESSION",
+]
+
+# ---------------------------------------------------------------------------
+# Optional creativity controls (null = use model default)
+# ---------------------------------------------------------------------------
+# temperature = 0.8
+# top_p = 0.95
+# seed = null

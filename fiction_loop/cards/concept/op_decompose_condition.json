@@ -1,0 +1,49 @@
+{
+  "id": "op_decompose_condition",
+  "name": "Decompose condition / keep part drop part",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 5,
+  "arc_introduced": 3,
+  "current_touch": 0,
+  "name_attached": false,
+  "name_at_touch": 2,
+  "touch_schedule": {
+    "1": 3,
+    "2": 4,
+    "3": 5
+  },
+  "touch_target": 3,
+  "prerequisite": [
+    "op_separate_condition"
+  ],
+  "teaching_history": [],
+  "failure_modes_shown": [],
+  "failure_modes_not_yet_shown": [
+    "the executor on complex condition",
+    "the system builder on complex condition"
+  ],
+  "contexts_demonstrated": [],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "negotiation",
+  "transferred_to_ordinary_life": false,
+  "physical_anchor": "The gaze narrows; parts of the room deliberately ignored; a visible reduction of the attention field.",
+  "canonical_problem_structure": {
+    "unknown": "Unreachable under the full condition.",
+    "data": [
+      "Sufficient for a partial problem."
+    ],
+    "condition": "Compound; the whole resists, but one part alone determines something solid."
+  },
+  "canonical_correct_approach": "Keep one clause, drop the rest; solve what the partial condition determines; reintroduce the clauses one by one.",
+  "compressible_at_touch": 3
+}

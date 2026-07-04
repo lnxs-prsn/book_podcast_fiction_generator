@@ -1,10 +1,11 @@
 import os
+from pathlib import Path
 
 from config import load_config
 from engines.llm_script import LLMScriptEngine
-from engines.pdf_splitter import PDFSplitterEngine
 from engines.wavespeed_audio import WaveSpeedAudioEngine
 from engines.protocols import ScriptEngine, AudioEngine, SplitterEngine
+from format_adapters import get_splitter
 from llm.env import resolve_from_env
 from llm.factory import create_client
 
@@ -46,6 +47,7 @@ def default_audio_engine(speakers: dict | None = None) -> AudioEngine:
     return WaveSpeedAudioEngine(speakers=speakers)
 
 
-def default_splitter_engine() -> SplitterEngine:
+def default_splitter_engine(source: str | Path) -> SplitterEngine:
+    splitter_cls = get_splitter(source)
     client = create_client(**_llm_client_kwargs())
-    return PDFSplitterEngine(llm=client)
+    return splitter_cls(llm=client)

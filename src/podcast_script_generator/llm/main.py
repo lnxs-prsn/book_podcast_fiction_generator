@@ -15,9 +15,10 @@ from llm.exceptions import LLMConfigError
 from llm.factory import create_client
 from llm.protocol import LLMClient
 
+from format_adapters import get_extractor
+
 try:
     from podcast_script_generator.llm.parse_args import parse_args
-    from podcast_script_generator.llm.extract_pdf import extract_pdf
     from podcast_script_generator.llm.read_prompt import read_prompt
     from podcast_script_generator.llm.call_api import call_api
     from podcast_script_generator.llm.parse_output import parse_output
@@ -25,7 +26,6 @@ try:
     from podcast_script_generator.llm.exceptions import PodcastError
 except ImportError:
     from parse_args import parse_args
-    from extract_pdf import extract_pdf
     from read_prompt import read_prompt
     from call_api import call_api
     from parse_output import parse_output
@@ -37,7 +37,7 @@ logger = logging.getLogger(__name__)
 
 def main(llm: LLMClient | None = None) -> None:
     pdf_path, prompt_path, output_dir, context = parse_args()
-    pdf_text = extract_pdf(pdf_path)
+    pdf_text = get_extractor(pdf_path)(pdf_path)
     prompt_text = read_prompt(prompt_path, context)
 
     if llm is None:

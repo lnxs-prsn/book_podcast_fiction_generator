@@ -1,0 +1,50 @@
+{
+  "id": "op_inventors_paradox",
+  "name": "Inventor's Paradox",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 7,
+  "arc_introduced": 5,
+  "current_touch": 0,
+  "name_attached": false,
+  "name_at_touch": 2,
+  "touch_schedule": {
+    "1": 5,
+    "2": 6,
+    "3": 7,
+    "4": 8
+  },
+  "touch_target": 4,
+  "prerequisite": [
+    "op_generalisation"
+  ],
+  "teaching_history": [],
+  "failure_modes_shown": [],
+  "failure_modes_not_yet_shown": [
+    "the information gatherer",
+    "the perfectionist"
+  ],
+  "contexts_demonstrated": [],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "civic_institutional",
+  "transferred_to_ordinary_life": false,
+  "physical_anchor": "The widening — a step back, the gaze opening, the problem deliberately made larger before it is touched.",
+  "canonical_problem_structure": {
+    "unknown": "Specific, and harder because specific.",
+    "data": [
+      "Insufficient for the narrow question, exactly right for the broader one."
+    ],
+    "condition": "The general problem's solution covers the specific case; the specific case alone offers no structure."
+  },
+  "canonical_correct_approach": "Enlarge the problem on purpose; answer the bigger question; the specific answer falls out.",
+  "compressible_at_touch": 4
+}

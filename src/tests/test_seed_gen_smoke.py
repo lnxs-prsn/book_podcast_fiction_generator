@@ -63,7 +63,7 @@ class TestSeedGenCallApiTimeout:
         ) as mock_call_api, mock.patch(
             "fiction.seed_gen.cli.create_client", return_value=client
         ), mock.patch(
-            "fiction.seed_gen.cli.extract_pdf", return_value="book text"
+            "fiction.seed_gen.cli.get_extractor", return_value=lambda x: "book text"
         ), mock.patch(
             "fiction.seed_gen.cli.load_templates",
             return_value={f: "" for f in [
@@ -98,7 +98,7 @@ class TestSeedGenCallApiTimeout:
             import fiction.seed_gen.cli as sg
             # Reset create_client mock on the module
             sg.create_client = mock.MagicMock(return_value=client)
-            sg.extract_pdf = mock.MagicMock(return_value="book text")
+            sg.get_extractor = mock.MagicMock(return_value=lambda x: "book text")
             sg.load_templates = mock.MagicMock(return_value={
                 f: "" for f in [
                     "world_laws.md", "curriculum.md", "style_contract.md",

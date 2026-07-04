@@ -1,0 +1,50 @@
+{
+  "id": "op_working_backwards",
+  "name": "Working backwards / analysis",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 7,
+  "arc_introduced": 5,
+  "current_touch": 0,
+  "name_attached": false,
+  "name_at_touch": 2,
+  "touch_schedule": {
+    "1": 5,
+    "2": 6,
+    "3": 7,
+    "4": 8
+  },
+  "touch_target": 4,
+  "prerequisite": [
+    "op_auxiliary_problem"
+  ],
+  "teaching_history": [],
+  "failure_modes_shown": [],
+  "failure_modes_not_yet_shown": [
+    "the information gatherer",
+    "the perfectionist"
+  ],
+  "contexts_demonstrated": [],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "civic_institutional",
+  "transferred_to_ordinary_life": false,
+  "physical_anchor": "The physical turn — standing with the back to the data, facing where the end must be.",
+  "canonical_problem_structure": {
+    "unknown": "Unreachable from the data side; every forward move dead-ends.",
+    "data": [
+      "Many forward paths, all divergent — from the goal side, one path is visible."
+    ],
+    "condition": "A chain of dependencies legible only in reverse."
+  },
+  "canonical_correct_approach": "Assume it solved; stand at the end; ask what must have been true immediately before, and step back until known ground.",
+  "compressible_at_touch": 4
+}

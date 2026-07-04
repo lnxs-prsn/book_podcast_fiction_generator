@@ -37,20 +37,20 @@ Every stage from world_laws.md must appear here. -->
 
 ## Actions and Operations
 
-<!-- Map the genre's active events (combat, rituals, crafting, negotiation, etc.) to operations in the source domain.
-Derive operations from what the source book describes — do not import operations from other domains.
-Include failure modes and retry semantics where they apply. -->
+<!-- Map the genre's active events (combat, rituals, crafting, negotiation, etc.) to actions or processes in the source domain.
+Derive them from what the source book describes — do not import actions from other domains.
+Include failure modes where they apply. -->
 
 | [Genre] action | Source domain equivalent | Mechanics |
 |---|---|---|
-| [genre event] | [source domain operation] | [why the mechanic matches] |
-| [genre event] | [source domain operation] | [why the mechanic matches] |
-| [genre event] | [source domain operation] | [why the mechanic matches] |
-| [genre event] | [source domain operation] | [why the mechanic matches] |
+| [genre event] | [source domain action or process] | [why the mechanic matches] |
+| [genre event] | [source domain action or process] | [why the mechanic matches] |
+| [genre event] | [source domain action or process] | [why the mechanic matches] |
+| [genre event] | [source domain action or process] | [why the mechanic matches] |
 
 ## Resources
 
-<!-- Map the genre's consumable or tradable resources to resources in the source domain.
+<!-- Map the genre's significant or limited resources to resources in the source domain.
 "Properties that must match" column: only list properties that are mechanically identical in both domains.
 Do not list properties that merely sound similar. -->
 
@@ -78,17 +78,17 @@ Derive failures from what the source book describes as going wrong, not from oth
 
 <!-- Source domain problems resolve at their own pace. Fiction spans months or years.
 The concepts map 1:1; the clock does not. Define a consistent conversion rate or pacing breaks.
-List at least 6 operations from the source domain ordered from fastest to slowest, with their fiction-time equivalent.
-Derive the operations from what the source book describes — do not use preset operations from other domains. -->
+List at least 6 actions or processes from the source domain ordered from fastest to slowest, with their fiction-time equivalent.
+Derive them from what the source book describes — do not use preset actions from other domains. -->
 
-| Source domain operation | [Genre] equivalent time |
+| Source domain action or process | [Genre] equivalent time |
 |---|---|
-| [fastest operation in source domain] | [e.g., one breath, one glance] |
-| [source domain operation] | [e.g., one exchange in a scene] |
-| [source domain operation] | [e.g., seconds — a desperate reflex] |
-| [source domain operation] | [e.g., days of focused work] |
-| [source domain operation] | [e.g., months of effort] |
-| [slowest operation in source domain] | [e.g., years, a generation] |
+| [fastest action in source domain] | [e.g., one breath, one glance] |
+| [source domain action] | [e.g., one exchange in a scene] |
+| [source domain action] | [e.g., seconds — a desperate reflex] |
+| [source domain action] | [e.g., days of focused work] |
+| [source domain action] | [e.g., months of effort] |
+| [slowest action in source domain] | [e.g., years, a generation] |
 
 ## Prose Example
 

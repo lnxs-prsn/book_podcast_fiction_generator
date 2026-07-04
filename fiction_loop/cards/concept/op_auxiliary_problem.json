@@ -1,0 +1,50 @@
+{
+  "id": "op_auxiliary_problem",
+  "name": "Auxiliary problem",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 6,
+  "arc_introduced": 4,
+  "current_touch": 0,
+  "name_attached": false,
+  "name_at_touch": 2,
+  "touch_schedule": {
+    "1": 4,
+    "2": 5,
+    "3": 6,
+    "4": 7
+  },
+  "touch_target": 4,
+  "prerequisite": [
+    "op_auxiliary_elements"
+  ],
+  "teaching_history": [],
+  "failure_modes_shown": [],
+  "failure_modes_not_yet_shown": [
+    "the confident specialist",
+    "the force applier"
+  ],
+  "contexts_demonstrated": [],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "project_management",
+  "transferred_to_ordinary_life": false,
+  "physical_anchor": "Stepping physically back from the work; beginning something that looks unrelated — deliberately, not in defeat.",
+  "canonical_problem_structure": {
+    "unknown": "No foothold; the forward path exhausted.",
+    "data": [
+      "Useless to the original problem directly, but sufficient for a different problem the solver could pose."
+    ],
+    "condition": "The original yields only via the invented side-problem — and the detour visibly costs time and may fail."
+  },
+  "canonical_correct_approach": "Deliberately pose a different problem as a stepping stone, knowing the risk; work it; return with what it yields.",
+  "compressible_at_touch": 4
+}

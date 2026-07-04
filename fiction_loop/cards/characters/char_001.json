@@ -1,0 +1,29 @@
+{
+  "id": "char_001",
+  "name": "Yejide Adeyemi",
+  "age": 0,
+  "occupation": "fabric quality inspector at a garment factory",
+  "location_id": "loc_lagos",
+  "first_appeared": 1,
+  "gate_history": [
+    {
+      "gate_id": "G-001",
+      "grade": 2,
+      "operation_encountered": "op_what_is_missing",
+      "approach_taken": "the executor",
+      "understood": true,
+      "looked_back": true,
+      "transferred_to_life": true
+    }
+  ],
+  "comprehension_state": {
+    "op_what_is_missing": "understood"
+  },
+  "still_gets_wrong": [],
+  "ordinary_life_state": "Yejide shares a Lagos household with her younger sister Fadeke, who is trying to register for university, and their argument over missing paperwork and fees is resolved when Yejide asks what Fadeke actually needs.",
+  "life_progression": [],
+  "ordinary_life_transfers": [],
+  "anchor_observed": false,
+  "last_seen": 1,
+  "next_planned_appearance": null
+}

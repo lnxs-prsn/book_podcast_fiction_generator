@@ -1,0 +1,20 @@
+{
+  "id": "loc_accra",
+  "name": "Accra, Ghana",
+  "first_appeared": 2,
+  "institutional_response": {
+    "primary_body": "",
+    "approach": "",
+    "failure_mode": ""
+  },
+  "ordinary_life_texture": [
+    "A dispatch office ceiling fan turns overhead with a low, rhythmic clicking sound.",
+    "A depot manager and a roster clerk reconcile a missing bus assignment using sign-out logs and filing cabinets.",
+    "Driver claims about a bus being in the yard are checked against the official roster log."
+  ],
+  "macro_mystery_evidence_here": [],
+  "characters_based_here": [],
+  "chapters_set_here": [
+    2
+  ]
+}

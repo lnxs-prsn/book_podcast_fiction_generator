@@ -10,7 +10,7 @@ Novel: [working title]
 Protagonist: [name]
 Current chapter: 0 (not yet started)
 Current arc: Arc 1 — [Arc name] (Chapters 1–[N])
-Current [progression stage]: [starting state — mortal, apprentice, novice, etc.]
+Current [stage]: [protagonist's starting state — newcomer, learner, outsider, novice, etc.]
 
 --- ACTIVE VOCABULARY ---
 
@@ -39,9 +39,7 @@ None yet. This section will list planted seeds waiting to pay off.
 - what their starting misconception is (the "wrong teaching" they will have to unlearn)
 This paragraph governs the narrator's access to the protagonist's mind in Arc 1. -->
 
-[Protagonist] starts without any systems vocabulary. They perceive problems through
-[sensation / intuition / craft / social role]. Their first arc teaches them that
-[the thing they believe is one unified thing] is not — it is [the distributed/composed reality].
+Write one paragraph. Cover: what source-domain vocabulary the protagonist completely lacks, how they perceive the domain's challenges instead (through sensation, intuition, craft, social role, or prior experience), and what their starting misconception is — the specific wrong belief the story will force them to revise.
 
 --- NEXT CHAPTER TARGET ---
 

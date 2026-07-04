@@ -1,0 +1,49 @@
+{
+  "id": "op_subconscious_work",
+  "name": "Subconscious work",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 8,
+  "arc_introduced": 7,
+  "current_touch": 0,
+  "name_attached": false,
+  "name_at_touch": 1,
+  "touch_schedule": {
+    "1": 7,
+    "2": 8,
+    "3": 9
+  },
+  "touch_target": 3,
+  "prerequisite": [
+    "op_variation_restatement"
+  ],
+  "teaching_history": [],
+  "failure_modes_shown": [],
+  "failure_modes_not_yet_shown": [
+    "the heuristic-only solver",
+    "the guild verifier"
+  ],
+  "contexts_demonstrated": [],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "creative",
+  "transferred_to_ordinary_life": false,
+  "physical_anchor": "Everything put down; the room left, or the wall sat against; the return — and the question present on return.",
+  "canonical_problem_structure": {
+    "unknown": "Will not yield to continued effort; every conscious approach exhausted.",
+    "data": [
+      "Fully absorbed already; nothing new to gather."
+    ],
+    "condition": "The connection forms only after effort stops."
+  },
+  "canonical_correct_approach": "Stop entirely; leave; return — the right question is present on return.",
+  "compressible_at_touch": 3
+}

@@ -1,0 +1,56 @@
+{
+  "id": "op_identify_unknown",
+  "name": "Identify unknown / data / condition",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 2,
+  "arc_introduced": 1,
+  "current_touch": 1,
+  "name_attached": false,
+  "name_at_touch": 2,
+  "touch_schedule": {
+    "1": 1,
+    "2": 2
+  },
+  "touch_target": 2,
+  "prerequisite": [],
+  "teaching_history": [
+    {
+      "chapter": "002",
+      "char_id": "char_002",
+      "touch": 1,
+      "context": "workplace"
+    }
+  ],
+  "failure_modes_shown": [
+    "the executor",
+    "the system builder"
+  ],
+  "failure_modes_not_yet_shown": [
+    "the information gatherer"
+  ],
+  "contexts_demonstrated": [
+    "workplace"
+  ],
+  "contexts_not_yet_demonstrated": [
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate",
+    "professional"
+  ],
+  "preferred_context": "workplace",
+  "transferred_to_ordinary_life": true,
+  "physical_anchor": "Standing still at the entrance; naming aloud, to no one, what is wanted, what is given, what binds them — sometimes counted on three fingers.",
+  "canonical_problem_structure": {
+    "unknown": "Never stated; the room presents objects and a mechanism and lets the solver assume what is wanted.",
+    "data": [
+      "Fully visible, slightly too orderly — invites action before understanding."
+    ],
+    "condition": "Explicit but easy to skip past."
+  },
+  "canonical_correct_approach": "Stop at the entrance; name what is wanted, what is given, and what binds them — before touching anything.",
+  "compressible_at_touch": 2
+}

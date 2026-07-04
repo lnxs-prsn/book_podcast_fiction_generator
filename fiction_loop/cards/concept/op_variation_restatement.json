@@ -1,0 +1,50 @@
+{
+  "id": "op_variation_restatement",
+  "name": "Variation of the problem / restatement",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 7,
+  "arc_introduced": 6,
+  "current_touch": 0,
+  "name_attached": false,
+  "name_at_touch": 2,
+  "touch_schedule": {
+    "1": 6,
+    "2": 7,
+    "3": 8,
+    "4": 9
+  },
+  "touch_target": 4,
+  "prerequisite": [
+    "op_working_backwards"
+  ],
+  "teaching_history": [],
+  "failure_modes_shown": [],
+  "failure_modes_not_yet_shown": [
+    "the confident specialist",
+    "the variation-tester"
+  ],
+  "contexts_demonstrated": [],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "civic_institutional",
+  "transferred_to_ordinary_life": false,
+  "physical_anchor": "The long stillness; the frown that is not frustration but suspicion; the problem restated aloud in different words.",
+  "canonical_problem_structure": {
+    "unknown": "As stated, the wrong unknown — the stated problem is solvable and solving it changes nothing.",
+    "data": [
+      "Contains a remainder the stated problem never touches."
+    ],
+    "condition": "The true condition differs from the apparent one; closure responds only to the restated problem."
+  },
+  "canonical_correct_approach": "Ask whether the stated problem is the real problem; restate until the condition matches what the gate actually requires.",
+  "compressible_at_touch": 4
+}

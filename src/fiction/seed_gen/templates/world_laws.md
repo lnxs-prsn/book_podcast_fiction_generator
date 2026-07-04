@@ -5,15 +5,15 @@ Replace all placeholder text in [brackets]. Do not remove any section headers.
 Every mapping must share real mechanics — not just similar names. -->
 
 ### Premise
-<!-- One paragraph. Answer: what does "power" or "progression" map to in the source domain's terms?
+<!-- One paragraph. Answer: what does mastery or advancement map to in the source domain's terms?
 What is the genre's equivalent of the source domain's core resource or constraint?
 What is the genre's equivalent of failure or breakdown in the source domain?
 Derive all answers from the concepts extracted from the source book — do not import concepts from other domains.
 Be concrete — this paragraph seeds everything else in the pipeline. -->
 
-[State the core mapping: what the genre's power system IS in source-domain terms,
-what the protagonist's "energy" or "resource" represents (drawn from the source book's concepts),
-and what the world's underlying logic (laws, magic, rules) maps to (drawn from the source book).]
+[State the core mapping: what the genre's mastery or progression system IS in source-domain terms,
+what the protagonist's core resource or capacity represents (drawn from the source book's concepts),
+and what the world's underlying logic (laws, rules, constraints) maps to (drawn from the source book).]
 
 ### The [N] Stages
 
@@ -44,9 +44,9 @@ For each role: name the genre equivalent, explain what it does, and explain why 
 - [Genre phenomenon]: [source domain equivalent and why the mapping holds]
 - [Genre phenomenon]: [source domain equivalent and why the mapping holds]
 
-### Power System Rules
+### World Rules
 
-<!-- 4–6 rules that govern how power works in this world.
+<!-- 4–6 rules that govern how the world's core mechanics work.
 Each rule must encode a real constraint from the source domain — not flavor.
 Derive every rule from a concept in the source book.
 State what happens when the rule is violated. -->

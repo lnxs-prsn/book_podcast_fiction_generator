@@ -1,0 +1,30 @@
+{
+  "id": "G-001",
+  "type": "gate",
+  "grade": 2,
+  "location_id": "loc_lagos",
+  "chapter_opened": 1,
+  "chapter_closed": 0,
+  "status": "open",
+  "problem_structure": {
+    "unknown": "the empty niche in the center of the grid \u2014 the carved wooden bird that should be there but is not",
+    "data": [
+      "twenty-five shallow stone niches arranged in five rows and five columns",
+      "twenty-four carved wooden birds of different sizes, shapes, and woods",
+      "one empty niche in the central position of the third row"
+    ],
+    "condition": "the gate opens only when the solver names what is missing, not when the present birds are arranged, categorised, or catalogued"
+  },
+  "wrong_approaches_demonstrated": [
+    "the executor",
+    "the system builder",
+    "the information gatherer"
+  ],
+  "correct_approach": "Yejide stopped searching among the birds, sat down, looked at the grid as a structure rather than a collection of items, and asked what should occupy the empty niche; naming the absence caused the door to unlock before she moved.",
+  "characters_entered": [
+    "char_001"
+  ],
+  "operation_taught": "op_what_is_missing",
+  "anchor_present": true,
+  "notes": ""
+}

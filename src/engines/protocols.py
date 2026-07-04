@@ -6,7 +6,7 @@ from pathlib import Path
 class ScriptEngine(Protocol):
     def generate(
         self,
-        pdf_path: Path,
+        source_path: Path,
         *,
         context: str | None = None,
         fiction_dir: Path | None = None,
@@ -26,9 +26,11 @@ class AudioEngine(Protocol):
 
 @runtime_checkable
 class SplitterEngine(Protocol):
+    chapter_glob: str
+
     def split(
         self,
-        book_pdf: Path,
+        book_path: Path,
         *,
         toc_page: int | None = None,
         output_dir: Path,

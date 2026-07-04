@@ -166,7 +166,7 @@ def main() -> None:
 
         from endpoints.podcast import generate_book_podcast
         results = generate_book_podcast(
-            book_pdf=book_path,
+            book_path=book_path,
             toc_page=toc_page,
             script_engine=script_engine,
             audio_engine=audio_engine,

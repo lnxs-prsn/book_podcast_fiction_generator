@@ -1,0 +1,55 @@
+{
+  "id": "op_what_is_missing",
+  "name": "What is missing (absence over presence)",
+  "source_text": "P\u00f3lya, How to Solve It (2nd ed.) \u2014 Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 2,
+  "arc_introduced": 1,
+  "current_touch": 1,
+  "name_attached": true,
+  "name_at_touch": 1,
+  "touch_schedule": {
+    "1": 1,
+    "2": 2
+  },
+  "touch_target": 2,
+  "prerequisite": [],
+  "teaching_history": [
+    {
+      "chapter": "001",
+      "char_id": "char_001",
+      "touch": 1,
+      "context": "family_domestic"
+    }
+  ],
+  "failure_modes_shown": [
+    "the executor",
+    "the system builder",
+    "the information gatherer"
+  ],
+  "failure_modes_not_yet_shown": [],
+  "contexts_demonstrated": [
+    "family_domestic"
+  ],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "family_domestic",
+  "transferred_to_ordinary_life": true,
+  "physical_anchor": "The gaze that moves to where things are not; a hand resting on an empty space.",
+  "canonical_problem_structure": {
+    "unknown": "An absence; the room is complete except for one thing that should be there and is not.",
+    "data": [
+      "An almost-complete set whose completeness invites cataloguing."
+    ],
+    "condition": "Closure responds to the absence being named, not to the present things being arranged."
+  },
+  "canonical_correct_approach": "Ask what should be here and is not; search the gaps, not the contents.",
+  "compressible_at_touch": 2
+}

@@ -1,0 +1,49 @@
+{
+  "id": "op_analogy",
+  "name": "Analogy — simpler analogous problem",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 4,
+  "arc_introduced": 3,
+  "current_touch": 0,
+  "name_attached": false,
+  "name_at_touch": 2,
+  "touch_schedule": {
+    "1": 3,
+    "2": 4,
+    "3": 5
+  },
+  "touch_target": 3,
+  "prerequisite": [
+    "op_related_problem"
+  ],
+  "teaching_history": [],
+  "failure_modes_shown": [],
+  "failure_modes_not_yet_shown": [
+    "the executor on complex condition",
+    "the system builder on complex condition"
+  ],
+  "contexts_demonstrated": [],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "teaching_mentoring",
+  "transferred_to_ordinary_life": false,
+  "physical_anchor": "Sketching a smaller version — in dust, on a palm, on paper; eyes on the relations, not the contents.",
+  "canonical_problem_structure": {
+    "unknown": "Too complex to attack directly.",
+    "data": [
+      "Relations that survive simplification — a smaller problem with identical structure can be built."
+    ],
+    "condition": "The simpler constructed problem shares the original's structural relations exactly."
+  },
+  "canonical_correct_approach": "Construct the simplest problem with the same relations; solve it; carry the method back.",
+  "compressible_at_touch": 3
+}

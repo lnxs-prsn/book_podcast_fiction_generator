@@ -1,0 +1,48 @@
+{
+  "id": "op_check_result",
+  "name": "Can you check the result?",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 3,
+  "arc_introduced": 2,
+  "current_touch": 0,
+  "name_attached": false,
+  "name_at_touch": 1,
+  "touch_schedule": {
+    "1": 2,
+    "2": 3
+  },
+  "touch_target": 2,
+  "prerequisite": [
+    "op_identify_unknown"
+  ],
+  "teaching_history": [],
+  "failure_modes_shown": [],
+  "failure_modes_not_yet_shown": [
+    "the confident specialist",
+    "the hypothesis tester"
+  ],
+  "contexts_demonstrated": [],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "professional",
+  "transferred_to_ordinary_life": false,
+  "physical_anchor": "Standing at the gate after the solution, waiting; not assuming closure.",
+  "canonical_problem_structure": {
+    "unknown": "Clear, with a plausible solution easy to produce.",
+    "data": [
+      "Supports two candidates — one correct, one method-correct but wrong."
+    ],
+    "condition": "Contains a built-in way to test a candidate against the original requirement."
+  },
+  "canonical_correct_approach": "Do not stop at 'the method worked'; test the result against the condition itself.",
+  "compressible_at_touch": 2
+}

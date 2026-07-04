@@ -1,0 +1,50 @@
+{
+  "id": "op_look_at_unknown",
+  "name": "Look at the unknown",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 4,
+  "arc_introduced": 1,
+  "current_touch": 0,
+  "name_attached": false,
+  "name_at_touch": 2,
+  "touch_schedule": {
+    "1": 1,
+    "2": 2,
+    "3": 3
+  },
+  "touch_target": 3,
+  "prerequisite": [
+    "op_identify_unknown"
+  ],
+  "teaching_history": [],
+  "failure_modes_shown": [],
+  "failure_modes_not_yet_shown": [
+    "the executor",
+    "the system builder",
+    "the information gatherer"
+  ],
+  "contexts_demonstrated": [],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "civic_institutional",
+  "transferred_to_ordinary_life": false,
+  "physical_anchor": "Standing at the entrance, eyes fixed on where the answer must appear — back half-turned to the data.",
+  "canonical_problem_structure": {
+    "unknown": "Of a recognizable category (a quantity, a place, a person) — naming the category activates memory.",
+    "data": [
+      "Abundant and seductive; starting from it leads into a maze."
+    ],
+    "condition": "Links data to unknown only when read from the unknown's side."
+  },
+  "canonical_correct_approach": "Stand with the unknown; ask what kind of thing is wanted and what has ever produced that kind of thing.",
+  "compressible_at_touch": 3
+}

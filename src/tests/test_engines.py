@@ -24,9 +24,10 @@ def test_default_llm_script_engine_passes_openrouter_timeout_seconds(
 def test_default_splitter_engine_passes_openrouter_timeout_seconds(
     mock_load_config, mock_create_client
 ):
+    from pathlib import Path
     mock_load_config.return_value = {}
     with patch.dict("os.environ", {"OPENROUTER_TIMEOUT_SECONDS": "60"}, clear=True):
-        engines_factory.default_splitter_engine()
+        engines_factory.default_splitter_engine(Path("book.pdf"))
     mock_create_client.assert_called_once()
     assert mock_create_client.call_args.kwargs["timeout"] == 60.0
 
@@ -69,11 +70,12 @@ def test_default_llm_script_engine_selects_llm_script_engine(
 def test_default_splitter_engine_selects_pdf_splitter_engine(
     mock_load_config, mock_create_client
 ):
+    from pathlib import Path
     from engines.pdf_splitter import PDFSplitterEngine
 
     mock_load_config.return_value = {}
     with patch.dict("os.environ", {}, clear=True):
-        result = engines_factory.default_splitter_engine()
+        result = engines_factory.default_splitter_engine(Path("book.pdf"))
     assert isinstance(result, PDFSplitterEngine)
 
 

@@ -1,0 +1,50 @@
+{
+  "id": "op_reductio",
+  "name": "Reductio ad absurdum",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 7,
+  "arc_introduced": 5,
+  "current_touch": 0,
+  "name_attached": false,
+  "name_at_touch": 1,
+  "touch_schedule": {
+    "1": 5,
+    "2": 6,
+    "3": 7,
+    "4": 8
+  },
+  "touch_target": 4,
+  "prerequisite": [
+    "op_working_backwards"
+  ],
+  "teaching_history": [],
+  "failure_modes_shown": [],
+  "failure_modes_not_yet_shown": [
+    "the information gatherer",
+    "the perfectionist"
+  ],
+  "contexts_demonstrated": [],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "argument_debate",
+  "transferred_to_ordinary_life": false,
+  "physical_anchor": "Building the case for the thing known to be wrong — carefully, precisely; waiting for the break.",
+  "canonical_problem_structure": {
+    "unknown": "A certainty — something to prove impossible or necessary; no direct proof available.",
+    "data": [
+      "Consistent with the false assumption at first; the contradiction sits several honest steps deep."
+    ],
+    "condition": "Assuming the opposite and following it faithfully must break against a given fact."
+  },
+  "canonical_correct_approach": "Assume what you believe false; follow it precisely; the break is the proof.",
+  "compressible_at_touch": 4
+}

@@ -1,0 +1,15 @@
+{
+  "_note": "Schema reference only. Actual location files are named [location_id].json and created by Updater or human.",
+  "id": "loc_XXX",
+  "name": "[ ]",
+  "first_appeared": 0,
+  "institutional_response": {
+    "primary_body": "[ ]",
+    "approach": "[ ]",
+    "failure_mode": "[ ]"
+  },
+  "ordinary_life_texture": [],
+  "macro_mystery_evidence_here": [],
+  "characters_based_here": [],
+  "chapters_set_here": []
+}

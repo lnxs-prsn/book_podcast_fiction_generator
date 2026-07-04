@@ -1,0 +1,50 @@
+{
+  "id": "op_generalisation",
+  "name": "Generalisation",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 6,
+  "arc_introduced": 5,
+  "current_touch": 0,
+  "name_attached": false,
+  "name_at_touch": 1,
+  "touch_schedule": {
+    "1": 5,
+    "2": 6,
+    "3": 7,
+    "4": 8
+  },
+  "touch_target": 4,
+  "prerequisite": [
+    "op_specialisation"
+  ],
+  "teaching_history": [],
+  "failure_modes_shown": [],
+  "failure_modes_not_yet_shown": [
+    "the information gatherer",
+    "the perfectionist"
+  ],
+  "contexts_demonstrated": [],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "professional",
+  "transferred_to_ordinary_life": false,
+  "physical_anchor": "Stepping back until the whole room is in view at once; asking a question about all gates rather than this one.",
+  "canonical_problem_structure": {
+    "unknown": "A specific instance whose specificity hides the structure.",
+    "data": [
+      "Peculiarities that look load-bearing and aren't."
+    ],
+    "condition": "An instance of a general class with a reachable class solution."
+  },
+  "canonical_correct_approach": "Ask what this is a case of; solve the class; step back down to the instance.",
+  "compressible_at_touch": 4
+}

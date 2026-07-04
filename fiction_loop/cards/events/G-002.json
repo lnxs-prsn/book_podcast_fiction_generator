@@ -1,0 +1,31 @@
+{
+  "id": "G-002",
+  "type": "gate",
+  "grade": 2,
+  "location_id": "loc_accra",
+  "chapter_opened": 2,
+  "chapter_closed": 0,
+  "status": "open",
+  "problem_structure": {
+    "unknown": "what the gate wants — the balance between each route's departure weight and its cargo load",
+    "data": [
+      "yellow route manifests printed on thick card",
+      "fifty wall slots with brass number plates",
+      "cargo lists and fare lines on each manifest",
+      "a scale on the floor and the condition written on the doorframe"
+    ],
+    "condition": "the load must balance the route"
+  },
+  "wrong_approaches_demonstrated": [
+    "the executor",
+    "the system builder"
+  ],
+  "correct_approach": "Kwabena stopped acting on the obvious route-number pattern, sat still until the background became visible, and named the three parts aloud — what is wanted (the departure weight), what is given (the route manifests and cargo lists), and what binds them (the balance condition) — then matched each manifest's weight on the scale until the gate closed.",
+  "characters_entered": [
+    "char_002",
+    "char_002a"
+  ],
+  "operation_taught": "op_identify_unknown",
+  "anchor_present": true,
+  "notes": ""
+}

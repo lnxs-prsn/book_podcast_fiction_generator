@@ -15,7 +15,7 @@ Now read the book text below (after the second --- separator). The book is a non
 For each genre, provide:
 - **World sketch**: What does this fictional world look like? What is the setting, technology level, and feel?
 - **Concept mapping**: How do the domain concepts map to the genre's mechanics, challenges, and world rules?
-- **Template fit**: Explain why this genre satisfies the template criteria — specifically address: progression stages, physical grounding, failure modes, time scaling, and narrative engine variety.
+- **Template fit**: Explain why this genre satisfies the template criteria — specifically address: learning stages, physical grounding, failure modes, time scaling, and narrative engine variety.
 - **Protagonist archetype**: What kind of character naturally encounters and must master these concepts?
 - **Example arc hook**: A one-sentence story hook for the first arc.
 

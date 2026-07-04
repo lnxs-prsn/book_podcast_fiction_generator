@@ -8,9 +8,9 @@ from llm.env import resolve_from_env
 from llm.exceptions import LLMConfigError
 from llm.factory import create_client
 
+from format_adapters import get_extractor
 from podcast_script_generator.llm.call_api import call_api
 from podcast_script_generator.llm.exceptions import ScriptGenerationError
-from podcast_script_generator.llm.extract_pdf import extract_pdf
 from podcast_script_generator.llm.parse_output import parse_output
 from podcast_script_generator.llm.save_output import save_output
 
@@ -274,7 +274,7 @@ def main() -> None:
         )
 
         templates = load_templates()
-        book_text = truncate_pdf_text(extract_pdf(args.source_pdf))
+        book_text = truncate_pdf_text(get_extractor(args.source_pdf)(args.source_pdf))
         pass1_prompt = build_pass1_prompt(templates)
 
         try:
@@ -306,3 +306,7 @@ def main() -> None:
         sys.stderr.write(f"Unexpected error: {e}\n")
         logger.exception("Unhandled exception in seed_gen")
         sys.exit(1)
+
+
+if __name__ == "__main__":
+    main()

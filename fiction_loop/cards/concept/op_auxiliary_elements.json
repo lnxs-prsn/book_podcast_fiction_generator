@@ -1,0 +1,49 @@
+{
+  "id": "op_auxiliary_elements",
+  "name": "Introduce auxiliary elements",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 5,
+  "arc_introduced": 3,
+  "current_touch": 0,
+  "name_attached": false,
+  "name_at_touch": 1,
+  "touch_schedule": {
+    "1": 3,
+    "2": 4,
+    "3": 5
+  },
+  "touch_target": 3,
+  "prerequisite": [
+    "op_use_related_problem"
+  ],
+  "teaching_history": [],
+  "failure_modes_shown": [],
+  "failure_modes_not_yet_shown": [
+    "the executor on complex condition",
+    "the system builder on complex condition"
+  ],
+  "contexts_demonstrated": [],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "family_domestic",
+  "transferred_to_ordinary_life": false,
+  "physical_anchor": "Hands moving to the space between things — adding a mark, a line, an object that was not given.",
+  "canonical_problem_structure": {
+    "unknown": "Connected to the data only through something not given.",
+    "data": [
+      "Complete but disconnected — two shores, no bridge."
+    ],
+    "condition": "Satisfiable only after the solver adds an element of their own."
+  },
+  "canonical_correct_approach": "Add what was not given — the line, the mark, the sub-unknown that makes a known method applicable.",
+  "compressible_at_touch": 3
+}

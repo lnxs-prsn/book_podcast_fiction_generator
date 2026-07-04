@@ -11,6 +11,9 @@ from dotenv import load_dotenv
 # DOTENV_PATH can be used to point at a specific env file.
 load_dotenv(os.environ.get("DOTENV_PATH", ".env"))
 
+sys.path.insert(0, str(Path(__file__).resolve().parent / "src"))
+from format_adapters import registered_extensions  # noqa: E402
+
 PROJECT_ROOT = Path(__file__).resolve().parent
 SRC_DIR = PROJECT_ROOT / "src"
 
@@ -43,12 +46,12 @@ def ask_pdf(label: str) -> Path:
     for attempt in range(1, 4):
         raw = ask(f"{label}: ")
         p = Path(raw).expanduser()
-        if p.exists() and p.suffix.lower() == ".pdf":
+        if p.exists() and p.suffix.lower() in registered_extensions():
             return p.resolve()
         if not p.exists():
             print(f"  Error: file not found: {p}")
         else:
-            print(f"  Error: not a PDF file: {p}")
+            print(f"  Error: not a supported source file: {p}")
         if attempt == 3:
             print("  Too many invalid attempts. Aborting.")
             return None

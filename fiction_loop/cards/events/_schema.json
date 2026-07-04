@@ -1,0 +1,21 @@
+{
+  "_note": "Schema reference only. Actual event files are named [event_id].json and created by Updater. Closed events move to /archive/.",
+  "id": "G-XXX",
+  "type": "gate",
+  "grade": 0,
+  "location_id": "[ ]",
+  "chapter_opened": 0,
+  "chapter_closed": 0,
+  "status": "open",
+  "problem_structure": {
+    "unknown": "[ ]",
+    "data": [],
+    "condition": "[ ]"
+  },
+  "wrong_approaches_demonstrated": [],
+  "correct_approach": "[ ]",
+  "characters_entered": [],
+  "operation_taught": "[ ]",
+  "anchor_present": false,
+  "notes": "[ ]"
+}

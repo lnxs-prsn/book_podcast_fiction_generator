@@ -1,0 +1,61 @@
+{
+  "story_title": "The Sankofa Gates",
+  "genre": "African gate-clearing process fiction — contemporary Africa, in the Korean/Japanese gate-fiction tradition",
+  "source_material": "Pólya, G. — How to Solve It: A New Aspect of Mathematical Method (2nd ed.) — books/How to Solve It_ A New Aspect  - Polya, G._7564 (1).epub",
+  "chapter_count": 2,
+  "arc_current": 1,
+  "process_state_summary": {
+    "op_what_is_missing": {
+      "touch": 1,
+      "last_chapter": "001"
+    },
+    "op_identify_unknown": {
+      "touch": 1,
+      "last_chapter": "002"
+    }
+  },
+  "failure_modes_not_yet_shown": [],
+  "population_index": [
+    {
+      "id": "char_001",
+      "name": "Yejide Adeyemi",
+      "status": "active",
+      "last_seen": "001"
+    },
+    {
+      "id": "char_002",
+      "name": "Kwabena Asante",
+      "status": "active",
+      "last_seen": "002"
+    },
+    {
+      "id": "char_002a",
+      "name": "Ama Serwah",
+      "status": "active",
+      "last_seen": "002"
+    }
+  ],
+  "anchor_summary": "Last appeared ch. 002 (notebook_page); 2 total appearances.",
+  "macro_mystery_evidence": [
+    {
+      "chapter": "001",
+      "evidence": "The same figure appeared on the street before the gate opened and afterward recorded that the empty niche stayed visually constant across three different solver approaches, as if the gate were tracking what the solvers failed to see."
+    },
+    {
+      "chapter": "002",
+      "evidence": "A torn notebook page in unfamiliar handwriting is found on the floor inside the Achimota depot gate, using the same concise notation as the Lagos observation and recording Kwabena's wrong approach as the executor approach."
+    }
+  ],
+  "next_chapter_pointer": {
+    "chapter": "003",
+    "type": "return_to_character",
+    "char_id": "char_002",
+    "operation_due": "op_identify_unknown",
+    "touch_due": 2,
+    "name_due": true,
+    "failure_mode_to_show": "the information gatherer",
+    "secondary_touches": [],
+    "echo_touch": null,
+    "anchor_appears": true
+  }
+}

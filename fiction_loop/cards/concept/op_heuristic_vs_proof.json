@@ -1,0 +1,49 @@
+{
+  "id": "op_heuristic_vs_proof",
+  "name": "Heuristic reasoning vs proof distinction",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 8,
+  "arc_introduced": 7,
+  "current_touch": 0,
+  "name_attached": false,
+  "name_at_touch": 2,
+  "touch_schedule": {
+    "1": 7,
+    "2": 8,
+    "3": 9
+  },
+  "touch_target": 3,
+  "prerequisite": [
+    "op_variation_restatement"
+  ],
+  "teaching_history": [],
+  "failure_modes_shown": [],
+  "failure_modes_not_yet_shown": [
+    "the heuristic-only solver",
+    "the guild verifier"
+  ],
+  "contexts_demonstrated": [],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "professional",
+  "transferred_to_ordinary_life": false,
+  "physical_anchor": "Movement with deliberateness that is not certainty; a running note kept of what is not yet checked.",
+  "canonical_problem_structure": {
+    "unknown": "Reachable by a plausible path that cannot yet be verified.",
+    "data": [
+      "Enough for a good guess now; enough for verification only separately, later."
+    ],
+    "condition": "Acting on the guess is necessary (time), and verifying it is also necessary (what follows punishes unverified confidence)."
+  },
+  "canonical_correct_approach": "Commit to the provisional path while separately tracking what remains unverified; do both, confuse neither.",
+  "compressible_at_touch": 3
+}

@@ -1,0 +1,944 @@
+{
+  "context_enum": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "operations": {
+    "op_identify_unknown": {
+      "name": "Identify unknown / data / condition",
+      "difficulty_rating": 2,
+      "arc_introduced": 1,
+      "current_touch": 1,
+      "name_attached": false,
+      "name_at_touch": 2,
+      "touch_schedule": {
+        "1": 1,
+        "2": 2
+      },
+      "touch_target": 2,
+      "prerequisite": [],
+      "teaching_history": [
+        {
+          "chapter": "002",
+          "char_id": "char_002",
+          "touch": 1,
+          "context": "workplace"
+        }
+      ],
+      "failure_modes_shown": [
+        "the executor",
+        "the system builder"
+      ],
+      "failure_modes_not_yet_shown": [
+        "the information gatherer"
+      ],
+      "contexts_demonstrated": [
+        "workplace"
+      ],
+      "contexts_not_yet_demonstrated": [
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate",
+        "professional"
+      ],
+      "preferred_context": "workplace",
+      "transferred_to_ordinary_life": true,
+      "compressible_at_touch": 2
+    },
+    "op_what_is_missing": {
+      "name": "What is missing (absence over presence)",
+      "difficulty_rating": 2,
+      "arc_introduced": 1,
+      "current_touch": 1,
+      "name_attached": true,
+      "name_at_touch": 1,
+      "touch_schedule": {
+        "1": 1,
+        "2": 2
+      },
+      "touch_target": 2,
+      "prerequisite": [],
+      "teaching_history": [
+        {
+          "chapter": "001",
+          "char_id": "char_001",
+          "touch": 1,
+          "context": "family_domestic"
+        }
+      ],
+      "failure_modes_shown": [
+        "the executor",
+        "the system builder",
+        "the information gatherer"
+      ],
+      "failure_modes_not_yet_shown": [],
+      "contexts_demonstrated": [
+        "family_domestic"
+      ],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "family_domestic",
+      "transferred_to_ordinary_life": true,
+      "compressible_at_touch": 2
+    },
+    "op_separate_condition": {
+      "name": "Separate the parts of the condition",
+      "difficulty_rating": 3,
+      "arc_introduced": 1,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 2,
+      "touch_schedule": {
+        "1": 1,
+        "2": 2
+      },
+      "touch_target": 2,
+      "prerequisite": [
+        "op_identify_unknown"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the executor",
+        "the system builder",
+        "the information gatherer"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "workplace",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 2
+    },
+    "op_use_all_data": {
+      "name": "Did you use all the data?",
+      "difficulty_rating": 3,
+      "arc_introduced": 2,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 1,
+      "touch_schedule": {
+        "1": 2,
+        "2": 3
+      },
+      "touch_target": 2,
+      "prerequisite": [
+        "op_separate_condition"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the confident specialist",
+        "the hypothesis tester"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "professional",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 2
+    },
+    "op_check_result": {
+      "name": "Can you check the result?",
+      "difficulty_rating": 3,
+      "arc_introduced": 2,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 1,
+      "touch_schedule": {
+        "1": 2,
+        "2": 3
+      },
+      "touch_target": 2,
+      "prerequisite": [
+        "op_identify_unknown"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the confident specialist",
+        "the hypothesis tester"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "professional",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 2
+    },
+    "op_derive_differently": {
+      "name": "Can you derive the result differently?",
+      "difficulty_rating": 3,
+      "arc_introduced": 3,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 1,
+      "touch_schedule": {
+        "1": 3,
+        "2": 4
+      },
+      "touch_target": 2,
+      "prerequisite": [
+        "op_looking_back"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the executor on complex condition",
+        "the system builder on complex condition"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "creative",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 2
+    },
+    "op_look_at_unknown": {
+      "name": "Look at the unknown",
+      "difficulty_rating": 4,
+      "arc_introduced": 1,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 2,
+      "touch_schedule": {
+        "1": 1,
+        "2": 2,
+        "3": 3
+      },
+      "touch_target": 3,
+      "prerequisite": [
+        "op_identify_unknown"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the executor",
+        "the system builder",
+        "the information gatherer"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "civic_institutional",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 3
+    },
+    "op_related_problem": {
+      "name": "Do you know a related problem?",
+      "difficulty_rating": 4,
+      "arc_introduced": 2,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 2,
+      "touch_schedule": {
+        "1": 2,
+        "2": 3,
+        "3": 4
+      },
+      "touch_target": 3,
+      "prerequisite": [
+        "op_look_at_unknown"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the confident specialist",
+        "the hypothesis tester"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "professional",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 3
+    },
+    "op_use_related_problem": {
+      "name": "Here is a problem related to yours and solved before",
+      "difficulty_rating": 4,
+      "arc_introduced": 2,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 1,
+      "touch_schedule": {
+        "1": 2,
+        "2": 3,
+        "3": 4
+      },
+      "touch_target": 3,
+      "prerequisite": [
+        "op_related_problem"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the confident specialist",
+        "the hypothesis tester"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "teaching_mentoring",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 3
+    },
+    "op_analogy": {
+      "name": "Analogy — simpler analogous problem",
+      "difficulty_rating": 4,
+      "arc_introduced": 3,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 2,
+      "touch_schedule": {
+        "1": 3,
+        "2": 4,
+        "3": 5
+      },
+      "touch_target": 3,
+      "prerequisite": [
+        "op_related_problem"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the executor on complex condition",
+        "the system builder on complex condition"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "teaching_mentoring",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 3
+    },
+    "op_looking_back": {
+      "name": "Looking back / transfer",
+      "difficulty_rating": 4,
+      "arc_introduced": 2,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 2,
+      "touch_schedule": {
+        "1": 2,
+        "2": 3,
+        "3": 4
+      },
+      "touch_target": 3,
+      "prerequisite": [
+        "op_check_result"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the confident specialist",
+        "the hypothesis tester"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "professional",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 3
+    },
+    "op_decompose_condition": {
+      "name": "Decompose condition / keep part drop part",
+      "difficulty_rating": 5,
+      "arc_introduced": 3,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 2,
+      "touch_schedule": {
+        "1": 3,
+        "2": 4,
+        "3": 5
+      },
+      "touch_target": 3,
+      "prerequisite": [
+        "op_separate_condition"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the executor on complex condition",
+        "the system builder on complex condition"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "negotiation",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 3
+    },
+    "op_auxiliary_elements": {
+      "name": "Introduce auxiliary elements",
+      "difficulty_rating": 5,
+      "arc_introduced": 3,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 1,
+      "touch_schedule": {
+        "1": 3,
+        "2": 4,
+        "3": 5
+      },
+      "touch_target": 3,
+      "prerequisite": [
+        "op_use_related_problem"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the executor on complex condition",
+        "the system builder on complex condition"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "family_domestic",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 3
+    },
+    "op_use_result": {
+      "name": "Can you use the result?",
+      "difficulty_rating": 5,
+      "arc_introduced": 4,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 1,
+      "touch_schedule": {
+        "1": 4,
+        "2": 5,
+        "3": 6
+      },
+      "touch_target": 3,
+      "prerequisite": [
+        "op_looking_back"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the confident specialist",
+        "the force applier"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "professional",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 3
+    },
+    "op_auxiliary_problem": {
+      "name": "Auxiliary problem",
+      "difficulty_rating": 6,
+      "arc_introduced": 4,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 2,
+      "touch_schedule": {
+        "1": 4,
+        "2": 5,
+        "3": 6,
+        "4": 7
+      },
+      "touch_target": 4,
+      "prerequisite": [
+        "op_auxiliary_elements"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the confident specialist",
+        "the force applier"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "project_management",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 4
+    },
+    "op_generalisation": {
+      "name": "Generalisation",
+      "difficulty_rating": 6,
+      "arc_introduced": 5,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 1,
+      "touch_schedule": {
+        "1": 5,
+        "2": 6,
+        "3": 7,
+        "4": 8
+      },
+      "touch_target": 4,
+      "prerequisite": [
+        "op_specialisation"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the information gatherer",
+        "the perfectionist"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "professional",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 4
+    },
+    "op_specialisation": {
+      "name": "Specialisation",
+      "difficulty_rating": 5,
+      "arc_introduced": 4,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 1,
+      "touch_schedule": {
+        "1": 4,
+        "2": 5,
+        "3": 6
+      },
+      "touch_target": 3,
+      "prerequisite": [
+        "op_analogy"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the confident specialist",
+        "the force applier"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "teaching_mentoring",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 3
+    },
+    "op_working_backwards": {
+      "name": "Working backwards / analysis",
+      "difficulty_rating": 7,
+      "arc_introduced": 5,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 2,
+      "touch_schedule": {
+        "1": 5,
+        "2": 6,
+        "3": 7,
+        "4": 8
+      },
+      "touch_target": 4,
+      "prerequisite": [
+        "op_auxiliary_problem"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the information gatherer",
+        "the perfectionist"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "civic_institutional",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 4
+    },
+    "op_variation_restatement": {
+      "name": "Variation of the problem / restatement",
+      "difficulty_rating": 7,
+      "arc_introduced": 6,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 2,
+      "touch_schedule": {
+        "1": 6,
+        "2": 7,
+        "3": 8,
+        "4": 9
+      },
+      "touch_target": 4,
+      "prerequisite": [
+        "op_working_backwards"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the confident specialist",
+        "the variation-tester"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "civic_institutional",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 4
+    },
+    "op_inventors_paradox": {
+      "name": "Inventor's Paradox",
+      "difficulty_rating": 7,
+      "arc_introduced": 5,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 2,
+      "touch_schedule": {
+        "1": 5,
+        "2": 6,
+        "3": 7,
+        "4": 8
+      },
+      "touch_target": 4,
+      "prerequisite": [
+        "op_generalisation"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the information gatherer",
+        "the perfectionist"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "civic_institutional",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 4
+    },
+    "op_reductio": {
+      "name": "Reductio ad absurdum",
+      "difficulty_rating": 7,
+      "arc_introduced": 5,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 1,
+      "touch_schedule": {
+        "1": 5,
+        "2": 6,
+        "3": 7,
+        "4": 8
+      },
+      "touch_target": 4,
+      "prerequisite": [
+        "op_working_backwards"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the information gatherer",
+        "the perfectionist"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "argument_debate",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 4
+    },
+    "op_heuristic_vs_proof": {
+      "name": "Heuristic reasoning vs proof distinction",
+      "difficulty_rating": 8,
+      "arc_introduced": 7,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 2,
+      "touch_schedule": {
+        "1": 7,
+        "2": 8,
+        "3": 9
+      },
+      "touch_target": 3,
+      "prerequisite": [
+        "op_variation_restatement"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the heuristic-only solver",
+        "the guild verifier"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "professional",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 3
+    },
+    "op_subconscious_work": {
+      "name": "Subconscious work",
+      "difficulty_rating": 8,
+      "arc_introduced": 7,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 1,
+      "touch_schedule": {
+        "1": 7,
+        "2": 8,
+        "3": 9
+      },
+      "touch_target": 3,
+      "prerequisite": [
+        "op_variation_restatement"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the heuristic-only solver",
+        "the guild verifier"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "creative",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 3
+    },
+    "op_auxiliary_chains": {
+      "name": "Auxiliary problem chains",
+      "difficulty_rating": 8,
+      "arc_introduced": 8,
+      "current_touch": 0,
+      "name_attached": false,
+      "name_at_touch": 1,
+      "touch_schedule": {
+        "1": 8,
+        "2": 9
+      },
+      "touch_target": 2,
+      "prerequisite": [
+        "op_auxiliary_problem",
+        "op_working_backwards"
+      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
+      "failure_modes_not_yet_shown": [
+        "the single-step auxiliary solver",
+        "the planner without synthesis"
+      ],
+      "contexts_demonstrated": [],
+      "contexts_not_yet_demonstrated": [
+        "workplace",
+        "professional",
+        "family_domestic",
+        "civic_institutional",
+        "teaching_mentoring",
+        "negotiation",
+        "project_management",
+        "creative",
+        "argument_debate"
+      ],
+      "preferred_context": "project_management",
+      "transferred_to_ordinary_life": false,
+      "compressible_at_touch": 2
+    }
+  }
+}

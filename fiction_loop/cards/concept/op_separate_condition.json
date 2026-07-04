@@ -1,0 +1,49 @@
+{
+  "id": "op_separate_condition",
+  "name": "Separate the parts of the condition",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 3,
+  "arc_introduced": 1,
+  "current_touch": 0,
+  "name_attached": false,
+  "name_at_touch": 2,
+  "touch_schedule": {
+    "1": 1,
+    "2": 2
+  },
+  "touch_target": 2,
+  "prerequisite": [
+    "op_identify_unknown"
+  ],
+  "teaching_history": [],
+  "failure_modes_shown": [],
+  "failure_modes_not_yet_shown": [
+    "the executor",
+    "the system builder",
+    "the information gatherer"
+  ],
+  "contexts_demonstrated": [],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "workplace",
+  "transferred_to_ordinary_life": false,
+  "physical_anchor": "Reading the condition clause by clause, a pause between clauses; covering part of it with a hand to see one part alone.",
+  "canonical_problem_structure": {
+    "unknown": "Clear.",
+    "data": [
+      "Clear."
+    ],
+    "condition": "Compound — several clauses fused into what reads as one requirement; taken whole, it stalls."
+  },
+  "canonical_correct_approach": "Split the condition into clauses; test each alone; find which one actually binds.",
+  "compressible_at_touch": 2
+}

@@ -1,0 +1,49 @@
+{
+  "id": "op_use_related_problem",
+  "name": "Here is a problem related to yours and solved before",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 4,
+  "arc_introduced": 2,
+  "current_touch": 0,
+  "name_attached": false,
+  "name_at_touch": 1,
+  "touch_schedule": {
+    "1": 2,
+    "2": 3,
+    "3": 4
+  },
+  "touch_target": 3,
+  "prerequisite": [
+    "op_related_problem"
+  ],
+  "teaching_history": [],
+  "failure_modes_shown": [],
+  "failure_modes_not_yet_shown": [
+    "the confident specialist",
+    "the hypothesis tester"
+  ],
+  "contexts_demonstrated": [],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "teaching_mentoring",
+  "transferred_to_ordinary_life": false,
+  "physical_anchor": "Holding the remembered thing beside the present one — eyes moving between two points, comparing structure.",
+  "canonical_problem_structure": {
+    "unknown": "Reachable by adapting a known solution, not by re-deriving.",
+    "data": [
+      "Includes a bridge element that maps the old solution onto the new problem."
+    ],
+    "condition": "Satisfied by the old method or result — but only after deliberate adaptation."
+  },
+  "canonical_correct_approach": "Hold the recalled problem next to this one: use its result? its method? what must be added to make it usable?",
+  "compressible_at_touch": 3
+}

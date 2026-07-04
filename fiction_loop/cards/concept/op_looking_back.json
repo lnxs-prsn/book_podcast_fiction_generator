@@ -1,0 +1,49 @@
+{
+  "id": "op_looking_back",
+  "name": "Looking back / transfer",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 4,
+  "arc_introduced": 2,
+  "current_touch": 0,
+  "name_attached": false,
+  "name_at_touch": 2,
+  "touch_schedule": {
+    "1": 2,
+    "2": 3,
+    "3": 4
+  },
+  "touch_target": 3,
+  "prerequisite": [
+    "op_check_result"
+  ],
+  "teaching_history": [],
+  "failure_modes_shown": [],
+  "failure_modes_not_yet_shown": [
+    "the confident specialist",
+    "the hypothesis tester"
+  ],
+  "contexts_demonstrated": [],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "professional",
+  "transferred_to_ordinary_life": false,
+  "physical_anchor": "Remaining after others leave; stillness that looks like confusion but is not; sometimes writing.",
+  "canonical_problem_structure": {
+    "unknown": "Not the gate's — the solver's own method is the unknown.",
+    "data": [
+      "The just-finished solution, still present and readable."
+    ],
+    "condition": "Nothing forces staying; leaving costs nothing today and everything at the next gate."
+  },
+  "canonical_correct_approach": "Stay; ask what was actually done; name where else it applies.",
+  "compressible_at_touch": 3
+}

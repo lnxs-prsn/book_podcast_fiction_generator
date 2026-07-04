@@ -1,0 +1,49 @@
+{
+  "id": "op_auxiliary_chains",
+  "name": "Auxiliary problem chains",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 8,
+  "arc_introduced": 8,
+  "current_touch": 0,
+  "name_attached": false,
+  "name_at_touch": 1,
+  "touch_schedule": {
+    "1": 8,
+    "2": 9
+  },
+  "touch_target": 2,
+  "prerequisite": [
+    "op_auxiliary_problem",
+    "op_working_backwards"
+  ],
+  "teaching_history": [],
+  "failure_modes_shown": [],
+  "failure_modes_not_yet_shown": [
+    "the single-step auxiliary solver",
+    "the planner without synthesis"
+  ],
+  "contexts_demonstrated": [],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "project_management",
+  "transferred_to_ordinary_life": false,
+  "physical_anchor": "A sequence built visibly forward; then the turn, and the sequence traced backward with a finger before acting.",
+  "canonical_problem_structure": {
+    "unknown": "Separated from the data by several equivalent reformulations; no single reduction suffices.",
+    "data": [
+      "Supports the last problem in a chain, not the first."
+    ],
+    "condition": "Each reduction must preserve equivalence, and closure requires walking the chain back (synthesis) after building it forward (analysis)."
+  },
+  "canonical_correct_approach": "Reduce problem to problem until one is solvable; then retrace the chain backward to deliver the original.",
+  "compressible_at_touch": 2
+}

@@ -8,7 +8,7 @@ from podcast_script_generator.llm.exceptions import ScriptGenerationError
 from settings import PodcastSettings
 
 def generate_chapter_podcast(
-    pdf_path: Path | None = None,
+    source_path: Path | None = None,
     *,
     script_path: Path | None = None,
     script_engine: ScriptEngine | None = None,
@@ -30,11 +30,11 @@ def generate_chapter_podcast(
             script_out = script_path
             naming_path = script_path
         else:
-            if pdf_path is None:
-                return PodcastResult(error=ValueError("pdf_path is required when not using --skip-script"))
-            pdf_path = Path(pdf_path).resolve()
-            if not pdf_path.exists():
-                return PodcastResult(error=FileNotFoundError(f"PDF not found: {pdf_path}"))
+            if source_path is None:
+                return PodcastResult(error=ValueError("source_path is required when not using --skip-script"))
+            source_path = Path(source_path).resolve()
+            if not source_path.exists():
+                return PodcastResult(error=FileNotFoundError(f"Source file not found: {source_path}"))
 
             if mode == "realworld" and not context:
                 return PodcastResult(error=ValueError("mode 'realworld' requires context"))
@@ -45,17 +45,17 @@ def generate_chapter_podcast(
 
             try:
                 script_text = script_engine.generate(
-                    pdf_path,
+                    source_path,
                     context=context,
                     fiction_dir=fiction_dir,
                 )
             except LLMError as e:
                 raise ScriptGenerationError(str(e)) from e
 
-            script_out = settings.script_path_for(pdf_path)
+            script_out = settings.script_path_for(source_path)
             script_out.parent.mkdir(parents=True, exist_ok=True)
             script_out.write_text(script_text, encoding="utf-8")
-            naming_path = pdf_path
+            naming_path = source_path
 
         if skip_audio:
             return PodcastResult(script_path=script_out)
@@ -73,7 +73,7 @@ def generate_chapter_podcast(
 
 
 def generate_book_podcast(
-    book_pdf: Path | None = None,
+    book_path: Path | None = None,
     chapters_dir: Path | None = None,
     toc_page: int | None = None,
     *,
@@ -94,20 +94,20 @@ def generate_book_podcast(
         from config import load_config
         toc_page = load_config().get("toc_page")
 
-    if book_pdf is not None:
-        book_pdf = Path(book_pdf).resolve()
+    if book_path is not None:
+        book_path = Path(book_path).resolve()
         if splitter_engine is None:
             from engines.factory import default_splitter_engine
             try:
-                splitter_engine = default_splitter_engine()
+                splitter_engine = default_splitter_engine(book_path)
             except LLMConfigError as e:
                 return [PodcastResult(error=e)]
         chapters_out = settings.chapters_dir
-        existing = list(chapters_out.glob("*.pdf")) if chapters_out.exists() else []
+        existing = list(chapters_out.glob(splitter_engine.chapter_glob)) if chapters_out.exists() else []
         if force or not existing:
             chapters_out.mkdir(parents=True, exist_ok=True)
             splitter_engine.split(
-                book_pdf,
+                book_path,
                 toc_page=toc_page,
                 output_dir=chapters_out,
                 no_ocr=no_ocr,
@@ -127,15 +127,16 @@ def generate_book_podcast(
         except LLMConfigError as e:
             return [PodcastResult(error=e)]
 
-    pdfs = sorted(
-        resolve_dir.glob("*.pdf"),
+    glob_pattern = splitter_engine.chapter_glob if splitter_engine is not None else "*"
+    chapters = sorted(
+        resolve_dir.glob(glob_pattern),
         key=lambda p: [int(c) if c.isdigit() else c.lower() for c in re.split(r"(\d+)", p.stem)],
     )
 
     results = []
-    for pdf in pdfs:
+    for chapter in chapters:
         r = generate_chapter_podcast(
-            pdf,
+            chapter,
             script_engine=script_engine,
             audio_engine=audio_engine,
             settings=settings,

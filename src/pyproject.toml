@@ -17,6 +17,7 @@ dependencies = [
     "typing-extensions>=4.15.0",
     "python-dotenv>=1.2.2",
     "ocrmypdf>=16.0.0",
+    "ebooklib>=0.18",
 ]
 
 [tool.uv]

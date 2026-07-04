@@ -1,0 +1,171 @@
+# DOCUMENT 4: LIVING DOCUMENT
+*The session save file. Updated after every approved chapter by `refresh_living_doc.py`. The human never edits this file.*
+
+*The Extractor reads this file when filling update_brief.json, for narrative-level continuity context that the raw state JSON does not carry. After the chapter is written and approved, `refresh_living_doc.py` rewrites this file from the approved chapter text, closing the cycle for the next iteration.*
+
+---
+
+## HOW THIS DOCUMENT WORKS IN THE AGENT LOOP
+
+This document is NOT pasted into sessions manually. It is read by the Extractor when filling update_brief.json, and written by `refresh_living_doc.py` at the end of every loop.
+
+The human only interacts with this document to:
+- Check current story state via the `show living document` command
+- Correct an error the Updater made
+- Set the initial state before the first chapter
+
+Everything else is automatic.
+
+---
+
+## CURRENT STATE
+
+| Field | Value |
+|---|---|
+| Story title | [ ] |
+| Last updated | Before Chapter 1 — initial state |
+| Last chapter completed | 0 |
+| Current arc | Arc 1 — Gate Grade 1-2 |
+| Active focal characters | None yet |
+| Mystery person last appeared | Not yet introduced |
+| Macro mystery evidence count | 0 |
+
+---
+
+## PROCESS STATE SUMMARY
+*Compressed view. Full detail in /state/process_state.json.*
+
+| Operation | Touch | Last Context | Next Due |
+|---|---|---|---|
+| Identify unknown / data / condition | 0 | — | Chapter 1 — Touch 1 (experience, no name) |
+| What is missing (absence over presence) | 0 | — | Chapter 1 — Touch 1N (name attached after experience) |
+| Separate parts of condition | 0 | — | Chapter 1 — Touch 1 (experience, no name) |
+| Look at the unknown | 0 | — | Chapter 1 — Touch 1 (experience, no name) |
+| Did you use all the data? | 0 | — | Arc 2 |
+| Can you check the result? | 0 | — | Arc 2 |
+| Can you derive the result differently? | 0 | — | Arc 3 |
+| Do you know a related problem? | 0 | — | Arc 2 |
+| Here is a problem related to yours | 0 | — | Arc 2 |
+| Analogy — simpler analogous problem | 0 | — | Arc 3 |
+| Looking back / transfer | 0 | — | Arc 2 |
+| Decompose condition | 0 | — | Arc 3 |
+| Introduce auxiliary elements | 0 | — | Arc 3 |
+| Can you use the result? | 0 | — | Arc 4 |
+| Auxiliary problem (invented) | 0 | — | Arc 4 |
+| Specialisation | 0 | — | Arc 4 |
+| Working backwards | 0 | — | Arc 5 |
+| Generalisation | 0 | — | Arc 5 |
+| Inventor's Paradox | 0 | — | Arc 5 |
+| Reductio ad absurdum | 0 | — | Arc 5 |
+| Variation / restatement | 0 | — | Arc 6 |
+| Heuristic vs proof | 0 | — | Arc 7 |
+| Subconscious work | 0 | — | Arc 7 |
+| Auxiliary problem chains | 0 | — | Arc 8 |
+| The sitting down (physical marker) | 0 | — | Chapter 1 — establish as physical anchor |
+
+---
+
+## FAILURE MODES NOT YET SHOWN
+
+*All wrong approach types must appear across Arcs 1-4. Types introduced per arc per concept_curriculum.md.*
+
+**Arc 1 (must appear in first 3 chapters):**
+- The executor (acts immediately on obvious pattern)
+- The system builder (applies method regardless of fit)
+- The information gatherer (catalogues everything, asks nothing)
+
+**Arc 2 (must appear before Arc 3 begins):**
+- The confident specialist (applies domain expertise to wrong problem type)
+- The hypothesis tester (tests systematically without naming what is being tested)
+
+**Arc 3-4 (introduced as operations expand):**
+- The executor on complex condition (acts on first part, ignores others)
+- The system builder on complex condition (processes all parts equally, finds no path)
+- The force applier (pushes harder when path does not appear)
+- The perfectionist (refuses heuristic, waits for certainty before reasoning)
+
+**Arc 5-6 (tied to restatement and working backwards):**
+- The variation-tester (tests restatements of wrong statement, all fail)
+- The single-step auxiliary solver (invents stepping stone but treats it as destination)
+- The planner without synthesis (builds chain forward, cannot reverse)
+
+**Arc 7+ (tied to heuristic/proof distinction):**
+- The heuristic-only solver (finds method, cannot account for it, cannot distinguish where it applies)
+- The guild verifier (demands proof before acting, paralysed by heuristic evidence)
+
+---
+
+## POPULATION INDEX
+*One line per character. Full detail in /cards/characters/[id].json.*
+
+| ID | Name | Occupation | City | Comprehension Level | Last Seen |
+|---|---|---|---|---|---|
+| — | — | — | — | — | — |
+
+---
+
+## MYSTERY PERSON THREAD
+*Observable log summary. Full detail in /state/mystery_anchor.json.*
+
+Appearances: 0
+Last location: —
+Reader can suspect: Nothing yet.
+Pattern being tracked in notebook: Not yet established.
+
+---
+
+## MACRO MYSTERY EVIDENCE
+*What the reader can suspect but not confirm.*
+
+Evidence count: 0
+Current state: Gates exist. No pattern established. No sender known.
+
+---
+
+## ACTIVE FORESHADOWING
+
+None yet.
+
+---
+
+## NEXT CHAPTER TARGET
+
+| Field | Value |
+|---|---|
+| Chapter | 1 |
+| Type | new_focal_character |
+| City | [ To be determined by Orchestrator — African city, contemporary ] |
+| Gate grade | 1 |
+| Gate problem structure | [ One clear unknown, data visible but misleading, condition explicit ] |
+| Wrong approach 1 | The executor — acts immediately on the most obvious pattern |
+| Wrong approach 2 | The system builder — applies methodical approach regardless of fit |
+| Wrong approach 3 | The information gatherer — catalogues everything, never asks what is missing |
+| Right question | What is not here that should be? (absence over presence) |
+| Operation Touch | Identify unknown: Touch 1 (experience only, no name yet). Separate parts of condition: Touch 1 (experience only, no name yet). Look at the unknown: Touch 1 (experience only, no name yet). What is missing: Touch 1N (name attached after experience, one sentence, narrator voice, end of chapter only). |
+| Sitting down | Must appear. After all three wrong approaches are exhausted. Physical. |
+| Mystery person appears | Yes — brief, at gate exterior, after gate closes. Notebook. One observation. |
+| Ordinary life echo | Same chapter, days later. Same question applied to ordinary work problem. Never labelled as connected. |
+| Focal character | African name, African city, ordinary occupation unrelated to gate clearing |
+| Emotional beat | Confusion → exhaustion → the relief of the right question → quiet competence → private uncertainty about what changed |
+| Foreshadowing to plant | Mystery person present before gate opened — suggests advance knowledge or pattern recognition |
+
+---
+
+## NOTES FOR AI — CURRENT SESSION
+
+- African names only. No Arabic names.
+- The wrong approaches must feel competent and reasonable before they fail.
+- Gate register and mirror behaviour must be shown for all three wrong approaches:
+  - Executor: Register 1 throughout. Mirror emphasises the obvious pattern — makes it cleaner, more distinct than the solver left it. One element outside the pattern is present but not receding.
+  - System builder: Register flickers false 3, never holds. Mirror shows the method's structure — everything categorised, ordered. The categorisation is perfect. The gate is elsewhere.
+  - Information gatherer: Register 1, undisturbed — as if solver not yet present. Mirror gives complete data. Room is still. The catalogue is the mirror.
+  - After sitting down: Register 2. Something that was background becomes foreground. The mirror shows what was always there.
+  - After right question forms: Register 3 before solver acts. Gate confirms.
+- Mirror prose rule for Chapter 1: describe the room's arrangement. Never state what it is showing. The reader holds the question.
+- Do not name the operation in Chapter 1. Experience only. The name "what is missing" may appear at the very end, once, in narrator voice, after the ordinary life echo lands.
+- The fourth wall never breaks. No direct address to reader.
+- The sitting down must be preceded by exhaustion of all three wrong approaches.
+- The solution after the right question arrives is fast and quiet. The gate closes without ceremony.
+- Mystery person notebook format: Gate grade. Approach type. Mirror content (one precise physical description). Underlined: the gap the mirror showed. Register log time-stamped. Nothing else.
+- Ordinary life echo: same question applied to ordinary work problem. Never labelled as connected. At least one other person in the scene goes still or the conversation changes register when the right question forms. Never explained.
+- Chapter length: 2000-3000 words.

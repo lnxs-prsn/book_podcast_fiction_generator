@@ -1,0 +1,18 @@
+{
+  "_note": "Schema reference only. Actual character files are named [char_id].json and created by Updater.",
+  "id": "char_XXX",
+  "name": "[ ]",
+  "age": null,
+  "occupation": "[ ]",
+  "location_id": "[ ]",
+  "first_appeared": 0,
+  "gate_history": [],
+  "comprehension_state": {},
+  "still_gets_wrong": [],
+  "ordinary_life_state": "[ ]",
+  "life_progression": [],
+  "ordinary_life_transfers": [],
+  "anchor_observed": false,
+  "last_seen": 0,
+  "next_planned_appearance": null
+}

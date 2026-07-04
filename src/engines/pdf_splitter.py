@@ -13,12 +13,14 @@ class PDFSplitterEngine(SplitterEngine):
         {"success": bool, "files": [{"output_path": str, ...}], ...}
     """
 
+    chapter_glob: str = "*.pdf"
+
     def __init__(self, *, llm: LLMClient) -> None:
         self.llm = llm
 
     def split(
         self,
-        book_pdf: Path,
+        book_path: Path,
         *,
         toc_page: int | None = None,
         output_dir: Path,
@@ -31,7 +33,7 @@ class PDFSplitterEngine(SplitterEngine):
         if toc_page is not None:
             kwargs["toc_page"] = toc_page
         result = run_splitter(
-            input_path=str(book_pdf),
+            input_path=str(book_path),
             output_dir=str(output_dir),
             prefix="chapter",
             chapters_only=True,

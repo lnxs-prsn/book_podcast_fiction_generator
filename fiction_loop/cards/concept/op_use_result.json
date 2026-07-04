@@ -1,0 +1,49 @@
+{
+  "id": "op_use_result",
+  "name": "Can you use the result?",
+  "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
+  "difficulty_rating": 5,
+  "arc_introduced": 4,
+  "current_touch": 0,
+  "name_attached": false,
+  "name_at_touch": 1,
+  "touch_schedule": {
+    "1": 4,
+    "2": 5,
+    "3": 6
+  },
+  "touch_target": 3,
+  "prerequisite": [
+    "op_looking_back"
+  ],
+  "teaching_history": [],
+  "failure_modes_shown": [],
+  "failure_modes_not_yet_shown": [
+    "the confident specialist",
+    "the force applier"
+  ],
+  "contexts_demonstrated": [],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "professional",
+  "transferred_to_ordinary_life": false,
+  "physical_anchor": "Pausing at the exit; looking back in; not done yet.",
+  "canonical_problem_structure": {
+    "unknown": "Belongs to the next problem; this gate's result is a tool.",
+    "data": [
+      "A second chamber restates the first chamber's result in new clothes."
+    ],
+    "condition": "The second chamber is unsolvable from scratch in the time available — and instant with the first chamber's result."
+  },
+  "canonical_correct_approach": "Treat every result as an asset; ask what it now unlocks.",
+  "compressible_at_touch": 3
+}

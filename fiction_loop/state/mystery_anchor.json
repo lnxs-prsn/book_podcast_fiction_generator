@@ -1,0 +1,36 @@
+{
+  "observable_log": [
+    {
+      "chapter": "001",
+      "observation": "Grade 2.\n\nApproach sequence: executor → system builder → information gatherer.\n\nMirror content: Room first emphasised the visible pattern among the birds (size, then posture), then sorted them into perfect categories, then offered a complete still catalogue. In all three arrangements the empty niche remained at the same height, same size, same shadow. It did not recede.\n\nUnderlined: the empty niche was the unknown. Every mirror showed it. None of the solvers looked at it.\n\nRegister 2 at minute 38. Register 3 at minute 41. Three minutes from sitting down to right question.",
+      "location": "loc_lagos",
+      "manifestation": "seen"
+    },
+    {
+      "chapter": "002",
+      "observation": "Grade 2. Executor approach. Room arranged the visible route data into a cleaner sequence — edges aligned, spacing even, the obvious pattern made more obvious. Underlined: the solver never named what was wanted before acting. Register 2 at minute 33. Register 3 at minute 36. Three minutes from sitting down to right question.",
+      "location": "loc_accra",
+      "manifestation": "notebook_page"
+    }
+  ],
+  "reader_can_suspect": [
+    {
+      "chapter": "001",
+      "suspicion": "The anchor was present before the gate opened, suggesting advance knowledge, pattern recognition, or tracking of gate locations."
+    },
+    {
+      "chapter": "002",
+      "suspicion": "The anchor leaves physical notes inside gates, tracking approach sequences and mirror content across different solvers and locations."
+    }
+  ],
+  "hidden_coherence": {
+    "access": "PLANNING_ONLY_NEVER_IN_CHAPTER_PROMPT",
+    "true_identity": "She was an ordinary solver who had reached the second stage of the progression — nothing exceptional — until, inside one gate, an amalgamation occurred between her and the gate-network's operating intelligence. What walked out is neither: not fully human, not fully the network. She is the personification of the gates' verification pass — the 'looking back' step of whatever sends the problems — wearing what remains of a human life. A kind of android, in the world's terms, though no one in book 1 has a word for it.",
+    "what_they_know": "What the mirror looks like from the inside. That all gates are one connected structure. That the network runs a verification pass on every solution — and that she is that pass. That a solution which does not transfer to life does not count, by the senders' own rule.",
+    "what_they_are_investigating": "Two problems that turn out to be the same problem: what she now is (the remainder of her humanity), and whether the assessment she embodies can be completed before the portals open fully. Her notebook is simultaneously the network's gradebook and her attempt to solve herself.",
+    "answer_pointing_toward": "The correctly restated macro problem: the gates are not tests but a message, and she is its punctuation. The completion of her notebook, the resolution of what she is, and the full opening of the portals are one event — book 2's opening state.",
+    "how_omnipresence_works": "The amalgamation displaced her backward in time and made her part of every gate. She does not travel; she is already there, and has been present since before the first recorded gate. From the outside this reads as impossible travel and as advance knowledge — both are planted clues, never explained in book 1.",
+    "book_2_bridge": "The amalgamation is existence proof that human and gate-intelligence can merge. She is the door mechanism for book 2's contact between worlds — and the reason book 1 taught the process: only solvers who own it survive what comes through.",
+    "writing_notes": "Her residual human side permits ordinary-life scenes (unlike a pure embodiment). Interiority remains absolutely forbidden — observable log only. The time displacement licenses the 'present before the gate opened' foreshadowing already planned in living_document.md. PRESENTATION (canon since ch. 001): the construct presents as an unremarkable man in a grey coat with a small black notebook — the 'she' throughout this file is the original solver who was amalgamated; the mismatch between the walking presentation and who she was is deliberate book-2 reveal material, never surfaced in book 1."
+  }
+}
