@@ -11,6 +11,12 @@
       "observation": "Grade 2. Executor approach. Room arranged the visible route data into a cleaner sequence — edges aligned, spacing even, the obvious pattern made more obvious. Underlined: the solver never named what was wanted before acting. Register 2 at minute 33. Register 3 at minute 36. Three minutes from sitting down to right question.",
       "location": "loc_accra",
       "manifestation": "notebook_page"
+    },
+    {
+      "chapter": "003",
+      "observation": "Grade 2. Executor approach. Room emphasised sequential testing — jars aligned, labels clarified, spacing even. Underlined: chalkboard condition ignored. Register 2 at minute 8. Register 3 at minute 14.\n\nInformation gatherer approach. Room gave complete catalogue — no movement, no shift. Underlined: no question of purpose. Register 1 throughout.\n\nCorrect approach: threshold naming. Wanted/given/binding spoken before entry. Register 3 confirmed at utterance. Gate closed minute 19.",
+      "location": "loc_accra",
+      "manifestation": "bystander_mention"
     }
   ],
   "reader_can_suspect": [
@@ -21,6 +27,10 @@
     {
       "chapter": "002",
       "suspicion": "The anchor leaves physical notes inside gates, tracking approach sequences and mirror content across different solvers and locations."
+    },
+    {
+      "chapter": "003",
+      "suspicion": "The anchor is now observing solvers both inside and outside gates, tracking post-gate behavior and social echoes with precise notation that explicitly identifies 'threshold naming' as the correct approach."
     }
   ],
   "hidden_coherence": {

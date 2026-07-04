@@ -35,10 +35,28 @@ The gap between observation and meaning is the teaching moment. Do not close it.
 **RIGHT — leaving the gap:**
 *"She did not open the first file. She looked at the problem the way she had looked at the room. What is not here that should be? She found it in four minutes."*
 
-## 4B. WRITING THE MIRROR
-*The mirror is the hardest element to write correctly. These rules govern every scene where gate mirror behaviour appears.*
+### Never:
 
-### The core constraint: show the arrangement, not the meaning
+| Prohibition | Why |
+|---|---|
+| Breaking the fourth wall | The reader's hypotheses must be activated by prose, not instruction. Any direct address to the reader admits the prose is not doing its job. |
+| A wrong approach that looks obviously wrong from the start | The reader must believe in the approach before it fails. Otherwise the failure teaches nothing. |
+| Vague failure | "It didn't work" is not failure. Show exactly what happened when the wrong approach met this gate. |
+| The sitting down arriving before wrong approaches are exhausted | A cheap sitting down produces a cheap right question. The reader must have run out of their own hypotheses first. |
+| The right question arriving as a revelation | It arrives as a relief. Matter-of-fact. Not dramatic. The drama was in the failure sequence. |
+| The solution being dramatic | The gate closes quietly. The emotional weight was in the question, not the answer. |
+| The ordinary life echo being labelled as connected to the gate | Reader makes the connection. Never state it. Never have the character think "just like the gate." The echo scene must show at least one other person's involuntary response to the right question — someone going still, a conversation changing register. This is the ordinary life substitute for gate register behaviour. |
+| The mystery person given interiority or explanation | Observable only. What they see, what they note. Never what they know or why. |
+| An operation named before the cost has been felt | Name arrives after experience. Always. |
+| Re-explaining an operation the character already owns | Use it naturally or do not use it. |
+| Power substituting for understanding on any gate above Grade 1 | The physics of the world forbids this. |
+| The gate explaining itself | Gates contain data. They do not label their own structure. The mirror shows. It does not point. Any sentence that states what the mirror is reflecting — rather than describing what the room looks like — is a violation. |
+| More than two sentences connecting a physical experience to its label | One sentence maximum for the name attachment. |
+| A technique succeeding perfectly the first time | No operation is demonstrated on first use without prior failure. |
+
+### Writing the mirror (§4B — always included)
+
+#### The core constraint: show the arrangement, not the meaning
 The gate's mirror is physical. It is a reorganisation of the room's contents — light, objects, surfaces, spatial relationships. The prose describes what the room looks like. It never states what the room is showing. The reader who has learned to read registers will read the mirror. The reader who has not will experience the room as strange without knowing why. Both responses are correct.
 
 **WRONG — stating the mirror's meaning:**
@@ -49,38 +67,22 @@ The gate's mirror is physical. It is a reorganisation of the room's contents —
 
 The reader asks: why is the room more organised than he left it? The mirror is operating. The prose does not answer. The reader holds the question.
 
-### The mirror shifts when the approach shifts
+#### The mirror shifts when the approach shifts
 When a solver changes wrong approach — or sits down — the room changes. This change is described physically. It is never attributed to the gate explicitly in early arcs. Later arcs may allow characters to notice the correlation without stating what it means.
 
 **Early arc (Arc 1-2) — no attribution:**
 *"She sat down. The room was different when she looked up. The light was not where it had been. She had been inside for forty minutes."*
 
-**Later arc (Arc 4-5) — noticed but not named:**
-*"He sat down. The room shifted — he had learned to expect this, though he could not have said when he had learned it. Something moved to the foreground. He looked at it the way he had learned to look: not at what it was, but at why it was now visible."*
-
-### The mirror content must match the wrong approach type precisely
+#### The mirror content must match the wrong approach type precisely
 Every wrong approach type has a specific mirror content (see world_rules.md Section 5). The prose must render that specific content — not a generic "the room shifted." The executor's mirror emphasises the obvious pattern. The information gatherer's mirror gives completeness. These are different rooms. Write them as different rooms.
 
-### The mirror in the sitting down is the pivot
+#### The mirror in the sitting down is the pivot
 The most important mirror moment is during the sitting down. This is when the mirror becomes readable — because the wrong approach has stopped and the solver is looking at the room rather than acting on it. The prose must show the solver's gaze changing: from operational (looking for what to do next) to structural (looking at what is there).
 
 **The gaze change:**
 *"She stopped sorting. She put the last box down. She looked at the room — not at the boxes but at the room. The way it was arranged. Who had arranged it like that. She had not. Or she had, and had not noticed. She looked at the part she had not touched."*
 
-### Mystery person mirror notation
-The mystery person reads mirror content directly. Their notebook records what the room showed, not what the solver did.
-
-**Notebook format:**
-- Gate grade.
-- Approach type identified (executor / gatherer / etc).
-- Mirror content: one precise physical description of what the room showed.
-- Underlined: the gap — what the mirror showed was missing from the solver's frame.
-- Register at sitting down. Register at right question. Time between.
-
-**Example:**
-*Grade 2. Specialist approach. Room organised by domain category — all chemical markers grouped, all mechanical elements grouped. Domain boundary visible as gap between groups. Underlined: gap between groups contained the unknown. Solver did not look at the gap. Register 2 at minute 31. Register 3 at minute 34. Three minutes from sitting down to right question.*
-
-## 5. THE MYSTERY PERSON — VOICE RULES
+### Mystery person voice rules (§5 — included because the anchor appears this chapter)
 
 The mystery person is never explained through their own words. They are described through what they do, where they go, what they notice. Their observations are precise. Their conclusions are never stated.
 
@@ -106,25 +108,6 @@ The mystery person's notebook entries follow this format:
 - Nothing else. No interpretation of what the gates mean overall.
 
 The hidden coherence layer — what the mystery person is building toward, what the gates are communicating at the macro level — is NEVER present in prose. It exists only in mystery_anchor.json for planning purposes.
-
-### Never:
-
-| Prohibition | Why |
-|---|---|
-| Breaking the fourth wall | The reader's hypotheses must be activated by prose, not instruction. Any direct address to the reader admits the prose is not doing its job. |
-| A wrong approach that looks obviously wrong from the start | The reader must believe in the approach before it fails. Otherwise the failure teaches nothing. |
-| Vague failure | "It didn't work" is not failure. Show exactly what happened when the wrong approach met this gate. |
-| The sitting down arriving before wrong approaches are exhausted | A cheap sitting down produces a cheap right question. The reader must have run out of their own hypotheses first. |
-| The right question arriving as a revelation | It arrives as a relief. Matter-of-fact. Not dramatic. The drama was in the failure sequence. |
-| The solution being dramatic | The gate closes quietly. The emotional weight was in the question, not the answer. |
-| The ordinary life echo being labelled as connected to the gate | Reader makes the connection. Never state it. Never have the character think "just like the gate." The echo scene must show at least one other person's involuntary response to the right question — someone going still, a conversation changing register. This is the ordinary life substitute for gate register behaviour. |
-| The mystery person given interiority or explanation | Observable only. What they see, what they note. Never what they know or why. |
-| An operation named before the cost has been felt | Name arrives after experience. Always. |
-| Re-explaining an operation the character already owns | Use it naturally or do not use it. |
-| Power substituting for understanding on any gate above Grade 1 | The physics of the world forbids this. |
-| The gate explaining itself | Gates contain data. They do not label their own structure. The mirror shows. It does not point. Any sentence that states what the mirror is reflecting — rather than describing what the room looks like — is a violation. |
-| More than two sentences connecting a physical experience to its label | One sentence maximum for the name attachment. |
-| A technique succeeding perfectly the first time | No operation is demonstrated on first use without prior failure. |
 
 ## WORLD RULES
 
@@ -164,35 +147,35 @@ The gate enters Register 3 before the solver acts on the right question. The gat
 **Rule 12: The mirror is always operating. It is never explained by the gate.**
 The gate reorganises itself to reflect the solver's current mental frame at all times. It does not label what it is showing. It does not indicate that it is showing anything. A solver who cannot read the mirror experiences the gate as inert or arbitrary. A solver who can read it has been given the question by the gate itself. The mirror requires the same mental operations to read as the gate requires to close — a solver without working backwards cannot read a Grade 4 mirror. Violation: the gate indicates, labels, or draws attention to what it is reflecting. The mirror shows. It does not point.
 
+### Selected wrong-approach mirror behaviour (from world_rules.md §5)
+
+| Wrong Approach Type | Gate Signature | Mirror Content |
+|---|---|---|
+| The executor (acts immediately on obvious pattern) | Register 1 holds. Contact produces no response. | Room arranges itself around the obvious pattern the executor is following. That pattern is emphasised, clarified, made almost legible — and still the gate does not move. |
+| The information gatherer (catalogues everything, asks nothing) | Register 1, undisturbed. As if solver not yet present. | Room gives everything asked for. Complete. Still. The mirror is a perfect catalogue. |
+
 ## THIS CHAPTER
 
 **Chapter type:** return_to_character
 **Chapter number:** 003
 
 **Focal character:**
-Kwabena Asante, bus depot scheduler, Accra, Ghana. Returning character (char_002); first appeared in chapter 002.
+- Name: Kwabena Asante
+- Occupation: bus depot scheduler
+- City: Accra, Ghana (from /cards/locations/loc_accra.json)
+- Ordinary life state: Kwabena works in the Achimota bus depot dispatch office, where a missing bus assignment is resolved when he asks what they are actually trying to find.
+- Gate history summary: Gate G-002, Grade 2, operation encountered "Identify unknown / data / condition", approach taken "the executor", understood: true, looked back: true, transferred to ordinary life: true.
+- Still gets wrong: (none listed)
 
-Previous ordinary_life_state (chapter 002): Works in the Achimota bus depot dispatch office, where a missing afternoon roster assignment for Bus 404 on the Tema route forced him to stop before opening any file and ask what they are actually trying to find.
-
-LIFE PROGRESSION (owner rule F14): This character's life has visibly moved forward since chapter 002. Show the progress in his work or professional circumstances (e.g., added responsibility, a resolved conflict, a promotion, improved standing with colleagues). Never attribute it to the gate — the reader makes the connection.
-
-Gate history summary: Gate G-002, Grade 2, operation encountered: Identify unknown / data / condition, approach taken: the executor, understood: true, looked_back: true, transferred_to_life: true. Comprehension state: encountered (not yet owned).
-
-still_gets_wrong: []
+**LIFE PROGRESSION (owner rule F14):**
+Previous ordinary_life_state: "Kwabena works in the Achimota bus depot dispatch office, where a missing bus assignment is resolved when he asks what they are actually trying to find."
+Instruction: This character's life has visibly moved forward since then. Show the progress — perhaps a promotion, a new responsibility, or a problem others now bring to him — but never attribute it to the gate. The reader makes the connection.
 
 **Cast (owner rules D6/D7/F15):**
 - Kwabena Asante — returning focal solver.
-- Akosua — fully improvised newcomer, market accountant (information gatherer wrong approach).
-- Ato — fully improvised newcomer, delivery rider (executor wrong approach, brief failure before the information gatherer runs).
-
-The gate shows multiple solvers. At least one is a fully improvised newcomer. Every named solver enters the permanent record.
-
-**Character naming source (/core/character_naming.md):**
-- African names only — never Arabic names.
-- Match names to city/region where possible (Akan names for Accra).
-- Never reuse a ledger name; avoid near-collisions.
-- Occupations are ordinary and unrelated to gate clearing.
-- Used-name ledger (names to avoid): Yejide, Fadeke, Kwabena, Ama Serwah, Mr. Owusu, Mr. Mensah, Esi, Kwame, Yaw, Kofi.
+- Akosua Osei — fully improvised newcomer (fishmonger, caught near the depot gate). She is the information-gatherer wrong-approach solver this chapter.
+- Kojo Acheampong — experienced stranger (telecom linesman with off-page gate history). He carries the executor wrong-approach this chapter.
+- Name only solvers who matter. Any additional bystanders remain unnamed.
 
 **Secondary touches (from pointer.secondary_touches, max 2):**
 None.
@@ -201,73 +184,75 @@ None.
 None.
 
 **Gate this chapter:**
-- Grade: 2 (Arc 1 gate grade band 1–2; do not use the operation's own difficulty_rating as the gate grade)
-- Problem structure: unknown / data / condition — the room presents objects and a mechanism and lets the solver assume what is wanted
-- Wrong approaches (multiple solvers; failure before success):
-  - INTERNAL LABEL (never in prose): the executor
-    - What the solver does: Acts immediately on the most obvious pattern without naming the unknown.
-    - Physical appearance in prose: Fast movement. Confident handling of objects. No pause at the entrance.
-    - Gate signature / mirror content (from world_rules.md §5): Register 1 holds. Contact produces no response. Room arranges itself around the obvious pattern the executor is following. That pattern is emphasised, clarified, made almost legible — and still the gate does not move. What a mirror-reader sees: the room is showing you what you assumed. The assumption is not wrong in itself. It is wrong as the frame. Something outside the pattern is not receding — it is waiting.
-  - INTERNAL LABEL (never in prose): the information gatherer
-    - What the solver does: Collects all available data meticulously before acting. Never asks what the data is for.
-    - Physical appearance in prose: Clipboard. Notes. Systematic audit. Complete documentation.
-    - Gate signature / mirror content (from world_rules.md §5): Register 1, undisturbed. As if solver not yet present. Room gives everything asked for. Complete. Still. The catalogue is the mirror. What a mirror-reader sees: the room has answered every question you asked. You have not asked the question the room is waiting for. The mirror shows completeness. Completeness is not the same as the right question.
+- Grade: 2 (Arc 1 gate-grade band 1–2)
+- Problem structure: unknown / data / condition
+- Wrong approaches to dramatise (at least two before the correct approach):
+  1. INTERNAL LABEL (never in prose): the executor
+     - Behaviour: Acts immediately on the most obvious pattern without naming the unknown.
+     - Physical appearance in prose: Fast movement. Confident handling of objects. No pause at the entrance.
+     - Mirror: Room arranges itself around the obvious pattern — emphasised, clarified, made almost legible. The gate does not move.
+  2. INTERNAL LABEL (never in prose): the information gatherer
+     - Behaviour: Collects all available data meticulously before acting. Never asks what the data is for.
+     - Physical appearance in prose: Clipboard. Notes. Systematic audit. Complete documentation.
+     - Mirror: Room gives complete data. Still. The mirror is a perfect catalogue.
 - Correct approach that closes gate: Stop at the entrance; name what is wanted, what is given, and what binds them — before touching anything.
 
 **Operation being taught:**
 - Operation name: Identify unknown / data / condition
 - Touch number: 2 (current_touch 1 + 1)
-- Name due: true — attach the operation's name in at most two sentences, narrator voice, after the experience
-- Delivery channel: narrator label
+- Name due: true
+- Delivery vehicle: a. TRADE METAPHOR — Kwabena reaches for his own work's vocabulary (routes, depots, schedules) to attach the name. The formal name may ride alongside or arrive in a later chapter.
+- Delivery channel: character action / narrator label
 - Physical anchor: Standing still at the entrance; naming aloud, to no one, what is wanted, what is given, what binds them — sometimes counted on three fingers.
-- Problem structure + correct approach (from /cards/concept/op_identify_unknown.json): Unknown is never stated; the room presents objects and a mechanism and lets the solver assume what is wanted. Data is fully visible, slightly too orderly — invites action before understanding. Condition is explicit but easy to skip past. Correct approach: stop at the entrance; name what is wanted, what is given, and what binds them — before touching anything. Dress these in this chapter's concrete objects, city, and character; the shape itself never varies.
+- Problem structure + correct approach: The unknown is never stated; the room presents objects and a mechanism and lets the solver assume what is wanted. Data are fully visible, slightly too orderly — inviting action before understanding. The condition is explicit but easy to skip past. The correct move is to stop at the entrance and name wanted/given/binding before touching anything.
+- Name-attachment rules: attach AFTER the echo, in AT MOST two sentences. FORBIDDEN in those sentences: the word "operation", any "X is/was the Y of Z" definition shape, restating the concept's components as a list.
 
 **Operations to use naturally (no re-explanation):**
-None — Kwabena's comprehension_state has no operations marked "owned."
+None — Kwabena's comprehension_state lists no operations as "owned" yet.
 
 **Ordinary life echo:**
-- Context: professional (selected from contexts_not_yet_demonstrated because preferred_context "workplace" was already demonstrated in chapter 002)
-- Real-world problem with the same structure: A professional problem is approached with action when the real unknown was never named. The solver pauses before opening the first file or committing to the first move. Asks what they are actually trying to find. Someone in the room goes still.
+- Echo context (from contexts_not_yet_demonstrated): professional
+- Real-world problem with the same structure: A problem at work approached with action when the real unknown was never named. In the depot or a neighbouring office, people are checking figures, moving papers, or chasing a missing item without first naming what they are actually trying to find.
 - Must appear in same chapter as gate closes.
 - ISOLATION RULE — copy verbatim into the brief: "Write the echo scene as if the gate chapter did not exist. The character does not remember, mention, or think about the gate, the room, or that day. The structural resemblance is visible to the reader alone. No sentence may state what the experience meant."
+- Reader-visible beat: Kwabena pauses before opening the first file. Asks what they are actually trying to find. Someone in the room goes still.
 
 **Anchor character appearance:**
-- Yes
-- Observable presentation (FIXED CANON since chapter 001): an unremarkable man in a grey coat, carrying a small black notebook. Never described in more detail, never named, never aged.
-- Manifestation: seen directly (different from last observable_log entry manifestation "notebook_page")
-- What they observe, in §5 notebook format:
-  - Grade 2. Information gatherer approach. Room gives complete data — every crate labelled, every label legible, every quantity recorded. Complete. Still. The catalogue is the mirror. Underlined: the catalogue answered every question the solver asked; the question the room was waiting for was never asked. Register 2 at minute [XX]. Register 3 at minute [XX]. [X] minutes from sitting down to right question.
-- Continuity from observable_log (never reference hidden_coherence): Last entry (chapter 002, loc_accra) observed an executor approach in a Grade 2 gate at the Achimota depot; a torn notebook page was left on the floor. Prior entry (chapter 001, loc_lagos) observed executor → system builder → information gatherer sequence in a Grade 2 gate; the empty niche stayed visually constant across all three approaches.
+- Yes (from next_chapter_pointer anchor_appears)
+- Observable presentation — FIXED CANON since chapter 001: an unremarkable man in a grey coat, carrying a small black notebook. Never described in more detail, never named, never aged.
+- Manifestation: mentioned by a bystander (different from last observable_log entry manifestation "notebook_page").
+- Continuity: The last observable_log entries are chapter 001 (Lagos, seen) and chapter 002 (Accra, notebook_page). Keep the anchor's pattern consistent: a note-taking figure who records approach sequences and mirror content. Do not reference hidden_coherence.
 
 **Failure mode to demonstrate:**
 - INTERNAL LABEL (never in prose): the information gatherer
-- BEHAVIOR (from correspondence_map.md §3): Collects all available data meticulously before acting. Never asks what the data is for. Clipboard. Notes. Systematic audit. Complete documentation.
-- Must appear before correct approach.
+- Behaviour: Collects all available data meticulously before acting. Never asks what the data is for.
+- Physical appearance in prose: Clipboard. Notes. Systematic audit. Complete documentation.
+- Must appear before the correct approach.
 
 **Macro mystery:**
-- No new macro_mystery_evidence item is specified in master_state.json for chapter 003.
-- Existing evidence for continuity: (1) Chapter 001 — the same figure appeared on the street before the Lagos gate opened and afterward recorded that the empty niche stayed visually constant across three different solver approaches, as if the gate were tracking what the solvers failed to see. (2) Chapter 002 — a torn notebook page in unfamiliar handwriting was found on the floor inside the Achimota depot gate, using the same concise notation as the Lagos observation and recording Kwabena's wrong approach as the executor approach.
+- No new evidence is pre-assigned for chapter 003 in master_state.json.
+- Plant existing continuity: the anchor's pattern of leaving notes (chapter 002 notebook page) and observing approach sequences (chapter 001). The bystander's mention of a man in a grey coat asking about the depot gate is the planted clue this chapter.
 
 **Emotional beat:**
-Kwabena returns to a gate having survived one before. He is not eager; he is someone who learned that moving first was almost fatal. The beat is recognition without triumph — the body remembers before the mind names it. Show the residue of chapter 002 in how he enters the room.
+Kwabena returns to a gate after successfully transferring the method to his work. He recognises his own previous wrong approach in Kojo, then watches Akosua make a new kind of mistake. The name arrives after the echo as something he has already lived.
 
 **Foreshadowing:**
-The anchor's direct observation this chapter reinforces that the same figure is appearing in multiple cities and leaving notes inside gates. Solvers begin to notice the grey coat only after the gate closes.
+Optional: the anchor's note-taking across cities continues; Kwabena's growing reputation for asking the right question first may draw attention.
 
 ## CONSTRAINTS
-- Do not name the operation before the character has suffered its absence
-- Do not close the gap between observation and meaning
-- The anchor character's hidden coherence is never surfaced
-- Failure before success always
-- Ordinary life echo must feel inevitable not surprising
-- Chapter ends when the gate closes and the ordinary life echo lands
-- Target length: 1800-2600 words; complete beats matter more than count; never pad
+- Do not name the operation before the character has suffered its absence.
+- Do not close the gap between observation and meaning.
+- The anchor character's hidden coherence is never surfaced.
+- Failure before success always.
+- Ordinary life echo must feel inevitable not surprising.
+- Chapter ends when the gate closes and the ordinary life echo lands.
+- Target length: 1800-2600 words; complete beats matter more than count; never pad.
 
 ## HARD RULES — a violation of any rule fails the chapter
 
 1. FORBIDDEN STRINGS: these internal planning labels must not appear anywhere in the prose: "the executor", "the information gatherer". Show the behavior. Never the label.
 2. ECHO ISOLATION: in the ordinary-life scene the character does not remember, mention, or think about the gate, the room, or that day. Write it as if the gate scene did not exist. The reader alone sees the connection.
-3. NO LESSON SENTENCES: never write a sentence whose job is to state what an experience meant or what the method is. The ONE exception — the operation's name is attached in AT MOST two sentences, narrator voice, after the experience.
+3. NO LESSON SENTENCES: never write a sentence whose job is to state what an experience meant or what the method is. [If name_due: the ONE exception — the name is attached in AT MOST two sentences, after the echo, using the delivery vehicle named in this brief. The word "operation" and any definition shape ("X is/was the Y of Z") are forbidden in those sentences.] [If not name_due: no operation name appears at all.]
 4. THE MIRROR SHOWS, NEVER POINTS: describe the room's arrangement; never state what it reflects or that it reflects anything.
 5. THE OBSERVER: exterior only — position, actions, notebook. No thoughts, no motives, no explanation of who they are.
 6. Never address the reader. The word "you" appears only inside dialogue.

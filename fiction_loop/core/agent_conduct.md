@@ -16,8 +16,12 @@ improvised around. Stopping is cheap. Guessing costs real money per attempt.**
   2. Return one line to the Orchestrator: `Error: [type] — [one line]`,
   3. STOP. Do not retry with variations. Do not investigate src/. Do not test
      hypotheses — every LLM/API call costs money; a human answer costs nothing.
-- The Orchestrator, on receiving an undocumented Error: STOP THE RUN and report to
-  the user with the log path. Never debug on the user's behalf.
+- The Orchestrator, on receiving an undocumented Error: STOP THE RUN, then run the
+  deterministic analyst (zero tokens, zero improvisation — it analyses, it never
+  fixes):
+    python3 fiction_loop/tools/analyst.py
+  and report to the user with the analyst's verdict + the log path. If the analyst
+  says "unknown signature", say exactly that — never fill the gap with guesses.
 
 ## 2. SCOPE WALLS
 

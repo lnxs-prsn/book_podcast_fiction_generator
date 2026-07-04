@@ -202,7 +202,11 @@ The Orchestrator touches none of these files. It coordinates by telling each sub
 
     Exit 1 → alert user that living_document.md is stale. Offer to continue or abort.
 
-11. SPAWN Extractor subagent with this prompt:
+11. SPAWN Extractor subagent with this prompt.
+    (If your harness supports a background / long-running task mode for subagents
+    with a longer timeout, use it for THIS step — the Extractor is the heaviest
+    subagent. If a foreground timeout fires anyway: check its log before retrying;
+    it may have completed after the deadline — run the analyst, see TIMEOUT RACE.)
     -------
     You are the Extractor. Read your spec at fiction_loop/agents/extractor.md.
    FIRST read fiction_loop/core/agent_conduct.md and obey it: log to
@@ -293,6 +297,12 @@ show anchor log
 
 show living document
   → Read fiction_loop/core/living_document.md and print formatted
+
+analyst
+  → Run bash: python3 fiction_loop/tools/analyst.py
+  → Print its output verbatim. Deterministic situation analysis from the pipeline's
+    logs — it identifies, it never fixes. Run it on ANY BLOCKED before reporting
+    (see agent_conduct.md §1).
 
 redo last chapter
   → Fully mechanical — no judgment calls, no state surgery (agent_conduct rules apply:

@@ -4,8 +4,8 @@
   "source_text": "Pólya, How to Solve It (2nd ed.) — Part III, Short Dictionary of Heuristic",
   "difficulty_rating": 2,
   "arc_introduced": 1,
-  "current_touch": 1,
-  "name_attached": false,
+  "current_touch": 2,
+  "name_attached": true,
   "name_at_touch": 2,
   "touch_schedule": {
     "1": 1,
@@ -19,17 +19,23 @@
       "char_id": "char_002",
       "touch": 1,
       "context": "workplace"
+    },
+    {
+      "chapter": "003",
+      "char_id": "char_002",
+      "touch": 2,
+      "context": "professional"
     }
   ],
   "failure_modes_shown": [
     "the executor",
-    "the system builder"
-  ],
-  "failure_modes_not_yet_shown": [
+    "the system builder",
     "the information gatherer"
   ],
+  "failure_modes_not_yet_shown": [],
   "contexts_demonstrated": [
-    "workplace"
+    "workplace",
+    "professional"
   ],
   "contexts_not_yet_demonstrated": [
     "family_domestic",
@@ -38,8 +44,7 @@
     "negotiation",
     "project_management",
     "creative",
-    "argument_debate",
-    "professional"
+    "argument_debate"
   ],
   "preferred_context": "workplace",
   "transferred_to_ordinary_life": true,

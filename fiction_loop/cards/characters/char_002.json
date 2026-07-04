@@ -14,16 +14,30 @@
       "understood": true,
       "looked_back": true,
       "transferred_to_life": true
+    },
+    {
+      "gate_id": "G-003",
+      "grade": 2,
+      "operation_encountered": "op_identify_unknown",
+      "approach_taken": "none — applied correctly",
+      "understood": true,
+      "looked_back": true,
+      "transferred_to_life": true
     }
   ],
   "comprehension_state": {
     "op_identify_unknown": "understood"
   },
   "still_gets_wrong": [],
-  "ordinary_life_state": "Kwabena works in the Achimota bus depot dispatch office, where a missing bus assignment is resolved when he asks what they are actually trying to find.",
-  "life_progression": [],
+  "ordinary_life_state": "Kwabena sits at his larger desk near the supervisor's office at the Achimota depot, where clerks bring him a routing discrepancy and he resolves it by asking what they are actually trying to find.",
+  "life_progression": [
+    {
+      "chapter": "003",
+      "state": "Kwabena sits at his larger desk near the supervisor's office at the Achimota depot, where clerks bring him a routing discrepancy and he resolves it by asking what they are actually trying to find."
+    }
+  ],
   "ordinary_life_transfers": [],
   "anchor_observed": true,
-  "last_seen": "002",
+  "last_seen": "003",
   "next_planned_appearance": null
 }

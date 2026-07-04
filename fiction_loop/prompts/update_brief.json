@@ -6,51 +6,55 @@
     "is_new": false,
     "name": "Kwabena Asante",
     "occupation": "bus depot scheduler",
-    "city": "Accra, Ghana",
+    "city": "Accra",
     "age": null,
     "gate_visited": {
       "gate_id": "G-003",
       "grade": 2,
       "operation_encountered": "op_identify_unknown",
-      "approach_taken": "UNDETERMINED — focal character did not use a wrong approach in this gate; other entrants demonstrated the executor and information gatherer approaches",
+      "approach_taken": "none — applied correctly",
       "understood": true,
-      "looked_back": false,
+      "looked_back": true,
       "transferred_to_life": true
     },
     "comprehension_changes": {
       "op_identify_unknown": "understood"
     },
-    "ordinary_life_state": "Kwabena sits at his desk in the Achimota dispatch office when Mr. Addo brings a thick folder of Tema route passenger manifests and asks him to find the lightest four-o'clock bus load to cancel.",
-    "life_progression_shown": false
+    "ordinary_life_state": "Kwabena sits at his larger desk near the supervisor's office at the Achimota depot, where clerks bring him a routing discrepancy and he resolves it by asking what they are actually trying to find.",
+    "life_progression_shown": true
   },
   "other_entrants": [
     {
       "id": "char_003a",
-      "name": "Ato",
+      "name": "Kojo Acheampong",
       "is_new": true,
       "approach_taken": "the executor",
       "operations_applied": []
     },
     {
       "id": "char_003b",
-      "name": "Akosua",
+      "name": "Akosua Osei",
       "is_new": true,
       "approach_taken": "the information gatherer",
       "operations_applied": []
     }
   ],
   "secondary_touch_updates": [],
+  "names_used_this_chapter": [
+    "Kwabena Asante",
+    "Kojo Acheampong",
+    "Akosua Osei"
+  ],
   "gate_details": {
     "problem_structure": {
-      "unknown": "what property the iron sorting mechanism actually sorts the crates by",
+      "unknown": "which jar contains the key that opens the sealed exit",
       "data": [
-        "dozens of wooden crates with painted numbers and weights",
-        "a heavy iron sorting mechanism with three wide angled chutes",
-        "a faint chalk line near the base of the mechanism"
+        "six glass jars filled with different coloured liquids",
+        "a chalkboard reading 'One jar contains the key. The rest will dissolve your gloves.'"
       ],
-      "condition": "the crates must be sorted by weight before the mechanism will turn"
+      "condition": "only one jar contains a key; the liquids in the other jars dissolve gloves"
     },
-    "correct_approach": "Kwabena stopped at the entrance and looked at the structure of the room rather than its contents, named aloud what was wanted (the sequence), what was given (numbers and weights), and what bound them (the condition), then identified weight as the relevant property from the chalk line, and the gate closed."
+    "correct_approach": "Stop at the entrance and name aloud what is wanted, what is given, and what binds them before touching anything; the key is literally contained inside one jar, not a property of the liquid."
   },
   "process_updates": {
     "operation": "op_identify_unknown",
@@ -67,27 +71,23 @@
     "location_id": "loc_accra",
     "new_chapter_added": "003",
     "new_texture": [
-      "Kwabena's desk in the Achimota dispatch office is clear except for a single pen and a blank logbook.",
-      "A supervisor drops a thick manila folder of passenger manifests on the desk and asks for the lightest four-o'clock bus load to cancel.",
-      "Mr. Addo goes still and lowers his hand when Kwabena asks whether they are trying to cut a bus or find the empty seats."
+      "Kwabena now sits at a larger desk near the supervisor's office, with people bringing problems to him.",
+      "Three clerks huddle over printouts while one shuffles papers, one taps a calculator, and one calls dispatchers on a rising radio voice.",
+      "The master manifest is opened to resolve a duplicate route entry from a corrupted upload.",
+      "The wall fan in the depot office seems to slow when Kwabena asks the right question."
     ]
   },
   "anchor_update": {
     "appeared": true,
-    "manifestation": "seen",
-    "observation": "Grade 2. Information gatherer approach. Room gives complete data — every crate labelled, every label legible, every quantity recorded. Complete. Still. The catalogue is the mirror. Underlined: the catalogue answered every question the solver asked; the question the room was waiting for was never asked. Register 2 at minute 14. Register 3 at minute 18. Four minutes from sitting down to right question.",
+    "manifestation": "bystander_mention",
+    "observation": "Grade 2. Executor approach. Room emphasised sequential testing — jars aligned, labels clarified, spacing even. Underlined: chalkboard condition ignored. Register 2 at minute 8. Register 3 at minute 14.\n\nInformation gatherer approach. Room gave complete catalogue — no movement, no shift. Underlined: no question of purpose. Register 1 throughout.\n\nCorrect approach: threshold naming. Wanted/given/binding spoken before entry. Register 3 confirmed at utterance. Gate closed minute 19.",
     "location": "loc_accra",
-    "reader_can_suspect_update": "The anchor is physically present inside the gates, observing and recording the exact mirror content and register shifts."
+    "reader_can_suspect_update": "The anchor is now observing solvers both inside and outside gates, tracking post-gate behavior and social echoes with precise notation that explicitly identifies 'threshold naming' as the correct approach."
   },
   "macro_mystery_update": {
     "evidence_planted": false,
     "evidence": "none"
   },
-  "names_used_this_chapter": [
-    "Ato",
-    "Akosua",
-    "Mr. Addo"
-  ],
   "next_chapter_pointer": {
     "chapter": "004",
     "type": "new_focal_character",
@@ -95,7 +95,7 @@
     "operation_due": "op_separate_condition",
     "touch_due": 1,
     "name_due": false,
-    "failure_mode_to_show": "the executor",
+    "failure_mode_to_show": "the system builder",
     "secondary_touches": [],
     "echo_touch": null,
     "anchor_appears": true

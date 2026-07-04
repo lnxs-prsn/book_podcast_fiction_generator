@@ -8,16 +8,17 @@
 
 ## INPUT
 
-Read all seven of these files before filling any field:
+Read these files before filling any field (curriculum is NOT among them — the
+schedule lives in each card's touch_schedule inside process_state.json; reading the
+6k-word curriculum made this step slow enough to hit harness timeouts):
 
 ```
 fiction_loop/chapters/chapter_[NNN].md       — what actually happened in the prose
 fiction_loop/prompts/assembled_prompt.md     — what was planned (operation, character, location, gate)
 fiction_loop/state/master_state.json         — chapter_count, arc_current, population_index
-fiction_loop/state/process_state.json        — touch counts, teaching_history, failure_modes_not_yet_shown
+fiction_loop/state/process_state.json        — touch counts, touch_schedule, pools (the ENTIRE scheduling input)
 fiction_loop/state/mystery_anchor.json       — observable_log (for anchor condition and appearance text)
-fiction_loop/core/concept_curriculum.md      — arc operation schedules (for next_chapter_pointer logic)
-fiction_loop/core/living_document.md         — narrative-level story state for continuity context
+fiction_loop/core/living_document.md         — "MYSTERY PERSON THREAD" section only (reader_can_suspect diff)
 fiction_loop/core/chapter_type_contract.md   — which sections below apply to this chapter_type
 ```
 

@@ -43,3 +43,6 @@ may modify; the RULES section is owner-maintained.
 | Kwame | 002 |  |
 | Yaw | 002 |  |
 | Kofi | 002 |  |
+| Kwabena Asante | 003 | char_002 |
+| Kojo Acheampong | 003 | char_003a |
+| Akosua Osei | 003 | char_003b |

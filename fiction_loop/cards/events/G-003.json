@@ -1,0 +1,30 @@
+{
+  "id": "G-003",
+  "type": "gate",
+  "grade": 2,
+  "location_id": "loc_accra",
+  "chapter_opened": 3,
+  "chapter_closed": 0,
+  "status": "open",
+  "problem_structure": {
+    "unknown": "which jar contains the key that opens the sealed exit",
+    "data": [
+      "six glass jars filled with different coloured liquids",
+      "a chalkboard reading 'One jar contains the key. The rest will dissolve your gloves.'"
+    ],
+    "condition": "only one jar contains a key; the liquids in the other jars dissolve gloves"
+  },
+  "wrong_approaches_demonstrated": [
+    "the executor",
+    "the information gatherer"
+  ],
+  "correct_approach": "Stop at the entrance and name aloud what is wanted, what is given, and what binds them before touching anything; the key is literally contained inside one jar, not a property of the liquid.",
+  "characters_entered": [
+    "char_002",
+    "char_003a",
+    "char_003b"
+  ],
+  "operation_taught": "op_identify_unknown",
+  "anchor_present": true,
+  "notes": ""
+}

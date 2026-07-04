@@ -1,0 +1,23 @@
+{
+  "id": "char_003b",
+  "name": "Akosua Osei",
+  "age": null,
+  "occupation": "",
+  "location_id": "",
+  "comprehension_state": {},
+  "still_gets_wrong": [],
+  "ordinary_life_state": "",
+  "life_progression": [],
+  "ordinary_life_transfers": [],
+  "anchor_observed": false,
+  "next_planned_appearance": null,
+  "first_appeared": 3,
+  "gate_history": [
+    {
+      "gate_id": "G-003",
+      "approach_taken": "the information gatherer",
+      "understood": false
+    }
+  ],
+  "last_seen": 3
+}

@@ -12,7 +12,7 @@
 # the PRIMARY deployment truthfully — .env is for temporary overrides.
 # CAUTION: price_per_1m_* and context_limit below do NOT switch when the model
 # is overridden via env — update them when you change models for real.
-model = "qwen3.7-plus"
+model = "qwen3-max"
 
 # ---------------------------------------------------------------------------
 # Document paths (required)
@@ -33,15 +33,16 @@ output_dir      = "../chapters"
 # ---------------------------------------------------------------------------
 # Context and pricing (required — set to match your model)
 # ---------------------------------------------------------------------------
-# context_limit: the model's actual maximum context window in tokens.
-# claude-sonnet-4-6 = 200000. claude-opus-4-8 = 200000. gpt-4o = 128000.
-context_limit = 200000
+# context_limit: conservative floor for qwen3-max (its window is larger; a low
+# value only makes the overflow guard stricter, which is safe). Prompts here run
+# ~6k tokens, far from any limit.
+context_limit = 131072
 
-# price_per_1m_tokens: USD per 1,000,000 tokens (from OpenRouter pricing page).
-# claude-sonnet-4-6 input=$3.00 output=$15.00
-# claude-opus-4-8   input=$15.00 output=$75.00
-price_per_1m_input_tokens  = 3.00
-price_per_1m_output_tokens = 15.00
+# price_per_1m_tokens: ESTIMATE for qwen3-max class — owner should replace with
+# the exact numbers from the Aliyun console; until then the cost caps are
+# approximate (previously they used Claude prices = pure fiction).
+price_per_1m_input_tokens  = 1.20
+price_per_1m_output_tokens = 6.00
 
 # ---------------------------------------------------------------------------
 # Output and spend tracking

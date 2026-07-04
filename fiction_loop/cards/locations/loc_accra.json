@@ -10,11 +10,16 @@
   "ordinary_life_texture": [
     "A dispatch office ceiling fan turns overhead with a low, rhythmic clicking sound.",
     "A depot manager and a roster clerk reconcile a missing bus assignment using sign-out logs and filing cabinets.",
-    "Driver claims about a bus being in the yard are checked against the official roster log."
+    "Driver claims about a bus being in the yard are checked against the official roster log.",
+    "Kwabena now sits at a larger desk near the supervisor's office, with people bringing problems to him.",
+    "Three clerks huddle over printouts while one shuffles papers, one taps a calculator, and one calls dispatchers on a rising radio voice.",
+    "The master manifest is opened to resolve a duplicate route entry from a corrupted upload.",
+    "The wall fan in the depot office seems to slow when Kwabena asks the right question."
   ],
   "macro_mystery_evidence_here": [],
   "characters_based_here": [],
   "chapters_set_here": [
-    2
+    2,
+    3
   ]
 }

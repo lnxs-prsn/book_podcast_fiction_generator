@@ -1,93 +1,119 @@
-Kwabena stood outside the corrugated iron door. The Harmattan dust coated his shoes. He adjusted his collar. He was the senior dispatcher now. The master schedule sat on his desk at the Achimota depot. He had the corner office. He managed the three junior schedulers. He had earned the room through six months of flawless routing. He did not think about the promotion. He looked at the door.
+# CHAPTER 003
 
-The air around the frame was still. The dust did not move. 
+Kwabena Asante stood at the gate entrance. He did not step in. He looked.
 
-He remembered the last room. His hands twitched. He forced them to his sides. He breathed in. He placed one foot over the threshold. He stopped. He looked at the room before entering it fully.
+The room was small. White walls. A table in the center. On it: six metal boxes, each with a dial on top. The dials were set to numbers between one and ten. Wires ran from each box to a panel on the far wall. The panel had six slots, each labeled with a letter—A through F. No instructions. No signs.
 
-Inside, the room was large. Wooden crates sat on the concrete floor. A metal chute led to a dark opening in the far wall. The crates were heavy. They smelled of pine and old oil. 
+Kojo Acheampong walked past him without stopping. “Simple,” he said. He went straight to the table. He picked up the first box. Checked its dial. Carried it to slot A. Plugged it in. Moved to the next.
 
-A young man in a delivery rider’s jacket was already moving. Ato. He grabbed the first crate. He checked the stenciled number. He carried it to the chute. He moved to the next. Fast. Confident. He sorted them by the numbers. One, two, three. 
+Kwabena watched. Kojo worked fast. Confident. He matched box to slot by dial number—lowest to highest. Box with dial 2 went to A, 3 to B, 4 to C. He didn’t look at the labels. He didn’t look at the wires. He just moved.
 
-Kwabena watched from the threshold. 
+The gate held. Register 1. Inert.
 
-Ato worked for ten minutes. The room changed. The crates Ato touched were aligned. The stenciled numbers were sharp. The spacing between the remaining crates was even. The crates were in three groups now. Ato had not moved them all. The large ones were together. The medium ones. The small. Ato had done that. But the groups were more distinct than he had left them. The edges were aligned. The spacing was even. Ato had not done that. The pattern of numbers was obvious. It was almost legible. 
+Kwabena remembered doing the same thing once. Acting before looking. It had taken him twenty-three minutes to stop.
 
-Ato wiped his forehead. He grabbed another crate. He shoved it toward the chute. 
+Now Akosua Osei entered. She carried a clipboard. She wore rubber boots and smelled of fish brine. She stopped just inside the threshold. She did not touch anything. She pulled a pen from her pocket and began writing.
 
-The chute did not open. The air did not shift. 
+She noted the dimensions of the room. The height of the ceiling. The number of light fixtures. She listed each box: weight (estimated), material (steel), dial range (1–10), wire length (approx. 1.2 meters). She drew a sketch of the panel. She labeled every slot. She wrote down the time—10:47 a.m.—and the temperature—28°C.
 
-Ato stopped. He looked at the crates. He looked at the chute. He stepped back. He had moved every crate he could reach. The pattern was clear. The gate did not move. Ato stood by the wall. He breathed hard. His hands hung at his sides. 
+She spent twelve minutes cataloguing. She did not ask what the boxes were for. She did not wonder why the dials mattered. She gathered everything. She assumed the answer would appear once she had enough.
 
-A woman stepped through the door behind Kwabena. Akosua. She carried a clipboard and a pen. She did not look at the chute. She looked at the crates. 
+The room stayed still. Register 1. Undisturbed. As if she were not there.
 
-She walked to the first unsorted crate. She opened her clipboard. She wrote down the dimensions. She noted the wood type. She checked the stenciled number. She moved to the next. 
+Kwabena stepped back out into the corridor. He leaned against the cool concrete wall. He closed his eyes. Not to rest. To remember how it felt when he finally asked the right question.
 
-She worked in silence. Her pen scratched against the paper. She measured the distance from the wall. She counted the nails in the wood. She checked the weight of each crate. She recorded the exact shade of the stencil paint. 
+Inside, Kojo finished arranging the boxes. He stepped back. Waited. Nothing happened. He frowned. He unplugged box D. Swapped it with E. Tried again. Still nothing.
 
-The room responded. The light shifted. It fell evenly across the floor. Every stenciled number became perfectly crisp. The shadows vanished. The room gave her everything she asked for. Every crate was labelled. Every label was legible. Every quantity was recorded. The inventory was complete. The documentation was total. The catalogue was the room. 
+Akosua flipped a page on her clipboard. She began measuring the distance between slots on the panel. She used a cloth tape measure pulled from her apron pocket.
 
-Akosua finished her page. She turned it over. She looked at the room. 
+Kwabena opened his eyes. He walked back to the entrance. He looked at the room again—not at the boxes, not at the panel, but at the whole arrangement.
 
-The chute remained dark. The air remained dead. 
+What is wanted?  
+What is given?  
+What binds them?
 
-She lowered the clipboard. She had every piece of data. She looked at the crates. She looked at the chute. She did not move. 
+He said it aloud. Quietly. To no one.
 
-Kwabena did not move toward the crates. He stayed at the entrance. 
+He counted on three fingers.
 
-He watched the room. He did not look at the numbers. He did not look at the measurements. He looked at the space between the crates and the chute. 
+Then he entered.
 
-He sat down on the concrete. 
+He did not touch the boxes. He walked to the panel. He read the labels: A, B, C, D, E, F. He turned. He looked at the dials. He saw something Kojo had missed. Something Akosua had recorded but not questioned.
 
-The room was different when he looked up. The light was not where it had been. The crates were no longer the focus. The dark opening of the chute was in the foreground. 
+The dials were not random. They were paired. Two boxes showed 3. Two showed 7. One showed 5. One showed 9.
 
-He looked at the chute. He looked at the crates. He looked at the space. 
+He looked at the panel again. The slots were not just letters. Beneath each, almost invisible, was a tiny symbol: a wave, a dot, a line, another wave, a dot, a line.
 
-He raised his left hand. He extended his index finger. What is wanted. 
+He matched symbol to symbol. Not number to number. Not position to position.
 
-He extended his middle finger. What is given. 
+He moved the first box—the one with dial 3 and a wave symbol under its base—to slot A. It clicked softly. The light above the panel flickered green.
 
-He extended his ring finger. What binds them. 
+He placed the second wave box—dial 7—in slot D. Another click. Another green light.
 
-He held the three fingers up. 
+Dot boxes went to B and E. Line boxes to C and F.
 
-“The sequence,” he said to the empty room. “The crates are the data. The chute is the condition. The binding is the sequence of the mechanism, not the numbers on the wood.”
+The gate shifted. Register 3. Before he plugged in the last box.
 
-The air changed. 
+He plugged it in. The panel lit fully. A low hum filled the room. The door behind him unlocked.
 
-The pressure dropped. The dark opening of the chute pulled the light inward. The room shifted. The unknown revealed itself a half-second before he moved. 
+He stepped out.
 
-He stood up. He walked to the crates. He did not look at the numbers. He looked at the internal mechanism of the chute. He aligned the first crate with the gear teeth inside the chute. He pushed. 
+In the corridor, a man in a grey coat stood near the stairwell. He held a small black notebook. He wrote something quickly, then closed it. He did not look at Kwabena. He walked away.
 
-The gate closed. Quietly. The room dissolved into ordinary dust and corrugated iron. 
+A depot worker passing by muttered, “That man again. Asked me this morning if anyone had gone into Gate Three. Like he was keeping count.”
 
-In the corner of the room, before it fully dissolved, a man in a grey coat stood by the wall. He held a small black notebook. He did not look at Kwabena. He looked at the space where the crates had been. 
-
-He opened the notebook. He wrote. 
-
-Grade 2. Information gatherer approach. Room gives complete data — every crate labelled, every label legible, every quantity recorded. Complete. Still. The catalogue is the mirror. Underlined: the catalogue answered every question the solver asked; the question the room was waiting for was never asked. Register 2 at minute 22. Register 3 at minute 26. Four minutes from sitting down to right question.
-
-He closed the notebook. He walked out the door. 
-
-The operation was to identify the unknown, the data, and the condition.
+Kwabena did not reply. He walked toward the dispatch office.
 
 ***
 
-The dispatch office at Achimota was loud. Fans clicked overhead. Kwabena sat at his desk. The master schedule was pinned to the board. 
+The depot office was loud. Radios crackled. Phones rang. Paper shuffled. Three people stood around Kwabena’s desk, talking over each other.
 
-His deputy, Ebo, dropped a thick folder on the desk. 
+“We’ve checked every manifest from Tuesday,” said Nana, the shift supervisor. “No record of Bus 47 being assigned to Takoradi.”
 
-“The fuel logs for the Tema route,” Ebo said. “The numbers are off by four percent. I started pulling the daily manifests to find the leak.”
+“But the driver says he was told to go,” said Yaw, the logistics clerk. “And the ticket master says passengers boarded.”
 
-Ebo reached for the folder to open it. 
+“Then where’s the paperwork?” Nana snapped. “If it left without a manifest, we’re liable.”
 
-Kwabena put his hand flat on the folder. 
+Yaw spread his hands. “I’ve pulled every file. Cross-referenced crew logs, fuel receipts, maintenance checks. Nothing shows Bus 47 leaving Achimota that day.”
 
-He did not open it. He looked at the cover. He looked at Ebo. 
+They turned as Kwabena entered. Nana gestured at the stack of folders on his desk. “You’re good at finding gaps. Take a look.”
 
-“What are we actually trying to find?” Kwabena asked. 
+Kwabena did not sit. He did not open the first file. He looked at the problem the way he had looked at the room.
 
-Ebo stopped. His hand hovered over the folder. He looked at Kwabena. The noise of the office seemed to drop away. Ebo went still. 
+“What are we actually trying to find?” he asked.
 
-“Not the leak,” Ebo said slowly. “The source of the variance.”
+Silence fell.
 
-Kwabena nodded. He took his hand off the folder.
+Nana blinked. Yaw stopped mid-gesture. Even the radio seemed to lower its static.
+
+“We’re trying to find the manifest,” Nana said slowly.
+
+“Are we?” Kwabena asked. “Or are we trying to prove the bus left?”
+
+Yaw frowned. “Same thing.”
+
+“Not if the manifest wasn’t made,” Kwabena said. “What if the bus left, but no one filed the departure slip? Then the manifest doesn’t exist. But the trip did.”
+
+Nana went very still.
+
+Kwabena sat. He opened the crew log for Tuesday. He skipped the manifests. He found the driver’s sign-in sheet. Bus 47’s driver had clocked out two hours later than usual. Enough time for a round trip to Takoradi.
+
+He checked the fuel log. An extra 80 liters drawn that morning—exactly what Bus 47 would need.
+
+He looked up. “The bus left. Someone forgot to file the departure. Check the ticket stubs. If they match the passenger count the driver reported, we close the loop.”
+
+Yaw stared. “I didn’t think to look at clock-out times.”
+
+Nana exhaled. “We were looking for a document that never existed.”
+
+Kwabena nodded. He closed the log. His hands rested flat on the desk.
+
+Later, alone, he thought about the gate. Not the room. Not the boxes. Just the moment before he moved.
+
+He reached for the language of his work. Routes. Depots. Schedules.
+
+It wasn’t about sorting. It wasn’t about collecting. It was about knowing what you were looking for before you started looking.
+
+He called it route clarity. You couldn’t assign a bus if you didn’t know the destination, the load, and the rules that tied them together.
+
+That was all it was.

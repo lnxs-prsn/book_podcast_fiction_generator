@@ -66,6 +66,13 @@ Limits: $5/session, $50 lifetime (`tools/pipeline_config.toml`).
   credentials found".
 - If the Consistency Checker BLOCKs, it will say why — fix the state or the pointer,
   don't override.
+- ANY problem, first move: `python3 fiction_loop/tools/analyst.py` — deterministic
+  situation analysis from the logs (zero tokens, ~90% of known failures; it names
+  the issue and the fix, it changes nothing itself). The Orchestrator runs it
+  automatically on BLOCKED; you can run it yourself anytime.
+- Where are we / how much is left: `python3 fiction_loop/tools/progress.py` —
+  book %, curriculum %, live chapter step with what's coming next. Leave it
+  running with `watch -n 30 python3 fiction_loop/tools/progress.py`.
 
 ## REDO / ROLLBACK
 
