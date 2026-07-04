@@ -109,7 +109,7 @@
       "name": "Separate the parts of the condition",
       "difficulty_rating": 3,
       "arc_introduced": 1,
-      "current_touch": 1,
+      "current_touch": 0,
       "name_attached": false,
       "name_at_touch": 2,
       "touch_schedule": {
@@ -120,25 +120,16 @@
       "prerequisite": [
         "op_identify_unknown"
       ],
-      "teaching_history": [
-        {
-          "chapter": "004",
-          "char_id": "char_004",
-          "touch": 1,
-          "context": "workplace"
-        }
-      ],
-      "failure_modes_shown": [
-        "the system builder"
-      ],
+      "teaching_history": [],
+      "failure_modes_shown": [],
       "failure_modes_not_yet_shown": [
         "the executor",
+        "the system builder",
         "the information gatherer"
       ],
-      "contexts_demonstrated": [
-        "workplace"
-      ],
+      "contexts_demonstrated": [],
       "contexts_not_yet_demonstrated": [
+        "workplace",
         "professional",
         "family_domestic",
         "civic_institutional",
@@ -149,7 +140,7 @@
         "argument_debate"
       ],
       "preferred_context": "workplace",
-      "transferred_to_ordinary_life": true,
+      "transferred_to_ordinary_life": false,
       "compressible_at_touch": 2
     },
     "op_use_all_data": {

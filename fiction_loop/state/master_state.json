@@ -2,18 +2,14 @@
   "story_title": "The Sankofa Gates",
   "genre": "African gate-clearing process fiction — contemporary Africa, in the Korean/Japanese gate-fiction tradition",
   "source_material": "Pólya, G. — How to Solve It: A New Aspect of Mathematical Method (2nd ed.) — books/How to Solve It_ A New Aspect  - Polya, G._7564 (1).epub",
-  "chapter_count": 4,
+  "chapter_count": 3,
   "arc_current": 1,
   "process_state_summary": {
     "op_what_is_missing": {
       "touch": 1,
       "last_chapter": "001"
     },
-    "op_identify_unknown": "owned",
-    "op_separate_condition": {
-      "touch": 1,
-      "last_chapter": "004"
-    }
+    "op_identify_unknown": "owned"
   },
   "failure_modes_not_yet_shown": [],
   "population_index": [
@@ -46,15 +42,9 @@
       "name": "Akosua Osei",
       "status": "active",
       "last_seen": "003"
-    },
-    {
-      "id": "char_004",
-      "name": "Aminata Diop",
-      "status": "active",
-      "last_seen": "004"
     }
   ],
-  "anchor_summary": "Last appeared ch. 004 (notebook_page); 4 total appearances.",
+  "anchor_summary": "Last appeared ch. 003 (bystander_mention); 3 total appearances.",
   "macro_mystery_evidence": [
     {
       "chapter": "001",
@@ -63,20 +53,16 @@
     {
       "chapter": "002",
       "evidence": "A torn notebook page in unfamiliar handwriting is found on the floor inside the Achimota depot gate, using the same concise notation as the Lagos observation and recording Kwabena's wrong approach as the executor approach."
-    },
-    {
-      "chapter": "004",
-      "evidence": "A folded notebook page in the same concise notation as the Lagos and Accra observations is found tucked under the Dakar gate's threshold seal, recording the system builder approach and explicitly noting that the compound condition had three clauses while the solver's method could hold only one at a time."
     }
   ],
   "next_chapter_pointer": {
-    "chapter": "005",
+    "chapter": "004",
     "type": "new_focal_character",
     "char_id": null,
-    "operation_due": "op_look_at_unknown",
+    "operation_due": "op_separate_condition",
     "touch_due": 1,
     "name_due": false,
-    "failure_mode_to_show": "the executor",
+    "failure_mode_to_show": "the system builder",
     "secondary_touches": [],
     "echo_touch": null,
     "anchor_appears": true
