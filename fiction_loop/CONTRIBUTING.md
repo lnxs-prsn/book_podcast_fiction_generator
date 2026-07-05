@@ -81,6 +81,13 @@ counting, table lookup, or string templating over already-structured data, it is
 code (L3 or `specs/`), never an LLM judgment. If a check CAN be deterministic it
 MUST be. *(Case law: word-count floors could not see an under-populated cast;
 `structural_gate.py` counts the brief and caught it on its first live run.)*
+Two corollaries: (a) code that spends money or gates a run ships with a runnable
+acceptance check — never merged on inspection alone *(case law: both bridge
+scripts silently dropped the API key via one bad dict merge; only a live smoke
+test exposed it)*; (b) numeric thresholds are TRIPWIRES calibrated to observed
+behavior, never aspirational targets *(case law: a 2000-word "floor" rejected a
+good 1,583-word chapter; the fix was floor 1200 as truncation tripwire + a
+separate prompt-side target, because models undershoot stated minimums)*.
 
 **LAW 4 — REGISTER PRODUCERS AND CONSUMERS, THEN AUDIT.** No new field without a
 registry row naming both producer and consumer (a field with only one is dead
@@ -127,7 +134,12 @@ evidence: STATUS.md, per-agent logs (START before acting), the brief, spend file
 `.bak` files. `analyst.py` must be able to diagnose from receipts alone; every
 new failure signature gets added to its table. The spend file records real money
 and is NEVER reverted. Debugging starts with `python3 fiction_loop/tools/analyst.py`,
-not with reading prose.
+not with reading prose. Corollary — ARTIFACT FRESHNESS: no step may consume a
+pipeline artifact left by a previous run; a failed producer must overwrite,
+delete, or salvage-rename its output so staleness is impossible to miss *(case
+law: a rejected draft left the PREVIOUS chapter sitting in chapter_draft.md —
+chapter 1 was nearly committed a second time as chapter 2; invoke_writer now
+salvages failures to `.rejected.md`)*.
 
 **LAW 10 — CONTEXT BUDGET IS CORRECTNESS, NOT OPTIMIZATION.** The Orchestrator
 never reads content files; subagents return one line; data moves by file path.
@@ -183,7 +195,12 @@ buildable without rewriting the machinery.)*
    If it has no row, add the row FIRST — you are the person discovering this
    dependency; the next AI shouldn't have to.
 4. Fix at the owning document; update every registered copy in the same sitting;
-   append case law to the registry if you found a new bug class.
+   append case law to the registry if you found a new bug class. BACKTEST RULE:
+   if NO law in §3 covers the bug class you just fixed, this constitution has a
+   gap — add a law or corollary with the incident as case law. (This file was
+   validated by replaying all 20 known historical bugs against it; every future
+   bug must keep mapping, or the file gets amended. An unmapped bug fixed
+   silently is how glue projects start.)
 5. Verify with zero-token tools (gate, analyst, JSON parse, grep the artifact).
    Paid verification happens only via the normal pipeline, cheapest rung.
 6. Commit pathspec-limited, governance separate from chapter transactions,
