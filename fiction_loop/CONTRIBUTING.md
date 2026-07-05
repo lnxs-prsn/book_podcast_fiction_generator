@@ -180,6 +180,22 @@ quoted into assembler.md rather than fetched from world_rules §5.
 *(This law is what makes `specs/intake_factory.spec.md` — book in, loop out —
 buildable without rewriting the machinery.)*
 
+**LAW 15 — NO SHADOW MACHINERY, NO DECORATIVE MACHINERY.** Everything that ACTS
+on a run — every check, gate, config value with behavioral content, git hygiene
+rule, ignore pattern, system prompt, harness setting (timeouts!), cron — must be
+listed in an owning document with (a) the invariant it protects and (b) evidence
+it can actually fire. Machinery nobody wrote down WILL contradict a law silently
+*(case law: `.gitignore` line 28 kept all prose out of "complete" chapter
+transactions, breaking LAW 8's premise, documented nowhere; harness subagent
+timeouts caused the ch3 timeout race from outside fiction_loop entirely)*.
+Machinery that cannot fire is worse than none — it buys false confidence
+*(case law: check CR3 ran for weeks policing a prerequisite field that did not
+exist — explicit SKIP forever; the gate's F14 check fires only on `false` while
+the Extractor emits `null`)*. When auditing or predicting bugs, "a check covers
+this" counts ONLY if you have seen that check fail or can show the input that
+makes it fail. OPEN: a one-time machinery inventory sweep against this law has
+not yet been performed — until it is, assume unregistered machinery exists.
+
 ## 4. BUG-FIX PROCEDURE (the algorithm)
 
 1. `python3 fiction_loop/tools/analyst.py`. Trust it. "Unknown signature" means
