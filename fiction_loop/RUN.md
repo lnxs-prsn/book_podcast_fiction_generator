@@ -1,5 +1,8 @@
 # HOW TO RUN THE LOOP (any agentic coding assistant)
 
+> Running a chapter: this file. **Changing/fixing the system itself:** read
+> `fiction_loop/CONTRIBUTING.md` (the laws) BEFORE editing any spec, tool, or state.
+
 The Orchestrator is not a program — it is an AI coding-agent session (any
 harness with file tools, a shell tool, and subagents) that reads
 `agents/orchestrator.md` and follows it. Subagents (Fetcher, Consistency Checker,
