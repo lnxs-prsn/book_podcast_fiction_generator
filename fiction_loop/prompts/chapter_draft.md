@@ -1,140 +1,102 @@
-# CHAPTER 004
+# CHAPTER 005
 
-The room was white. Not clean white. Not hospital white. The white of a page left too long in the sun—brittle, waiting to yellow. Wanjiku stepped inside and stopped.
+The gate room opened into a chamber lined with pigeonholes. Each slot held files, ledgers, stamped forms, maps rolled and tied with twine. The air smelled of paper, ink, and the faint tang of metal fasteners. Light came from overhead panels that hummed softly.
 
-She had not meant to stop. Her feet carried her through the door as they always did: toward the stack, the list, the pile that needed clearing. But something held her at the threshold. She looked at the room the way she looked at everything new—from the entrance, before moving.
-
-Three people were already inside.
-
-One stood near the far wall, arranging files into neat stacks on a metal table. He moved slowly, deliberately, placing each folder with its spine aligned, corners flush. His sleeves were rolled to the elbows. A pen tucked behind his ear. He did not look up.
-
-Another crouched by a low cabinet, pulling out drawers one by one, checking their contents against a clipboard. She tapped her pencil against the paper after each entry, lips moving silently as she counted. Her hair was pulled back tight. No strand out of place.
-
-The third was already halfway across the room, hands full of folders, sorting them into piles on the floor. Fast. Confident. He barely glanced at what he held before setting it down. He had been here less than two minutes.
-
-Wanjiku stepped fully inside. The door clicked shut behind her.
+A man in a grey coat stood near the far wall. He held a small black notebook open in one hand. His eyes moved from solver to solver without expression.
 
 ---
 
-The fast man finished his first pass. Five piles now, radiating from his boots like spokes. He straightened, wiped his palms on his trousers, and looked at the central panel on the far wall. It remained dark.
+The first solver entered fast. He wore work boots and a leather satchel slung across his chest. He did not stop at the threshold. He stepped straight to the nearest pigeonhole and pulled out a file. He flipped it open, scanned the first page, nodded once, and moved to the next slot. His hands were sure. His pace steady. He worked like someone who had done this before.
 
-He frowned. Walked to the nearest pile, picked up a file, opened it, flipped to the last page. Closed it. Replaced it exactly where it had been. Did the same with the next. And the next. After the seventh, he stopped. Rubbed his jaw. Looked around.
+The room responded. The files he touched glowed faintly at the edges. The labels on the pigeonholes sharpened—dates clearer, names bolder, case numbers aligned as if freshly printed. One slot, high on the left wall, remained dull. It held a single envelope with no stamp, no return address. The solver never looked up.
 
-The room had changed.
+He finished ten minutes later. Stacked the files neatly on a central table. Stepped back. Waited.
 
-The five piles were still there—but now spaced evenly, each group forming a perfect semicircle. The folders within each pile stood upright, spines parallel, gaps between them uniform. He had not done that. He stared at the arrangement. Then at the panel. Still dark.
+Nothing happened. The gate stayed open. The light above the entrance did not change.
 
-He tried again. This time, he re-sorted by patient ID number, calling out digits under his breath as he worked. When he finished, the room shifted again. The piles realigned—not by his new sequence, but by the old one. The size sequence. Large files together. Medium. Small. One file sat apart, slightly askew, outside all groups. He did not look at it. He walked to the panel. Touched it. Nothing.
-
-He left ten minutes later, shoulders stiff, without looking back.
+He frowned. Checked his stack again. Flipped through each file slowly this time. Still nothing. He left without looking back.
 
 ---
 
-The methodical man never rushed. He began by clearing the table entirely. Wiped it with a cloth from his pocket. Laid out a grid of tape—six columns, four rows. Then he started processing every object in the room.
+The second solver entered slowly. She carried a canvas roll that unspooled into a set of labeled trays. She placed them on the floor in a precise grid. Then she began removing every file from every pigeonhole. She sorted them by year, then by district, then by dispute type. Her movements were unhurried. Deliberate. She hummed under her breath.
 
-Files went into categories: admissions, discharge summaries, lab results, imaging reports, referral letters, administrative notes. Each category got its own column. Within each, he sorted chronologically. He labeled every row with a date range in neat block letters. When he finished, he stepped back. Crossed his arms. Nodded once.
+The room shifted. The pigeonholes rearranged themselves into columns that matched her categories. Labels appeared where none had been. A new shelf formed along the right wall, holding only boundary survey sketches. Everything fit. Everything was accounted for.
 
-The room gleamed with order.
+She stepped back when the last file was placed. She crossed her arms. Smiled slightly.
 
-Every surface reflected his system. Drawers hung open at precise angles. Pens lay parallel on the desk. Even the dust motes in the light seemed to align along his grid lines. He approached the central panel. Placed his palm flat against it. Waited.
+The gate did not close.
 
-The panel flickered—a pale blue for half a second—then died.
-
-He frowned. Checked his categories again. Verified dates. Re-counted files. Found no error. He touched the panel a second time. It lit briefly—three separate points glowing—but they did not connect. No hum. No shift. No closure.
-
-He packed his cloth. Closed his notebook. Left without speaking. The grid remained. Perfect. Useless.
+She waited two full minutes. Then she walked the perimeter, checking each category again. Nothing changed. She repacked her trays. Left without speaking.
 
 ---
 
-The woman with the clipboard never touched anything without writing it down first.
+The third solver arrived with a clipboard. He wore glasses and a vest with many pockets. He stood just inside the entrance and took a deep breath. Then he began.
 
-She began at the door and moved clockwise. Every drawer, every shelf, every loose sheet on the floor—she logged it. File number. Date. Type. Condition of binding. Presence of staples or paper clips. She noted the brand of pen on the desk, the make of the lamp, the number of screws holding the panel to the wall. She spent twenty-three minutes documenting before she even considered acting.
+He recorded the number of pigeonholes. Noted the material of the shelves. Counted the files in each row. He opened every ledger, wrote down its title, its date range, its condition. He measured the thickness of the twine on the rolled maps. He logged the humidity in the room using a small brass device clipped to his belt. His notes filled twelve pages.
 
-When she finally approached the central panel, she carried her clipboard like a shield. She read aloud from it: “Panel is matte black, 60 by 40 centimeters, mounted flush, no visible seams, no buttons, no ports.” She ran her fingers along its edges. Pressed gently in the center. Nothing.
+The room gave him everything. Files stayed open as long as he needed. Pages turned themselves when he reached for the next. Ink did not smudge. Paper did not tear. The catalogue grew complete.
 
-She returned to her notes. Added: “No response to tactile input.” Then she began cross-referencing her inventory against hospital filing protocols, national records guidelines, and three international standards she had memorized. She filled two more pages.
+When he finished, he closed his clipboard with a soft click. He looked around, satisfied. He had missed nothing.
 
-The room stayed still. Silent. Complete.
+The gate remained open.
 
-At minute forty-one, she closed her clipboard. Looked at the panel one last time. Walked out. The room did not change. It had given her everything she asked for. She had asked for nothing it could answer.
-
----
-
-Wanjiku had watched them all. She had not moved from near the door.
-
-Her own habit was different. At the hospital, when a fused memo landed on her desk—ten requests stapled together, signed by three different supervisors, stamped urgent in red ink—she never split it. She swallowed the whole thing. Worked through lunch. Stayed late. Got it done.
-
-That was competence. That was pride.
-
-She walked to the central panel now. It was featureless. Cold to the touch. She turned. Looked at the room.
-
-The grid from the methodical man still held. The size-sorted piles from the fast man remained, though slightly disturbed. The clipboard woman’s notes lay abandoned on a chair. And scattered among it all: files. Dozens of them. All marked with the same red stamp: **REQUEST PENDING — CONDITION UNMET**.
-
-Wanjiku picked up the nearest file. Opened it. The first page held a single paragraph:
-
-> *Patient file may be released only if (a) next of kin has submitted written consent using Form H-7b, (b) outstanding balance is below KSh 5,000, and (c) attending physician has countersigned discharge summary within last 30 days.*
-
-She read it once. Frowned. Read it again.
-
-Her eyes moved over the whole sentence. She tried to hold all three clauses at once. Her mind snagged on the balance clause—KSh 5,000 was arbitrary; some patients owed 4,999, others 10,000. She thought about Form H-7b—rarely used, often misplaced. The physician signature—sometimes delayed by bureaucracy.
-
-She set the file down. Picked up another. Same paragraph. Word for word.
-
-A third. Same.
-
-She stood still. Hands at her sides. Eyes unfocused—not on the files, but through them.
-
-Then she sat down on the edge of the metal table. The grid tape crinkled under her weight.
-
-She took a deep breath. Reached for the first file again. This time, she covered the last two clauses with her hand. Read only: *“next of kin has submitted written consent using Form H-7b.”*
-
-She looked up. Around the room.
-
-Nothing happened.
-
-She uncovered the second clause. Covered the first and third. Read: *“outstanding balance is below KSh 5,000.”*
-
-Still nothing.
-
-Then she covered the first two. Read only the last: *“attending physician has countersigned discharge summary within last 30 days.”*
-
-The panel glowed.
-
-Not brightly. Just a soft amber pulse, like a heartbeat seen through skin.
-
-Wanjiku stood. Walked to the panel. Touched it.
-
-It opened.
-
-A drawer slid out. Inside lay a single key. She took it. The panel dimmed. The room exhaled.
-
-She turned to leave. Paused. Looked back.
-
-On the dusty surface of a side table—near where the clipboard woman had sat—was a faint rectangular impression. Fresh. As if something small and square had rested there recently. Beside it, a smudged pencil mark:  
-
-*Grade 2. Executor approach. Room organised by size sequence — large, medium, small files grouped, spacing even. Underlined: one file outside sequence. Solver did not look at it. Register 2 at minute 8. Register 3 at minute 10.*  
-*System builder. Room mirrored categorical grid — six columns, chronological rows. Perfect assignment. Underlined: condition not in categories. Register flicker 1/3 throughout. No true Register 2.*  
-*Information gatherer. Room gave complete inventory — all objects logged, all surfaces noted. Underlined: no question asked of data. Register 1 entire session.*  
-*Correct approach: condition read clause by clause. Hand covered extraneous text. Register 3 at minute 52. Gate closed minute 53.*
-
-Wanjiku did not read it twice. She walked out.
+He checked his watch. Frowned. Opened the clipboard again and reviewed his notes. Found no error. Closed it once more. Walked out without glancing at the entrance.
 
 ---
 
-Back at the hospital, the fused memo sat on her desk. Ten requests. Three signatures. Red stamp: **URGENT — ACTION REQUIRED**.
+Fatou Ndiaye entered last.
 
-She did not open the first file. She looked at the problem the way she had looked at the room. What binds this?
+She stopped at the threshold. Her sandals were dusty from the street outside. She wore a simple cotton dress, sleeves rolled to the elbow. She did not carry anything. She looked at the room the way she looked at a new filing cabinet back at the registry—before touching any drawer.
 
-She took a blank sheet. Wrote down each requirement separately:
+Her eyes swept the walls. The files. The maps. The stacks on the table left by the others. Then she turned slightly, so her back was half to the data. Her gaze fixed on the empty space above the central table—the place where an answer would appear if this were a land registry office and someone had asked for a ruling.
 
-1. Supervisor A must initial Section 3.  
-2. Budget code must match current fiscal year.  
-3. Patient consent form must be notarized.  
-4. Records must be digitized before release.  
-5. …
+She stood still.
 
-She crossed out all but the first. Solved it in seven minutes. Returned to the rest one by one.
+The room dimmed in the corners. The pigeonholes on the right faded to grey. The files on the table lost their glow. Only the dull slot on the left wall—the one with the unstamped envelope—held its shape.
 
-Across the aisle, David from billing stopped mid-sentence. Watched her. His pen hovered over his ledger. The office noise dipped—just for a breath—before rising again.
+Fatou did not move toward it. She kept her eyes on the empty space above the table. She asked herself: *What kind of thing is wanted here?*
 
-Wanjiku did not notice. She was already on requirement four.
+Not who. Not when. Not how much land. But what *kind* of answer closes this gate?
+
+She remembered a case from last month. A widow in Parcelle Assainie. No deed. Only a witness statement from a neighbour who had since moved to Thiès. The ruling had hinged not on documents but on testimony type—oral boundary acknowledgment, pre-1987, admissible under Article 12(b).
+
+The unknown here was not a person or a date. It was a *category of evidence*.
+
+As soon as she named it—even silently—the unstamped envelope pulsed once. The slot brightened. The rest of the room stilled.
+
+Fatou walked to the left wall. Took the envelope. Opened it. Inside was a single sheet of paper. Handwritten. Signed by two witnesses. Dated 1983. It described a boundary marked by a baobab tree felled in 1991.
+
+She placed the sheet on the central table.
+
+The light above the entrance shifted from white to amber. Then to green. The gate closed with a soft click.
+
+Fatou stood for a moment longer. She looked at the table, then at the now-dark pigeonholes. She did not write anything down. She turned and walked out.
+
+---
+
+Three days later, Fatou sat at her desk in the Dakar District Land Registry. Morning sun slanted through the high windows. A stack of boundary-dispute files rose beside her—twenty-three cases, all unresolved. Her supervisor had dropped them with a sigh: “Start with the oldest.”
+
+Her colleague Amadou shuffled papers nearby. Another clerk, Mame, argued softly with a petitioner over a missing signature.
+
+Fatou did not open the top file. She placed her palms flat on the desk. Looked at the stack the way she had looked at the gate room.
+
+“What does the outcome actually need to be?” she said.
+
+Her voice was quiet. Not rhetorical. A plain question.
+
+Amadou stopped shuffling. Mame’s argument paused mid-sentence. The petitioner turned slightly, as if the air had changed.
+
+Fatou picked up the first file. Opened it. Read the claimant’s request carefully. Then she set it aside and reached for the third file instead—the one involving a shared well.
+
+She found the relevant precedent in four minutes.
+
+---
+
+The man in the grey coat closed his notebook. He did not look at Fatou as she left the gate room. He walked to the exit, turned left down the corridor, and disappeared.
+
+His notebook entries read:
+
+> Grade 1–2 / executor / room emphasises sequential file order; gap: unstamped envelope (slot L7); Reg 1 throughout; closure attempt min 10 — failed  
+> Grade 1–2 / system builder / room mirrors categorical grid; gap: categorisation ignores evidentiary type; Reg flicker 1→3→1; closure attempt min 14 — failed  
+> Grade 1–2 / information gatherer / room yields complete audit; gap: no question asked of data; Reg 1 undisturbed; closure attempt min 18 — failed  
+> Grade 1–2 / correct / Reg 2 at threshold-standing (min 19:03); Reg 3 at right question (min 19:47); gate closed min 20

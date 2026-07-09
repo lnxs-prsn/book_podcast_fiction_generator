@@ -266,7 +266,7 @@
       "name": "Look at the unknown",
       "difficulty_rating": 4,
       "arc_introduced": 1,
-      "current_touch": 0,
+      "current_touch": 1,
       "name_attached": false,
       "name_at_touch": 2,
       "touch_schedule": {
@@ -278,19 +278,27 @@
       "prerequisite": [
         "op_identify_unknown"
       ],
-      "teaching_history": [],
-      "failure_modes_shown": [],
-      "failure_modes_not_yet_shown": [
+      "teaching_history": [
+        {
+          "chapter": "005",
+          "char_id": "char_005",
+          "touch": 1,
+          "context": "civic_institutional"
+        }
+      ],
+      "failure_modes_shown": [
         "the executor",
         "the system builder",
         "the information gatherer"
       ],
-      "contexts_demonstrated": [],
+      "failure_modes_not_yet_shown": [],
+      "contexts_demonstrated": [
+        "civic_institutional"
+      ],
       "contexts_not_yet_demonstrated": [
         "workplace",
         "professional",
         "family_domestic",
-        "civic_institutional",
         "teaching_mentoring",
         "negotiation",
         "project_management",
@@ -298,7 +306,7 @@
         "argument_debate"
       ],
       "preferred_context": "civic_institutional",
-      "transferred_to_ordinary_life": false,
+      "transferred_to_ordinary_life": true,
       "compressible_at_touch": 3
     },
     "op_related_problem": {

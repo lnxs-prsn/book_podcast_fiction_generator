@@ -1,0 +1,20 @@
+{
+  "id": "loc_dakar",
+  "name": "Dakar, Senegal",
+  "first_appeared": 5,
+  "institutional_response": {
+    "primary_body": "[ ]",
+    "approach": "[ ]",
+    "failure_mode": "[ ]"
+  },
+  "ordinary_life_texture": [
+    "Morning sun slants through the high windows of the Dakar District Land Registry office.",
+    "Boundary-dispute case backlogs pile up on junior clerks' desks, with supervisors instructing them to start with the oldest file.",
+    "A colleague shuffling papers and another arguing with a petitioner over a missing signature both go still or change register when a plain question is asked aloud."
+  ],
+  "macro_mystery_evidence_here": [],
+  "characters_based_here": [],
+  "chapters_set_here": [
+    5
+  ]
+}

@@ -1,87 +1,81 @@
 {
-  "chapter": "004",
+  "chapter": "005",
   "chapter_type": "new_focal_character",
   "focal_character": {
-    "id": "char_004",
+    "id": "char_005",
     "is_new": true,
-    "name": "Wanjiku Mwangi",
-    "occupation": "medical records clerk at a public hospital in Nairobi",
-    "city": "Nairobi, Kenya",
+    "name": "Fatou Ndiaye",
+    "occupation": "junior clerk at a district land registry office",
+    "city": "Dakar, Senegal",
     "age": null,
     "gate_visited": {
-      "gate_id": "G-004",
-      "grade": 2,
-      "operation_encountered": "op_separate_condition",
+      "gate_id": "G-005",
+      "grade": "1-2",
+      "operation_encountered": "op_look_at_unknown",
       "approach_taken": "none — applied correctly",
       "understood": true,
       "looked_back": true,
       "transferred_to_life": true
     },
     "comprehension_changes": {
-      "op_separate_condition": "encountered"
+      "op_look_at_unknown": "encountered"
     },
-    "ordinary_life_state": "Back at her hospital desk, Wanjiku faces a fused memo with ten requests and three signatures, then rewrites each requirement separately and solves them one by one.",
+    "ordinary_life_state": "Fatou returns to a backlog of twenty-three unresolved boundary-dispute files at the Dakar registry and, instead of starting with the oldest as told, asks what the outcome actually needs before opening any file.",
     "life_progression_shown": null
   },
   "other_entrants": [],
   "secondary_touch_updates": [],
-  "names_used_this_chapter": [
-    "Wanjiku Mwangi",
-    "David"
-  ],
+  "names_used_this_chapter": ["Fatou Ndiaye", "Amadou", "Mame"],
   "gate_details": {
     "problem_structure": {
-      "unknown": "which of the three clauses in the compound patient-file release condition actually binds",
+      "unknown": "the category of evidence that would resolve the boundary dispute, not a person, date, or amount of land",
       "data": [
-        "files stamped REQUEST PENDING — CONDITION UNMET",
-        "the compound release paragraph with three clauses",
-        "the featureless central panel on the far wall",
-        "the abandoned wrong-approach arrangements: size-sorted piles, categorical grid, and inventory notes"
+        "a chamber of pigeonholes holding files, ledgers, stamped forms, and rolled maps",
+        "a dull, unstamped envelope in a slot on the left wall",
+        "the stacks and arrangements left behind by the three previous solvers",
+        "boundary survey sketches"
       ],
-      "condition": "a patient file may be released only if next-of-kin consent, a low balance, and a physician countersignature all hold"
+      "condition": "the ruling turns on testimony type — oral boundary acknowledgment, pre-1987, admissible under Article 12(b) — rather than on the documents themselves"
     },
-    "correct_approach": "Wanjiku split the compound condition into individual clauses, tested each one alone by covering the others with her hand, identified the binding clause, and touched the panel; the gate opened."
+    "correct_approach": "Fatou stood at the threshold with her back half-turned to the data and asked what kind of answer the room wanted, recalling a precedent that hinged on evidence type rather than documents. Naming the category silently made the unstamped envelope brighten; she opened it and placed its contents on the table, and the gate closed."
   },
   "process_updates": {
-    "operation": "op_separate_condition",
+    "operation": "op_look_at_unknown",
     "new_touch": 1,
-    "failure_modes_shown_this_chapter": [
-      "the executor",
-      "the system builder",
-      "the information gatherer"
-    ],
+    "failure_modes_shown_this_chapter": ["the executor", "the system builder", "the information gatherer"],
+    "lead_failure_mode": "the information gatherer",
     "name_attached_this_chapter": false,
-    "context_demonstrated": "workplace",
+    "context_demonstrated": "civic_institutional",
     "transferred": true
   },
   "location_updates": {
-    "location_id": "loc_nairobi",
-    "new_chapter_added": "004",
+    "location_id": "loc_dakar",
+    "new_chapter_added": "005",
     "new_texture": [
-      "Fused memos stamped URGENT — ACTION REQUIRED land on clerks' desks with multiple supervisor signatures.",
-      "A billing colleague across the aisle notices when someone stops treating the whole memo as one problem and goes still.",
-      "Office noise dips for a breath when a clerk changes register before anyone has spoken."
+      "Morning sun slants through the high windows of the Dakar District Land Registry office.",
+      "Boundary-dispute case backlogs pile up on junior clerks' desks, with supervisors instructing them to start with the oldest file.",
+      "A colleague shuffling papers and another arguing with a petitioner over a missing signature both go still or change register when a plain question is asked aloud."
     ]
   },
   "anchor_update": {
     "appeared": true,
-    "manifestation": "traces",
-    "observation": "Grade 2. Executor approach. Room organised by size sequence — large, medium, small files grouped, spacing even. Underlined: one file outside sequence. Solver did not look at it. Register 2 at minute 8. Register 3 at minute 10.\nSystem builder. Room mirrored categorical grid — six columns, chronological rows. Perfect assignment. Underlined: condition not in categories. Register flicker 1/3 throughout. No true Register 2.\nInformation gatherer. Room gave complete inventory — all objects logged, all surfaces noted. Underlined: no question asked of data. Register 1 entire session.\nCorrect approach: condition read clause by clause. Hand covered extraneous text. Register 3 at minute 52. Gate closed minute 53.",
-    "location": "loc_nairobi",
-    "reader_can_suspect_update": "The anchor now leaves physical traces inside gates that document multiple wrong approaches and the correct clause-by-clause condition separation in real time."
+    "manifestation": "seen",
+    "observation": "Grade 1–2 / executor / room emphasises sequential file order; gap: unstamped envelope (slot L7); Reg 1 throughout; closure attempt min 10 — failed\nGrade 1–2 / system builder / room mirrors categorical grid; gap: categorisation ignores evidentiary type; Reg flicker 1→3→1; closure attempt min 14 — failed\nGrade 1–2 / information gatherer / room yields complete audit; gap: no question asked of data; Reg 1 undisturbed; closure attempt min 18 — failed\nGrade 1–2 / correct / Reg 2 at threshold-standing (min 19:03); Reg 3 at right question (min 19:47); gate closed min 20",
+    "location": "loc_dakar",
+    "reader_can_suspect_update": "The anchor's notation now explicitly confirms that naming the category of an unknown precedes closure even when unspoken, and tracks whether solvers orient toward the type of answer wanted rather than its content."
   },
   "macro_mystery_update": {
     "evidence_planted": true,
-    "evidence": "A trace inside the gate room records three different solver approaches, the gap each missed, and the exact minute the condition was read clause by clause."
+    "evidence": "The anchor's notebook logs all three wrong-approach solvers' entries side by side within the same gate event, each with precise register timestamps, before recording the correct approach — extending the simultaneous-approaches pattern first seen in chapter 004's trace."
   },
   "next_chapter_pointer": {
-    "chapter": "005",
-    "type": "new_focal_character",
-    "char_id": null,
-    "operation_due": "op_look_at_unknown",
-    "touch_due": 1,
+    "chapter": "006",
+    "type": "return_to_character",
+    "char_id": "char_001",
+    "operation_due": "op_what_is_missing",
+    "touch_due": 2,
     "name_due": false,
-    "failure_mode_to_show": "the system builder",
+    "failure_mode_to_show": "none",
     "secondary_touches": [],
     "echo_touch": null,
     "anchor_appears": true

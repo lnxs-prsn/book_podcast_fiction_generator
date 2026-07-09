@@ -2,7 +2,7 @@
   "story_title": "The Sankofa Gates",
   "genre": "African gate-clearing process fiction — contemporary Africa, in the Korean/Japanese gate-fiction tradition",
   "source_material": "Pólya, G. — How to Solve It: A New Aspect of Mathematical Method (2nd ed.) — books/How to Solve It_ A New Aspect  - Polya, G._7564 (1).epub",
-  "chapter_count": 4,
+  "chapter_count": 5,
   "arc_current": 1,
   "process_state_summary": {
     "op_what_is_missing": {
@@ -13,6 +13,10 @@
     "op_separate_condition": {
       "touch": 1,
       "last_chapter": "004"
+    },
+    "op_look_at_unknown": {
+      "touch": 1,
+      "last_chapter": "005"
     }
   },
   "failure_modes_not_yet_shown": [],
@@ -20,7 +24,8 @@
     { "chapter": "001", "lead": "the executor" },
     { "chapter": "002", "lead": "the executor" },
     { "chapter": "003", "lead": "the executor" },
-    { "chapter": "004", "lead": "the system builder" }
+    { "chapter": "004", "lead": "the system builder" },
+    { "chapter": "005", "lead": "the information gatherer" }
   ],
   "population_index": [
     {
@@ -58,9 +63,15 @@
       "name": "Wanjiku Mwangi",
       "status": "active",
       "last_seen": "004"
+    },
+    {
+      "id": "char_005",
+      "name": "Fatou Ndiaye",
+      "status": "active",
+      "last_seen": "005"
     }
   ],
-  "anchor_summary": "Last appeared ch. 004 (traces); 4 total appearances.",
+  "anchor_summary": "Last appeared ch. 005 (seen); 5 total appearances.",
   "macro_mystery_evidence": [
     {
       "chapter": "001",
@@ -73,16 +84,20 @@
     {
       "chapter": "004",
       "evidence": "A trace inside the gate room records three different solver approaches, the gap each missed, and the exact minute the condition was read clause by clause."
+    },
+    {
+      "chapter": "005",
+      "evidence": "The anchor's notebook logs all three wrong-approach solvers' entries side by side within the same gate event, each with precise register timestamps, before recording the correct approach — extending the simultaneous-approaches pattern first seen in chapter 004's trace."
     }
   ],
   "next_chapter_pointer": {
-    "chapter": "005",
-    "type": "new_focal_character",
-    "char_id": null,
-    "operation_due": "op_look_at_unknown",
-    "touch_due": 1,
+    "chapter": "006",
+    "type": "return_to_character",
+    "char_id": "char_001",
+    "operation_due": "op_what_is_missing",
+    "touch_due": 2,
     "name_due": false,
-    "failure_mode_to_show": "the information gatherer",
+    "failure_mode_to_show": "none",
     "secondary_touches": [],
     "echo_touch": null,
     "anchor_appears": true

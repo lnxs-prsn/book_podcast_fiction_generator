@@ -23,11 +23,11 @@ Everything else is automatic.
 | Field | Value |
 |---|---|
 | Story title | The Sankofa Gates |
-| Last updated | After Chapter 5 |
-| Last chapter completed | 5 |
-| Current arc | Arc 1 — Gate Grade 1–2 |
-| Active focal characters | Fatou Ndiaye |
-| Mystery person last appeared | Chapter 5 (Inside gate room / Notebook entry observed) |
+| Last updated | After Chapter 4 |
+| Last chapter completed | 4 |
+| Current arc | Arc 2 — Gate Grade 2 |
+| Active focal characters | Wanjiku Mwangi |
+| Mystery person last appeared | Chapter 4 (Inside gate room / Notebook entry left on side table) |
 | Macro mystery evidence count | 4 |
 
 ---
@@ -37,17 +37,17 @@ Everything else is automatic.
 
 | Operation | Touch | Last Context | Next Due |
 |---|---|---|---|
-| Identify unknown / data / condition | 2 | Professional | Arc 2 — Touch 3 |
-| What is missing (absence over presence) | 1 | Family / Domestic | Chapter 5 — Touch 2 |
-| Separate parts of condition | 1 | Workplace | Chapter 6 — Touch 2 |
-| Look at the unknown | 1 | Civic / Institutional | Chapter 6 — Touch 2 |
-| Did you use all the data? | 0 | — | Arc 2 |
-| Can you check the result? | 0 | — | Arc 2 |
+| Identify unknown / data / condition | 3 | Workplace | Arc 2 — Touch 3 complete |
+| What is missing (absence over presence) | 2 | Domestic | Chapter 4 — Touch 2 |
+| Separate parts of condition | 1 | Workplace | Chapter 5 — Touch 2 |
+| Look at the unknown | 2 | Workplace | Chapter 5 — Touch 3 |
+| Did you use all the data? | 1N | Professional | Chapter 5 — Touch 2 |
+| Can you check the result? | 1N | Professional | Chapter 5 — Touch 2 |
 | Can you derive the result differently? | 0 | — | Arc 3 |
-| Do you know a related problem? | 0 | — | Arc 2 |
-| Here is a problem related to yours | 0 | — | Arc 2 |
+| Do you know a related problem? | 1N | Professional | Chapter 5 — Touch 2 |
+| Here is a problem related to yours | 1N | Teaching / Mentoring | Chapter 5 — Touch 2 |
 | Analogy — simpler analogous problem | 0 | — | Arc 3 |
-| Looking back / transfer | 0 | — | Arc 2 |
+| Looking back / transfer | 2 | Professional | Chapter 5 — Touch 3 |
 | Decompose condition | 0 | — | Arc 3 |
 | Introduce auxiliary elements | 0 | — | Arc 3 |
 | Can you use the result? | 0 | — | Arc 4 |
@@ -61,17 +61,13 @@ Everything else is automatic.
 | Heuristic vs proof | 0 | — | Arc 7 |
 | Subconscious work | 0 | — | Arc 7 |
 | Auxiliary problem chains | 0 | — | Arc 8 |
-| The sitting down (physical marker) | 3 | Gate (Grade 1–2) | Chapter 6 — Touch 3 |
+| The sitting down (physical marker) | 3 | Gate (Grade 2) | Chapter 5 — Touch 3 |
 
 ---
 
 ## FAILURE MODES NOT YET SHOWN
 
 *All wrong approach types must appear across Arcs 1-4. Types introduced per arc per concept_curriculum.md.*
-
-**Arc 2 (introduced as operations expand):**
-- The confident specialist (applies domain expertise to wrong problem type)
-- The hypothesis tester (tests systematically without naming what is being tested)
 
 **Arc 3-4 (introduced as operations expand):**
 - The executor on complex condition (acts on first part, ignores others)
@@ -101,16 +97,15 @@ Everything else is automatic.
 | char_003a | Kojo Acheampong | Depot Supervisor | Accra | 1 (Touch 1) | Chapter 3 |
 | char_003b | Akosua Osei | Cleaner | Accra | 1 (Touch 1) | Chapter 3 |
 | char_004 | Wanjiku Mwangi | Hospital Records Officer | Nairobi | 2 (Touch 2) | Chapter 4 |
-| char_005 | Fatou Ndiaye | Land Registry Clerk | Dakar | 1 (Touch 1) | Chapter 5 |
 
 ---
 
 ## MYSTERY PERSON THREAD
 *Observable log summary. Full detail in /state/mystery_anchor.json.*
 
-Appearances: 5  
-Last location: Inside Dakar land registry gate room / Observed recording all three wrong approaches and the successful solver’s threshold-standing behavior  
-Reader can suspect: The anchor now logs register transitions with second-level precision and explicitly notes when solvers fail to ask *any question of the data*. Their notation confirms that “look at the unknown” precedes closure even when unspoken, and they track whether solvers orient toward the *category* of answer rather than its content.
+Appearances: 4  
+Last location: Inside Nairobi hospital gate room / Left notebook entry on side table  
+Reader can suspect: The anchor now leaves physical traces inside gates—not just observing but documenting multiple approaches in real time. Their notation explicitly identifies clause-by-clause condition separation as the correct move and logs register transitions with precision. They are tracking how solvers interact with compound conditions—a shift toward structural diagnosis over behavioral observation.
 
 ---
 
@@ -118,17 +113,17 @@ Reader can suspect: The anchor now logs register transitions with second-level p
 *What the reader can suspect but not confirm.*
 
 Evidence count: 4  
-Current state: The anchor’s notebook entry inside the gate records that all three failed solvers treated the room as a repository to be processed, while the successful solver treated it as a question to be parsed. This reinforces that the macro problem is not about effort or thoroughness but about the *frame*—whether the solver asks what kind of thing is wanted before acting.
+Current state: The anchor’s notebook entry inside the gate confirms they are now recording *simultaneous* wrong approaches within a single gate event and identifying the exact operation that produced closure (“condition read clause by clause”). This reinforces that the macro problem is not about individual solvers but about the structure of the problem itself—the gates respond to precise parsing of the condition, not effort or intent.
 
 ---
 
 ## ACTIVE FORESHADOWING
 
-- The anchor’s notebook now includes timestamps down to the second for register shifts, suggesting they are building a temporal model of the solving process.
-- Fatou’s ordinary-life echo shows her applying “look at the unknown” to bureaucratic overload—skipping the oldest file to find the one whose resolution type matches a precedent—without naming the method.
-- Amadou stops shuffling and Mame’s argument pauses when Fatou asks “What does the outcome actually need to be?”—mirroring gate Register 2 behavior in ordinary life.
-- The phrase “category of evidence” replaces “what is missing” as the diagnostic lens, showing progression toward abstracting the unknown’s type rather than its presence.
-- The gate’s mirror for the information gatherer yielded perfect completeness but no insight—highlighting that exhaustive data collection without a guiding question produces no path.
+- The anchor’s notebook now includes register timing for *all* solvers in a gate, not just the successful one—suggesting comparative analysis across approaches.
+- Wanjiku’s ordinary-life echo shows her applying clause separation to bureaucratic overload, solving a fused memo by isolating requirements—without naming the method.
+- David from billing goes still when Wanjiku begins separating clauses, mirroring gate Register 2 behavior in ordinary life.
+- The phrase “checking the frame” has evolved; Wanjiku doesn’t name the unknown outright but parses the condition’s internal structure—showing progression beyond basic identification.
+- The gate’s mirror for the system builder showed perfect categorization but no integration with the condition—highlighting that organization ≠ relevance.
 
 ---
 
@@ -136,15 +131,15 @@ Current state: The anchor’s notebook entry inside the gate records that all th
 
 | Field | Value |
 |---|---|
-| Chapter | 006 |
+| Chapter | 005 |
 | Type | new_focal_character |
 | City | [ To be determined by Orchestrator — African city, contemporary ] |
 | Gate grade | [ To be determined ] |
 | Gate problem structure | [ To be determined ] |
-| Wrong approach 1 | the confident specialist |
-| Wrong approach 2 | the hypothesis tester |
+| Wrong approach 1 | the executor on complex condition |
+| Wrong approach 2 | the system builder on complex condition |
 | Right question | [ To be determined ] |
-| Operation Touch | Do you know a related problem?: Touch 1 |
+| Operation Touch | Analogy — simpler analogous problem: Touch 1 |
 | Sitting down | Must appear. After both wrong approaches are exhausted. Physical. |
 | Mystery person appears | Yes |
 | Ordinary life echo | [ To be determined ] |
@@ -156,7 +151,7 @@ Current state: The anchor’s notebook entry inside the gate records that all th
 
 ## NOTES FOR AI — CURRENT SESSION
 
-- African names only. No Arabic names. (Fatou, Ndiaye, Dakar established. Continue this rule).
+- African names only. No Arabic names. (Wanjiku, Mwangi, Nairobi established. Continue this rule).
 - The wrong approaches must feel competent and reasonable before they fail.
 - Gate register and mirror behaviour must be shown for all wrong approaches.
 - Mirror prose rule: describe the room's arrangement. Never state what it is showing.
@@ -167,7 +162,7 @@ Current state: The anchor’s notebook entry inside the gate records that all th
 - Mystery person notebook format: Gate grade. Approach type. Mirror content (one precise physical description). Underlined: the gap the mirror showed. Register log time-stamped. Nothing else.
 - Ordinary life echo: same question applied to ordinary problem. Never labelled as connected. At least one other person goes still or conversation changes register.
 - Chapter length: 2000-3000 words.
-- Chapter 5 completed Arc 1’s core operations: executor, system builder, and information gatherer as wrong approaches, with “look at the unknown” as the hard operation.
-- Fatou’s method shows institutional fluency—she parses legal outcomes structurally, not procedurally.
-- The anchor’s in-gate notebook implies they can observe multiple solvers simultaneously and diagnose their mental frames in real time—deepening their role as structural diagnostician.
-- The phrase “category of evidence” is now in-world terminology for abstracting the unknown’s type.
+- Chapter 4 completed Arc 2’s core operations: confident specialist and hypothesis tester as wrong approaches, with “related problem” and “separate parts of condition” as hard operations.
+- Wanjiku’s method shows institutional fluency—she parses bureaucratic language structurally, not procedurally.
+- The anchor’s in-gate notebook implies they can enter gates post-closure or observe remotely—deepening their role as diagnostician, not just observer.
+- The phrase “clause by clause” is now in-world terminology for condition decomposition.

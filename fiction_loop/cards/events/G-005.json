@@ -1,0 +1,31 @@
+{
+  "id": "G-005",
+  "type": "gate",
+  "grade": "1-2",
+  "location_id": "loc_dakar",
+  "chapter_opened": 5,
+  "chapter_closed": 0,
+  "status": "open",
+  "problem_structure": {
+    "unknown": "the category of evidence that would resolve the boundary dispute, not a person, date, or amount of land",
+    "data": [
+      "a chamber of pigeonholes holding files, ledgers, stamped forms, and rolled maps",
+      "a dull, unstamped envelope in a slot on the left wall",
+      "the stacks and arrangements left behind by the three previous solvers",
+      "boundary survey sketches"
+    ],
+    "condition": "the ruling turns on testimony type — oral boundary acknowledgment, pre-1987, admissible under Article 12(b) — rather than on the documents themselves"
+  },
+  "wrong_approaches_demonstrated": [
+    "the executor",
+    "the system builder",
+    "the information gatherer"
+  ],
+  "correct_approach": "Fatou stood at the threshold with her back half-turned to the data and asked what kind of answer the room wanted, recalling a precedent that hinged on evidence type rather than documents. Naming the category silently made the unstamped envelope brighten; she opened it and placed its contents on the table, and the gate closed.",
+  "characters_entered": [
+    "char_005"
+  ],
+  "operation_taught": "op_look_at_unknown",
+  "anchor_present": true,
+  "notes": ""
+}

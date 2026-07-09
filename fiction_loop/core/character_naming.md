@@ -48,3 +48,6 @@ may modify; the RULES section is owner-maintained.
 | Akosua Osei | 003 | char_003b |
 | Wanjiku Mwangi | 004 | char_004 |
 | David | 004 |  |
+| Fatou Ndiaye | 005 | char_005 |
+| Amadou | 005 |  |
+| Mame | 005 |  |

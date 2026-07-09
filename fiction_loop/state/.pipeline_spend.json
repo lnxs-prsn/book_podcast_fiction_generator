@@ -1,6 +1,6 @@
 {
-  "session_total": 0.051007199999999996,
-  "lifetime_total": 3.2745653999999993,
+  "session_total": 0.05124959999999999,
+  "lifetime_total": 3.342379799999999,
   "session_started_at": "2026-07-02T16:08:48.842766+00:00",
   "entries": [
     {
@@ -202,6 +202,16 @@
       "ts": "2026-07-04T14:57:36.784382+00:00",
       "amount": 0.051007,
       "note": "update_living_doc model=qwen3-max in=31661 out=2169"
+    },
+    {
+      "ts": "2026-07-09T19:55:54.902677+00:00",
+      "amount": 0.016565,
+      "note": "generate_chapter model=qwen3-max in=5614 out=1638"
+    },
+    {
+      "ts": "2026-07-09T19:57:12.696638+00:00",
+      "amount": 0.05125,
+      "note": "update_living_doc model=qwen3-max in=31463 out=2249"
     }
   ]
 }

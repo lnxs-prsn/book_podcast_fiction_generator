@@ -1,0 +1,29 @@
+{
+  "id": "char_005",
+  "name": "Fatou Ndiaye",
+  "age": null,
+  "occupation": "junior clerk at a district land registry office",
+  "location_id": "loc_dakar",
+  "first_appeared": 5,
+  "gate_history": [
+    {
+      "gate_id": "G-005",
+      "grade": "1-2",
+      "operation_encountered": "op_look_at_unknown",
+      "approach_taken": "none — applied correctly",
+      "understood": true,
+      "looked_back": true,
+      "transferred_to_life": true
+    }
+  ],
+  "comprehension_state": {
+    "op_look_at_unknown": "encountered"
+  },
+  "still_gets_wrong": [],
+  "ordinary_life_state": "Fatou returns to a backlog of twenty-three unresolved boundary-dispute files at the Dakar registry and, instead of starting with the oldest as told, asks what the outcome actually needs before opening any file.",
+  "life_progression": [],
+  "ordinary_life_transfers": [],
+  "anchor_observed": false,
+  "last_seen": 5,
+  "next_planned_appearance": null
+}
