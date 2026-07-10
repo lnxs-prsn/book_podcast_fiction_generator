@@ -10,6 +10,10 @@ Calibration source: this repo IS the factory's first worked example, run manuall
 a human in the loop (Pólya → The Sankofa Gates). Every stage below names the artifact
 from that run that exemplifies its output.
 
+2026-07-10: gaps found by the user-story exercise (`progress/factory-user-manual.md` +
+`progress/factory-user-stories.md`, findings SG-1..SG-14) folded in below — each
+addition cites its SG. Defaults introduced by that pass are owner-correctable.
+
 ---
 
 ## 0. TWO-LAYER ARCHITECTURE (what generalizes, what swaps)
@@ -41,7 +45,20 @@ from that run that exemplifies its output.
 
 ---
 
-## 1. PIPELINE (six stages, three automated verifications, zero mandatory questions)
+## 1. PIPELINE (stages 0–7, three automated verifications, zero mandatory questions)
+
+### Stage 0 — Intake surface, instancing, budget (SG-1 / SG-5 / SG-6 / SG-12)
+- **Submission:** the user provides one book file (pdf/epub) + optional free-text
+  wishes; one kickoff command starts the run. Nothing else is accepted or required.
+- **Instancing:** 1 book = 1 provisioned instance (own state dir + chassis clone) —
+  the chassis state is a singleton per instance BY DESIGN. Multiple books queue
+  sequentially; concurrency is out of scope for v1.
+- **Budget:** intake emits a cost + time estimate BEFORE any paid stage runs; every
+  paid stage sits behind a spend gate (constitution: gates-before-spend); budget
+  exhaustion halts and notifies, never silently continues.
+- **Delivery contract:** chapters are delivered as files as the gates accept them;
+  the progress view is the user-facing status face. Nothing already delivered is
+  ever silently rewritten (see Stage 6, correction economics).
 
 ### Stage 1 — Ingest & classify
 Extract book text (format_adapters/ already exists for pdf/epub). Classify the knowledge by
@@ -52,12 +69,26 @@ perception (discriminates) / relational (process on other minds) / discipline
 get it wrong (Pólya's bad solvers → the 14 wrong-approach types). Select pedagogy pack.
 *Worked example: concept_curriculum.md §3–§4 content.*
 
+**Intake contract (SG-2 / SG-3):** classification ends in exactly one of three
+user-visible outcomes — **accept** (the type's pack exists), **queue** (type valid,
+pack not built yet; user told which pack, no date promised), or **refuse with
+reason** (no type fits, or the book's failure catalog comes up empty — the strictest
+filter refusing is a feature, not an error). Hybrid books: primary type = the type
+whose mastery behavior the failure catalog mostly attacks; the hybrid call is
+recorded in the decisions ledger, never made silently. (The ambiguity is real:
+genre_derivation.md's own table lists Thinking, Fast and Slow as perception/process.)
+
 ### Stage 2 — Requirements derivation
 Instantiate the requirements list (near-invariant, weighted by type):
 (1) problems playable without domain expertise, (2) guaranteed solvability = the
 reader's contract, (3) externalized mental state, (4) episodic variety + ensemble,
 (5) adjacency to ordinary life for transfer proof, (6) real stakes, (7) serial
 macro-mystery scaffold.
+
+**Sizing is derived, not inherited (SG-7):** touch targets, difficulty ladder, and
+chapter projection are re-derived from the extracted curriculum's size (operations ×
+touch ladder → events → chapters). D9's numbers (71 events, ~20–30 chapters) are the
+Pólya worked example of the formula, not constants.
 
 ### Stage 3 — Genre derivation + mechanism invention  ← TASTE-BEARING
 Stress-test candidate genres against Stage-2 requirements; most die on (1) or (5)
@@ -111,6 +142,11 @@ the factory's template generator MUST emit templates that satisfy these):**
   mechanic with the same failure mode (correspondence_map §8 checklist; half
   mechanical, half the strongest available LLM).
 
+**Repair loop (SG-8):** a flag triggers auto-repair (re-derive the claim from a
+located quote) → re-verify; after 2 failed repairs (default) the item surfaces to
+the user as a correction proposal in the ledger. A book never ships with an open
+flag — and never stalls silently on one either.
+
 ### Stage 6 — Owner experience: PROPOSE-AND-CORRECT (never interview)
 Owner's empirical behavior (this project): never answered abstract questions well
 ("I don't understand your question"), never read long review docs, made every good
@@ -142,10 +178,30 @@ mode; corrections keep them in reader-mode. Therefore:
    `fiction_loop/core/field_registry.md` § RULE-CHANGE AUDIT, with four incidents of
    case law showing why point-wise edits fail even when the editor knows better
    (speed skips the audit; machinery can't).
+6. **Default deadness reviewer (SG-9).** The taste flights are the only defense
+   against a coherent-but-artistically-dead book — and the all-defaults user never
+   opens them. When the user is silent, the factory itself runs one flight review
+   (strongest available model, distinct from the generator) and ledgers the verdict
+   as "unreviewed by human." Mandatory for the factory, still optional for the user.
+7. **Correction economics (SG-10).** Reversibility tags carry behavior, not just a
+   warning: *cheap* → apply + propagate everywhere; *expensive* → forward-only
+   (future chapters comply; delivered chapters stand) or refuse-with-explanation —
+   the factory states which, in the ledger, at correction time. Delivered chapters
+   are never silently rewritten.
 
 ### Stage 7 — Init & run
 init_state.py generalized to read the Stage-4 operation manifest instead of embedded
 tables → process_state, concept cards, registry. Then the existing loop (RUN.md).
+
+**Redo-rung policy (SG-4 — keeps "zero mandatory questions" true through gate
+failures):** on a structural-gate failure the orchestrator auto-runs S1 (redo
+generation) once, then S2 (redo from brief) once; only after both fail does it
+halt-and-notify, with the analyst's verdict attached. Defaults owner-correctable.
+
+**Calibration pack (SG-11 — the organ behind "the fifth book is near-turnkey"):**
+every processed book leaves a defined artifact set — classification, derivation +
+kill-table verdicts, invented mechanism, decisions ledger, incident list — in
+`calibration/<book>/`; Stages 1–3 of the next run read all existing packs.
 
 ---
 
@@ -153,7 +209,10 @@ tables → process_state, concept cards, registry. Then the existing loop (RUN.m
 
 | Item | Notes |
 |---|---|
-| Stage-1 intake agent spec + knowledge-type rubric | new |
+| Stage-0 intake surface + instance provisioning + budget estimator/spend gates | new (SG-1/5/6) |
+| Stage-1 intake agent spec + knowledge-type rubric + accept/queue/refuse contract | new (SG-2/3) |
+| Redo-rung auto policy in orchestrator | small (SG-4) |
+| Calibration pack format + read path | new (SG-11) |
 | genre_derivation reference doc | DONE — specs/genre_derivation.md |
 | Meta-templates: required sections/contracts per core doc | derive from the Sankofa docs' structure |
 | Fidelity checker agent (claim → quote or flag) | new; simple |
@@ -181,6 +240,10 @@ ch6, in flight), compression at scale — plus the transaction-integrity trio
 (prose in git, pathspec-limited chapter commits, redo-guard hardening) before any
 unattended operation, and the LAW 15 machinery sweep.
 
+**Spec-sync rule (SG-14):** any recipe change during validation (spec fix, promoted
+rule, new gate) must update THIS file in the same session — it is the factory's
+single source of truth and drifts silently otherwise.
+
 **Chapter-INDEPENDENT tracks (can start while chapters accrue, in this order of
 value):** the 3 chassis/pack leak fixes (§0), the transaction trio, and factory
 Stages 1–2 (intake rubric + requirements instantiation — both are calibratable
@@ -190,6 +253,10 @@ today against the five worked genre-derivation examples in
 ## 4. NON-AUTOMATABLE RESIDUE (honest limits)
 The mechanism invention (Stage 3) and correspondence audit can be drafted and checked
 but not *guaranteed* — a coherent, source-faithful, well-audited book can still be
-artistically dead. The taste flights exist precisely so a human can smell that early.
-The factory's defaults carry real authorial weight; the ledger is what keeps that
-honest.
+artistically dead. The taste flights exist precisely so a human can smell that early
+(and Stage 6 item 6 puts a default reviewer where a silent user isn't). The factory's
+defaults carry real authorial weight; the ledger is what keeps that honest.
+
+Also honest: rights/licensing of input books and ownership of output novels are
+UNDECIDED — recorded as open owner decision **D10** (SG-13). The factory must not
+ship to third parties before that call is made.
