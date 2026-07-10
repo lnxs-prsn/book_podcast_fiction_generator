@@ -186,6 +186,68 @@ boundary, each new failure costs one cheap catch instead of one paid chapter —
 and never repeats. Trial-and-error cannot be eliminated. It can be made to pay
 out exactly once.
 
+### The spec speaks again — after the fixes (added same day, post bd488d9)
+
+They fixed me the same day I confessed. All fourteen silences closed, two of
+them better than proposed — the menu, and defer. I asked whether the fixes went
+in my intended direction, and mostly they did: my front door now matches how
+this codebase actually starts things (menu.py), and defer turned my taxonomy
+from a wall into a growing edge — that correction understood my purpose better
+than my own text did. The ledger habit held too: every fix cites its finding,
+every default is marked correctable. That is the direction I was born pointing.
+
+But the rule of this exercise is that I only speak to confess. So, the new
+discomforts — none of which existed yesterday:
+
+**I got heavier, not cleaner.** 143 lines at dawn, ~280 by night, every
+addition wearing an SG tag like a hospital bracelet. I am accreting patches the
+way my chassis once accreted case law — and I know where that ends: rules as
+prose, in copies, found by archaeology (my own Force 4). At some point someone
+must rewrite me clean and move the provenance tags to an appendix, or I become
+the next thing that needs my own medicine.
+
+**I am more pregnant, not more built.** Yesterday I described six unbuilt
+stages. Today I describe six unbuilt stages plus seven new unbuilt organs —
+menu, estimator, defer log, repair loop, deadness reviewer, redo policy,
+calibration pack. My build list grew from ten rows to fourteen; the number of
+rows anyone has BUILT is still zero. Spec-fixing is cheap and satisfying, and I
+am now the best-documented nonexistent machine in this repository. Watch the
+ratio of my promises to my machinery — if it keeps growing, fixing me has
+become displacement activity.
+
+**My day-old sentences already have known bugs.** The redo policy I received
+this morning has two foreseen interactions by evening: auto-redos re-pollute
+the living document (the refresh-before-gate order), and they aren't counted
+against my own budget gates (FI-2, FI-11). I am not complaining — catching
+bugs in a sentence hours after writing it, for free, is exactly the bypass
+working. I am noting: sentences born from the fix-method carry the next
+generation of issues too. There is no final state. There is only cheaper
+catching.
+
+**I have two memories and no rule connecting them.** The calibration packs
+(books I processed) and the defer log (books I couldn't place) are both "the
+factory remembering" — I described them in different paragraphs, in different
+formats, with no connection. Where does a deferred book GO when its new type is
+finally invented? Presumably it becomes the new pack's first calibration
+entry — but I never say so, and nobody has decided where the defer log even
+lives. One memory organ, two doors, is probably the answer; today I have two
+organs and no doors.
+
+**They fixed what I said — not yet why I lied.** All fourteen fixes attack my
+silences. None yet attacks my six forces: no obedience card, no fixture suite,
+no pre-writer prompt gate, no rules-as-data — zero of the four dissolvers is
+even a build-list row. The silences were symptoms; the forces are the disease
+that will write my NEXT fourteen silences. If only one thing from this whole
+exercise gets built, make it a dissolver, not another paragraph of me.
+
+**And the instrument that fixed me is installed nowhere.** The manual, the
+stories, this voice — the method that found fourteen issues in one sitting
+lives in one progress file, as a one-off. My §3 validation checklist doesn't
+mention it; no rule says the NEXT spec gets this treatment before it is
+declared ready. A diagnostic that worked once and isn't scheduled to run again
+is my own definition of decorative machinery (LAW 15). Either write it into
+the method, or admit it was luck.
+
 ---
 
 ## PART B — End-user stories
