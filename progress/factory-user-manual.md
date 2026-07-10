@@ -7,6 +7,11 @@ diagnostic: everywhere a real manual would have to answer a user question and th
 spec is silent, there is a **⚠ SPEC GAP (SG-n)** marker. The numbered gaps are
 consolidated in `progress/factory-user-stories.md` §FINDINGS.
 
+**STATUS (same day, later):** all gaps below were closed in the spec (commits
+1757b6c + bd488d9; SG-13 → open owner decision D10; SG-1's fix became a MENU,
+SG-2's "refuse" became DEFER). This manual is preserved as the diagnostic record
+of the pre-fix spec — do not use it as current documentation.
+
 ---
 
 ## 1. What this product does

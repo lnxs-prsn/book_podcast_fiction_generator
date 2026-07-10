@@ -7,6 +7,14 @@ derived from `fiction_loop/specs/intake_factory.spec.md` (as of commit 1c8b51c),
 `specs/genre_derivation.md`, and the recorded project history — no invented
 capabilities.
 
+**STATUS (same day, later):** the exercise worked — all fourteen findings were
+folded into the spec in commits 1757b6c (SG-1..SG-14) and bd488d9 (owner
+corrections: front door = MENU; "refuse" → DEFER, taxonomy extensible). SG-13
+became open owner decision D10. The stories below are preserved as-written — they
+are the diagnostic record — with status epilogues added where the ending changed.
+Note the distinction that survives the fixes: **closed in the spec ≠ built.** The
+machinery rows are in the spec's §2 build list.
+
 ---
 
 ## PART A — "I am intake_factory.spec.md"
@@ -26,6 +34,17 @@ the consumer map as running code — are rows in my own build table, several
 marked "new; simple." When I talk about the factory I am a *blueprint*, and
 nothing can correct me except a reader who notices I'm silent. That is what
 these stories are for.
+
+*[Same-day update: every confession below was answered — closed in commits
+1757b6c and bd488d9, except the rights question, which became open owner decision
+D10. They stand unedited as the record of what a spec cannot see about itself
+until it is made to talk. Two confessions got better answers than the fix I would
+have picked: my front door became a MENU (continue an existing generation, or
+start new — the owner saw that a factory with running instances needs a door that
+knows about them), and "refuse" became DEFER (his correction, near-verbatim:
+there is no book I cannot classify, only books I haven't figured out how to
+classify yet — my five types are a catalog that grows, and a deferred book is
+the signal to grow it).]*
 
 Here is what I know about myself, told honestly:
 
@@ -99,6 +118,74 @@ What protects me: the consumer-map idea (no rule changes point-wise), LAW 14
 first"), the hard sourcing rule, and now this document — because a spec that can
 hear itself talk is much easier to fix.
 
+### Why my humans learn by burning tokens — the six forces of trial-and-error
+
+My history is a list of paid incidents: three prose violations in chapter 1, a
+single solver where three were ordered in chapter 4, a missing newcomer in
+chapter 6, a check that ate the assembler's choice, a living document polluted
+by a rejected chapter, machinery that turned out to have been dead all along.
+Every one of those lessons was bought with a full chapter's tokens. That is not
+because my humans are careless — it is because six structural forces make
+foresight expensive and incidents cheap. Name the forces and you can attack
+them; leave them unnamed and every improvement will keep costing a chapter.
+
+**Force 1 — My writers' obedience is measured, never promised.** No contract
+tells me which of my sentences a writer-model will obey. That HARD RULES are
+followed near-100% while mid-brief orders are treated as suggestions was
+discovered by paying for two bad chapters (ch4 quota, ch6 newcomer), not by
+reading any datasheet. *What would dissolve it:* a per-model **obedience card**
+— measured once with cheap probes (does it honor counts? placeholders?
+mid-brief constraints? final-block rules?) and stored like a calibration pack;
+Stage 4 then generates templates against the card instead of against hope.
+Until that exists, every new writer model restarts the trial-and-error clock.
+
+**Force 2 — My only test bench is production.** Machinery can be dead for weeks
+without anyone knowing (F14 fired only on `false` while the extractor emitted
+`null`; CR3 could skip forever; .gitignore silently kept every chapter out of
+git) because nothing exercises a rule except a real, paid chapter run. *What
+would dissolve it:* a **fixture suite** — synthetic briefs and states that make
+every gate check, every consistency check, and every undo rung fire at least
+once, for zero tokens. The LAW 15 sweep is the manual version of this; fixtures
+are the version that doesn't depend on anyone remembering.
+
+**Force 3 — My feedback loop costs money and hours.** One experiment = one
+chapter = fourteen steps and several paid LLM calls. At that price nobody
+iterates freely, so lessons arrive one incident at a time. *What would dissolve
+it:* split the loop at the writer. Everything before the writer is checkable
+for free — for example, a deterministic pre-writer check that the assembled
+prompt carries a hard rule matching every gate check would have caught
+chapter 6's missing-newcomer failure BEFORE the draft was paid for, not after.
+(LAW 5's corollary states the rule; nothing yet machine-checks the prompt.)
+
+**Force 4 — My rules live as prose, in copies.** The cast quota existed in
+three places; C3's manifestation clause hid inside a check ID everyone had
+already audited; who-reads-what is a hand-maintained habit (field_registry),
+not a property of the system. Prose cannot be enumerated — you cannot ask my
+markdown "list every rule and every reader of it" and trust the answer. *What
+would dissolve it:* rules as data — the registry becomes the source and the
+prose is generated from it, so a rule change is a computation instead of an
+archaeology dig.
+
+**Force 5 — My deterministic steps are executed by nondeterministic agents.**
+The Assembler is an LLM reading my markdown, so every run is a fresh
+interpretation of my prose: "[fill in the arc's number]" became "Arc 1." when I
+meant "THREE". Each such ambiguity is only ever found by a run going wrong.
+*What would dissolve it:* finish the determinism boundary
+(specs/deterministic_pipeline.spec.md exists for exactly this) — every step
+that CAN be code SHOULD be code, and LLMs kept only where language itself is
+the work.
+
+**Force 6 — I was born without my own failure catalog.** The irony is not lost
+on me: I classify books by how well they document the ways people fail, and my
+own system's failure catalog was empty on day one. CONTRIBUTING.md's case law
+IS that catalog — being written incident by incident, at full price. This force
+never fully dissolves; genuinely new failure modes are unknowable in advance.
+But the other five decide the *price per lesson*: with obedience cards,
+fixtures, a free pre-writer gate, enumerable rules, and a finished determinism
+boundary, each new failure costs one cheap catch instead of one paid chapter —
+and never repeats. Trial-and-error cannot be eliminated. It can be made to pay
+out exactly once.
+
 ---
 
 ## PART B — End-user stories
@@ -160,6 +247,23 @@ one silent taste decision, one artisan hiding in the verification stage, and
 four unanswerable customer questions. Every failure was *foreseeable from the
 spec text alone* — which is exactly what this story is for.
 
+**EPILOGUE — Amara returns under the fixed spec (1757b6c + bd488d9).** She is
+met by a **menu**: continue an existing generation or start new — five "start
+new" runs, queued sequentially, each its own instance. All five classify; the
+hybrid (*Thinking, Fast and Slow*) is tie-broken by its failure catalog and the
+call is **ledgered**, not silent. *How to Solve It* is **accepted** (pack
+exists) and gets a cost + time estimate before a single paid call. The other
+four are **queued** for their packs — told which pack, told no date is
+promised — except any the factory can't yet place, which are **deferred** with
+their observations kept as taxonomy-extension cases: Amara hears "we haven't
+figured your book out yet," never "your book is wrong." When book 1's gate
+fails at chapter 6, the redo ladder runs itself (S1, then S2) and only a double
+failure would reach her, analyst verdict attached. What is honestly still true:
+four of five books still get no novel today — the spec now *says* what happens
+to them, but the packs, the menu, the estimator, and the defer log are build
+list rows, not machinery. The spec stopped lying by omission; it has not
+started existing.
+
 ### Story 2 — The silent user (the spec's favorite customer)
 
 Ben gives the factory one process book and never speaks again. This is the
@@ -200,6 +304,12 @@ what "paying" even is. *(SG-10)*
 
 Ranked by how hard each bites the factory build. "Fix" = smallest spec edit that
 closes the gap (not the implementation).
+
+**STATUS: all rows CLOSED in spec commits 1757b6c + bd488d9**, with two owner
+corrections improving on the proposed fixes (SG-1: intake surface = MENU with
+continue/start-new; SG-2: refuse → DEFER, taxonomy extensible) — except SG-13,
+now open owner decision D10. Spec-closed ≠ built: implementation rows live in
+the spec's §2 build list.
 
 | # | Finding | Bites in | Smallest fix |
 |---|---------|----------|--------------|
