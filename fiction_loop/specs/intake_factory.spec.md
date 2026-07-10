@@ -48,8 +48,13 @@ addition cites its SG. Defaults introduced by that pass are owner-correctable.
 ## 1. PIPELINE (stages 0–7, three automated verifications, zero mandatory questions)
 
 ### Stage 0 — Intake surface, instancing, budget (SG-1 / SG-5 / SG-6 / SG-12)
-- **Submission:** the user provides one book file (pdf/epub) + optional free-text
-  wishes; one kickoff command starts the run. Nothing else is accepted or required.
+- **Front door = MENU (owner correction 2026-07-10):** the kickoff opens a menu
+  with two choices — **(a) CONTINUE an existing fiction generation** (lists the
+  provisioned instances, each with its progress-view line: chapters done,
+  curriculum bar, current step; resumes the chosen one) or **(b) START NEW**
+  (user provides one book file, pdf/epub, + optional free-text wishes). Nothing
+  else is accepted or required. Precedent: the repo's own menu.py interactive
+  launcher — same entry-point pattern, extended with instance awareness.
 - **Instancing:** 1 book = 1 provisioned instance (own state dir + chassis clone) —
   the chassis state is a singleton per instance BY DESIGN. Multiple books queue
   sequentially; concurrency is out of scope for v1.
@@ -69,11 +74,17 @@ perception (discriminates) / relational (process on other minds) / discipline
 get it wrong (Pólya's bad solvers → the 14 wrong-approach types). Select pedagogy pack.
 *Worked example: concept_curriculum.md §3–§4 content.*
 
-**Intake contract (SG-2 / SG-3):** classification ends in exactly one of three
-user-visible outcomes — **accept** (the type's pack exists), **queue** (type valid,
-pack not built yet; user told which pack, no date promised), or **refuse with
-reason** (no type fits, or the book's failure catalog comes up empty — the strictest
-filter refusing is a feature, not an error). Hybrid books: primary type = the type
+**Intake contract (SG-2 / SG-3; outcome set corrected by owner 2026-07-10 — the
+taxonomy is EXTENSIBLE, never a dead end):** classification ends in exactly one of
+three user-visible outcomes — **accept** (the type's pack exists), **queue** (type
+valid, pack not built yet; user told which pack, no date promised), or **defer**
+(the factory has not yet figured out how to classify this book). There is no
+unclassifiable book — only a taxonomy that hasn't caught up. The five types are the
+CURRENT catalog, not a closed one: a deferred book is logged as a taxonomy-extension
+case (what WAS observed: candidate mastery behaviors, failure-catalog findings) and
+the user is told the limitation is the factory's, not the book's. An empty failure
+catalog defers the same way — some books need a pedagogy the factory hasn't invented
+yet. Each new type resolved from the defer log = a new pack variant (§0). Hybrid books: primary type = the type
 whose mastery behavior the failure catalog mostly attacks; the hybrid call is
 recorded in the decisions ledger, never made silently. (The ambiguity is real:
 genre_derivation.md's own table lists Thinking, Fast and Slow as perception/process.)
@@ -209,8 +220,8 @@ kill-table verdicts, invented mechanism, decisions ledger, incident list — in
 
 | Item | Notes |
 |---|---|
-| Stage-0 intake surface + instance provisioning + budget estimator/spend gates | new (SG-1/5/6) |
-| Stage-1 intake agent spec + knowledge-type rubric + accept/queue/refuse contract | new (SG-2/3) |
+| Stage-0 menu (continue existing / start new) + instance provisioning + budget estimator/spend gates | new (SG-1/5/6); extend menu.py pattern |
+| Stage-1 intake agent spec + knowledge-type rubric + accept/queue/defer contract + taxonomy-extension (defer) log | new (SG-2/3) |
 | Redo-rung auto policy in orchestrator | small (SG-4) |
 | Calibration pack format + read path | new (SG-11) |
 | genre_derivation reference doc | DONE — specs/genre_derivation.md |
