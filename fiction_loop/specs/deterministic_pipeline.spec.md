@@ -57,6 +57,9 @@ Assembler spec below) get typed fields instead of parsing markdown.
 
 **In scope, implement literally against `agents/consistency_checker.md`:** V1, V2, C1,
 C2, C3, C4, CR1, CR2, A1. Each is already a boolean comparison, count, or string scan.
+(C3 is presence-only since 2026-07-10 — its manifestation-variety clause is now C3b in
+the POST-ASSEMBLY PASS and is out of this function's scope: its input is
+`assembled_prompt.md`, which doesn't exist at step 5.)
 The `SKIP: chapter_type IN [anchor_interlude, arc_transition]` guards already present on
 V2, C2, CR1, CR2 (per `core/chapter_type_contract.md`) carry over unchanged.
 

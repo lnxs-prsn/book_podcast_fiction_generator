@@ -59,9 +59,10 @@ fiction_loop/cards/concept/[operation_id].json (physical_anchor, canonical_probl
 7. Apply any FLAG corrections from consistency report:
    - If a failure_mode was already shown: pick the next one from process_state failure_modes_not_yet_shown
    - If operation re-explanation flagged: remove explanatory framing, keep physical anchor only
-   - If C3 flags manifestation repetition: pick a DIFFERENT manifestation form —
-     NEVER remove the anchor from a gate chapter (owner rule D3/F16: she appears
-     in every gate chapter; only the form varies)
+   - If C3b flags manifestation repetition (arrives via a step-7 re-run after the
+     post-assembly pass, not in the step-5 consistency report): pick a DIFFERENT
+     manifestation form — NEVER remove the anchor from a gate chapter (owner rule
+     D3/F16: she appears in every gate chapter; only the form varies)
 
 8. Append the HARD RULES block (verbatim, below) as the LAST section of the
    assembled prompt — recency position, for every chapter type. Fill the

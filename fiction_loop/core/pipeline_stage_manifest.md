@@ -11,7 +11,7 @@ at the step your agent runs. Step numbers match `orchestrator.md`'s STEPS sectio
 | 4 | Fetcher | `fetched_fields.md` | pointer/card/state data per `fetcher.md`'s per-type fetch logic — **no chapter prose exists yet** |
 | 5 | Consistency Checker | `consistency_report.md` | `fetched_fields.md`, `style_contract.md` — runs **before** Assembler and Writer. Any check here may only reference pointer/state/card data, never prose or the assembled prompt. |
 | 7 | Assembler | `assembled_prompt.md` | `fetched_fields.md`, `consistency_report.md`, `style_contract.md` (incl. §4B, §5), `world_rules.md` (incl. §5 mirror rows), `correspondence_map.md` §5, `character_naming.md`, concept card canonical fields |
-| 7.5 | Consistency Checker (post-assembly pass) | post-assembly FLAG line | `assembled_prompt.md`, `process_state.json` — V3, C4, A2b run HERE, not at step 5 (their inputs are Assembler outputs) |
+| 7.5 | Consistency Checker (post-assembly pass) | post-assembly FLAG line | `assembled_prompt.md`, `process_state.json`, `mystery_anchor.json` — V3, C4, A2b, C3b run HERE, not at step 5 (their inputs are Assembler outputs) |
 | 8 | Writer | `chapter_draft.md` | **chapter prose now exists** for the first time in the pipeline |
 | 9 | (bash copy) | `chapters/chapter_[NNN].md` | prose persisted |
 | 10 | `refresh_living_doc.py` | updated `living_document.md` | prose-derived narrative state |

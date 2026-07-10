@@ -156,7 +156,8 @@ The Orchestrator touches none of these files. It coordinates by telling each sub
    and on ANY undocumented error — log BLOCKED, return the Error line, STOP.
    Never touch anything outside fiction_loop/.
 
-   Read: fiction_loop/prompts/assembled_prompt.md, fiction_loop/state/process_state.json
+   Read: fiction_loop/prompts/assembled_prompt.md, fiction_loop/state/process_state.json,
+   fiction_loop/state/mystery_anchor.json
 
    Return to me ONLY:
      POST-ASSEMBLY: FLAG conditions [list or NONE]

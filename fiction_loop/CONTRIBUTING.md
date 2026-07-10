@@ -96,7 +96,11 @@ phrases across `agents/ core/ tools/ RUN.md` and update or exempt every hit IN
 THE SAME SITTING. *(Case law: four incidents in the registry's RULE-CHANGE AUDIT
 section, all born in the gap between "rule changed" and "consumers audited
 later"; also: the living document's consumer list was stale, which nearly hid
-that a rejected chapter's canon leaks into the next prompt.)*
+that a rejected chapter's canon leaks into the next prompt; also: when V3/C4/A2b
+moved to the post-assembly pass, C3's manifestation clause — same class, consumes
+the Assembler's step-7 choice — was missed because it was a sub-clause of a check
+that otherwise belonged at step 5; it blocked ch 006 at step 5 (2026-07-10, fixed
+as C3b). Audit sub-clauses, not just check IDs.)*
 
 **LAW 5 — HARD REQUIREMENTS GO IN THE HARD CHANNEL, FULLY SPELLED OUT.** The
 Writer model obeys the HARD RULES block (final section, explicit, self-check

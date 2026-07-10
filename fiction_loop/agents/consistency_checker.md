@@ -76,10 +76,12 @@ C2 — Character already encountered this operation?
 C3 — Anchor present on every gate chapter? (INVERTED per owner decision D3/F16)
   Check: IF chapter_type IN [new_focal_character, return_to_character],
          the pointer's anchor_appears must be true.
-         Also: the planned manifestation must differ from observable_log[-1].manifestation
-         (no two consecutive chapters use the same form — anti-formula).
-  PASS: anchor_appears = true on gate chapters, manifestation varies
-  FLAG: anchor_appears = false on a gate chapter, or same manifestation twice running
+  PASS: anchor_appears = true on gate chapters
+  FLAG: anchor_appears = false on a gate chapter
+  ** Manifestation variety is C3b, POST-ASSEMBLY (step 7.5) — the manifestation is
+     chosen by the Assembler at step 7; it does not exist at step 5. See
+     POST-ASSEMBLY PASS below. (Same reasoning as C4/V3/A2b; moved 2026-07-10 after
+     the ch-006 SpecGap block.) **
 
 C4 — Ordinary life echo context already used for this operation?
   ** POST-ASSEMBLY (step 7.5) — the echo context is chosen by the Assembler at
@@ -137,8 +139,9 @@ A2 — Anchor character given interiority or explanation?
 ## POST-ASSEMBLY PASS — Orchestrator step 7.5
 
 Runs AFTER the Assembler (step 7), reading `fiction_loop/prompts/assembled_prompt.md`
-plus `process_state.json`. Small, narrowly-scoped semantic checks that step 5 cannot
-run because their inputs don't exist yet (see pipeline_stage_manifest.md).
+plus `process_state.json` and `mystery_anchor.json`. Small, narrowly-scoped semantic
+checks that step 5 cannot run because their inputs don't exist yet (see
+pipeline_stage_manifest.md).
 
 ```
 V3 — Owned operation re-explained in the assembled prompt?
@@ -157,6 +160,13 @@ C4 — Echo context reuse?
 A2b — Anchor interiority in the assembled prompt?
   Check: The anchor-appearance section must be observational only
   PASS / FLAG as A2
+
+C3b — Anchor manifestation repeated? (moved from C3, 2026-07-10 — anti-formula)
+  Check: The assembled prompt's chosen manifestation (anchor-appearance section)
+         vs mystery_anchor.json observable_log[-1].manifestation
+  PASS: forms differ (no two consecutive chapters use the same form)
+  FLAG: same form twice running — Assembler must pick a DIFFERENT manifestation
+        form (its anchor section already instructs this; see assembler.md)
 
 Return to Orchestrator ONLY:
   POST-ASSEMBLY: FLAG conditions [list or NONE]
@@ -179,7 +189,7 @@ V3 — Owned operation re-explained: [PASS / FLAG: detail]
 ### CONTINUITY CHECKS
 C1 — Failure mode already shown: [PASS / FLAG: detail]
 C2 — Character/operation overlap: [PASS / SKIP / FLAG: detail]
-C3 — Anchor frequency: [PASS / FLAG: detail]
+C3 — Anchor present on gate chapter: [PASS / FLAG: detail]
 C4 — Ordinary life echo context: [PASS / FLAG: detail]
 
 ### CURRICULUM CHECKS

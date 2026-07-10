@@ -23,6 +23,7 @@ before merging.
 | `next_chapter_pointer.failure_mode_to_show` | Extractor (least-recently-LED selection vs `failure_mode_lead_history`; shown-recency tiebreak) → Updater STEP 7 | Consistency Checker (V1, C1); Assembler ("Lead wrong approach" — the featured type the anchor observes); Extractor next chapter (copies it into `lead_failure_mode`) |
 | `update_brief.json.process_updates.lead_failure_mode` | Extractor (verbatim copy of the pointer that steered this chapter) | Updater STEP 7 (archives to `failure_mode_lead_history`) |
 | `master_state.json.failure_mode_lead_history` | Updater STEP 7 (append per gate chapter; seeded ch 001–004 by hand 2026-07-04) | Extractor (`failure_mode_to_show` selection — least recently led). Exists because shown-recency saturates when arc quota = pool size (arc 1: 3 of 3 → permanent tie; executor led ch 1–3 undetected) |
+| `mystery_anchor.json.observable_log[].manifestation` | Extractor (`anchor_update.manifestation`, drawn from the assembled prompt's chosen form) → Updater (observable_log append + "Last appeared" summary) | Assembler (anchor section: "pick one, DIFFERENT from the last entry's manifestation"); Consistency Checker C3b at step 7.5 (anti-formula backstop — moved out of pre-assembly C3 2026-07-10 after the ch-006 SpecGap block: the pre-pass has no manifestation to compare, Assembler chooses it at step 7) |
 | `chapter_type_contract.md` | (static, hand-authored) | Extractor, Updater, Consistency Checker (branch guards) |
 
 ## Known orphans / open items
