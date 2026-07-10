@@ -26,6 +26,9 @@ logs/
 
 # Generated media
 chapters/
+# fiction_loop prose IS transaction content (FI-1: chapter commits must
+# contain their chapters); other chapters/ dirs stay ignored
+!fiction_loop/chapters/
 *.pdf
 *.mp3
 *.wav

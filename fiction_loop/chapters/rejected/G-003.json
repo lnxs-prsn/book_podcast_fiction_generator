@@ -1,0 +1,31 @@
+{
+  "id": "G-003",
+  "type": "gate",
+  "grade": 2,
+  "location_id": "loc_accra",
+  "chapter_opened": 3,
+  "chapter_closed": 0,
+  "status": "open",
+  "problem_structure": {
+    "unknown": "what property the iron sorting mechanism actually sorts the crates by",
+    "data": [
+      "dozens of wooden crates with painted numbers and weights",
+      "a heavy iron sorting mechanism with three wide angled chutes",
+      "a faint chalk line near the base of the mechanism"
+    ],
+    "condition": "the crates must be sorted by weight before the mechanism will turn"
+  },
+  "wrong_approaches_demonstrated": [
+    "the executor",
+    "the information gatherer"
+  ],
+  "correct_approach": "Kwabena stopped at the entrance and looked at the structure of the room rather than its contents, named aloud what was wanted (the sequence), what was given (numbers and weights), and what bound them (the condition), then identified weight as the relevant property from the chalk line, and the gate closed.",
+  "characters_entered": [
+    "char_002",
+    "char_003a",
+    "char_003b"
+  ],
+  "operation_taught": "op_identify_unknown",
+  "anchor_present": true,
+  "notes": ""
+}
