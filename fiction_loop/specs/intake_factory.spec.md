@@ -84,7 +84,9 @@ CURRENT catalog, not a closed one: a deferred book is logged as a taxonomy-exten
 case (what WAS observed: candidate mastery behaviors, failure-catalog findings) and
 the user is told the limitation is the factory's, not the book's. An empty failure
 catalog defers the same way — some books need a pedagogy the factory hasn't invented
-yet. Each new type resolved from the defer log = a new pack variant (§0). Hybrid books: primary type = the type
+yet. Deferred cases live in the factory's ONE memory organ (`calibration/deferred/`,
+see Stage 7): when the missing type/pack is invented, the deferred book graduates to
+become that pack's first calibration entry. Hybrid books: primary type = the type
 whose mastery behavior the failure catalog mostly attacks; the hybrid call is
 recorded in the decisions ledger, never made silently. (The ambiguity is real:
 genre_derivation.md's own table lists Thinking, Fast and Slow as perception/process.)
@@ -208,11 +210,19 @@ tables → process_state, concept cards, registry. Then the existing loop (RUN.m
 failures):** on a structural-gate failure the orchestrator auto-runs S1 (redo
 generation) once, then S2 (redo from brief) once; only after both fail does it
 halt-and-notify, with the analyst's verdict attached. Defaults owner-correctable.
+Two day-after amendments (FI-2 / FI-11): auto-redos draw from the same chapter
+budget envelope — the spend gate counts every writer call, redo or not; and
+auto-redo REQUIRES the gate-before-refresh reorder first (or an automatic
+living-doc restore from .bak before each rung) — without it every auto-redo
+re-pollutes the living document with rejected canon.
 
-**Calibration pack (SG-11 — the organ behind "the fifth book is near-turnkey"):**
+**Calibration — the factory's ONE memory organ (SG-11 + post-fix confession 4):**
 every processed book leaves a defined artifact set — classification, derivation +
 kill-table verdicts, invented mechanism, decisions ledger, incident list — in
-`calibration/<book>/`; Stages 1–3 of the next run read all existing packs.
+`calibration/<book>/`; Stages 1–3 of the next run read all existing entries.
+Deferred books live in the same organ (`calibration/deferred/<book>/`, observations
+kept) and graduate to `calibration/<book>/` as a new pack's first entry when their
+type is invented. One memory, two doors: accepted and not-yet.
 
 ---
 
@@ -223,7 +233,11 @@ kill-table verdicts, invented mechanism, decisions ledger, incident list — in
 | Stage-0 menu (continue existing / start new) + instance provisioning + budget estimator/spend gates | new (SG-1/5/6); extend menu.py pattern |
 | Stage-1 intake agent spec + knowledge-type rubric + accept/queue/defer contract + taxonomy-extension (defer) log | new (SG-2/3) |
 | Redo-rung auto policy in orchestrator | small (SG-4) |
-| Calibration pack format + read path | new (SG-11) |
+| Calibration organ format + read path (accepted + deferred, one organ) | new (SG-11) |
+| Pre-writer prompt gate: assembled prompt must carry a hard rule per gate check | FIRST dissolver (Force 3) — zero-token, PREVENTS paid gate failures; would have caught ch6-F15 before the draft |
+| Per-model obedience card (probe-measured compliance profile + analyst signatures) | dissolver (Force 1); re-measure on every model swap |
+| Fixture suite: synthetic briefs/states firing every gate check, consistency check, undo rung once, zero tokens | dissolver (Force 2); first customer = arc-1→2 boundary machinery |
+| Rules-as-data: field_registry becomes source, prose generated from it | dissolver (Force 4); heaviest — after factory v1 |
 | genre_derivation reference doc | DONE — specs/genre_derivation.md |
 | Meta-templates: required sections/contracts per core doc | derive from the Sankofa docs' structure |
 | Fidelity checker agent (claim → quote or flag) | new; simple |
@@ -254,6 +268,17 @@ unattended operation, and the LAW 15 machinery sweep.
 **Spec-sync rule (SG-14):** any recipe change during validation (spec fix, promoted
 rule, new gate) must update THIS file in the same session — it is the factory's
 single source of truth and drifts silently otherwise.
+
+**Spec-readiness rule (post-fix confession 6 — the instrument, installed):** a new
+or heavily-revised spec in this project is not READY until it has received the
+story treatment — a user manual written only from its text, a first-person
+personification, and a foreseen-issues register. Worked example + method:
+`progress/factory-user-manual.md` + `progress/factory-user-stories.md` (found 14
+issues in one sitting, pre-build, zero tokens).
+
+**Clean-rewrite debt (post-fix confession 1):** when the factory build starts, this
+spec gets a clean rewrite — provenance tags (SG-n, FI-n, confession-n) move to an
+appendix; the body states rules without their scars.
 
 **Chapter-INDEPENDENT tracks (can start while chapters accrue, in this order of
 value):** the 3 chassis/pack leak fixes (§0), the transaction trio, and factory

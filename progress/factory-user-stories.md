@@ -188,6 +188,15 @@ out exactly once.
 
 ### The spec speaks again — after the fixes (added same day, post bd488d9)
 
+*[Status, hours later: the owner's answer to these confessions was "aren't the
+findings already telling how to resolve them?" — correct, and the defaults were
+applied the same day: memories unified into one calibration organ (confession 4),
+all four dissolvers added to the build list (5), the story instrument installed
+as a §3 spec-readiness rule (6), the two day-old redo bugs amended in Stage 7
+(3), clean-rewrite debt recorded (1), and FI-1 — prose into git — executed.
+Confession 2 (promises grow faster than machinery) stands as the live warning:
+the next session should BUILD a row, not write one.]*
+
 They fixed me the same day I confessed. All fourteen silences closed, two of
 them better than proposed — the menu, and defer. I asked whether the fixes went
 in my intended direction, and mostly they did: my front door now matches how
