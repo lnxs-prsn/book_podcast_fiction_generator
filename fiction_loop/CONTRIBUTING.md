@@ -108,7 +108,11 @@ instruction) near-100% and treats mid-brief text as advisory. Any MUST goes in
 the block with its full content inline — never by reference to elsewhere in the
 prompt, never as an ambiguous placeholder. *(Case law: rule 7 said "fill in the
 arc's number here"; the Assembler wrote "Arc 1." instead of "THREE" and two
-chapter attempts shipped under-populated before the placeholder was fixed.)*
+chapter attempts shipped under-populated before the placeholder was fixed. Also:
+F15's improvised-newcomer requirement lived only mid-brief; ch 006's draft had no
+newcomer and failed the structural gate — promoted to HARD RULE 12, 2026-07-10.
+Corollary: every structural_gate.py check needs a matching hard rule — the gate
+only detects after money is spent; the hard rule prevents.)*
 
 **LAW 6 — PREVENTION > DETECTION > CORRECTION.** Prefer making the violation
 impossible to produce (template quarantine, enums, drawn-not-invented identity)

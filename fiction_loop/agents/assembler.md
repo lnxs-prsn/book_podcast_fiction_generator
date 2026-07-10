@@ -123,8 +123,14 @@ fiction_loop/cards/concept/[operation_id].json (physical_anchor, canonical_probl
    lesson sentences breed. (The in-gate "looking back" beat — a solver lingering
    after closure — is a SCENE and is allowed; this rule governs only the tail
    after the echo/name.)
+12. THE IMPROVISED NEWCOMER: at least ONE solver present in the gate is a
+   brand-new walk-in — appearing for the first time in the book, never seen or
+   named in any previous chapter. On chapters whose focal character is returning,
+   the newcomer must be one of the OTHER entrants. A gate containing only familiar
+   faces FAILS the chapter. Name the newcomer only if they matter — every named
+   solver enters the permanent record.
 
-Before finishing: re-read your draft against rules 1–11, fix every violation,
+Before finishing: re-read your draft against rules 1–12, fix every violation,
 then output only the corrected chapter.
 ```
 
