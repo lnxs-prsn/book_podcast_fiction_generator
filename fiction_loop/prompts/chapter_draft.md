@@ -1,102 +1,187 @@
-# CHAPTER 005
+# CHAPTER 006
 
-The gate room opened into a chamber lined with pigeonholes. Each slot held files, ledgers, stamped forms, maps rolled and tied with twine. The air smelled of paper, ink, and the faint tang of metal fasteners. Light came from overhead panels that hummed softly.
+The gate opened in the middle of the inspection floor.
 
-A man in a grey coat stood near the far wall. He held a small black notebook open in one hand. His eyes moved from solver to solver without expression.
+Yejide saw it first. She had just finished checking a bolt of indigo cotton, her fingers tracing the weave for snags, when the air between two racks shimmered. Not like heat haze. Like glass forming in midair. Then it solidified—a doorway, waist-high, framed in dull metal, standing where nothing had been seconds before.
+
+She stepped back. Her new trainee, Bisi, bumped into her shoulder.
+
+“What’s that?” Bisi asked.
+
+“A gate,” Yejide said.
+
+Bisi blinked. “Like… in stories?”
+
+“Yes.”
+
+“Do we call someone?”
+
+“No,” Yejide said. “We wait.”
+
+They did not have to wait long.
 
 ---
 
-The first solver entered fast. He wore work boots and a leather satchel slung across his chest. He did not stop at the threshold. He stepped straight to the nearest pigeonhole and pulled out a file. He flipped it open, scanned the first page, nodded once, and moved to the next slot. His hands were sure. His pace steady. He worked like someone who had done this before.
+The first solver arrived ten minutes later. He wore a leather satchel slung across his chest and moved like he owned the room. He did not stop at the threshold. He walked straight in.
 
-The room responded. The files he touched glowed faintly at the edges. The labels on the pigeonholes sharpened—dates clearer, names bolder, case numbers aligned as if freshly printed. One slot, high on the left wall, remained dull. It held a single envelope with no stamp, no return address. The solver never looked up.
+Inside, rolls of fabric stood upright in neat rows—hundreds of them, wrapped in clear plastic, labeled with dye lots and batch numbers. The man scanned the nearest row, then grabbed a roll marked *Lot 47-B*. He unrolled three feet of cloth onto the concrete floor, ran his hand over it, rolled it back up. He moved to the next. Unrolled. Checked. Rolled.
 
-He finished ten minutes later. Stacked the files neatly on a central table. Stepped back. Waited.
+He worked fast. Confident. His hands never hesitated.
 
-Nothing happened. The gate stayed open. The light above the entrance did not change.
+The room changed as he worked. The rolls aligned themselves more precisely. Gaps between them evened out. Labels faced forward uniformly. One roll—*Lot 39-A*—sat slightly askew at the far end. It did not move. It stayed crooked while everything else straightened.
 
-He frowned. Checked his stack again. Flipped through each file slowly this time. Still nothing. He left without looking back.
+The man never looked at it.
 
----
-
-The second solver entered slowly. She carried a canvas roll that unspooled into a set of labeled trays. She placed them on the floor in a precise grid. Then she began removing every file from every pigeonhole. She sorted them by year, then by district, then by dispute type. Her movements were unhurried. Deliberate. She hummed under her breath.
-
-The room shifted. The pigeonholes rearranged themselves into columns that matched her categories. Labels appeared where none had been. A new shelf formed along the right wall, holding only boundary survey sketches. Everything fit. Everything was accounted for.
-
-She stepped back when the last file was placed. She crossed her arms. Smiled slightly.
+After twenty-two minutes, he stopped. He stood in the center of the room, arms crossed. “It’s all here,” he said aloud. “Nothing’s wrong.”
 
 The gate did not close.
 
-She waited two full minutes. Then she walked the perimeter, checking each category again. Nothing changed. She repacked her trays. Left without speaking.
+He tried again. This time he sorted the rolls by shade—lightest to darkest. He stacked them in gradients along the wall. The room cooperated. The gradient sharpened. Colors bled smoothly from ivory to charcoal. Only *Lot 39-A* remained outside the sequence. It sat on the floor near the door, untouched.
+
+He ignored it.
+
+At minute thirty-eight, he gave up. He walked out without looking back. The gate stayed open.
 
 ---
 
-The third solver arrived with a clipboard. He wore glasses and a vest with many pockets. He stood just inside the entrance and took a deep breath. Then he began.
+The second solver came an hour later. She carried a clipboard and wore a Guild pin on her lapel—a silver lozenge stamped with interlocking gears. She paused at the entrance. Looked in. Nodded once.
 
-He recorded the number of pigeonholes. Noted the material of the shelves. Counted the files in each row. He opened every ledger, wrote down its title, its date range, its condition. He measured the thickness of the twine on the rolled maps. He logged the humidity in the room using a small brass device clipped to his belt. His notes filled twelve pages.
+She entered slowly. Methodically.
 
-The room gave him everything. Files stayed open as long as he needed. Pages turned themselves when he reached for the next. Ink did not smudge. Paper did not tear. The catalogue grew complete.
+She began by assigning categories. Natural fibers. Synthetics. Blends. She grouped them with colored tags—green, red, blue. Within each group, she subcategorized: weight, finish, origin. She wrote everything down. Her pen moved steadily. No rush.
 
-When he finished, he closed his clipboard with a soft click. He looked around, satisfied. He had missed nothing.
+The room responded. Rolls slid into place under her system. Tags appeared on unlabeled bolts. A shelf materialized along one wall, divided into labeled compartments. Everything fit. Everything was accounted for.
 
-The gate remained open.
+Except the space beneath the shelf.
 
-He checked his watch. Frowned. Opened the clipboard again and reviewed his notes. Found no error. Closed it once more. Walked out without glancing at the entrance.
+It was empty. Clean concrete. No roll. No tag. No label. Just a rectangle of floor where something should have been.
 
----
+She never looked there.
 
-Fatou Ndiaye entered last.
+She spent forty minutes verifying her system. Cross-referencing batch logs. Checking humidity readings against fabric tension specs. She built a perfect map of what was present.
 
-She stopped at the threshold. Her sandals were dusty from the street outside. She wore a simple cotton dress, sleeves rolled to the elbow. She did not carry anything. She looked at the room the way she looked at a new filing cabinet back at the registry—before touching any drawer.
+The gate did not close.
 
-Her eyes swept the walls. The files. The maps. The stacks on the table left by the others. Then she turned slightly, so her back was half to the data. Her gaze fixed on the empty space above the central table—the place where an answer would appear if this were a land registry office and someone had asked for a ruling.
+At minute fifty-one, she frowned. “The data is complete,” she said. “But the gate isn’t responding.” She tapped her clipboard. “Unless… is there a hidden variable?”
 
-She stood still.
+She checked the ceiling. The walls. The floor seams.
 
-The room dimmed in the corners. The pigeonholes on the right faded to grey. The files on the table lost their glow. Only the dull slot on the left wall—the one with the unstamped envelope—held its shape.
+Not the empty space.
 
-Fatou did not move toward it. She kept her eyes on the empty space above the table. She asked herself: *What kind of thing is wanted here?*
-
-Not who. Not when. Not how much land. But what *kind* of answer closes this gate?
-
-She remembered a case from last month. A widow in Parcelle Assainie. No deed. Only a witness statement from a neighbour who had since moved to Thiès. The ruling had hinged not on documents but on testimony type—oral boundary acknowledgment, pre-1987, admissible under Article 12(b).
-
-The unknown here was not a person or a date. It was a *category of evidence*.
-
-As soon as she named it—even silently—the unstamped envelope pulsed once. The slot brightened. The rest of the room stilled.
-
-Fatou walked to the left wall. Took the envelope. Opened it. Inside was a single sheet of paper. Handwritten. Signed by two witnesses. Dated 1983. It described a boundary marked by a baobab tree felled in 1991.
-
-She placed the sheet on the central table.
-
-The light above the entrance shifted from white to amber. Then to green. The gate closed with a soft click.
-
-Fatou stood for a moment longer. She looked at the table, then at the now-dark pigeonholes. She did not write anything down. She turned and walked out.
+She left. The gate remained.
 
 ---
 
-Three days later, Fatou sat at her desk in the Dakar District Land Registry. Morning sun slanted through the high windows. A stack of boundary-dispute files rose beside her—twenty-three cases, all unresolved. Her supervisor had dropped them with a sigh: “Start with the oldest.”
+The third solver arrived just after lunch. He was young—barely older than Fadeke—and carried no tools. No notebook. No Guild insignia. He hovered at the entrance, eyes wide.
 
-Her colleague Amadou shuffled papers nearby. Another clerk, Mame, argued softly with a petitioner over a missing signature.
+“I’ve never done this before,” he told Yejide.
 
-Fatou did not open the top file. She placed her palms flat on the desk. Looked at the stack the way she had looked at the gate room.
+“You don’t have to,” she said.
 
-“What does the outcome actually need to be?” she said.
+“But someone should.”
 
-Her voice was quiet. Not rhetorical. A plain question.
+He stepped inside.
 
-Amadou stopped shuffling. Mame’s argument paused mid-sentence. The petitioner turned slightly, as if the air had changed.
+He started by counting. Aloud. “One. Two. Three.” He touched each roll as he named it. He wrote numbers on his forearm with a marker. When he reached fifty, he stopped and recounted. He missed number thirty-two the second time. Went back. Found it. Marked it again.
 
-Fatou picked up the first file. Opened it. Read the claimant’s request carefully. Then she set it aside and reached for the third file instead—the one involving a shared well.
+He catalogued every detail. Width. Weight. Thread count. Dye absorption rating. He whispered specs like prayers.
 
-She found the relevant precedent in four minutes.
+The room gave him everything. Labels grew clearer. Batch codes glowed faintly. A screen flickered to life on one wall, displaying real-time inventory stats. Complete. Exhaustive. Total.
+
+He read it all. Absorbed it. Memorized it.
+
+He never asked why the inventory mattered.
+
+He worked for an hour and twelve minutes. At the end, he stood in the center of the room, sweating, arms full of notes scribbled on scrap paper. “I have everything,” he said. “Every piece.”
+
+The gate stayed open.
+
+He looked at Yejide through the threshold. “What am I missing?”
+
+She didn’t answer.
+
+He left. Defeated. The gate hummed softly behind him.
 
 ---
 
-The man in the grey coat closed his notebook. He did not look at Fatou as she left the gate room. He walked to the exit, turned left down the corridor, and disappeared.
+Yejide waited until the factory shift ended. Workers filed out. Bisi lingered, but Yejide sent her home. “Go study,” she said. “Your sister needs you sharp tomorrow.”
 
-His notebook entries read:
+Alone, Yejide approached the gate.
 
-> Grade 1–2 / executor / room emphasises sequential file order; gap: unstamped envelope (slot L7); Reg 1 throughout; closure attempt min 10 — failed  
-> Grade 1–2 / system builder / room mirrors categorical grid; gap: categorisation ignores evidentiary type; Reg flicker 1→3→1; closure attempt min 14 — failed  
-> Grade 1–2 / information gatherer / room yields complete audit; gap: no question asked of data; Reg 1 undisturbed; closure attempt min 18 — failed  
-> Grade 1–2 / correct / Reg 2 at threshold-standing (min 19:03); Reg 3 at right question (min 19:47); gate closed min 20
+She stopped at the threshold. Did not enter. Looked in.
+
+The room was orderly now. Too orderly. Rolls stood in perfect lines. Labels faced forward. The shelf from the Guild solver’s attempt remained, its compartments filled except for one—empty, clean, waiting.
+
+She saw it immediately.
+
+She did not move. She let her gaze drift past the contents—the fabrics, the tags, the glowing batch codes—and settle on the absence. The space where something should be.
+
+She sat down on the concrete just outside the gate. Cross-legged. Hands flat on her thighs. Eyes unfocused.
+
+The room shifted.
+
+Light pooled in the empty compartment. Dust motes hung still above it. The air there shimmered faintly, like the gate had when it first formed.
+
+She watched it.
+
+After three minutes, she stood. Walked in. Stopped in front of the shelf. Reached out—not to touch fabric, but to hover her palm over the empty space.
+
+“What’s missing?” she asked.
+
+The gate answered before she finished the sentence.
+
+A panel on the far wall slid open. Inside sat a single bolt of fabric—unlabeled, undyed, raw cotton. It matched none of the others. It belonged to no lot.
+
+She pulled it out. Held it up.
+
+The gate closed behind her with a soft click.
+
+She turned. The room was just a warehouse again. Racks of fabric. Fluorescent lights. The smell of starch and machine oil.
+
+On the windowsill beside the loading bay door, a small black notebook lay open. A single page showed neat handwriting:
+
+*Grade 2. Executor approach — room emphasised the visible pattern; one element outside it did not recede. System builder — room mirrored categorical order, perfectly arranged, gate elsewhere. Information gatherer — room gave complete inventory, no question asked. Correct solver: stood at threshold, gaze moved to empty space; Register 2 at sitting; Register 3 at naming absence; gate closed.*
+
+The ink was dry. The notebook empty otherwise. No name. No signature.
+
+Yejide left it there.
+
+---
+
+Back on the inspection line the next morning, a crisis brewed.
+
+“We’re missing Lot 41-C,” the foreman announced. “Entire shipment. Without it, the navy set can’t ship.”
+
+Panic rippled through the team. Checkers scrambled. They pulled every roll from storage, laid them out on tables, compared labels. Someone called logistics. Someone else blamed the dye house.
+
+Yejide stood at the edge of the chaos. Watched.
+
+The navy bolts were all present. Indigo. Midnight. Steel. Every shade accounted for. But the production board showed a gap—between midnight and steel—where 41-C should slot in.
+
+No one looked at the gap.
+
+They argued about mislabeling. About customs delays. About faulty manifests.
+
+Yejide walked to the empty hook on the sequencing rack—the one reserved for 41-C. She placed her hand flat over it. Felt the cool metal beneath her palm.
+
+“Who ordered the base cotton for 41-C?” she asked.
+
+Silence.
+
+The foreman frowned. “Base cotton? That’s… standard issue. Comes with the dye contract.”
+
+“Did it arrive?”
+
+He checked his tablet. Scrolled. Paled. “No. It was listed as ‘pending.’ We assumed…”
+
+Yejide nodded. “Call the mill. Ask for the undyed bolt. It’s probably sitting in their holding yard, waiting for us to notice it’s missing.”
+
+The foreman stared at her. Then at the empty hook. Then at his tablet again.
+
+Around them, the argument died. People went still.
+
+Within twenty minutes, the mill confirmed the undyed bolt was ready. A driver was dispatched. Production resumed by noon.
+
+Yejide returned to her station. Checked the next roll. Her hands moved slowly. Deliberately. She looked at the whole problem before touching any part of it.
+
+Fadeke would be late for class if the danfo broke down again. Yejide made sure to leave extra fare in her sister’s bag that morning.

@@ -1,109 +1,65 @@
-# CHAPTER 004
+# CHAPTER 006
 
-Wanjiru Muthoni stood at the entrance to the gate and did not look at it. She stepped in.
+The fabric-inspection floor smelled of starch and machine oil. Rolls of cloth stood upright in metal racks, each tagged with a supplier code, weight class, and dye batch. Empty hooks lined the wall above them. One hook held nothing.
 
-The room was small. Concrete floor. White walls. A single table in the center held three metal boxes. Each box had a latch, no lock. Beside the table, a clipboard with a sheet of paper clipped to it. The paper bore one sentence:
+A man in a stained work shirt stepped into the room without pausing. He went straight to the nearest rack, pulled a bolt free, checked its tag against a clipboard, then moved to the next. His hands were quick, sure. He aligned tags by height as he worked, stacking bolts into neat rows on a trolley. The room stayed still. No light shifted. No panel opened. He finished his pass, wiped his brow, and left. The gate did not close.
 
-*Deliver only if temperature-controlled transport was used, documentation is complete, and recipient signature matches the master list.*
+Next came a woman in a crisp uniform, hair pinned tight. She carried a tablet. She walked the perimeter first, then began sorting. Supplier A to the left, B to the right. Heavyweights forward, lights behind. Defects—snags, dye bleeds, warp inconsistencies—she grouped into a third zone, labeling each with sticky notes. Her system was flawless. Every bolt found its place. The racks gleamed with order. For a moment, a faint hum rose from the far wall—a flicker of something almost responding. Then it died. She frowned, tapped her screen, and walked out. The gate remained open.
 
-She read it once. She moved to the first box. Opened it. Inside: a stack of shipping manifests. She flipped through them quickly. All stamped. All signed. She set the box aside.
+Then Folake arrived.
 
-Second box: temperature logs. Printed strips from calibrated recorders. Dates matched the delivery window. She stacked them neatly next to the manifests.
+She wore salon scrubs under a rain jacket, hair wrapped in a scarf. A delivery bag hung from her shoulder. She paused at the threshold, eyes wide. “I just need to drop this off,” she said to no one. But the door had sealed behind her. She looked around. Took a deep breath. Pulled a notebook from her pocket.
 
-Third box: signature cards. She pulled them out one by one, comparing each to a laminated sheet taped to the underside of the clipboard. Most matched. Two did not. She set those two apart.
+She began at the leftmost rack. Wrote down every tag. Every bolt number. Noted the colour gradients, the spacing between rolls, the condition of the hooks. She measured gaps with her fingers. Counted empty spaces. Jotted timestamps. Her writing was precise, unhurried. She treated the room like evidence. When she finished, she flipped through her pages, satisfied. Closed the book. Waited. Nothing happened. The air stayed thick. The panels stayed shut. She knocked on the door. Called out. No answer. She sat on the floor, back against the wall, and waited longer. Stillness settled over her like dust. The gate gave no sign.
 
-She reassembled the boxes. Closed the latches. Stepped back.
+Yejide entered last.
 
-Nothing happened.
+She stopped at the entrance. Did not step fully inside. Looked at the room the way she looked at everything new—from the threshold, before moving.
 
-She checked the clipboard again. Read the sentence aloud. “Temperature-controlled transport was used, documentation is complete, and recipient signature matches the master list.”
+Her eyes passed over the sorted bolts, the catalogued tags, the perfect rows. They landed on the empty hook near the center of the wall. Not the one at the end. Not the obvious gap. The one that broke the rhythm.
 
-She opened the boxes again. Rechecked every manifest. Verified every log timestamp. Compared every signature twice. She found no errors. She closed the boxes again.
+She walked to it slowly. Stopped. Rested her hand on the bare metal.
 
-The room stayed still.
+“What’s actually missing?” she said.
 
-She looked at the clipboard. The sentence had not changed. She tapped her pen against it. Frowned. Tried rearranging the boxes—manifests on top, then logs, then signatures. Still nothing.
+The wall panel beside the hook slid open before she moved again. Light spilled out—soft, white, final. The gate closed.
 
-She glanced at the door behind her. It remained closed. No sound came from outside. No clock on the wall. She estimated twenty minutes had passed.
-
-She sat down on the floor beside the table. Crossed her legs. Rested her hands on her knees. Looked at the room—not at the boxes, not at the clipboard, but at the whole arrangement.
-
-The light shifted. Not much. Just enough. The white walls seemed brighter near the third box. The shadows under the table deepened. The clipboard lay flat, but the paper curled slightly at the bottom edge, as if something underneath wanted out.
-
-She reached for the clipboard. Lifted it. Nothing beneath. She turned the paper over. Blank.
-
-She looked at the sentence again. Read it slowly.
-
-*Deliver only if temperature-controlled transport was used,*  
-*documentation is complete,*  
-*and recipient signature matches the master list.*
-
-She covered the last two lines with her hand. Read only the first clause.
-
-She opened the second box. Pulled out one temperature log. Held it up. Waited.
-
-A panel in the far wall clicked open. A narrow drawer slid out. Empty.
-
-She uncovered the second line. Covered the first and third. Read: *documentation is complete.*
-
-She opened the first box. Took one manifest. Held it up.
-
-The drawer clicked shut.
-
-She uncovered the third line. Covered the first two. Read: *recipient signature matches the master list.*
-
-She picked up one of the mismatched signature cards. Held it up.
-
-The drawer clicked open again. This time, it held a key.
-
-She took the key. Walked to the door. Turned it in the lock. The door opened.
-
-Outside, Nairobi heat pressed against her skin. Traffic hummed two blocks away. She stepped out. The gate sealed behind her with a soft hiss.
-
-Across the street, a man in a grey coat closed a small black notebook. He had watched the system builder—the one before Wanjiru—spend forty-three minutes sorting every item into labeled trays, cross-referencing each against a self-made index, arranging the room into perfect taxonomic order. The gate had mirrored his method exactly: trays aligned, labels crisp, categories exhaustive. One clause on the clipboard—*recipient signature matches the master list*—had remained untouched throughout, sitting outside every category he built. The man had noted it.
-
-Now he watched Wanjiru walk away without looking back. He turned to a woman selling roasted maize at the corner.
-
-“Did she come out calm?” he asked.
-
-The vendor shrugged. “Quiet. Like she remembered something.”
-
-He nodded. Walked east.
+She turned and left. No one followed.
 
 ---
 
-Back at the depot, Wanjiru faced her supervisor’s checklist. Three days until audit. The top item read:
+Back on the factory floor, the line had stalled again.
 
-*Verify that all Q3 deliveries were processed with correct PO reference, received within 48 hours of dispatch, and reconciled against inventory count.*
+Bolts of base cotton hadn’t arrived. Or so everyone assumed. The supervisor paced, shouting into his radio. Two cutters argued over whether the delay was logistics or procurement. A clerk waved a printout: “All deliveries logged! All tags accounted for!” Another pointed to the racks: “But the cotton isn’t here!”
 
-She stared at it. Her stomach tightened. She had tried to process the whole line at once for two days. Every attempt stalled. She kept circling back to the same dead end.
+Yejide stood near the edge of the group. She watched them list what was present. Who signed what. Which trucks came in. Which forms matched which invoices. Blame circled like smoke.
 
-She took a fresh sheet of paper. Wrote the sentence at the top. Then drew two lines beneath it, splitting it into three separate statements.
+She stepped forward. Not quickly. Not dramatically. She walked to the staging rack where the base-cotton bolts should have been stacked. Reached out. Rested her hand on the empty space between two full racks.
 
-1. *All Q3 deliveries were processed with correct PO reference.*  
-2. *All Q3 deliveries were received within 48 hours of dispatch.*  
-3. *All Q3 deliveries were reconciled against inventory count.*
+“What’s not here that should be?” she asked.
 
-She covered lines 2 and 3 with her hand. Read only line 1.
+The supervisor stopped mid-sentence. His mouth stayed open. The cutter closest to him went still. The clerk lowered her printout. The argument didn’t resume. The room changed register.
 
-She pulled the purchase order ledger. Scanned the Q3 entries. Found three mismatches. Corrected them. Marked them done.
+Someone checked the inbound manifest again. Found a single unsigned release slip—never filed, never flagged. The cotton was in the yard. Waiting.
 
-Uncovered line 2. Covered 1 and 3. Checked dispatch timestamps against receiving logs. Two late arrivals. Flagged them for exception report.
+The line restarted within ten minutes.
 
-Uncovered line 3. Covered the others. Ran the inventory reconciliation script. One batch discrepancy. Traced it to a mislabeled shelf. Fixed it.
+---
 
-By four o’clock, the entire checklist was cleared. She handed the completed file to her supervisor.
+Later, Folake lingered near the inspection room door. She’d been let out after Yejide’s exit, confused but unharmed. She leaned against the wall, flipping through her notebook. A sheet fluttered loose from between the pages. She picked it up.
 
-“You sorted it fast,” he said.
+It wasn’t hers.
 
-“I broke it down,” she said.
+Black paper. Neat script. No name at the top.
 
-He nodded, already turning to the next stack.
+> Grade 1–2. Executor approach. Room emphasised the bolt sequence — tags aligned, colours graduated, spacing even. Underlined: one empty hook not receding. Register 1 throughout.  
+>   
+> System builder approach. Room mirrored categorical grid — supplier groups, weight bands, defect classes. Categorisation perfect. Underlined: the missing category was the condition. Register flicker 1/3, no true 2.  
+>   
+> Information gatherer approach. Room yielded complete audit — every bolt logged, every tag copied. Underlined: no question asked of the data. Register 1 undisturbed.  
+>   
+> Correct approach. Solver stood at threshold. Did not enter fully. Hand on empty hook. Register 2 at threshold-standing. Register 3 at right question. Gate closed.
 
-Wanjiru washed her hands at the sink in the staff room. Water ran clear. She dried them on her uniform. Looked at the clock. Sixteen minutes past four.
+Folake read it twice. Folded it carefully. Slipped it into her pocket.
 
-She walked back to her desk. Sat down. Placed her palms flat on the surface. Looked at the next problem—not at the details, but at the shape of it.
-
-A junior clerk paused mid-step nearby. Stopped talking. Watched her for a beat too long.
-
-Then kept walking.
+Down the hall, a man in a grey coat walked past a loading bay. He did not look back.

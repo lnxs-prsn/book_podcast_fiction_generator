@@ -23,12 +23,12 @@ Everything else is automatic.
 | Field | Value |
 |---|---|
 | Story title | The Sankofa Gates |
-| Last updated | After Chapter 6 |
-| Last chapter completed | 6 |
+| Last updated | After Chapter 5 |
+| Last chapter completed | 5 |
 | Current arc | Arc 1 — Gate Grade 1–2 |
-| Active focal characters | Yejide Adeyemi |
-| Mystery person last appeared | Chapter 6 (Inside gate room / Notebook entry observed) |
-| Macro mystery evidence count | 5 |
+| Active focal characters | Fatou Ndiaye |
+| Mystery person last appeared | Chapter 5 (Inside gate room / Notebook entry observed) |
+| Macro mystery evidence count | 4 |
 
 ---
 
@@ -38,9 +38,9 @@ Everything else is automatic.
 | Operation | Touch | Last Context | Next Due |
 |---|---|---|---|
 | Identify unknown / data / condition | 2 | Professional | Arc 2 — Touch 3 |
-| What is missing (absence over presence) | 2 | Workplace | Arc 2 — Touch 3 |
-| Separate parts of condition | 1 | Workplace | Chapter 7 — Touch 2 |
-| Look at the unknown | 1 | Civic / Institutional | Chapter 7 — Touch 2 |
+| What is missing (absence over presence) | 1 | Family / Domestic | Chapter 5 — Touch 2 |
+| Separate parts of condition | 1 | Workplace | Chapter 6 — Touch 2 |
+| Look at the unknown | 1 | Civic / Institutional | Chapter 6 — Touch 2 |
 | Did you use all the data? | 0 | — | Arc 2 |
 | Can you check the result? | 0 | — | Arc 2 |
 | Can you derive the result differently? | 0 | — | Arc 3 |
@@ -61,7 +61,7 @@ Everything else is automatic.
 | Heuristic vs proof | 0 | — | Arc 7 |
 | Subconscious work | 0 | — | Arc 7 |
 | Auxiliary problem chains | 0 | — | Arc 8 |
-| The sitting down (physical marker) | 3 | Gate (Grade 1–2) | Chapter 7 — Touch 3 |
+| The sitting down (physical marker) | 3 | Gate (Grade 1–2) | Chapter 6 — Touch 3 |
 
 ---
 
@@ -95,7 +95,7 @@ Everything else is automatic.
 
 | ID | Name | Occupation | City | Comprehension Level | Last Seen |
 |---|---|---|---|---|---|
-| char_001 | Yejide Adeyemi | Fabric Checker / Seamstress | Lagos | 2 (Touch 2) | Chapter 6 |
+| char_001 | Yejide Adeyemi | Fabric Checker / Seamstress | Lagos | 1 (Touch 1/1N) | Chapter 1 |
 | char_002 | Kwabena Asante | Dispatch Clerk (Promoted) | Accra | 2 (Touch 2) | Chapter 3 |
 | char_002a | Ama Serwah | Plantain Seller | Accra | 1 (Touch 1) | Chapter 2 |
 | char_003a | Kojo Acheampong | Depot Supervisor | Accra | 1 (Touch 1) | Chapter 3 |
@@ -108,8 +108,8 @@ Everything else is automatic.
 ## MYSTERY PERSON THREAD
 *Observable log summary. Full detail in /state/mystery_anchor.json.*
 
-Appearances: 6  
-Last location: Inside Lagos fabric inspection floor gate room / Observed recording all three wrong approaches and the successful solver’s threshold-standing behavior  
+Appearances: 5  
+Last location: Inside Dakar land registry gate room / Observed recording all three wrong approaches and the successful solver’s threshold-standing behavior  
 Reader can suspect: The anchor now logs register transitions with second-level precision and explicitly notes when solvers fail to ask *any question of the data*. Their notation confirms that “look at the unknown” precedes closure even when unspoken, and they track whether solvers orient toward the *category* of answer rather than its content.
 
 ---
@@ -117,7 +117,7 @@ Reader can suspect: The anchor now logs register transitions with second-level p
 ## MACRO MYSTERY EVIDENCE
 *What the reader can suspect but not confirm.*
 
-Evidence count: 5  
+Evidence count: 4  
 Current state: The anchor’s notebook entry inside the gate records that all three failed solvers treated the room as a repository to be processed, while the successful solver treated it as a question to be parsed. This reinforces that the macro problem is not about effort or thoroughness but about the *frame*—whether the solver asks what kind of thing is wanted before acting.
 
 ---
@@ -125,10 +125,10 @@ Current state: The anchor’s notebook entry inside the gate records that all th
 ## ACTIVE FORESHADOWING
 
 - The anchor’s notebook now includes timestamps down to the second for register shifts, suggesting they are building a temporal model of the solving process.
-- Yejide’s ordinary-life echo shows her applying “what is missing” to production logistics—skipping the visible inventory to find the undelivered base cotton—without naming the method.
-- The foreman pales and the argument dies when Yejide asks “Who ordered the base cotton?”—mirroring gate Register 2 behavior in ordinary life.
-- The phrase “empty hook” replaces “empty space” as the diagnostic lens, showing progression toward institutional fluency in absence-based reasoning.
-- The gate’s mirror for the system builder yielded perfect categorical order but left one compartment empty—highlighting that exhaustive classification without a guiding question produces no path.
+- Fatou’s ordinary-life echo shows her applying “look at the unknown” to bureaucratic overload—skipping the oldest file to find the one whose resolution type matches a precedent—without naming the method.
+- Amadou stops shuffling and Mame’s argument pauses when Fatou asks “What does the outcome actually need to be?”—mirroring gate Register 2 behavior in ordinary life.
+- The phrase “category of evidence” replaces “what is missing” as the diagnostic lens, showing progression toward abstracting the unknown’s type rather than its presence.
+- The gate’s mirror for the information gatherer yielded perfect completeness but no insight—highlighting that exhaustive data collection without a guiding question produces no path.
 
 ---
 
@@ -136,7 +136,7 @@ Current state: The anchor’s notebook entry inside the gate records that all th
 
 | Field | Value |
 |---|---|
-| Chapter | 007 |
+| Chapter | 006 |
 | Type | new_focal_character |
 | City | [ To be determined by Orchestrator — African city, contemporary ] |
 | Gate grade | [ To be determined ] |
@@ -156,7 +156,7 @@ Current state: The anchor’s notebook entry inside the gate records that all th
 
 ## NOTES FOR AI — CURRENT SESSION
 
-- African names only. No Arabic names. (Yejide, Adeyemi, Lagos established. Continue this rule).
+- African names only. No Arabic names. (Fatou, Ndiaye, Dakar established. Continue this rule).
 - The wrong approaches must feel competent and reasonable before they fail.
 - Gate register and mirror behaviour must be shown for all wrong approaches.
 - Mirror prose rule: describe the room's arrangement. Never state what it is showing.
@@ -167,7 +167,7 @@ Current state: The anchor’s notebook entry inside the gate records that all th
 - Mystery person notebook format: Gate grade. Approach type. Mirror content (one precise physical description). Underlined: the gap the mirror showed. Register log time-stamped. Nothing else.
 - Ordinary life echo: same question applied to ordinary problem. Never labelled as connected. At least one other person goes still or conversation changes register.
 - Chapter length: 2000-3000 words.
-- Chapter 6 completed Arc 1’s core operations: executor, system builder, and information gatherer as wrong approaches, with “what is missing” as the hard operation.
-- Yejide’s method shows workplace fluency—she parses production gaps structurally, not procedurally.
+- Chapter 5 completed Arc 1’s core operations: executor, system builder, and information gatherer as wrong approaches, with “look at the unknown” as the hard operation.
+- Fatou’s method shows institutional fluency—she parses legal outcomes structurally, not procedurally.
 - The anchor’s in-gate notebook implies they can observe multiple solvers simultaneously and diagnose their mental frames in real time—deepening their role as structural diagnostician.
-- The phrase “empty hook” is now in-world terminology for abstracting the unknown’s absence in institutional contexts.
+- The phrase “category of evidence” is now in-world terminology for abstracting the unknown’s type.

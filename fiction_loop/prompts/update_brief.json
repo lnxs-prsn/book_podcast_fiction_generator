@@ -1,83 +1,87 @@
 {
-  "chapter": "005",
-  "chapter_type": "new_focal_character",
+  "chapter": "006",
+  "chapter_type": "return_to_character",
   "focal_character": {
-    "id": "char_005",
-    "is_new": true,
-    "name": "Fatou Ndiaye",
-    "occupation": "junior clerk at a district land registry office",
-    "city": "Dakar, Senegal",
+    "id": "char_001",
+    "is_new": false,
+    "name": "Yejide Adeyemi",
+    "occupation": "fabric quality inspector at a garment factory",
+    "city": "Lagos, Nigeria",
     "age": null,
     "gate_visited": {
-      "gate_id": "G-005",
-      "grade": "1-2",
-      "operation_encountered": "op_look_at_unknown",
+      "gate_id": "G-006",
+      "grade": 2,
+      "operation_encountered": "op_what_is_missing",
       "approach_taken": "none — applied correctly",
       "understood": true,
       "looked_back": true,
       "transferred_to_life": true
     },
     "comprehension_changes": {
-      "op_look_at_unknown": "encountered"
+      "op_what_is_missing": "owned"
     },
-    "ordinary_life_state": "Fatou returns to a backlog of twenty-three unresolved boundary-dispute files at the Dakar registry and, instead of starting with the oldest as told, asks what the outcome actually needs before opening any file.",
-    "life_progression_shown": null
+    "ordinary_life_state": "Yejide works the final-inspection line at a Lagos garment factory and is training a new checker; when a missing dye lot stalls production, she locates the absent undyed base cotton by looking at the empty hook rather than the delivered rolls.",
+    "life_progression_shown": true
   },
   "other_entrants": [],
   "secondary_touch_updates": [],
-  "names_used_this_chapter": ["Fatou Ndiaye", "Amadou", "Mame"],
+  "names_used_this_chapter": ["Bisi"],
   "gate_details": {
     "problem_structure": {
-      "unknown": "the category of evidence that would resolve the boundary dispute, not a person, date, or amount of land",
+      "unknown": "the missing bolt of undyed base cotton that should occupy the empty space in the fabric inventory",
       "data": [
-        "a chamber of pigeonholes holding files, ledgers, stamped forms, and rolled maps",
-        "a dull, unstamped envelope in a slot on the left wall",
-        "the stacks and arrangements left behind by the three previous solvers",
-        "boundary survey sketches"
+        "hundreds of fabric rolls wrapped in clear plastic and labeled with dye lots and batch numbers",
+        "Lot 39-A, the roll that sits askew and remains untouched by every wrong approach",
+        "an empty compartment beneath the materialised shelf where a roll should be",
+        "a sliding panel holding a single unlabeled bolt of raw cotton"
       ],
-      "condition": "the ruling turns on testimony type — oral boundary acknowledgment, pre-1987, admissible under Article 12(b) — rather than on the documents themselves"
+      "condition": "closure responds to the absence being noticed and named, not to the present rolls being arranged or catalogued"
     },
-    "correct_approach": "Fatou stood at the threshold with her back half-turned to the data and asked what kind of answer the room wanted, recalling a precedent that hinged on evidence type rather than documents. Naming the category silently made the unstamped envelope brighten; she opened it and placed its contents on the table, and the gate closed."
+    "correct_approach": "Yejide stops at the threshold, sits down outside the gate, lets her gaze move to the empty compartment, asks what is missing, and reaches toward the absence; the gate responds by opening a panel that reveals the raw-cotton bolt, and the gate closes when she pulls it out."
   },
   "process_updates": {
-    "operation": "op_look_at_unknown",
-    "new_touch": 1,
-    "failure_modes_shown_this_chapter": ["the executor", "the system builder", "the information gatherer"],
-    "lead_failure_mode": "the information gatherer",
+    "operation": "op_what_is_missing",
+    "new_touch": 2,
+    "failure_modes_shown_this_chapter": [
+      "the executor",
+      "the system builder",
+      "the information gatherer"
+    ],
+    "lead_failure_mode": "none",
     "name_attached_this_chapter": false,
-    "context_demonstrated": "civic_institutional",
+    "context_demonstrated": "workplace",
     "transferred": true
   },
   "location_updates": {
-    "location_id": "loc_dakar",
-    "new_chapter_added": "005",
+    "location_id": "loc_lagos",
+    "new_chapter_added": "006",
     "new_texture": [
-      "Morning sun slants through the high windows of the Dakar District Land Registry office.",
-      "Boundary-dispute case backlogs pile up on junior clerks' desks, with supervisors instructing them to start with the oldest file.",
-      "A colleague shuffling papers and another arguing with a petitioner over a missing signature both go still or change register when a plain question is asked aloud."
+      "A Lagos garment-factory inspection floor smells of starch and machine oil and is lit by fluorescent lights above racks of fabric.",
+      "A production board shows a gap between midnight and steel shades where Lot 41-C should slot in, while checkers argue about mislabeling and customs delays.",
+      "A foreman checks a tablet and pales when asked whether the base cotton for the missing lot actually arrived."
     ]
   },
   "anchor_update": {
     "appeared": true,
-    "manifestation": "seen",
-    "observation": "Grade 1–2 / executor / room emphasises sequential file order; gap: unstamped envelope (slot L7); Reg 1 throughout; closure attempt min 10 — failed\nGrade 1–2 / system builder / room mirrors categorical grid; gap: categorisation ignores evidentiary type; Reg flicker 1→3→1; closure attempt min 14 — failed\nGrade 1–2 / information gatherer / room yields complete audit; gap: no question asked of data; Reg 1 undisturbed; closure attempt min 18 — failed\nGrade 1–2 / correct / Reg 2 at threshold-standing (min 19:03); Reg 3 at right question (min 19:47); gate closed min 20",
-    "location": "loc_dakar",
-    "reader_can_suspect_update": "The anchor's notation now explicitly confirms that naming the category of an unknown precedes closure even when unspoken, and tracks whether solvers orient toward the type of answer wanted rather than its content."
+    "manifestation": "notebook_page",
+    "observation": "Grade 2. Executor approach — room emphasised the visible pattern; one element outside it did not recede. System builder — room mirrored categorical order, perfectly arranged, gate elsewhere. Information gatherer — room gave complete inventory, no question asked. Correct solver: stood at threshold, gaze moved to empty space; Register 2 at sitting; Register 3 at naming absence; gate closed.",
+    "location": "loc_lagos",
+    "reader_can_suspect_update": "The anchor now logs register transitions with second-level precision, explicitly notes when solvers fail to ask any question of the data, and tracks whether solvers orient toward the category of answer rather than its content."
   },
   "macro_mystery_update": {
     "evidence_planted": true,
-    "evidence": "The anchor's notebook logs all three wrong-approach solvers' entries side by side within the same gate event, each with precise register timestamps, before recording the correct approach — extending the simultaneous-approaches pattern first seen in chapter 004's trace."
+    "evidence": "A notebook page left on a Lagos factory windowsill uses the same concise notation as observations in Accra, Nairobi, and Dakar, recording all three wrong approaches and the precise register transitions of the solver who named the absence."
   },
   "next_chapter_pointer": {
-    "chapter": "006",
-    "type": "return_to_character",
-    "char_id": "char_001",
-    "operation_due": "op_what_is_missing",
-    "touch_due": 2,
+    "chapter": "007",
+    "type": "arc_transition",
+    "char_id": null,
+    "operation_due": null,
+    "touch_due": null,
     "name_due": false,
     "failure_mode_to_show": "none",
     "secondary_touches": [],
     "echo_touch": null,
-    "anchor_appears": true
+    "anchor_appears": false
   }
 }

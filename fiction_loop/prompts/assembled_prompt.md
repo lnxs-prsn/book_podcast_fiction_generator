@@ -1,4 +1,4 @@
-# CHAPTER 005 — GENERATION PROMPT
+# CHAPTER 006 — GENERATION PROMPT
 
 ## VOICE RULES
 
@@ -45,7 +45,7 @@ The gap between observation and meaning is the teaching moment. Do not close it.
 | The sitting down arriving before wrong approaches are exhausted | A cheap sitting down produces a cheap right question. The reader must have run out of their own hypotheses first. |
 | The right question arriving as a revelation | It arrives as a relief. Matter-of-fact. Not dramatic. The drama was in the failure sequence. |
 | The solution being dramatic | The gate closes quietly. The emotional weight was in the question, not the answer. |
-| The ordinary life echo being labelled as connected to the gate | Reader makes the connection. Never state it. Never have the character think "just like the gate." The echo scene must show at least one other person's involuntary response to the right question — someone going still, a conversation changing register. This is the ordinary life substitute for gate register behaviour. |
+| The ordinary life echo being labelled as connected to the gate | Reader makes the connection. Never state it. Never have the character think "just like the gate." The echo scene must show at least one other person's involuntary response to the right question — someone going still, a conversation changing register. |
 | The mystery person given interiority or explanation | Observable only. What they see, what they note. Never what they know or why. |
 | An operation named before the cost has been felt | Name arrives after experience. Always. |
 | Re-explaining an operation the character already owns | Use it naturally or do not use it. |
@@ -94,96 +94,105 @@ The gate reorganises itself to reflect the solver's current mental frame at all 
 
 ## THIS CHAPTER
 
-**Chapter type:** new_focal_character
-**Chapter number:** 005
+**Chapter type:** return_to_character
+**Chapter number:** 006
 
 **Focal character:**
-Fatou Ndiaye. A junior clerk at a district land registry office in Dakar, Senegal. Twenty-six years old. Handles boundary-dispute filings — ordinary bureaucratic work, unrelated to gate clearing. Wolof name matched to city per character_naming.md; occupation is ordinary and civic/institutional in flavour, echoing this chapter's preferred_context without ever naming it as such. No character card exists yet — generated fresh, checked against the used-name ledger (Yejide, Fadeke, Kwabena, Ama Serwah, Mr. Owusu, Mr. Mensah, Esi, Kwame, Yaw, Kofi, Kwabena Asante, Kojo Acheampong, Akosua Osei, Wanjiku Mwangi, David — none reused, no near-collisions).
+Name: Yejide Adeyemi
+Occupation: fabric quality inspector at a garment factory
+City: Lagos, Nigeria
+Previous ordinary_life_state: Yejide shares a Lagos household with her younger sister Fadeke, who is trying to register for university, and their argument over missing paperwork and fees is resolved when Yejide asks what Fadeke actually needs.
+Gate history summary: Gate G-001, Grade 2, operation "What is missing (absence over presence)", touch 1 (chapter 001). Approach taken: the executor. She understood the operation, looked back, and transferred it to ordinary life.
+Still_gets_wrong: []
+
+LIFE PROGRESSION (owner rule F14): Since chapter 001, Yejide's life has visibly moved forward. Fadeke's university registration is settled; the household has a working rhythm. At the factory, Yejide's role has expanded — she is now the person the floor supervisor calls when a production run stalls because something that should be present is not. Show this progress. Never attribute it to the gate — the reader makes the connection.
 
 **Cast (owner rules D6/D7/F15) — BEAT QUOTA by arc (curriculum §9, reader progression):**
-This chapter requires EXACTLY THREE (3) wrong-approach solver scenes (Arc 1 quota): the executor / the system builder / the information gatherer. EACH requires a full dramatized scene (approach shown feeling competent → its specific mirror shift → its specific physical failure). The labels above are internal only — never write them in the prose; show each behavior, never the label. Before returning, COUNT the fully dramatized wrong-approach scenes; a chapter with fewer than three FAILS regardless of word count.
+Arc 1 requires EXACTLY THREE (3) wrong-approach solver scenes, EACH a full dramatized scene (approach feels competent → its specific mirror shift → its specific physical failure). The gate shows multiple solvers. AT LEAST ONE must be a fully improvised newcomer — appearing for the first time in the book, never seen or named in any previous chapter. On this return-to-character chapter, the newcomer must be one of the OTHER entrants, not Yejide.
 
-Order: executor first, system builder second, information gatherer third. The information gatherer is the lead failure mode for this brief (see "Failure mode to demonstrate" below) and must be the last wrong approach shown, immediately before Fatou's correct approach.
+Lead wrong approach: pointer.failure_mode_to_show is "none" — this is touch 2, not a new failure introduction. The three wrong approaches for this Arc 1 gate are drawn from the operation's already-shown pool: the executor, the system builder, the information gatherer. Show each behavior; never write the labels in prose.
 
-Each of these three is a SEPARATE PERSON with a SEPARATE SCENE. Do not collapse two failure modes into one solver. Do not merge the mirror behaviours of two approaches into one room state.
+Suggested cast:
+- The executor: an unnamed male factory worker or delivery runner. Fast, confident hands; starts pairing visible tags to fabric bolts immediately.
+- The system builder: an unnamed line supervisor or inventory clerk. Sorts the room's contents into perfect categories by supplier, weight, or defect type.
+- The information gatherer: Folake, a newcomer, a hairdresser making a delivery to the factory floor. She writes down every tag, every bolt number, every visible detail — complete catalogue, no question of what is absent.
 
-At least one solver must be a fully improvised newcomer (owner rule F15) — Fatou herself qualifies, being invented fresh for this chapter. Name only solvers who matter; every named solver enters the permanent record (character_naming.md ledger).
+Name only solvers who matter. Every named solver enters the permanent record. Folake matters because she is the required improvised newcomer.
 
-**Secondary touches (from pointer.secondary_touches, max 2):** none this chapter (pointer.secondary_touches = []).
+**Secondary touches (from pointer.secondary_touches, max 2):**
+None.
 
-**Echo touch (from pointer.echo_touch, or none):** none this chapter (pointer.echo_touch = null).
+**Echo touch (from pointer.echo_touch, or none):**
+None.
 
 **Gate this chapter:**
-- **Grade:** 1–2 (Arc 1 Gate Grade band, concept_curriculum.md §5 Arc Breakdown — not the operation's own difficulty_rating of 4).
-- **Problem structure:** The unknown is of a recognizable category (a quantity, a place, a person) — naming the category activates memory. The data is abundant and seductive; starting from it leads into a maze. The condition links data to unknown only when read from the unknown's side.
-- **Wrong approaches — three required scenes:**
+Grade: 1–2 (Arc 1 Gate Grade band from concept_curriculum.md Section 5; operation difficulty_rating 2).
+Problem structure: An absence is the unknown. The room contains an almost-complete set of data; closure responds to the absence being named, not to the present things being arranged.
 
-  **INTERNAL LABEL (never in prose): the executor**
-  - **Behaviour to show:** Acts immediately on the most obvious pattern without naming the unknown. Fast movement, confident handling of objects, no pause at the entrance. Looks like competence, decisiveness, experience.
-  - **Gate signature:** Register 1 holds. Contact produces no response.
-  - **Mirror content:** Room arranges itself around the obvious pattern the executor is following — emphasised, clarified, made almost legible — and still the gate does not move. One element outside the pattern is not receding; it is waiting.
-  - **Failure:** The executor solves the pattern they saw and the gate stays open.
+Wrong approaches:
+- INTERNAL LABEL (never in prose): the executor — Acts immediately on the most obvious pattern without naming the unknown. Fast movement. Confident handling of objects. No pause at the entrance. The room emphasises the obvious pattern and keeps the element outside the pattern from receding. Register 1 holds; contact produces no response.
+- INTERNAL LABEL (never in prose): the system builder — Has a method and applies it regardless of fit. Methodical, thorough, unhurried; creates visible order. The room mirrors the method's structure: everything categorised, categorisation perfect, gate elsewhere. Register flickers between 1 and false 3; nothing integrates.
+- INTERNAL LABEL (never in prose): the information gatherer — Collects all available data meticulously before acting, never asking what the data is for. Clipboard, notes, systematic audit, complete documentation. The room gives complete data, still; the catalogue is the mirror. Register 1 undisturbed, as if the solver is not yet present.
 
-  **INTERNAL LABEL (never in prose): the system builder**
-  - **Behaviour to show:** Has a method and applies it regardless of whether it fits this problem. Methodical, thorough, unhurried. Creates visible order from the room's contents.
-  - **Gate signature:** Register flickers between 1 and false 3. Parts light, nothing integrates.
-  - **Mirror content:** Room mirrors the method's structure — every element categorised, the categorisation perfect. The gate does not care about the categorisation; it is elsewhere.
-  - **Failure:** The room is perfectly organised by the builder's system and the gate stays open.
-
-  **INTERNAL LABEL (never in prose): the information gatherer**
-  - **Behaviour to show:** Collects all available data meticulously before acting. Never asks what the data is for. Clipboard, notes, systematic audit, complete documentation.
-  - **Gate signature:** Register 1, undisturbed. As if the solver is not yet present.
-  - **Mirror content:** Room gives everything asked for — complete, still, a perfect catalogue. The mirror shows completeness; completeness is not the same as the right question.
-  - **Failure:** The catalogue is exhaustive and the gate stays open.
-
-- **Correct approach that closes the gate:** Fatou stands at the entrance, back half-turned to the data, eyes fixed on where the answer must appear. She asks what kind of thing is wanted and what has ever produced that kind of thing — before touching any of the room's abundant data. Only once she has named, even silently, the category of the unknown does the room's data organise into a path.
+Correct approach that closes gate: Ask what should be here and is not; search the gaps, not the contents. The right question is "What is actually missing?" Physical marker: the gaze moves to where things are not; a hand rests on an empty space.
 
 **Operation being taught:**
-- **Operation name (internal brief use only — NOT in prose):** Look at the unknown
-- **Touch number:** 1 (current_touch 0 + 1)
-- **Name due:** false. Experience only. No name appears anywhere in the prose — no definition, no narrator label, no character naming it, not even obliquely.
-- **Delivery channel:** none this chapter (experience only).
-- **Physical anchor:** Standing at the entrance, eyes fixed on where the answer must appear — back half-turned to the data.
-- **Problem structure + correct approach:** Dress the canonical shape in this chapter's concrete objects — a gate room where the unknown is of a recognizable category, and the room offers abundant, seductive data (files, ledgers, stamped forms, a wall of pigeonholed documents) that tempts direct engagement. The condition connecting this data to the unknown only resolves when read from the unknown's side: once Fatou has stood still and named, even silently, what kind of thing she is looking for, the room's data organises into a path. She reaches this only after the three wrong approaches have exhausted themselves around her.
-- **Forbidden in prose:** the operation name "Look at the unknown" must not appear anywhere in the chapter. The word "operation" and any "X is/was the Y of Z" definition shape are also forbidden.
+Operation name: What is missing (absence over presence)
+Touch number: 2 (current_touch 1 + 1)
+Name due: false — the operation was already named at touch 1 (chapter 001). In this chapter Yejide applies it naturally; NO operation name appears anywhere.
+Delivery channel: character action
+Physical anchor: The gaze that moves to where things are not; a hand resting on an empty space.
+Problem structure + correct approach (from concept card): Unknown = an absence; the room is complete except for one thing that should be there and is not. Data = an almost-complete set whose completeness invites cataloguing. Condition = closure responds to the absence being named, not to the present things being arranged. Correct approach: Ask what should be here and is not; search the gaps, not the contents.
+
+Dress the problem in this chapter's concrete objects: a Lagos garment-factory fabric-inspection floor. Rolls of cloth, hanging tags, empty hooks, an incomplete delivery. The absent thing is a base-cotton order or a single unsigned release slip that everyone else is assuming is present because everything else is.
+
+Consistency FLAG C2 — operation already encountered by this character at touch 1. Assembler correction: apply/use the operation naturally; remove any explanatory framing; keep only the physical anchor and the character's action.
 
 **Operations to use naturally (no re-explanation):**
-- **Identify unknown / data / condition** (op_identify_unknown — the only operation at "owned" status this chapter) — physical anchor: standing still at the entrance, naming the category of the unknown before moving further in, sometimes aloud, to no one. Use it naturally in how Fatou or an experienced side character orients at a threshold. Do not re-explain it.
+None currently owned by Yejide. (Her comprehension_state lists op_what_is_missing as "understood"; this chapter moves it toward ownership through application, not explanation.)
 
 **Ordinary life echo:**
-- **Domain:** civic / institutional (correspondence_map.md §5, matching op_look_at_unknown's preferred_context).
-- **Real-world problem with the same structure:** A plan or process being built from the resources already at hand — the registry's existing backlog of boundary-dispute files and precedents — when the real starting point should have been what the outcome actually requires. Fatou, back at the land registry days later, faces this backlog. Rather than diving into the stack of case files, she states plainly, unremarked, what the outcome actually needs to be. Everything she does afterward follows from that one sentence.
-- **Constraint:** Must appear in the same chapter as the gate closes.
-- **ISOLATION RULE — copy verbatim into the brief:** "Write the echo scene as if the gate chapter did not exist. The character does not remember, mention, or think about the gate, the room, or that day. The structural resemblance is visible to the reader alone. No sentence may state what the experience meant."
-- The echo scene must show at least one other person's involuntary response to the right question forming — a colleague going still, or the office's conversation changing register — without explanation.
+Context (from process_state.json contexts_not_yet_demonstrated, preferred_context family_domestic already used): workplace.
+Real-world problem: A production-line stall at the factory. Everyone is checking the inventory that arrived — the visible, catalogued fabric — when the real problem is a missing base-cotton delivery or an unsigned approval that was never logged. The conversation lists what is present and argues about blame. Yejide stops, rests her hand on the empty hook or the blank line on the form, and asks what is not here that should be. The foreman or another worker goes still; the conversation changes register.
+
+ISOLATION RULE — copy verbatim into the brief: "Write the echo scene as if the gate chapter did not exist. The character does not remember, mention, or think about the gate, the room, or that day. The structural resemblance is visible to the reader alone. No sentence may state what the experience meant."
 
 **Anchor character appearance:**
-- **Yes.** anchor_appears is true on this gate chapter (owner rule D3: present in every gate chapter).
-- **Observable presentation — FIXED CANON since chapter 001:** an unremarkable man in a grey coat, carrying a small black notebook. Never described in more detail, never named, never aged.
-- **Manifestation for this chapter:** seen directly. This differs from the last three observable_log entries (Chapter 002 — notebook_page; Chapter 003 — bystander_mention; Chapter 004 — traces); none of those three forms may repeat, and this chapter uses the remaining unused form.
-- **What he observes, in the §5 notebook format (gate grade / approach type / mirror content / underlined gap / register log — nothing else, no interpretation):**
-  - Entry for the executor approach: grade, "executor," the room's emphasis of the obvious pattern, underlined gap (the element outside the pattern the solver never looked at), register timestamps.
-  - Entry for the system builder approach: grade, "system builder," the room's perfect categorisation, underlined gap (the categorisation that never touched the gate), register timestamps.
-  - Entry for the information gatherer approach: grade, "information gatherer," the room's complete catalogue, underlined gap (no question ever asked of the data), register timestamps.
-  - Entry for Fatou's correct approach: grade, approach identified as the correct one, register at threshold-standing, register at right question, time between, gate closed at minute [N].
-- **Continuity pull from observable_log:** match chapters 002–004's notation style and register-logging precision — never reference hidden_coherence. This chapter extends the "simultaneous approaches, single event" pattern first fully visible in chapter 004's trace by logging all three wrong-approach entries side by side, with precise register timestamps for each, before the correct-approach entry.
+Yes — this is a gate chapter; owner rule D3 requires the anchor to appear in some form.
+
+Observable presentation — FIXED CANON since chapter 001: an unremarkable man in a grey coat, carrying a small black notebook. Never described in more detail, never named, never aged. Copy this line into the brief verbatim.
+
+Manifestation: a notebook page found (different from chapter 005's "seen"). A small black notebook page is left on a workbench or pinned under a bolt inside the gate room. It records the session in §5 notebook format.
+
+Anchor observation (§5 notebook format, observational only, no interiority):
+"Grade 1–2. Executor approach. Room emphasised the bolt sequence — tags aligned, colours graduated, spacing even. Underlined: one empty hook not receding. Register 1 throughout.
+
+System builder approach. Room mirrored categorical grid — supplier groups, weight bands, defect classes. Categorisation perfect. Underlined: the missing category was the condition. Register flicker 1/3, no true 2.
+
+Information gatherer approach. Room yielded complete audit — every bolt logged, every tag copied. Underlined: no question asked of the data. Register 1 undisturbed.
+
+Correct approach. Solver stood at threshold. Did not enter fully. Hand on empty hook. Register 2 at threshold-standing. Register 3 at right question. Gate closed."
+
+Pull from observable_log to establish continuity: the anchor's recent pattern (chapters 003–005) shows second-level register timestamps and explicit tracking of whether solvers orient toward the category of answer rather than its content. Maintain that precision.
 
 **Failure mode to demonstrate:**
-- **INTERNAL LABEL (never in prose):** the information gatherer
-- Must appear before the correct approach and must be one of the three fully dramatized wrong-approach scenes — the last of the three, immediately preceding Fatou's correct approach.
+INTERNAL LABEL (never in prose): none — pointer.failure_mode_to_show is "none" because this is touch 2. The operation's failure pool (executor, system builder, information gatherer) has already been shown. This chapter demonstrates the operation's application after ownership, not a new failure introduction. The three Arc 1 wrong approaches still appear before the correct approach.
+
+Must appear before correct approach: yes — all three wrong-approach scenes must run before Yejide's sitting down and right question.
 
 **Macro mystery:**
-- **Evidence to plant:** The anchor's notation logs entries for all three wrong-approach solvers side by side within this single gate event, including precise register timestamps for each, before logging the correct approach's entry — extending the "simultaneous approaches, single event" pattern first seen in chapter 004's trace ("A trace inside the gate room records three different solver approaches, the gap each missed, and the exact minute the condition was read clause by clause").
-- **How it appears:** present without explanation, purely as notebook content per the format above. No interpretation of what the pattern across entries means.
+Evidence to plant: No new chapter-006 evidence was supplied in fetched_fields.md. Plant evidence consistent with the established pattern: the anchor's notebook page inside the gate records that the three failed solvers treated the room as a repository to be processed, while the successful solver treated it as a question to be parsed — specifically, that the successful solver oriented toward an absence before touching any presence. This reinforces that the macro problem is not about effort or thoroughness but about the frame.
+
+How it appears: present without explanation. A bystander or the newcomer finds the page; it is read or described in the notebook voice only.
 
 **Emotional beat:**
-Fatou is not seeking a gate — she is pulled in like everyone in Arc 1. She is competent at her registry job in the narrow, procedural sense but has never had to ask what an outcome actually requires rather than what the files in front of her contain. The gate forces this once; the echo shows it beginning, tentatively, to generalise into her ordinary work without her naming it.
+Yejide returns to a gate already familiar with the operation it demands. Her emotional arc is not discovery but recognition — the slower, quieter shock of realising that a skill she earned in crisis has become part of how she moves through ordinary life. She is not grateful to the gate. She is simply no longer the person who charged at the obvious pattern.
 
 **Foreshadowing:**
-Optional seed: the anchor's side-by-side logging of three simultaneous wrong approaches (rather than one at a time) continues the comparative, structural trajectory already visible in chapter 004's foreshadowing (comparative analysis across approaches). Do not resolve or explain this; plant only.
+Optional seed for chapter 007 (new_focal_character, "Do you know a related problem?", touch 1): a brief mention, in the ordinary-life echo or in a bystander's comment, of a solver in another city who recognised a gate's shape from somewhere else — someone whose expertise became blindness. Do not name the next operation.
 
 ## CONSTRAINTS
-- Do not name the operation before the character has suffered its absence.
+- Do not name the operation before the character has suffered its absence (name_due is false; no name appears at all).
 - Do not close the gap between observation and meaning.
 - The anchor character's hidden coherence is never surfaced.
 - Failure before success always.
@@ -193,16 +202,17 @@ Optional seed: the anchor's side-by-side logging of three simultaneous wrong app
 
 ## HARD RULES — a violation of any rule fails the chapter
 
-1. **FORBIDDEN STRINGS:** these internal planning labels must not appear anywhere in the prose: "the executor", "the system builder", "the information gatherer". Show the behavior. Never the label.
-2. **ECHO ISOLATION:** in the ordinary-life scene the character does not remember, mention, or think about the gate, the room, or that day. Write it as if the gate scene did not exist. The reader alone sees the connection.
-3. **NO LESSON SENTENCES:** never write a sentence whose job is to state what an experience meant or what the method is. This chapter is not name_due: no operation name appears at all.
-4. **THE MIRROR SHOWS, NEVER POINTS:** describe the room's arrangement; never state what it reflects or that it reflects anything. The gate NEVER displays words, labels, or instructions that name or hint at the operation — gates do not explain themselves; a panel may light, shift, or open, never speak.
-5. **THE OBSERVER:** exterior only — position, actions, notebook. No thoughts, no motives, no explanation of who they are.
+1. FORBIDDEN STRINGS: these internal planning labels must not appear anywhere in the prose: "the executor", "the system builder", "the information gatherer". Show the behavior. Never the label.
+2. ECHO ISOLATION: in the ordinary-life scene the character does not remember, mention, or think about the gate, the room, or that day. Write it as if the gate scene did not exist. The reader alone sees the connection.
+3. NO LESSON SENTENCES: never write a sentence whose job is to state what an experience meant or what the method is. [name_due is false: no operation name appears at all.]
+4. THE MIRROR SHOWS, NEVER POINTS: describe the room's arrangement; never state what it reflects or that it reflects anything. The gate NEVER displays words, labels, or instructions that name or hint at the operation — gates do not explain themselves; a panel may light, shift, or open, never speak.
+5. THE OBSERVER: exterior only — position, actions, notebook. No thoughts, no motives, no explanation of who they are.
 6. Never address the reader. The word "you" appears only inside dialogue.
-7. **THE CAST QUOTA IS A HARD REQUIREMENT:** this chapter requires EXACTLY THREE (3) wrong-approach solver scenes: the executor / the system builder / the information gatherer. EACH requires a full dramatized scene (approach feels competent → its mirror shift → its specific failure). The labels are internal (rule 1): show each behavior, never the label. Before returning, COUNT your fully dramatized wrong-approach scenes; a chapter with fewer scenes than the quota FAILS regardless of word count.
-8. **THE OBSERVER APPEARS:** the grey-coat man is present in some form in every gate chapter (seen / traces / mentioned / a notebook page). Omitting him fails the chapter.
-9. **THE ECHO EXISTS:** the ordinary-life scene is present and complete. A chapter without it fails.
-10. **THE GESTURE APPEARS:** the focal solver visibly performs this brief's physical anchor gesture at the turning point — standing at the entrance, eyes fixed on where the answer must appear, back half-turned to the data.
-11. **NO REFLECTIVE CODA:** after the final anchor beat (no name is due this chapter), the chapter ends within TWO sentences. Reflection is where lesson sentences breed. (The in-gate "looking back" beat — a solver lingering after closure — is a SCENE and is allowed; this rule governs only the tail after the echo.)
+7. THE CAST QUOTA IS A HARD REQUIREMENT: this chapter requires EXACTLY THREE (3) wrong-approach solver scenes: the executor / the system builder / the information gatherer. EACH requires a full dramatized scene (approach feels competent → its mirror shift → its specific failure). The labels are internal (rule 1): show each behavior, never the label. Before returning, COUNT your fully dramatized wrong-approach scenes; a chapter with fewer scenes than the quota FAILS regardless of word count.
+8. THE OBSERVER APPEARS: the grey-coat man is present in some form in every gate chapter (seen / traces / mentioned / a notebook page). Omitting him fails the chapter.
+9. THE ECHO EXISTS: the ordinary-life scene is present and complete. A chapter without it fails.
+10. THE GESTURE APPEARS: the focal solver visibly performs this brief's physical anchor gesture at the turning point. [Returning focal: their life shows nameable forward movement since last time — never credited to the gate.]
+11. NO REFLECTIVE CODA: after the name attachment (or, if no name is due, after the final anchor beat), the chapter ends within TWO sentences. Reflection is where lesson sentences breed. (The in-gate "looking back" beat — a solver lingering after closure — is a SCENE and is allowed; this rule governs only the tail after the echo/name.)
+12. THE IMPROVISED NEWCOMER: at least ONE solver present in the gate is a brand-new walk-in — appearing for the first time in the book, never seen or named in any previous chapter. On chapters whose focal character is returning, the newcomer must be one of the OTHER entrants. A gate containing only familiar faces FAILS the chapter. Name the newcomer only if they matter — every named solver enters the permanent record.
 
-Before finishing: re-read your draft against rules 1–11, fix every violation, then output only the corrected chapter.
+Before finishing: re-read your draft against rules 1–12, fix every violation, then output only the corrected chapter.

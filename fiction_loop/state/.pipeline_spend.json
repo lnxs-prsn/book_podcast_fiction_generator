@@ -1,6 +1,6 @@
 {
-  "session_total": 0.05124959999999999,
-  "lifetime_total": 3.342379799999999,
+  "session_total": 0.0136116,
+  "lifetime_total": 3.4587413999999987,
   "session_started_at": "2026-07-02T16:08:48.842766+00:00",
   "entries": [
     {
@@ -212,6 +212,31 @@
       "ts": "2026-07-09T19:57:12.696638+00:00",
       "amount": 0.05125,
       "note": "update_living_doc model=qwen3-max in=31463 out=2249"
+    },
+    {
+      "ts": "2026-07-10T01:25:52.562146+00:00",
+      "amount": 0.01657,
+      "note": "generate_chapter model=qwen3-max in=6508 out=1460"
+    },
+    {
+      "ts": "2026-07-10T01:28:27.885964+00:00",
+      "amount": 0.01987,
+      "note": "generate_chapter model=qwen3-max in=6508 out=2010"
+    },
+    {
+      "ts": "2026-07-10T01:30:41.982619+00:00",
+      "amount": 0.051967,
+      "note": "update_living_doc model=qwen3-max in=32126 out=2236"
+    },
+    {
+      "ts": "2026-07-10T06:26:30.142718+00:00",
+      "amount": 0.014344,
+      "note": "generate_chapter model=qwen3-max in=5418 out=1307"
+    },
+    {
+      "ts": "2026-07-10T06:29:08.243582+00:00",
+      "amount": 0.013612,
+      "note": "generate_chapter model=qwen3-max in=5418 out=1185"
     }
   ]
 }
