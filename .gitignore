@@ -30,6 +30,7 @@ chapters/
 # contain their chapters); other chapters/ dirs stay ignored
 !fiction_loop/chapters/
 *.pdf
+*.epub
 *.mp3
 *.wav
 
