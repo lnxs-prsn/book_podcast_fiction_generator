@@ -64,12 +64,16 @@ log_path        = "../logs/pipeline.log"
 # so the target is set above the true desire).
 min_chapter_words              = 1200
 expected_output_tokens_chapter = 4000
-api_default_max_tokens_chapter = 5000
+# deepseek-v4-pro REASONS by default: completion tokens include hidden
+# reasoning_tokens (smoke test 2026-07-18: 26 of 28). Caps sized so thinking
+# can never squeeze the visible prose into truncation; at $0.87/1M output the
+# headroom costs nothing unless used.
+api_default_max_tokens_chapter = 12000
 expected_output_tokens_update  = 4000
 # Living doc grows every chapter (population index, foreshadowing, evidence log).
 # Without this, call_api caps update output at expected_output_tokens_update and
 # the refresh starts truncating -> LivingDocValidationError.
-api_default_max_tokens_update  = 8000
+api_default_max_tokens_update  = 16000
 
 # ---------------------------------------------------------------------------
 # Cost limits

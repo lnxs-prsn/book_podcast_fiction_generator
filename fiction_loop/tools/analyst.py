@@ -87,10 +87,14 @@ def check_api_log(cfg: dict) -> None:
         ctoks, chars = last.get("actual_completion_tokens", 0), last.get("content_chars", 0)
         visible = max(chars / 4, 1)
         if ctoks > 2 * visible:
-            find("CRITICAL",
+            # WARN, not CRITICAL (2026-07-18): the Writer seat now runs
+            # deepseek-v4-pro, a reasoning model chosen deliberately by the
+            # owner — the tax is priced in at DeepSeek rates. CRITICAL here
+            # would trip the orchestrator's STEP 0 gate on every chapter.
+            find("WARN",
                  f"THINKING TAX: last call ({last.get('model')}) billed {ctoks} completion tokens "
                  f"for ~{int(visible)} tokens of visible text ({ctoks/visible:.1f}x)",
-                 "reasoning model in the Writer seat — switch to a non-thinking instruct model")
+                 "expected for a reasoning model; escalate only if the ratio grows or costs hurt")
         else:
             ok(f"last API call healthy: {ctoks} completion tokens, ratio {ctoks/visible:.1f}x ({last.get('model')})")
         if last.get("finish_reason") == "length":
