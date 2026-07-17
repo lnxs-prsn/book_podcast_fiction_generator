@@ -13,7 +13,9 @@ Only two steps touch Python: the Writer bridge and the living-doc refresh.
 
 1. `OPENROUTER_API_KEY`: the bridge scripts read the shell environment first, and
    fall back to the repo-root `.env` automatically (shell env wins if both are set).
-   The repo `.env` already contains the key — nothing to do unless you rotate it.
+   `.env` is gitignored and does NOT survive a fresh clone (learned 2026-07-17):
+   copy `.env.example` to `.env`, set the key, then verify with
+   `.venv/bin/python fiction_loop/tools/analyst.py` (zero tokens) before any run.
 2. Everything else is already initialized: state files, 24 concept cards, pointer for
    chapter 1. Do not re-run `tools/init_state.py` (it will refuse without `--force`;
    `--force` wipes teaching history).
@@ -69,13 +71,13 @@ Limits: $5/session, $50 lifetime (`tools/pipeline_config.toml`).
   credentials found".
 - If the Consistency Checker BLOCKs, it will say why — fix the state or the pointer,
   don't override.
-- ANY problem, first move: `python3 fiction_loop/tools/analyst.py` — deterministic
+- ANY problem, first move: `.venv/bin/python fiction_loop/tools/analyst.py` — deterministic
   situation analysis from the logs (zero tokens, ~90% of known failures; it names
   the issue and the fix, it changes nothing itself). The Orchestrator runs it
   automatically on BLOCKED; you can run it yourself anytime.
-- Where are we / how much is left: `python3 fiction_loop/tools/progress.py` —
+- Where are we / how much is left: `.venv/bin/python fiction_loop/tools/progress.py` —
   book %, curriculum %, live chapter step with what's coming next. Leave it
-  running with `watch -n 30 python3 fiction_loop/tools/progress.py`.
+  running with `watch -n 30 .venv/bin/python fiction_loop/tools/progress.py`.
 
 ## REDO / ROLLBACK
 
