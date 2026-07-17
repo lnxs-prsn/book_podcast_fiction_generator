@@ -91,6 +91,41 @@ contract; includes an owner step to rename `.env` keys). Scope boundary: the
 `src/engines`/`src/slicer` podcast transport keeps its old names (dormant,
 never under a companion shell).
 
+## 3c. ADDENDUM (2026-07-18, later still): what is PROVEN vs OPEN
+
+Owner challenged the diagnosis; this section is the honest ledger.
+
+PROVEN (receipts exist):
+- Chapters 1–5 generated fine with qwen writer models. The failure began at
+  the DeepSeek-direct switch — the first time OPENROUTER_URL became
+  load-bearing (with OpenRouter, the client's hardcoded default URL serves
+  and a stale/absent var is harmless).
+- Step-8 404 had an EMPTY body (bad path signature, not model-not-found).
+- The identical request succeeded from a plain repo-root shell (smoke test).
+- The Qwen companion session reported `echo $OPENROUTER_URL` →
+  `https://api.deepseek.com` (base url) — reported by that agent in-session,
+  relayed by the owner. This shell also verified its OWN env is clean.
+- T-002 is implemented (Codex), accepted (senior), committed (aebc2ca): URL
+  normalization + analyst 404 signature (both branches behavior-verified) —
+  the 404 CLASS is closed regardless of where the override comes from.
+
+OPEN — NOT located (do not present hypotheses as findings):
+- WHERE the Qwen process got that env var. Checked and ruled out: shell
+  profiles, home/.env, project .qwen/ (none exists), VSCode process env (this
+  session's shells are clean). `~/.qwen/settings.json` has
+  `providerMetadata.deepseek.baseUrl = https://api.deepseek.com` — the same
+  value, but that it gets EXPORTED into subprocess env is UNVERIFIED
+  speculation. Candidate mechanisms: (a) Qwen Code auto-loaded a stale repo
+  .env at session start; (b) the extension exports provider config. Neither
+  confirmed.
+
+DISCRIMINATING TEST (owner, in progress): run the chapter-006 step-8 resume
+in a CODEX session — same repo, same .env, different companion. Codex env
+probe (`echo $OPENROUTER_URL`) clean + run completes → override is
+Qwen-layer; T-003 stays queued behind ch6. Codex ALSO shows the base url or
+404s → the Qwen-layer localization is WRONG; re-diagnose from the new
+receipts, and treat §3c hypotheses as dead.
+
 ## 4. To resume
 
 1. Confirm/clear the env override (§3), then re-run the RUN.md kickoff in a
