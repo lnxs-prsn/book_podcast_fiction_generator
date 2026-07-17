@@ -153,7 +153,7 @@ required_living_doc_sections = [
 ### CLI interface
 
 ```
-PYTHONPATH=src src/.venv/bin/python fiction_loop/tools/invoke_writer.py
+PYTHONPATH=src .venv/bin/python fiction_loop/tools/invoke_writer.py
   --prompt   PATH    # assembled_prompt.md (required)
   --config   PATH    # pipeline_config.toml (required)
   --output   PATH    # where to write chapter_draft.md (required)
@@ -287,7 +287,7 @@ This step is optional but recommended. If skipped, living_document.md will drift
 ### CLI interface
 
 ```
-PYTHONPATH=src src/.venv/bin/python fiction_loop/tools/refresh_living_doc.py
+PYTHONPATH=src .venv/bin/python fiction_loop/tools/refresh_living_doc.py
   --chapter   PATH   # the approved chapter file (e.g. fiction_loop/chapters/chapter_001.md)
   --config    PATH   # pipeline_config.toml
   --ignore-cost-limit  # optional flag
@@ -393,7 +393,7 @@ Orchestrator step 8 (Writer) and steps 9-10:
 
 ```
 8. Run Writer bridge:
-    PYTHONPATH=src src/.venv/bin/python fiction_loop/tools/invoke_writer.py \
+    PYTHONPATH=src .venv/bin/python fiction_loop/tools/invoke_writer.py \
       --prompt fiction_loop/prompts/assembled_prompt.md \
       --config fiction_loop/tools/pipeline_config.toml \
       --output fiction_loop/prompts/chapter_draft.md
@@ -410,7 +410,7 @@ Orchestrator step 8 (Writer) and steps 9-10:
     Save chapter to /chapters/chapter_[NNN].md
 
 10. Run Living Doc refresh bridge:
-    PYTHONPATH=src src/.venv/bin/python fiction_loop/tools/refresh_living_doc.py \
+    PYTHONPATH=src .venv/bin/python fiction_loop/tools/refresh_living_doc.py \
       --chapter fiction_loop/chapters/chapter_[NNN].md \
       --config fiction_loop/tools/pipeline_config.toml
 

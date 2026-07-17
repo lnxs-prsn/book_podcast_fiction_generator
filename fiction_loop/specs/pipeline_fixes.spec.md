@@ -39,7 +39,7 @@ set**. Verified by running the merge with a dummy key: `merged api_key: None`.
 its documented contract (see its docstring). The extra keys it may add (`max_tokens`,
 `retry_after_override`) are harmless — config is already validated by this point.
 
-**Acceptance:** `OPENROUTER_API_KEY=x PYTHONPATH=src src/.venv/bin/python
+**Acceptance:** `OPENROUTER_API_KEY=x PYTHONPATH=src .venv/bin/python
 fiction_loop/tools/invoke_writer.py …` gets past transport creation (fails later at the
 HTTP call with an auth error, not at `create_transport`).
 
@@ -97,10 +97,10 @@ concept card.
 
 `writer.md`, `orchestrator.md` step 10, and `INTEGRATION_SPECS.md` all say
 `PYTHONPATH=src python …`. On this machine bare `python` (and the root `./.venv`) lacks
-`requests`; only `src/.venv` has the pipeline deps. Verified: root venv →
-`ModuleNotFoundError: requests`; `src/.venv` → runs.
+`requests`; only `.venv` has the pipeline deps. Verified: root venv →
+`ModuleNotFoundError: requests`; `.venv` → runs.
 
-**Fix:** change all three docs to `PYTHONPATH=src src/.venv/bin/python …` (or a
+**Fix:** change all three docs to `PYTHONPATH=src .venv/bin/python …` (or a
 `uv run --project src` form). One canonical command string, quoted identically in all
 three places.
 

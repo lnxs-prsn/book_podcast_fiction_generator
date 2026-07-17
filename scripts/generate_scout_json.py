@@ -13,7 +13,7 @@ EXCLUDED_PREFIXES = (
     ".venv/",
     ".mypy_cache/",
     ".pytest_cache/",
-    "src/.venv/",
+    ".venv/",
     "src/build/",
     "src/.pytest_cache/",
     "src/harness.egg-info/",

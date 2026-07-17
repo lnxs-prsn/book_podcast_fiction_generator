@@ -26,7 +26,7 @@ legitimately takes 5–10+ minutes on slower endpoints (per-request timeout is 1
 kill it mid-generation from outside. Never run it foreground.
 
 ```bash
-( PYTHONPATH=src src/.venv/bin/python fiction_loop/tools/invoke_writer.py \
+( PYTHONPATH=src .venv/bin/python fiction_loop/tools/invoke_writer.py \
     --prompt fiction_loop/prompts/assembled_prompt.md \
     --config fiction_loop/tools/pipeline_config.toml \
     --output fiction_loop/prompts/chapter_draft.md ; \
@@ -47,7 +47,7 @@ acceptable — poll the same output file.
 To override cost limits when explicitly needed:
 
 ```bash
-PYTHONPATH=src src/.venv/bin/python fiction_loop/tools/invoke_writer.py \
+PYTHONPATH=src .venv/bin/python fiction_loop/tools/invoke_writer.py \
   --prompt fiction_loop/prompts/assembled_prompt.md \
   --config fiction_loop/tools/pipeline_config.toml \
   --output fiction_loop/prompts/chapter_draft.md \

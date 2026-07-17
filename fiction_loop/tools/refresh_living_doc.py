@@ -1,7 +1,7 @@
 """Bridge: approved chapter → request_living_doc_update() → living_document.md.
 
 Usage (from project root):
-  PYTHONPATH=src src/.venv/bin/python fiction_loop/tools/refresh_living_doc.py \\
+  PYTHONPATH=src .venv/bin/python fiction_loop/tools/refresh_living_doc.py \\
     --chapter fiction_loop/chapters/chapter_001.md \\
     --config  fiction_loop/tools/pipeline_config.toml
 """
@@ -54,7 +54,7 @@ except ImportError as e:
     print(
         f"Import error: {e}\n"
         "Run with PYTHONPATH=src, e.g.:\n"
-        "  PYTHONPATH=src src/.venv/bin/python fiction_loop/tools/refresh_living_doc.py ...",
+        "  PYTHONPATH=src .venv/bin/python fiction_loop/tools/refresh_living_doc.py ...",
         file=sys.stderr,
     )
     sys.exit(1)

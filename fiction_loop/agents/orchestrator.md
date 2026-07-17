@@ -193,7 +193,7 @@ The Orchestrator touches none of these files. It coordinates by telling each sub
 10. Run bash — Living Document refresh. This is an LLM call: run it in the
     BACKGROUND and poll, exactly like the Writer bridge (foreground tool timeouts
     kill it):
-    ( PYTHONPATH=src src/.venv/bin/python fiction_loop/tools/refresh_living_doc.py \
+    ( PYTHONPATH=src .venv/bin/python fiction_loop/tools/refresh_living_doc.py \
         --chapter fiction_loop/chapters/chapter_[NNN].md \
         --config  fiction_loop/tools/pipeline_config.toml ; \
       echo "BRIDGE_EXIT:$?" ) \

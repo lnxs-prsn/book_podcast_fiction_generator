@@ -1,7 +1,7 @@
 """Bridge: assembled_prompt.md → call_api() → chapter_draft.md.
 
 Usage (from project root):
-  PYTHONPATH=src src/.venv/bin/python fiction_loop/tools/invoke_writer.py \\
+  PYTHONPATH=src .venv/bin/python fiction_loop/tools/invoke_writer.py \\
     --prompt fiction_loop/prompts/assembled_prompt.md \\
     --config fiction_loop/tools/pipeline_config.toml \\
     --output fiction_loop/prompts/chapter_draft.md
@@ -55,7 +55,7 @@ except ImportError as e:
     print(
         f"Import error: {e}\n"
         "Run with PYTHONPATH=src, e.g.:\n"
-        "  PYTHONPATH=src src/.venv/bin/python fiction_loop/tools/invoke_writer.py ...",
+        "  PYTHONPATH=src .venv/bin/python fiction_loop/tools/invoke_writer.py ...",
         file=sys.stderr,
     )
     sys.exit(1)
