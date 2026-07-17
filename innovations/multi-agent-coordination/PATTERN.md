@@ -47,5 +47,12 @@ last commit, ticket amended on its branch, implemented in parallel with work
 in the root checkout, merged --no-ff with post-merge suites green. The
 refusing agent's stop-and-report was the protocol working, not failing.
 
+Partial transplant, 2026-07-17, host repo (book_podcast_fiction_generator):
+the agent-entry-pointer half of the kit adopted — root `AGENTS.md` plus thin
+per-tool pointers (`CLAUDE.md`, `QWEN.md`) for a senior Claude + junior
+Codex/Qwen roster, routing every agent to the repo's `HANDOFF.md`. The
+protocol/board half (ALONE/GROUP modes, worktrees) not yet adopted: work is
+currently dispatched one ticket at a time on one Raspberry Pi checkout.
+
 ## Kit (deployable files in `kit/`)
 `kit/MULTI_AGENT_PROTOCOL.md` (fill §8 deltas), `kit/BOARD.md`, `kit/AGENTS.md` (root entry pointer — clone per agent tool as CLAUDE.md/QWEN.md/...). Pair with trunk-review-queue's kit for the git side.

@@ -44,5 +44,15 @@ ACCEPTED, by a reviewer who copied the handoff without checking — that
 incident is cited inside the rules as case law, and the verify-before-repeat
 rule exists because of it.
 
+First transplant, 2026-07-17, host repo (book_podcast_fiction_generator,
+commit 71ea7ea): adopted after an OS migration + fresh clone left a cold
+agent orienting from two confidently-stale 2026-05 docs (one literally
+promising "cold-start in under 5 minutes"). Root `HANDOFF.md` front door +
+STALE banners on the three trap docs + agent entry pointers. Known delta
+from the kit: dated handoff sections live as separate files in `progress/`
+(the host repo's pre-existing convention) instead of appended sections in
+HANDOFF.md itself; HANDOFF.md holds only the banner, read-order, and trust
+map.
+
 ## Kit (deployable files in `kit/`)
 `kit/HANDOFF_RULES.md` + `kit/HANDOFF_TEMPLATE.md` — copy both; start the handoff from the template on day one.
