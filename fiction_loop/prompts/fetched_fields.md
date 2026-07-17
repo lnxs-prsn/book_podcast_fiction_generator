@@ -1,4 +1,4 @@
-## FETCHED FIELDS — Chapter 006 — return_to_character
+## FETCHED FIELDS — Chapter 006 — return_to_character:char_001
 
 ### SOURCE: /state/master_state.json
 process_state_summary:
@@ -19,6 +19,7 @@ process_state_summary:
   }
 }
 ```
+
 macro_mystery_evidence:
 ```json
 [
@@ -40,6 +41,7 @@ macro_mystery_evidence:
   }
 ]
 ```
+
 next_chapter_pointer:
 ```json
 {
@@ -56,14 +58,54 @@ next_chapter_pointer:
 }
 ```
 
-### SOURCE: /state/process_state.json — operations_due
-op_what_is_missing:
-  name: What is missing (absence over presence)
-  current_touch: 1
-  failure_modes_not_yet_shown: []
-  contexts_not_yet_demonstrated: ["workplace", "professional", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
-  difficulty_rating: 2
-  name_at_touch: 1
+### SOURCE: /state/process_state.json — operation_due: op_what_is_missing
+
+```json
+{
+  "name": "What is missing (absence over presence)",
+  "difficulty_rating": 2,
+  "arc_introduced": 1,
+  "current_touch": 1,
+  "name_attached": true,
+  "name_at_touch": 1,
+  "touch_schedule": {
+    "1": 1,
+    "2": 2
+  },
+  "touch_target": 2,
+  "prerequisite": [],
+  "teaching_history": [
+    {
+      "chapter": "001",
+      "char_id": "char_001",
+      "touch": 1,
+      "context": "family_domestic"
+    }
+  ],
+  "failure_modes_shown": [
+    "the executor",
+    "the system builder",
+    "the information gatherer"
+  ],
+  "failure_modes_not_yet_shown": [],
+  "contexts_demonstrated": [
+    "family_domestic"
+  ],
+  "contexts_not_yet_demonstrated": [
+    "workplace",
+    "professional",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "family_domestic",
+  "transferred_to_ordinary_life": true,
+  "compressible_at_touch": 2
+}
+```
 
 ### SOURCE: /cards/characters/char_001.json
 ```json
@@ -121,19 +163,20 @@ op_what_is_missing:
 }
 ```
 
-### SOURCE: /core/concept_curriculum.md — Arc 1 only
+### SOURCE: /core/concept_curriculum.md — Arc 1 Section 4 (Wrong Approach Sequencing)
 
-#### Section 4 — Wrong Approach Sequencing (Arc 1)
-| Arc | Wrong Approaches to Show (in sequence) | Gate Signature Sequence | Mirror Content Shown | Right Question That Arrives | Why This Sequence |
-|---|---|---|---|---|---|
-| Arc 1 | 1. The executor (acts immediately on obvious pattern) 2. The system builder (applies method regardless of fit) 3. The information gatherer (catalogues everything, asks nothing) | 1. Register 1 holds — contact, nothing. 2. Register flickers false 3, never holds. 3. Register 1, undisturbed — as if solver not yet present. Then Register 2 shift after sitting down. | 1. Room emphasises the obvious pattern — makes it cleaner, more legible. One element outside the pattern not receding. 2. Room mirrors the method's structure: everything categorised. Categorisation perfect. Gate elsewhere. 3. Room gives complete data. Still. The catalogue is the mirror. | What is the unknown here, really? What is missing rather than what is present? | Three visibly distinct mirrors. Reader learns to read them as a sequence. By the third they recognise what the mirror is showing before the solver does. |
+| Arc | Gate Grade | Wrong Approaches | Gate Signature Sequence | Mirror Content | Right Question | Why |
+|---|---|---|---|---|---|---|
+| Arc 1 | 1-2 | Executor → System builder → Information gatherer | Reg 1 holds; Reg flickers false 3; Reg 1 undisturbed; then Reg 2 after sitting down | Room emphasises obvious pattern with one element not receding; room mirrors method categories perfectly but gate elsewhere; room gives complete data, still — the catalogue is the mirror | What is the unknown here, really? What is missing rather than what is present? | Three visibly distinct mirrors. Reader learns to read them as a sequence. |
 
-#### Section 5 — Arc Breakdown (Arc 1)
+### SOURCE: /core/concept_curriculum.md — Arc 1 Section 5 (Arc Breakdown)
+
 | Arc | Gate Grade | Hard Operation | Easy Pairing | New Wrong Approach Type | Narrative Engine |
 |---|---|---|---|---|---|
 | 1 | 1-2 | Look at the unknown / what is missing (4) | Identify unknown / data / condition (2). Separate parts of condition (3). | Executor. System builder. Information gatherer. | First gates open. Society scrambling. Most survive Grade 1 by luck. Grade 2 begins killing those who got lucky on Grade 1. |
 
-### SOURCE: /state/mystery_anchor.json — observable_log (last 3)
+### SOURCE: /state/mystery_anchor.json — observable_log (last 3 entries)
+
 ```json
 [
   {

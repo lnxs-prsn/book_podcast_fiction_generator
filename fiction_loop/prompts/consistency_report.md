@@ -1,26 +1,26 @@
 ## CONSISTENCY REPORT — Chapter 006
 
 ### VOICE CHECKS
-V1 — Failure mode available before touch: PASS — touch_due is 2, not 1; condition does not apply.
-V2 — Multiple new operations: PASS — exactly one operation_due (op_what_is_missing); secondary_touches empty; echo_touch null; total touch events = 1.
-V3 — Owned operation re-explained: PASS — post-assembly check deferred to step 7.5.
+V1 — Failure mode available before touch: PASS — touch_due is 2 (not 1); no failure mode needed before a touch_2 operation
+V2 — Multiple new operations: PASS — exactly one operation_due (op_what_is_missing), secondary_touches is empty, echo_touch is null (0 co-hosted touches, well under cap of 4)
+V3 — Owned operation re-explained: POST-ASSEMBLY — deferred to step 7.5
 
 ### CONTINUITY CHECKS
-C1 — Failure mode already shown: PASS — failure_mode_to_show is "none"; not present in op_what_is_missing.failure_modes_shown.
-C2 — Character/operation overlap: FLAG — char_001 gate_history already records operation_encountered "op_what_is_missing" (chapter 001, touch 1). This chapter is a return_to_character with touch_due 2, so the overlap is intentional, but Assembler must ensure the operation is applied/used naturally and not re-explained.
-C3 — Anchor present on gate chapter: PASS — chapter_type is return_to_character and anchor_appears = true.
-C4 — Ordinary life echo context: PASS — post-assembly check deferred to step 7.5.
+C1 — Failure mode already shown: PASS — failure_mode_to_show is "none" (literal string), not in failure_modes_shown
+C2 — Character/operation overlap: FLAG — char_001 gate_history already contains op_what_is_missing (touch_1, chapter 001). This is the planned return for touch_2 — confirm with Assembler that this is intentional and the new context (not family_domestic) is selected.
+C3 — Anchor present on gate chapter: PASS — anchor_appears is true on return_to_character gate chapter
+C4 — Ordinary life echo context: POST-ASSEMBLY — deferred to step 7.5
 
 ### CURRICULUM CHECKS
-CR1 — Touch number correct: PASS — touch_due 2 == current_touch 1 + 1.
-CR2 — Grade/arc consistency: PASS — Arc 1 difficulty band is grade 1–2; op_what_is_missing difficulty_rating is 2.
-CR3 — Prerequisite gate: PASS — prerequisite list is empty; no prerequisites below touch_2.
+CR1 — Touch number correct: PASS — touch_due (2) == current_touch (1) + 1
+CR2 — Grade/arc consistency: PASS — difficulty_rating 2 is within Arc 1 band (1-2)
+CR3 — Prerequisite gate: PASS — prerequisite list is empty for op_what_is_missing; no prerequisites to gate
 
 ### ANCHOR CHECKS
-A1 — Hidden coherence exposure: PASS — no "hidden_coherence" string or matching content found in fetched_fields.md.
-A2 — Anchor interiority: PASS — observable_log entries are observational only; no anchor thoughts, motives, or inner state described.
+A1 — Hidden coherence exposure: PASS — no hidden_coherence content found in fetched_fields.md
+A2 — Anchor interiority: PASS — observable_log entries are purely observational (register times, room arrangements, approach types); no thoughts, motives, or inner state described
 
 ### SUMMARY
 BLOCK conditions: NONE
-FLAG conditions: C2 — Character already encountered this operation; confirm intentional touch_2 return and avoid re-explanation.
-Recommendation: PROCEED — one FLAG for Assembler attention; no BLOCK.
+FLAG conditions: C2 — character already encountered op_what_is_missing (touch_1, chapter 001); this is intentional return for touch_2, confirm Assembler uses a new context (not family_domestic)
+Recommendation: PROCEED with FLAG — C2 is expected for a return_to_character touch_2 chapter; Assembler should note this and select a fresh context from contexts_not_yet_demonstrated
