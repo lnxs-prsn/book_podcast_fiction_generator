@@ -33,6 +33,21 @@ _NETWORK_ERRORS = (
 )
 
 
+def _normalize_api_url(api_url: str | None) -> str:
+    """OpenAI-compatible providers serve chat at <base>/v1/chat/completions.
+    Callers (and shell env, which wins over .env) sometimes supply a bare
+    base_url; a raw POST to it returns an empty-body 404. Complete the path;
+    leave any URL that already ends in /chat/completions untouched."""
+    if api_url is None:
+        return _DEFAULT_API_URL
+    url = api_url.rstrip("/")
+    if url.endswith("/chat/completions"):
+        return url
+    if url.endswith("/v1"):
+        return url + "/chat/completions"
+    return url + "/v1/chat/completions"
+
+
 class OpenRouterClient:
     """OpenRouter-compatible HTTP transport.
 
@@ -76,7 +91,7 @@ class OpenRouterClient:
 
         self.api_key = api_key
         self.model = model if model is not None else _DEFAULT_MODEL
-        self.api_url = api_url if api_url is not None else _DEFAULT_API_URL
+        self.api_url = _normalize_api_url(api_url)
         self.max_tokens = max_tokens
         self.retry_after_override = retry_after_override
         self.max_retries = int(max_retries)

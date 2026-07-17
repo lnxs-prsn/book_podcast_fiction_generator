@@ -18,6 +18,7 @@ import re
 import subprocess
 import sys
 from pathlib import Path
+from urllib.parse import urlsplit
 
 R = Path(__file__).resolve().parent.parent  # fiction_loop/
 FINDINGS: list[tuple[str, str, str]] = []   # (severity, verdict, fix)
@@ -123,6 +124,11 @@ SIGS = [
     ("CostLimitError", "WARN", "cost cap hit — verify TOML prices match the actual model first",
      "fix price_per_1m_* or raise caps / --ignore-cost-limit deliberately"),
     ("Rate limit", "WARN", "provider rate limiting", "wait / lower frequency"),
+    ("returned 404", "CRITICAL",
+     "endpoint path wrong — a shell-exported OPENROUTER_URL (base url, no "
+     "/v1/chat/completions) overrides .env",
+     "run `echo $OPENROUTER_URL` in the run shell; unset it or export the full "
+     "/v1/chat/completions url"),
 ]
 
 
@@ -150,6 +156,18 @@ def check_bridge_outs() -> None:
                 find("INFO", f"{latest.parent.name}: previous bridge run failed on a "
                      "missing key, but a key is present NOW — stale receipt",
                      "safe to re-run step 8; a new bridge run overwrites this .out")
+            elif needle == "returned 404":
+                override = os.environ.get("OPENROUTER_URL", "")
+                if override and not urlsplit(override).path.rstrip("/").endswith(
+                    "/chat/completions"
+                ):
+                    find(sev, f"{latest.parent.name}: {verdict}; override present "
+                         "NOW in THIS shell", fix)
+                else:
+                    find("INFO", f"{latest.parent.name}: previous bridge run failed "
+                         "on a bad endpoint path, but no bad override is present NOW "
+                         "— stale receipt",
+                         "safe to re-run step 8; a new bridge run overwrites this .out")
             else:
                 find(sev, f"{latest.parent.name}: {verdict}", fix)
             return

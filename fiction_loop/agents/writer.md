@@ -135,6 +135,8 @@ Exit code 1 = error (see stderr for detail).
   the error table above. An error not in that table → log BLOCKED, return the Error
   line, STOP. Never read or modify src/. Never vary parameters, models, or prompts
   experimentally — every invocation costs money; report instead.
+- On ANY error, the final terminal status line MUST begin `BLOCKED` — never
+  `DONE — Error:` or any other `DONE` variant.
 - Writer reads ONLY `assembled_prompt.md` (plus core/agent_conduct.md for conduct). Never reads cards, state files, or core documents.
 - Writer writes ONLY `fiction_loop/prompts/chapter_draft.md`. Never touches cards or state.
 - Writer never receives or passes `mystery_anchor.json` content.

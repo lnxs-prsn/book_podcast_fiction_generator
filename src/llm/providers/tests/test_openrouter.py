@@ -9,7 +9,7 @@ import pytest
 import requests
 
 from llm.exceptions import LLMConfigError, RateLimitError, TransportError
-from llm.providers.openrouter import OpenRouterClient
+from llm.providers.openrouter import _DEFAULT_API_URL, OpenRouterClient
 
 
 def _success_response(content: str = "hello") -> dict:
@@ -32,6 +32,37 @@ def test_invalid_max_tokens_raises():
 def test_invalid_retry_after_override_raises():
     with pytest.raises(LLMConfigError):
         OpenRouterClient(api_key="k", retry_after_override="abc")
+
+
+def test_api_url_base_gets_chat_completions_path():
+    client = OpenRouterClient(api_key="k", api_url="https://api.deepseek.com")
+    assert client.api_url == "https://api.deepseek.com/v1/chat/completions"
+
+
+@pytest.mark.parametrize(
+    "api_url",
+    ["https://api.deepseek.com/v1", "https://api.deepseek.com/v1/"],
+)
+def test_api_url_v1_gets_chat_completions_path(api_url):
+    client = OpenRouterClient(api_key="k", api_url=api_url)
+    assert client.api_url == "https://api.deepseek.com/v1/chat/completions"
+
+
+@pytest.mark.parametrize(
+    "api_url",
+    [
+        "https://api.deepseek.com/v1/chat/completions",
+        "https://api.deepseek.com/v1/chat/completions/",
+    ],
+)
+def test_api_url_full_path_passes_through(api_url):
+    client = OpenRouterClient(api_key="k", api_url=api_url)
+    assert client.api_url == "https://api.deepseek.com/v1/chat/completions"
+
+
+def test_api_url_none_uses_default():
+    client = OpenRouterClient(api_key="k", api_url=None)
+    assert client.api_url == _DEFAULT_API_URL
 
 
 def test_429_retry_then_success():
