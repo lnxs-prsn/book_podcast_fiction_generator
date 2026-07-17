@@ -1,0 +1,35 @@
+#!/bin/sh
+# commit-msg hook — enforce the repo's commit-message format.
+# POSIX sh + grep; no dependencies. Adapted from the origin project's hook.
+#
+# INSTALL (from the repo root):
+#   mkdir -p .githooks && cp <this file> .githooks/commit-msg
+#   chmod +x .githooks/commit-msg
+#   git config core.hooksPath .githooks
+#
+# EDIT the area list below to match your GIT_CONVENTIONS.md, and keep the
+# two in sync forever — a hook that rejects your conventions' own messages
+# is worse than no hook.
+
+MSG_FILE="$1"
+FIRST=$(head -n1 "$MSG_FILE")
+
+# Areas with optional (scope). EDIT this list per your conventions.
+if printf '%s\n' "$FIRST" | grep -Eq '^(docs|build|spec|feat|fix|test|chore)(\([a-z0-9_./-]+\))?: .+'; then
+    exit 0
+fi
+
+# Git-generated first lines.
+if printf '%s\n' "$FIRST" | grep -Eq '^(Merge |Revert )'; then
+    exit 0
+fi
+
+# EXTENSION POINT: add project-specific ID patterns here, e.g. work-unit ids
+# ("ticket-12: ..."), the origin project allowed cycle ids like
+#   ^(proto|learn|audit)-[0-9]+(-r[0-9]+)?: .+
+
+echo "commit-msg: rejected — first line must match one of:" >&2
+echo "  docs: ... | build: ... | spec: ... | feat(...): ... | fix(...): ... | test(...): ... | chore: ..." >&2
+echo "  Merge ... | Revert \"...\"" >&2
+echo "(edit .githooks/commit-msg to match your GIT_CONVENTIONS.md)" >&2
+exit 1
