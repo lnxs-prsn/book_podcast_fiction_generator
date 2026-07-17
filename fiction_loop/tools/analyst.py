@@ -22,6 +22,7 @@ from pathlib import Path
 R = Path(__file__).resolve().parent.parent  # fiction_loop/
 FINDINGS: list[tuple[str, str, str]] = []   # (severity, verdict, fix)
 OK: list[str] = []
+KEY_PRESENT = False  # set by check_key; lets later checks age stale key errors
 
 
 def find(sev: str, verdict: str, fix: str) -> None:
@@ -56,7 +57,9 @@ def check_key(cfg: dict) -> None:
                 file_key = True
             if line.startswith("OPENROUTER_MODEL="):
                 env_model = env_model or line.split("=", 1)[1].strip()
-    if not env_key and not file_key:
+    global KEY_PRESENT
+    KEY_PRESENT = bool(env_key or file_key)
+    if not KEY_PRESENT:
         find("CRITICAL", "no API key in shell env or repo .env",
              "add OPENROUTER_API_KEY to .env (bridge scripts read it as fallback)")
     else:
@@ -135,7 +138,16 @@ def check_bridge_outs() -> None:
         return
     for needle, sev, verdict, fix in SIGS:
         if needle in text:
-            find(sev, f"{latest.parent.name}: {verdict}", fix)
+            # ARTIFACT FRESHNESS: a bridge .out persists until the next step-8
+            # run overwrites it. A missing-key failure recorded there is stale
+            # the moment a key exists — reporting it CRITICAL would wrongly
+            # trip the orchestrator's STEP 0 gate (observed 2026-07-18).
+            if needle == "api_key is required" and KEY_PRESENT:
+                find("INFO", f"{latest.parent.name}: previous bridge run failed on a "
+                     "missing key, but a key is present NOW — stale receipt",
+                     "safe to re-run step 8; a new bridge run overwrites this .out")
+            else:
+                find(sev, f"{latest.parent.name}: {verdict}", fix)
             return
     if "Chapter too short" in text:
         return  # already reported via pipeline.log with better data
