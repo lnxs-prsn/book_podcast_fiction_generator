@@ -1,8 +1,10 @@
 # HANDOFF — front door (stable path; content lives in progress/)
 
-> **CURRENT handoff: `progress/handoff-2026-07-17-clone-audit.md`**
-> (roles, environment, story state, open queue). One hop from here to
-> current truth; do not orient from any other document.
+> **CURRENT handoff: `progress/handoff-2026-07-17-ch6-postmortem-fixes.md`**
+> (ch6 BLOCKED-run post-mortem, conduct/orchestrator hardening, current
+> resume steps). Roles/environment/queue: `handoff-2026-07-17-clone-audit.md`,
+> which it supersedes only in §4c (resume). One hop from here to current
+> truth; do not orient from any other document.
 
 This file is a pointer, not a ledger. Dated handoffs are appended in
 `progress/handoff-YYYY-MM-DD-*.md`; the newest wins. Files always override
@@ -11,7 +13,9 @@ rules: `innovations/handoff-discipline/kit/HANDOFF_RULES.md`.
 
 ## Read-first order for a cold session
 
-1. `progress/handoff-2026-07-17-clone-audit.md` — current state + open queue
+1. `progress/handoff-2026-07-17-ch6-postmortem-fixes.md` — latest events +
+   resume steps; then `handoff-2026-07-17-clone-audit.md` — roles, state,
+   open queue
 2. `fiction_loop/CONTRIBUTING.md` — the 15 laws; binding BEFORE any change
    under `fiction_loop/`
 3. `fiction_loop/specs/intake_factory.spec.md` — the factory spec (design
