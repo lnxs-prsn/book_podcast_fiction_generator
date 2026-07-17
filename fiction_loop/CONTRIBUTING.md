@@ -141,7 +141,7 @@ keeps prose out of commits, so "commit = complete delta" is not yet true.)*
 evidence: STATUS.md, per-agent logs (START before acting), the brief, spend file,
 `.bak` files. `analyst.py` must be able to diagnose from receipts alone; every
 new failure signature gets added to its table. The spend file records real money
-and is NEVER reverted. Debugging starts with `python3 fiction_loop/tools/analyst.py`,
+and is NEVER reverted. Debugging starts with `.venv/bin/python fiction_loop/tools/analyst.py`,
 not with reading prose. Corollary — ARTIFACT FRESHNESS: no step may consume a
 pipeline artifact left by a previous run; a failed producer must overwrite,
 delete, or salvage-rename its output so staleness is impossible to miss *(case
@@ -206,7 +206,7 @@ not yet been performed — until it is, assume unregistered machinery exists.
 
 ## 4. BUG-FIX PROCEDURE (the algorithm)
 
-1. `python3 fiction_loop/tools/analyst.py`. Trust it. "Unknown signature" means
+1. `.venv/bin/python fiction_loop/tools/analyst.py`. Trust it. "Unknown signature" means
    say exactly that — then investigate receipts, not hypotheses.
 2. Classify the defect by layer (§2). Symptom guide:
    - prose violates a rule → L2 (usually the brief induced it — check the

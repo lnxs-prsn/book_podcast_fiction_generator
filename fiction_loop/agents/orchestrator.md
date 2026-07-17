@@ -44,6 +44,15 @@ The Orchestrator touches none of these files. It coordinates by telling each sub
 ## STEPS
 
 ```
+0. PRE-FLIGHT GATE (LAW 7/9 — before reading state, before spawning anything):
+   Run bash: .venv/bin/python fiction_loop/tools/analyst.py
+   Exit 0 → proceed to step 1.
+   Exit 1 (any CRITICAL) → report the analyst's output VERBATIM to the user and
+   STOP: no spawns, no logs, no STATUS.md. Do not attempt to fix what it found.
+   (Case law 2026-07-17: a ch-006 run executed the whole free pipeline — four
+   subagent spawns — to discover at step 8 a missing API key that this gate
+   reports in one second for zero tokens.)
+
 1. Read fiction_loop/state/master_state.json.
    Extract ONLY these three fields — read nothing else:
      chapter_count
@@ -238,7 +247,7 @@ The Orchestrator touches none of these files. It coordinates by telling each sub
     -------
 
 11.5. Run bash — STRUCTURAL GATE (deterministic, pre-state-mutation):
-    python3 fiction_loop/tools/structural_gate.py
+    .venv/bin/python fiction_loop/tools/structural_gate.py
     Exit 0 → proceed to step 12.
     Exit 1 → STOP before the Updater and report its output verbatim to the user
     (cast quota / anchor presence / echo presence / F14 progression / F15 newcomer).
@@ -308,7 +317,7 @@ show living document
   → Read fiction_loop/core/living_document.md and print formatted
 
 analyst
-  → Run bash: python3 fiction_loop/tools/analyst.py
+  → Run bash: .venv/bin/python fiction_loop/tools/analyst.py
   → Print its output verbatim. Deterministic situation analysis from the pipeline's
     logs — it identifies, it never fixes. Run it on ANY BLOCKED before reporting
     (see agent_conduct.md §1).

@@ -3,7 +3,7 @@
 
 Book-level, curriculum-level, and live chapter-step progress, computed from the
 pipeline's own receipts (state files + STATUS.md). Zero tokens, stdlib only.
-Usage:  python3 fiction_loop/tools/progress.py        (or: watch -n 30 python3 ...)
+Usage:  .venv/bin/python fiction_loop/tools/progress.py        (or: watch -n 30 python3 ...)
 """
 from __future__ import annotations
 

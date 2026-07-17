@@ -7,7 +7,7 @@ state files, git) and matches it against the known failure-signature table built
 from this project's real incident history. Prints ranked findings; says "unknown
 signature" instead of guessing — escalate those with the evidence bundle.
 
-Usage:  python3 fiction_loop/tools/analyst.py
+Usage:  .venv/bin/python fiction_loop/tools/analyst.py
 Exit:   0 = no critical findings, 1 = critical findings present.
 """
 from __future__ import annotations
@@ -158,8 +158,12 @@ def check_agent_logs() -> None:
         txt = logf.read_text(errors="ignore")
         if "START" not in txt:
             continue
-        finished = "DONE" in txt
-        died = not finished and "BLOCKED" not in txt
+        # "DONE — Error: ..." is a conduct violation (DONE means success only)
+        # but must read as a failure, not completion: 2026-07-17 a writer log
+        # shaped this way produced a false TIMEOUT RACE advising resume-past-
+        # the-writer while a stale draft sat in chapter_draft.md.
+        finished = "DONE" in txt and not re.search(r"DONE[^\n]*Error:", txt)
+        died = not finished and "BLOCKED" not in txt and "DONE" not in txt
         step_id = logf.name.split("_")[0]
         if blocked_step and blocked_step[2] == "BLOCKED" and blocked_step[0].lstrip("0") == step_id.lstrip("0"):
             if finished:

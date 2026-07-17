@@ -20,6 +20,12 @@ Run the bridge script from the project root. The script reads `OPENROUTER_API_KE
 from the shell environment, falling back to the repo-root `.env` automatically
 (shell env wins if both are set).
 
+**Before invoking the bridge (ARTIFACT FRESHNESS, LAW 9):** run
+`rm -f fiction_loop/prompts/chapter_draft.md` so that a draft file existing
+after this step means exactly one thing: THIS run's bridge succeeded. A stale
+draft (previous run, or resurrected by a git clone — case law 2026-07-17) must
+never be mistakable for fresh output.
+
 **Run it in the background — this is the DEFAULT, not a fallback.** A chapter call
 legitimately takes 5–10+ minutes on slower endpoints (per-request timeout is 180 s
 × up to 4 attempts + backoffs), and foreground Bash tool timeouts (often 300 s)
