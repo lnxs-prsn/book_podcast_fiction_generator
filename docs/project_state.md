@@ -1,4 +1,10 @@
 # Project State Report
+
+> **STALE — 2026-05 snapshot (2026-07-17 banner).** Describes a project shape
+> that no longer exists (submodule-era layout, stage percentages, blockers
+> since resolved). Do NOT orient from this file. Current truth: `HANDOFF.md`
+> at the repo root → `progress/handoff-2026-07-17-clone-audit.md`.
+
 **Generated:** 2026-05-28  
 **Inspected by:** Claude Sonnet 4.6  
 **Scope:** Full directory read — every file verified, nothing assumed

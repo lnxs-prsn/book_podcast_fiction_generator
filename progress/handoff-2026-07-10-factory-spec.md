@@ -1,5 +1,11 @@
 # HANDOFF — 2026-07-10 factory-spec session — for the next AI
 
+> **STALENESS NOTE 2026-07-17:** the repo was re-cloned on a new OS; see
+> `progress/handoff-2026-07-17-clone-audit.md` for what survived and what
+> didn't. The interpreter rule below (`src/.venv/bin/python`, §0/§2/§6)
+> is superseded once ticket `tickets/T-001-move-python-project-root.md`
+> lands: the venv moves to the repo root (`.venv/bin/python`).
+
 Self-contained: assumes no access to the previous session's memory. Everything
 verifiable is in git; where something might have changed since writing, this
 file says CHECK instead of asserting.

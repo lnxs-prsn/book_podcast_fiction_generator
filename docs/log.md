@@ -1,4 +1,9 @@
 # AI Agent Log — harnessv2
+
+> **STALE — 2026-05 era (2026-07-17 banner).** The cold-start claim below is
+> no longer true; this file and `project_state.md` describe the old project.
+> Cold-start path today: `HANDOFF.md` at the repo root.
+
 **Project:** Multi-Angle Learning Engine  
 **Purpose of this file:** Running notes for AI agents. Cold-start this entire project in under 5 minutes by reading this file + `project_state.md`.
 

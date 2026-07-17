@@ -1,5 +1,10 @@
 # User Manual — How to Solve It Learning Engine
 
+> **STALE — pre-fiction_loop era (2026-07-17 banner).** Describes the old
+> podcast + cultivation-novel pipelines, not the current fiction_loop system.
+> Current orientation: `HANDOFF.md` at the repo root; running the loop:
+> `fiction_loop/RUN.md`.
+
 ## What This Project Is
 
 A pipeline that takes a book (PDF) and transforms it into two parallel learning formats:
