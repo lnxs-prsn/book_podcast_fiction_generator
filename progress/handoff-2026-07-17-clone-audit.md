@@ -102,14 +102,48 @@ orientation traps (`docs/project_state.md`, `docs/log.md`, `user_manual.md`)
 carry STALE banners pointing to the front door. Keep HANDOFF.md's banner
 aimed at the newest dated handoff whenever a new one is written.
 
+## 4c. RUN-READY STATE (end of 2026-07-17 session — verified, not assumed)
+
+Analyst run 2026-07-17 evening (post 526f08e): **all green except ONE
+CRITICAL — no `OPENROUTER_API_KEY`** (`.env` gone with the clone; only the
+owner has the key). Everything else verified: config OK (model=qwen3-max),
+state sync OK (chapter_count=5, next=006 return_to_character
+op_what_is_missing), git tree clean. Cleared this session: the stale
+rejected-F15 `chapter_006.md` is archived as
+`chapters/rejected/chapter_006_attempt1.md` (ch3 precedent) so the count
+mismatch WARN is gone; RUN.md's stale ".env already contains the key" claim
+and bare-python3 refs fixed in place.
+
+**To resume generation (in order):**
+1. OWNER: `cp .env.example .env`, set `OPENROUTER_API_KEY`.
+2. Re-run `.venv/bin/python fiction_loop/tools/analyst.py` → expect zero
+   CRITICALs (the "last commit is not a chapter transaction" INFO is normal).
+3. Kickoff prompt for the generating agent (Qwen companion or any harness
+   with subagents + shell): **the verbatim Kickoff prompt in
+   `fiction_loop/RUN.md`** — no custom prompt. One session per chapter.
+   Note: the harness MUST have a subagent/Task tool (context-budget rules
+   depend on it) and a shell; 300 s shell timeout applies. An invalid key
+   fails at the writer call with OpenRouter's misleading 401 ("Missing
+   Authentication header" = key sent but INVALID) — no charge on auth
+   failure; see RUN.md practical advice.
+4. Chapter 006 lands first (the pointer schedules it automatically).
+   **First-ever exercise of the return-chapter review** — senior (or owner)
+   checks: F14 life progression nameable and visible; correct_approach
+   continuity for char_001; anchor manifestation differs from ch5's "seen".
+5. Continue one chapter per session toward the validation bar (§5).
+
 ## 5. Open queue (unchanged from 2026-07-10 except as noted)
 
 1. ~~T-001 lands + acceptance verified by senior~~ DONE 2026-07-17 (f3ed1b5).
-2. Env restore: `.env`, then the free→cheap verification ladder (§2).
-3. Resolve chapter 6 (Qwen companion drives; senior reviews).
-4. FIRST BUILD after that: pre-writer prompt gate (fixture changed — see §1
-   logs/ loss; use `prompts/assembled_prompt.md` or regenerate a logged
-   prompt from the ch6 run).
+2. ~~Pre-run hygiene~~ DONE 2026-07-17 (526f08e) — only `.env` remains (§4c).
+3. Generate chapters 006 → ~008/009 (the arc-1→2 boundary): the "validated"
+   bar from `specs/intake_factory.spec.md` §3 — never-fired machinery must
+   fire for real (arc_transition + anchor_interlude chapter types, failure
+   pool growth at the arc boundary, F14 return-chapter continuity = ch6,
+   compression at scale). Qwen companion drives; senior reviews each chapter.
+4. FIRST BUILD after that: pre-writer prompt gate (fixture changed — old
+   logs/ lost with the clone; use committed `prompts/assembled_prompt.md` or
+   a freshly logged prompt from the ch6 run).
 5. Then the standing order from 2026-07-10 §4: FI-2..FI-11, factory
    Stages 1–2 parallel track. All future implementation goes out as tickets
    (§0 role split).
