@@ -66,6 +66,31 @@ commands only; never `env | grep OPENROUTER` (that would print the key).
   `returned 404` signature to analyst.py SIGS pointing at the env-override
   cause.
 
+## 3b. ADDENDUM (2026-07-18, later): §3 CONFIRMED — override found
+
+The echo check ran inside the Qwen companion session: shell had
+`OPENROUTER_URL=https://api.deepseek.com` (BASE url, no path) exported by the
+companion harness, overriding `.env`'s full `/v1/chat/completions` endpoint.
+Exactly the §3 prime suspect. Session fix approved by the senior:
+`unset OPENROUTER_URL` in that session, then retry step 8 (assembled prompt
+intact; do NOT edit `.env` or `pipeline_config.toml` — both proven good).
+
+Durable fix ticketed: `tickets/T-002-normalize-api-url-404-signature.md` —
+client-side URL normalization + analyst `returned 404` signature with
+freshness aging + the writer.md BLOCKED wording (§2's residual bug).
+**IMPLEMENTED (Codex) and ACCEPTED (senior) 2026-07-18** — all 5 checks
+green; see the ticket's §6 for the pytest-availability note (`uv run
+--frozen --with pytest`, never add pytest to pyproject).
+
+Root-cause fix ticketed (owner chose the bulletproof option):
+`tickets/T-003-bookgen-env-namespace.md` — rename the shared llm-channel env
+vars to a project-owned `BOOKGEN_LLM_*` namespace so no external harness can
+ever export a colliding name. Clean break, no aliases. Sequencing is binding:
+T-002 → chapter 006 → T-003 (it depends on a T-002 line and breaks the env
+contract; includes an owner step to rename `.env` keys). Scope boundary: the
+`src/engines`/`src/slicer` podcast transport keeps its old names (dormant,
+never under a companion shell).
+
 ## 4. To resume
 
 1. Confirm/clear the env override (§3), then re-run the RUN.md kickoff in a
