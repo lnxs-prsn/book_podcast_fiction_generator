@@ -1,11 +1,12 @@
 # HANDOFF — front door (stable path; content lives in progress/)
 
 > **CURRENT handoff: `progress/handoff-2026-07-18-ch6-landed-open-queue.md`
-> — read its §5 addendum first** (ch6 committed a77eec8 AND review ACCEPTED;
-> queue: T-004 redispatch → T-005 extractor-precedence → T-003 env rename
-> with the .env step delegated to senior; binding facts: pytest-via-uv-overlay,
-> Codex classifier quirks, F15 false-fail warning until T-004, thinking-tax
-> verdict = keep deepseek-v4-pro). Detailed day record:
+> — read its §8 (newest) first** (ch6 accepted; T-004, T-005, T-003 ALL
+> accepted — F15 gate fixed, extractor precedence fixed, BOOKGEN_LLM_* env
+> live incl. .env; queue: owner confirms Qwen companion session exports no
+> OPENROUTER_*, then chapter 007 kickoff via RUN.md; binding facts:
+> pytest-via-uv-overlay, Codex classifier quirks, thinking-tax verdict =
+> keep deepseek-v4-pro). Detailed day record:
 > `handoff-2026-07-18-deepseek-switch-404.md` §3b–3d. Background: the two
 > 2026-07-17 handoffs (conduct hardening; roles/environment/queue). One hop
 > from here to current truth; do not orient from any other document.
