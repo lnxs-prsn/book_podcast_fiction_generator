@@ -300,3 +300,29 @@ Implemented-by: <Codex|Qwen — whoever implements>
 - Before the state receipt commit, `git diff --name-only` showed only
   `fiction_loop/state/master_state.json`; this §6 receipt append is the other
   explicitly permitted path in the commit.
+
+### 2026-07-18 — senior — **ACCEPTED** (commits `b128773` + `76185c2`)
+
+All §3 criteria re-run independently: (1) updater STEP 9 advance present
+(~203–217) with summary-first crash-ordering rationale and the T-006
+historical line; (2) `arc_effective` defined (~419) and used by deficit()
+and the STEP D note (~422, ~500); no bare `arc_current` read remains inside
+DECISION LOGIC (line 18 is the inputs declaration, outside scope); (3)
+pre-reconcile CRITICAL drift line verified from implementer receipts (state
+no longer reproducible post-repair, as designed); (4) `arc_current` reads 2;
+commit `76185c2` diff = master_state.json + this ticket's §6 only; (5)
+default analyst → `state sync OK (chapter_count=7, arc=2, next=008
+new_focal_character op_check_result)`, no CRITICAL; `--repair` re-run →
+`no drift — nothing written (stored 2, basis: 1 arc summary files)` —
+idempotent; (6) determinism walk re-done by senior: deficit(op_check_result)
+= 1 at arc 2 → committed 008 pointer reproduced; ch7 extraction under
+arc_effective = 2 → same pointer; (7) chapter_type_contract row (line 22),
+field_registry row (line 26, with invariant + producers + consumers + case
+law), and the full LAW 4 audit disposition list all present; §2.7 anchor
+observation hygiene verified in extractor.md (~315–322); (8) test suite:
+`1 failed, 331 passed in 7.84s` — sole failure is the documented
+pre-existing test_factory legacy case; (9) tree clean, both commits
+pathspec-limited to the write-set. Mid-run refusal guard (untestable
+without faking STATUS) verified by code inspection in the `b128773` diff:
+refuses on RUNNING/BLOCKED, non-contiguity, and unreadable state.
+Chapter 008 is UNBLOCKED on the T-006 side.

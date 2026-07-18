@@ -139,3 +139,15 @@ kickoff; 008 must start only after master_state shows arc_current=2.
 starts. (4) §3.3 optional lead-history backfill is WITHDRAWN as hand surgery
 (superseded by this session's owner decision); if arc-1 history completeness
 ever matters, it becomes a ticket with a deterministic path.
+
+**UPDATE (same day, later): T-006 LANDED AND ACCEPTED** — Codex implemented
+(`b128773` specs+tools, `76185c2` state reconcile 1→2 with receipts); senior
+re-ran all nine §3 acceptance criteria independently — full record in the
+ticket's §6. Analyst now reports `state sync OK (chapter_count=7, arc=2,
+next=008 new_focal_character op_check_result)`; repair verified idempotent;
+tests at the expected `1 failed, 331 passed`. Queue item (1) is DONE.
+**Remaining queue: (a) owner's Qwen companion-session env check (§3.1);
+(b) chapter 008 kickoff — paid, owner starts, RUN.md prompt as written.
+First chapter of arc 2: watch the fetcher pull the ARC 2 curriculum section
+(narrative engine + gate grade band) — first live consumer of the T-006
+advance.**
