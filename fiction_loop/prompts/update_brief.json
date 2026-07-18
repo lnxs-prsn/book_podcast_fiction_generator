@@ -1,47 +1,113 @@
 {
-  "chapter": "007",
-  "chapter_type": "arc_transition",
-  "focal_character": null,
+  "chapter": "008",
+  "chapter_type": "new_focal_character",
+  "focal_character": {
+    "id": "char_008",
+    "is_new": true,
+    "name": "Adwoa Agyeman",
+    "occupation": "hospital pharmacist",
+    "city": "Kumasi",
+    "age": null,
+    "gate_visited": {
+      "gate_id": "G-008",
+      "grade": 2,
+      "operation_encountered": "op_check_result",
+      "approach_taken": "none — applied correctly",
+      "understood": true,
+      "looked_back": true,
+      "transferred_to_life": true
+    },
+    "comprehension_changes": {
+      "op_check_result": "understood"
+    },
+    "ordinary_life_state": "Working the dispensary pickup queue at Komfo Anokye Teaching Hospital, checking filled prescriptions against patient charts before release.",
+    "life_progression_shown": null
+  },
   "other_entrants": [
     {
-      "id": "char_007a",
-      "name": "Kuuku Dadzie",
+      "id": "char_008a",
+      "name": "Kofi Manu",
       "is_new": true,
-      "approach_taken": "the system builder",
-      "operations_applied": ["op_identify_unknown"]
+      "approach_taken": "the confident specialist",
+      "operations_applied": []
+    },
+    {
+      "id": "char_008b",
+      "name": "Ama Serwaa",
+      "is_new": true,
+      "approach_taken": "the hypothesis tester",
+      "operations_applied": []
     },
     {
       "id": null,
       "name": null,
       "is_new": true,
-      "approach_taken": "none — applied correctly",
-      "operations_applied": ["op_look_at_unknown"]
+      "approach_taken": "the executor",
+      "operations_applied": []
     }
   ],
   "secondary_touch_updates": [],
-  "names_used_this_chapter": ["Yaw Boateng", "Kuuku Dadzie"],
-  "gate_details": null,
-  "process_updates": null,
-  "location_updates": null,
+  "names_used_this_chapter": [
+    "Adwoa Agyeman",
+    "Kofi Manu",
+    "Ama Serwaa",
+    "Abena",
+    "Emmanuel",
+    "Dr. Asare"
+  ],
+  "gate_details": {
+    "problem_structure": {
+      "unknown": "Whether the filled medication order matches the patient chart — not just the written prescription",
+      "data": [
+        "Two vial sets — one potassium salt, one sodium salt, both matching the written prescription by drug name, dosage, and frequency",
+        "A patient chart clipped to the order board with comorbidity notes and a sodium-load caution annotation",
+        "A verification panel mounted beside the dispensing tray"
+      ],
+      "condition": "The filled order must pass the verification panel — matching the patient chart rather than the prescription alone"
+    },
+    "correct_approach": "Read the patient chart first to find the comorbidity and the sodium-load caution, select the formulation that matches the chart rather than the prescription alone, then activate the verification panel to confirm the filled order before dispensing."
+  },
+  "process_updates": {
+    "operation": "op_check_result",
+    "new_touch": 1,
+    "failure_modes_shown_this_chapter": [
+      "the confident specialist",
+      "the hypothesis tester",
+      "the executor"
+    ],
+    "lead_failure_mode": "the confident specialist",
+    "name_attached_this_chapter": true,
+    "context_demonstrated": "professional",
+    "transferred": true
+  },
+  "location_updates": {
+    "location_id": "loc_kumasi",
+    "new_chapter_added": "008",
+    "new_texture": [
+      "The dispensary pickup queue is six deep during the afternoon rush, with prescriptions arriving from specialty clinics in stacks.",
+      "Pharmacists annotate patient charts with caution notes that protocol-alone dispensing checks do not surface.",
+      "The pickup tray holds filled prescriptions awaiting final release to ward nurses."
+    ]
+  },
   "anchor_update": {
-    "appeared": true,
-    "manifestation": "notebook_page",
-    "observation": "UNDETERMINED — no verbatim notebook entry in chapter prose; a junior clerk at the Accra guildhall discovers five torn notebook pages in a folder labelled 'Unidentified Documents—Gates'. Three share the same notebook stock. Each page records gate events with solver approaches, register timestamps, and missed observations. The terms 'executor', 'system builder', and 'information gatherer' recur across all five pages. The pages were recovered from gates in Achimota, Kumasi, Lagos, and Dakar. The clerk photocopies them and sends them to the senior coordinator, where they are filed without review.",
-    "location": "loc_accra",
-    "reader_can_suspect_update": "The anchor has been present at every major gate event across cities, leaving physical records that the guild is not yet equipped to interpret. The terms 'executor', 'system builder', 'information gatherer' are the anchor's diagnostic categories for wrong approaches — and the guild, who has not yet recognised these patterns, is losing trained solvers at an accelerating rate."
+    "appeared": false,
+    "manifestation": "none",
+    "observation": "none",
+    "location": "none",
+    "reader_can_suspect_update": "none"
   },
   "macro_mystery_update": {
-    "evidence_planted": true,
-    "evidence": "Five torn notebook pages from the anchor, recovered from gates in Achimota, Kumasi, Lagos, and Dakar, are discovered by a junior clerk in the Accra guildhall archives. The pages use consistent diagnostic terminology (executor, system builder, information gatherer) to classify solver approaches across different gates and cities. The pages are photocopied and sent to the senior coordinator, then shelved without review."
+    "evidence_planted": false,
+    "evidence": "none"
   },
   "next_chapter_pointer": {
-    "chapter": "008",
-    "type": "new_focal_character",
-    "char_id": null,
-    "operation_due": "op_check_result",
-    "touch_due": 1,
+    "chapter": "009",
+    "type": "return_to_character",
+    "char_id": "char_004",
+    "operation_due": "op_separate_condition",
+    "touch_due": 2,
     "name_due": true,
-    "failure_mode_to_show": "the confident specialist",
+    "failure_mode_to_show": "none",
     "secondary_touches": [],
     "echo_touch": null,
     "anchor_appears": true
