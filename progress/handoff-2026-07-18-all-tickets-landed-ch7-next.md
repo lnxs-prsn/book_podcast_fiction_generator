@@ -268,3 +268,17 @@ commands). Attempt-3 draft preserved as the T-012 fixture at commit
 `cf70a1b` (`fiction_loop/prompts/chapter_draft.md`). Ch8 restarts on the
 post-ticket machine and enters at the revision rung (T-012 §2.5
 existing-draft intake) — do NOT roll blind again.
+
+## 10. ADDENDUM (2026-07-18, late) — T-008 redispatched (write-set defect, not an impl failure)
+
+Codex began T-008, ran the §3.8 LAW 4 audit, and correctly STOPPED +
+reverted: two live old-order contracts sat outside the write-set —
+`tools/INTEGRATION_SPECS.md` (§5/§6 state refresh-before-Extractor) and
+`core/pipeline_stage_manifest.md` (order table + Extractor input list).
+Under LAW 7's all-or-nothing rule a partial reorder leaving those stale is
+the forbidden failure, so the STOP was right. Senior redispatched at
+`795a159`: both files ADDED to the write-set with exact edits (§3.9/§3.10)
+and grep proofs (§6a/§6b); verified no OTHER out-of-write-set file states
+the order. Queue order unchanged (T-008 still after T-007, which is merged
+`b8f0b7c`). Re-run the FULL §3 from a clean tree — do not resume the
+reverted partial.
