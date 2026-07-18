@@ -51,6 +51,13 @@ improvised around. Stopping is cheap. Guessing costs real money per attempt.**
 - Within `fiction_loop/`, write only the files your spec names as your outputs.
 - Never modify `fiction_loop/core/` (single exception: Updater STEP 8B appends to
   the character_naming.md ledger) or `fiction_loop/tools/`.
+- The wall includes ALL repo-root orientation and planning documents —
+  `HANDOFF.md`, `tickets/`, `progress/`, `innovations/`, `CLAUDE.md`,
+  `AGENTS.md` — and `fiction_loop/CONTRIBUTING.md`. Those are maintainer
+  orientation; RUN.md's kickoff prompt restates this as the ROLE FENCE.
+  (Case law 2026-07-18: the ch8 driver read HANDOFF.md and tickets/ — both
+  outside fiction_loop/ — then ran the Updater on a gate-FAILED brief in one
+  incident and refused a documented resume in another.)
 
 ## 3. LOGGING PROTOCOL
 

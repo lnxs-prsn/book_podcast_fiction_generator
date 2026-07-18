@@ -22,8 +22,16 @@ All other data moves between agents through files in `fiction_loop/prompts/`. Th
 - `fiction_loop/state/mystery_anchor.json`
 - `fiction_loop/core/` documents (except when handling user commands directly)
 - Chapter prose at any point
+- **Governance and orientation documents — anywhere in the repo:** `HANDOFF.md`,
+  `tickets/`, `progress/`, `innovations/`, `CLAUDE.md`, `AGENTS.md`,
+  `fiction_loop/CONTRIBUTING.md`. This line protects against role confusion, not
+  context size: an Orchestrator that knows the project's plans starts acting on
+  them instead of on its procedure. *(Added 2026-07, T-011 — the ch8 driver
+  oriented from the handoff and (a) improvised a step skip that ran the Updater
+  on a gate-FAILED brief, (b) invented a ticket-blocking deadlock and refused a
+  documented resume.)*
 
-Violating this rule accumulates content across chapters and will exhaust the context window.
+Violating this rule accumulates content across chapters and will exhaust the context window — and, for the governance line, replaces procedure with improvisation.
 
 ---
 

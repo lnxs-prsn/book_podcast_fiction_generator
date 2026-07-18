@@ -2,7 +2,8 @@
 
 **Orient first: read `HANDOFF.md` (repo root), then the current handoff it
 points to. Do not orient from `docs/` or root-level manuals — several are
-stale and say so in their banners.**
+stale and say so in their banners.** EXCEPTION: pipeline-run sessions
+(RUN.md kickoff) never orient here — see the ROLE FENCE in `fiction_loop/RUN.md`.
 
 Binding rules, in force for every agent regardless of harness:
 

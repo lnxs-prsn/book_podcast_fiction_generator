@@ -20,6 +20,11 @@
 > 2026-07-17 handoffs (conduct hardening; roles/environment/queue). One hop
 > from here to current truth; do not orient from any other document.
 
+**Scope: maintainer sessions only.** A session running the fiction_loop
+pipeline (RUN.md kickoff) must NOT orient here — its complete world is
+`fiction_loop/RUN.md` + the two specs it names. If you were kicked off to
+run a chapter, close this file now and report that you read it.
+
 This file is a pointer, not a ledger. Dated handoffs are appended in
 `progress/handoff-YYYY-MM-DD-*.md`; the newest wins. Files always override
 handoff claims — the handoff's job is to point at them accurately. Update

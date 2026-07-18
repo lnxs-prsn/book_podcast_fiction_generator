@@ -133,3 +133,31 @@ the write-set.)
    (pathspec includes the two root files).
 
 ## 4. Implementer log (append below; never delete the ticket body)
+
+### 2026-07-18 — senior implementation (OWNER TIMING OVERRIDE + delegation)
+
+- **Owner override of the ticket's timing gate, recorded:** owner ordered
+  immediate implementation BEFORE the ch8 resume ("the agent will keep
+  hallucinating" — the fence must exist before any new driver session is
+  kicked off). Rationale accepted by senior: the between-runs rule protects
+  live sessions from contract shifts; the run is PARKED with the driver
+  session killed, so no live agent's contract changes. Implemented by the
+  senior under the T-003 §0 delegation precedent.
+- All five §2 edits applied: RUN.md ROLE FENCE inside the kickoff block
+  (between CONTEXT BUDGET and STOP-DON'T-GUESS bullets); orchestrator.md
+  CONTEXT BUDGET governance-doc line with T-011 case law; agent_conduct.md
+  §2 wall-includes line with case law; HANDOFF.md scope paragraph under the
+  pointer blockquote; AGENTS.md one-sentence EXCEPTION.
+- §2.6 audit dispositions: RUN.md 33/35/40 + orchestrator.md 25/30 +
+  agent_conduct 54-55 = the new fence text (intended); AGENTS.md 3-4 =
+  orient line now carrying the exception (intended); AGENTS.md 14 (role
+  assignments) = maintainer content, exempt; CLAUDE.md 3 = routes through
+  HANDOFF.md which now carries the scope paragraph — verified sufficient,
+  CLAUDE.md addresses maintainer sessions only, NOT edited (per §2.6).
+- Acceptance: (1) ROLE FENCE 1 hit, inside the pasted prompt block; (2)
+  scope paragraph present, before the read-first list; (3) AGENTS.md diff =
+  one appended sentence (rewrapped to 2 physical lines — noted); (4) both
+  spec-file additions present; (5) cold-read order verified both paths;
+  (6) audit above; (7) tests `1 failed, 331 passed in 8.02s` — documented
+  legacy failure only; (8) commit pathspec-limited to the write-set + this
+  log.
