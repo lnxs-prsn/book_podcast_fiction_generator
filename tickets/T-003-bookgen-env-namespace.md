@@ -135,9 +135,10 @@ implementer contract is unchanged: never touch `.env`.
    → green, serially (Raspberry Pi — no `-n`, nothing heavy in parallel).
    pytest is NOT a declared dependency — the `uv run --with` overlay is the
    sanctioned way to get it (T-002 §6); do not add it to pyproject.toml.
-2. `grep -rn "OPENROUTER_\|LLM_PROVIDER\|LLM_DEFAULT_TIMEOUT" src/llm src/endpoints src/podcast_script_generator fiction_loop --include="*.py" --include="*.md" --include="*.toml"`
+2. `grep -rn "OPENROUTER_\|LLM_PROVIDER\|LLM_DEFAULT_TIMEOUT" src/llm src/tests src/endpoints src/podcast_script_generator fiction_loop --include="*.py" --include="*.md" --include="*.toml"`
    → zero hits outside `fiction_loop/specs/pipeline_fixes.spec.md` (record,
-   untouched).
+   untouched). (`src/tests` added to the scope 2026-07-18 — the original
+   grep missed the write-set file `src/tests/test_llm_factory.py`.)
 3. `grep -rn "OPENROUTER_TIMEOUT_SECONDS" src/engines src/slicer | wc -l`
    → unchanged vs HEAD (scope boundary respected).
 4. (after owner step) `PYTHONPATH=src .venv/bin/python fiction_loop/tools/analyst.py`
@@ -199,3 +200,35 @@ Pathspec-limit the commit to exactly the write-set files (never
   `llm.env.resolve_from_env`, so after the rename the docstring would be
   actively wrong documentation (LAW 2) — exempting the hit was the worse fix.
 - Ticket body is otherwise unchanged. Redispatch and implement as written.
+
+### 2026-07-18 — Codex — STOPPED during implementation
+
+- Read `AGENTS.md`, `fiction_loop/CONTRIBUTING.md`, `HANDOFF.md`, the current
+  handoff, and this corrected ticket as required. `.env` was not touched or
+  inspected.
+- Pre-edit baseline: the working tree was clean, and acceptance 3 counted 13
+  `OPENROUTER_TIMEOUT_SECONDS` hits in `src/engines` + `src/slicer`.
+- STOP reason: the first `apply_patch` edit operation failed atomically with:
+  `Failed to find expected lines in
+  /home/mr/Desktop/python/github_clones_working_on/book_podcast_fiction_generator/src/tests/test_llm_factory.py:
+      with patch.dict("os.environ", {"LLM_DEFAULT_TIMEOUT_SECONDS": "not-a-number"}, clear=True`
+  The file uses multiline formatting at that location, so the patch context did
+  not match.
+- No implementation files were changed; `git status --porcelain` was clean
+  immediately after the failed edit. Acceptance 1–3 and 6 were not run because
+  §7 requires STOP on any failure.
+
+### 2026-07-18 — senior — STOP verified as RETRYABLE TOOLING FAILURE; redispatch authorized
+
+- Verified: tree was clean after the failed edit; no implementation files
+  changed; `.env` untouched. The STOP itself was rule-compliant.
+- Classification: NOT a ticket defect. `src/tests/test_llm_factory.py` DOES
+  carry 7 `LLM_DEFAULT_TIMEOUT_SECONDS` hits; the patch failed because the
+  `patch.dict(...)` calls at ~lines 35–36 and 64–65 wrap across lines and
+  the patch context assumed single-line form. Remedy for redispatch: READ
+  each write-set file immediately before editing and build edits from the
+  file's actual current text, not from remembered or ticket-quoted shapes.
+- One genuine ticket gap found while verifying: acceptance 2's grep scope
+  omitted `src/tests/` entirely, so it could never catch a missed rename in
+  that write-set file. FIXED — `src/tests` added to the acceptance-2 paths.
+- Ticket otherwise unchanged. Redispatch and implement as written.
