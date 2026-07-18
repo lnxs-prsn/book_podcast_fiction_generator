@@ -202,13 +202,19 @@ The Orchestrator touches none of these files. It coordinates by telling each sub
      ContextOverflowError  → ask Assembler to trim assembled_prompt.md, retry step 7
      CostLimitError        → alert user, wait for explicit --ignore-cost-limit instruction
      ChapterValidationError (too short) → retry step 8 once, then alert user
-     LabelLeakError        → retry step 8 once (redo generation; fresh roll), then
-                             alert user with the offending lines — owner may accept
-                             explicitly or order redo from brief
+     LabelLeakError / prose-check FAIL
+                           → run `--check-prose`, then `--revise` with its
+                             deficiency report; re-check after each revision.
+                             Revise at most twice. On a second failure or any
+                             RevisionOverreachError, fall to `redo generation`;
+                             owner may then accept explicitly or order redo from brief
      Any other error       → alert user, do not continue
 
    LabelLeakError handling added 2026-07 (T-010): ch8 attempt 2 narrated all
    three labels and no check could see it.
+   Targeted revision added 2026-07 (T-012): ch8's independent-rule arithmetic
+   showed that surgical, checkable misses should preserve the passing draft
+   instead of forcing another whole-draft roll.
 
 9. Run bash — do NOT read chapter_draft.md into context:
    cp fiction_loop/prompts/chapter_draft.md fiction_loop/chapters/chapter_[NNN].md
@@ -352,6 +358,15 @@ analyst
   → Print its output verbatim. Deterministic situation analysis from the pipeline's
     logs — it identifies, it never fixes. Run it on ANY BLOCKED before reporting
     (see agent_conduct.md §1).
+
+revise
+  → Use when: step 8 has a checkable, surgical prose miss and the brief is fine.
+  → Run `invoke_writer.py --check-prose` on the draft, then run
+    `invoke_writer.py --revise` with `prompts/prose_deficiencies.json`.
+  → Re-run `--check-prose`; revise at most twice total. If the second attempt
+    still fails, or RevisionOverreachError fires, use `redo generation`.
+  → Do not use for a missing whole scene; skip directly to `redo generation`.
+  → Cost: one Writer API call per invocation.
 
 redo generation
   → Use when: the draft is bad but the brief is fine, and step 12 has NOT run.

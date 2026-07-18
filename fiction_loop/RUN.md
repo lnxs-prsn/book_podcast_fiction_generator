@@ -96,13 +96,16 @@ Limits: $5/session, $50 lifetime (`tools/pipeline_config.toml`).
 
 The pipeline commits each completed chapter as ONE git transaction (orchestrator
 step 13.5, with a pre-chapter baseline commit at 3.5 keeping each transaction pure).
-Undo is STAGED — always use the cheapest rung: `redo generation` (draft bad;
-restore living doc if step 10 ran, then one API call) → `redo from brief` (brief
+Undo is STAGED — always use the cheapest applicable rung: `revise` (checkable,
+surgical prose miss; at most two targeted calls) → `redo generation` (fresh
+draft roll; restore living doc if step 10 ran, then one API call) → `redo from brief` (brief
 bad) → `undo state application` (Updater ran,
 not yet committed; git restore to baseline) → **`redo last chapter`** — a fully mechanical procedure
 (guards, preserve attempt, `git revert --no-edit HEAD`, report) defined in its USER
 COMMANDS. No external help needed; the loop undoes itself. Deeper rewinds = revert
 chapter commits newest-first, one at a time.
+Revision is only for surgical misses. A scene-shaped omission skips straight to
+`redo generation`.
 
 For chapters completed BEFORE per-chapter commits existed: every run leaves receipts —
 `prompts/update_brief.json` lists exactly what was mutated, and `core/*.bak.*` holds

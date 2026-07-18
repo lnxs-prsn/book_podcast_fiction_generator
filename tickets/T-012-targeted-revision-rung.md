@@ -267,3 +267,19 @@ Trailers: `Ticket: T-012` / `Implemented-by: <Codex|Qwen>`.
     superseded into this dispatched ticket; the `T-012-PLAN-SUPERSEDED.md`
     stub points here. Build from THIS file.
   Write-set is BYTE-UNCHANGED. Re-run the full §3 from a clean tree.
+
+- 2026-07-19 — Codex — **IMPLEMENTED.** Added structured `--check-prose`,
+  one-call `--revise` (with a genuinely offline `--dry-run`), shared
+  deficiency records, the 0.25 changed-line overreach guard, post-revision
+  re-check, and the registered revision ladder. LAW 4 audit dispositions:
+  `invoke_writer.py`, `orchestrator.md`, `RUN.md`, and `field_registry.md`
+  updated; `structural_gate.py:105` and the matching Orchestrator step-11.5
+  structural-failure sentence are exempt (structural misses skip revision);
+  all other grep hits are step numbering, historical specs, or unrelated
+  updater contracts. Offline fixtures: ch7 PASS, attempt 2 FAIL with four occurrences
+  across three distinct narration labels (the executor occurs twice; italic
+  artifact hits WARN only), attempt 3 PASS; dry-run checklist contains all
+  flagged lines and the full draft; arg guards and legacy `--check-labels`
+  regression pass; diff-guard prints `diff-guard ok`. Spend receipt remained
+  byte-identical. Sanctioned serial suite: expected known baseline only,
+  `1 failed, 331 passed`.
