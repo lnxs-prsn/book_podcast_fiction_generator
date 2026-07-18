@@ -1,0 +1,174 @@
+# DOCUMENT 4: LIVING DOCUMENT
+*The session save file. Updated after every approved chapter by `refresh_living_doc.py`. The human never edits this file.*
+
+*The Extractor reads this file when filling update_brief.json, for narrative-level continuity context that the raw state JSON does not carry. After the chapter is written and approved, `refresh_living_doc.py` rewrites this file from the approved chapter text, closing the cycle for the next iteration.*
+
+---
+
+## HOW THIS DOCUMENT WORKS IN THE AGENT LOOP
+
+This document is NOT pasted into sessions manually. It is read by the Extractor when filling update_brief.json, and written by `refresh_living_doc.py` at the end of every loop.
+
+The human only interacts with this document to:
+- Check current story state via the `show living document` command
+- Correct an error the Updater made
+- Set the initial state before the first chapter
+
+Everything else is automatic.
+
+---
+
+## CURRENT STATE
+
+| Field | Value |
+|---|---|
+| Story title | The Sankofa Gates |
+| Last updated | After Chapter 6 |
+| Last chapter completed | 6 |
+| Current arc | Arc 1 — Gate Grade 1–2 |
+| Active focal characters | Yejide Adeyemi |
+| Mystery person last appeared | Chapter 6 (Inside gate room — notebook entry left behind; observed all three wrong approaches and the successful solver) |
+| Macro mystery evidence count | 5 |
+
+---
+
+## PROCESS STATE SUMMARY
+*Compressed view. Full detail in /state/process_state.json.*
+
+| Operation | Touch | Last Context | Next Due |
+|---|---|---|---|
+| Identify unknown / data / condition | 2 | Professional | Arc 2 — Touch 3 |
+| What is missing (absence over presence) | 2 | Workplace | Arc 2 — Touch 3 |
+| Separate parts of condition | 1 | Workplace | Chapter 7 — Touch 2 |
+| Look at the unknown | 1 | Civic / Institutional | Chapter 7 — Touch 2 |
+| Did you use all the data? | 0 | — | Arc 2 |
+| Can you check the result? | 0 | — | Arc 2 |
+| Can you derive the result differently? | 0 | — | Arc 3 |
+| Do you know a related problem? | 0 | — | Arc 2 |
+| Here is a problem related to yours | 0 | — | Arc 2 |
+| Analogy — simpler analogous problem | 0 | — | Arc 3 |
+| Looking back / transfer | 0 | — | Arc 2 |
+| Decompose condition | 0 | — | Arc 3 |
+| Introduce auxiliary elements | 0 | — | Arc 3 |
+| Can you use the result? | 0 | — | Arc 4 |
+| Auxiliary problem (invented) | 0 | — | Arc 4 |
+| Specialisation | 0 | — | Arc 4 |
+| Working backwards | 0 | — | Arc 5 |
+| Generalisation | 0 | — | Arc 5 |
+| Inventor's Paradox | 0 | — | Arc 5 |
+| Reductio ad absurdum | 0 | — | Arc 5 |
+| Variation / restatement | 0 | — | Arc 6 |
+| Heuristic vs proof | 0 | — | Arc 7 |
+| Subconscious work | 0 | — | Arc 7 |
+| Auxiliary problem chains | 0 | — | Arc 8 |
+| The sitting down (physical marker) | 3 | Gate (Grade 2) | Chapter 7 — Touch 3 |
+
+---
+
+## FAILURE MODES NOT YET SHOWN
+
+*All wrong approach types must appear across Arcs 1-4. Types introduced per arc per concept_curriculum.md.*
+
+**Arc 2 (introduced as operations expand):**
+- The confident specialist (applies domain expertise to wrong problem type)
+- The hypothesis tester (tests systematically without naming what is being tested)
+
+**Arc 3-4 (introduced as operations expand):**
+- The executor on complex condition (acts on first part, ignores others)
+- The system builder on complex condition (processes all parts equally, finds no path)
+- The force applier (pushes harder when path does not appear)
+- The perfectionist (refuses heuristic, waits for certainty before reasoning)
+
+**Arc 5-6 (tied to restatement and working backwards):**
+- The variation-tester (tests restatements of wrong statement, all fail)
+- The single-step auxiliary solver (invents stepping stone but treats it as destination)
+- The planner without synthesis (builds chain forward, cannot reverse)
+
+**Arc 7+ (tied to heuristic/proof distinction):**
+- The heuristic-only solver (finds method, cannot account for it, cannot distinguish where it applies)
+- The guild verifier (demands proof before acting, paralysed by heuristic evidence)
+
+---
+
+## POPULATION INDEX
+*One line per character. Full detail in /cards/characters/[id].json.*
+
+| ID | Name | Occupation | City | Comprehension Level | Last Seen |
+|---|---|---|---|---|---|
+| char_001 | Yejide Adeyemi | Fabric Checker / Seamstress | Lagos | 2 (Touch 2) | Chapter 6 |
+| char_002 | Kwabena Asante | Dispatch Clerk (Promoted) | Accra | 2 (Touch 2) | Chapter 3 |
+| char_002a | Ama Serwah | Plantain Seller | Accra | 1 (Touch 1) | Chapter 2 |
+| char_003a | Kojo Acheampong | Depot Supervisor | Accra | 1 (Touch 1) | Chapter 3 |
+| char_003b | Akosua Osei | Cleaner | Accra | 1 (Touch 1) | Chapter 3 |
+| char_004 | Wanjiku Mwangi | Hospital Records Officer | Nairobi | 2 (Touch 2) | Chapter 4 |
+| char_005 | Fatou Ndiaye | Land Registry Clerk | Dakar | 1 (Touch 1) | Chapter 5 |
+
+---
+
+## MYSTERY PERSON THREAD
+*Observable log summary. Full detail in /state/mystery_anchor.json.*
+
+Appearances: 6  
+Last location: Inside Lagos fabric inspection floor gate — left torn notebook page after the gate closed; recorded all three wrong-approach solvers (executor, system builder, information gatherer) and the successful solver’s threshold-standing, hand-on-hook behaviour.  
+Reader can suspect: The anchor now logs register transitions with sub-second precision and notes the exact moment the absence is named. Their notation confirms that “what is missing” is the pivot — the solvers who catalogued, matched, or audited never asked that question, and the gate remained inert until it was asked.
+
+---
+
+## MACRO MYSTERY EVIDENCE
+*What the reader can suspect but not confirm.*
+
+Evidence count: 5  
+Current state: The anchor’s notebook from the Lagos fabric gate shows that all three failed solvers interacted with the room’s contents without ever asking what should be present but was not. The empty hook was seen, catalogued, categorised, and filed — but never treated as a question. The successful solver asked what was missing, and the gate responded before any further action. This continues the macro pattern: the gate does not reward thoroughness or speed; it rewards the correct frame.
+
+---
+
+## ACTIVE FORESHADOWING
+
+- The anchor’s notebook now logs register timestamps to the second, suggesting a temporal model of the solving process is under construction.
+- Yejide’s ordinary-life echo shows her applying “what is missing” to production logistics — skipping the visible inventory and supply-chain noise to find the undelivered base cotton that is the real root cause.
+- The floor supervisor and the dye-lab technician both go still when Yejide asks about the missing shipment — mirroring gate Register 2 behaviour in ordinary life.
+- The phrase “empty hook” has emerged as a physical embodiment of absence-based diagnosis, replacing the earlier “empty space” and offering a more tangible metaphor.
+- The gate’s mirror for the system builder produced a flawless categorical grid, yet the empty hook remained untouched in its own cell — demonstrating that exhaustive classification without the right question yields no path forward.
+- The anchor’s ability to record multiple solvers inside the same gate event (approaches A, B, C, and D side-by-side) implies either simultaneous presence, precognition, or access to the gate’s own recording of solver mental frames — deepening the mystery of their nature.
+
+---
+
+## NEXT CHAPTER TARGET
+
+| Field | Value |
+|---|---|
+| Chapter | 007 |
+| Type | new_focal_character |
+| City | [ To be determined by Orchestrator — African city, contemporary ] |
+| Gate grade | [ To be determined ] |
+| Gate problem structure | [ To be determined ] |
+| Wrong approach 1 | the confident specialist |
+| Wrong approach 2 | the hypothesis tester |
+| Right question | [ To be determined ] |
+| Operation Touch | Do you know a related problem?: Touch 1 |
+| Sitting down | Must appear. After both wrong approaches are exhausted. Physical. |
+| Mystery person appears | Yes |
+| Ordinary life echo | [ To be determined ] |
+| Focal character | [ To be determined ] |
+| Emotional beat | [ To be determined ] |
+| Foreshadowing to plant | [ To be determined ] |
+
+---
+
+## NOTES FOR AI — CURRENT SESSION
+
+- African names only. No Arabic names. (Yejide, Adeyemi, Lagos established. Continue this rule.)
+- The wrong approaches must feel competent and reasonable before they fail.
+- Gate register and mirror behaviour must be shown for all wrong approaches.
+- Mirror prose rule: describe the room's arrangement. Never state what it is showing.
+- Do not name the operation in the chapter until the experience is complete.
+- The fourth wall never breaks. No direct address to reader.
+- The sitting down must be preceded by exhaustion of wrong approaches.
+- The solution after the right question arrives is fast and quiet. The gate closes without ceremony.
+- Mystery person notebook format: Gate grade. Approach type. Mirror content (one precise physical description). Underlined: the gap the mirror showed. Register log time-stamped. Nothing else.
+- Ordinary life echo: same question applied to ordinary problem. Never labelled as connected. At least one other person goes still or conversation changes register.
+- Chapter length: 2000-3000 words.
+- Chapter 6 completed the Arc 1 wrong approach roster — executor, system builder, and information gatherer have all been shown with their distinct gate signatures and mirror content.
+- Yejide now owns “what is missing” at Touch 2 in a workplace context; she has not been formally named the higher-level operations.
+- The anchor’s in-gate notebook confirms they can observe multiple solvers within the same gate event and diagnose their mental frames in real time — they are tracking the *process*, not just the outcome.
+- The “empty hook” is now available as a recurring physical emblem for absence-based reasoning in later arcs.

@@ -1,0 +1,176 @@
+# DOCUMENT 4: LIVING DOCUMENT
+*The session save file. Updated after every approved chapter by `refresh_living_doc.py`. The human never edits this file.*
+
+*The Extractor reads this file when filling update_brief.json, for narrative-level continuity context that the raw state JSON does not carry. After the chapter is written and approved, `refresh_living_doc.py` rewrites this file from the approved chapter text, closing the cycle for the next iteration.*
+
+---
+
+## HOW THIS DOCUMENT WORKS IN THE AGENT LOOP
+
+This document is NOT pasted into sessions manually. It is read by the Extractor when filling update_brief.json, and written by `refresh_living_doc.py` at the end of every loop.
+
+The human only interacts with this document to:
+- Check current story state via the `show living document` command
+- Correct an error the Updater made
+- Set the initial state before the first chapter
+
+Everything else is automatic.
+
+---
+
+## CURRENT STATE
+
+| Field | Value |
+|---|---|
+| Story title | The Sankofa Gates |
+| Last updated | After Chapter 7 |
+| Last chapter completed | 7 |
+| Current arc | Arc 2 — Gate Grade 2–3 |
+| Active focal characters | Yejide Adeyemi (Lagos), Kwabena Asante (Accra), Wanjiku Mwangi (Nairobi), Fatou Ndiaye (Dakar) |
+| Mystery person last appeared | Chapter 6 (in person); Chapter 7 (notebook pages recovered from five gates, archived in Accra guildhall) |
+| Macro mystery evidence count | 6 |
+
+---
+
+## PROCESS STATE SUMMARY
+*Compressed view. Full detail in /state/process_state.json.*
+
+| Operation | Touch | Last Context | Next Due |
+|---|---|---|---|
+| Identify unknown / data / condition | 2 | Professional | Arc 2 — Touch 3 |
+| What is missing (absence over presence) | 2 | Workplace | Arc 2 — Touch 3 |
+| Separate parts of condition | 1 | Workplace | Chapter 7 — Touch 2 |
+| Look at the unknown | 1 | Civic / Institutional | Chapter 7 — Touch 2 |
+| Did you use all the data? | 0 | — | Arc 2 |
+| Can you check the result? | 0 | — | Arc 2 |
+| Can you derive the result differently? | 0 | — | Arc 3 |
+| Do you know a related problem? | 0 | — | Arc 2 |
+| Here is a problem related to yours | 0 | — | Arc 2 |
+| Analogy — simpler analogous problem | 0 | — | Arc 3 |
+| Looking back / transfer | 0 | — | Arc 2 |
+| Decompose condition | 0 | — | Arc 3 |
+| Introduce auxiliary elements | 0 | — | Arc 3 |
+| Can you use the result? | 0 | — | Arc 4 |
+| Auxiliary problem (invented) | 0 | — | Arc 4 |
+| Specialisation | 0 | — | Arc 4 |
+| Working backwards | 0 | — | Arc 5 |
+| Generalisation | 0 | — | Arc 5 |
+| Inventor's Paradox | 0 | — | Arc 5 |
+| Reductio ad absurdum | 0 | — | Arc 5 |
+| Variation / restatement | 0 | — | Arc 6 |
+| Heuristic vs proof | 0 | — | Arc 7 |
+| Subconscious work | 0 | — | Arc 7 |
+| Auxiliary problem chains | 0 | — | Arc 8 |
+| The sitting down (physical marker) | 3 | Gate (Grade 2) | Chapter 7 — Touch 3 |
+
+---
+
+## FAILURE MODES NOT YET SHOWN
+
+*All wrong approach types must appear across Arcs 1-4. Types introduced per arc per concept_curriculum.md.*
+
+**Arc 1 (completed):** executor, system builder, information gatherer — all shown.
+
+**Arc 2 (introduced as operations expand):**
+- ~~The confident specialist~~ (shown in Chapter 7 — Dakar Grade 2 gate, guild-trained solver Kuuku Dadzie)
+- The hypothesis tester (tests systematically without naming what is being tested)
+
+**Arc 3-4 (introduced as operations expand):**
+- The executor on complex condition (acts on first part, ignores others)
+- The system builder on complex condition (processes all parts equally, finds no path)
+- The force applier (pushes harder when path does not appear)
+- The perfectionist (refuses heuristic, waits for certainty before reasoning)
+
+**Arc 5-6 (tied to restatement and working backwards):**
+- The variation-tester (tests restatements of wrong statement, all fail)
+- The single-step auxiliary solver (invents stepping stone but treats it as destination)
+- The planner without synthesis (builds chain forward, cannot reverse)
+
+**Arc 7+ (tied to heuristic/proof distinction):**
+- The heuristic-only solver (finds method, cannot account for it, cannot distinguish where it applies)
+- The guild verifier (demands proof before acting, paralysed by heuristic evidence)
+
+---
+
+## POPULATION INDEX
+*One line per character. Full detail in /cards/characters/[id].json.*
+
+| ID | Name | Occupation | City | Comprehension Level | Last Seen |
+|---|---|---|---|---|---|
+| char_001 | Yejide Adeyemi | Fabric Checker / Seamstress | Lagos | 2 (Touch 2) | Chapter 6 |
+| char_002 | Kwabena Asante | Dispatch Clerk (Promoted) | Accra | 2 (Touch 2) | Chapter 3 |
+| char_002a | Ama Serwah | Plantain Seller | Accra | 1 (Touch 1) | Chapter 2 |
+| char_003a | Kojo Acheampong | Depot Supervisor | Accra | 1 (Touch 1) | Chapter 3 |
+| char_003b | Akosua Osei | Cleaner | Accra | 1 (Touch 1) | Chapter 3 |
+| char_004 | Wanjiku Mwangi | Hospital Records Officer | Nairobi | 2 (Touch 2) | Chapter 4 |
+| char_005 | Fatou Ndiaye | Land Registry Clerk | Dakar | 1 (Touch 1) | Chapter 5 |
+
+---
+
+## MYSTERY PERSON THREAD
+*Observable log summary. Full detail in /state/mystery_anchor.json.*
+
+Appearances: 6 (Chapters 1–6 in person; Chapter 7 — five notebook pages recovered from gates in Achimota, Kumasi, Lagos, Dakar; now archived in the Accra guildhall under “Unidentified Documents—Gates”).  
+Last location (direct): Inside Lagos fabric inspection floor gate (Chapter 6).  
+The recovered pages from Chapter 7 confirm that the anchor tracks approach types (`executor`, `system builder`, `information gatherer`) across multiple gates, always noting the same three terms. A junior guild clerk noticed the repetition but filed them without further inquiry.  
+Reader can suspect: The anchor’s notebook pages predate the guild’s discovery; the anchor has been present inside gates from the earliest recorded events, observing not just single solvers but the full sequence of attempts—yet never intervening. The three approach-type labels are consistent across all pages, suggesting a deliberate taxonomy of solving mindsets. The pages are identical in format to the earlier recovered fragments (Achimota, Lagos), but the Dakar page now includes a new note: the exact time the successful solver sat down and the property that was invisible when objects were handled one at a time. That note is the closest the mystery person has come to recording the right question itself.
+
+---
+
+## MACRO MYSTERY EVIDENCE
+*What the reader can suspect but not confirm.*
+
+Evidence count: 6  
+Current state: The guild’s internal review (Chapter 7) reveals that 22 of 37 Grade 2 closures were performed by non-guild civilians, while all 12 Grade 2 deaths were guild-trained. The guild cannot explain why. The Dakar gate explicitly demonstrates the difference: a trained solver failed by applying catalogue-and-reorganise (confident specialist), while an untrained woman stood still, looked at the table as a whole, recalled a structurally similar gate from Kumasi, and solved in three minutes. The guild does not recognise that the operation “do you know a related problem?” is the missing piece. The anonymous solver’s method—looking for a relationship, not handling objects—mirrors the pattern from earlier gates: the right question always concerns what the gate is really asking, not what is obviously present. The mystery person’s pages, now archived, show that the anchor has been documenting this gap from the start, using the same descriptive language across cities and grades. The consistency of the notebooks across five gates (Achimota, Kumasi, Lagos-1, Lagos-2, Dakar) implies the anchor has either been present at an implausible number of events, or has access to information the guild does not—perhaps the gates’ own records.
+
+---
+
+## ACTIVE FORESHADOWING
+
+- The guild’s data shows a systemic void: trained solvers die on Grade 2 at a rate untrained civilians do not. The institution will soon have to confront that its methods are training the wrong approach.
+- The Dakar gate’s solution rested on a property invisible when objects were handled one at a time—a structural relationship. This is the first explicit instance of “related problem” solving, and it will recur as the core of Arc 2.
+- The unnamed woman who solved the Dakar gate had also closed a gate in Kumasi two weeks earlier. Her existence, and her silence, hints at a network of silent solvers the guild cannot track.
+- The mystery person’s taxonomy of wrong approaches (executor, system builder, information gatherer) matches the guild’s observed failure modes, but the guild has no name for them. The junior clerk’s discovery of the pages will likely resurface once the guild’s crisis deepens.
+- Kuuku Dadzie’s failure as a confident specialist is duplicated in microcosm in the guild’s own training method: treat every gate as an isolated problem, never ask “what does this remind me of?” That institutional blindness is the hidden antagonist of Arc 2.
+- The ordinary-life echoes in Chapter 7 (Yejide asking “what’s missing?” on the inspection floor, Kwabena spotting the routing gap, Wanjiku ignoring categories to trace dates, Fatou asking what was missing from the original survey) confirm that the process transfers even when the solvers do not consciously connect it to gates. The next step is for them to recognise the pattern consciously.
+- The anchor’s Dakar page records the moment the unnamed solver sat down. The notation is more precise than earlier entries—suggesting the anchor is refining their observation method, possibly building toward a prediction model.
+
+---
+
+## NEXT CHAPTER TARGET
+
+| Field | Value |
+|---|---|
+| Chapter | 008 |
+| Type | new_focal_character |
+| Arc | 2 |
+| City | African city — to be determined |
+| Gate grade | 2–3 |
+| Gate problem structure | Problem where unknown is clear but connection to data non-obvious; multiple data elements, one consistently unused. Gate solution requires recalling a structurally similar earlier problem. |
+| Wrong approach 1 | the confident specialist (if not yet fully exhausted; else the hypothesis tester) |
+| Wrong approach 2 | the hypothesis tester |
+| Right question | “What does this remind me of? What did I do the last time I faced a problem with this shape?” |
+| Operation Touch | “Do you know a related problem?” — Touch 1 (experience only; name withheld until after the solution) |
+| Sitting down | Must appear. After both wrong approaches are exhausted. Physical. Solver stops handling objects and looks at the whole gate structure. |
+| Mystery person appears | Yes (presence or a notebook page) |
+| Ordinary life echo | The solver, days later, applies the same recall move to a non-gate problem—recognising a structural similarity to a past situation and adapting the method, without naming the operation. |
+| Focal character | New civilian solver, ideally someone with wide ordinary-life experience but no guild training. |
+| Emotional beat | The discovery that they have already solved something like this, and the memory holds the key—relief mixed with surprise at the mind’s hidden library. |
+| Foreshadowing to plant | The solver notices, after the gate, that they are beginning to see problems everywhere in terms of “what this is like,” not just “what this is.” The guild still cannot explain why civilians are surviving better than trainees. |
+
+---
+
+## NOTES FOR AI — CURRENT SESSION
+
+- African names only. No Arabic names. (Yejide, Adeyemi, Kwabena, Kuuku, Wanjiku, Fatou established. Continue this rule.)
+- Chapter 7 completed the arc transition. Arc 1 is closed. Arc 2 has begun.
+- The confident specialist wrong approach has been shown in Chapter 7. The hypothesis tester is the remaining Arc 2 wrong approach to be shown in an upcoming chapter.
+- The operation “Do you know a related problem?” is targeted for Touch 1 in chapter 008 or 009. Do not name the operation during the gate scene; the name arrives after the experience, if at all in the chapter.
+- The gate mirror for the confident specialist: the room organises by domain category, the gap between groups contains the unknown, solver looks only inside the groups. For the hypothesis tester: the room mirrors each hypothesis in sequence, the sequence of endings has a shape visible only if you stop and look at all of them together.
+- The mystery person notebook format remains: Gate grade. Approach type. Mirror content (precise physical description). Underlined: the gap. Register log.
+- The guild’s institutional blindness—treating every gate as isolated—will be a recurring tension in Arc 2. Show, don’t tell.
+- The unnamed woman from Dakar is a potential future focal character. Her Kumasi gate is part of the backdrop. The Extractor may choose to bring her forward.
+- Ordinary life echoes continue: at least one other person goes still or the conversation changes register when the right question forms.
+- The anchor’s pages are now archived in the Accra guildhall. They can be rediscovered in a later arc for major reveal.
+- Chapter length: 2000–3000 words.
+- All existing living document notes remain active unless explicitly superseded.

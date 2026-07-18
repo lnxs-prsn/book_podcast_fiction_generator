@@ -52,3 +52,5 @@ may modify; the RULES section is owner-maintained.
 | Amadou | 005 |  |
 | Mame | 005 |  |
 | Mrs. Okafor | 006 |  |
+| Yaw Boateng | 007 |  |
+| Kuuku Dadzie | 007 |  |
