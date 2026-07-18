@@ -111,3 +111,27 @@ the tripwire detects, the human decides.)
 Trailers: `Ticket: T-010` / `Implemented-by: <Codex|Qwen>`.
 
 ## 6. Implementer log (append below; never delete the ticket body)
+
+### 2026-07-18 — Codex
+
+- Implemented the runtime-derived forbidden-label check, `LabelLeakError`,
+  rejected-draft salvage, and zero-token `--check-labels PATH` mode in
+  `invoke_writer.py`; added the Orchestrator error handling and LAW 15 registry
+  row.
+- Calibrated artifact classification at the matched italic span. This is needed
+  because accepted chapter 007 line 181 contains the three artifact labels as
+  inline italic spans rather than as a whole-line italic block.
+- Fixture A:
+  `PYTHONPATH=src .venv/bin/python fiction_loop/tools/invoke_writer.py
+  --check-labels fiction_loop/chapters/chapter_008.md` → exit 1; lines 23/25/27
+  WARN as artifact labels, line 49 reports the required three narration labels
+  (and line 55 reports one additional executor narration hit).
+- Fixture B:
+  `PYTHONPATH=src .venv/bin/python fiction_loop/tools/invoke_writer.py
+  --check-labels fiction_loop/chapters/chapter_007.md` → exit 0; its three
+  inline-italic artifact labels WARN.
+- Sanctioned serial suite:
+  `PYTHONPATH=src uv run --frozen --with pytest python -m pytest src/ -q` →
+  expected baseline `1 failed, 331 passed`
+  (`test_default_splitter_engine_passes_openrouter_timeout_seconds`, missing
+  required `source`).

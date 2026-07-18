@@ -5,12 +5,18 @@ Usage (from project root):
     --prompt fiction_loop/prompts/assembled_prompt.md \\
     --config fiction_loop/tools/pipeline_config.toml \\
     --output fiction_loop/prompts/chapter_draft.md
+
+Zero-token label check:
+  PYTHONPATH=src .venv/bin/python fiction_loop/tools/invoke_writer.py \\
+    --check-labels fiction_loop/chapters/chapter_007.md
 """
 
 from __future__ import annotations
 
 import argparse
+import json
 import os
+import re
 import sys
 import traceback
 from pathlib import Path
@@ -81,28 +87,128 @@ def validate_word_count(text: str, min_words: int) -> None:
         )
 
 
+class LabelLeakError(Exception):
+    """Raised when an internal failure-mode label leaks into narration."""
+
+
+def load_forbidden_labels(
+    state_path: Path | None = None,
+) -> tuple[str, ...]:
+    """Load the book-specific failure-mode labels from process state."""
+    if state_path is None:
+        state_path = Path(__file__).resolve().parents[1] / "state" / "process_state.json"
+    state = json.loads(state_path.read_text(encoding="utf-8"))
+    labels: set[str] = set()
+    for operation in state["operations"].values():
+        for field in ("failure_modes_shown", "failure_modes_not_yet_shown"):
+            labels.update(
+                label.strip()
+                for label in operation.get(field, [])
+                if isinstance(label, str) and label.strip()
+            )
+    return tuple(sorted(labels, key=str.casefold))
+
+
+def _artifact_spans(line: str) -> list[tuple[int, int]]:
+    """Return spans inside Markdown italic markers on a prose line."""
+    content = line.strip()
+    while content.startswith(">"):
+        content = content[1:].lstrip()
+    return [
+        match.span(1)
+        for match in re.finditer(r"(?<!\*)\*([^*\n]+)\*(?!\*)", content)
+    ]
+
+
+def _label_pattern(label: str) -> re.Pattern[str]:
+    variants = [label]
+    if label.casefold().startswith("the "):
+        variants.append(label[4:])
+    alternatives = "|".join(
+        re.escape(variant) for variant in sorted(variants, key=len, reverse=True)
+    )
+    return re.compile(rf"(?<!\w)(?:{alternatives})(?!\w)", re.IGNORECASE)
+
+
+def validate_forbidden_labels(text: str) -> None:
+    """Warn on artifact hits; raise LabelLeakError on narration hits."""
+    labels = load_forbidden_labels()
+    patterns = [(label, _label_pattern(label)) for label in labels]
+    violations: list[str] = []
+    for line_number, line in enumerate(text.splitlines(), start=1):
+        content = line.strip()
+        while content.startswith(">"):
+            content = content[1:].lstrip()
+        italic_spans = _artifact_spans(line)
+        matches = [
+            (label, match)
+            for label, pattern in patterns
+            if (match := pattern.search(content))
+        ]
+        if not matches:
+            continue
+        excerpt = line.strip()[:60]
+        for label, match in matches:
+            artifact = any(
+                start <= match.start() and match.end() <= end
+                for start, end in italic_spans
+            )
+            kind = "WARN artifact label" if artifact else "VIOLATION"
+            report = (
+                f"{kind}: line {line_number}: label {label!r}: {excerpt}"
+            )
+            print(report, file=sys.stderr)
+            if kind == "VIOLATION":
+                violations.append(report)
+    if violations:
+        raise LabelLeakError(
+            f"LabelLeakError: {len(violations)} forbidden narration label "
+            f"hit(s); internal planning labels must not appear in prose."
+        )
+
+
 # ---------------------------------------------------------------------------
 # Entry point
 # ---------------------------------------------------------------------------
 
 def parse_args() -> argparse.Namespace:
     p = argparse.ArgumentParser(description="fiction_loop Writer bridge")
-    p.add_argument("--prompt", required=True, help="Path to assembled_prompt.md")
-    p.add_argument("--config", required=True, help="Path to pipeline_config.toml")
-    p.add_argument("--output", required=True, help="Where to write chapter_draft.md")
+    p.add_argument("--prompt", help="Path to assembled_prompt.md")
+    p.add_argument("--config", help="Path to pipeline_config.toml")
+    p.add_argument("--output", help="Where to write chapter_draft.md")
+    p.add_argument(
+        "--check-labels",
+        metavar="PATH",
+        help="Check an existing chapter for forbidden planning labels; no API call",
+    )
     p.add_argument(
         "--ignore-cost-limit",
         action="store_true",
         default=False,
         help="Skip cost-limit enforcement",
     )
-    return p.parse_args()
+    args = p.parse_args()
+    if args.check_labels:
+        if any((args.prompt, args.config, args.output, args.ignore_cost_limit)):
+            p.error("--check-labels cannot be combined with generation arguments")
+    elif not all((args.prompt, args.config, args.output)):
+        p.error("--prompt, --config, and --output are required for generation")
+    return args
 
 
 def main() -> None:
     args = parse_args()
 
     try:
+        if args.check_labels:
+            chapter_path = Path(args.check_labels)
+            if not chapter_path.exists():
+                print(f"Chapter not found: {chapter_path}", file=sys.stderr)
+                sys.exit(1)
+            validate_forbidden_labels(chapter_path.read_text(encoding="utf-8"))
+            print(f"OK: no forbidden narration labels → {chapter_path}", file=sys.stderr)
+            sys.exit(0)
+
         # 1. Load config
         try:
             config = load_config(args.config)
@@ -169,7 +275,8 @@ def main() -> None:
         # if it were this one).
         try:
             validate_word_count(chapter, int(config.get("min_chapter_words", 2000)))
-        except ChapterValidationError:
+            validate_forbidden_labels(chapter)
+        except (ChapterValidationError, LabelLeakError):
             rejected = Path(str(args.output) + ".rejected.md")
             rejected.write_text(chapter, encoding="utf-8")
             print(f"Rejected draft salvaged to {rejected}", file=sys.stderr)
@@ -196,6 +303,9 @@ def main() -> None:
         print(f"API error: {e}", file=sys.stderr)
         sys.exit(1)
     except ChapterValidationError as e:
+        print(str(e), file=sys.stderr)
+        sys.exit(1)
+    except LabelLeakError as e:
         print(str(e), file=sys.stderr)
         sys.exit(1)
     except Exception:

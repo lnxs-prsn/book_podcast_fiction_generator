@@ -202,7 +202,13 @@ The Orchestrator touches none of these files. It coordinates by telling each sub
      ContextOverflowError  → ask Assembler to trim assembled_prompt.md, retry step 7
      CostLimitError        → alert user, wait for explicit --ignore-cost-limit instruction
      ChapterValidationError (too short) → retry step 8 once, then alert user
+     LabelLeakError        → retry step 8 once (redo generation; fresh roll), then
+                             alert user with the offending lines — owner may accept
+                             explicitly or order redo from brief
      Any other error       → alert user, do not continue
+
+   LabelLeakError handling added 2026-07 (T-010): ch8 attempt 2 narrated all
+   three labels and no check could see it.
 
 9. Run bash — do NOT read chapter_draft.md into context:
    cp fiction_loop/prompts/chapter_draft.md fiction_loop/chapters/chapter_[NNN].md
