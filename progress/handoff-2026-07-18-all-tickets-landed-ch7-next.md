@@ -253,3 +253,18 @@ fiction_loop/ boundary deliberately (the defect lives in the interaction).
 Complementary split: T-009 makes the destructive step mechanically
 unreachable; T-011 stops the driver improvising everywhere else. Ch8
 resume per §7 checklist remains the immediate next action.
+
+## 9. ADDENDUM (2026-07-18, late) — ch8 run ABANDONED (owner, Option 2); ticket queue UNLOCKED; T-012 plan on disk
+
+Third redo roll ran (spend 19:10, $0.006) and ALSO failed pre-flight:
+labels clean, stool+wiped present, torn-page anchor ABSENT (attempt 1's
+miss again — three rolls, three different misses; the 40%-joint-rate
+diagnosis confirmed live). Owner decision: **run abandoned** — the §6
+timing trigger — so **T-007→T-008→T-009→T-010→T-011 implement NOW**, then
+T-012 (targeted-revision station) and T-013 (rule-intake law), plan at
+`tickets/T-012-PLAN-targeted-revision-station.md` (a PLAN, not a
+dispatched ticket — expand to house style first, dry-run acceptance
+commands). Attempt-3 draft preserved as the T-012 fixture at commit
+`cf70a1b` (`fiction_loop/prompts/chapter_draft.md`). Ch8 restarts on the
+post-ticket machine and enters at the revision rung (T-012 §2.5
+existing-draft intake) — do NOT roll blind again.
