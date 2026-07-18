@@ -1,11 +1,31 @@
-# T-012 PLAN — targeted-revision station (+ T-013 intake law)
+# T-012 PLAN — SUPERSEDED (expanded into dispatched T-012/T-013/T-014)
 
-STATUS: PLAN, not a dispatched ticket. Owner decision 2026-07-18 (Option 2):
-ch8 run is ABANDONED (sanctioned trigger, handoff §6 "or the run is
-abandoned") — this unlocks the T-007→T-011 timing gates NOW. A future
-senior session must expand this plan into full tickets in house style
-(dry-run every acceptance command against HEAD — handoff §2.7 lesson).
-Queue position: T-007 → T-008 → T-009 → T-010 → T-011 → T-012 → T-013.
+STATUS: SUPERSEDED 2026-07-18. This plan has been expanded into three
+DISPATCHED tickets by the senior (the implementer correctly refused to
+build from a PLAN):
+- `T-012-targeted-revision-rung.md` — the core station (revise-not-reroll
+  for SURGICAL checkable misses; zero-paid acceptance, live proof rides a
+  run).
+- `T-013-rule-intake-law.md` — LAW 16 (a new hard rule ships its check or
+  its excuse); stops the ratchet at the source.
+- `T-014-prose-anchor-presence-check.md` — OPTIONAL/deferrable early catch
+  of a missing anchor scene before the Extractor spend (gate already
+  catches it authoritatively).
+
+Key design correction made during expansion (recorded so it is not lost):
+all three ch8 failure modes are ALREADY caught deterministically today (the
+structural gate catches anchor-absent on the brief; T-010's label check
+catches label leaks on prose). The station's real win is therefore
+REVISE-NOT-REROLL for surgical misses, NOT new correctness. A whole-scene
+omission (anchor absent) is closer to inventing than copying, so it stays
+on `redo generation` — revision targets surgical spans only. A coarse prose
+anchor grep FALSE-PASSES (attempt 3 contains "notebook"/"page" incidentally
+while the anchor scene is absent), so T-014 derives the required phrase from
+a structured Assembler field, never a hardcoded literal.
+
+Original plan text retained below for provenance; the dispatched tickets are
+the authority.
+Queue position (revised): T-012 → (T-013 any time) → T-014 optional.
 All BETWEEN runs.
 
 ## 0. Diagnosis being fixed (agreed with owner)
