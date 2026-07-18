@@ -101,3 +101,41 @@ fiction_loop/tools/analyst.py` and `.../progress.py`. Conduct: never
 cat/grep/print `.env` or `env | grep`; env inspection is `echo $VAR` for
 non-secret vars only; interpreter is `.venv/bin/python` from repo root, uv
 only, never pip; Raspberry Pi — nothing heavy in parallel.
+
+## 5. ADDENDUM (2026-07-18, later) — ch7 ran; senior verification; T-006 dispatched; 008 BLOCKED
+
+Chapter 007 (arc_transition) ran and committed at `0b3b362` (owner-started
+paid run). Senior verification of the run's two flags plus full state audit:
+
+- **Green:** analyst all-ok on the new `BOOKGEN_LLM_*` names (2.6× thinking
+  tax = expected WARN); arc_1_summary.md written correctly on STEP 9's first
+  firing; next pointer 008 `new_focal_character / op_check_result` sane;
+  Kuuku Dadzie correctly ledger-only (arc_transition contract — no focal, no
+  card); the UNDETERMINED anchor observation's CONTENT matches prose
+  chapter_007.md:175–183 exactly (archive-discovery scene).
+- **Defect found (blocks 008): `arc_current` stuck at 1 — NO producer
+  exists.** Updater never advances it; fetcher would assemble 008 from arc
+  1's curriculum section; extractor deficit math would fire a spurious
+  second arc_transition for 009. Corollary: the committed 008 pointer is
+  NOT derivable from a literal spec walk at arc_current=1 (receipt: T-005
+  §6's own dry-run) — same defect class as T-005 §1A, one layer up.
+- **Owner decision (this session): no hand surgery — the system manages
+  itself.** Tool-mediated deterministic repair is the sanctioned LAW 8 path.
+- **T-006 dispatched** (`tickets/T-006-arc-current-self-managing.md`):
+  updater STEP 9 advances arc_current (summary-first ordering); extractor
+  gets `arc_effective` (+1 during arc_transition extraction); analyst gains
+  the invariant `arc_current = 1 + count(arc summaries)` as a CRITICAL drift
+  check and an opt-in `--repair` reconcile (the ONLY sanctioned writer for
+  the current 1→2 fix — two pathspec-limited commits, receipts in ticket
+  §6); field_registry row; chapter_type_contract row; LAW 4 grep audit.
+  Also (§2.7): extractor anchor-observation hygiene — marker prefixes never
+  enter state; ch7's entry deliberately left as-is (LAW 12, ages out of the
+  fetcher window after ch010).
+
+**Revised queue:** (1) T-006 implement + senior acceptance — BLOCKS the ch8
+kickoff; 008 must start only after master_state shows arc_current=2.
+(2) Owner: Qwen companion-session env check (unchanged, §3.1 above).
+(3) Chapter 008 kickoff (new_focal_character, op_check_result) — paid, owner
+starts. (4) §3.3 optional lead-history backfill is WITHDRAWN as hand surgery
+(superseded by this session's owner decision); if arc-1 history completeness
+ever matters, it becomes a ticket with a deterministic path.

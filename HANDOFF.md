@@ -1,10 +1,12 @@
 # HANDOFF — front door (stable path; content lives in progress/)
 
 > **CURRENT handoff: `progress/handoff-2026-07-18-all-tickets-landed-ch7-next.md`**
-> (ch6 accepted; T-002/004/005/003 ALL landed and accepted — F15 gate fixed,
-> extractor precedence fixed, BOOKGEN_LLM_* env live incl. .env; queue:
-> owner confirms Qwen companion session exports no OPENROUTER_*, then
-> chapter 007 kickoff via RUN.md — paid, owner starts). Day detail:
+> — read its §5 ADDENDUM first: chapter 007 (arc_transition) ran and
+> committed `0b3b362`, senior-verified; NEW DEFECT — `arc_current` stuck at
+> 1 (no producer); **T-006 dispatched and BLOCKS the ch8 kickoff** (updater
+> STEP 9 advance, extractor arc_effective, analyst drift check + `--repair`
+> reconcile 1→2). Then owner's Qwen companion-env check, then ch8. Earlier
+> that day: T-002/004/005/003 all landed and accepted. Day detail:
 > `handoff-2026-07-18-ch6-landed-open-queue.md` §§5–8 and
 > `handoff-2026-07-18-deepseek-switch-404.md` §3b–3d. Background: the two
 > 2026-07-17 handoffs (conduct hardening; roles/environment/queue). One hop
