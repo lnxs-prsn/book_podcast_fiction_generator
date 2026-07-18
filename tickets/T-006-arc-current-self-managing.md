@@ -283,3 +283,20 @@ Implemented-by: <Codex|Qwen — whoever implements>
   exactly: `fatal: Unable to create '.../.git/index.lock': Read-only file system`.
   Retried through the approved external git-index path; no alternate design or
   file mutation was used.
+
+### 2026-07-18 — Codex reconcile phase
+
+- Governance/tool commit: `b128773`.
+- The sanctioned path printed exactly:
+  `REPAIR arc_current: stored 1 -> derived 2 (basis: 1 arc summary files)`.
+- Immediate JSON readback printed `2`. The state diff contained exactly one
+  line change: `master_state.json.arc_current` from 1 to 2.
+- Post-reconcile default analyst run reported
+  `state sync OK (chapter_count=7, arc=2, next=008 new_focal_character op_check_result)`
+  with no CRITICAL findings (the expected thinking-tax WARN and git-worktree
+  INFO remained).
+- Idempotence re-run printed:
+  `REPAIR arc_current: no drift — nothing written (stored 2, basis: 1 arc summary files)`.
+- Before the state receipt commit, `git diff --name-only` showed only
+  `fiction_loop/state/master_state.json`; this §6 receipt append is the other
+  explicitly permitted path in the commit.
