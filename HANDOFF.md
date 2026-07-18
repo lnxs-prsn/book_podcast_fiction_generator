@@ -1,12 +1,11 @@
 # HANDOFF — front door (stable path; content lives in progress/)
 
-> **CURRENT handoff: `progress/handoff-2026-07-18-ch6-landed-open-queue.md`
-> — read its §8 (newest) first** (ch6 accepted; T-004, T-005, T-003 ALL
-> accepted — F15 gate fixed, extractor precedence fixed, BOOKGEN_LLM_* env
-> live incl. .env; queue: owner confirms Qwen companion session exports no
-> OPENROUTER_*, then chapter 007 kickoff via RUN.md; binding facts:
-> pytest-via-uv-overlay, Codex classifier quirks, thinking-tax verdict =
-> keep deepseek-v4-pro). Detailed day record:
+> **CURRENT handoff: `progress/handoff-2026-07-18-all-tickets-landed-ch7-next.md`**
+> (ch6 accepted; T-002/004/005/003 ALL landed and accepted — F15 gate fixed,
+> extractor precedence fixed, BOOKGEN_LLM_* env live incl. .env; queue:
+> owner confirms Qwen companion session exports no OPENROUTER_*, then
+> chapter 007 kickoff via RUN.md — paid, owner starts). Day detail:
+> `handoff-2026-07-18-ch6-landed-open-queue.md` §§5–8 and
 > `handoff-2026-07-18-deepseek-switch-404.md` §3b–3d. Background: the two
 > 2026-07-17 handoffs (conduct hardening; roles/environment/queue). One hop
 > from here to current truth; do not orient from any other document.
@@ -18,9 +17,10 @@ rules: `innovations/handoff-discipline/kit/HANDOFF_RULES.md`.
 
 ## Read-first order for a cold session
 
-1. `progress/handoff-2026-07-18-ch6-landed-open-queue.md` — current state +
-   open queue; then `handoff-2026-07-18-deepseek-switch-404.md` (day record)
-   and the two 2026-07-17 handoffs — conduct hardening, roles, state
+1. `progress/handoff-2026-07-18-all-tickets-landed-ch7-next.md` — current
+   state + open queue; then `handoff-2026-07-18-ch6-landed-open-queue.md`
+   (§§5–8, day record), `handoff-2026-07-18-deepseek-switch-404.md`, and the
+   two 2026-07-17 handoffs — conduct hardening, roles, state
 2. `fiction_loop/CONTRIBUTING.md` — the 15 laws; binding BEFORE any change
    under `fiction_loop/`
 3. `fiction_loop/specs/intake_factory.spec.md` — the factory spec (design
