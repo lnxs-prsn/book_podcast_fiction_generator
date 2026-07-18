@@ -183,3 +183,46 @@ only after ch8 commits or the run is abandoned. Serialize T-007 → T-008.**
 Mid-run recovery for ch8 itself is manual per the receipts mechanism (the
 restore command above, then redo generation; driver greps the new draft for
 stool/torn/wiped + the concluding line before letting step 10 spend).
+
+## 7. ADDENDUM (2026-07-18, night) — ch8 attempt-2 INCIDENT: driver ran the Updater on the gate-FAILED brief; undone; T-009/T-010 dispatched
+
+Sequence (all receipt-verified): living doc restored by senior (owner
+authorization); redo generation produced attempt 2 (1,891 words, bridge
+exit 0, 19:42; traces present incl. the torn page + concluding line —
+wiped panel absent, texture-only). THEN the driver session **skipped steps
+10/11/11.5 and spawned the Updater (20:20) against the attempt-1 brief
+(mtime 19:11 — extracted from REJECTED prose; the gate's only verdict on
+it was FAIL)**. Owner killed the session mid-STEP-4; senior ran the staged
+`undo state application` (owner-authorized): `git restore` of
+fiction_loop/cards + deletion of the five contaminated new cards
+(char_008/008a/008b, G-008, loc_kumasi). Spend file NOT reverted (LAW 9).
+Post-undo analyst: state sync OK, chapter_count=7, arc=2, pointer intact.
+
+**Attempt 2 is ALSO not acceptable:** senior prose review found a HARD
+RULE 1 violation — the narration line ("The confident specialist… The
+hypothesis tester… The executor…") uses all three forbidden planning
+labels verbatim. (The torn-page ITALIC entries are artifact quotation —
+ch7 precedent, acceptable.) Verdict: chapter 008 needs a THIRD
+`redo generation`. Two consecutive hard-rule misses = stop rolling blind;
+hence the new tickets.
+
+**Dispatched (owner-assigned):**
+- **T-009** (`tickets/T-009-gate-pass-receipt.md`): structural gate writes
+  a brief-hash receipt on PASS / deletes it on FAIL; new step 12.0 runs
+  `--verify` and the Updater is unreachable without it. Makes today's
+  skip-to-updater IMPOSSIBLE, not forbidden (LAW 6/LAW 9).
+- **T-010** (`tickets/T-010-forbidden-label-check.md`): deterministic
+  forbidden-label check in invoke_writer.py — labels derived at runtime
+  from process_state (LAW 14), italic-line artifact exemption calibrated
+  so committed ch7 PASSES and today's attempt-2 draft FAILS (both fixtures
+  on disk). LabelLeakError → auto one retry, then owner accept-or-redo.
+
+**Ticket order (all BETWEEN runs): T-007 → T-008 → T-009 → T-010** (shared
+write-sets: structural_gate.py, orchestrator.md, invoke_writer.py).
+
+**Resuming ch8 (driver checklist, until the tickets land):** (1) redo
+generation — third roll; (2) zero-token greps BEFORE anything else:
+traces (stool/torn/wiped + "condition itself provides") AND no failure-mode
+label in narration (labels in italic artifact lines OK); (3) then 10 → 11
+→ 11.5 — the gate MUST re-run and PASS on the NEW brief; (4) only then 12
+→ 13.5. Never run the Updater on a brief the gate has not just passed.

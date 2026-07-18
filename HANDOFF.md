@@ -4,12 +4,14 @@
 > — read its §5 ADDENDUM first: chapter 007 (arc_transition) committed
 > `0b3b362` and senior-verified; T-006 (arc_current self-managing: updater
 > STEP 9 advance, extractor arc_effective, analyst drift check + `--repair`)
-> LANDED `b128773`+`76185c2` and ACCEPTED — state reads arc=2. Then §6:
-> ch8 attempt 1 REJECTED by the gate (anchor absent); the LAW 7
-> refresh-before-gate pollution fired live; recovery = living-doc git
-> restore + redo generation (mid-run, manual). **T-007 (truthful redo
-> ladder) and T-008 (gate-before-refresh reorder, whole) dispatched —
-> BETWEEN runs, serialize T-007→T-008, implement only after ch8 lands.**
+> LANDED `b128773`+`76185c2` and ACCEPTED — state reads arc=2. Then §§6–7:
+> ch8 attempt 1 gate-rejected (anchor absent; LAW 7 pollution fired,
+> living doc restored); attempt 2 INCIDENT — driver skipped 10/11/11.5 and
+> ran the Updater on the gate-FAILED brief; killed by owner, state undone
+> by senior (receipts §7); attempt-2 prose ALSO fails HARD RULE 1. **Ch8
+> parked awaiting a third redo generation (driver checklist in §7). FOUR
+> tickets queued, BETWEEN runs, in order: T-007 → T-008 → T-009
+> (gate pass-receipt blocks Updater) → T-010 (deterministic label check).**
 > Earlier that day: T-002/004/005/003 all landed and accepted.
 > Day detail:
 > `handoff-2026-07-18-ch6-landed-open-queue.md` §§5–8 and
