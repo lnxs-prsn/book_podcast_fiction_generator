@@ -1,247 +1,257 @@
 {
- "session_total": 0.013716,
- "lifetime_total": 3.458845,
- "session_started_at": "2026-07-02T16:08:48.842766+00:00",
- "entries": [
-  {
-   "ts": "2026-07-02T16:08:48.842807+00:00",
-   "amount": 0.143733,
-   "note": "generate_chapter model=qwen3.7-plus in=5416 out=8499"
-  },
-  {
-   "ts": "2026-07-02T16:23:08.195693+00:00",
-   "amount": 0.005172,
-   "note": "test model=qwen3.7-plus in=24 out=340"
-  },
-  {
-   "ts": "2026-07-02T16:44:12.456963+00:00",
-   "amount": 0.143358,
-   "note": "generate_chapter model=qwen3.7-plus in=5416 out=8474"
-  },
-  {
-   "ts": "2026-07-02T16:46:56.381649+00:00",
-   "amount": 0.163053,
-   "note": "generate_chapter model=qwen3.7-plus in=5416 out=9787"
-  },
-  {
-   "ts": "2026-07-02T16:50:33.989966+00:00",
-   "amount": 0.091173,
-   "note": "generate_chapter model=qwen3.5-122b-a10b in=5416 out=4995"
-  },
-  {
-   "ts": "2026-07-02T16:55:57.735711+00:00",
-   "amount": 0.000201,
-   "note": "test model=qwen-max in=22 out=9"
-  },
-  {
-   "ts": "2026-07-02T16:55:59.116319+00:00",
-   "amount": 0.000243,
-   "note": "test model=qwen-turbo in=26 out=11"
-  },
-  {
-   "ts": "2026-07-02T16:56:00.645496+00:00",
-   "amount": 0.000231,
-   "note": "test model=qwen-plus in=22 out=11"
-  },
-  {
-   "ts": "2026-07-02T16:56:12.545021+00:00",
-   "amount": 0.008517,
-   "note": "test model=qwen3.7-plus in=24 out=563"
-  },
-  {
-   "ts": "2026-07-02T16:57:05.273704+00:00",
-   "amount": 0.027963,
-   "note": "test model=qwen-max in=5291 out=806"
-  },
-  {
-   "ts": "2026-07-02T16:57:24.170100+00:00",
-   "amount": 0.029523,
-   "note": "test model=qwen-max in=5291 out=910"
-  },
-  {
-   "ts": "2026-07-02T16:57:40.899923+00:00",
-   "amount": 0.027918,
-   "note": "test model=qwen-max in=5291 out=803"
-  },
-  {
-   "ts": "2026-07-02T16:57:47.809585+00:00",
-   "amount": 0.150393,
-   "note": "test model=qwen3.7-plus in=5416 out=8943"
-  },
-  {
-   "ts": "2026-07-02T16:59:06.858639+00:00",
-   "amount": 0.219315,
-   "note": "update_living_doc model=qwen3.7-plus in=33130 out=7995"
-  },
-  {
-   "ts": "2026-07-02T17:01:21.861788+00:00",
-   "amount": 0.184698,
-   "note": "test model=qwen3.7-plus in=5416 out=11230"
-  },
-  {
-   "ts": "2026-07-02T17:02:18.439181+00:00",
-   "amount": 0.033483,
-   "note": "test model=qwen-max in=5291 out=1174"
-  },
-  {
-   "ts": "2026-07-02T17:03:15.906897+00:00",
-   "amount": 0.062388,
-   "note": "test model=qwen-plus in=5291 out=3101"
-  },
-  {
-   "ts": "2026-07-03T08:51:35.009377+00:00",
-   "amount": 0.142971,
-   "note": "generate_chapter model=qwen3.7-plus in=5887 out=8354"
-  },
-  {
-   "ts": "2026-07-03T12:22:04.528469+00:00",
-   "amount": 0.133086,
-   "note": "generate_chapter model=qwen3.7-plus in=5527 out=7767"
-  },
-  {
-   "ts": "2026-07-03T12:28:56.630423+00:00",
-   "amount": 0.191151,
-   "note": "generate_chapter model=qwen3.7-plus in=5527 out=11638"
-  },
-  {
-   "ts": "2026-07-03T19:33:34.916965+00:00",
-   "amount": 0.132801,
-   "note": "generate_chapter model=qwen3.7-plus in=5527 out=7748"
-  },
-  {
-   "ts": "2026-07-03T19:47:28.542866+00:00",
-   "amount": 0.280191,
-   "note": "update_living_doc model=qwen3.7-plus in=32542 out=12171"
-  },
-  {
-   "ts": "2026-07-04T07:08:54.714649+00:00",
-   "amount": 0.125148,
-   "note": "generate_chapter model=qwen3.7-plus in=6056 out=7132"
-  },
-  {
-   "ts": "2026-07-04T07:13:16.142306+00:00",
-   "amount": 0.143853,
-   "note": "generate_chapter model=qwen3.7-plus in=6056 out=8379"
-  },
-  {
-   "ts": "2026-07-04T07:17:11.370761+00:00",
-   "amount": 0.245091,
-   "note": "update_living_doc model=qwen3.7-plus in=32617 out=9816"
-  },
-  {
-   "ts": "2026-07-04T08:45:07.984472+00:00",
-   "amount": 0.113019,
-   "note": "generate_chapter model=qwen3.7-plus in=5583 out=6418"
-  },
-  {
-   "ts": "2026-07-04T08:48:53.385453+00:00",
-   "amount": 0.123894,
-   "note": "generate_chapter model=qwen3.7-plus in=5583 out=7143"
-  },
-  {
-   "ts": "2026-07-04T09:11:45.016267+00:00",
-   "amount": 0.016208,
-   "note": "generate_chapter model=qwen3-max in=5457 out=1610"
-  },
-  {
-   "ts": "2026-07-04T09:15:23.156937+00:00",
-   "amount": 0.018098,
-   "note": "generate_chapter model=qwen3-max in=5457 out=1925"
-  },
-  {
-   "ts": "2026-07-04T09:17:28.344490+00:00",
-   "amount": 0.050251,
-   "note": "update_living_doc model=qwen3-max in=31321 out=2111"
-  },
-  {
-   "ts": "2026-07-04T10:52:20.247421+00:00",
-   "amount": 0.013747,
-   "note": "generate_chapter model=qwen3-max in=5946 out=1102"
-  },
-  {
-   "ts": "2026-07-04T10:54:08.491099+00:00",
-   "amount": 0.015709,
-   "note": "generate_chapter model=qwen3-max in=5946 out=1429"
-  },
-  {
-   "ts": "2026-07-04T11:05:58.776419+00:00",
-   "amount": 0.014386,
-   "note": "generate_chapter model=qwen3-max in=5883 out=1221"
-  },
-  {
-   "ts": "2026-07-04T11:09:01.525208+00:00",
-   "amount": 0.017908,
-   "note": "generate_chapter model=qwen3-max in=5883 out=1808"
-  },
-  {
-   "ts": "2026-07-04T11:11:08.195010+00:00",
-   "amount": 0.050873,
-   "note": "update_living_doc model=qwen3-max in=31329 out=2213"
-  },
-  {
-   "ts": "2026-07-04T13:42:52.968419+00:00",
-   "amount": 0.01509,
-   "note": "generate_chapter model=qwen3-max in=5975 out=1320"
-  },
-  {
-   "ts": "2026-07-04T13:45:33.964722+00:00",
-   "amount": 0.016956,
-   "note": "generate_chapter model=qwen3-max in=5975 out=1631"
-  },
-  {
-   "ts": "2026-07-04T13:49:22.136290+00:00",
-   "amount": 0.051242,
-   "note": "update_living_doc model=qwen3-max in=31152 out=2310"
-  },
-  {
-   "ts": "2026-07-04T14:54:50.623975+00:00",
-   "amount": 0.020522,
-   "note": "generate_chapter model=qwen3-max in=6402 out=2140"
-  },
-  {
-   "ts": "2026-07-04T14:57:36.784382+00:00",
-   "amount": 0.051007,
-   "note": "update_living_doc model=qwen3-max in=31661 out=2169"
-  },
-  {
-   "ts": "2026-07-09T19:55:54.902677+00:00",
-   "amount": 0.016565,
-   "note": "generate_chapter model=qwen3-max in=5614 out=1638"
-  },
-  {
-   "ts": "2026-07-09T19:57:12.696638+00:00",
-   "amount": 0.05125,
-   "note": "update_living_doc model=qwen3-max in=31463 out=2249"
-  },
-  {
-   "ts": "2026-07-10T01:25:52.562146+00:00",
-   "amount": 0.01657,
-   "note": "generate_chapter model=qwen3-max in=6508 out=1460"
-  },
-  {
-   "ts": "2026-07-10T01:28:27.885964+00:00",
-   "amount": 0.01987,
-   "note": "generate_chapter model=qwen3-max in=6508 out=2010"
-  },
-  {
-   "ts": "2026-07-10T01:30:41.982619+00:00",
-   "amount": 0.051967,
-   "note": "update_living_doc model=qwen3-max in=32126 out=2236"
-  },
-  {
-   "ts": "2026-07-10T06:26:30.142718+00:00",
-   "amount": 0.014344,
-   "note": "generate_chapter model=qwen3-max in=5418 out=1307"
-  },
-  {
-   "ts": "2026-07-10T06:29:08.243582+00:00",
-   "amount": 0.013612,
-   "note": "generate_chapter model=qwen3-max in=5418 out=1185"
-  },
-  {
-   "ts": "2026-07-17T21:34:17.104111+00:00",
-   "amount": 0.000104,
-   "note": "test model=deepseek-v4-pro in=55 out=92 (smoke: 4 empty at max_tokens=16 \u2014 reasoning ate budget \u2014 then ok at 300)"
-  }
- ]
+  "session_total": 0.019551074999999998,
+  "lifetime_total": 3.48645532,
+  "session_started_at": "2026-07-02T16:08:48.842766+00:00",
+  "entries": [
+    {
+      "ts": "2026-07-02T16:08:48.842807+00:00",
+      "amount": 0.143733,
+      "note": "generate_chapter model=qwen3.7-plus in=5416 out=8499"
+    },
+    {
+      "ts": "2026-07-02T16:23:08.195693+00:00",
+      "amount": 0.005172,
+      "note": "test model=qwen3.7-plus in=24 out=340"
+    },
+    {
+      "ts": "2026-07-02T16:44:12.456963+00:00",
+      "amount": 0.143358,
+      "note": "generate_chapter model=qwen3.7-plus in=5416 out=8474"
+    },
+    {
+      "ts": "2026-07-02T16:46:56.381649+00:00",
+      "amount": 0.163053,
+      "note": "generate_chapter model=qwen3.7-plus in=5416 out=9787"
+    },
+    {
+      "ts": "2026-07-02T16:50:33.989966+00:00",
+      "amount": 0.091173,
+      "note": "generate_chapter model=qwen3.5-122b-a10b in=5416 out=4995"
+    },
+    {
+      "ts": "2026-07-02T16:55:57.735711+00:00",
+      "amount": 0.000201,
+      "note": "test model=qwen-max in=22 out=9"
+    },
+    {
+      "ts": "2026-07-02T16:55:59.116319+00:00",
+      "amount": 0.000243,
+      "note": "test model=qwen-turbo in=26 out=11"
+    },
+    {
+      "ts": "2026-07-02T16:56:00.645496+00:00",
+      "amount": 0.000231,
+      "note": "test model=qwen-plus in=22 out=11"
+    },
+    {
+      "ts": "2026-07-02T16:56:12.545021+00:00",
+      "amount": 0.008517,
+      "note": "test model=qwen3.7-plus in=24 out=563"
+    },
+    {
+      "ts": "2026-07-02T16:57:05.273704+00:00",
+      "amount": 0.027963,
+      "note": "test model=qwen-max in=5291 out=806"
+    },
+    {
+      "ts": "2026-07-02T16:57:24.170100+00:00",
+      "amount": 0.029523,
+      "note": "test model=qwen-max in=5291 out=910"
+    },
+    {
+      "ts": "2026-07-02T16:57:40.899923+00:00",
+      "amount": 0.027918,
+      "note": "test model=qwen-max in=5291 out=803"
+    },
+    {
+      "ts": "2026-07-02T16:57:47.809585+00:00",
+      "amount": 0.150393,
+      "note": "test model=qwen3.7-plus in=5416 out=8943"
+    },
+    {
+      "ts": "2026-07-02T16:59:06.858639+00:00",
+      "amount": 0.219315,
+      "note": "update_living_doc model=qwen3.7-plus in=33130 out=7995"
+    },
+    {
+      "ts": "2026-07-02T17:01:21.861788+00:00",
+      "amount": 0.184698,
+      "note": "test model=qwen3.7-plus in=5416 out=11230"
+    },
+    {
+      "ts": "2026-07-02T17:02:18.439181+00:00",
+      "amount": 0.033483,
+      "note": "test model=qwen-max in=5291 out=1174"
+    },
+    {
+      "ts": "2026-07-02T17:03:15.906897+00:00",
+      "amount": 0.062388,
+      "note": "test model=qwen-plus in=5291 out=3101"
+    },
+    {
+      "ts": "2026-07-03T08:51:35.009377+00:00",
+      "amount": 0.142971,
+      "note": "generate_chapter model=qwen3.7-plus in=5887 out=8354"
+    },
+    {
+      "ts": "2026-07-03T12:22:04.528469+00:00",
+      "amount": 0.133086,
+      "note": "generate_chapter model=qwen3.7-plus in=5527 out=7767"
+    },
+    {
+      "ts": "2026-07-03T12:28:56.630423+00:00",
+      "amount": 0.191151,
+      "note": "generate_chapter model=qwen3.7-plus in=5527 out=11638"
+    },
+    {
+      "ts": "2026-07-03T19:33:34.916965+00:00",
+      "amount": 0.132801,
+      "note": "generate_chapter model=qwen3.7-plus in=5527 out=7748"
+    },
+    {
+      "ts": "2026-07-03T19:47:28.542866+00:00",
+      "amount": 0.280191,
+      "note": "update_living_doc model=qwen3.7-plus in=32542 out=12171"
+    },
+    {
+      "ts": "2026-07-04T07:08:54.714649+00:00",
+      "amount": 0.125148,
+      "note": "generate_chapter model=qwen3.7-plus in=6056 out=7132"
+    },
+    {
+      "ts": "2026-07-04T07:13:16.142306+00:00",
+      "amount": 0.143853,
+      "note": "generate_chapter model=qwen3.7-plus in=6056 out=8379"
+    },
+    {
+      "ts": "2026-07-04T07:17:11.370761+00:00",
+      "amount": 0.245091,
+      "note": "update_living_doc model=qwen3.7-plus in=32617 out=9816"
+    },
+    {
+      "ts": "2026-07-04T08:45:07.984472+00:00",
+      "amount": 0.113019,
+      "note": "generate_chapter model=qwen3.7-plus in=5583 out=6418"
+    },
+    {
+      "ts": "2026-07-04T08:48:53.385453+00:00",
+      "amount": 0.123894,
+      "note": "generate_chapter model=qwen3.7-plus in=5583 out=7143"
+    },
+    {
+      "ts": "2026-07-04T09:11:45.016267+00:00",
+      "amount": 0.016208,
+      "note": "generate_chapter model=qwen3-max in=5457 out=1610"
+    },
+    {
+      "ts": "2026-07-04T09:15:23.156937+00:00",
+      "amount": 0.018098,
+      "note": "generate_chapter model=qwen3-max in=5457 out=1925"
+    },
+    {
+      "ts": "2026-07-04T09:17:28.344490+00:00",
+      "amount": 0.050251,
+      "note": "update_living_doc model=qwen3-max in=31321 out=2111"
+    },
+    {
+      "ts": "2026-07-04T10:52:20.247421+00:00",
+      "amount": 0.013747,
+      "note": "generate_chapter model=qwen3-max in=5946 out=1102"
+    },
+    {
+      "ts": "2026-07-04T10:54:08.491099+00:00",
+      "amount": 0.015709,
+      "note": "generate_chapter model=qwen3-max in=5946 out=1429"
+    },
+    {
+      "ts": "2026-07-04T11:05:58.776419+00:00",
+      "amount": 0.014386,
+      "note": "generate_chapter model=qwen3-max in=5883 out=1221"
+    },
+    {
+      "ts": "2026-07-04T11:09:01.525208+00:00",
+      "amount": 0.017908,
+      "note": "generate_chapter model=qwen3-max in=5883 out=1808"
+    },
+    {
+      "ts": "2026-07-04T11:11:08.195010+00:00",
+      "amount": 0.050873,
+      "note": "update_living_doc model=qwen3-max in=31329 out=2213"
+    },
+    {
+      "ts": "2026-07-04T13:42:52.968419+00:00",
+      "amount": 0.01509,
+      "note": "generate_chapter model=qwen3-max in=5975 out=1320"
+    },
+    {
+      "ts": "2026-07-04T13:45:33.964722+00:00",
+      "amount": 0.016956,
+      "note": "generate_chapter model=qwen3-max in=5975 out=1631"
+    },
+    {
+      "ts": "2026-07-04T13:49:22.136290+00:00",
+      "amount": 0.051242,
+      "note": "update_living_doc model=qwen3-max in=31152 out=2310"
+    },
+    {
+      "ts": "2026-07-04T14:54:50.623975+00:00",
+      "amount": 0.020522,
+      "note": "generate_chapter model=qwen3-max in=6402 out=2140"
+    },
+    {
+      "ts": "2026-07-04T14:57:36.784382+00:00",
+      "amount": 0.051007,
+      "note": "update_living_doc model=qwen3-max in=31661 out=2169"
+    },
+    {
+      "ts": "2026-07-09T19:55:54.902677+00:00",
+      "amount": 0.016565,
+      "note": "generate_chapter model=qwen3-max in=5614 out=1638"
+    },
+    {
+      "ts": "2026-07-09T19:57:12.696638+00:00",
+      "amount": 0.05125,
+      "note": "update_living_doc model=qwen3-max in=31463 out=2249"
+    },
+    {
+      "ts": "2026-07-10T01:25:52.562146+00:00",
+      "amount": 0.01657,
+      "note": "generate_chapter model=qwen3-max in=6508 out=1460"
+    },
+    {
+      "ts": "2026-07-10T01:28:27.885964+00:00",
+      "amount": 0.01987,
+      "note": "generate_chapter model=qwen3-max in=6508 out=2010"
+    },
+    {
+      "ts": "2026-07-10T01:30:41.982619+00:00",
+      "amount": 0.051967,
+      "note": "update_living_doc model=qwen3-max in=32126 out=2236"
+    },
+    {
+      "ts": "2026-07-10T06:26:30.142718+00:00",
+      "amount": 0.014344,
+      "note": "generate_chapter model=qwen3-max in=5418 out=1307"
+    },
+    {
+      "ts": "2026-07-10T06:29:08.243582+00:00",
+      "amount": 0.013612,
+      "note": "generate_chapter model=qwen3-max in=5418 out=1185"
+    },
+    {
+      "ts": "2026-07-17T21:34:17.104111+00:00",
+      "amount": 0.000104,
+      "note": "test model=deepseek-v4-pro in=55 out=92 (smoke: 4 empty at max_tokens=16 — reasoning ate budget — then ok at 300)"
+    },
+    {
+      "ts": "2026-07-18T11:57:31.178190+00:00",
+      "amount": 0.008059,
+      "note": "generate_chapter model=deepseek-v4-pro in=6725 out=5901"
+    },
+    {
+      "ts": "2026-07-18T12:00:18.634099+00:00",
+      "amount": 0.019551,
+      "note": "update_living_doc model=deepseek-v4-pro in=32769 out=6088"
+    }
+  ]
 }

@@ -14,16 +14,30 @@
       "understood": true,
       "looked_back": true,
       "transferred_to_life": true
+    },
+    {
+      "gate_id": "G-006",
+      "grade": 2,
+      "operation_encountered": "op_what_is_missing",
+      "approach_taken": "none — applied correctly",
+      "understood": true,
+      "looked_back": true,
+      "transferred_to_life": true
     }
   ],
   "comprehension_state": {
     "op_what_is_missing": "understood"
   },
   "still_gets_wrong": [],
-  "ordinary_life_state": "Yejide shares a Lagos household with her younger sister Fadeke, who is trying to register for university, and their argument over missing paperwork and fees is resolved when Yejide asks what Fadeke actually needs.",
-  "life_progression": [],
+  "ordinary_life_state": "Yejide has moved into a supervisory cubicle at the garment factory with her name on the glass. When a production line stalls, the floor supervisor brings the problem to her, and she identifies the missing cotton shipment that everyone else overlooked while cataloguing visible data.",
+  "life_progression": [
+    {
+      "chapter": "006",
+      "state": "Yejide has moved into a supervisory cubicle at the garment factory with her name on the glass. When a production line stalls, the floor supervisor brings the problem to her, and she identifies the missing cotton shipment that everyone else overlooked while cataloguing visible data."
+    }
+  ],
   "ordinary_life_transfers": [],
   "anchor_observed": false,
-  "last_seen": 1,
+  "last_seen": 6,
   "next_planned_appearance": null
 }

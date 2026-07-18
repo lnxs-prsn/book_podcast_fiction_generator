@@ -51,3 +51,4 @@ may modify; the RULES section is owner-maintained.
 | Fatou Ndiaye | 005 | char_005 |
 | Amadou | 005 |  |
 | Mame | 005 |  |
+| Mrs. Okafor | 006 |  |

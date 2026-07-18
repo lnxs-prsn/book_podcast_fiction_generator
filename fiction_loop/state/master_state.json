@@ -2,13 +2,10 @@
   "story_title": "The Sankofa Gates",
   "genre": "African gate-clearing process fiction — contemporary Africa, in the Korean/Japanese gate-fiction tradition",
   "source_material": "Pólya, G. — How to Solve It: A New Aspect of Mathematical Method (2nd ed.) — books/How to Solve It_ A New Aspect  - Polya, G._7564 (1).epub",
-  "chapter_count": 5,
+  "chapter_count": 6,
   "arc_current": 1,
   "process_state_summary": {
-    "op_what_is_missing": {
-      "touch": 1,
-      "last_chapter": "001"
-    },
+    "op_what_is_missing": "owned",
     "op_identify_unknown": "owned",
     "op_separate_condition": {
       "touch": 1,
@@ -32,7 +29,7 @@
       "id": "char_001",
       "name": "Yejide Adeyemi",
       "status": "active",
-      "last_seen": "001"
+      "last_seen": "006"
     },
     {
       "id": "char_002",
@@ -71,7 +68,7 @@
       "last_seen": "005"
     }
   ],
-  "anchor_summary": "Last appeared ch. 005 (seen); 5 total appearances.",
+  "anchor_summary": "Last appeared ch. 006 (notebook_page); 6 total appearances.",
   "macro_mystery_evidence": [
     {
       "chapter": "001",
@@ -88,18 +85,22 @@
     {
       "chapter": "005",
       "evidence": "The anchor's notebook logs all three wrong-approach solvers' entries side by side within the same gate event, each with precise register timestamps, before recording the correct approach — extending the simultaneous-approaches pattern first seen in chapter 004's trace."
+    },
+    {
+      "chapter": "006",
+      "evidence": "A torn notebook page found inside the Lagos fabric-inspection gate records all four solver approaches with register timestamps at second-level precision, showing the anchor can observe multiple solvers within the same gate event and diagnose their mental frames in real time across different approaches."
     }
   ],
   "next_chapter_pointer": {
-    "chapter": "006",
-    "type": "return_to_character",
-    "char_id": "char_001",
-    "operation_due": "op_what_is_missing",
-    "touch_due": 2,
+    "chapter": "007",
+    "type": "arc_transition",
+    "char_id": null,
+    "operation_due": null,
+    "touch_due": null,
     "name_due": false,
     "failure_mode_to_show": "none",
     "secondary_touches": [],
     "echo_touch": null,
-    "anchor_appears": true
+    "anchor_appears": false
   }
 }

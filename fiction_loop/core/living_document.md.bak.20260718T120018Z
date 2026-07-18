@@ -27,7 +27,7 @@ Everything else is automatic.
 | Last chapter completed | 6 |
 | Current arc | Arc 1 — Gate Grade 1–2 |
 | Active focal characters | Yejide Adeyemi |
-| Mystery person last appeared | Chapter 6 (Inside gate room — notebook entry left behind; observed all three wrong approaches and the successful solver) |
+| Mystery person last appeared | Chapter 6 (Inside gate room / Notebook entry observed) |
 | Macro mystery evidence count | 5 |
 
 ---
@@ -61,7 +61,7 @@ Everything else is automatic.
 | Heuristic vs proof | 0 | — | Arc 7 |
 | Subconscious work | 0 | — | Arc 7 |
 | Auxiliary problem chains | 0 | — | Arc 8 |
-| The sitting down (physical marker) | 3 | Gate (Grade 2) | Chapter 7 — Touch 3 |
+| The sitting down (physical marker) | 3 | Gate (Grade 1–2) | Chapter 7 — Touch 3 |
 
 ---
 
@@ -109,8 +109,8 @@ Everything else is automatic.
 *Observable log summary. Full detail in /state/mystery_anchor.json.*
 
 Appearances: 6  
-Last location: Inside Lagos fabric inspection floor gate — left torn notebook page after the gate closed; recorded all three wrong-approach solvers (executor, system builder, information gatherer) and the successful solver’s threshold-standing, hand-on-hook behaviour.  
-Reader can suspect: The anchor now logs register transitions with sub-second precision and notes the exact moment the absence is named. Their notation confirms that “what is missing” is the pivot — the solvers who catalogued, matched, or audited never asked that question, and the gate remained inert until it was asked.
+Last location: Inside Lagos fabric inspection floor gate room / Observed recording all three wrong approaches and the successful solver’s threshold-standing behavior  
+Reader can suspect: The anchor now logs register transitions with second-level precision and explicitly notes when solvers fail to ask *any question of the data*. Their notation confirms that “look at the unknown” precedes closure even when unspoken, and they track whether solvers orient toward the *category* of answer rather than its content.
 
 ---
 
@@ -118,18 +118,17 @@ Reader can suspect: The anchor now logs register transitions with sub-second pre
 *What the reader can suspect but not confirm.*
 
 Evidence count: 5  
-Current state: The anchor’s notebook from the Lagos fabric gate shows that all three failed solvers interacted with the room’s contents without ever asking what should be present but was not. The empty hook was seen, catalogued, categorised, and filed — but never treated as a question. The successful solver asked what was missing, and the gate responded before any further action. This continues the macro pattern: the gate does not reward thoroughness or speed; it rewards the correct frame.
+Current state: The anchor’s notebook entry inside the gate records that all three failed solvers treated the room as a repository to be processed, while the successful solver treated it as a question to be parsed. This reinforces that the macro problem is not about effort or thoroughness but about the *frame*—whether the solver asks what kind of thing is wanted before acting.
 
 ---
 
 ## ACTIVE FORESHADOWING
 
-- The anchor’s notebook now logs register timestamps to the second, suggesting a temporal model of the solving process is under construction.
-- Yejide’s ordinary-life echo shows her applying “what is missing” to production logistics — skipping the visible inventory and supply-chain noise to find the undelivered base cotton that is the real root cause.
-- The floor supervisor and the dye-lab technician both go still when Yejide asks about the missing shipment — mirroring gate Register 2 behaviour in ordinary life.
-- The phrase “empty hook” has emerged as a physical embodiment of absence-based diagnosis, replacing the earlier “empty space” and offering a more tangible metaphor.
-- The gate’s mirror for the system builder produced a flawless categorical grid, yet the empty hook remained untouched in its own cell — demonstrating that exhaustive classification without the right question yields no path forward.
-- The anchor’s ability to record multiple solvers inside the same gate event (approaches A, B, C, and D side-by-side) implies either simultaneous presence, precognition, or access to the gate’s own recording of solver mental frames — deepening the mystery of their nature.
+- The anchor’s notebook now includes timestamps down to the second for register shifts, suggesting they are building a temporal model of the solving process.
+- Yejide’s ordinary-life echo shows her applying “what is missing” to production logistics—skipping the visible inventory to find the undelivered base cotton—without naming the method.
+- The foreman pales and the argument dies when Yejide asks “Who ordered the base cotton?”—mirroring gate Register 2 behavior in ordinary life.
+- The phrase “empty hook” replaces “empty space” as the diagnostic lens, showing progression toward institutional fluency in absence-based reasoning.
+- The gate’s mirror for the system builder yielded perfect categorical order but left one compartment empty—highlighting that exhaustive classification without a guiding question produces no path.
 
 ---
 
@@ -157,7 +156,7 @@ Current state: The anchor’s notebook from the Lagos fabric gate shows that all
 
 ## NOTES FOR AI — CURRENT SESSION
 
-- African names only. No Arabic names. (Yejide, Adeyemi, Lagos established. Continue this rule.)
+- African names only. No Arabic names. (Yejide, Adeyemi, Lagos established. Continue this rule).
 - The wrong approaches must feel competent and reasonable before they fail.
 - Gate register and mirror behaviour must be shown for all wrong approaches.
 - Mirror prose rule: describe the room's arrangement. Never state what it is showing.
@@ -168,7 +167,7 @@ Current state: The anchor’s notebook from the Lagos fabric gate shows that all
 - Mystery person notebook format: Gate grade. Approach type. Mirror content (one precise physical description). Underlined: the gap the mirror showed. Register log time-stamped. Nothing else.
 - Ordinary life echo: same question applied to ordinary problem. Never labelled as connected. At least one other person goes still or conversation changes register.
 - Chapter length: 2000-3000 words.
-- Chapter 6 completed the Arc 1 wrong approach roster — executor, system builder, and information gatherer have all been shown with their distinct gate signatures and mirror content.
-- Yejide now owns “what is missing” at Touch 2 in a workplace context; she has not been formally named the higher-level operations.
-- The anchor’s in-gate notebook confirms they can observe multiple solvers within the same gate event and diagnose their mental frames in real time — they are tracking the *process*, not just the outcome.
-- The “empty hook” is now available as a recurring physical emblem for absence-based reasoning in later arcs.
+- Chapter 6 completed Arc 1’s core operations: executor, system builder, and information gatherer as wrong approaches, with “what is missing” as the hard operation.
+- Yejide’s method shows workplace fluency—she parses production gaps structurally, not procedurally.
+- The anchor’s in-gate notebook implies they can observe multiple solvers simultaneously and diagnose their mental frames in real time—deepening their role as structural diagnostician.
+- The phrase “empty hook” is now in-world terminology for abstracting the unknown’s absence in institutional contexts.

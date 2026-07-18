@@ -6,7 +6,7 @@
     "is_new": false,
     "name": "Yejide Adeyemi",
     "occupation": "fabric quality inspector at a garment factory",
-    "city": "Lagos, Nigeria",
+    "city": "Lagos",
     "age": null,
     "gate_visited": {
       "gate_id": "G-006",
@@ -18,26 +18,25 @@
       "transferred_to_life": true
     },
     "comprehension_changes": {
-      "op_what_is_missing": "owned"
+      "op_what_is_missing": "understood"
     },
-    "ordinary_life_state": "Yejide works the final-inspection line at a Lagos garment factory and is training a new checker; when a missing dye lot stalls production, she locates the absent undyed base cotton by looking at the empty hook rather than the delivered rolls.",
+    "ordinary_life_state": "Yejide has moved into a supervisory cubicle at the garment factory with her name on the glass. When a production line stalls, the floor supervisor brings the problem to her, and she identifies the missing cotton shipment that everyone else overlooked while cataloguing visible data.",
     "life_progression_shown": true
   },
   "other_entrants": [],
   "secondary_touch_updates": [],
-  "names_used_this_chapter": ["Bisi"],
+  "names_used_this_chapter": ["Mrs. Okafor"],
   "gate_details": {
     "problem_structure": {
-      "unknown": "the missing bolt of undyed base cotton that should occupy the empty space in the fabric inventory",
+      "unknown": "the missing indigo sample — supplier Oke-Aro, lot 41 — that should hang on the empty hook between the blue-tagged and white-tagged hooks",
       "data": [
-        "hundreds of fabric rolls wrapped in clear plastic and labeled with dye lots and batch numbers",
-        "Lot 39-A, the roll that sits askew and remains untouched by every wrong approach",
-        "an empty compartment beneath the materialised shelf where a roll should be",
-        "a sliding panel holding a single unlabeled bolt of raw cotton"
+        "bolts of fabric on pallets — ankara, wax print, plain cotton",
+        "brass hooks with sample tags arranged by colour, one hook empty between blue and white",
+        "a delivery manifest on the inspection table showing an indigo sample that should be present but has no tag on the hooks"
       ],
-      "condition": "closure responds to the absence being noticed and named, not to the present rolls being arranged or catalogued"
+      "condition": "closure responds to the absence being named, not to the present items being arranged, matched, or catalogued"
     },
-    "correct_approach": "Yejide stops at the threshold, sits down outside the gate, lets her gaze move to the empty compartment, asks what is missing, and reaches toward the absence; the gate responds by opening a panel that reveals the raw-cotton bolt, and the gate closes when she pulls it out."
+    "correct_approach": "Stand at the threshold, look at the whole room, find the empty hook, check the manifest for what should be there, and name the missing item. The gate responds to naming the absence, not to arranging what is present."
   },
   "process_updates": {
     "operation": "op_what_is_missing",
@@ -56,21 +55,21 @@
     "location_id": "loc_lagos",
     "new_chapter_added": "006",
     "new_texture": [
-      "A Lagos garment-factory inspection floor smells of starch and machine oil and is lit by fluorescent lights above racks of fabric.",
-      "A production board shows a gap between midnight and steel shades where Lot 41-C should slot in, while checkers argue about mislabeling and customs delays.",
-      "A foreman checks a tablet and pales when asked whether the base cotton for the missing lot actually arrived."
+      "A garment factory inspection floor with a mezzanine, cubicles named in glass, and metal trays of fabric swatches",
+      "Production lines identified by colour runs; bolts come out with shading bands when the wrong base cotton is used during an indigo run",
+      "Floor supervisors dial mills directly when a missing shipment stalls a production line"
     ]
   },
   "anchor_update": {
     "appeared": true,
     "manifestation": "notebook_page",
-    "observation": "Grade 2. Executor approach — room emphasised the visible pattern; one element outside it did not recede. System builder — room mirrored categorical order, perfectly arranged, gate elsewhere. Information gatherer — room gave complete inventory, no question asked. Correct solver: stood at threshold, gaze moved to empty space; Register 2 at sitting; Register 3 at naming absence; gate closed.",
+    "observation": "Gate G-006 (Grade 2)\nEntrants: four.\nApproach A (executive pattern-match) \u2014 Register 1 throughout. Room sorts by colour; hook 4 remains empty, not receding.\nApproach B (grid taxonomy) \u2014 Register 1 with false 3 flicker on completion. Room mirrors categorical grid; hook 4 sits in cell \u2018unmatched\u2019.\nApproach C (full audit) \u2014 Register 1 undisturbed. Room yields complete catalogue; item 4 listed as \u2018empty\u2019, no query.\nTimeout at 14:02:17 \u2014 no closure.\nApproach D (threshold-standing, gaze-to-gaps) \u2014 Register 2 at sit. Hand on hook 4 at 14:03:51. Latch at 14:04:03. Gate closed 14:04:05.\n\u2014 Gap: absence unnamed by A, B, C. Named by D.",
     "location": "loc_lagos",
-    "reader_can_suspect_update": "The anchor now logs register transitions with second-level precision, explicitly notes when solvers fail to ask any question of the data, and tracks whether solvers orient toward the category of answer rather than its content."
+    "reader_can_suspect_update": "The anchor now logs register transitions with sub-second precision and notes the exact moment the absence is named. Their notation confirms that 'what is missing' is the pivot \u2014 the solvers who catalogued, matched, or audited never asked that question, and the gate remained inert until it was asked."
   },
   "macro_mystery_update": {
     "evidence_planted": true,
-    "evidence": "A notebook page left on a Lagos factory windowsill uses the same concise notation as observations in Accra, Nairobi, and Dakar, recording all three wrong approaches and the precise register transitions of the solver who named the absence."
+    "evidence": "A torn notebook page found inside the Lagos fabric-inspection gate records all four solver approaches with register timestamps at second-level precision, showing the anchor can observe multiple solvers within the same gate event and diagnose their mental frames in real time across different approaches."
   },
   "next_chapter_pointer": {
     "chapter": "007",

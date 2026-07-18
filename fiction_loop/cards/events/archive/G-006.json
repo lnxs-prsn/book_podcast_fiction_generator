@@ -1,0 +1,26 @@
+{
+  "id": "G-006",
+  "chapter_opened": 6,
+  "chapter_closed": 6,
+  "status": "closed",
+  "grade": 2,
+  "location_id": "loc_lagos",
+  "problem_structure": {
+    "unknown": "the missing indigo sample — supplier Oke-Aro, lot 41 — that should hang on the empty hook between the blue-tagged and white-tagged hooks",
+    "data": [
+      "bolts of fabric on pallets — ankara, wax print, plain cotton",
+      "brass hooks with sample tags arranged by colour, one hook empty between blue and white",
+      "a delivery manifest on the inspection table showing an indigo sample that should be present but has no tag on the hooks"
+    ],
+    "condition": "closure responds to the absence being named, not to the present items being arranged, matched, or catalogued"
+  },
+  "wrong_approaches_demonstrated": [
+    "the executor",
+    "the system builder",
+    "the information gatherer"
+  ],
+  "correct_approach": "Stand at the threshold, look at the whole room, find the empty hook, check the manifest for what should be there, and name the missing item. The gate responds to naming the absence, not to arranging what is present.",
+  "characters_entered": ["char_001"],
+  "operation_taught": "op_what_is_missing",
+  "anchor_present": true
+}

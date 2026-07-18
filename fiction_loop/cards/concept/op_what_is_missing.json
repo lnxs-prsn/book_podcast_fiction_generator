@@ -4,7 +4,7 @@
   "source_text": "P\u00f3lya, How to Solve It (2nd ed.) \u2014 Part III, Short Dictionary of Heuristic",
   "difficulty_rating": 2,
   "arc_introduced": 1,
-  "current_touch": 1,
+  "current_touch": 2,
   "name_attached": true,
   "name_at_touch": 1,
   "touch_schedule": {
@@ -19,6 +19,12 @@
       "char_id": "char_001",
       "touch": 1,
       "context": "family_domestic"
+    },
+    {
+      "chapter": "006",
+      "char_id": "char_001",
+      "touch": 2,
+      "context": "workplace"
     }
   ],
   "failure_modes_shown": [
@@ -28,10 +34,10 @@
   ],
   "failure_modes_not_yet_shown": [],
   "contexts_demonstrated": [
-    "family_domestic"
+    "family_domestic",
+    "workplace"
   ],
   "contexts_not_yet_demonstrated": [
-    "workplace",
     "professional",
     "civic_institutional",
     "teaching_mentoring",

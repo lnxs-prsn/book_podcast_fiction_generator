@@ -29,6 +29,12 @@
       "observation": "Grade 1–2 / executor / room emphasises sequential file order; gap: unstamped envelope (slot L7); Reg 1 throughout; closure attempt min 10 — failed\nGrade 1–2 / system builder / room mirrors categorical grid; gap: categorisation ignores evidentiary type; Reg flicker 1→3→1; closure attempt min 14 — failed\nGrade 1–2 / information gatherer / room yields complete audit; gap: no question asked of data; Reg 1 undisturbed; closure attempt min 18 — failed\nGrade 1–2 / correct / Reg 2 at threshold-standing (min 19:03); Reg 3 at right question (min 19:47); gate closed min 20",
       "location": "loc_dakar",
       "manifestation": "seen"
+    },
+    {
+      "chapter": "006",
+      "observation": "Gate G-006 (Grade 2)\nEntrants: four.\nApproach A (executive pattern-match) — Register 1 throughout. Room sorts by colour; hook 4 remains empty, not receding.\nApproach B (grid taxonomy) — Register 1 with false 3 flicker on completion. Room mirrors categorical grid; hook 4 sits in cell 'unmatched'.\nApproach C (full audit) — Register 1 undisturbed. Room yields complete catalogue; item 4 listed as 'empty', no query.\nTimeout at 14:02:17 — no closure.\nApproach D (threshold-standing, gaze-to-gaps) — Register 2 at sit. Hand on hook 4 at 14:03:51. Latch at 14:04:03. Gate closed 14:04:05.\n— Gap: absence unnamed by A, B, C. Named by D.",
+      "location": "loc_lagos",
+      "manifestation": "notebook_page"
     }
   ],
   "reader_can_suspect": [
@@ -51,6 +57,10 @@
     {
       "chapter": "005",
       "suspicion": "The anchor's notation now explicitly confirms that naming the category of an unknown precedes closure even when unspoken, and tracks whether solvers orient toward the type of answer wanted rather than its content."
+    },
+    {
+      "chapter": "006",
+      "suspicion": "The anchor now logs register transitions with sub-second precision and notes the exact moment the absence is named. Their notation confirms that 'what is missing' is the pivot — the solvers who catalogued, matched, or audited never asked that question, and the gate remained inert until it was asked."
     }
   ],
   "hidden_coherence": {

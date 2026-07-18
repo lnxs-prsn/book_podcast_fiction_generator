@@ -167,7 +167,7 @@ next_chapter_pointer:
 
 | Arc | Gate Grade | Wrong Approaches | Gate Signature Sequence | Mirror Content | Right Question | Why |
 |---|---|---|---|---|---|---|
-| Arc 1 | 1-2 | Executor → System builder → Information gatherer | Reg 1 holds; Reg flickers false 3; Reg 1 undisturbed; then Reg 2 after sitting down | Room emphasises obvious pattern with one element not receding; room mirrors method categories perfectly but gate elsewhere; room gives complete data, still — the catalogue is the mirror | What is the unknown here, really? What is missing rather than what is present? | Three visibly distinct mirrors. Reader learns to read them as a sequence. |
+| Arc 1 | 1-2 | 1. The executor (acts immediately on obvious pattern) 2. The system builder (applies method regardless of fit) 3. The information gatherer (catalogues everything, asks nothing) | 1. Register 1 holds — contact, nothing. 2. Register flickers false 3, never holds. 3. Register 1, undisturbed — as if solver not yet present. Then Register 2 shift after sitting down. | 1. Room emphasises the obvious pattern — makes it cleaner, more legible. One element outside the pattern not receding. 2. Room mirrors the method's structure: everything categorised. Categorisation perfect. Gate elsewhere. 3. Room gives complete data. Still. The catalogue is the mirror. | What is the unknown here, really? What is missing rather than what is present? | Three visibly distinct mirrors. Reader learns to read them as a sequence. By the third they recognise what the mirror is showing before the solver does. |
 
 ### SOURCE: /core/concept_curriculum.md — Arc 1 Section 5 (Arc Breakdown)
 
