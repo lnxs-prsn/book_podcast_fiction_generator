@@ -129,6 +129,16 @@
 
 *Gap of more than 8 chapters between touches risks reader forgetting.*
 
+> **D9 AMENDMENT — read before treating these columns as a schedule** (lever 2,
+> 2026-07-02; note applied 2026-07-18 after the ch6 review nearly re-read the
+> columns as a scheduling gap). Difficulty-scaled touch counts supersede any
+> column beyond an operation's card `touch_target` (easy ops 2, medium 3, hard
+> 4). The machine-read schedule is each concept card's `touch_schedule` — the
+> Extractor never reads this map. Columns beyond an op's target (e.g. the 3/4
+> entries for "What is missing", target 2) are the AMBIENT layer — the D1
+> cumulative "use naturally" list in the Assembler brief plus D9 lever-4
+> structural-chapter reinforcement — never dedicated chapters.
+
 | Operation | Arc 1 | Arc 2 | Arc 3 | Arc 4 | Arc 5 | Arc 6 | Arc 7 | Arc 8 | Finale | Mystery Thread |
 |---|---|---|---|---|---|---|---|---|---|---|
 | Identify unknown / data / condition | 1 | 1N | 2 | 3 | 3 | 3 | 3 | 3 | 4 | 3 always |

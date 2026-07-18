@@ -76,6 +76,9 @@ implements; Codex/Qwen implement.
 
 ## 4. How to continue (cold-start)
 
+> **SUPERSEDED IN PART by §5 (same day, later):** queue item 1 (ch6 review) is
+> DONE and ACCEPTED; the open queue is now T-004 → T-005 → T-003.
+
 Read-first: this file → `handoff-2026-07-18-deepseek-switch-404.md`
 (§3b–3d) → the two 2026-07-17 handoffs → `fiction_loop/CONTRIBUTING.md` →
 `tickets/`. Diagnostics: `PYTHONPATH=src .venv/bin/python
@@ -84,3 +87,54 @@ fiction_loop/tools/analyst.py` (zero tokens) and `.../progress.py`
 resume note needed; the pointer is clean. Conduct: never cat/grep/print
 `.env` or `env | grep`; env inspection is `echo $VAR` for non-secret vars
 only.
+
+## 5. ADDENDUM (2026-07-18, late) — ch6 review ACCEPTED; queue: T-004 → T-005 → T-003
+
+Senior review of queue item 1 ran in full; owner ACCEPTED chapter 006 (no
+redo). Every claim below verified against files this sitting.
+
+1. **F14 / continuity / anchor — PASS.** Progression nameable+visible
+   (supervisory cubicle, name on the glass; never gate-attributed); char_001
+   continuity verified against the pre-ch6 card (`git show a77eec8~1`);
+   anchor manifestation `notebook_page` differs from ch5's `seen` (repeating
+   ch2's vehicle is legal — the rotation constraint is vs the previous
+   chapter). LAW 13 F15-override ledger entry confirmed at
+   `logs/chapter_006/00_orchestrator.log:38`.
+2. **"Owned" compression is CORRECT — not Updater over-compression.**
+   Verified against updater.md COMPRESSION RULES + owner D9 lever 2 (easy
+   ops target 2 touches): master_state's `"owned"` is summary-only; full
+   schedule/history retained in the concept card and `process_state.json`
+   (which is what the Extractor plans from). The confusion source was
+   curriculum §7's stale 3/4 columns — D9 said the columns would be edited
+   down when the registry was authored; they never were. FIXED this sitting:
+   D9-amendment note added under §7's legend (cards' `touch_schedule` =
+   machine truth; beyond-target columns = ambient layer per D1 hybrid + D9
+   lever 4). Owner ruled "follow the existing structure" — no card
+   re-encoding, no new scheduling machinery.
+3. **THINKING TAX (first deepseek-v4-pro receipts, `.pipeline_spend.json`):**
+   generation out=5,901 tokens vs ~2,600-token chapter → reasoning ≈ 55% of
+   output; living-doc update ≈ 63% (out=6,088 vs qwen3-max's ~2,200 for the
+   same task). BUT the full ch6 cycle cost $0.028 vs $0.067 (qwen3-max) and
+   ~$0.40 (qwen3.7-plus) — cheapest chapter to date. Verdict: keep model and
+   budgets. Operational rule: `max_tokens` ≥ ~2.5× expected prose (the
+   2026-07-17 smoke receipt shows reasoning eating the whole budget at 16).
+4. **NEW FINDING → T-005** (`tickets/T-005-extractor-pointer-precedence.md`):
+   extractor STEP A FALLBACK and STEP D fire on the same all-deficits-zero
+   condition with no precedence — ch5's run took the FALLBACK (taught ch6 an
+   arc-2 touch early; harmless, committed state), ch6's run took STEP D
+   (arc_transition; the correct reading, ratified by the ticket). Also
+   `lead_failure_mode` is not contractually required: NO 006 entry in
+   `failure_mode_lead_history` (actual lead: the executor). Deliberately NOT
+   backfilled — LAW 8 hand surgery, and harmless since arc 2 rotates a fresh
+   failure-mode pool. Dispatch T-005 only AFTER T-004 (same write-set file).
+5. **T-004 redispatch authorized** (owner); senior note in its §6 —
+   exact-paths warning (`fiction_loop/tools/INTEGRATION_SPECS.md`).
+6. **T-003 owner step DELEGATED to senior** (owner, this session): senior
+   renames the `.env` keys blind after the implementation lands (ticket §4).
+   Repo + shell rc verified clean of `OPENROUTER_*`; residual check is the
+   Qwen companion session's live env.
+
+**Open queue now:** dispatch T-004 → senior acceptance → dispatch T-005 →
+senior acceptance → dispatch T-003 → senior .env step + acceptance → chapter
+007 kickoff (RUN.md prompt as written; pointer clean). Older queue:
+`handoff-2026-07-17-clone-audit.md` §5, unchanged.

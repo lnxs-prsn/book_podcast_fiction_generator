@@ -105,3 +105,10 @@ Pathspec-limit to the write-set (never `git commit -a`).
   declared write-set places the file at
   `fiction_loop/tools/INTEGRATION_SPECS.md`. Per §5 ("On ANY failure: stop"),
   no contract files were edited and no acceptance commands were run.
+- 2026-07-18 — senior — REDISPATCH AUTHORIZED by owner. The first attempt
+  aborted on its own path typo (entry above); the ticket body is correct as
+  written and unchanged. Implementer: use the write-set's EXACT paths —
+  `INTEGRATION_SPECS.md` lives at `fiction_loop/tools/INTEGRATION_SPECS.md`.
+  Timing precondition satisfied (ch6 committed `a77eec8`; between runs).
+  Senior re-runs acceptance after completion. Note: T-005 depends on this
+  ticket landing first (same write-set file — extractor.md).

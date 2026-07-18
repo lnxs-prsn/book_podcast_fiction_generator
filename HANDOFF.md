@@ -1,9 +1,11 @@
 # HANDOFF — front door (stable path; content lives in progress/)
 
-> **CURRENT handoff: `progress/handoff-2026-07-18-ch6-landed-open-queue.md`**
-> (chapter 006 committed a77eec8; queue: ch6 review → T-004 redispatch →
-> T-003 env rename; binding facts: pytest-via-uv-overlay, Codex classifier
-> quirks, F15 false-fail warning until T-004). Detailed day record:
+> **CURRENT handoff: `progress/handoff-2026-07-18-ch6-landed-open-queue.md`
+> — read its §5 addendum first** (ch6 committed a77eec8 AND review ACCEPTED;
+> queue: T-004 redispatch → T-005 extractor-precedence → T-003 env rename
+> with the .env step delegated to senior; binding facts: pytest-via-uv-overlay,
+> Codex classifier quirks, F15 false-fail warning until T-004, thinking-tax
+> verdict = keep deepseek-v4-pro). Detailed day record:
 > `handoff-2026-07-18-deepseek-switch-404.md` §3b–3d. Background: the two
 > 2026-07-17 handoffs (conduct hardening; roles/environment/queue). One hop
 > from here to current truth; do not orient from any other document.

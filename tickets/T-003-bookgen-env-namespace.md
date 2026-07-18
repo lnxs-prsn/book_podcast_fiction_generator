@@ -112,6 +112,15 @@ harness config. Until this is done the pipeline will fail STEP 0 with the
 analyst's missing-key CRITICAL — that failure is the correct signal, not a
 bug. Do not proceed to acceptance 4–5 before the owner confirms.
 
+**Delegation (owner → senior, 2026-07-18):** the owner delegated the `.env`
+key rename to the senior instance. Senior performs it BLIND — in-place rename
+of key NAMES only per the §2 table; never cat/grep/print the file or its
+values — AFTER the implementation commit lands and BEFORE acceptance 4–5.
+Verified 2026-07-18: repo and shell rc files carry no `OPENROUTER_*` exports;
+the one residual check is the Qwen companion session's own live environment
+(owner confirms nothing is exported there before the next chapter run). The
+implementer contract is unchanged: never touch `.env`.
+
 ## 5. Acceptance (numbered; ALL must pass)
 
 1. `PYTHONPATH=src uv run --frozen --with pytest python -m pytest src/ -q`
