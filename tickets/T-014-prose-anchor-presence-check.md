@@ -124,9 +124,13 @@ the gate." Use it to seed the design-(b) field for the fixture run.
    (the phrase is present), exit governed only by the label check
    (which is why attempt-2 still fails on labels — proving the two checks
    are independent).
-3. Coarse-grep guard: a unit asserting that a draft containing "notebook"
-   and "page" but NOT the required phrase (i.e. attempt 3) is reported
-   ABSENT — the check must not false-pass on incidental nouns.
+3. Coarse-grep guard (tested via CLI `--check-prose` on the fixtures, NOT a
+   new pytest module — none exists for invoke_writer; T-010/T-012
+   precedent): confirm that step 1 (attempt-3, which DOES contain the
+   incidental nouns "notebook" and "page" but NOT the required phrase) is
+   reported `anchor_absent`. The check must key on the required PHRASE from
+   the structured field, never on incidental nouns — step 1 passing IS this
+   guard.
 4. `anchor_appears=false` → the anchor check emits nothing regardless of
    draft content (no-op path covered).
 5. Test suite → `1 failed, 331 passed`. `git status --porcelain` → only the
