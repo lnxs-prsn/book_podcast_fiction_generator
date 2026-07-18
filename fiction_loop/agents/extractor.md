@@ -135,13 +135,37 @@ life_progression_shown
 ### SECTION: other_entrants
 
 ```
-Every OTHER solver the prose NAMES who entered this gate (the failed solvers of the
-productive-failure structure, experienced strangers, etc. — not crowd/bystanders).
-For each: { "id": existing char_id if they are in population_index, else "char_[NNN][a/b/c]",
-            "name": ..., "is_new": ..., "approach_taken": wrong approach type shown,
-            "operations_applied": [operation_ids they visibly used, for secondary touch
-            verification] }
-Empty list if no other solver is named.
+Every OTHER solver present in the gate scene gets an entry (the failed solvers of
+the productive-failure structure, experienced strangers, etc. — not
+crowd/bystanders), whether the prose names them or leaves them unnamed.
+
+For each NAMED solver:
+  { "id": existing char_id if they are in population_index, else "char_[NNN][a/b/c]",
+    "name": ..., "is_new": ..., "approach_taken": wrong approach type shown,
+    "operations_applied": [operation_ids they visibly used, for secondary touch
+    verification] }
+
+For each UNNAMED solver:
+  { "id": null, "name": null, "is_new": true/false,
+    "approach_taken": wrong approach type shown,
+    "operations_applied": [operation_ids they visibly used, for secondary touch
+    verification] }
+For an unnamed solver, set is_new = true when the prose presents them as a first
+appearance and supplies no continuity marker to any prior chapter; otherwise set
+is_new = false.
+
+WRONG — chapter 006's unnamed information-gatherer is omitted:
+  "other_entrants": []
+RIGHT — the same unnamed solver reaches the structural gate:
+  "other_entrants": [
+    { "id": null, "name": null, "is_new": true,
+      "approach_taken": "the information gatherer", "operations_applied": [] }
+  ]
+
+LAW 4 producer/consumer registration: Extractor produces
+other_entrants[].is_new; structural_gate.py consumes it to count F15 newcomers;
+Updater consumes other_entrants and skips name: null entries so they remain
+gate-only signals rather than permanent character records.
 ```
 
 ---

@@ -44,6 +44,8 @@ STEP 1 — Character card
 
   For each entry in update_brief.other_entrants (owner decision D6 — every NAMED
   solver is tracked):
+    IF name is null: SKIP this entry — unnamed entrants exist in the brief only
+      so deterministic gates can count them; never create or update a card
     IF is_new = true: create a STUB card /cards/characters/[id].json —
       id, name, first_appeared, last_seen, gate_history with this gate's
       { gate_id, approach_taken, understood: false }, all other fields at defaults
@@ -101,6 +103,7 @@ STEP 3 — Event card
     wrong_approaches_demonstrated ← process_updates.failure_modes_shown_this_chapter
     correct_approach              ← gate_details.correct_approach
     characters_entered            ← [focal_character.id] + every other_entrants id
+                                     whose name is not null; SKIP name: null entries
                                      (multi-entry list per owner decision D6)
     operation_taught              ← gate_visited.operation_encountered
     anchor_present                ← anchor_update.appeared
