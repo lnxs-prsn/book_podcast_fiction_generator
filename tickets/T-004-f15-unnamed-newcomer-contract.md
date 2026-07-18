@@ -112,3 +112,18 @@ Pathspec-limit to the write-set (never `git commit -a`).
   Timing precondition satisfied (ch6 committed `a77eec8`; between runs).
   Senior re-runs acceptance after completion. Note: T-005 depends on this
   ticket landing first (same write-set file — extractor.md).
+- 2026-07-18 — Codex — implemented and committed as `58e4dbd` (extractor.md +
+  updater.md only; INTEGRATION_SPECS.md untouched — it does not document the
+  update-brief schema, verified). Reported via owner; this log line added by
+  senior because the implementer omitted the §6 append (process note for next
+  dispatch: the log append is part of the ticket).
+- 2026-07-18 — senior — **ACCEPTED.** All §3 criteria re-run independently:
+  (1) scratchpad copy of structural_gate.py + synthetic brief: unnamed
+  `is_new: true` → exit 0; same brief with `is_new: false` → exit 1 with the
+  F15 line; (2) "Empty list if no other solver is named" → zero hits; new
+  named/unnamed contract + WRONG/RIGHT ch6 example pair present
+  (extractor.md §other_entrants); (3) `name: null` skip rule present at both
+  updater.md sites (card creation ~47, characters_entered ~106); LAW 4
+  producer/consumer line present (extractor.md ~165); (4) commit 58e4dbd
+  pathspec-limited to the write-set; tree clean. structural_gate.py
+  untouched, as designed.

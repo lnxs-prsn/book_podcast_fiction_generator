@@ -40,7 +40,10 @@ implements; Codex/Qwen implement.
    out of Auto mode, or pre-approve analyst.py. Aircraft-vs-scanner rule:
    these blocks are harness-side; the pipeline state stays clean — verify
    with receipts (pgrep + .out mtimes), not with STATUS.md claims.
-3. **F15 FALSE-FAIL WARNING (until T-004 lands):** the structural gate
+3. **RESOLVED by `58e4dbd` (T-004 accepted — see §6):** ~~F15 FALSE-FAIL
+   WARNING (until T-004 lands)~~ — the structural gate now counts unnamed
+   newcomers via the new other_entrants contract. Historical text follows:
+   the structural gate
    cannot see unnamed newcomers — extractor.md emits `other_entrants` only
    for NAMED solvers while the prompt correctly says "name the newcomer
    only if they matter". Any chapter whose only newcomer is unnamed will
@@ -138,3 +141,18 @@ redo). Every claim below verified against files this sitting.
 senior acceptance → dispatch T-003 → senior .env step + acceptance → chapter
 007 kickoff (RUN.md prompt as written; pointer clean). Older queue:
 `handoff-2026-07-17-clone-audit.md` §5, unchanged.
+
+## 6. ADDENDUM (2026-07-18, later) — T-004 ACCEPTED (58e4dbd); queue: T-005 → T-003
+
+- **T-004 implemented by Codex (`58e4dbd`) and ACCEPTED by senior** — all §3
+  criteria re-run independently (synthetic-brief gate test both directions,
+  contract greps, write-set check); full record in the ticket's §6. The F15
+  false-fail warning (§2.3) is RESOLVED — unnamed newcomers now reach the
+  structural gate. structural_gate.py and state untouched, as designed.
+- Process note: the implementer omitted the §6 log append (reported via owner
+  instead); senior backfilled it. Next dispatch prompt should restate that
+  the log append is part of the ticket.
+- **Open queue now:** dispatch T-005 (extractor precedence — unblocked, T-004
+  landed) → senior acceptance → dispatch T-003 → senior .env step +
+  acceptance → chapter 007 kickoff. T-003 is NOT yet implemented or
+  dispatched. Older queue: `handoff-2026-07-17-clone-audit.md` §5, unchanged.
