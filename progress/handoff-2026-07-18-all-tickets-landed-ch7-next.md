@@ -151,3 +151,35 @@ tests at the expected `1 failed, 331 passed`. Queue item (1) is DONE.
 First chapter of arc 2: watch the fetcher pull the ARC 2 curriculum section
 (narrative engine + gate grade band) — first live consumer of the T-006
 advance.**
+
+## 6. ADDENDUM (2026-07-18, evening) — ch8 attempt 1 rejected; pollution class ticketed (T-007/T-008)
+
+Chapter 008 run started (Qwen driver; step-0 analyst gate run externally by
+senior — Qwen's classifier blocks Python, §0 precedent). **Structural gate
+FAILED attempt 1: anchor absent** (HARD RULE 8 carried the full
+manifestation; Writer delivered only the warm stool — the torn page with
+the anchor's FIRST CONCLUDING LINE, the planned 7th macro-evidence piece,
+is missing; owner override correctly rejected). Verdict: **redo generation**,
+after `git restore --source=HEAD -- fiction_loop/core/living_document.md` —
+because the step-10 paid refresh had already ingested the rejected draft:
+the LAW 7 standing violation fired live for the first time, and the
+`redo generation` rung's "nothing was mutated" claim proved false.
+
+**Owner assigned both fixes; senior dispatched:**
+- **T-007** (`tickets/T-007-truthful-redo-ladder.md`) — truthful ladder:
+  redo-generation rung gains the conditional living-doc restore; gate FAIL
+  output prints the hint; RUN.md ladder line amended. Small; lands first.
+- **T-008** (`tickets/T-008-gate-before-refresh-reorder.md`) — the mapped
+  LAW 7 reorder, done WHOLE: new order 8→9→11→11.5→**10**→12 (step numbers
+  kept, M-15 precedent). The one real coupling is severed by design
+  decision: `reader_can_suspect_update` now derives from chapter prose +
+  mystery_anchor.json — the Extractor's living_document.md input is
+  deleted. Kills both the wasted call and the pollution class at the root;
+  also satisfies the intake-factory auto-redo precondition. Full §3.8
+  LAW 4 audit list in the ticket.
+
+**Both tickets are BETWEEN-runs (agents/ edits never mid-chapter): implement
+only after ch8 commits or the run is abandoned. Serialize T-007 → T-008.**
+Mid-run recovery for ch8 itself is manual per the receipts mechanism (the
+restore command above, then redo generation; driver greps the new draft for
+stool/torn/wiped + the concluding line before letting step 10 spend).

@@ -4,10 +4,13 @@
 > — read its §5 ADDENDUM first: chapter 007 (arc_transition) committed
 > `0b3b362` and senior-verified; T-006 (arc_current self-managing: updater
 > STEP 9 advance, extractor arc_effective, analyst drift check + `--repair`)
-> LANDED `b128773`+`76185c2` and ACCEPTED — state reads arc=2, ch8 UNBLOCKED.
-> Queue: owner's Qwen companion-env check, then chapter 008 kickoff (paid,
-> owner starts; first arc-2 chapter — fetcher must pull the arc 2 curriculum
-> section). Earlier that day: T-002/004/005/003 all landed and accepted.
+> LANDED `b128773`+`76185c2` and ACCEPTED — state reads arc=2. Then §6:
+> ch8 attempt 1 REJECTED by the gate (anchor absent); the LAW 7
+> refresh-before-gate pollution fired live; recovery = living-doc git
+> restore + redo generation (mid-run, manual). **T-007 (truthful redo
+> ladder) and T-008 (gate-before-refresh reorder, whole) dispatched —
+> BETWEEN runs, serialize T-007→T-008, implement only after ch8 lands.**
+> Earlier that day: T-002/004/005/003 all landed and accepted.
 > Day detail:
 > `handoff-2026-07-18-ch6-landed-open-queue.md` §§5–8 and
 > `handoff-2026-07-18-deepseek-switch-404.md` §3b–3d. Background: the two
