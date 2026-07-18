@@ -282,3 +282,43 @@ and grep proofs (§6a/§6b); verified no OTHER out-of-write-set file states
 the order. Queue order unchanged (T-008 still after T-007, which is merged
 `b8f0b7c`). Re-run the FULL §3 from a clean tree — do not resume the
 reverted partial.
+
+## 11. ADDENDUM (2026-07-18, late) — T-007..T-011 all LANDED + verified; T-012 PLAN expanded into dispatched T-012/T-013/T-014
+
+**Whole between-runs queue is DONE and senior-verified** (commits: T-007
+`b8f0b7c`, T-008 `3ab5f5a` after redispatch `795a159`, T-009 `1e8b082`,
+T-010 `1fa915b`, T-011 `23fe193`). Independent re-checks this session:
+T-008 order-proof greps pass and both redispatch-added files
+(INTEGRATION_SPECS.md, pipeline_stage_manifest.md) now state the new order;
+T-009 `--verify` correctly returns "no receipt" / exit 1 with no receipt on
+disk; T-010 label check green on all three fixtures (ch7 PASS, attempt-2
+FAIL with 4 narration violations, attempt-3 PASS); tests `1 failed, 331
+passed` (known engines failure only).
+
+**T-012 was a PLAN, not a ticket — implementer correctly STOPPED.** Senior
+expanded it into three DISPATCHED tickets (`1c2c917`):
+- **T-012 targeted-revision rung** — `invoke_writer.py` gains
+  `--check-prose` (structured deficiency JSON) and `--revise` (one targeted
+  paid call, diff-size guard `REVISION_MAX_DIFF_RATIO=0.25`, re-check after).
+  Ladder: prose-check FAIL → revise ≤2× → `redo generation`. Acceptance is
+  ENTIRELY OFFLINE (`--dry-run` + the three on-disk fixtures); live proof
+  that revision converges rides the next owner run (T-008 pattern).
+- **T-013 LAW 16** — a new hard rule must ship its deterministic check or a
+  written non-checkability note. Stops the rule-ratchet at the source.
+- **T-014 (OPTIONAL/deferrable)** prose anchor-presence check — early catch
+  of a missing anchor scene before the Extractor spend. The gate ALREADY
+  catches anchor-absent authoritatively, so this is efficiency + driver-
+  improvisation removal, not correctness. Derives the required phrase from a
+  structured Assembler field (design fork (b)); a coarse grep FALSE-PASSES.
+
+**Key correction captured during expansion:** all three ch8 failure modes
+are already caught deterministically today (gate/label check), so the
+station's real win is REVISE-NOT-REROLL for SURGICAL misses; whole-scene
+omissions (anchor absent) stay on `redo generation`. `T-012-PLAN-SUPERSEDED.md`
+records this; the dispatched tickets are the authority.
+
+**Revised queue (all BETWEEN runs):** implement **T-012** first
+(foundation), **T-013** any time (independent, tiny), **T-014** last and
+only if wanted. Then ch8 restarts on the new machine and enters at the
+revision rung for any surgical miss (T-012 existing-draft path), never a
+blind fourth roll. Ch8 attempt-3 fixture preserved at `cf70a1b`.
