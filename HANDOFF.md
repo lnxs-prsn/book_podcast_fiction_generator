@@ -1,11 +1,12 @@
 # HANDOFF — front door (stable path; content lives in progress/)
 
-> **CURRENT handoff: `progress/handoff-2026-07-18-deepseek-switch-404.md`**
-> (DeepSeek model switch, step-8 404 diagnosis + one remaining check, resume
-> steps). Background: `handoff-2026-07-17-ch6-postmortem-fixes.md` (conduct
-> hardening) and `handoff-2026-07-17-clone-audit.md` (roles, environment,
-> open queue). One hop from here to current truth; do not orient from any
-> other document.
+> **CURRENT handoff: `progress/handoff-2026-07-18-ch6-landed-open-queue.md`**
+> (chapter 006 committed a77eec8; queue: ch6 review → T-004 redispatch →
+> T-003 env rename; binding facts: pytest-via-uv-overlay, Codex classifier
+> quirks, F15 false-fail warning until T-004). Detailed day record:
+> `handoff-2026-07-18-deepseek-switch-404.md` §3b–3d. Background: the two
+> 2026-07-17 handoffs (conduct hardening; roles/environment/queue). One hop
+> from here to current truth; do not orient from any other document.
 
 This file is a pointer, not a ledger. Dated handoffs are appended in
 `progress/handoff-YYYY-MM-DD-*.md`; the newest wins. Files always override
@@ -14,9 +15,9 @@ rules: `innovations/handoff-discipline/kit/HANDOFF_RULES.md`.
 
 ## Read-first order for a cold session
 
-1. `progress/handoff-2026-07-18-deepseek-switch-404.md` — current blocker +
-   resume steps; then the two 2026-07-17 handoffs — conduct hardening, roles,
-   state, open queue
+1. `progress/handoff-2026-07-18-ch6-landed-open-queue.md` — current state +
+   open queue; then `handoff-2026-07-18-deepseek-switch-404.md` (day record)
+   and the two 2026-07-17 handoffs — conduct hardening, roles, state
 2. `fiction_loop/CONTRIBUTING.md` — the 15 laws; binding BEFORE any change
    under `fiction_loop/`
 3. `fiction_loop/specs/intake_factory.spec.md` — the factory spec (design
