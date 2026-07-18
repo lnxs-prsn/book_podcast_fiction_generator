@@ -7,7 +7,7 @@
 # Model (required)
 # ---------------------------------------------------------------------------
 # Model ID on your OpenAI-compatible endpoint. NOTE: environment variables
-# OVERRIDE this file (OPENROUTER_MODEL → model, OPENROUTER_URL → endpoint;
+# OVERRIDE this file (BOOKGEN_LLM_MODEL → model, BOOKGEN_LLM_API_URL → endpoint;
 # loaded from shell env or repo-root .env, shell wins). This line should state
 # the PRIMARY deployment truthfully — .env is for temporary overrides.
 # CAUTION: price_per_1m_* and context_limit below do NOT switch when the model

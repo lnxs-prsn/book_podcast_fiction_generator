@@ -322,7 +322,7 @@ def _run_e2e(tmp_path):
         main.main()
     """)
     env = os.environ.copy()
-    env["OPENROUTER_API_KEY"] = "fake-key-for-test"
+    env["BOOKGEN_LLM_API_KEY"] = "fake-key-for-test"
     env["PYTHONPATH"] = "src"
     r = subprocess.run(
         [sys.executable, "-c", wrapper],

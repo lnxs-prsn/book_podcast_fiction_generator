@@ -5,22 +5,22 @@ from llm.protocol import LLMClient, LLMTransport
 
 
 def _build(**kwargs):
-    provider = os.getenv("LLM_PROVIDER", "openrouter")
+    provider = os.getenv("BOOKGEN_LLM_PROVIDER", "openrouter")
     if provider == "openrouter":
         from llm.providers.openrouter import OpenRouterClient
 
         return OpenRouterClient(**kwargs)
-    raise LLMConfigError(f"Unknown LLM_PROVIDER: {provider!r}")
+    raise LLMConfigError(f"Unknown BOOKGEN_LLM_PROVIDER: {provider!r}")
 
 
 def create_client(**kwargs) -> LLMClient:
     if "timeout" not in kwargs:
-        if timeout_env := os.getenv("LLM_DEFAULT_TIMEOUT_SECONDS"):
+        if timeout_env := os.getenv("BOOKGEN_LLM_DEFAULT_TIMEOUT_SECONDS"):
             try:
                 kwargs["timeout"] = float(timeout_env)
             except (TypeError, ValueError) as e:
                 raise LLMConfigError(
-                    f"LLM_DEFAULT_TIMEOUT_SECONDS must be a float, got: {timeout_env!r}"
+                    f"BOOKGEN_LLM_DEFAULT_TIMEOUT_SECONDS must be a float, got: {timeout_env!r}"
                 ) from e
     obj = _build(**kwargs)
     if not isinstance(obj, LLMClient):
@@ -32,12 +32,12 @@ def create_client(**kwargs) -> LLMClient:
 
 def create_transport(**kwargs) -> LLMTransport:
     if "timeout" not in kwargs:
-        if timeout_env := os.getenv("LLM_DEFAULT_TIMEOUT_SECONDS"):
+        if timeout_env := os.getenv("BOOKGEN_LLM_DEFAULT_TIMEOUT_SECONDS"):
             try:
                 kwargs["timeout"] = float(timeout_env)
             except (TypeError, ValueError) as e:
                 raise LLMConfigError(
-                    f"LLM_DEFAULT_TIMEOUT_SECONDS must be a float, got: {timeout_env!r}"
+                    f"BOOKGEN_LLM_DEFAULT_TIMEOUT_SECONDS must be a float, got: {timeout_env!r}"
                 ) from e
     obj = _build(**kwargs)
     if not isinstance(obj, LLMTransport):

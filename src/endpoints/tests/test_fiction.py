@@ -1,6 +1,6 @@
 """Tests for the fiction endpoint env-override config merge.
 
-Regression tests for Error 3: OPENROUTER_MODEL env var not reaching the
+Regression tests for Error 3: BOOKGEN_LLM_MODEL env var not reaching the
 config dict passed to run_session. The fix is in endpoints/fiction.py —
 env overrides are merged into config before the session is started, so
 the config dict is the single resolved source of truth for the whole session.
@@ -67,39 +67,39 @@ def call_endpoint():
 
 
 class TestEnvModelOverride:
-    """OPENROUTER_MODEL must override config.toml's model everywhere the
+    """BOOKGEN_LLM_MODEL must override config.toml's model everywhere the
     session reads it — both the config dict passed to run_session and the
     kwargs used to construct the transport."""
 
     def test_model_env_wins_over_file(self, call_endpoint, monkeypatch):
-        monkeypatch.setenv("OPENROUTER_MODEL", "env/model")
+        monkeypatch.setenv("BOOKGEN_LLM_MODEL", "env/model")
         config, _ = call_endpoint()
         assert config["model"] == "env/model"
 
     def test_no_env_var_keeps_file_model(self, call_endpoint, monkeypatch):
-        monkeypatch.delenv("OPENROUTER_MODEL", raising=False)
+        monkeypatch.delenv("BOOKGEN_LLM_MODEL", raising=False)
         config, _ = call_endpoint()
         assert config["model"] == _FILE_MODEL
 
     def test_api_url_env_wins_over_file(self, call_endpoint, monkeypatch):
-        monkeypatch.setenv("OPENROUTER_URL", "https://env-url/v1/chat/completions")
+        monkeypatch.setenv("BOOKGEN_LLM_API_URL", "https://env-url/v1/chat/completions")
         config, _ = call_endpoint()
         assert config["api_url"] == "https://env-url/v1/chat/completions"
 
     def test_no_api_url_env_keeps_file_url(self, call_endpoint, monkeypatch):
-        monkeypatch.delenv("OPENROUTER_URL", raising=False)
+        monkeypatch.delenv("BOOKGEN_LLM_API_URL", raising=False)
         config, _ = call_endpoint()
         assert config["api_url"] == _FILE_URL
 
     def test_env_key_absent_from_raw_config_not_injected(self, call_endpoint, monkeypatch):
-        # OPENROUTER_API_KEY has no corresponding key in the raw config dict,
+        # BOOKGEN_LLM_API_KEY has no corresponding key in the raw config dict,
         # so it must not appear in the config that run_session receives.
-        monkeypatch.setenv("OPENROUTER_API_KEY", "sk-env-key")
+        monkeypatch.setenv("BOOKGEN_LLM_API_KEY", "sk-env-key")
         config, _ = call_endpoint()
         assert "api_key" not in config
 
     def test_transport_receives_env_model(self, call_endpoint, monkeypatch):
-        monkeypatch.setenv("OPENROUTER_MODEL", "env/model")
+        monkeypatch.setenv("BOOKGEN_LLM_MODEL", "env/model")
         _, mock_create = call_endpoint()
         assert mock_create.call_args.kwargs["model"] == "env/model"
 
@@ -109,7 +109,7 @@ class TestEnvModelOverride:
         # When a client is provided externally, create_transport is not called,
         # but the env override must still land in the config dict that
         # run_session receives (session reads model from config, not client).
-        monkeypatch.setenv("OPENROUTER_MODEL", "env/model")
+        monkeypatch.setenv("BOOKGEN_LLM_MODEL", "env/model")
         config, mock_create = call_endpoint(client=MagicMock())
         assert config["model"] == "env/model"
         mock_create.assert_not_called()

@@ -16,7 +16,7 @@ Writer reads no other document. No card files. No core documents. No state files
 
 ## INVOCATION
 
-Run the bridge script from the project root. The script reads `OPENROUTER_API_KEY`
+Run the bridge script from the project root. The script reads `BOOKGEN_LLM_API_KEY`
 from the shell environment, falling back to the repo-root `.env` automatically
 (shell env wins if both are set).
 
@@ -71,7 +71,7 @@ The script (`fiction_loop/tools/invoke_writer.py`) calls src/ tools in this sequ
    → validated config dict with all defaults applied
 
 2. llm.env.resolve_from_env()
-   → env overrides (OPENROUTER_API_KEY, LLM_DEFAULT_TIMEOUT_SECONDS, etc.)
+   → env overrides (BOOKGEN_LLM_API_KEY, BOOKGEN_LLM_DEFAULT_TIMEOUT_SECONDS, etc.)
 
 3. llm.factory.create_transport(...)
    → LLMTransport instance (OpenRouter)
@@ -125,7 +125,7 @@ Exit code 1 = error (see stderr for detail).
 | `FileNotFoundError` (assembled_prompt.md) | read step | Exit 1. Assembler must run first. |
 | `FileNotFoundError` (pipeline_config.toml) | load_config | Exit 1. Config file missing — see INTEGRATION_SPECS.md for required fields. |
 | `ConfigError` | load_config | Exit 1. Print exact field missing or invalid. |
-| `LLMConfigError` | create_transport | Exit 1. Check OPENROUTER_API_KEY env var is set. |
+| `LLMConfigError` | create_transport | Exit 1. Check BOOKGEN_LLM_API_KEY env var is set. |
 
 ---
 

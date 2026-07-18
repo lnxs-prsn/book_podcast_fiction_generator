@@ -4,7 +4,7 @@ Usage:
     python main.py <pdf_path> <output_dir>
 
 Environment:
-    OPENROUTER_API_KEY  required for the API call (via llm.env.resolve_from_env).
+    BOOKGEN_LLM_API_KEY  required for the API call (via llm.env.resolve_from_env).
 """
 
 import logging

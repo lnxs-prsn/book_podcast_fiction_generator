@@ -11,7 +11,7 @@ Only two steps touch Python: the Writer bridge and the living-doc refresh.
 
 ## Prerequisites (once)
 
-1. `OPENROUTER_API_KEY`: the bridge scripts read the shell environment first, and
+1. `BOOKGEN_LLM_API_KEY`: the bridge scripts read the shell environment first, and
    fall back to the repo-root `.env` automatically (shell env wins if both are set).
    `.env` is gitignored and does NOT survive a fresh clone (learned 2026-07-17):
    copy `.env.example` to `.env`, set the key, then verify with

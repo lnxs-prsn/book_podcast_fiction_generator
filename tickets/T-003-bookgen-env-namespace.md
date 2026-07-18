@@ -135,10 +135,13 @@ implementer contract is unchanged: never touch `.env`.
    → green, serially (Raspberry Pi — no `-n`, nothing heavy in parallel).
    pytest is NOT a declared dependency — the `uv run --with` overlay is the
    sanctioned way to get it (T-002 §6); do not add it to pyproject.toml.
-2. `grep -rn "OPENROUTER_\|LLM_PROVIDER\|LLM_DEFAULT_TIMEOUT" src/llm src/tests src/endpoints src/podcast_script_generator fiction_loop --include="*.py" --include="*.md" --include="*.toml"`
-   → zero hits outside `fiction_loop/specs/pipeline_fixes.spec.md` (record,
-   untouched). (`src/tests` added to the scope 2026-07-18 — the original
-   grep missed the write-set file `src/tests/test_llm_factory.py`.)
+2. `grep -rn "OPENROUTER_\|LLM_PROVIDER\|LLM_DEFAULT_TIMEOUT" src/llm src/tests src/endpoints src/podcast_script_generator fiction_loop --include="*.py" --include="*.md" --include="*.toml" | grep -v "fiction_loop/specs/pipeline_fixes.spec.md" | grep -v "BOOKGEN_LLM_" | grep -v "OPENROUTER_TIMEOUT_SECONDS"`
+   → zero lines. (Corrected twice 2026-07-18: `src/tests` added to the scope
+   — the original grep missed write-set file `src/tests/test_llm_factory.py`
+   — and the filters added because the bare pattern substring-matches the NEW
+   `BOOKGEN_LLM_*` names and the out-of-scope `OPENROUTER_TIMEOUT_SECONDS`
+   family in `src/tests/test_engines.py` / `test_slicer_smoke.py`; as
+   originally written it could never pass after a correct rename.)
 3. `grep -rn "OPENROUTER_TIMEOUT_SECONDS" src/engines src/slicer | wc -l`
    → unchanged vs HEAD (scope boundary respected).
 4. (after owner step) `PYTHONPATH=src .venv/bin/python fiction_loop/tools/analyst.py`
@@ -232,3 +235,50 @@ Pathspec-limit the commit to exactly the write-set files (never
   omitted `src/tests/` entirely, so it could never catch a missed rename in
   that write-set file. FIXED — `src/tests` added to the acceptance-2 paths.
 - Ticket otherwise unchanged. Redispatch and implement as written.
+
+### 2026-07-18 — Codex — IMPLEMENTED; STOPPED at acceptance 1
+
+- Read `AGENTS.md`, `fiction_loop/CONTRIBUTING.md`, `HANDOFF.md`, the current
+  handoff, this corrected ticket, and every write-set file from its actual
+  current text immediately before editing. `.env` was not touched or inspected.
+- Implemented the §2 clean-break rename across the full write-set. Preserved the
+  deliberate `src/engines` + `src/slicer` boundary; `openrouter.py` changed only
+  its error-message string and `src/podcast_script_generator/llm/main.py`
+  changed only its module-docstring line.
+- Acceptance 1 command:
+  `PYTHONPATH=src uv run --frozen --with pytest python -m pytest src/ -q`
+  → STOPPED before test collection, exit 2:
+  `error: Could not acquire lock`
+  `Caused by: Could not create temporary file`
+  `Caused by: Read-only file system (os error 30) at path
+  "/home/mr/.cache/uv/.tmpHx0BSw"`
+- Per §7, did not retry with a changed cache location or elevated permissions
+  and did not run acceptance 2, 3, or 6 after acceptance 1 failed.
+- Implementation edits remain coherent in the working tree for senior
+  acceptance/retry. No commit was created.
+
+### 2026-07-18 — senior — acceptance run externally (implementer harness block); implementation COMMITTED on implementer's behalf
+
+- The STOP at acceptance 1 was a harness-side block (read-only
+  `~/.cache/uv` in the implementer sandbox), same family as the handoff's
+  binding fact 2; remedy per precedent: senior runs the gate externally and
+  says so here.
+- Senior verification of the working-tree implementation:
+  - Diff scope: exactly the 17 write-set files ✓ (acceptance 6). Clean
+    break confirmed in `env.py`/`factory.py` — no alias reads.
+  - Acceptance 1: `1 failed, 331 passed`. The single failure
+    (`src/engines/tests/test_factory.py::test_default_splitter_engine_passes_openrouter_timeout_seconds`,
+    TypeError: missing positional `source`) was re-run at HEAD in a scratch
+    worktree and fails IDENTICALLY there — pre-existing defect in the §2
+    OUT-of-scope subsystem, not introduced by this ticket. PASS with this
+    documented exception. (Follow-up candidate for a future engines ticket.)
+  - Acceptance 2: PASS under the corrected command (zero legacy hits; see
+    §5.2 errata — the original pattern substring-matched the new names and
+    could never pass; third ticket correction, all senior-authored).
+  - Acceptance 3: 13 hits, unchanged vs the implementer's pre-edit baseline
+    of 13 ✓.
+- Commit performed by senior on the implementer's behalf because the same
+  harness block prevented `git` index writes in their sandbox; authorship
+  credited via trailer as the ticket specifies. Committing verified work is
+  senior-scope; the implementation itself is Codex's.
+- Next: senior `.env` blind rename (§4 delegation) → acceptance 4–5.

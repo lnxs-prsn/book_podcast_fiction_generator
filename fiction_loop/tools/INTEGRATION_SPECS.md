@@ -249,7 +249,7 @@ def main() -> None:
 | `APIResponseError` | "API error: {e}" | 1 |
 | `ChapterValidationError` | Full exception text | 1 |
 | `ConfigError` | "Config error: {e}" | 1 |
-| `LLMConfigError` | "LLM config error: {e}. Check OPENROUTER_API_KEY." | 1 |
+| `LLMConfigError` | "LLM config error: {e}. Check BOOKGEN_LLM_API_KEY." | 1 |
 | `FileNotFoundError` (prompt) | "assembled_prompt.md not found at {path}. Run Assembler first." | 1 |
 | `FileNotFoundError` (config) | "Config not found: {path}" | 1 |
 | Any unexpected exception | "Unexpected error: {traceback}" | 1 |
@@ -269,7 +269,7 @@ def main() -> None:
 | Output path parent directory does not exist | `Path.write_text()` raises `FileNotFoundError`. Propagates as unexpected error. Output dir should always be `fiction_loop/prompts/` which exists. |
 | Output path already exists | Overwrite silently. Orchestrator always reads the latest file. |
 | `pipeline_config.toml` has wrong `context_limit` for the model | `call_api()` will not catch this — it trusts the config. If `context_limit` is set too high, the overflow guard will never fire even when the model's true limit is exceeded. Set `context_limit` to the model's actual documented context window. |
-| API key missing from env | `create_transport()` raises `LLMConfigError`. Exit 1 with "Check OPENROUTER_API_KEY." |
+| API key missing from env | `create_transport()` raises `LLMConfigError`. Exit 1 with "Check BOOKGEN_LLM_API_KEY." |
 | Model returns `finish_reason="content_filter"` | `call_api()` raises `APIResponseError`. Exit 1. assembled_prompt.md likely contains content the model refuses. Orchestrator must flag for human review. |
 
 ---
@@ -429,10 +429,10 @@ Orchestrator step 8 (Writer) and steps 9-10:
 
 | Variable | Purpose | Required |
 |---|---|---|
-| `OPENROUTER_API_KEY` | API key — any OpenAI-compatible provider (the variable name is legacy; the transport is a generic OpenAI chat-completions client) | Yes |
-| `OPENROUTER_URL` | Endpoint override for non-OpenRouter OpenAI-compatible providers | No |
-| `LLM_PROVIDER` | Transport to use (default: `openrouter`) | No |
-| `LLM_DEFAULT_TIMEOUT_SECONDS` | Overrides `timeout_seconds` in config | No |
+| `BOOKGEN_LLM_API_KEY` | API key — any OpenAI-compatible provider (project-owned name, renamed 2026-07 in T-003) | Yes |
+| `BOOKGEN_LLM_API_URL` | Endpoint override for non-OpenRouter OpenAI-compatible providers | No |
+| `BOOKGEN_LLM_PROVIDER` | Transport to use (default: `openrouter`) | No |
+| `BOOKGEN_LLM_DEFAULT_TIMEOUT_SECONDS` | Overrides `timeout_seconds` in config | No |
 | `NOVEL_MODEL` | Overrides `model` in config | No |
 
 Both bridge scripts load the repo-root `.env` as a **fallback** at startup

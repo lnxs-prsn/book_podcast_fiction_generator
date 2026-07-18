@@ -48,21 +48,21 @@ def check_config() -> dict:
 
 # --- 2. api key ------------------------------------------------------------
 def check_key(cfg: dict) -> None:
-    env_key = os.environ.get("OPENROUTER_API_KEY")
+    env_key = os.environ.get("BOOKGEN_LLM_API_KEY")
     dotenv = R.parent / ".env"
     file_key = None
-    env_model = os.environ.get("OPENROUTER_MODEL")
+    env_model = os.environ.get("BOOKGEN_LLM_MODEL")
     if dotenv.exists():
         for line in dotenv.read_text().splitlines():
-            if line.startswith("OPENROUTER_API_KEY=") and len(line.split("=", 1)[1].strip()) > 5:
+            if line.startswith("BOOKGEN_LLM_API_KEY=") and len(line.split("=", 1)[1].strip()) > 5:
                 file_key = True
-            if line.startswith("OPENROUTER_MODEL="):
+            if line.startswith("BOOKGEN_LLM_MODEL="):
                 env_model = env_model or line.split("=", 1)[1].strip()
     global KEY_PRESENT
     KEY_PRESENT = bool(env_key or file_key)
     if not KEY_PRESENT:
         find("CRITICAL", "no API key in shell env or repo .env",
-             "add OPENROUTER_API_KEY to .env (bridge scripts read it as fallback)")
+             "add BOOKGEN_LLM_API_KEY to .env (bridge scripts read it as fallback)")
     else:
         ok("API key present (shell env)" if env_key else "API key present (.env fallback)")
     if env_model and cfg.get("model") and env_model != cfg["model"]:
@@ -115,7 +115,7 @@ def check_api_log(cfg: dict) -> None:
 # --- 4. bridge .out signatures ----------------------------------------------
 SIGS = [
     ("api_key is required", "CRITICAL", "key missing from process env AND .env fallback",
-     "restore OPENROUTER_API_KEY in .env"),
+     "restore BOOKGEN_LLM_API_KEY in .env"),
     ("Missing Authentication header", "CRITICAL",
      "key was SENT but is INVALID (verified provider quirk — misleading message)", "rotate the API key"),
     ("No cookie auth credentials found", "CRITICAL", "request went out with NO auth header",
@@ -125,9 +125,9 @@ SIGS = [
      "fix price_per_1m_* or raise caps / --ignore-cost-limit deliberately"),
     ("Rate limit", "WARN", "provider rate limiting", "wait / lower frequency"),
     ("returned 404", "CRITICAL",
-     "endpoint path wrong — a shell-exported OPENROUTER_URL (base url, no "
+     "endpoint path wrong — a shell-exported BOOKGEN_LLM_API_URL (base url, no "
      "/v1/chat/completions) overrides .env",
-     "run `echo $OPENROUTER_URL` in the run shell; unset it or export the full "
+     "run `echo $BOOKGEN_LLM_API_URL` in the run shell; unset it or export the full "
      "/v1/chat/completions url"),
 ]
 
@@ -157,7 +157,7 @@ def check_bridge_outs() -> None:
                      "missing key, but a key is present NOW — stale receipt",
                      "safe to re-run step 8; a new bridge run overwrites this .out")
             elif needle == "returned 404":
-                override = os.environ.get("OPENROUTER_URL", "")
+                override = os.environ.get("BOOKGEN_LLM_API_URL", "")
                 if override and not urlsplit(override).path.rstrip("/").endswith(
                     "/chat/completions"
                 ):

@@ -112,7 +112,7 @@ def main() -> None:
             )
         except LLMConfigError as e:
             print(
-                f"LLM config error: {e}. Check OPENROUTER_API_KEY.",
+                f"LLM config error: {e}. Check BOOKGEN_LLM_API_KEY.",
                 file=sys.stderr,
             )
             sys.exit(1)

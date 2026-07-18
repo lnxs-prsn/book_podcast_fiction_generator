@@ -1,4 +1,4 @@
-"""Tests for llm.factory — LLM_DEFAULT_TIMEOUT_SECONDS env var read and forwarded."""
+"""Tests for llm.factory — BOOKGEN_LLM_DEFAULT_TIMEOUT_SECONDS forwarding."""
 
 from unittest.mock import patch
 
@@ -10,7 +10,7 @@ from llm.factory import create_client, create_transport
 
 @patch("llm.providers.openrouter.OpenRouterClient")
 def test_create_client_uses_llm_default_timeout_seconds(mock_client):
-    with patch.dict("os.environ", {"LLM_DEFAULT_TIMEOUT_SECONDS": "90.5"}, clear=True):
+    with patch.dict("os.environ", {"BOOKGEN_LLM_DEFAULT_TIMEOUT_SECONDS": "90.5"}, clear=True):
         create_client(api_key="k")
     mock_client.assert_called_once()
     assert mock_client.call_args.kwargs["timeout"] == 90.5
@@ -18,7 +18,7 @@ def test_create_client_uses_llm_default_timeout_seconds(mock_client):
 
 @patch("llm.providers.openrouter.OpenRouterClient")
 def test_create_client_explicit_timeout_overrides_env(mock_client):
-    with patch.dict("os.environ", {"LLM_DEFAULT_TIMEOUT_SECONDS": "90.5"}, clear=True):
+    with patch.dict("os.environ", {"BOOKGEN_LLM_DEFAULT_TIMEOUT_SECONDS": "90.5"}, clear=True):
         create_client(api_key="k", timeout=30.0)
     assert mock_client.call_args.kwargs["timeout"] == 30.0
 
@@ -33,7 +33,7 @@ def test_create_client_no_timeout_when_env_unset(mock_client):
 
 def test_create_client_rejects_invalid_llm_default_timeout():
     with patch.dict(
-        "os.environ", {"LLM_DEFAULT_TIMEOUT_SECONDS": "not-a-number"}, clear=True
+        "os.environ", {"BOOKGEN_LLM_DEFAULT_TIMEOUT_SECONDS": "not-a-number"}, clear=True
     ):
         with pytest.raises(LLMConfigError):
             create_client(api_key="k")
@@ -41,14 +41,14 @@ def test_create_client_rejects_invalid_llm_default_timeout():
 
 @patch("llm.providers.openrouter.OpenRouterClient")
 def test_create_transport_uses_llm_default_timeout_seconds(mock_client):
-    with patch.dict("os.environ", {"LLM_DEFAULT_TIMEOUT_SECONDS": "45"}, clear=True):
+    with patch.dict("os.environ", {"BOOKGEN_LLM_DEFAULT_TIMEOUT_SECONDS": "45"}, clear=True):
         create_transport(api_key="k")
     assert mock_client.call_args.kwargs["timeout"] == 45.0
 
 
 @patch("llm.providers.openrouter.OpenRouterClient")
 def test_create_transport_explicit_timeout_overrides_env(mock_client):
-    with patch.dict("os.environ", {"LLM_DEFAULT_TIMEOUT_SECONDS": "45"}, clear=True):
+    with patch.dict("os.environ", {"BOOKGEN_LLM_DEFAULT_TIMEOUT_SECONDS": "45"}, clear=True):
         create_transport(api_key="k", timeout=10.0)
     assert mock_client.call_args.kwargs["timeout"] == 10.0
 
@@ -62,7 +62,7 @@ def test_create_client_forwards_api_key(mock_client):
 
 def test_create_transport_rejects_invalid_llm_default_timeout():
     with patch.dict(
-        "os.environ", {"LLM_DEFAULT_TIMEOUT_SECONDS": "bad-value"}, clear=True
+        "os.environ", {"BOOKGEN_LLM_DEFAULT_TIMEOUT_SECONDS": "bad-value"}, clear=True
     ):
         with pytest.raises(LLMConfigError):
             create_transport(api_key="k")

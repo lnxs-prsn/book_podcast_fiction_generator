@@ -78,7 +78,7 @@ class OpenRouterClient:
             max_tokens = int(max_tokens)
         except (TypeError, ValueError) as e:
             raise LLMConfigError(
-                f"OPENROUTER_MAX_TOKENS must be an integer, got: {max_tokens!r}"
+                f"BOOKGEN_LLM_MAX_TOKENS must be an integer, got: {max_tokens!r}"
             ) from e
 
         if retry_after_override is not None:

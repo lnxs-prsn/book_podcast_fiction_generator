@@ -281,7 +281,7 @@ with tempfile.TemporaryDirectory() as tmp:
     """)
 
     env = os.environ.copy()
-    env["OPENROUTER_API_KEY"] = "fake-key-for-test"
+    env["BOOKGEN_LLM_API_KEY"] = "fake-key-for-test"
 
     # Run main.py as a subprocess with call_api monkey-patched via a wrapper.
     wrapper = textwrap.dedent(f"""
