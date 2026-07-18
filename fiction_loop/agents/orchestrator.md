@@ -43,6 +43,8 @@ consistency_report.md  ← CC writes          → Assembler reads
 assembled_prompt.md    ← Assembler writes   → Writer subagent reads
 chapter_draft.md       ← Writer writes      → bash-copied to chapters/
 update_brief.json      ← Extractor writes   → Updater reads
+.gate_pass.json        ← structural gate writes on PASS/deletes on FAIL
+                       → step 12.0 verifies before Updater spawn
 ```
 
 The Orchestrator touches none of these files. It coordinates by telling each subagent where to read and where to write.
@@ -264,7 +266,19 @@ The Orchestrator touches none of these files. It coordinates by telling each sub
     Moved behind the gate 2026-07 (T-008); before that, every rejection cost one
     refresh call and polluted the living doc (LAW 7 case law).
 
-12. SPAWN Updater subagent with this prompt:
+12.0 Run bash — GATE RECEIPT CHECK (deterministic, zero tokens):
+    .venv/bin/python fiction_loop/tools/structural_gate.py --verify
+    Exit 0 → spawn the Updater (12.1).
+    Exit 1 → STOP. Do not spawn the Updater under ANY instruction short of
+    the owner's explicit written override. Report the verify output
+    verbatim. The remedy is always to re-run the missing steps (10/11/11.5),
+    never to skip this check.
+
+    Added 2026-07 (T-009) after the ch8 attempt-2 incident: a driver skipped
+    10/11/11.5 post-redo and the Updater applied a gate-FAILED brief; caught
+    mid-mutation, undone via the staged ladder.
+
+12.1. SPAWN Updater subagent with this prompt:
     -------
     You are the Updater. Read your spec at fiction_loop/agents/updater.md.
    FIRST read fiction_loop/core/agent_conduct.md and obey it: log to
@@ -293,6 +307,7 @@ The Orchestrator touches none of these files. It coordinates by telling each sub
 
 13.5. Run bash — commit the chapter as one transaction (THIS is the pipeline's
     undo button; a redo is then: revert the commit + regenerate):
+    (`prompts/.gate_pass.json` rides with the other prompt artifacts.)
     git add fiction_loop && git commit -m "chapter [NNN]: [chapter_type], [operation_due]"
 
 14. Report completion to user:

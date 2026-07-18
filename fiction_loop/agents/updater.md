@@ -15,6 +15,10 @@
 
 ## UPDATE SEQUENCE
 
+Precondition: the orchestrator has just run `structural_gate.py --verify`
+with exit 0 (step 12.0). If you cannot confirm this from the conversation,
+STOP and return BLOCKED — you are the only non-idempotent agent.
+
 Execute in this order. Report each step to Orchestrator as it completes.
 
 ```

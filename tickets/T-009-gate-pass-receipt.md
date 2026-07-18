@@ -115,3 +115,43 @@ rides along like update_brief.json; no .gitignore change).
 Trailers: `Ticket: T-009` / `Implemented-by: <Codex|Qwen>`.
 
 ## 5. Implementer log (append below; never delete the ticket body)
+
+### 2026-07-18 — Codex — IMPLEMENTED
+
+- Timing/dependency gates: PASS. T-007 (`b8f0b7c`) and T-008 (`3ab5f5a`)
+  are merged; current handoff §9 records chapter 008 formally abandoned.
+  Paid calls: none. Repository state and parked pipeline artifacts were not
+  modified.
+- `structural_gate.py` now hashes the exact brief bytes, writes
+  `prompts/.gate_pass.json` only on PASS, and deletes any prior receipt
+  before reporting gate FAIL or an exception. Read-only `--verify` checks
+  receipt presence, PASS verdict, and the current brief hash.
+- Orchestrator step 12.0 deterministically verifies the receipt before the
+  Updater spawn; updater.md carries the matching non-idempotent-agent
+  precondition. The registry records producer, consumer, protected invariant,
+  and firing evidence. The chapter transaction text explicitly records that
+  the receipt rides with the prompt artifacts.
+- Live parked-brief FAIL acceptance:
+  `STRUCTURAL GATE: FAIL` with
+  `anchor absent from a gate chapter (owner rule D3/F16)`; exit 1;
+  `.gate_pass.json` absent afterward. `--verify` printed exactly
+  `no receipt` and exited 1.
+- Scratch-tree PASS/tamper acceptance (`/tmp/t009-scratch`, no repo artifact
+  edits): after changing only the copied brief's rejected anchor boolean so
+  the complete deterministic gate legitimately passed, the gate wrote a
+  receipt for chapter 008 and `--verify` printed
+  `gate receipt verified: PASS` with exit 0. Adding one whitespace byte to
+  the copied brief then made `--verify` print exactly
+  `hash mismatch — brief changed since gate PASS` and exit 1.
+- Static acceptance: orchestrator step 12.0 precedes the 12.1 Updater SPAWN;
+  updater precondition is present; `py_compile` and `git diff --check` PASS.
+  LAW 4 phrase audit found the new machinery only in the four ticket files;
+  other gate/step-12 hits describe the existing pipeline order and need no
+  receipt-contract change.
+- Sanctioned serial suite:
+  `PYTHONPATH=src uv run --frozen --with pytest python -m pytest src/ -q` →
+  expected `1 failed, 331 passed`; sole failure is the documented
+  out-of-scope `test_default_splitter_engine_passes_openrouter_timeout_seconds`
+  (`default_splitter_engine()` missing `source`).
+- First live PASS receipt and step-12.0 log evidence remain intentionally
+  deferred to the next successful owner-started chapter run, per §3.3.
