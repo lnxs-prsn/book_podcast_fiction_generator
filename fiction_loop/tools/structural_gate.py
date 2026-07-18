@@ -51,5 +51,7 @@ if problems:
     for p in problems:
         print(f"  - {p}")
     print("Options: redo generation (step 8) / redo from brief (step 7) / owner accepts explicitly.")
+    print("If step 10 (living-doc refresh) already ran: first")
+    print("  git restore --source=HEAD -- fiction_loop/core/living_document.md")
     sys.exit(1)
 print(f"STRUCTURAL GATE: PASS (arc {arc}, quota {quota}).")

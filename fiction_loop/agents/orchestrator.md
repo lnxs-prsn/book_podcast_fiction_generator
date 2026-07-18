@@ -259,8 +259,10 @@ The Orchestrator touches none of these files. It coordinates by telling each sub
     Exit 0 → proceed to step 12.
     Exit 1 → STOP before the Updater and report its output verbatim to the user
     (cast quota / anchor presence / echo presence / F14 progression / F15 newcomer).
-    State has not been touched; per the STAGED UNDO ladder a fix costs only
-    "redo generation" or "redo from brief". Await the user's answer.
+    State has not been touched, but core/living_document.md HAS been if step 10
+    ran — the redo rungs begin with its restore (see USER COMMANDS); per the
+    STAGED UNDO ladder a fix costs only "redo generation" or "redo from brief".
+    Await the user's answer.
 
 12. SPAWN Updater subagent with this prompt:
     -------
@@ -332,8 +334,22 @@ analyst
 
 redo generation
   → Use when: the draft is bad but the brief is fine, and step 12 has NOT run.
-  → Re-run step 8 only (assembled_prompt.md is intact on disk). Fresh retry budget.
-  → Cost: one API call. No git involved — nothing was mutated.
+  → IF step 10 (living-doc refresh) already ran for the rejected attempt
+    (its log fiction_loop/logs/chapter_[NNN]/10_living_doc_refresh.log shows
+    BRIDGE_EXIT:0): FIRST run bash:
+      git restore --source=HEAD -- fiction_loop/core/living_document.md
+    (HEAD predates the run — one chapter = one commit, nothing is committed
+    mid-run — so this is the exact pre-run document; the refresh re-runs
+    legitimately on the new draft. Receipt: the tool's pre-refresh
+    core/living_document.md.bak.* remains on disk.)
+  → Then re-run step 8 only (assembled_prompt.md is intact on disk). Fresh
+    retry budget.
+  → Cost: one API call (+ the refresh call re-run at step 10 — the rejected
+    attempt's refresh call is sunk cost, LAW 7 known debt until T-008).
+  → Restore condition added 2026-07 (T-007) after the ch8 rejection polluted
+    the living doc for real; becomes vestigial when T-008 moves the refresh
+    behind the gate — keep it as defense-in-depth (it self-neutralizes: the
+    condition can no longer be true).
 
 redo from brief
   → Use when: the brief itself was wrong, and step 12 has NOT run.

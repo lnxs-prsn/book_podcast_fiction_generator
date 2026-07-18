@@ -121,3 +121,24 @@ conditional in wording, deterministic in emission.)
 Trailers: `Ticket: T-007` / `Implemented-by: <Codex|Qwen>`.
 
 ## 5. Implementer log (append below; never delete the ticket body)
+
+### 2026-07-18 — Codex
+
+- Timing gate: PASS. Current handoff §9 records chapter 008 formally
+  abandoned, unlocking the between-runs ticket queue.
+- Implemented §2.1–§2.4 exactly in the declared three-file write-set.
+- Acceptance 1: PASS — `git restore` appears in both the redo-generation
+  and undo-state-application rungs.
+- Acceptance 2: PASS — `nothing was mutated` has zero hits.
+- Acceptance 3: PASS — RUN.md contains the amended living-doc summary.
+- Acceptance 4: PASS with a dispatch-time premise update. The current
+  abandoned-ch8 brief correctly exits 1 for `anchor absent` and emits the
+  new hint. For the PASS branch, exported committed chapter-007 inputs from
+  `0b3b362` to `/tmp/t007-pass`, copied only the modified gate into that
+  scratch tree, and ran it there: exit 0,
+  `STRUCTURAL GATE: PASS (arc 1, quota 3).`, with no hint. No state changed.
+- Acceptance 5: PASS at the documented baseline — `1 failed, 331 passed`;
+  sole failure:
+  `src/engines/tests/test_factory.py::test_default_splitter_engine_passes_openrouter_timeout_seconds`
+  (`default_splitter_engine()` missing `source`).
+- Paid calls: none.
