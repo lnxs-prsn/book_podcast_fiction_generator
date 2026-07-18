@@ -14,7 +14,11 @@ Write-set: fiction_loop/agents/orchestrator.md,
            fiction_loop/CONTRIBUTING.md (LAW 7 standing-violation note only),
            fiction_loop/core/field_registry.md,
            fiction_loop/specs/intake_factory.spec.md (auto-redo precondition
-           note only)
+           note only),
+           fiction_loop/tools/INTEGRATION_SPECS.md (§5 + §6 order text —
+           ADDED on redispatch, §3.9),
+           fiction_loop/core/pipeline_stage_manifest.md (order table +
+           Extractor input list — ADDED on redispatch, §3.10)
 Hot-files: orchestrator.md, extractor.md (heavily edited this month:
            T-004/005/006/007)
 State-access: none — no state/, prompts/, chapters/, core/living_document.md,
@@ -125,7 +129,52 @@ record each disposition in §5. Known hits at ticket time: orchestrator.md
 + dead hint), CONTRIBUTING.md LAW 7 (resolve), intake_factory.spec.md:215
 (satisfy), field_registry.md (rows), analyst.py (log-signature tables — its
 step-10 log parsing is position-independent; verify and exempt with a note),
-tools/INTEGRATION_SPECS.md (check; update only if it states the order).
+tools/INTEGRATION_SPECS.md (WRITE — §3.9, it states the old order in two
+places), core/pipeline_stage_manifest.md (WRITE — §3.10, order table +
+Extractor input list).
+
+**3.9 tools/INTEGRATION_SPECS.md** (added on redispatch — the original
+ticket listed this as a conditional "check" and omitted it from the
+write-set; the 2026-07-18 Codex audit correctly found it states the old
+order and STOPPED per LAW 7. Two edits, text only, no code):
+- §5 "refresh_living_doc.py — CONTRACT SPEC", **When called** (~line 283):
+  change "AFTER step 9 (chapter saved) and BEFORE step 11 (Extractor
+  generates update_brief). The updated living_document.md gives the
+  Extractor richer context when writing the update_brief." to state the
+  new order — refresh runs AFTER the structural gate passes (step 11.5)
+  and BEFORE the Updater (step 12); DELETE the "richer context to the
+  Extractor" rationale entirely (the Extractor no longer consumes
+  living_document.md — §3.2). Keep the "optional but recommended / drift"
+  note.
+- §6 "HOW ORCHESTRATOR INTEGRATES THE TOOLS" (~lines 390–422): the step-10
+  refresh block currently sits between step 9 (save) and step 11
+  (Extractor) and its exit-0 line reads "Proceed to step 11 (Extractor)."
+  Move/renumber the illustrative sequence so refresh follows the gate and
+  precedes the Updater, matching orchestrator.md's new order (11 → 11.5 →
+  10 → 12; step numbers kept per M-15). Exit-0 text becomes "Proceed to
+  step 12 (Updater)." Mirror orchestrator.md exactly — this section is a
+  worked example of it, so it must not diverge.
+
+**3.10 core/pipeline_stage_manifest.md** (added on redispatch — same
+audit, same STOP; this is a live data-availability contract):
+- The order table (lines 9–19): the manifest is keyed by orchestrator
+  step number and step numbers are KEPT, but the "Guaranteed available"
+  semantics change. Row **11 Extractor**: REMOVE `living_document.md`
+  from its input list (the Extractor no longer reads it — §3.2), and its
+  note must no longer imply refresh ran before it. Row **10
+  refresh_living_doc.py**: it now runs AFTER the gate and produces the
+  refreshed doc for the Updater's downstream reference, NOT as Extractor
+  context. Make the table unambiguous about execution order vs step
+  number — annotate that execution order is 8→9→11→11.5→10→12 while step
+  labels are retained (point at orchestrator.md as the authority).
+- The step-11.5 structural gate is absent from this table today; adding a
+  row for it is OPTIONAL and OUT OF SCOPE for T-008 (it produces no data
+  field this manifest tracks until T-009's pass-receipt lands). Do not
+  add it here — leave for T-009 if that ticket needs it. Note the
+  omission in §5 so it is a recorded decision, not a miss.
+- The "Why this exists" prose (lines 21–32): verify it makes no claim
+  that depends on the old refresh-before-Extractor order; if clean,
+  exempt with a note in §5. Do not rewrite it speculatively.
 
 ## 4. Acceptance (ALL must pass)
 
@@ -145,6 +194,18 @@ tools/INTEGRATION_SPECS.md (check; update only if it states the order).
    → the LAW 7 instance now reads as resolved (T-008 named); no other law
    touched.
 6. Registry + spec notes present (§3.6, §3.7); §3.8 disposition list in §5.
+6a. **INTEGRATION_SPECS.md (§3.9):**
+   `grep -n "richer context" fiction_loop/tools/INTEGRATION_SPECS.md` → 0
+   hits (rationale deleted). `grep -n "Proceed to step 11 (Extractor)"
+   fiction_loop/tools/INTEGRATION_SPECS.md` → 0 hits; the §6 refresh
+   block's exit-0 line now names step 12 (Updater). The §5 "When called"
+   line names the gate (11.5) and Updater (12), not "BEFORE step 11".
+6b. **pipeline_stage_manifest.md (§3.10):**
+   `grep -n "living_document" fiction_loop/core/pipeline_stage_manifest.md`
+   → hits only in the refresh (step-10) row, NOT in the Extractor
+   (step-11) input list. The table or its note states execution order
+   8→9→11→11.5→10→12. §5 records the deliberate omission of a step-11.5
+   row.
 7. **Live validation (next owner-started chapter run, not this ticket):**
    watch two receipts and append them to §5 after the run: (a) the run's
    log sequence shows 11 → 11.5 → 10 → 12; (b) on any future gate FAIL,
@@ -170,3 +231,45 @@ Trailers: `Ticket: T-008` / `Implemented-by: <Codex|Qwen>`.
   coherent.
 
 ## 7. Implementer log (append below; never delete the ticket body)
+
+### 2026-07-18 — Codex — BLOCKED
+
+- Timing/dependency gates: PASS. T-007 is merged at `b8f0b7c`; current handoff
+  §9 records chapter 008 abandoned and the between-runs queue unlocked.
+- Began the complete §3 reorder in the declared write-set, then ran the required
+  §3.8 LAW 4 audit before validation.
+- BLOCKER: the audit found live old-order contracts outside this ticket's
+  write-set:
+  - `fiction_loop/tools/INTEGRATION_SPECS.md:283` says refresh runs before
+    Extractor and supplies it richer context; line 418 says refresh proceeds to
+    step 11. Section 3.8 explicitly says to update this file if it states the
+    order, but the ticket does not authorize writing it.
+  - `fiction_loop/core/pipeline_stage_manifest.md:17-18` places refresh at 10
+    before Extractor at 11 and lists `living_document.md` as an Extractor input.
+    It is a live data-availability contract and is also absent from the
+    write-set.
+- Expanding the write-set or exempting contradictory live contracts would
+  violate the ticket's write-set and LAW 4 respectively. Per §§6–7, STOPPED
+  rather than improvising and reverted every partial implementation edit.
+- Final tree is coherent: only this required implementer-log entry is changed.
+  Paid calls: none. Acceptance suite not run because §3 could not be completed.
+
+### 2026-07-18 — senior — REDISPATCH (blocker valid; ticket defect fixed)
+
+The STOP was correct. Both flagged files are live old-order contracts and,
+under LAW 7's all-or-nothing rule, a partial reorder that leaves them
+stating the old order is the exact failure the ticket forbids — reverting
+was the right call, not over-caution. The defect was mine: §3.8 named
+`INTEGRATION_SPECS.md` only as a conditional "check" and left it out of
+the write-set, and `pipeline_stage_manifest.md` was omitted entirely.
+Fixed on redispatch:
+- Write-set: both files ADDED (see header).
+- §3.9: exact edits for INTEGRATION_SPECS.md (§5 "When called" + §6 worked
+  sequence — text only, mirror orchestrator.md).
+- §3.10: exact edits for pipeline_stage_manifest.md (Extractor input list
+  loses living_document.md; refresh row + execution-order annotation;
+  step-11.5 row explicitly OUT OF SCOPE, record in §5).
+- §6a / §6b: grep-based acceptance proofs for both.
+The reorder remains all-or-nothing and BETWEEN runs; T-007 already merged
+(`b8f0b7c`). Re-run the FULL §3 (all items) from a clean tree — do not
+resume the reverted partial. Nothing else in the ticket changed.
