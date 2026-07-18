@@ -322,3 +322,27 @@ records this; the dispatched tickets are the authority.
 only if wanted. Then ch8 restarts on the new machine and enters at the
 revision rung for any surgical miss (T-012 existing-draft path), never a
 blind fourth roll. Ch8 attempt-3 fixture preserved at `cf70a1b`.
+
+## 12. ADDENDUM (2026-07-19) — T-012 redispatched twice-over (both blockers valid); T-014 preemptively fixed
+
+Codex STOPPED on T-012 with two blockers, BOTH valid against the ticket as
+written (receipts in T-012 §7):
+- §3.5's STOP-condition grep was too broad — it flagged
+  `structural_gate.py:105`'s redo-only option list, which is actually
+  CORRECT (gate failures are structural/whole-scene → `redo generation`;
+  revision applies only to prose-check/step-8 surgical misses). Fixed by
+  EXEMPTING that line explicitly and narrowing the STOP-condition; write-set
+  UNCHANGED.
+- §4.5 required a pytest in a nonexistent invoke_writer test module. Rewrote
+  to the repo's `python -c` import pattern (T-010 CLI-test precedent);
+  verified the import path and the difflib ratio assertions dry-run green.
+Same test-module defect class preemptively fixed in T-014 §4.3 (CLI
+`--check-prose` guard, not a "unit"). Commits: `4b1e4b7` (T-012),
+`d6f83ce` (T-014).
+
+**T-012 is now clean to implement from `tickets/T-012-targeted-revision-rung.md`.**
+Queue unchanged: T-012 (foundation) → T-013 (any time) → T-014 (optional).
+Root-cause lesson (recurring, now 3×): acceptance commands AND STOP-condition
+greps must be dry-run against HEAD before dispatch — including verifying that
+any named test harness exists and that broad audit greps exempt
+correct-as-is contracts. Extends handoff §2.7.
