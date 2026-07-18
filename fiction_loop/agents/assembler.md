@@ -64,15 +64,44 @@ fiction_loop/cards/concept/[operation_id].json (physical_anchor, canonical_probl
      manifestation form — NEVER remove the anchor from a gate chapter (owner rule
      D3/F16: she appears in every gate chapter; only the form varies)
 
-8. Append the HARD RULES block (verbatim, below) as the LAST section of the
+8. Immediately before the HARD RULES block, append an
+   `ANCHOR_REQUIREMENT_JSON` fenced machine block using the contract below.
+   When `anchor_appears` is true, copy into `anchor_required_prose` each exact,
+   discrete phrase whose presence is required for the planned anchor scene.
+   These are values the Assembler has already chosen for the anchor section;
+   do not derive them by parsing that section. When `anchor_appears` is false,
+   emit an empty list.
+
+9. Append the HARD RULES block (verbatim, below) as the LAST section of the
    assembled prompt — recency position, for every chapter type. Fill the
    forbidden-strings list with every approach-type label used anywhere in this
    brief's internal notes.
 
-9. Write the complete file to /prompts/assembled_prompt.md
+10. Write the complete file to /prompts/assembled_prompt.md
 
-10. Report to Orchestrator: assembled_prompt.md written, chapter number confirmed
+11. Report to Orchestrator: assembled_prompt.md written, chapter number confirmed
 ```
+
+---
+
+## ANCHOR REQUIREMENT MACHINE BLOCK
+
+Emit exactly one block immediately before `## HARD RULES`:
+
+````markdown
+<!-- ANCHOR_REQUIREMENT_JSON -->
+```json
+{
+  "anchor_appears": true,
+  "anchor_required_prose": ["<exact required phrase>", "..."]
+}
+```
+<!-- /ANCHOR_REQUIREMENT_JSON -->
+````
+
+This is a machine contract, not an additional source of story content. The
+phrases are exact copies of discrete requirements already chosen for the anchor
+scene. Use `false` and `[]` when the pointer says the anchor does not appear.
 
 ---
 

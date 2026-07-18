@@ -198,6 +198,11 @@ The Orchestrator touches none of these files. It coordinates by telling each sub
      OR: Error: [error type] — [one-line description from stderr]
    -------
 
+   On Success, run `invoke_writer.py --check-prose` on
+   `fiction_loop/prompts/chapter_draft.md` before step 9. A nonzero result uses
+   the prose-check routing below; `anchor_absent` goes directly to
+   `redo generation`.
+
    On Error return:
      ContextOverflowError  → ask Assembler to trim assembled_prompt.md, retry step 7
      CostLimitError        → alert user, wait for explicit --ignore-cost-limit instruction
@@ -205,6 +210,9 @@ The Orchestrator touches none of these files. It coordinates by telling each sub
      LabelLeakError / prose-check FAIL
                            → run `--check-prose`, then `--revise` with its
                              deficiency report; re-check after each revision.
+                             If any deficiency is `anchor_absent`, skip revision
+                             and use `redo generation` directly: a missing anchor
+                             scene is invention, not a surgical prose repair.
                              Revise at most twice. On a second failure or any
                              RevisionOverreachError, fall to `redo generation`;
                              owner may then accept explicitly or order redo from brief
@@ -363,6 +371,8 @@ revise
   → Use when: step 8 has a checkable, surgical prose miss and the brief is fine.
   → Run `invoke_writer.py --check-prose` on the draft, then run
     `invoke_writer.py --revise` with `prompts/prose_deficiencies.json`.
+  → `anchor_absent` skips this rung and routes directly to `redo generation`
+    (ch8 attempts 1 and 3 omitted the required scene).
   → Re-run `--check-prose`; revise at most twice total. If the second attempt
     still fails, or RevisionOverreachError fires, use `redo generation`.
   → Do not use for a missing whole scene; skip directly to `redo generation`.

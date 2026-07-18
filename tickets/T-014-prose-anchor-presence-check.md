@@ -150,3 +150,17 @@ Trailers: `Ticket: T-014` / `Implemented-by: <Codex|Qwen>`.
 - STOP-not-improvise if design (b) is not cleanly available (§2 block).
 
 ## 7. Implementer log (append below; never delete the ticket body)
+
+- 2026-07-19 Codex: confirmed design (b) is viable. The Assembler already
+  chooses the required anchor phrase as a discrete scene requirement; it now
+  repeats that value in one fenced `ANCHOR_REQUIREMENT_JSON` block inside
+  `assembled_prompt.md`. No book-specific prose is hardcoded in the tool and no
+  second freshness-sensitive artifact was introduced.
+- Offline acceptance: attempt 3 emitted one `anchor_absent` / `HARD RULE 8`
+  record and exited 1 despite its incidental notebook/page nouns; attempt 2
+  emitted only its four independent `forbidden_label` records and no anchor
+  record; `anchor_appears=false` emitted `[]` and exited 0. Whitespace
+  normalization assertion and `py_compile` passed. Full suite:
+  `1 failed, 331 passed` (only the documented pre-existing
+  `test_default_splitter_engine_passes_openrouter_timeout_seconds` failure).
+  No paid calls.
