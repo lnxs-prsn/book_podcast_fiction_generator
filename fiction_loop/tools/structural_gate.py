@@ -6,6 +6,8 @@ Updater applies anything. Word floors catch truncation; this catches under-popul
 (the failure mode word counts cannot see — chapter 004 passed the floor with a third
 of its ordered cast). Exit 0 = pass, exit 1 = under-populated (report to user:
 accept or redo; state untouched, redo costs only steps 7-11).
+At FAIL time both state and the living document are untouched; no paid post-writer
+refresh has run.
 Stdlib only, zero tokens. Reads counts/booleans — never prose.
 """
 from __future__ import annotations
@@ -51,7 +53,5 @@ if problems:
     for p in problems:
         print(f"  - {p}")
     print("Options: redo generation (step 8) / redo from brief (step 7) / owner accepts explicitly.")
-    print("If step 10 (living-doc refresh) already ran: first")
-    print("  git restore --source=HEAD -- fiction_loop/core/living_document.md")
     sys.exit(1)
 print(f"STRUCTURAL GATE: PASS (arc {arc}, quota {quota}).")

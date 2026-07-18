@@ -121,11 +121,11 @@ loops. *(Owner rule, 2026-07-02; the prevention layer eliminated all three
 chapter-1 violation classes in one move.)*
 
 **LAW 7 — GATES BEFORE SPEND.** Deterministic verification runs before the next
-paid call and before any state mutation, wherever the data allows. *(Known
-standing violation, documented and accepted for now: the living-doc refresh
-(paid) runs at step 10, before the structural gate at 11.5 — every rejection
-wastes one call and pollutes the living doc. The mapped fix is a 6-consumer
-reorder; do not "quick-fix" it partially.)*
+paid call and before any state mutation, wherever the data allows. *(Resolved
+standing violation: the paid living-doc refresh formerly ran before the structural
+gate, so every rejection wasted one call and polluted the living doc; this fired
+live on chapter 008. T-008 fixed the violation with the complete consumer reorder:
+the gate now runs before every paid post-Writer call.)*
 
 **LAW 8 — STATE MUTATES ONCE, TRANSACTIONALLY.** Only the Updater (step 12)
 writes L4, and one chapter is one commit. Anything else uses the staged undo

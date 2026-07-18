@@ -5,6 +5,8 @@ Maintainer reference, not read by agents at chapter-generation time.
 Before writing or editing any check in `consistency_checker.md`, or any read in another
 agent spec, confirm here that the field you're checking is actually guaranteed to exist
 at the step your agent runs. Step numbers match `orchestrator.md`'s STEPS section.
+Step labels are retained, while execution order is 8→9→11→11.5→10→12; see
+`orchestrator.md` for the authoritative order.
 
 | Orchestrator step | Agent | Produces | Guaranteed available at this step |
 |---|---|---|---|
@@ -14,8 +16,8 @@ at the step your agent runs. Step numbers match `orchestrator.md`'s STEPS sectio
 | 7.5 | Consistency Checker (post-assembly pass) | post-assembly FLAG line | `assembled_prompt.md`, `process_state.json`, `mystery_anchor.json` — V3, C4, A2b, C3b run HERE, not at step 5 (their inputs are Assembler outputs) |
 | 8 | Writer | `chapter_draft.md` | **chapter prose now exists** for the first time in the pipeline |
 | 9 | (bash copy) | `chapters/chapter_[NNN].md` | prose persisted |
-| 10 | `refresh_living_doc.py` | updated `living_document.md` | prose-derived narrative state |
-| 11 | Extractor | `update_brief.json` | prose (chapter file), `assembled_prompt.md`, `master_state.json`, `process_state.json`, `mystery_anchor.json`, `concept_curriculum.md`, `living_document.md` — this is the **first and only** stage prose is read by anything other than the Writer |
+| 10 | `refresh_living_doc.py` | updated `living_document.md` | runs after structural-gate PASS; produces prose-derived narrative state for downstream Updater reference |
+| 11 | Extractor | `update_brief.json` | prose (chapter file), `assembled_prompt.md`, `master_state.json`, `process_state.json`, `mystery_anchor.json`, `concept_curriculum.md` — this is the **first and only** stage prose is read by anything other than the Writer |
 | 12 | Updater | card/state file writes | `update_brief.json` only — never reads prose (see `updater.md` CRITICAL RULES) |
 
 ## Why this exists

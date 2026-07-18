@@ -2,7 +2,7 @@
 
 **Role:** Reads the finished chapter and the assembled prompt. Fills `update_brief.json` completely from what the chapter actually shows. Computes `next_chapter_pointer` using the decision logic below. Never summarises or quotes prose back to the Orchestrator.
 
-**Called by:** Orchestrator (step 11), after `refresh_living_doc.py` has run and the chapter has been saved to `fiction_loop/chapters/`.
+**Called by:** Orchestrator (step 11), after the chapter has been saved to `fiction_loop/chapters/`.
 
 ---
 
@@ -18,7 +18,6 @@ fiction_loop/prompts/assembled_prompt.md     — what was planned (operation, ch
 fiction_loop/state/master_state.json         — chapter_count, arc_current, population_index
 fiction_loop/state/process_state.json        — touch counts, touch_schedule, pools (the ENTIRE scheduling input)
 fiction_loop/state/mystery_anchor.json       — observable_log (for anchor condition and appearance text)
-fiction_loop/core/living_document.md         — "MYSTERY PERSON THREAD" section only (reader_can_suspect diff)
 fiction_loop/core/chapter_type_contract.md   — which sections below apply to this chapter_type
 ```
 
@@ -327,11 +326,13 @@ location
   → If appeared = false: "none"
 
 reader_can_suspect_update
-  → Compare living_document.md's "Reader can suspect" line (MYSTERY PERSON THREAD
-    section) to mystery_anchor.json's current reader_can_suspect array
-  → If the living document describes a suspicion not already recorded there:
-    one sentence capturing the new suspicion
-  → "none" if unchanged from what's already recorded
+  → Compare what THIS chapter's prose lets an attentive reader newly suspect about
+    the anchor against mystery_anchor.json's current reader_can_suspect array
+  → If the prose supports a suspicion not already recorded: one sentence capturing
+    it, written observationally
+  → If nothing new: "none"
+  → Provenance changed 2026-07 (T-008): this field derives from chapter prose, not
+    the refresh model's paraphrase
 ```
 
 ---

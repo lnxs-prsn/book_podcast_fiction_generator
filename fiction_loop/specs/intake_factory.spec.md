@@ -212,8 +212,8 @@ generation) once, then S2 (redo from brief) once; only after both fail does it
 halt-and-notify, with the analyst's verdict attached. Defaults owner-correctable.
 Two day-after amendments (FI-2 / FI-11): auto-redos draw from the same chapter
 budget envelope — the spend gate counts every writer call, redo or not; and
-auto-redo REQUIRES the gate-before-refresh reorder first (or an automatic
-living-doc restore from .bak before each rung) — without it every auto-redo
+auto-redo REQUIRES the gate-before-refresh reorder first (satisfied by T-008,
+2026-07) — without it every auto-redo
 re-pollutes the living document with rejected canon.
 
 **Calibration — the factory's ONE memory organ (SG-11 + post-fix confession 4):**

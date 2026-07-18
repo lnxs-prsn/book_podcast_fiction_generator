@@ -280,7 +280,7 @@ def main() -> None:
 
 **Purpose:** After a chapter is approved, use the LLM to update `fiction_loop/core/living_document.md` to reflect new story state. Uses `request_living_doc_update()` from `src/novel_pipeline/requests_.py`.
 
-**When called:** Orchestrator calls this AFTER step 9 (chapter saved) and BEFORE step 11 (Extractor generates update_brief). The updated living_document.md gives the Extractor richer context when writing the update_brief.
+**When called:** Orchestrator calls this AFTER the structural gate passes (step 11.5) and BEFORE the Updater (step 12).
 
 This step is optional but recommended. If skipped, living_document.md will drift from story state until manually updated.
 
@@ -389,7 +389,8 @@ Note: `static_doc_paths` is shared between `invoke_writer.py` and `refresh_livin
 
 ## 6. HOW ORCHESTRATOR INTEGRATES THE TOOLS
 
-Orchestrator step 8 (Writer) and steps 9-10:
+Orchestrator step 8 (Writer), step 9, step 11 (Extractor), step 11.5
+(structural gate), and step 10 (refresh; step labels retained):
 
 ```
 8. Run Writer bridge:
@@ -409,13 +410,22 @@ Orchestrator step 8 (Writer) and steps 9-10:
 9. Read chapter_draft.md
     Save chapter to /chapters/chapter_[NNN].md
 
+11. Run Extractor to write update_brief.json.
+
+11.5. Run the deterministic structural gate:
+    .venv/bin/python fiction_loop/tools/structural_gate.py
+
+    Check exit code:
+      0 → proceed to step 10 (Living Doc refresh).
+      1 → stop; no paid refresh or state mutation has run.
+
 10. Run Living Doc refresh bridge:
     PYTHONPATH=src .venv/bin/python fiction_loop/tools/refresh_living_doc.py \
       --chapter fiction_loop/chapters/chapter_[NNN].md \
       --config fiction_loop/tools/pipeline_config.toml
 
     Check exit code:
-      0 → living_document.md updated. Proceed to step 11 (Extractor).
+      0 → living_document.md updated. Proceed to step 12 (Updater).
       1 → alert user. living_document.md is unchanged (stale).
           Orchestrator may continue with stale doc or abort.
           If continuing stale: note in status report that living_doc was not updated.

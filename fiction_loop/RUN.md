@@ -57,9 +57,10 @@ generate next chapter
    Consistency Checker (post-assembly, step 7.5).
 3. Bash: `invoke_writer.py` calls the LLM (OpenRouter) → `prompts/chapter_draft.md`,
    then the draft is copied to `chapters/chapter_NNN.md`.
-4. Bash: `refresh_living_doc.py` updates `core/living_document.md` (second LLM call).
-5. Subagents: Extractor (fills `prompts/update_brief.json`, computes the next
-   pointer) → Updater (writes all cards/state).
+4. Subagent: Extractor fills `prompts/update_brief.json` and computes the next
+   pointer; then the deterministic structural gate verifies the brief.
+5. After the gate passes, bash: `refresh_living_doc.py` updates
+   `core/living_document.md` (second LLM call) → Updater writes all cards/state.
 6. Orchestrator reports: chapter written, operation taught, cards updated, next
    chapter plan.
 

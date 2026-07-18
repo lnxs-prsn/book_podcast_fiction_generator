@@ -273,3 +273,56 @@ Fixed on redispatch:
 The reorder remains all-or-nothing and BETWEEN runs; T-007 already merged
 (`b8f0b7c`). Re-run the FULL §3 (all items) from a clean tree — do not
 resume the reverted partial. Nothing else in the ticket changed.
+
+### 2026-07-18 — Codex — IMPLEMENTED
+
+- Timing/dependency gates: PASS. T-007 is merged at `b8f0b7c`; current handoff
+  §9 records chapter 008 abandoned and the between-runs queue unlocked. Paid
+  calls: none; state, prompt artifacts, chapters, living document, backups, and
+  spend receipts were not touched.
+- Implemented the complete order `8→9→11→11.5→10→12` while retaining step
+  labels. The Extractor no longer reads `living_document.md`;
+  `reader_can_suspect_update` now derives from chapter prose +
+  `mystery_anchor.json`. The paid refresh runs only after structural-gate PASS.
+- LAW 4 audit (`refresh_living_doc|living_doc|step 10`) dispositions:
+  - UPDATED: `agents/orchestrator.md`, `agents/extractor.md`, `RUN.md`,
+    `tools/structural_gate.py`, `CONTRIBUTING.md` LAW 7,
+    `core/field_registry.md`, `specs/intake_factory.spec.md`,
+    `tools/INTEGRATION_SPECS.md`, and `core/pipeline_stage_manifest.md`.
+  - EXEMPT — position-independent or unrelated step labels:
+    `tools/analyst.py` parses the refresh failure event rather than pipeline
+    position; `core/agent_conduct.md` only names the stable step-10 log;
+    `agents/updater.md` uses its own internal STEP 10 report; `tools/pipeline_config.toml`,
+    `tools/refresh_living_doc.py`, and the remaining `INTEGRATION_SPECS.md`
+    hits define refresh mechanics/configuration, not call order;
+    `agents/assembler.md`, `core/character_naming.md`, and
+    `specs/pipeline_fixes.spec.md` use the living doc for other contracts or
+    historical defects.
+  - EXEMPT — immutable/out-of-write-set state receipts:
+    `core/living_document.md` and its `.bak.*` files retain historical
+    self-description saying the Extractor reads the document. They are L4 run
+    artifacts, explicitly forbidden by this ticket's state-access fence, and
+    are no longer operational inputs because both the Extractor spec and
+    Orchestrator spawn list removed the path.
+  - Deliberately did not add a step-11.5 manifest row, as §3.10 marks it
+    optional and out of scope; the manifest's existing rationale is
+    order-independent and was left unchanged.
+- Static acceptance: order line numbers are 243 (11.5), 252 (10), 267 (12);
+  Extractor `living_document` hits = 0; structural-gate `git restore` hits = 0;
+  both stale INTEGRATION_SPECS phrases have 0 hits; manifest has one
+  `living_document` hit (refresh row only) and records the new execution order.
+  `git diff --check` PASS.
+- Gate receipt against current HEAD: Exit 1, exactly as expected for the
+  deliberately preserved abandoned chapter-008 brief — `anchor absent from a
+  gate chapter`. Thus §4.4's older “committed passing brief” fixture assumption
+  is stale after handoff §9/commit `cf70a1b`; no state or fixture was changed to
+  manufacture a PASS. Gate decision logic is unchanged by T-008 (docstring and
+  dead restore hint only).
+- Sanctioned serial suite:
+  `PYTHONPATH=src uv run --frozen --with pytest python -m pytest src/ -q` →
+  expected `1 failed, 331 passed`; sole failure is the documented out-of-scope
+  `test_default_splitter_engine_passes_openrouter_timeout_seconds`
+  (`default_splitter_engine()` missing `source`).
+- §4.7 live validation is intentionally deferred to the next owner-started
+  paid chapter run, per ticket. The step-11.5 manifest-row omission above is
+  deliberate, pending T-009 if needed.

@@ -207,19 +207,6 @@ The Orchestrator touches none of these files. It coordinates by telling each sub
    Then ensure the heading (idempotent, no context read):
    grep -q "^# CHAPTER" fiction_loop/chapters/chapter_[NNN].md || sed -i "1i # CHAPTER [NNN]\n" fiction_loop/chapters/chapter_[NNN].md
 
-10. Run bash — Living Document refresh. This is an LLM call: run it in the
-    BACKGROUND and poll, exactly like the Writer bridge (foreground tool timeouts
-    kill it):
-    ( PYTHONPATH=src .venv/bin/python fiction_loop/tools/refresh_living_doc.py \
-        --chapter fiction_loop/chapters/chapter_[NNN].md \
-        --config  fiction_loop/tools/pipeline_config.toml ; \
-      echo "BRIDGE_EXIT:$?" ) \
-      > fiction_loop/logs/chapter_[NNN]/10_living_doc_refresh.log 2>&1 &
-    Poll the log about once per minute (give up after 20 minutes → treat as Exit 1):
-    BRIDGE_EXIT:0 → proceed. BRIDGE_EXIT:1 → see below.
-
-    Exit 1 → alert user that living_document.md is stale. Offer to continue or abort.
-
 11. SPAWN Extractor subagent with this prompt.
     (If your harness supports a background / long-running task mode for subagents
     with a longer timeout, use it for THIS step — the Extractor is the heaviest
@@ -242,7 +229,6 @@ The Orchestrator touches none of these files. It coordinates by telling each sub
       fiction_loop/state/process_state.json
       fiction_loop/state/mystery_anchor.json
       fiction_loop/core/concept_curriculum.md
-      fiction_loop/core/living_document.md
       fiction_loop/core/chapter_type_contract.md
 
     Follow your spec exactly. Write your output to:
@@ -256,13 +242,27 @@ The Orchestrator touches none of these files. It coordinates by telling each sub
 
 11.5. Run bash — STRUCTURAL GATE (deterministic, pre-state-mutation):
     .venv/bin/python fiction_loop/tools/structural_gate.py
-    Exit 0 → proceed to step 12.
+    Exit 0 → proceed to step 10 (refresh), then step 12.
     Exit 1 → STOP before the Updater and report its output verbatim to the user
     (cast quota / anchor presence / echo presence / F14 progression / F15 newcomer).
-    State has not been touched, but core/living_document.md HAS been if step 10
-    ran — the redo rungs begin with its restore (see USER COMMANDS); per the
-    STAGED UNDO ladder a fix costs only "redo generation" or "redo from brief".
+    No paid post-writer refresh has run and nothing has been mutated; per the STAGED
+    UNDO ladder a fix costs only "redo generation" or "redo from brief".
     Await the user's answer.
+
+10. Run bash — Living Document refresh. This is an LLM call: run it in the
+    BACKGROUND and poll, exactly like the Writer bridge (foreground tool timeouts
+    kill it):
+    ( PYTHONPATH=src .venv/bin/python fiction_loop/tools/refresh_living_doc.py \
+        --chapter fiction_loop/chapters/chapter_[NNN].md \
+        --config  fiction_loop/tools/pipeline_config.toml ; \
+      echo "BRIDGE_EXIT:$?" ) \
+      > fiction_loop/logs/chapter_[NNN]/10_living_doc_refresh.log 2>&1 &
+    Poll the log about once per minute (give up after 20 minutes → treat as Exit 1):
+    BRIDGE_EXIT:0 → proceed. BRIDGE_EXIT:1 → see below.
+
+    Exit 1 → alert user that living_document.md is stale. Offer to continue or abort.
+    Moved behind the gate 2026-07 (T-008); before that, every rejection cost one
+    refresh call and polluted the living doc (LAW 7 case law).
 
 12. SPAWN Updater subagent with this prompt:
     -------
@@ -344,8 +344,7 @@ redo generation
     core/living_document.md.bak.* remains on disk.)
   → Then re-run step 8 only (assembled_prompt.md is intact on disk). Fresh
     retry budget.
-  → Cost: one API call (+ the refresh call re-run at step 10 — the rejected
-    attempt's refresh call is sunk cost, LAW 7 known debt until T-008).
+  → Cost: one Writer API call; the gate runs before the step-10 refresh.
   → Restore condition added 2026-07 (T-007) after the ch8 rejection polluted
     the living doc for real; becomes vestigial when T-008 moves the refresh
     behind the gate — keep it as defense-in-depth (it self-neutralizes: the
