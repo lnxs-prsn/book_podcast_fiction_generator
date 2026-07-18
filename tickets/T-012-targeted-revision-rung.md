@@ -143,12 +143,28 @@ artifact, not state.
 validate_forbidden_labels\|redo generation` across `fiction_loop/agents/
 fiction_loop/core/ fiction_loop/tools/ fiction_loop/RUN.md
 fiction_loop/specs/`; update or exempt EVERY hit; record dispositions in
-§5. Known hits at ticket time: invoke_writer.py (refactor), orchestrator.md
-(rung + error line), RUN.md (ladder), field_registry.md (row),
-tickets are out of scope. If the grep surfaces a live contract OUTSIDE this
-write-set that states the redo-only ladder, STOP and return BLOCKED (do not
-widen the write-set yourself — the T-008 precedent: a write-set defect is
-the senior's to fix on redispatch).
+§5. Known hits at ticket time, with dispositions:
+- `invoke_writer.py` — refactor (in write-set).
+- `orchestrator.md` — rung + error line (in write-set).
+- `RUN.md` — ladder text (in write-set).
+- `field_registry.md` — row (in write-set).
+- **`structural_gate.py:105` ("Options: redo generation / redo from brief
+  / owner accepts") — EXEMPT, do NOT edit, and this is NOT a STOP.** The
+  revision rung is for PROSE-check failures caught at step 8 (labels, and
+  future surgical checks). The structural gate operates on the BRIEF and
+  its failures are STRUCTURAL/whole-scene (cast quota, anchor-absent, echo,
+  F14, F15) — which per §2/§3.3's scope boundary route to `redo
+  generation`, NOT revision. The gate's redo-only option set is therefore
+  CORRECT and COMPLETE; adding "revise" there would mis-route the owner
+  toward revising a whole-scene omission. Record this exemption in §5.
+- `tickets/` — out of scope.
+
+If the grep surfaces some OTHER live redo-only-ladder contract outside the
+write-set that is NOT the structural-gate FAIL message above — i.e. one
+that governs the PROSE-check/step-8 repair path — STOP and return BLOCKED
+(the T-008 precedent: a write-set defect is the senior's to fix on
+redispatch; do not widen the write-set yourself). The structural-gate line
+alone is not such a case.
 
 ## 4. Acceptance (ALL must pass — entirely offline; three fixtures on disk)
 
@@ -171,11 +187,21 @@ attempt-2 draft at `git show d91e558:fiction_loop/prompts/chapter_draft.md`
    --dry-run` → writes `revision_prompt.md` containing the full draft AND
    an explicit correction checklist naming the three flagged lines; exit 0;
    NO spend entry appended (grep the spend file mtime/contents unchanged).
-5. Diff-guard unit: with two static files differing by >25% of lines,
-   `--revise ... --dry-run` is unaffected (dry-run never adopts), and the
-   adoption path's guard is covered by a pytest that calls the ratio
-   function directly (add to the existing invoke_writer test module; no
-   API). Assert `RevisionOverreachError` above threshold, adoption below.
+5. Diff-guard, tested via the repo's `python -c` diagnostic pattern (NOT a
+   pytest module — none exists for invoke_writer, and T-010 set the
+   precedent of CLI/import-level testing for this file; no test path is in
+   the write-set and none is needed). Expose the ratio as an importable
+   module-level function, e.g. `revision_diff_ratio(original, revised)
+   -> float`, and the guard as a pure predicate against
+   `REVISION_MAX_DIFF_RATIO`. Acceptance command:
+   `PYTHONPATH=src .venv/bin/python -c "from fiction_loop.tools.invoke_writer
+   import revision_diff_ratio, REVISION_MAX_DIFF_RATIO as T; a='x\n'*100;
+   b='x\n'*100; c='y\n'*40+'x\n'*60; assert revision_diff_ratio(a,b)==0.0;
+   assert revision_diff_ratio(a,c)>T; print('diff-guard ok')"` → prints
+   `diff-guard ok`. (Adjust the import path to however tools are imported in
+   this repo — verify with a dry-run before finalizing, handoff §2.7.) The
+   actual adopt-vs-restore behaviour on a real revised draft rides the live
+   run, like §4.4's paid path.
 6. Arg-guard: `--revise` without `--deficiencies` errors; `--check-prose`
    combined with `--output` errors (mirror the `--check-labels` guard).
 7. `--check-labels` still behaves exactly as today on all three fixtures
@@ -205,3 +231,39 @@ Trailers: `Ticket: T-012` / `Implemented-by: <Codex|Qwen>`.
   coherent; record in §5 exactly as observed (T-008 precedent).
 
 ## 7. Implementer log (append below; never delete the ticket body)
+
+- 2026-07-18 — Codex — **BLOCKED before implementation.** The mandatory
+  §3.5 audit found
+  `fiction_loop/tools/structural_gate.py:105` advertising the live
+  redo-only ladder (`redo generation / redo from brief / owner accepts
+  explicitly`). That file is outside this ticket's write-set; §3.5
+  explicitly requires STOP and redispatch when such a live contract is
+  found. A second write-set defect is present in acceptance §4.5: it
+  requires adding a pytest to an existing invoke-writer test module, but no
+  such module exists under `fiction_loop/` and no test path is included in
+  the write-set. No implementation, paid call, prompt/state/chapter write,
+  or spend-file change was made.
+
+- 2026-07-19 — senior — **REDISPATCH (both blockers valid; ticket defects
+  fixed, write-set UNCHANGED).** Both STOPs were correct against the ticket
+  as written.
+  - §3.5 defect (mine): the STOP-condition grep was too broad. On the
+    merits, `structural_gate.py:105`'s redo-only option set is CORRECT —
+    gate failures are STRUCTURAL/whole-scene and route to `redo generation`
+    by this ticket's own §2/§3.3 scope boundary; revision does not apply
+    there. Fixed by EXEMPTING that line explicitly in §3.5 (not editing it,
+    not widening the write-set) and narrowing the STOP-condition to
+    prose-check/step-8 redo contracts only. Verified the §3.5 grep's only
+    out-of-write-set hit is that one exempt line.
+  - §4.5 defect (mine): no invoke_writer pytest module exists (only legacy
+    `src/` tests), and T-010 — the label check in the SAME file — was
+    tested via CLI invocation, not pytest. Rewrote §4.5 to test the
+    diff-guard via the repo's `python -c` import pattern; no test path, no
+    write-set change. Verified the import path
+    `from fiction_loop.tools.invoke_writer import ...` works (implicit
+    namespace package) and the asserted ratios hold with a difflib
+    implementation (identical→0.0, 40%-changed→0.4>0.25).
+  - Blocker 3 (filename) is not a defect: the old `T-012-PLAN-*` was
+    superseded into this dispatched ticket; the `T-012-PLAN-SUPERSEDED.md`
+    stub points here. Build from THIS file.
+  Write-set is BYTE-UNCHANGED. Re-run the full §3 from a clean tree.
