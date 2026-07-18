@@ -156,3 +156,17 @@ senior acceptance → dispatch T-003 → senior .env step + acceptance → chapt
   landed) → senior acceptance → dispatch T-003 → senior .env step +
   acceptance → chapter 007 kickoff. T-003 is NOT yet implemented or
   dispatched. Older queue: `handoff-2026-07-17-clone-audit.md` §5, unchanged.
+
+## 7. ADDENDUM (2026-07-18, later still) — T-005 ACCEPTED (1063ff0); queue: T-003 only
+
+- **T-005 implemented by Codex (`1063ff0`) and ACCEPTED by senior** — all §3
+  criteria re-run independently, including the determinism dry-run (result
+  equals the committed ch7 pointer). Extractor pointer logic is now
+  single-outcome: STEP A.0 arc-transition precedence, FALLBACK deleted,
+  STEP D selection explicit, lead_failure_mode REQUIRED with LAW 4
+  producer/consumer registration. Full record in the ticket's §6.
+- **Open queue now: T-003 only** (then ch7 kickoff). Sequence: dispatch
+  T-003 → implementation commit lands → senior performs the delegated .env
+  key rename (blind, per T-003 §4) → senior runs acceptance 1–6 (4–5 are
+  post-rename) → done. Older queue: `handoff-2026-07-17-clone-audit.md` §5,
+  unchanged.

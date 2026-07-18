@@ -125,3 +125,15 @@ Pathspec-limit to the write-set (never `git commit -a`).
   This was the harness filesystem boundary, not a spec/test failure; the tree
   remained coherent and the same path-limited commit was retried with repository
   write approval.
+- 2026-07-18 — senior — **ACCEPTED** (commit `1063ff0`). All §3 criteria
+  re-run independently: (1) "FALLBACK" → zero hits anywhere in extractor.md;
+  (2) STEP A.0 present at ~426, before STEP A candidate selection, with the
+  gate-blocked note and the T-005 historical line; (3) lead_failure_mode
+  REQUIRED contract with producer/consumer registration present (~242);
+  (4) determinism dry-run re-walked by senior against committed state —
+  result equals the committed ch7 pointer (arc_transition / nulls /
+  secondary_touches []); (5) commit is pathspec-limited to extractor.md +
+  this ticket's §6 log (the log append is part of the ticket contract);
+  INTEGRATION_SPECS.md legitimately untouched (fields not documented there,
+  verified); tree clean. The read-only index.lock failure was correctly
+  logged per §5 and did not affect the result.
