@@ -14,6 +14,7 @@ Write-set: src/llm/env.py,
            src/endpoints/tests/test_fiction.py,
            src/podcast_script_generator/llm/test_all.py,
            src/podcast_script_generator/llm/tests/test_podcast.py,
+           src/podcast_script_generator/llm/main.py       (docstring line only),
            fiction_loop/tools/analyst.py,
            fiction_loop/tools/invoke_writer.py    (error-message string only),
            fiction_loop/tools/refresh_living_doc.py (error-message string only),
@@ -97,7 +98,14 @@ a compat shim would re-import the vulnerability (an external harness's
    can now be replaced by "project-owned name, renamed 2026-07 (T-003)"),
    `fiction_loop/tools/pipeline_config.toml` header comment (~line 10).
 7. `.env.example`: rename the three keys; keep values as-is.
-8. Tests — rename env keys ONLY, never assertions' semantics:
+8. `src/podcast_script_generator/llm/main.py`: the module docstring's
+   `OPENROUTER_API_KEY  required for the API call` line →
+   `BOOKGEN_LLM_API_KEY ...`. Docstring ONLY — the module resolves env via
+   `llm.env.resolve_from_env`, so no code change is needed here. (Added
+   2026-07-18 after the first dispatch correctly STOPPED on the
+   write-set/acceptance-2 contradiction; senior re-swept the acceptance-2
+   grep — this was the only file outside the write-set.)
+9. Tests — rename env keys ONLY, never assertions' semantics:
    `src/llm/tests/test_factory.py`, `src/tests/test_llm_factory.py`,
    `src/endpoints/tests/test_fiction.py` (docstrings mentioning the old
    name may be updated), `src/podcast_script_generator/llm/test_all.py`
@@ -163,3 +171,31 @@ Pathspec-limit the commit to exactly the write-set files (never
   leave the tree coherent.
 
 ## 8. Implementer log (append below; never delete the ticket body)
+
+### 2026-07-18 — Codex — STOPPED before implementation
+
+- Read `AGENTS.md`, `HANDOFF.md`, the current handoff, and
+  `fiction_loop/CONTRIBUTING.md` as required.
+- Preflight command:
+  `rg -n 'OPENROUTER_|LLM_PROVIDER|LLM_DEFAULT_TIMEOUT' src/llm src/endpoints src/podcast_script_generator fiction_loop/tools/analyst.py fiction_loop/tools/invoke_writer.py fiction_loop/tools/refresh_living_doc.py fiction_loop/tools/pipeline_config.toml fiction_loop/tools/INTEGRATION_SPECS.md fiction_loop/agents/writer.md fiction_loop/RUN.md .env.example`
+- STOP reason: the command found
+  `src/podcast_script_generator/llm/main.py:7:    OPENROUTER_API_KEY  required for the API call (via llm.env.resolve_from_env).`
+  Acceptance 2 requires zero old-name hits under
+  `src/podcast_script_generator`, but `src/podcast_script_generator/llm/main.py`
+  is not in the ticket write-set. Strict write-set compliance and acceptance 2
+  therefore cannot both be satisfied without a ticket correction.
+- No implementation files were changed. Acceptance 1–3 and 6 were not run
+  because the ticket requires STOP on any failure. `.env` was not inspected or
+  modified.
+
+### 2026-07-18 — senior — TICKET CORRECTED; REDISPATCH AUTHORIZED
+
+- The STOP was correct and the finding verified: senior re-ran the
+  acceptance-2 grep against HEAD — `src/podcast_script_generator/llm/main.py`
+  (1 hit, docstring line 7) was the ONLY file with legacy-name hits outside
+  the write-set. Every other hit maps to a write-set file.
+- Resolution: file ADDED to the write-set (docstring line only) with new §3
+  step 8; old step 8 renumbered to 9. Rationale: the module resolves env via
+  `llm.env.resolve_from_env`, so after the rename the docstring would be
+  actively wrong documentation (LAW 2) — exempting the hit was the worse fix.
+- Ticket body is otherwise unchanged. Redispatch and implement as written.
