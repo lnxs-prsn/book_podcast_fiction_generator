@@ -126,7 +126,36 @@ Qwen-layer; T-003 stays queued behind ch6. Codex ALSO shows the base url or
 404s → the Qwen-layer localization is WRONG; re-diagnose from the new
 receipts, and treat §3c hypotheses as dead.
 
-## 4. To resume
+## 3d. ADDENDUM (2026-07-18 evening): CHAPTER 006 LANDED — §4 below is now historical
+
+Run completed in a CODEX session (discriminating test §3c: Codex env was
+clean; the override never reappeared — Qwen-layer localization stands, exact
+in-Qwen mechanism still unproven and now moot pending T-003). Chapter 006
+committed as transaction a77eec8 (1,909 words, gate G-006 closed, anchor
+notebook page, next pointer 007 arc_transition).
+
+Two incidents during the run, both resolved:
+- Codex harness classifier: first a false-positive block on analyst.py (its
+  .env key-presence read pattern-matches secret access), then a full
+  classifier-service outage blocking everything incl. `date`. Gate was
+  passed externally by the senior (analyst green). If it recurs: take Codex
+  out of Auto mode, or pre-approve analyst.py.
+- Structural gate F15 FALSE FAIL at step 11.5: unnamed improvised newcomer
+  present in prose but invisible to the extractor→gate contract
+  (extractor.md "empty list if no other solver is named"). Owner accepted
+  explicitly (LAW 13 entry in chapter log). Durable fix: `tickets/
+  T-004-f15-unnamed-newcomer-contract.md`. WARNING for ch7+ until T-004
+  lands: any chapter whose only newcomer is unnamed will false-FAIL F15 the
+  same way — check prose before believing the gate.
+
+OPEN QUEUE (order): 1. owner/senior prose review of chapter 006 (F14
+progression, char_001 continuity, anchor differs from ch5 — first
+return-chapter review; also check THINKING TAX ratio in the spend receipts —
+first real deepseek-v4-pro chapter). 2. T-004 (redispatch — first attempt
+aborted on its own path typo, see ticket §6). 3. T-003 env-namespace rename
+(between runs; includes owner .env step). Older queue: clone-audit §5.
+
+## 4. To resume (HISTORICAL — superseded by §3d)
 
 1. Confirm/clear the env override (§3), then re-run the RUN.md kickoff in a
    fresh Qwen session. Artifacts from steps 4–7.5 are fresh; the orchestrator
