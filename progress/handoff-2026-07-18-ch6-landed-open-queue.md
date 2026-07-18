@@ -170,3 +170,24 @@ senior acceptance → dispatch T-003 → senior .env step + acceptance → chapt
   key rename (blind, per T-003 §4) → senior runs acceptance 1–6 (4–5 are
   post-rename) → done. Older queue: `handoff-2026-07-17-clone-audit.md` §5,
   unchanged.
+
+## 8. ADDENDUM (2026-07-18, night) — T-003 ACCEPTED; queue EMPTY except ch7 kickoff
+
+- **T-003 implemented (Codex, committed `9abbd11` by senior on their behalf —
+  harness uv-cache/git block, logged) and ACCEPTED.** `BOOKGEN_LLM_*` is now
+  the only env contract; clean break verified (zero legacy hits under the
+  corrected acceptance-2 grep); `.env` keys renamed by senior per the §4
+  delegation; analyst green end-to-end on the new names. The 404 collision
+  class is closed at the root.
+- Ticket §5.2's grep needed two senior corrections (scope + substring false
+  positives) and §3 gained the main.py docstring step — all logged in the
+  ticket. Pattern for future tickets: dry-run the acceptance commands against
+  HEAD when authoring.
+- Known pre-existing failure (NOT from T-003, fails identically at HEAD):
+  `src/engines/tests/test_factory.py::test_default_splitter_engine_passes_openrouter_timeout_seconds`
+  (TypeError: missing `source`). Future engines ticket if that subsystem is
+  revived.
+- **Residual owner check before the next run:** Qwen companion session's live
+  env must export no `OPENROUTER_*` (repo and rc files verified clean).
+- **Queue: chapter 007 kickoff** (arc_transition; RUN.md prompt as written,
+  pointer clean) — then `handoff-2026-07-17-clone-audit.md` §5 older queue.

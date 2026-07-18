@@ -282,3 +282,16 @@ Pathspec-limit the commit to exactly the write-set files (never
   credited via trailer as the ticket specifies. Committing verified work is
   senior-scope; the implementation itself is Codex's.
 - Next: senior `.env` blind rename (§4 delegation) → acceptance 4–5.
+
+### 2026-07-18 — senior — **ACCEPTED** (implementation `9abbd11`; all six criteria pass)
+
+- §4 delegated step DONE: blind in-place rename of 3 `.env` keys
+  (OPENROUTER_API_KEY / OPENROUTER_URL / OPENROUTER_MODEL → BOOKGEN_LLM_*);
+  key names only touched, values never read into any output.
+- Acceptance 4: analyst.py → key-present ok, no CRITICAL; full receipt chain
+  green (state sync, tree, STATUS). Acceptance 5: probe prints `probe`.
+- Acceptance 1–3, 6 recorded in the previous entry (1 passes with the
+  documented pre-existing engines failure, identical at HEAD).
+- Residual (owner, before next chapter run): confirm the Qwen companion
+  session's live env exports no `OPENROUTER_*` — nothing in repo or rc files
+  does. The collision class is otherwise closed (LAW 6 at the root).
