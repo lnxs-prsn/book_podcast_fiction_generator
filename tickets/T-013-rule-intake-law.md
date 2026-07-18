@@ -90,3 +90,12 @@ Trailers: `Ticket: T-013` / `Implemented-by: <Codex|Qwen>`.
   yields to all others in conflict.
 
 ## 7. Implementer log (append below; never delete the ticket body)
+
+- 2026-07-19 — Codex — **IMPLEMENTED.** Appended LAW 16 after LAW 15
+  without modifying the existing laws: every new hard rule must ship a
+  registered structured deterministic check or state its one-line
+  NON-CHECKABILITY reason. Updated the sole in-scope law-count copy in
+  `specs/intake_factory.spec.md` from 15 to 16. Acceptance greps pass with
+  no stale `15 laws` / `fifteen laws` references under `fiction_loop/`;
+  `git diff --check` passes. Sanctioned serial suite matches the documented
+  baseline: `1 failed, 331 passed` (only the known legacy splitter failure).

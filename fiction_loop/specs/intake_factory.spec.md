@@ -26,7 +26,7 @@ addition cites its SG. Defaults introduced by that pass are owner-correctable.
   (tools/structural_gate.py, pre-state per-chapter check), per-chapter git
   transactions + staged undo ladder (S1–S4), progress.py / analyst.py (receipts-
   driven status + zero-token diagnosis — the future product face), and the
-  constitution (`fiction_loop/CONTRIBUTING.md`, 15 laws with case law; LAW 14 is
+  constitution (`fiction_loop/CONTRIBUTING.md`, 16 laws with case law; LAW 14 is
   the chassis/pack insurance: "if generalizing forces a law change, there's a
   chassis/pack leak — find it first").
 - **Pedagogy pack (knowledge-type specific):** chapter-structure template, failure-pool

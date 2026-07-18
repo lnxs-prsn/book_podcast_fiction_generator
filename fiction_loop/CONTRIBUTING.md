@@ -204,6 +204,20 @@ this" counts ONLY if you have seen that check fail or can show the input that
 makes it fail. OPEN: a one-time machinery inventory sweep against this law has
 not yet been performed — until it is, assume unregistered machinery exists.
 
+**LAW 16 — A NEW HARD RULE SHIPS ITS OWN CHECK OR ITS EXCUSE.** No violation
+may be promoted to a hard rule unless the SAME change either ships a deterministic
+check that emits a structured deficiency and registers it under LAW 15, or records
+in the rule's own text a one-line NON-CHECKABILITY note explaining why no
+deterministic check is possible. A hard rule with neither is incomplete and must
+not be added. A rule's ongoing cost is (rule count) × (cost-per-miss); T-010 +
+T-012 drive cost-per-miss toward one cheap call for checkable rules, so the immune
+response must pay its own enforcement cost or declare it cannot — otherwise the
+prompt silently re-accumulates the load this quarter's work just removed. *(case
+law: HARD RULE 1 planning labels rode the Writer's self-check for weeks, then
+leaked into chapter 008 attempt-2 narration and cost a roll before T-010 made the
+violation a grep; the chapter 008 three-roll incident is the arithmetic proof,
+handoff 2026-07-18 §§6–9.)*
+
 ## 4. BUG-FIX PROCEDURE (the algorithm)
 
 1. `.venv/bin/python fiction_loop/tools/analyst.py`. Trust it. "Unknown signature" means
