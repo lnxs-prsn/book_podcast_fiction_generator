@@ -240,10 +240,14 @@ failure_modes_shown_this_chapter
   → List, not a single value
 
 lead_failure_mode
-  → This chapter's FEATURED wrong approach: copy master_state.json
-    next_chapter_pointer.failure_mode_to_show verbatim (that pointer steered THIS
-    chapter; the Updater archives the value to failure_mode_lead_history)
-  → "none" if that pointer field is "none" or null
+  → REQUIRED for every gate chapter; never omit it.
+  → Set it to the FIRST wrong approach dramatized in the prose, using the exact
+    name from process_state.
+  → Producer: Extractor. Consumers: Updater STEP 7 (appends it to
+    failure_mode_lead_history) and Extractor's failure_mode_to_show selection
+    (least-recently-led rotation).
+  → "none" only for anchor_interlude / arc_transition (whose process_updates is
+    null under the section guard above).
 
 name_attached_this_chapter
   → true if the prose attaches the operation's name (the one-sentence narrator label
@@ -419,6 +423,17 @@ spacing(X)   = master_state.chapter_count - X.teaching_history[-1].chapter
 cleared(X)   = X.current_touch >= 2
 ```
 
+**STEP A.0 — arc-transition precedence:**
+```
+IF every ELIGIBLE operation has deficit = 0:
+  → go directly to STEP D (arc transition).
+
+Gate-blocked operations do not hold the arc open; their deficit carries per
+STEP D.
+```
+
+Precedence fixed 2026-07 (T-005) after the ch5/ch6 divergence.
+
 **STEP A — formal operation_due (the chapter's one taught operation):**
 ```
 1. Candidates: all eligible operations with deficit > 0.
@@ -426,9 +441,6 @@ cleared(X)   = X.current_touch >= 2
 3. Pick the candidate with the largest deficit;
    tie-break: lowest current_touch; then registry order (operation_registry.md).
 4. touch_due = current_touch + 1.
-5. FALLBACK (no candidate at all): pick the eligible arc_current operation with the
-   lowest current_touch, touch_due = current_touch + 1. If even that is empty,
-   check arc transition (STEP D).
 ```
 
 **STEP B — chapter type and char_id (owner rule: the process is the protagonist):**
@@ -477,9 +489,10 @@ IF every ELIGIBLE operation has deficit = 0
     priority as soon as the prerequisite clears):
   → type: arc_transition for the NEXT chapter
   → operation_due: null, touch_due: null
-  → secondary_touches: up to 2 ambient reinforcement entries (cleared ops only) —
-    per the amended chapter_type_contract.md, structural chapters may carry
-    reinforcement, never new operations
+  → secondary_touches: from cleared operations with deficit > 0, by largest
+    deficit, max 2. If none exist, an EMPTY list is valid. Ambient reinforcement
+    is carried by the Assembler's cumulative "use naturally" list (owner D1
+    hybrid + D9 lever 4), not by the pointer.
 ```
 
 **STEP E — anchor (owner D3 — replaces all cadence logic):**

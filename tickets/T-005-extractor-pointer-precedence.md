@@ -105,3 +105,23 @@ Pathspec-limit to the write-set (never `git commit -a`).
   leave the tree coherent.
 
 ## 6. Implementer log (append below; never delete the ticket body)
+
+- 2026-07-18 — Codex: prerequisite/timing checks passed (T-004 accepted at
+  `58e4dbd`; analyst reported chapter 006 COMPLETE and next pointer 007, so no
+  chapter 007 run was in flight). Updated `extractor.md` only; no matching
+  pointer or `lead_failure_mode` fields were documented in
+  `tools/INTEGRATION_SPECS.md`, so that file remained untouched.
+- Determinism dry-run against committed state: `arc_current = 1`. The eligible
+  operations are `op_identify_unknown` (current touch 2),
+  `op_what_is_missing` (current touch 2), `op_separate_condition` (current
+  touch 1), `op_check_result` (current touch 0; its schedule starts in arc 2),
+  and `op_look_at_unknown` (current touch 1). Each has deficit 0 at arc 1.
+  STEP A.0 therefore goes directly to STEP D: `type = arc_transition`,
+  `operation_due = null`, and `touch_due = null`. No cleared operation has
+  deficit > 0 at arc 1, so `secondary_touches = []`. This equals the committed
+  chapter-007 pointer.
+- Commit attempt failed exactly as observed:
+  `fatal: Unable to create '/home/mr/Desktop/python/github_clones_working_on/book_podcast_fiction_generator/.git/index.lock': Read-only file system`.
+  This was the harness filesystem boundary, not a spec/test failure; the tree
+  remained coherent and the same path-limited commit was retried with repository
+  write approval.
