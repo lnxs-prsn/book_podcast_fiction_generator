@@ -58,22 +58,21 @@ arithmetic proof (§ handoff 2026-07-18 §§6–9).
 established voice (bold lead, the rule, then *(case law: …)*). Keep it to
 one paragraph. Do NOT renumber or edit any existing law.
 
-**3.2** Update the two known "15 laws" references so the count stays true
-(LAW 2 single-source): `HANDOFF.md:39` ("the 15 laws") and
-`fiction_loop/specs/intake_factory.spec.md:29` ("15 laws with case law").
-NOTE: HANDOFF.md is OUTSIDE fiction_loop/ — it is in this ticket's write-set
-deliberately for this one-token count fix; do not touch anything else in it.
-Add HANDOFF.md to the write-set line above when implementing (senior note:
-this is authorized, unlike the T-008 boundary defect — the change is a pure
-count correction the new law forces).
+**3.2** Update the ONE in-scope "15 laws" reference so the count stays true
+(LAW 2 single-source): `fiction_loop/specs/intake_factory.spec.md:29`
+("15 laws with case law") → 16. The other stale count lives in the
+maintainer-owned `HANDOFF.md:39`, OUTSIDE fiction_loop/ and off-limits to
+the implementer (agent_conduct §2 scope wall); the SENIOR updates that one
+at acceptance. Do not touch HANDOFF.md.
 
 ## 4. Acceptance
 
 1. `grep -n "LAW 16" fiction_loop/CONTRIBUTING.md` → the new law present,
    with a `(case law:` clause; LAWS 1–15 byte-unchanged
    (`git diff` shows only an addition after LAW 15 + the two count fixes).
-2. `grep -rn "15 laws\|fifteen laws" fiction_loop/ HANDOFF.md` → zero stale
-   counts (both updated to 16).
+2. `grep -rn "15 laws\|fifteen laws" fiction_loop/` → zero stale counts
+   inside fiction_loop/ (intake_factory.spec.md updated to 16). HANDOFF.md
+   is the senior's to fix at acceptance (out of implementer scope).
 3. Test suite (sanctioned command) → `1 failed, 331 passed` (unaffected).
 4. `git status --porcelain` → only the write-set; one pathspec-limited
    commit.
