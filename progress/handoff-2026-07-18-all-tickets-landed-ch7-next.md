@@ -226,3 +226,30 @@ traces (stool/torn/wiped + "condition itself provides") AND no failure-mode
 label in narration (labels in italic artifact lines OK); (3) then 10 → 11
 → 11.5 — the gate MUST re-run and PASS on the NEW brief; (4) only then 12
 → 13.5. Never run the Updater on a brief the gate has not just passed.
+
+## 8. ADDENDUM (2026-07-18, late) — driver deadlock diagnosed; T-011 role fence dispatched
+
+The driver session refused the documented ch8 resume, citing the four
+dispatched tickets and proposing to implement them mid-run — a blocking
+relationship no document states and the tickets' timing gates forbid.
+Senior overrode with the §7 checklist. Root cause of BOTH driver
+incidents: **two orientation systems, one front door.** agent_conduct §2
+SCOPE WALLS already forbids reading anything outside fiction_loop/
+(HANDOFF.md, tickets/, progress/ included), but AGENTS.md/CLAUDE.md order
+every cold session to orient from the handoff, and the RUN.md kickoff
+prompt never restates the wall (LAW 5: a MUST living only in a referenced
+doc is advisory). The driver obeyed both masters and synthesized policy
+from maintainer context.
+
+**Owner decision: the agent that runs fiction_loop operates the loop as
+Orchestrator, and ONLY that.** Dispatched **T-011**
+(`tickets/T-011-orchestrator-role-fence.md`): ROLE FENCE inline in the
+kickoff prompt (hard channel); CONTEXT BUDGET names governance docs;
+agent_conduct §2 case law; HANDOFF.md gains a "maintainer sessions only"
+scope paragraph; AGENTS.md a one-line exception. Write-set crosses the
+fiction_loop/ boundary deliberately (the defect lives in the interaction).
+
+**Queue order (all BETWEEN runs): T-007 → T-008 → T-009 → T-010 → T-011.**
+Complementary split: T-009 makes the destructive step mechanically
+unreachable; T-011 stops the driver improvising everywhere else. Ch8
+resume per §7 checklist remains the immediate next action.

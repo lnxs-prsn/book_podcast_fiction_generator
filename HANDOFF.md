@@ -9,9 +9,10 @@
 > living doc restored); attempt 2 INCIDENT — driver skipped 10/11/11.5 and
 > ran the Updater on the gate-FAILED brief; killed by owner, state undone
 > by senior (receipts §7); attempt-2 prose ALSO fails HARD RULE 1. **Ch8
-> parked awaiting a third redo generation (driver checklist in §7). FOUR
+> parked awaiting a third redo generation (driver checklist in §7). FIVE
 > tickets queued, BETWEEN runs, in order: T-007 → T-008 → T-009
-> (gate pass-receipt blocks Updater) → T-010 (deterministic label check).**
+> (gate pass-receipt blocks Updater) → T-010 (deterministic label check) →
+> T-011 (role fence: run driver = Orchestrator ONLY, owner decision — §8).**
 > Earlier that day: T-002/004/005/003 all landed and accepted.
 > Day detail:
 > `handoff-2026-07-18-ch6-landed-open-queue.md` §§5–8 and
