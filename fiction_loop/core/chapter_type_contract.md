@@ -19,6 +19,7 @@ consuming specs below is derived from it, not the other way around.
 | macro_mystery_update | always evaluated | always evaluated | always evaluated | always evaluated |
 | next_chapter_pointer | always computed | always computed | always computed | always computed |
 | arc summary (Updater STEP 9) | n/a | n/a | n/a | required |
+| arc_current advance (Updater STEP 9) | n/a | n/a | n/a | required |
 
 ## Rationale
 

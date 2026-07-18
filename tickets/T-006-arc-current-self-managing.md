@@ -233,3 +233,53 @@ Implemented-by: <Codex|Qwen — whoever implements>
 - On ANY failure: stop at that step, record it in §6 exactly as observed.
 
 ## 6. Implementer log (append below; never delete the ticket body)
+
+### 2026-07-18 — Codex implementation, governance/tool phase
+
+- Oriented from `HANDOFF.md`, current handoff §5, this ticket, and
+  `fiction_loop/CONTRIBUTING.md`; working tree was clean and STATUS was
+  `chapter: 007 | step: DONE | state: COMPLETE`.
+- Implemented §2.1–§2.5 and §2.7 inside the declared write-set.
+- Before reconcile, the default analyst run reported exactly:
+  `[CRITICAL] arc_current drift (stored 1, derived 2)`.
+- LAW 4 `arc_current` audit dispositions:
+  - `agents/extractor.md`: updated — the input declaration remains valid;
+    DECISION LOGIC now derives and exclusively uses `arc_effective`.
+  - `agents/updater.md`: updated — STEP 9 is the advancing producer with
+    summary-first crash ordering.
+  - `agents/orchestrator.md`: exempt — status/display consumer, registered and
+    compatible with the cached field.
+  - `agents/fetcher.md`: exempt — curriculum/arc-summary consumer, registered
+    and correct once STEP 9/repair maintains the cache.
+  - `agents/assembler.md`: exempt — closing/opening arc consumer, registered
+    and compatible.
+  - `core/field_registry.md`: updated — source, invariant, producers,
+    consumers, and T-006 case law registered.
+  - `core/chapter_type_contract.md`: updated — required arc-transition advance
+    row added.
+  - `tools/analyst.py`: updated — invariant detection and explicit repair
+    producer.
+  - `tools/structural_gate.py`: exempt — read-only current-arc gate consumer;
+    semantics remain correct and it does not compute a next-chapter pointer.
+  - `specs/pipeline_fixes.spec.md`: historical design record, exempt; its seed
+    value remains correct and its older scheduling/fallback prose is superseded
+    by the live Extractor contract without contradicting the new invariant.
+  - `prompts/fetched_fields.md`: generated pipeline artifact, exempt by ticket
+    definition and untouched.
+  - `RUN.md`: no hits.
+- Determinism walk: stored/current effective arc 2 gives
+  `deficit(op_check_result) = 1` from schedule `{1: 2, 2: 3}`, current touch 0,
+  with prerequisite `op_identify_unknown` owned. STEP A.0 does not fire;
+  candidate selection yields committed pointer 008
+  `new_focal_character / op_check_result / touch 1`. While extracting ch7,
+  `chapter_type = arc_transition` makes `arc_effective = 1 + 1 = 2`, producing
+  the same pointer before Updater STEP 9 advances the stored cache.
+- Sanctioned test command first hit the documented harness/cache restriction:
+  `Could not create temporary file ... Read-only file system ... /home/mr/.cache/uv/...`.
+  Re-run with approved uv-cache access completed with the sole expected failure:
+  `src/engines/tests/test_factory.py::test_default_splitter_engine_passes_openrouter_timeout_seconds`;
+  result `1 failed, 331 passed in 8.66s`.
+- First pathspec-limited commit attempt hit the documented harness restriction
+  exactly: `fatal: Unable to create '.../.git/index.lock': Read-only file system`.
+  Retried through the approved external git-index path; no alternate design or
+  file mutation was used.

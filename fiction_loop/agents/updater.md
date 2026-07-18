@@ -200,10 +200,22 @@ STEP 8B — Naming ledger (owner decision D7/F17)
 
 STEP 9 — Arc summary (arc_transition only)
   IF chapter_type = arc_transition:
+    Let N = the arc_current value read at the start of this update sequence.
     Write /arcs/arc_[N]_summary.md
     Include: arc number, operations taught, touch levels reached,
              characters introduced, macro_mystery_evidence planted,
              anchor appearances, total chapters
+    AFTER the summary write completes:
+      Re-open /state/master_state.json
+      Set arc_current = N + 1
+      Write master_state.json
+    This ordering is deliberate: summary first, increment second, so a crash can
+    only leave arc_current lagging the truth derived from arc summaries, never
+    leading it. Do NOT perform this advance in STEP 7, before the summary exists
+    and N becomes ambiguous.
+
+  Added 2026-07 (T-006) — before this, arc_current had no producer and stuck
+  at its init value.
 
 STEP 10 — Report
   Report to Orchestrator:

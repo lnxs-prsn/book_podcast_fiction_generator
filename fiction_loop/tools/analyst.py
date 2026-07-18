@@ -7,7 +7,7 @@ state files, git) and matches it against the known failure-signature table built
 from this project's real incident history. Prints ranked findings; says "unknown
 signature" instead of guessing — escalate those with the evidence bundle.
 
-Usage:  .venv/bin/python fiction_loop/tools/analyst.py
+Usage:  .venv/bin/python fiction_loop/tools/analyst.py [--repair]
 Exit:   0 = no critical findings, 1 = critical findings present.
 """
 from __future__ import annotations
@@ -24,6 +24,7 @@ R = Path(__file__).resolve().parent.parent  # fiction_loop/
 FINDINGS: list[tuple[str, str, str]] = []   # (severity, verdict, fix)
 OK: list[str] = []
 KEY_PRESENT = False  # set by check_key; lets later checks age stale key errors
+ARC_SUMMARY_RE = re.compile(r"^arc_(\d+)_summary\.md$")
 
 
 def find(sev: str, verdict: str, fix: str) -> None:
@@ -213,6 +214,21 @@ def check_agent_logs() -> None:
 
 
 # --- 5. state consistency -----------------------------------------------------
+def arc_summary_state() -> tuple[int | None, int]:
+    """Return (derived arc, summary count), reporting non-contiguity."""
+    numbers = [
+        int(match.group(1))
+        for path in (R / "arcs").iterdir()
+        if (match := ARC_SUMMARY_RE.fullmatch(path.name))
+    ]
+    expected = list(range(1, len(numbers) + 1))
+    if sorted(numbers) != expected:
+        find("CRITICAL", "arc summaries non-contiguous",
+             "inspect fiction_loop/arcs/ — no auto-repair possible")
+        return None, len(numbers)
+    return 1 + len(numbers), len(numbers)
+
+
 def check_state() -> None:
     try:
         ms = json.loads((R / "state/master_state.json").read_text())
@@ -224,6 +240,15 @@ def check_state() -> None:
     on_disk = len(list((R / "chapters").glob("chapter_*.md")))
     status = (R / "logs/STATUS.md").read_text() if (R / "logs/STATUS.md").exists() else ""
     mid_run = ("state: RUNNING" in status or "state: BLOCKED" in status) and f"chapter: {n + 1:03d}" in status
+    derived_arc, _ = arc_summary_state()
+    stored_arc = ms.get("arc_current")
+    if derived_arc is not None and stored_arc != derived_arc:
+        if mid_run:
+            find("INFO", f"arc_current drift (stored {stored_arc}, derived {derived_arc})",
+                 "Updater may be between the arc-summary write and master-state write")
+        else:
+            find("CRITICAL", f"arc_current drift (stored {stored_arc}, derived {derived_arc})",
+                 "run: PYTHONPATH=src .venv/bin/python fiction_loop/tools/analyst.py --repair")
     if n != on_disk:
         if mid_run and on_disk == n + 1:
             state_word = "RUNNING" if "state: RUNNING" in status else "INTERRUPTED (blocked mid-run)"
@@ -243,8 +268,53 @@ def check_state() -> None:
         find("CRITICAL", f"pointer operation_due {op!r} not in process_state", "operation id typo/desync")
     if ptr.get("type") == "return_to_character" and not ptr.get("char_id"):
         find("CRITICAL", "pointer type return_to_character but char_id is null", "set char_id or type")
-    if not FINDINGS or all("pointer" not in f[1] for f in FINDINGS):
-        ok(f"state sync OK (chapter_count={n}, next={ptr.get('chapter')} {ptr.get('type')} {op})")
+    state_bad = any(
+        "pointer" in verdict or "arc_current drift" in verdict
+        or "arc summaries non-contiguous" in verdict
+        for _, verdict, _ in FINDINGS
+    )
+    if not state_bad:
+        ok(f"state sync OK (chapter_count={n}, arc={stored_arc}, "
+           f"next={ptr.get('chapter')} {ptr.get('type')} {op})")
+
+
+def repair_arc_current() -> int:
+    status = (R / "logs/STATUS.md").read_text() if (R / "logs/STATUS.md").exists() else ""
+    if "state: RUNNING" in status or "state: BLOCKED" in status:
+        print("REFUSED: pipeline run is in progress (STATUS state is RUNNING or BLOCKED)")
+        return 1
+
+    derived, count = arc_summary_state()
+    if derived is None:
+        print("REFUSED: arc summaries non-contiguous; inspect fiction_loop/arcs/ "
+              "— no auto-repair possible")
+        return 1
+
+    path = R / "state/master_state.json"
+    try:
+        original = path.read_text()
+        state = json.loads(original)
+    except Exception as e:
+        print(f"REFUSED: master_state.json unreadable: {e}")
+        return 1
+    stored = state.get("arc_current")
+    if stored == derived:
+        print(f"REPAIR arc_current: no drift — nothing written "
+              f"(stored {stored}, basis: {count} arc summary files)")
+        return 0
+
+    print(f"REPAIR arc_current: stored {stored} -> derived {derived} "
+          f"(basis: {count} arc summary files)")
+    updated, replacements = re.subn(
+        r'(?m)^(\s*"arc_current"\s*:\s*)[^,\n]+(,?\s*)$',
+        rf"\g<1>{derived}\g<2>",
+        original,
+    )
+    if replacements != 1:
+        print(f"REFUSED: expected exactly one arc_current field, found {replacements}")
+        return 1
+    path.write_text(updated)
+    return 0
 
 
 # --- 6. git / redo readiness ---------------------------------------------------
@@ -275,6 +345,12 @@ def show_status() -> None:
 
 
 def main() -> None:
+    if sys.argv[1:] == ["--repair"]:
+        sys.exit(repair_arc_current())
+    if sys.argv[1:]:
+        print("usage: analyst.py [--repair]", file=sys.stderr)
+        sys.exit(2)
+
     cfg = check_config()
     check_key(cfg)
     check_api_log(cfg)

@@ -314,8 +314,12 @@ manifestation
 
 observation
   → If appeared = true:
-    The exact notebook entry text from the prose (what the anchor observed)
-    Pull verbatim from the chapter — this is what goes into observable_log
+    Contains ONLY reader-observable prose facts, never marker/meta prefixes.
+    If the prose contains a notebook entry, pull its exact text verbatim; otherwise
+    record an accurate reader-observable description of the anchor material.
+    The bare sentinel "UNDETERMINED" is permitted only when the chapter contains
+    NO observable anchor material at all (the Updater's missing-field report flag
+    then applies).
   → If appeared = false: "none"
 
 location
@@ -412,7 +416,10 @@ schedule: `touch_schedule` (touch → arc), `touch_target`, `name_at_touch`,
 
 **Definitions:**
 ```
-deficit(X)   = number of touches in X.touch_schedule whose arc <= arc_current
+arc_effective = arc_current + 1 IF the chapter being extracted has
+                chapter_type = arc_transition
+                ELSE arc_current
+deficit(X)   = number of touches in X.touch_schedule whose arc <= arc_effective
                and whose touch number > X.current_touch
 eligible(X)  = X.prerequisite is null
                OR every operation in X.prerequisite has current_touch >= 2
@@ -422,6 +429,11 @@ spacing(X)   = master_state.chapter_count - X.teaching_history[-1].chapter
                (infinity if teaching_history is empty)
 cleared(X)   = X.current_touch >= 2
 ```
+
+The Extractor computes the pointer for the NEXT chapter at step 11, before the
+Updater's STEP 9 arc advance at step 12. During an arc_transition extraction,
+the next chapter already belongs to the new arc. T-006 ratifies the ch7 run's
+committed 008 pointer, which a literal arc_current=1 walk could not produce.
 
 **STEP A.0 — arc-transition precedence:**
 ```
@@ -485,7 +497,7 @@ echo_touch (max 1):
 IF every ELIGIBLE operation has deficit = 0
    (gate-blocked operations — prerequisite not yet at touch 2 — do NOT hold the
     arc open; their deficit carries into the next arc automatically, since
-    deficit counts all schedule entries with arc <= arc_current, and gains
+    deficit counts all schedule entries with arc <= arc_effective, and gains
     priority as soon as the prerequisite clears):
   → type: arc_transition for the NEXT chapter
   → operation_due: null, touch_due: null
