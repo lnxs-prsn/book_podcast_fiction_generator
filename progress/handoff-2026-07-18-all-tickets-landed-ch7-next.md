@@ -346,3 +346,44 @@ Root-cause lesson (recurring, now 3×): acceptance commands AND STOP-condition
 greps must be dry-run against HEAD before dispatch — including verifying that
 any named test harness exists and that broad audit greps exempt
 correct-as-is contracts. Extends handoff §2.7.
+
+## 13. ADDENDUM (2026-07-19) — T-012/T-013/T-014 implemented; senior acceptance; T-014 regression → T-015 dispatched
+
+All three implemented (T-012 `4834101`, T-013 `0b0f4af`, T-014 `ba7204b`);
+write-sets matched. Senior re-ran acceptance independently against HEAD:
+
+- **T-013 (LAW 16): ACCEPTED.** LAW 16 present with its case-law clause;
+  LAWS 1–15 byte-unchanged; no stale "15 laws" counts under fiction_loop.
+  Senior-owned HANDOFF.md count fix 15→16 done (`this session`).
+- **T-012 (revision rung): mostly green** — `--check-labels` regression
+  (ch7/att2/att3), diff-guard (`diff-guard ok`), arg-guards, `--revise
+  --dry-run` (exit 0, revision_prompt.md holds draft+flagged lines, spend
+  BYTE-UNCHANGED), test baseline `1 failed, 331 passed` all PASS. **BUT
+  §4.1/§4.3 REGRESSED by T-014** (see below).
+- **T-014 (anchor check): correct WHEN asked** — with
+  `--anchor-requirement`, attempt3→`anchor_absent`, attempt2→labels-only
+  (phrase present), `anchor_appears:false`→no-op. **Defect:** T-014 wired
+  the anchor check into the SHARED `write_prose_deficiencies`
+  UNCONDITIONALLY, and `load_anchor_requirement` RAISES on a missing
+  `ANCHOR_REQUIREMENT_JSON` block. So `--check-prose` with NO
+  `--anchor-requirement` (T-012's accepted label-only contract) now dies
+  with a raw traceback whenever the assembled_prompt lacks the block —
+  every historical draft, and it holds the label check hostage to the
+  anchor contract. Live happy-path survives only because the Assembler
+  always emits the block and the orchestrator relies on that unwritten
+  coupling.
+
+**T-015 dispatched** (`tickets/T-015-check-prose-anchor-coupling-regression.md`):
+`--check-prose` runs labels ALWAYS, anchor check ONLY when
+`--anchor-requirement` is supplied; orchestrator's live step-8 call passes
+`--anchor-requirement …/assembled_prompt.md` so enforcement moves to the one
+site that has the block; supplied-but-malformed block → clean handled error,
+not a traceback. Write-set: invoke_writer.py + orchestrator.md (both already
+T-014's). Fully offline acceptance. This is a classic integration
+regression: T-014 changed shared code without re-running the prior ticket's
+(T-012's) acceptance — the ticket-pipeline analogue of "gates before spend"
+applied to redispatch.
+
+**Queue: T-015 (small, between-runs) before ch8 restart.** After it lands,
+the revision station is whole and ch8 re-enters at the revision rung for any
+surgical miss. Fixtures preserved: attempt-2 `d91e558`, attempt-3 `cf70a1b`.
