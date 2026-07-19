@@ -146,3 +146,28 @@ LAW 17 is live (`c55110a`, senior-verified: purely additive, spec bumped to
 **Queue now: T-016 (tool regression suite) → then ch8 restart** (paid,
 owner-started). T-016 is unblocked (its dep T-017 landed) and is the last
 tool ticket before the product resumes.
+
+## 10. T-016 LANDED + ch8 arc-2 quota bug FIXED (2026-07-19, later)
+
+- **T-016 landed** (`12ed7b9`) — tool regression suite live. §5/§9 queue text
+  above is now STALE on this point: no offline tool tickets remain.
+- **ch8 run resumed** (paid, owner-started) and hit a **structural gate FAIL at
+  step 11.5**: "2 of 3 wrong-approach scenes for arc 2". Root cause was NOT the
+  chapter — `concept_curriculum.md` §9 held **two contradictory count statements**
+  (Section 4 designs arc 2 = 2; the reader-progression table said "arc 1-2 three
+  minimum"), and both copies (`QUOTA_BY_ARC`, assembler BEAT QUOTA) followed the 3.
+  Latent since the curriculum's first commit; dormant through arc 1 (reads 3 both
+  ways); fired on the first arc-2 gate chapter (ch8).
+- **Owner DECISION 10 → Option A** (Section 4 is sole count owner). Fix landed
+  `6d15c30` (senior, owner-delegated small task, pathspec-limited governance
+  commit — NOT in the chapter transaction, LAW 8): gate arc 2 `3→2`; assembler
+  BEAT QUOTA split "Arc 1: THREE / Arc 2: TWO"; reader-progression table now defers
+  on count; field_registry case law; human_decision.md DECISION 10; a
+  `QUOTA_BY_ARC` freeze assertion in `tools/regression/run.py` (LAW 15/16).
+  Verified: regression **12/12**, gate **PASS (arc 2, quota 2)** on the existing
+  draft (receipt written + `--verify` green), no rewrite, no paid call.
+- **ch8 is UNBLOCKED at step 11.5.** The Orchestrator can proceed straight into
+  its normal step-10 living-doc refresh + step-12 Updater (ordinary chapter cost,
+  not a redo). The run's working state (chapter_008.md, prompts/*, spend,
+  `.gate_pass.json`) remains uncommitted for the Orchestrator's own step-12
+  chapter transaction.
