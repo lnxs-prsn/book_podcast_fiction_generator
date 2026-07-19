@@ -1,14 +1,18 @@
 # HANDOFF — front door (stable path; content lives in progress/)
 
-> **CURRENT handoff: `progress/handoff-2026-07-19-compacted-state.md`**
-> — a COMPACTED snapshot (2026-07-19): 7 chapters, arc 2, chapter 008 parked
-> pending two offline tool tickets (T-018 LAW 17 → T-016 regression suite),
-> then a paid owner-started ch8 restart. T-017 (anchor-check retired) landed
-> + accepted; T-015 withdrawn. New "govern change" operating model live
-> (ticket Upstream/Downstream fields, LAW 16/17, CAST & FIT lens). Read that
-> file's §§1–5 for current truth in one hop. The prior running ledger
-> `handoff-2026-07-18-all-tickets-landed-ch7-next.md` (§§1–14) is ARCHIVED —
-> the detailed *why*, not the front door. Do not orient from any other document.
+> **CURRENT handoff: `progress/handoff-2026-07-19-compacted-state.md` — read its
+> §11 first (latest state).** As of later 2026-07-19: **8 chapters committed,
+> arc 2, ch8 landed + accepted** (`8935458`); next = ch9 (return_to_character,
+> char_004). T-016 + T-018 landed; **DECISION 10** (arc-2 cast quota 3→2, §9
+> self-contradiction) fixed (`6d15c30`); **factory spec-sync pass** done
+> (`3ff7c43`). A story-treatment on the factory spec (individual + CAST & FIT
+> personifications) is uncommitted, pending owner reaction; a factory Tier-1
+> action queue (leak fixes / pre-writer prompt gate) is proposed, not dispatched.
+> The "govern change" operating model is live (ticket Upstream/Downstream, LAW
+> 16/17, CAST & FIT lens). §§1–5 are the initial-compaction snapshot; §§8–11 are
+> the current addenda (§11 newest). The prior running ledger
+> `handoff-2026-07-18-all-tickets-landed-ch7-next.md` (§§1–14) is ARCHIVED — the
+> detailed *why*, not the front door. Do not orient from any other document.
 
 **Scope: maintainer sessions only.** A session running the fiction_loop
 pipeline (RUN.md kickoff) must NOT orient here — its complete world is

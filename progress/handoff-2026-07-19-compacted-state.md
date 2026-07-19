@@ -10,6 +10,9 @@ tree clean.
 
 ## 1. State (verified against master_state.json + git, 2026-07-19)
 
+> **STALE as of later 2026-07-19 — see §11 for current state (8 chapters, ch8
+> COMMITTED, factory spec-sync done). §1 below is the initial-compaction snapshot.**
+
 - **7 chapters committed, `arc_current` = 2**, next pointer = `008`
   (new_focal_character, op_check_result). Analyst: state sync OK.
 - **Chapter 008 is PARKED.** Three attempts were abandoned (handoff-archived
@@ -171,3 +174,42 @@ tool ticket before the product resumes.
   not a redo). The run's working state (chapter_008.md, prompts/*, spend,
   `.gate_pass.json`) remains uncommitted for the Orchestrator's own step-12
   chapter transaction.
+
+## 11. ch8 COMMITTED + factory spec-sync + story-treatment (2026-07-19, LATEST — read this for current state)
+
+**Supersedes §1's "7 chapters / ch8 parked" — that is now stale.**
+
+- **Chapter 008 COMMITTED + senior-accepted** (`8935458`): new_focal_character,
+  op_check_result, the two DECISION-10 arc-2 wrong approaches (confident specialist
+  + hypothesis tester). **`chapter_count`=8, `arc_current`=2**, next pointer =
+  **009** (return_to_character, char_004 Wanjiku Mwangi, op_separate_condition,
+  touch 2). Clean one-chapter transaction; governance fixes stayed out (LAW 8);
+  analyst green, tree clean.
+- **Factory spec-sync pass** (`3ff7c43`, per SG-14): the factory specs had drifted
+  on hold through T-004..T-018 + DECISION 10; reconciled — `intake_factory.spec.md`
+  §3 validation status (arc-1→2 boundary now CROSSED at ch8, not projected),
+  Stage-4 **generation rule 5** (one quantity, one owning table), §0 `QUOTA_BY_ARC`
+  leak marked **PROVEN LIVE**, build-list rows marked (T-016 partial);
+  `deterministic_pipeline`/`assembler_template` drift notes extended;
+  `addional_good_to_know.md` §6 refreshed. **No design change — LAW 14 validated.**
+- **Story treatment run on the factory spec** (spec-readiness instrument) — TWO
+  artifacts, **UNCOMMITTED pending owner reaction** (propose-and-correct):
+  - `progress/factory-spec-personification-2026-07-19.md` — **INDIVIDUAL** angle
+    ("the spec speaks a third time"); findings CH8-1..8, theme "design closed,
+    build didn't" (its own unbuilt diagnoses) + a foreseen-issues register.
+  - `progress/factory-cast-and-fit-2026-07-19.md` — **INTERACTION** angle (CAST &
+    FIT lens): factory as a company. Key findings — the 3 chassis/pack leaks are
+    ONE bad hire ×3 with the human as sync-pass babysitter (Q3); the human is the
+    overloaded worker covering 7 empty chairs (Q4); the Gate got blamed while the
+    Curriculum was guilty (Q5).
+- **Factory action queue (PROPOSED from the findings, NOT dispatched):** a Tier-1
+  thrust to cut per-chapter human burden — **T-019** retire the `QUOTA_BY_ARC`
+  leak (introduce a pack-owned `arc_quota` data source the Gate reads — also a
+  Stage-4 manifest down payment); **T-020/021** anchor + mirror leaks; **T-022**
+  pre-writer prompt gate (the spec's designated FIRST build); **T-023** regression
+  suite fires the gate's own checks (incl. a rule-5 curriculum-consistency check).
+  Still-OPEN validation gaps (chapter-independent except the first): **anchor_interlude
+  never fired**; **LAW 15 machinery sweep** undone; `calibration/` organ unbuilt.
+- **QUEUE NOW:** owner deciding between (a) the factory Tier-1 action tickets
+  (chapter-independent, zero paid — leads with T-019 or T-022) and (b) **ch9**
+  (return_to_character, char_004 — paid, owner-started; pointer already staged).
