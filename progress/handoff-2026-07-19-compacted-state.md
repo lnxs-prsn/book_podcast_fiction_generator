@@ -117,3 +117,24 @@ T-018 + T-016 land.
 
 Diagnostics (zero tokens): `PYTHONPATH=src .venv/bin/python
 fiction_loop/tools/analyst.py` and `.../progress.py`.
+
+## 8. Since compaction (2026-07-19, later) — governance changes + T-018 status
+
+Recorded so a cold session's front door stays current (handoff discipline):
+- **AGENTS.md §1 standing exemption** (`af970c4`): appending to a ticket's OWN
+  implementer-log section is always allowed and is NOT counted against its
+  write-set or any "only the write-set changed" acceptance. No ticket lists
+  itself. (Fixed a template-inherited contradiction that made a strict
+  implementer STOP.)
+- **Innovations extracted** (`ef7ebf5`): two new patterns —
+  `situation-personification` (CAST & FIT) and `root-cause-laddering`; two
+  enhancements (ticket-dispatch Upstream/Downstream; handoff compaction); one
+  incubating (meta-layer regression net). `innovations/` is now 13 patterns.
+- **T-018 (LAW 17) in redispatch, UNBLOCKED, pending implementation.** Two
+  valid implementer STOPs, both senior-resolved (`af970c4`, `c49bbc5`):
+  (1) the implementer-log exemption above; (2) write-set expanded to include
+  `fiction_loop/specs/intake_factory.spec.md` for the "16 laws"→"17" count
+  bump — the original Downstream wrongly said "none" (the law COUNT is a
+  shared value). **At T-018 acceptance the SENIOR bumps `HANDOFF.md:29`
+  "16 laws"→"17"** (out of implementer scope, T-013 precedent).
+- Queue unchanged: **T-018 → T-016 → ch8 restart** (paid, owner-started).
