@@ -5,7 +5,9 @@ Mode: alone
 Depends-on: none (constitution edit). Independent of T-016/T-017.
 Timing: BETWEEN runs only.
 Worktree: main working tree, repo root
-Write-set: fiction_loop/CONTRIBUTING.md (one new law + case law)
+Write-set: fiction_loop/CONTRIBUTING.md (one new law + case law),
+           fiction_loop/specs/intake_factory.spec.md (law-count bump
+           "16 laws" → "17 laws" ONLY — added on redispatch, §3.2)
 Hot-files: none
 Upstream (preconditions — author verified 2026-07-19):
   - CONTRIBUTING.md currently ends at LAW 16 (verified); the new law is 17.
@@ -13,9 +15,15 @@ Upstream (preconditions — author verified 2026-07-19):
     template's Downstream field + acceptance item 4 (committed), and the
     tool regression suite (T-016). So LAW 17 ships WITH its check — it is
     LAW-16-compliant by construction.
-Downstream (consumers to re-verify): none — CONTRIBUTING is read by humans/
-  agents; no code consumes it. (The "16 laws" count references were fixed at
-  T-013; confirm none now say "16 laws" needs bumping — see §3.2.)
+Downstream (consumers to re-verify — CORRECTED on redispatch): the law COUNT
+  ("the N laws") is a shared value with consumers. Verified hits of "16 laws":
+  (a) fiction_loop/specs/intake_factory.spec.md:29 — IN write-set, bump here;
+  (b) HANDOFF.md:29 — OUTSIDE fiction_loop, senior updates at acceptance
+  (T-013 precedent). CONTRIBUTING.md itself gains only the LAW 17 paragraph.
+  [Original Downstream said "none — no code consumes it." That was WRONG and
+  caused the STOP below — a live demonstration that even LAW 17's own ticket
+  under-enumerated its consumers, which is exactly why the mechanical check,
+  not the principle alone, is the point.]
 State-access: none
 Paid-calls: forbidden
 ```
@@ -53,12 +61,14 @@ Case law: T-014 rewired `write_prose_deficiencies` and regressed T-012's
 house voice (bold lead, the rule, then *(case law: …)*). One paragraph. Do
 NOT renumber or edit any existing law.
 
-**3.2** Check for any "16 laws" count copy that must become "17":
-`grep -rn "16 laws\|sixteen laws" fiction_loop/ HANDOFF.md`. Update the
-in-scope ones under `fiction_loop/`; note any `HANDOFF.md` hit for the
-senior (out of implementer scope, per T-013 precedent). At ticket time the
-known counts still read "15/16" fixed by T-013; verify and update only real
-hits.
+**3.2** Bump the law-count copies from "16" to "17". Verified hits
+(`grep -rn "16 laws\|sixteen laws" fiction_loop/ HANDOFF.md`):
+- `fiction_loop/specs/intake_factory.spec.md:29` ("16 laws with case law")
+  → "17 laws with case law" — IN write-set, you update it.
+- `HANDOFF.md:29` ("the 16 laws") — OUTSIDE fiction_loop, off-limits to the
+  implementer (agent_conduct scope wall); the SENIOR updates it at
+  acceptance (T-013 precedent). Do not touch HANDOFF.md.
+Change only the digit; touch nothing else in the spec.
 
 ## 4. Acceptance
 
@@ -97,3 +107,18 @@ Trailers: `Ticket: T-018` / `Implemented-by: <Codex|Qwen>`.
   write-set changed" check — AGENTS.md §1, TICKET_TEMPLATE §3/§6, and §4 above
   now say so. No ticket lists itself. **Proceed:** implement LAW 17 into
   CONTRIBUTING.md per §3; append your log here freely.
+- 2026-07-19 — Codex — **BLOCKED.** The required §3.2 count scan found a real
+  stale count at `fiction_loop/specs/intake_factory.spec.md:29` ("16 laws"),
+  and §3.2 requires updating real hits under `fiction_loop/`, but the literal
+  write-set permits only `fiction_loop/CONTRIBUTING.md`. Per AGENTS.md §1 and
+  LAW 1, stopped without editing LAW 17 or the out-of-write-set spec. Expand
+  the write-set to include `fiction_loop/specs/intake_factory.spec.md`, or
+  explicitly exempt that hit for a separate ticket.
+- 2026-07-19 — senior — **RESOLVED (write-set expanded; STOP was correct;
+  authoring defect owned).** `intake_factory.spec.md` added to the write-set
+  (law-count bump only); the Downstream field is corrected (it wrongly said
+  "none"). The irony is instructive and now recorded in the ticket: the LAW 17
+  ticket itself under-enumerated its consumers — the count is a shared value.
+  HANDOFF.md's count stays the senior's at acceptance. **Proceed:** LAW 17
+  into CONTRIBUTING §3.1; bump the ONE digit in intake_factory.spec.md §3.2;
+  append your log here.
