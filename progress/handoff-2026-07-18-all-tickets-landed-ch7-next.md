@@ -387,3 +387,40 @@ applied to redispatch.
 **Queue: T-015 (small, between-runs) before ch8 restart.** After it lands,
 the revision station is whole and ch8 re-enters at the revision rung for any
 surgical miss. Fixtures preserved: attempt-2 `d91e558`, attempt-3 `cf70a1b`.
+
+## 14. ADDENDUM (2026-07-19) — B operating model adopted; T-014 retired; LAW 17; CAST & FIT lens
+
+Owner decisions this session, all executed:
+- **Authoring discipline (committed):** the ticket template
+  (`innovations/ticket-dispatch/kit/TICKET_TEMPLATE.md`) now has **Upstream**
+  (preconditions the author dry-ran) and **Downstream** (consumers to
+  re-verify, from field_registry) header fields + acceptance item 4. Kills the
+  T-008/T-012/T-014 bounce class at authoring time.
+- **T-014 RETIRED (decision "3c").** The prose anchor-check was optional (the
+  gate catches anchor-absent authoritatively) and needed T-015 to babysit its
+  coupling. CAST & FIT Q3 named it a bad hire → retire, don't babysit.
+  **T-017** dispatched (revert T-014's surface; restore label-only
+  `--check-prose`). **T-015 WITHDRAWN** (subsumed by T-017).
+- **LAW 17 dispatched (T-018):** "know who eats your output" — a shared-surface
+  change re-verifies its consumers. LAW-16-compliant by construction: its
+  enforcement (the Downstream template field + the T-016 suite) ships with it.
+- **T-016 (tool regression suite)** rewritten to depend on T-017 and freeze the
+  POST-retirement label-only contract (anchor assertions removed). It is LAW
+  17's mechanical enforcement — the factory's first immune cell.
+- **CAST & FIT one-pager** committed at
+  `innovations/situation-personification/cast-and-fit.md` — a reusable lens
+  (five questions) for analysing a system as a household; the anchor-retirement
+  is its worked example.
+
+**Spec queue (all BETWEEN runs, offline, no paid calls):**
+T-017 (retire anchor-check) → T-016 (regression suite; depends on T-017).
+T-018 (LAW 17) independent, any time. All three implementable now.
+
+**Deferred (not now):** full boundary-enforcement architecture (let the suite
+reveal the seams first); a mechanical Upstream preflight (the template field +
+author dry-run covers it for now — building the mechanism is deferred, priced-
+guardrails discipline).
+
+**PRODUCT — chapter 008:** still parked. Owner decision: ch8 restarts only
+after ALL non-ch8-dependent specs are implemented (T-016/T-017/T-018). Then
+paid, owner-started; re-enters at the revision rung for any surgical miss.

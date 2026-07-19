@@ -1,5 +1,13 @@
 # TICKET T-015: --check-prose must not crash when no anchor block is present (T-014 regression)
 
+> **WITHDRAWN 2026-07-19 — SUPERSEDED BY T-017 (retire the anchor-check).**
+> This ticket existed only to *babysit* T-014 (decouple its anchor check from
+> the label check). The owner chose to RETIRE T-014 instead (decision "3c";
+> CAST & FIT Q3 — a hire that needs a minder was a bad hire). T-017 removes
+> the coupling by removing the component, which subsumes this fix — retiring
+> the anchor check restores `--check-prose` to label-only. DO NOT IMPLEMENT.
+> Kept for provenance.
+
 ```
 Mode: alone
 Depends-on: T-012 + T-014 MERGED (they are — 4834101, ba7204b). This
