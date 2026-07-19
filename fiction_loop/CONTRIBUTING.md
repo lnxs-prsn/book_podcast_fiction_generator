@@ -218,6 +218,17 @@ leaked into chapter 008 attempt-2 narration and cost a roll before T-010 made th
 violation a grep; the chapter 008 three-roll incident is the arithmetic proof,
 handoff 2026-07-18 §§6–9.)*
 
+**LAW 17 — KNOW WHO EATS YOUR OUTPUT.** A change to any surface with registered
+consumers (LAW 4) must, in the SAME change, enumerate those consumers in the
+ticket's Downstream field and re-verify them through their acceptance and/or the
+tool regression suite as part of its own acceptance. A downstream regression
+must fail in the ticket that caused it, never be discovered by the next one.
+Enforcement (LAW 16 self-compliance): the ticket template's Downstream field and
+acceptance item 4, plus the tool regression suite (T-016). *(case law: T-014
+rewired `write_prose_deficiencies` and regressed T-012's `--check-prose`
+label-only contract; caught only by hand re-verification, handoff 2026-07-19
+§13.)*
+
 ## 4. BUG-FIX PROCEDURE (the algorithm)
 
 1. `.venv/bin/python fiction_loop/tools/analyst.py`. Trust it. "Unknown signature" means

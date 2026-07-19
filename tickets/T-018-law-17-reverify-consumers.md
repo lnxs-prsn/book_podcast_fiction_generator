@@ -122,3 +122,6 @@ Trailers: `Ticket: T-018` / `Implemented-by: <Codex|Qwen>`.
   HANDOFF.md's count stays the senior's at acceptance. **Proceed:** LAW 17
   into CONTRIBUTING §3.1; bump the ONE digit in intake_factory.spec.md §3.2;
   append your log here.
+- 2026-07-19 — Codex — **IMPLEMENTED.** Appended LAW 17 with its LAW-16
+  enforcement and T-014 case law; bumped the factory spec's sole law-count copy
+  from 16 to 17. Acceptance verification completed with no paid calls.
