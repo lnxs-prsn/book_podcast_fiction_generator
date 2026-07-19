@@ -7,6 +7,15 @@
 > rules' line was corrected to dynamic extraction (12 today); the HARD RULES
 > block (assembler.md, 2026-07-02) must be appended by the implementation as
 > the prompt's final section.
+>
+> **DRIFT NOTE 2026-07-19.** The wrong-approach selection this spec mechanizes
+> (`failure_modes_not_yet_shown[0]` + the arc cast quota) is a registered LAW 17
+> consumer of the arc quota, which changed in DECISION 10: the count is owned by
+> `concept_curriculum.md` §9 Section 4 (arc 1 → 3, arcs 2–8 → 2); assembler.md's
+> BEAT QUOTA table now reads "Arc 1: THREE / Arc 2: TWO" and `structural_gate.py`'s
+> `QUOTA_BY_ARC` matches. When implemented as code, this function must READ the
+> per-arc count from the pack (curriculum/manifest), never hardcode it — the §0
+> `QUOTA_BY_ARC` chassis/pack leak in `intake_factory.spec.md` applies here too.
 
 Covers: the mechanical half of `agents/assembler.md` — pulling fixed reference material
 and fetched fields into `assembled_prompt.md`. This is the file where the three

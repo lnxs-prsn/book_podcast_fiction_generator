@@ -8,6 +8,20 @@
 > paraphrase limitation is closed: contexts are a fixed enum
 > (`process_state.json` context_enum); implement exact enum equality, and C4
 > runs post-assembly (step 7.5), not step 5.
+>
+> **DRIFT NOTE 2026-07-19 — further changes since 2026-07-03; implement against
+> the current agents/tools, not any pre-July logic:** (4) pipeline order changed
+> (T-008): the structural gate (step 11.5) + living-doc refresh now run AFTER the
+> Writer/Extractor, the gate BEFORE any paid post-Writer call — §1's step list
+> must follow the current `orchestrator.md` order (8 Writer → 9 save → 11
+> Extractor → 11.5 gate → 10 refresh → 12 Updater). (5) `arc_current` self-manages
+> (T-006): the Updater advances it and the analyst enforces `arc_current = 1 +
+> count(arc summaries)` — §5 must not treat arc as a static field. (6) the
+> Extractor emits a single-outcome next-pointer (T-005) and the gate is
+> receipt-guarded (T-009: Updater unreachable without a fresh gate PASS) — the
+> §4/§5 boundaries shifted accordingly. (7) the Orchestrator is Orchestrator-ONLY
+> (T-011): no governance reads in the control-flow layer. This note is a pointer;
+> re-derive against the live `agents/*.md`, which are the truth.
 
 Covers: Orchestrator, Fetcher, Updater, Consistency Checker's mechanical checks, and
 Extractor's DECISION LOGIC. Each of these is already written as unambiguous pseudocode

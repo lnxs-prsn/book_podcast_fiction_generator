@@ -98,18 +98,19 @@ artistically dead — the taste flights exist so a human smells that early.
 ## 6. Gates between here and building the factory (the honest checklist)
 
 Sequencing is owner-agreed: **validate book 1 first** — the factory must encode a
-PROVEN recipe. What "validated" still requires as of ch. 4/~26 (all OPEN):
+PROVEN recipe. Status updated 2026-07-19 (ch8 committed); the canonical, most
+detailed version now lives in `intake_factory.spec.md` §3 — keep the two in sync
+(SG-14):
 
-1. More teaching chapters at accepted quality (prose bar: 1.docx).
-2. The never-exercised machinery: arc_transition and anchor_interlude chapter types,
-   arc-1→2 boundary (does the failure pool actually grow? are new-type cards wired?),
-   a return chapter (tests F14 + correct_approach continuity, both currently
-   decorative/unwired), compression at scale.
-3. Transaction integrity trio (gitignore prose exclusion, pathspec-limited step 13.5,
-   redo-guard hardening) — the undo button must be real before unattended operation.
-4. The gate/refresh reorder (mapped, 6 consumers) — cost-per-rejection matters much
-   more at factory scale.
-5. Machinery inventory sweep (LAW 15).
+1. More teaching chapters at accepted quality (prose bar: 1.docx) — **8 committed**.
+2. The never-exercised machinery: **arc_transition ✓ (ch7)**; **arc-1→2 boundary ✓
+   (ch8 — failure pool grew, new-type cards wired)**; **return chapter F14 +
+   correct_approach ✓ (ch6; again ch9)**; STILL OPEN: **anchor_interlude** (never
+   fired) and **compression at scale**.
+3. Transaction integrity trio: **gitignore prose exclusion ✓ (FI-1)**; pathspec-
+   limited chapter commit + redo-guard hardening — confirm status.
+4. The gate/refresh reorder (mapped, 6 consumers) — **✓ DONE (T-008)**.
+5. Machinery inventory sweep (LAW 15) — **STILL OPEN**.
 
 ## 7. One meta-rule that made all of this work (SETTLED, owner-empirical)
 

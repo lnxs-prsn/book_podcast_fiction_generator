@@ -42,6 +42,13 @@ addition cites its SG. Defaults introduced by that pass are owner-correctable.
   into assembler.md instead of fetched from world_rules §5; `QUOTA_BY_ARC`
   hardcoded in structural_gate.py (arc cast quotas are pedagogy — pack content
   living in chassis code).
+  **UPDATE 2026-07-19: the `QUOTA_BY_ARC` leak has now fired for real** — it
+  false-failed a correct arc-2 chapter (ch8) and blocked the run (DECISION 10;
+  the value was corrected, the leak itself remains). It is no longer theoretical
+  debt: of the three it is the demonstrated-costly one and the ripest to fix
+  (chassis should READ the per-arc count from the pack, not own a copy). This
+  episode validates LAW 14 — a real generalization pain resolved to a chassis/pack
+  leak, exactly as the law predicts.
 
 ---
 
@@ -142,6 +149,20 @@ the factory's template generator MUST emit templates that satisfy these):**
    names, schedule mechanics) must be quarantined at the prompt layer (forbidden-
    strings + self-verify), not caught in review (ch1's three never-list violations
    were all induced by the brief itself).
+5. **One quantity, one owning table (single-source WITHIN the pack).** A generated
+   curriculum must never state the same quantity in two places. The wrong-approach
+   COUNT per arc lives in exactly one table; every other table that touches it
+   defers rather than restates. *(Case law, ch8 / DECISION 10: concept_curriculum
+   §9 held two count statements — Section 4 designed arc 2 = two approaches while
+   the reader-progression table said "arc 1-2 three minimum"; both chassis copies
+   followed the 3 and the structural gate false-failed a correct arc-2 chapter.
+   Latent since the curriculum's first commit, dormant through arc 1 where both
+   tables read 3, fired on the first arc-2 gate chapter. A template generator that
+   emits two count-bearing tables ships this contradiction into every book.)* This
+   is LAW 2 (single source of truth) applied to generated pack content, and it
+   pairs with the §0 `QUOTA_BY_ARC` leak fix: the count belongs in the pack, stated
+   once, and the chassis READS it — neither copied into chassis code nor duplicated
+   within the pack.
 
 ### Stage 5 — Verification (all automated; humans don't read piles)
 - **Fidelity check:** a checker agent re-locates a supporting quote for every domain
@@ -236,7 +257,7 @@ type is invented. One memory, two doors: accepted and not-yet.
 | Calibration organ format + read path (accepted + deferred, one organ) | new (SG-11) |
 | Pre-writer prompt gate: assembled prompt must carry a hard rule per gate check | FIRST dissolver (Force 3) — zero-token, PREVENTS paid gate failures; would have caught ch6-F15 before the draft |
 | Per-model obedience card (probe-measured compliance profile + analyst signatures) | dissolver (Force 1); re-measure on every model swap |
-| Fixture suite: synthetic briefs/states firing every gate check, consistency check, undo rung once, zero tokens | dissolver (Force 2); first customer = arc-1→2 boundary machinery |
+| Fixture suite: synthetic briefs/states firing every gate check, consistency check, undo rung once, zero tokens | dissolver (Force 2); first customer = arc-1→2 boundary machinery. **PARTIAL 2026-07-19: T-016 (`tools/regression/run.py`) landed** — freezes tool contracts (label / prose / gate-receipt / `QUOTA_BY_ARC` value) with fixtures; still open: firing the gate's quota/anchor/echo/F14/F15 checks against synthetic briefs |
 | Rules-as-data: field_registry becomes source, prose generated from it | dissolver (Force 4); heaviest — after factory v1 |
 | genre_derivation reference doc | DONE — specs/genre_derivation.md |
 | Meta-templates: required sections/contracts per core doc | derive from the Sankofa docs' structure |
@@ -246,7 +267,7 @@ type is invented. One memory, two doors: accepted and not-yet.
 | Decisions ledger format + propagation rules | generalize human_decision.md |
 | Consumer map per template section (rule → its consumers) + propagation enforcement | new; the case law is in core/field_registry.md §RULE-CHANGE AUDIT |
 | init_state.py: split OPERATIONS/PREREQS into a manifest file it loads | small refactor |
-| Fix the 3 chassis/pack leaks (§0: anchor description, mirror content, QUOTA_BY_ARC) | chapter-independent; precondition for any second pack |
+| Fix the 3 chassis/pack leaks (§0: anchor description, mirror content, QUOTA_BY_ARC) | chapter-independent; precondition for any second pack. **QUOTA_BY_ARC leak now PROVEN LIVE (ch8 / DECISION 10) — ripest of the three; fix = gate reads the per-arc count from the pack (curriculum/manifest) instead of owning a copy** |
 | Machinery inventory sweep (LAW 15: no shadow/decorative machinery) | chapter-independent; the factory can't generate packs against a chassis whose machinery is partly unwritten or non-firing |
 | Thing-fiction pedagogy pack (v2) | promote novel_pipeline patterns into the chassis |
 
@@ -256,14 +277,28 @@ PROVEN recipe). Then build Stages 1–6 for process books (v1). Thing pack v2.
 Each processed book leaves a worked example that calibrates the next — the second
 book is much cheaper than the first; the fifth is near-turnkey.
 
-**What "validated" concretely requires (as of ch6; projected proven ~ch 8–9, the
-arc-1→2 boundary):** the never-exercised machinery must fire for real at least
-once — arc_transition and anchor_interlude chapter types, the arc boundary (does
-the failure pool actually grow? are new-type cards wired?), a return chapter
-exercising F14 life progression + correct_approach continuity (first exercise =
-ch6, in flight), compression at scale — plus the transaction-integrity trio
-(prose in git, pathspec-limited chapter commits, redo-guard hardening) before any
-unattended operation, and the LAW 15 machinery sweep.
+**What "validated" concretely requires (updated 2026-07-19, ch8 committed — the
+arc-1→2 boundary is now CROSSED, not projected):** progress against the original
+checklist —
+- ✓ **arc_transition** chapter type — exercised ch7.
+- ✓ **arc-1→2 boundary** — crossed at ch8: the failure pool grew (arc-2 types
+  "the confident specialist" + "the hypothesis tester" introduced) and new-type
+  cards wired (char_008, G-008, loc_kampala). This crossing also surfaced and
+  fixed the `QUOTA_BY_ARC` chassis/pack leak (DECISION 10 / §1 Stage 4 rule 5) —
+  the boundary machinery firing did exactly the diagnostic job it was meant to.
+- ✓ **return chapter** F14 life progression + correct_approach continuity —
+  first exercised ch6; available again ch9 (return_to_character, char_004).
+- ✓ **transaction-integrity: prose in git** — FI-1 landed (.gitignore excepts
+  `fiction_loop/chapters/`; ch8 prose is committed).
+- ✗ **STILL OPEN:** `anchor_interlude` chapter type (**never once fired** — the
+  single largest never-exercised gap); **compression at scale** (later arcs); the
+  remaining transaction trio (pathspec-limited chapter commit + redo-guard
+  hardening — confirm status); and the **LAW 15 machinery inventory sweep**.
+
+Book-1 is at its ~8-chapter target count, but the recipe is NOT yet fully proven:
+`anchor_interlude` must fire and the LAW 15 sweep must run first. Both are
+chapter-independent except `anchor_interlude`, which rides the pointer schedule
+(or a deliberate trigger).
 
 **Spec-sync rule (SG-14):** any recipe change during validation (spec fix, promoted
 rule, new gate) must update THIS file in the same session — it is the factory's
