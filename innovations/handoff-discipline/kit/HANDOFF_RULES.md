@@ -54,3 +54,28 @@ included. Updating the handoff needs no dispatch or permission: recording true
 state is never out of scope. (Implementing agents with a tight write-set:
 record the finding in your ticket's implementer log instead, and the reviewer
 carries it into the handoff.)
+
+## Compaction (when the running ledger gets too big to be a front door)
+
+The handoff is append-only by design, so the current file grows
+(dated addenda accumulate). When reaching current truth stops being a
+one-hop read — rule of thumb ~10+ addenda / a few hundred lines — COMPACT,
+don't keep appending:
+
+1. **Write a fresh `handoff-YYYY-MM-DD-compacted-state.md`** containing ONLY
+   live current truth: state, roles, still-binding facts, the open queue,
+   and a read-first order. **Re-verify every carried-forward fact against
+   its authoritative file/commit as you write it** (same rule as any new
+   section — compaction is the highest-risk moment for copying staleness).
+   Cite the commit you verified at.
+2. **Do NOT delete the old ledger.** It stays in `progress/` as the archived
+   detailed *why*; the compacted file names it as such. Files override the
+   handoff, and the ledger is still a file of record.
+3. **Repoint the front door** (`HANDOFF.md` banner + read-first item 1) at
+   the new compacted file; demote the old ledger to "archived detail."
+4. Commit as `docs: HANDOFF compaction — <date>`.
+
+This is the lightweight method. A heavier factory-scale rotation (auto-
+archiving landed tickets, a state-snapshot tool) is a separate, later concern
+— do not build it pre-emptively (priced-guardrails: compact by hand until the
+by-hand cost actually hurts).

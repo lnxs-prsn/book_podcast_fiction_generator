@@ -1,24 +1,14 @@
 # HANDOFF — front door (stable path; content lives in progress/)
 
-> **CURRENT handoff: `progress/handoff-2026-07-18-all-tickets-landed-ch7-next.md`**
-> — read its §5 ADDENDUM first: chapter 007 (arc_transition) committed
-> `0b3b362` and senior-verified; T-006 (arc_current self-managing: updater
-> STEP 9 advance, extractor arc_effective, analyst drift check + `--repair`)
-> LANDED `b128773`+`76185c2` and ACCEPTED — state reads arc=2. Then §§6–7:
-> ch8 attempt 1 gate-rejected (anchor absent; LAW 7 pollution fired,
-> living doc restored); attempt 2 INCIDENT — driver skipped 10/11/11.5 and
-> ran the Updater on the gate-FAILED brief; killed by owner, state undone
-> by senior (receipts §7); attempt-2 prose ALSO fails HARD RULE 1. **Ch8
-> parked awaiting a third redo generation (driver checklist in §7). FIVE
-> tickets queued, BETWEEN runs, in order: T-007 → T-008 → T-009
-> (gate pass-receipt blocks Updater) → T-010 (deterministic label check) →
-> T-011 (role fence: run driver = Orchestrator ONLY, owner decision — §8).**
-> Earlier that day: T-002/004/005/003 all landed and accepted.
-> Day detail:
-> `handoff-2026-07-18-ch6-landed-open-queue.md` §§5–8 and
-> `handoff-2026-07-18-deepseek-switch-404.md` §3b–3d. Background: the two
-> 2026-07-17 handoffs (conduct hardening; roles/environment/queue). One hop
-> from here to current truth; do not orient from any other document.
+> **CURRENT handoff: `progress/handoff-2026-07-19-compacted-state.md`**
+> — a COMPACTED snapshot (2026-07-19): 7 chapters, arc 2, chapter 008 parked
+> pending two offline tool tickets (T-018 LAW 17 → T-016 regression suite),
+> then a paid owner-started ch8 restart. T-017 (anchor-check retired) landed
+> + accepted; T-015 withdrawn. New "govern change" operating model live
+> (ticket Upstream/Downstream fields, LAW 16/17, CAST & FIT lens). Read that
+> file's §§1–5 for current truth in one hop. The prior running ledger
+> `handoff-2026-07-18-all-tickets-landed-ch7-next.md` (§§1–14) is ARCHIVED —
+> the detailed *why*, not the front door. Do not orient from any other document.
 
 **Scope: maintainer sessions only.** A session running the fiction_loop
 pipeline (RUN.md kickoff) must NOT orient here — its complete world is
@@ -32,10 +22,10 @@ rules: `innovations/handoff-discipline/kit/HANDOFF_RULES.md`.
 
 ## Read-first order for a cold session
 
-1. `progress/handoff-2026-07-18-all-tickets-landed-ch7-next.md` — current
-   state + open queue; then `handoff-2026-07-18-ch6-landed-open-queue.md`
-   (§§5–8, day record), `handoff-2026-07-18-deepseek-switch-404.md`, and the
-   two 2026-07-17 handoffs — conduct hardening, roles, state
+1. `progress/handoff-2026-07-19-compacted-state.md` — current state + open
+   queue (COMPACTED front door). For the *why* behind any claim, the archived
+   ledger `handoff-2026-07-18-all-tickets-landed-ch7-next.md` §§1–14, then the
+   older 2026-07-18 and 2026-07-17 handoffs
 2. `fiction_loop/CONTRIBUTING.md` — the 16 laws; binding BEFORE any change
    under `fiction_loop/`
 3. `fiction_loop/specs/intake_factory.spec.md` — the factory spec (design

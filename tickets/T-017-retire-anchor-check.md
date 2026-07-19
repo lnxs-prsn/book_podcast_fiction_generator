@@ -123,3 +123,11 @@ Trailers: `Ticket: T-017` / `Implemented-by: <Codex|Qwen>`.
   suite invocation hit the known read-only uv-cache harness restriction; the
   exact command completed after approved cache access. No paid call or
   state/chapter write was made.
+
+- 2026-07-19 — senior — **ACCEPTED.** Independently re-ran acceptance against
+  `f739452`: `--check-prose` label-only restored (ch7 → `[]` exit 0; attempt-3
+  → `[]` exit 0; attempt-2 → 4 `forbidden_label` exit 1 — T-012 §4.1/§4.3
+  regression gone); `grep -rn` for anchor machinery across `fiction_loop/` →
+  ZERO hits; `--anchor-requirement` flag removed (unrecognized); suite
+  `1 failed, 331 passed` (baseline). Downstream (T-012 label-only) green.
+  T-016 is now unblocked.
