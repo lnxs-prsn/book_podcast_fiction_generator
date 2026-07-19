@@ -125,3 +125,9 @@ Trailers: `Ticket: T-018` / `Implemented-by: <Codex|Qwen>`.
 - 2026-07-19 — Codex — **IMPLEMENTED.** Appended LAW 17 with its LAW-16
   enforcement and T-014 case law; bumped the factory spec's sole law-count copy
   from 16 to 17. Acceptance verification completed with no paid calls.
+- 2026-07-19 — senior — **ACCEPTED** (independently re-verified at `c55110a`):
+  LAW 17 present with a `(case law:` clause; the CONTRIBUTING diff is purely
+  additive (LAWS 1–16 byte-unchanged); `intake_factory.spec.md:29` reads
+  "17 laws"; `grep -rn "16 laws" fiction_loop/` → zero; commit touches only the
+  write-set + this log; suite `1 failed, 331 passed`. Senior-owned Downstream
+  done: `HANDOFF.md:29` bumped "16 laws"→"17". LAW 17 is live.

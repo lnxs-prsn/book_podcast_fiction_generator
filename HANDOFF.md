@@ -26,7 +26,7 @@ rules: `innovations/handoff-discipline/kit/HANDOFF_RULES.md`.
    queue (COMPACTED front door). For the *why* behind any claim, the archived
    ledger `handoff-2026-07-18-all-tickets-landed-ch7-next.md` §§1–14, then the
    older 2026-07-18 and 2026-07-17 handoffs
-2. `fiction_loop/CONTRIBUTING.md` — the 16 laws; binding BEFORE any change
+2. `fiction_loop/CONTRIBUTING.md` — the 17 laws; binding BEFORE any change
    under `fiction_loop/`
 3. `fiction_loop/specs/intake_factory.spec.md` — the factory spec (design
    complete, unbuilt; its §2 build list is the work map)

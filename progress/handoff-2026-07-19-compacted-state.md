@@ -138,3 +138,11 @@ Recorded so a cold session's front door stays current (handoff discipline):
   shared value). **At T-018 acceptance the SENIOR bumps `HANDOFF.md:29`
   "16 laws"→"17"** (out of implementer scope, T-013 precedent).
 - Queue unchanged: **T-018 → T-016 → ch8 restart** (paid, owner-started).
+
+## 9. T-018 LANDED + ACCEPTED (2026-07-19)
+
+LAW 17 is live (`c55110a`, senior-verified: purely additive, spec bumped to
+"17 laws", baseline green). Senior-owned `HANDOFF.md` count bump 16→17 done.
+**Queue now: T-016 (tool regression suite) → then ch8 restart** (paid,
+owner-started). T-016 is unblocked (its dep T-017 landed) and is the last
+tool ticket before the product resumes.
