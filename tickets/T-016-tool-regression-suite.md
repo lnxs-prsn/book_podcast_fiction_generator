@@ -100,3 +100,15 @@ Trailers: `Ticket: T-016` / `Implemented-by: <Codex|Qwen>`.
 - If ANY §2 item cannot be completed, STOP and revert; record in §6.
 
 ## 6. Implementer log (append below; never delete the ticket body)
+
+- 2026-07-19 — Codex: implemented the standalone offline runner and three
+  frozen fixtures; registered the suite in `field_registry.md` and under LAW
+  15. Green acceptance: `run.py` exited 0 with 11/11 assertions PASS and
+  restored transient prompt artifacts. Evidence-it-fires: temporarily changed
+  the attempt-2 prose expectation from 4 deficiencies to 0; the runner exited
+  1, named `FAIL: check-prose attempt-2 returns 4 forbidden_label records`,
+  and summarized `FAIL: 10/11 assertions passed`; then restored and reran
+  green. Fixture byte comparisons matched all three declared sources.
+  Sanctioned pytest baseline: `1 failed, 331 passed` (only the documented
+  pre-existing
+  `test_default_splitter_engine_passes_openrouter_timeout_seconds` failure).

@@ -203,6 +203,9 @@ the Extractor emits `null`)*. When auditing or predicting bugs, "a check covers
 this" counts ONLY if you have seen that check fail or can show the input that
 makes it fail. OPEN: a one-time machinery inventory sweep against this law has
 not yet been performed — until it is, assume unregistered machinery exists.
+Registered machinery: `tools/regression/run.py` protects the invariant that tool
+contracts do not silently regress; evidence it fires is a red assertion when the
+attempt-2 label-leak fixture is given the clean-fixture expectation.
 
 **LAW 16 — A NEW HARD RULE SHIPS ITS OWN CHECK OR ITS EXCUSE.** No violation
 may be promoted to a hard rule unless the SAME change either ships a deterministic
