@@ -21,7 +21,7 @@ from pathlib import Path
 R = Path(__file__).resolve().parent.parent
 BRIEF_PATH = R / "prompts/update_brief.json"
 RECEIPT_PATH = R / "prompts/.gate_pass.json"
-QUOTA_BY_ARC = {1: 3, 2: 3, 3: 2, 4: 2}  # arc 5+ -> 1 (curriculum §9)
+QUOTA_BY_ARC = {1: 3, 2: 2, 3: 2, 4: 2}  # curriculum §9 Section 4 (types designed per arc); arc 5+ -> 1
 
 
 def brief_sha256(data: bytes) -> str:

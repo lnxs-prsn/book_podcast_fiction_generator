@@ -193,10 +193,12 @@
 
 *The reader's growing expertise changes how chapters should be written. Early chapters need full wrong approach sequences. Later chapters can be more implicit.*
 
+*This table governs only how FULLY each wrong approach is dramatized as reader expertise grows; the COUNT of wrong-approach types per arc is owned by Section 4 above (arc 1 → three, arcs 2–8 → two) — this table never restates or overrides it.*
+
 | Arc | Reader's State | Chapter Adjustment |
 |---|---|---|
-| 1-2 | No prior knowledge of the process. Fully inside the wrong approaches. | Full productive failure sequence every chapter. Three wrong approaches minimum. |
-| 3-4 | Beginning to recognise the wrong approach pattern. Still surprised by specific varieties. Analogy and auxiliary problem are new — reader experiences them alongside the character. | Two wrong approaches shown fully. Third may be shortened. Reader is ahead of character on familiar wrong approaches but behind on the new operations. |
+| 1-2 | No prior knowledge of the process. Fully inside the wrong approaches. | Full productive failure sequence every chapter — every wrong approach the arc defines (Section 4: arc 1 → three, arc 2 → two), each fully dramatized. |
+| 3-4 | Beginning to recognise the wrong approach pattern. Still surprised by specific varieties. Analogy and auxiliary problem are new — reader experiences them alongside the character. | Both wrong approaches the arc defines shown fully; the second may be shortened as recognition grows. Reader is ahead of character on familiar wrong approaches but behind on the new operations. |
 | 5-6 | Recognises most wrong approaches before they fail. Watching for the sitting down and the mirror shift. Beginning to read mirrors before characters. | One wrong approach shown fully. Others implied. Reader diagnoses approach type from gate signature before character names it. |
 | 7-8 | Fully recognises wrong approaches at a glance. Now watching for which operation the chapter is teaching. Reading mirror content fluently. | Wrong approaches shown in compressed form. The chapter's teaching weight is in the new operation, not in the failure sequence. |
 | Finale | Fully internalised. Reader applies all operations to the macro mystery alongside the mystery person. | Wrong approaches shown at institutional scale. Reader sees the macro wrong approach — institutions solving the wrong stated version — before any character names it. Reader reads the mystery person's notebook as a complete auxiliary problem chain. |

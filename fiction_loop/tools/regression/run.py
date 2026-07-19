@@ -192,6 +192,20 @@ def main() -> int:
             )
         )
 
+        from structural_gate import QUOTA_BY_ARC
+
+        # Frozen against curriculum §9 Section 4 (the sole count owner: arc 1 -> 3,
+        # arcs 2-8 -> 2). Guards the day-1 contradiction that false-failed ch8 arc-2
+        # (field_registry.md "arc cast quota" row; human_decision.md DECISION 10).
+        expected_quota = {1: 3, 2: 2, 3: 2, 4: 2}
+        results.append(
+            check(
+                "structural gate QUOTA_BY_ARC matches curriculum §9 Section 4",
+                QUOTA_BY_ARC == expected_quota,
+                f"observed {QUOTA_BY_ARC}",
+            )
+        )
+
     failed = len(results) - sum(results)
     print(
         f"{'PASS' if failed == 0 else 'FAIL'}: "

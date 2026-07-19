@@ -474,6 +474,41 @@ naturally, the book runs slightly longer rather than reading like a checklist.
 
 ---
 
+## DECISION 10 — How many wrong approaches does an Arc 2 gate chapter show? (added 2026-07-19)
+
+**The issue.** The curriculum contradicted itself. `concept_curriculum.md` §9 has two
+tables that both speak to the wrong-approach count. Section 4 (the craft table, with a
+gate signature + mirror for each approach) designs Arc 2 with **two**: the confident
+specialist and the hypothesis tester. The reader-progression table said arcs 1–2 need
+"three wrong approaches minimum." Both code copies (`structural_gate.py QUOTA_BY_ARC`,
+`assembler.md` BEAT QUOTA) followed the "three." Chapter 8 is the first Arc 2 gate
+chapter, so the structural gate false-failed a correct 2-approach draft. Archaeology:
+the contradiction was present in the curriculum's first commit and dormant through all
+of arc 1 (where both tables read three); it could only fire once the story reached arc 2.
+
+**Analogy.** Two blueprints for one building — the detailed architectural plan (Section 4,
+each door with its hardware spec) shows two doors; the zoning summary sheet says "three
+minimum." You can only hang doors that were actually drawn; no third Arc 2 approach exists
+anywhere in the design.
+
+**Options.**
+- **A — Two (Section 4 governs).** Fix the source's self-contradiction so Section 4 owns the
+  count and the reader-progression table only governs how fully each is dramatized; correct
+  both copies to 2. The parked ch8 draft is already correct → re-gate → PASS, zero paid calls.
+- **B — Three (reader-progression governs).** Author a brand-new third Arc 2 approach (type +
+  gate signature + mirror) into Section 4, then pay to redo generation. Also risks the LAW 11
+  anti-formula trap: forcing three scenes from a two-type pool guarantees repetition or an
+  invented, spec-less approach every arc-2 chapter.
+
+**DECISION: Option A.** Only two Arc 2 approaches were ever designed; A ships the intended
+pedagogy at zero cost and avoids the LAW 11 pool trap. Section 4 is now the single count
+owner (arc 1 → three, arcs 2–8 → two); the reader-progression table explicitly defers.
+This resolves the class for every future arc, not just arc 2 (arc 2 was the only arc where
+the gate demanded more scenes than the pool designs). Mechanical consequences (LAW 2 copies,
+registry case law, regression freeze) are ordinary work, done in the same sitting.
+
+---
+
 ## NOT DECISIONS — content only you can provide
 
 These aren't forks with options; they're blanks only a human should fill (per the
