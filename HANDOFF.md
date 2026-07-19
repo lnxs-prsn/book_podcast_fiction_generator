@@ -36,7 +36,7 @@ rules: `innovations/handoff-discipline/kit/HANDOFF_RULES.md`.
    state + open queue; then `handoff-2026-07-18-ch6-landed-open-queue.md`
    (§§5–8, day record), `handoff-2026-07-18-deepseek-switch-404.md`, and the
    two 2026-07-17 handoffs — conduct hardening, roles, state
-2. `fiction_loop/CONTRIBUTING.md` — the 15 laws; binding BEFORE any change
+2. `fiction_loop/CONTRIBUTING.md` — the 16 laws; binding BEFORE any change
    under `fiction_loop/`
 3. `fiction_loop/specs/intake_factory.spec.md` — the factory spec (design
    complete, unbuilt; its §2 build list is the work map)
