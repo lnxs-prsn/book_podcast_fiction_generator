@@ -54,3 +54,6 @@ may modify; the RULES section is owner-maintained.
 | Mrs. Okafor | 006 |  |
 | Yaw Boateng | 007 |  |
 | Kuuku Dadzie | 007 |  |
+| Nantale Namakula | 008 | char_008 |
+| Dr. Akello | 008 | char_008a |
+| Moses | 008 |  |

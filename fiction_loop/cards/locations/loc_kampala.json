@@ -1,0 +1,20 @@
+{
+  "id": "loc_kampala",
+  "name": "Kampala",
+  "first_appeared": 8,
+  "institutional_response": {
+    "primary_body": "",
+    "approach": "",
+    "failure_mode": ""
+  },
+  "ordinary_life_texture": [
+    "Community pharmacies on Nakasero Road fill overnight prescriptions left by junior dispensers, with patient record cards stored in a file rack behind the counter for cross-reference during morning verification.",
+    "Pickup trays hold filled prescriptions awaiting final verification before release to patients.",
+    "Regular customers at neighbourhood pharmacies maintain years-long relationships with their pharmacist."
+  ],
+  "macro_mystery_evidence_here": [],
+  "characters_based_here": [],
+  "chapters_set_here": [
+    8
+  ]
+}

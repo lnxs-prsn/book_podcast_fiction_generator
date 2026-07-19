@@ -1,0 +1,29 @@
+{
+  "id": "char_008",
+  "name": "Nantale Namakula",
+  "age": 0,
+  "occupation": "community pharmacist",
+  "location_id": "loc_kampala",
+  "first_appeared": 8,
+  "gate_history": [
+    {
+      "gate_id": "G-008",
+      "grade": 2,
+      "operation_encountered": "op_check_result",
+      "approach_taken": "none — applied correctly",
+      "understood": true,
+      "looked_back": true,
+      "transferred_to_life": true
+    }
+  ],
+  "comprehension_state": {
+    "op_check_result": "understood"
+  },
+  "still_gets_wrong": [],
+  "ordinary_life_state": "Working at her community pharmacy on Nakasero Road, verifying dispensed prescriptions against patient record cards before release.",
+  "life_progression": [],
+  "ordinary_life_transfers": [],
+  "anchor_observed": false,
+  "last_seen": 8,
+  "next_planned_appearance": null
+}

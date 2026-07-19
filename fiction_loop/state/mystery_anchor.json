@@ -41,6 +41,12 @@
       "observation": "UNDETERMINED \u2014 no verbatim notebook entry in chapter prose; a junior clerk at the Accra guildhall discovers five torn notebook pages in a folder labelled 'Unidentified Documents\u2014Gates'. Three share the same notebook stock. Each page records gate events with solver approaches, register timestamps, and missed observations. The terms 'executor', 'system builder', and 'information gatherer' recur across all five pages. The pages were recovered from gates in Achimota, Kumasi, Lagos, and Dakar. The clerk photocopies them and sends them to the senior coordinator, where they are filed without review.",
       "location": "loc_accra",
       "manifestation": "notebook_page"
+    },
+    {
+      "chapter": "008",
+      "observation": "Grade 2. Specialist approach. Room organised by chemical category \u2014 all analgesics grouped, all antibiotics grouped, all cardiovascular agents grouped. Reference chart outside groups, dim. Domain boundary visible as gap between analgesic and cardiovascular clusters. Underlined: gap between groups contained the correct formulation. Solver did not look at the gap. Register 2 at minute 8, lost at minute 11. No closure.\n\nGrade 2. Tester approach. Room mirrored each configuration in sequence \u2014 twelve arrangements, each ending at panel. Panel present in every configuration, unactivated. Underlined: panel was the test. Solver never asked what was being tested. Register flicker throughout. No sitting down. No closure.",
+      "location": "loc_kampala",
+      "manifestation": "notebook_page"
     }
   ],
   "reader_can_suspect": [
@@ -71,6 +77,10 @@
     {
       "chapter": "007",
       "suspicion": "The anchor has been present at every major gate event across cities, leaving physical records that the guild is not yet equipped to interpret. The terms 'executor', 'system builder', 'information gatherer' are the anchor's diagnostic categories for wrong approaches \u2014 and the guild, who has not yet recognised these patterns, is losing trained solvers at an accelerating rate."
+    },
+    {
+      "chapter": "008",
+      "suspicion": "The anchor's Kampala notebook page omits the correct approach for the first time, recording only the two failed approaches before departing \u2014 suggesting the anchor either knew Nantale would succeed or deliberately left the page as a clue rather than a complete record."
     }
   ],
   "hidden_coherence": {

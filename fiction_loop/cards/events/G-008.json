@@ -1,0 +1,31 @@
+{
+  "id": "G-008",
+  "type": "gate",
+  "grade": 2,
+  "location_id": "loc_kampala",
+  "chapter_opened": 8,
+  "chapter_closed": 0,
+  "status": "open",
+  "problem_structure": {
+    "unknown": "How to fill the order correctly when two candidate solutions both appear to match the written slip",
+    "data": [
+      "Two sets of containers on the shelf, both matching the written order slip — one set matches by standard-formulation protocol, the other matches when cross-referenced against the reference chart",
+      "A written order slip on the counter beside a flat square verification panel",
+      "A reference chart pinned to the wall above the shelves showing formulary cross-references and interaction corrections",
+      "A flat square verification panel on the counter, dark and faintly warm"
+    ],
+    "condition": "The filled order must be placed on the verification panel and the panel must light green — a protocol-only fill that ignores the reference chart will not pass"
+  },
+  "wrong_approaches_demonstrated": [
+    "the confident specialist",
+    "the hypothesis tester"
+  ],
+  "correct_approach": "Read the reference chart to cross-check the order slip against known interactions and corrections; select the chart-correct set rather than the protocol-correct set; place it on the verification panel; press the panel and wait for the green light before assuming closure.",
+  "characters_entered": [
+    "char_008",
+    "char_008a"
+  ],
+  "operation_taught": "op_check_result",
+  "anchor_present": true,
+  "notes": ""
+}

@@ -198,8 +198,8 @@
       "name": "Can you check the result?",
       "difficulty_rating": 3,
       "arc_introduced": 2,
-      "current_touch": 0,
-      "name_attached": false,
+      "current_touch": 1,
+      "name_attached": true,
       "name_at_touch": 1,
       "touch_schedule": {
         "1": 2,
@@ -209,16 +209,24 @@
       "prerequisite": [
         "op_identify_unknown"
       ],
-      "teaching_history": [],
-      "failure_modes_shown": [],
-      "failure_modes_not_yet_shown": [
+      "teaching_history": [
+        {
+          "chapter": "008",
+          "char_id": "char_008",
+          "touch": 1,
+          "context": "professional"
+        }
+      ],
+      "failure_modes_shown": [
         "the confident specialist",
         "the hypothesis tester"
       ],
-      "contexts_demonstrated": [],
+      "failure_modes_not_yet_shown": [],
+      "contexts_demonstrated": [
+        "professional"
+      ],
       "contexts_not_yet_demonstrated": [
         "workplace",
-        "professional",
         "family_domestic",
         "civic_institutional",
         "teaching_mentoring",
@@ -228,7 +236,7 @@
         "argument_debate"
       ],
       "preferred_context": "professional",
-      "transferred_to_ordinary_life": false,
+      "transferred_to_ordinary_life": true,
       "compressible_at_touch": 2
     },
     "op_derive_differently": {

@@ -1,155 +1,125 @@
 # CHAPTER 008
 
-Heads turned when the senior pharmacist entered.
+The gate opened on a Tuesday morning, a block from Nakasero market. It sliced through the midday heat like a curtain of cold air, and by the time the first police cordon went up, six people had been pulled inside. Nantale Namakula was one of them. She had been walking to the wholesale supplier on Market Street with a list of restocks pinned to her pocket when the world tilted and the pavement under her feet became a tiled floor.
 
-Not because he was loud. He was not. He was a man in his fifties, grey at the temples, carrying himself with the quiet authority of someone who had been the most competent person in every room for twenty years. His white coat was pressed. His hands were steady. He stopped at the entrance and looked at the dispensary the way a man looks at his own front door — not with curiosity, with recognition.
+She did not scream. She stood exactly where she had arrived, one hand still in her pocket on the list, and looked at the room.
 
-Adwoa was standing by the counter. She had arrived ten minutes earlier, before anyone else, and had spent those minutes not touching anything. The room was a perfect replica of a hospital dispensary: shelves of labeled vials, a dispensing tray on the counter, a prescription slip clipped to a small clipboard, a patient chart beside it. A square verification panel sat mounted on the counter to the right of the tray. Its surface was dark. The counter film was thin dust everywhere except that panel — it was clean, wiped recently. The stool in front of the counter was warm when she first sat on it. Someone had been here. She stood when she heard the others approaching.
+It was a dispensary. A long counter ran across the back wall, its surface scarred and clean. Shelves behind it, crowded with small labelled containers. A written order slip lay on the counter beside a flat square panel, dark and faintly warm to the air. A reference chart was pinned to the wall above the shelves — dense columns of tiny script, too small to read from where she stood. On the floor near the counter, a stool.
 
-The senior pharmacist glanced at her, then at the two other solvers who had entered behind him — a thin man in a lab coat who walked to the counter and began examining the vials without greeting anyone, and a stocky man with a wrestler's shoulders who stood near the door, arms crossed, watching.
+Nantale let her eyes move across these things. She did not step forward. She did not reach for any of them. She was doing what she had done for twelve years every time a new prescription arrived: looking at the whole problem before touching any part of it. The gate was a room with an unknown. The unknown was what she was supposed to do here. She could see at least two sets of containers that matched the slip. She did not yet know which was correct. She did not yet know if the panel was part of the test. She waited.
 
-The pharmacist moved to the counter. He scanned the prescription.
+The others were already moving.
 
-"Dispensary-type gates," he said. He did not say it to anyone. He said it the way someone notes the weather before deciding whether to carry an umbrella. "I've seen this layout before. Formulation knowledge. That is what they test."
+A woman in a pressed laboratory coat strode to the counter, tapping a guild-issued access card against her palm. She was tall, late forties, with the unhurried confidence of someone who had closed gates before. Two of the other entrants — a young man in a Makerere University hoodie and a woman clutching a shopping bag — deferred to her immediately, stepping back as if they had been waiting for instruction.
 
-He pulled the first set of vials toward him. His hands moved without hesitation — turning each vial to read the label, grouping them by drug class, aligning them in rows. The room shifted slightly as he worked. The shelves brightened where his hands had touched. Vials of the same drug family drew together on the counter — not noticeably at first, then unmistakably, the gaps between groups widening, the clusters tightening. The room was showing him his own expertise. The groups were clean. Legible.
+"Standard formulation gate," the woman said. She had a Kenyan accent, softened by years of travel. "Grade 2 at most. I've done a dozen of these."
 
-He did not notice.
+The name stitched above her coat pocket read DR. AKELLO.
 
-"The standard-formulation set," he said, tapping the row of vials in front of him. "Correct drug name, correct dosage, correct route. This is what every hospital stocks. This is what every pharmacist reaches for."
+Dr. Akello set her card on the counter and began sorting the containers. She worked in quick, precise movements: all the analgesics together, then the antibiotics, then the cardiovascular agents. Her hands knew the categories. She talked while she worked, half to herself, half to the others — naming the groups, referencing a standard formulary she had memorised.
 
-He pushed the second set away. "That is the older salt. We stopped using it three years ago. Same therapeutic effect, different absorption profile. But it is not current practice. It is not what the protocol specifies."
+"The order slip wants a combination therapy. Pain management plus blood pressure control. Two candidates on the shelf. This one — " she tapped a cluster of three containers " — follows the WHO protocol exactly. Dosage, timing, contraindication flags all match. The other set is an older formulation. It's on the shelf because someone stocked it, but it's not the current standard."
 
-He placed his selected vials in the dispensing tray. His movements were practised — the vial, the count, the tray, the placement. A thousand prescriptions filled. Ten thousand.
+She swept the first set into a tray and placed it in front of her. The gate had been changing as she worked.
 
-The patient chart lay beside the tray. He did not look at it.
+The containers on the shelves had not been in that order when Nantale first looked. She was sure of it. Now they sat in tight, obvious groups — the analgesics at one end, the cardiovascular at the other, the antibiotics bridging the middle. The categories were cleaner than any human hand could have made them. The reference chart on the wall had dimmed, as if the light had moved away from it, leaving it in a soft grey shadow. Between the analgesic cluster and the cardiovascular cluster was a gap — a bare stretch of shelf where no container sat.
 
-The verification panel was dark. He did not touch it.
+Dr. Akello did not look at the gap. Her attention was on the groups, checking her own sorting against the labels, her lips moving silently.
 
-He pushed the tray forward.
+She pushed the tray toward the centre of the counter.
 
-The gate held.
+Nothing happened.
 
-The room dimmed slightly — not dark, but less bright. The vials on the counter remained in their tidy groups. The space between the groups was shadowed. The patient chart sat in that shadow. The pharmacist looked at his tray. He looked at the prescription. He looked at the vials he had not chosen.
+The gate held. The cold air did not shift. The door — if there was a door — did not appear.
 
-"I have selected the correct formulation," he said.
+Dr. Akello frowned. She checked the slip again. She checked the containers again. She moved the tray a few centimetres to the left, as if placement mattered. She touched the dark square panel with one finger — not to activate it, but to see if it responded. It did not.
 
-He tried again. He rearranged the vials in the tray — same set, different order. Pushed the tray forward. The gate held. The room did not brighten. The panel did not light. He stood there for a long moment, a man whose certainty had always been enough, finding that it was not. He did not look at the patient chart. He did not touch the panel. He stepped back from the counter, his hands still steady, his face unreadable.
+"Wrong configuration," she muttered. She returned to the shelf and pulled a fourth container from the antibiotic cluster, swapping it with one in the tray. She pushed the tray forward again.
 
-The thin man in the lab coat moved forward before the pharmacist had fully stepped away.
+The gate held. The gap between the analgesic and cardiovascular clusters seemed wider now. The light on the reference chart was a smudge.
 
----
+Dr. Akello stood still for the first time, hands flat on the counter. The confidence that had carried her through the first minutes was still there, but it had nowhere to go. The domain she knew had run out. She looked at the tray, at the slip, at the silent panel. She did not look at the chart. She did not look at the gap. She pushed the tray away and stepped back.
 
-He was a lab analyst — Adwoa could tell by how he touched things. His fingers were precise, his gaze narrow, focused on one object at a time. He did not speak. He pulled the tray to the centre of the counter and began.
+"I don't understand," she said. "The protocol was correct."
 
-Configuration one: vial set A in the tray. He pushed the tray. Nothing.
+The young man in the hoodie moved forward before she had finished. He was early twenties, thin-faced, carrying a small spiral notebook. He had been watching Dr. Akello with a mixture of impatience and excitement.
 
-Configuration two: vial set B. Nothing.
+"May I?" he said, though he was already reaching for the tray.
 
-Configuration three: vials in reverse order. Nothing.
+He emptied it. He set the slip in front of him and began to work through the container sets systematically. First the WHO-protocol combination — tray, counter, wait. Then the alternative combination. Then a half-combination, two from one set and one from the other. Then a different half. He noted each configuration in his notebook, ticking and crossing, his pen scratching fast.
 
-He worked quickly. His hands moved in short, efficient arcs — pick up, place, push, observe. He swapped the vials between sets. He used only half the vials. He rearranged the prescription slip on the clipboard — perhaps the order of listed items mattered. Nothing. He grouped the vials by colour, by cap type, by label font. Each configuration: tray pushed, tray held, nothing.
+The gate mirrored each attempt.
 
-The room flickered. Each time he placed a new configuration, the counter brightened around the arrangement — the vials sharp, the tray distinct. Each time he pushed and nothing happened, the brightness faded. Not to dark. Back to the base light. Then the next configuration: brighten, fade. Brighten, fade. The room was showing him each attempt. Each attempt ended.
+When he placed the protocol set on the tray, the containers on the shelf slid into a clean pattern — the chosen set bright, the rejected set retreating into shadow. The panel sat at the edge of the light. When he replaced it with the alternative set, the pattern reversed. When he tried the half-combinations, the room flickered — the containers rearranging so quickly that the after-image of the previous arrangement still hung in the air.
 
-The verification panel sat at the edge of every configuration. In the first, it was to the right of the tray. In the second, still to the right. In the third, the fourth, the tenth — always present, always in the frame, always untouched. The analyst's hands passed over it, around it, never to it. It was furniture. It was background. It was the one constant in every arrangement and he did not test it.
+The panel was in every arrangement. It was never lit. The young man never touched it.
 
-After the twelfth configuration, the gate emitted a low tone.
+After the fifth configuration, a faint outline of the panel remained visible even when he was not looking at it — a pale square that sat under every new arrangement like a watermark. After the eighth, it was a constant. After the twelfth, the room seemed to be showing him a composite: the panel, untouched, beneath every tried and discarded combination.
 
-It was not a warning. It was a statement. A held note, sustained for three seconds, then silence.
+He did not stop to look at the composite. He was already setting up the thirteenth configuration, his hands moving faster, his notebook filling.
 
-The analyst paused. His hands hovered over the vials. He looked at the tray. He looked at the prescription. He did not look at the panel. He set down the vials and stepped back, his face tight, the precision in his fingers gone still.
+The gate flickered each time — brief, almost interrupted — and then dropped. The quality of the light was unstable now, fluttering between brightness and shadow without settling.
 
-The stocky man near the door uncrossed his arms.
+The young man ran out of configurations. He stared at his notebook. He stared at the tray. He sat down on the floor — not to think, but because he had nothing left to try. His sitting was collapse, not stillness. The gate did not respond. After a minute he stood again, shuffled the containers one last time, and shook his head.
 
----
+"It should work," he said. "One of them should work."
 
-He was not tall but he moved like he was. He crossed the room in four strides and reached the counter before Adwoa could step aside. His hands were fast. He saw the prescription. He saw the vials. He grabbed the first set — the same set the pharmacist had chosen, the standard-formulation set — and placed them in the tray in one continuous motion.
+Nantale had not moved from her spot near the entrance. She had watched both of them. She had seen Dr. Akello sort by category and stop when the categories stopped. She had seen the young man test and test and never test the panel. She had watched the gap between the containers grow wider, watched the chart on the wall dim, watched the faint square of the panel persist through every configuration.
 
-He did not pause at the entrance. He did not read the patient chart. He did not look at the verification panel.
+She sat down.
 
-He pushed the tray toward the closure point.
+She sat on the floor the way she sat at the counter in her pharmacy when a prescription was not right — not to rest, but to stop. To stop doing what they had done. To look at the room.
 
-The room did something it had not done before. The prescription-to-vial match brightened — the script on the paper, the labels on the vials, the correspondence between them glowing faintly, almost legibly, the pattern clean and obvious and correct. The patient chart receded. The verification panel receded. Not disappearing — but dim, peripheral, easy to ignore.
+She looked at the room. Not at the containers. Not at the slip. At the room.
 
-The tray stopped.
+The reference chart was on the wall. The verification panel was on the counter. Both had been there the whole time.
 
-It halted halfway across the counter. It did not meet the gate's closure point. It simply stopped, as though it had hit a barrier that was not visible.
+She stood, walked to the counter, and read the chart. The small print was a formulary cross-reference — standard names on the left, known interactions and corrections on the right. The order slip was written in standard names. The WHO-protocol set matched the standard names. The alternative set matched the corrections field for every drug on the list, adjusted for the specific combination the slip requested. The chart did not list the corrections as optional.
 
-The man pushed harder. The tray did not move.
+Nantale had spent twelve years reading charts just like this one. She had caught dozens of errors that the protocol alone would have missed.
 
-He pulled it back and tried again — same vials, same placement, faster. The tray stopped at the same point. He pushed. His shoulders bunched. The tray did not move.
+She took the WHO-protocol containers off the tray. She placed the alternative set — the chart-correct set — onto it. She did not push the tray toward anything.
 
-He stood there, hands on the tray, breathing hard through his nose. The prescription glowed. The chart was dim. The panel was dark. The man had done everything he knew to do. The gate had not responded to any of it.
+She slid it onto the flat square panel. She pressed the corner of the panel with two fingers, the way she might activate a glucose meter, and then she waited.
 
-He stepped back. His jaw was tight. He looked at the pharmacist, who did not meet his eyes. He looked at the analyst, who was staring at the counter. He did not look at Adwoa.
+She did not assume.
 
-No one else moved toward the counter.
-
----
-
-Adwoa sat down on the dispensary stool.
-
-It was still faintly warm. She put her hands flat on the counter. She did not touch the vials. She did not touch the tray. She looked at the room.
-
-The patient chart was on the counter. It had been there the entire time.
-
-The verification panel was mounted beside the tray. It had been there the entire time.
-
-She reached for the chart. She opened it. The patient's name was at the top — she did not recognise it, but the format was the same as every chart she had ever pulled from the rack at Komfo Anokye. Condition. History. Weight. Contraindications. She read the entry under Contraindications. She read it twice.
-
-She set down the chart and looked at the two sets of vials. Set one: the standard formulation. Correct drug name, correct dosage, correct route. A salt form that was listed — she checked the chart again — as contraindicated for the patient's specific condition. The protocol allowed it. The chart forbade it.
-
-Set two: the older salt. Different absorption profile. Pharmacologically equivalent by standard protocol. Not on the contraindication list. Not what the pharmacist would reach for. Correct for this patient.
-
-She selected set two.
-
-She placed the vials in the dispensing tray. She did not push the tray.
-
-She looked at the verification panel. She pressed it.
-
-It was the first time anyone had touched it.
+Her hand stayed on the edge of the panel, her eyes on its surface. One second. Two. The pause was deliberate — a stillness that was not fear or doubt, just the space she always left for the result to speak.
 
 The panel lit green.
 
-She paused. Her hand still on the panel. Her eyes on the light. One deliberate second. Then she pushed the tray forward.
+The gate closed. The cold air softened. The shelves, the counter, the chart, the panel dissolved into the back wall of a wholesale supplier on Market Street. Nantale was standing on pavement, the list still in her pocket, and the police cordon was parting to let the stunned entrants step through.
 
-It moved the full length of the counter. It reached the closure point. The gate closed.
+Behind her, the stool was still warm. A single torn notebook page was wedged between the counter and the wall — a sheet of thin paper, filled with tight handwriting she did not recognise. The surface of the verification panel was wiped clean, while the rest of the counter carried a thin film of dust. Someone had sat there. Someone had used the panel. She pulled the page free and read it before the gate fully vanished:
 
-The sound was not dramatic. It was quiet. The room held for a moment — the vials, the chart, the lit panel, the warm stool — and then it was gone. Adwoa was standing at the counter of the main dispensary at Komfo Anokye Teaching Hospital, the afternoon light coming through the high windows, the sound of the ward corridor outside the door.
+*Grade 2. Specialist approach. Room organised by chemical category — all analgesics grouped, all antibiotics grouped, all cardiovascular agents grouped. Reference chart outside groups, dim. Domain boundary visible as gap between analgesic and cardiovascular clusters. Underlined: gap between groups contained the correct formulation. Solver did not look at the gap. Register 2 at minute 8, lost at minute 11. No closure.*
 
-She let out a breath. She had not known she was holding it.
+*Grade 2. Tester approach. Room mirrored each configuration in sequence — twelve arrangements, each ending at panel. Panel present in every configuration, unactivated. Underlined: panel was the test. Solver never asked what was being tested. Register flicker throughout. No sitting down. No closure.*
 
----
+The page evaporated in her hand. The gate was gone. The stool was cold. Dr. Akello was on her knees by the kerb, staring at nothing. The young man was staring at his notebook, his pen still.
 
-The pickup tray had a prescription in it.
-
-Adwoa set down her bag and pulled the patient chart from the rack before she had even read the name on the order. Emmanuel, her junior colleague, had filled it while she was out. The medication sat in the tray — counted, labeled, ready for the ward. She could see from the label that he had checked every dosage against the written prescription. The route was correct. The frequency was correct. It was protocol-perfect.
-
-She read the chart.
-
-The patient's weight was at the top of the second page. The dosage Emmanuel had prepared was correct by formula — the standard calculation, the one every pharmacist used, the one she herself had taught him six months ago. The chart had a note in the consultant's handwriting. Weight-adjusted dosing. The standard formula did not account for it. The protocol did not account for it. The prescription did not account for it. Only the chart did.
-
-Adwoa reached for the replacement vial.
-
-Across the dispensary, Abena — a staff nurse who had worked the afternoon shift for eleven years — stopped mid-step. She had been about to take the medication to the ward. Her hand was halfway to the tray. She went still. Not alarmed. Just still. Her eyes were on Adwoa, on the chart in Adwoa's hands, on the vial Adwoa was removing from the shelf.
-
-"Doctor noted something?" Abena asked.
-
-Adwoa did not answer. She was counting.
-
-The conversation in the dispensary changed register. Emmanuel, who had been talking to another nurse about stock orders, stopped talking. The other nurse stopped listening. The room did not go silent — the corridor was still loud, the ceiling fan still turned — but the quality of the attention shifted. Five people in the room. Four of them watching Adwoa. She did not notice.
-
-She placed the corrected medication in the tray. She pulled the chart closer and checked the dosage against the consultant's note one more time. She nodded — not to anyone, just the small nod she gave herself when the numbers matched.
-
-"Take this one," she said to Abena. "The first was incorrect."
-
-Abena took the tray. She did not ask what had been wrong. She had seen Adwoa check the chart. That was enough.
-
-Emmanuel was still watching. He did not argue. He did not look embarrassed. He pulled a small notebook from his pocket and wrote something in it. Adwoa did not see. She was already reaching for the next prescription in the queue.
+A guild coordinator arrived fifteen minutes later, took down Dr. Akello's report, and then listened to four merchants describe an unremarkable man in a grey coat who had already left. The report, when filed, included the word "anomalous closure" and a brief summary of Nantale's method. The word "checking" was written in the margin by someone who would not remember writing it.
 
 ---
 
-She had learned to check the result. That was the name for it.
+The pharmacy on Nakasero Road was busy when Nantale returned the next morning. Moses, her junior dispenser, had opened alone and filled the overnight prescriptions. He had done everything by the book — every dosage verified against the written order, every drug confirmed against the standard formulary. The pickup tray was full.
 
-The dispensary was quiet again, the afternoon light lower, Emmanuel recounting a tray at the far counter. Adwoa pulled the next chart from the rack. She checked the prescription. She checked the filled order. She checked the chart. She sent the tray forward only when all three agreed.
+Nantale hung her coat on the hook behind the counter, washed her hands, and began the morning verification. She did not glance at the open prescriptions; she pulled each patient's record card from the file rack first. This was not caution. It was just how she worked.
+
+A prescription for an older woman sat at the top of the tray: ibuprofen, 400mg, three times daily, for joint pain. Moses had filled it precisely — the correct drug, the correct dose, the correct labelling. Nantale opened the patient's record card.
+
+The card listed a second medication, prescribed six months earlier by a clinic Moses had never visited: warfarin, a blood thinner. Ibuprofen and warfarin together increased bleeding risk. The protocol had asked no question about the patient's other drugs. The card had asked.
+
+Nantale replaced the ibuprofen with a non-interacting alternative. She wrote a note for the patient's file. She placed the new package in the tray.
+
+The pharmacy went quiet.
+
+An elderly woman who had been waiting at the counter — one of Nantale's regulars, someone who had come to this shop for years — stopped talking mid-sentence. Her mouth was open, the last word unfinished. She was looking at Nantale's hands on the record card. She did not appear confused. She appeared still, the way a room goes still when something important is about to be said and no one knows who will say it.
+
+The silence lasted three seconds. The ceiling fan clicked. A child coughed outside. The woman closed her mouth and said, "Thank you, my dear," though she had been talking about the price of maize before.
+
+Moses watched Nantale re-check the prescription. He did not argue. He pulled a scrap of paper from the counter and wrote something on it, then tucked it into his pocket. Nantale did not notice.
+
+She had learned to check the result. That was what the waiting was for.
+
+The pharmacy was busy again by ten.

@@ -2,7 +2,7 @@
   "story_title": "The Sankofa Gates",
   "genre": "African gate-clearing process fiction — contemporary Africa, in the Korean/Japanese gate-fiction tradition",
   "source_material": "Pólya, G. — How to Solve It: A New Aspect of Mathematical Method (2nd ed.) — books/How to Solve It_ A New Aspect  - Polya, G._7564 (1).epub",
-  "chapter_count": 7,
+  "chapter_count": 8,
   "arc_current": 2,
   "process_state_summary": {
     "op_what_is_missing": "owned",
@@ -14,6 +14,10 @@
     "op_look_at_unknown": {
       "touch": 1,
       "last_chapter": "005"
+    },
+    "op_check_result": {
+      "touch": 1,
+      "last_chapter": "008"
     }
   },
   "failure_modes_not_yet_shown": [],
@@ -22,7 +26,8 @@
     { "chapter": "002", "lead": "the executor" },
     { "chapter": "003", "lead": "the executor" },
     { "chapter": "004", "lead": "the system builder" },
-    { "chapter": "005", "lead": "the information gatherer" }
+    { "chapter": "005", "lead": "the information gatherer" },
+    { "chapter": "008", "lead": "the confident specialist" }
   ],
   "population_index": [
     {
@@ -66,9 +71,21 @@
       "name": "Fatou Ndiaye",
       "status": "active",
       "last_seen": "005"
+    },
+    {
+      "id": "char_008",
+      "name": "Nantale Namakula",
+      "status": "active",
+      "last_seen": "008"
+    },
+    {
+      "id": "char_008a",
+      "name": "Dr. Akello",
+      "status": "active",
+      "last_seen": "008"
     }
   ],
-  "anchor_summary": "Last appeared ch. 007 (notebook_page); 7 total appearances.",
+  "anchor_summary": "Last appeared ch. 008 (notebook_page); 8 total appearances.",
   "macro_mystery_evidence": [
     {
       "chapter": "001",
@@ -93,16 +110,20 @@
     {
       "chapter": "007",
       "evidence": "Five torn notebook pages from the anchor, recovered from gates in Achimota, Kumasi, Lagos, and Dakar, are discovered by a junior clerk in the Accra guildhall archives. The pages use consistent diagnostic terminology (executor, system builder, information gatherer) to classify solver approaches across different gates and cities. The pages are photocopied and sent to the senior coordinator, then shelved without review."
+    },
+    {
+      "chapter": "008",
+      "evidence": "The Kampala notebook page records two Arc 2 wrong-approach types (specialist, tester) using the anchor's diagnostic framework, expanding the taxonomy across five cities; the guild files the gate report as an 'anomalous closure' with the word 'checking' written unconsciously in the margin, continuing the pattern of the guild noticing but failing to interpret the anchor's accumulating records."
     }
   ],
   "next_chapter_pointer": {
-    "chapter": "008",
-    "type": "new_focal_character",
-    "char_id": null,
-    "operation_due": "op_check_result",
-    "touch_due": 1,
+    "chapter": "009",
+    "type": "return_to_character",
+    "char_id": "char_004",
+    "operation_due": "op_separate_condition",
+    "touch_due": 2,
     "name_due": true,
-    "failure_mode_to_show": "the confident specialist",
+    "failure_mode_to_show": "none",
     "secondary_touches": [],
     "echo_touch": null,
     "anchor_appears": true

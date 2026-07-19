@@ -4,9 +4,9 @@
   "focal_character": {
     "id": "char_008",
     "is_new": true,
-    "name": "Adwoa Agyeman",
-    "occupation": "hospital pharmacist",
-    "city": "Kumasi",
+    "name": "Nantale Namakula",
+    "occupation": "community pharmacist",
+    "city": "Kampala",
     "age": null,
     "gate_visited": {
       "gate_id": "G-008",
@@ -20,60 +20,50 @@
     "comprehension_changes": {
       "op_check_result": "understood"
     },
-    "ordinary_life_state": "Working the dispensary pickup queue at Komfo Anokye Teaching Hospital, checking filled prescriptions against patient charts before release.",
+    "ordinary_life_state": "Working at her community pharmacy on Nakasero Road, verifying dispensed prescriptions against patient record cards before release.",
     "life_progression_shown": null
   },
   "other_entrants": [
     {
       "id": "char_008a",
-      "name": "Kofi Manu",
+      "name": "Dr. Akello",
       "is_new": true,
       "approach_taken": "the confident specialist",
-      "operations_applied": []
-    },
-    {
-      "id": "char_008b",
-      "name": "Ama Serwaa",
-      "is_new": true,
-      "approach_taken": "the hypothesis tester",
       "operations_applied": []
     },
     {
       "id": null,
       "name": null,
       "is_new": true,
-      "approach_taken": "the executor",
+      "approach_taken": "the hypothesis tester",
       "operations_applied": []
     }
   ],
   "secondary_touch_updates": [],
   "names_used_this_chapter": [
-    "Adwoa Agyeman",
-    "Kofi Manu",
-    "Ama Serwaa",
-    "Abena",
-    "Emmanuel",
-    "Dr. Asare"
+    "Nantale Namakula",
+    "Dr. Akello",
+    "Moses"
   ],
   "gate_details": {
     "problem_structure": {
-      "unknown": "Whether the filled medication order matches the patient chart — not just the written prescription",
+      "unknown": "How to fill the order correctly when two candidate solutions both appear to match the written slip",
       "data": [
-        "Two vial sets — one potassium salt, one sodium salt, both matching the written prescription by drug name, dosage, and frequency",
-        "A patient chart clipped to the order board with comorbidity notes and a sodium-load caution annotation",
-        "A verification panel mounted beside the dispensing tray"
+        "Two sets of containers on the shelf, both matching the written order slip — one set matches by standard-formulation protocol, the other matches when cross-referenced against the reference chart",
+        "A written order slip on the counter beside a flat square verification panel",
+        "A reference chart pinned to the wall above the shelves showing formulary cross-references and interaction corrections",
+        "A flat square verification panel on the counter, dark and faintly warm"
       ],
-      "condition": "The filled order must pass the verification panel — matching the patient chart rather than the prescription alone"
+      "condition": "The filled order must be placed on the verification panel and the panel must light green — a protocol-only fill that ignores the reference chart will not pass"
     },
-    "correct_approach": "Read the patient chart first to find the comorbidity and the sodium-load caution, select the formulation that matches the chart rather than the prescription alone, then activate the verification panel to confirm the filled order before dispensing."
+    "correct_approach": "Read the reference chart to cross-check the order slip against known interactions and corrections; select the chart-correct set rather than the protocol-correct set; place it on the verification panel; press the panel and wait for the green light before assuming closure."
   },
   "process_updates": {
     "operation": "op_check_result",
     "new_touch": 1,
     "failure_modes_shown_this_chapter": [
       "the confident specialist",
-      "the hypothesis tester",
-      "the executor"
+      "the hypothesis tester"
     ],
     "lead_failure_mode": "the confident specialist",
     "name_attached_this_chapter": true,
@@ -81,24 +71,24 @@
     "transferred": true
   },
   "location_updates": {
-    "location_id": "loc_kumasi",
+    "location_id": "loc_kampala",
     "new_chapter_added": "008",
     "new_texture": [
-      "The dispensary pickup queue is six deep during the afternoon rush, with prescriptions arriving from specialty clinics in stacks.",
-      "Pharmacists annotate patient charts with caution notes that protocol-alone dispensing checks do not surface.",
-      "The pickup tray holds filled prescriptions awaiting final release to ward nurses."
+      "Community pharmacies on Nakasero Road fill overnight prescriptions left by junior dispensers, with patient record cards stored in a file rack behind the counter for cross-reference during morning verification.",
+      "Pickup trays hold filled prescriptions awaiting final verification before release to patients.",
+      "Regular customers at neighbourhood pharmacies maintain years-long relationships with their pharmacist."
     ]
   },
   "anchor_update": {
-    "appeared": false,
-    "manifestation": "none",
-    "observation": "none",
-    "location": "none",
-    "reader_can_suspect_update": "none"
+    "appeared": true,
+    "manifestation": "notebook_page",
+    "observation": "Grade 2. Specialist approach. Room organised by chemical category — all analgesics grouped, all antibiotics grouped, all cardiovascular agents grouped. Reference chart outside groups, dim. Domain boundary visible as gap between analgesic and cardiovascular clusters. Underlined: gap between groups contained the correct formulation. Solver did not look at the gap. Register 2 at minute 8, lost at minute 11. No closure.\n\nGrade 2. Tester approach. Room mirrored each configuration in sequence — twelve arrangements, each ending at panel. Panel present in every configuration, unactivated. Underlined: panel was the test. Solver never asked what was being tested. Register flicker throughout. No sitting down. No closure.",
+    "location": "loc_kampala",
+    "reader_can_suspect_update": "The anchor's Kampala notebook page omits the correct approach for the first time, recording only the two failed approaches before departing — suggesting the anchor either knew Nantale would succeed or deliberately left the page as a clue rather than a complete record."
   },
   "macro_mystery_update": {
-    "evidence_planted": false,
-    "evidence": "none"
+    "evidence_planted": true,
+    "evidence": "The Kampala notebook page records two Arc 2 wrong-approach types (specialist, tester) using the anchor's diagnostic framework, expanding the taxonomy across five cities; the guild files the gate report as an 'anomalous closure' with the word 'checking' written unconsciously in the margin, continuing the pattern of the guild noticing but failing to interpret the anchor's accumulating records."
   },
   "next_chapter_pointer": {
     "chapter": "009",

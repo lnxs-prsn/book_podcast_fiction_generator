@@ -23,24 +23,24 @@ Everything else is automatic.
 | Field | Value |
 |---|---|
 | Story title | The Sankofa Gates |
-| Last updated | After Chapter 7 |
-| Last chapter completed | 7 |
+| Last updated | After Chapter 8 |
+| Last chapter completed | 8 |
 | Current arc | Arc 2 — Gate Grade 2–3 |
-| Active focal characters | Yejide Adeyemi, Kwabena Asante, Wanjiku Mwangi, Fatou Ndiaye |
-| Mystery person last appeared | Chapter 7 (Accra guildhall archives — junior clerk finds five torn notebook pages from gates in Achimota, Kumasi, Lagos, and Dakar; pages record solver approaches using terms “executor,” “system builder,” “information gatherer”; pages are copied and filed away without further action) |
-| Macro mystery evidence count | 6 |
+| Active focal characters | Yejide Adeyemi, Kwabena Asante, Wanjiku Mwangi, Fatou Ndiaye, Nantale Namakula |
+| Mystery person last appeared | Chapter 8 (Kampala, Nakasero market — described by merchants as an unremarkable man in a grey coat; left a torn notebook page inside the gate) |
+| Macro mystery evidence count | 7 |
 
 ---
 
 ## PROCESS STATE SUMMARY
 *Compressed view. Full detail in /state/process_state.json.*
 
-| Operation | Touch | Last Context | Next Due |
+| Operation | Touch | Last Chapter | Status |
 |---|---|---|---|
-| Identify unknown / data / condition | owned | — | Arc 2 — Touch 3 |
-| What is missing (absence over presence) | owned | — | Arc 2 — Touch 3 |
-| Separate parts of condition | 1 | Chapter 004 | Chapter 7 — Touch 2 |
-| Look at the unknown | 1 | Chapter 005 | Chapter 7 — Touch 2 |
+| Identify unknown / data / condition | owned | — | — |
+| What is missing (absence over presence) | owned | — | — |
+| Separate parts of condition | 1 | 004 | Touch 2 pending |
+| Look at the unknown | 1 | 005 | Touch 2 pending |
 
 All other operations are at touch 0 and will be introduced in later arcs as scheduled in /state/process_state.json.
 
@@ -51,8 +51,7 @@ All other operations are at touch 0 and will be introduced in later arcs as sche
 *All wrong approach types must appear across Arcs 1-4. Types introduced per arc per concept_curriculum.md.*
 
 **Arc 2 (introduced as operations expand):**
-- The confident specialist (applies domain expertise to wrong problem type)
-- The hypothesis tester (tests systematically without naming what is being tested)
+*All Arc 2 failure modes have now been shown (the confident specialist, the hypothesis tester — both in chapter 008).*
 
 **Arc 3-4 (introduced as operations expand):**
 - The executor on complex condition (acts on first part, ignores others)
@@ -76,7 +75,7 @@ All other operations are at touch 0 and will be introduced in later arcs as sche
 
 | ID | Name | Occupation | City | Comprehension Level | Last Seen |
 |---|---|---|---|---|---|
-| char_001 | Yejide Adeyemi | Fabric Checker / Seamstress | Lagos | 2 (Touch 2) | Chapter 7 |
+| char_001 | Yejide Adeyemi | Fabric Checker / Seamstress | Lagos | 2 (Touch 2) | Chapter 6 |
 | char_002 | Kwabena Asante | Dispatch Clerk (Promoted) | Accra | 2 (Touch 2) | Chapter 7 |
 | char_002a | Ama Serwah | Plantain Seller | Accra | 1 (Touch 1) | Chapter 2 |
 | char_003a | Kojo Acheampong | Depot Supervisor | Accra | 1 (Touch 1) | Chapter 3 |
@@ -89,28 +88,28 @@ All other operations are at touch 0 and will be introduced in later arcs as sche
 ## MYSTERY PERSON THREAD
 *Observable log summary. Full detail in /state/mystery_anchor.json.*
 
-Appearances: 7  
-Last location: Accra guildhall archives — five torn notebook pages recovered from gate interiors (Achimota, Kumasi, Lagos, Dakar) and filed by a junior clerk under “Unidentified Documents—Gates.” Pages record solver approaches using the anchor’s consistent terminology (executor, system builder, information gatherer) with register timestamps. The clerk photocopied the pages, sent them to the senior coordinator, and they were shelved unread.  
-Reader can suspect: The anchor has been present at every major gate event across cities, leaving physical records that the guild is not yet equipped to interpret. The terms “executor,” “system builder,” “information gatherer” are the anchor’s diagnostic categories for wrong approaches — and the guild, who has not yet recognised these patterns, is losing trained solvers at an accelerating rate.
+Appearances: 8  
+Last location: Kampala, near Nakasero market — an unremarkable man in a grey coat observed the gate event; a torn notebook page was found inside the dispensary gate wedged between the counter and the wall, containing precise register timestamps and mirror-content descriptions of Dr. Akello’s specialist approach and the young man’s tester approach. The page was read by Nantale before the gate fully vanished. The guild coordinator later received merchant descriptions but filed the incident without follow-up.  
+Reader can suspect: The anchor is aware of every gate where a non-guild solver succeeds and is leaving pages deliberately — the terminology “specialist approach” and “tester approach” match the anchor’s diagnostic categories, and the anchor is tracking the specific gap each wrong approach misses. The anchor is also present before the guild can verify.
 
 ---
 
 ## MACRO MYSTERY EVIDENCE
 *What the reader can suspect but not confirm.*
 
-Evidence count: 6  
-Current state: The discovery of the five notebook pages establishes that the anchor has been systematically observing multiple gates across different cities and recording solver mental frames in identical notation from the beginning. None of the pages have been studied; the guild’s internal systems file them as anomalies. Meanwhile, the guild’s data shows that untrained solvers are closing Grade 2 gates at a far higher rate than guild-trained ones — and none of the twelve deaths are among the untrained. The anchor’s documentation and the guild’s statistics converge on the same truth: the guild trains solvers in a method that works only when the problem matches the method, and the gates are now presenting problems that require a new mental move.
+Evidence count: 7  
+Current state: The anchor’s notebook page from the Kampala gate documents two wrong approaches in a Grade 2 gate, each with mirror content and register timestamps, and underlines the gap each missed — the specialist ignored the reference chart, the tester never activated the verification panel. The page ends with “No closure.” The anchor’s diagnostic precision, combined with the fact that the page was left inside the gate for anyone to find, suggests the anchor is not merely observing — the anchor is building a record that, if assembled, would articulate the process the guild refuses to see. Meanwhile, Nantale Namakula, a pharmacist with no gate training, closes the gate by reading the chart, using the panel, and waiting for confirmation — a procedure that matches what the anchor documented as the missing steps.
 
 ---
 
 ## ACTIVE FORESHADOWING
 
-- Kuuku Dadzie’s failure in the Dakar gate demonstrates the guild method’s limits: thorough cataloguing and spatial reorganisation produce no response when the gate’s solution lies in a relationship between objects, not in the objects themselves — and recognising that relationship requires recalling a prior gate, which the method does not teach.
-- The unnamed woman who closes the Dakar gate does so by recalling a Grade 1 gate from Kumasi two weeks earlier — the first clear instance of “Do you know a related problem?” (Touch 1) appearing in the story. She sits down, studies the table as a whole, finds the structural resemblance, and the gate closes. The guild will never know.
-- Yaw Boateng’s realisation — “Maybe we’re training them wrong” — and the guild’s internal review showing a mortality split between trained and untrained solvers signals an institutional crisis that will deepen as more solvers emerge outside the guild.
-- The junior clerk’s photocopied pages reach the senior coordinator’s office and are filed without review — a time-delay fuse; the reader knows those records contain the diagnosis the guild needs and is not yet capable of reading.
-- Yejide, Kwabena, Wanjiku, and Fatou are shown in ordinary-life echoes at the chapter’s end, each applying gate-honed perception to their work without naming the connection — they are the silent population of solvers the guild cannot track, whose accumulated instinct will eventually overtake the institutions.
-- The arc closes with the phrase “The next gate opened at dawn,” establishing a world where the rate of gate events continues to accelerate and the guild’s window for adapting its training is narrowing.
+- Nantale’s instinct — to look at the chart, to check the panel, to wait for the result — is a direct application of “look at the unknown,” “find what is missing,” and “can you check the result?” to a gate problem. She has performed these operations for twelve years without naming them. The reader sees the operations transferring before the character knows what to call them.
+- The guild coordinator files the report with the word “anomalous closure” and the marginal note “checking,” indicating that the guild is beginning to notice the pattern but lacks the vocabulary to integrate it. The anchor’s pages contain that vocabulary; the guild is still not reading them.
+- The junior dispenser Moses writes something on a scrap of paper after watching Nantale re-check the prescription — the instinct is spreading to those who observe the solvers, not only to the solvers themselves.
+- Dr. Akello’s failure as a confident specialist shows that domain expertise without the willingness to look outside the domain boundary cannot solve the new gate structures. The guild, which trains specialists to trust their domain, is structurally producing this failure mode.
+- The anchor’s page explicitly lists what both wrong approaches missed, and the missing steps are the ones Nantale performed. The anchor is effectively writing the solution; the world is catching up to the pages being left behind.
+- The phrase “The stool was cold. The surface of the verification panel was wiped clean” hints that the anchor may have sat at that counter, used the panel, and prepared the scene before the gate opened — a degree of foreknowledge or methodical preparation that the guild would find terrifying if it understood.
 
 ---
 
@@ -138,12 +137,14 @@ Current state: The discovery of the five notebook pages establishes that the anc
 
 ## NOTES FOR AI — CURRENT SESSION
 
-- Chapter 7 closed Arc 1 and opened Arc 2. All Arc 1 wrong‐approach types (executor, system builder, information gatherer) have now been demonstrated with distinctive gate signatures and mirror content.
-- The “Do you know a related problem?” operation was experienced — not named — through the unnamed solver in the Dakar gate. This is Touch 1. The gate rewarded structural recall: the same relationship between objects that had appeared in a Kumasi Grade 1 gate was the key to the Dakar Grade 2 gate. The solver did not articulate the principle; she simply remembered and the gate closed.
-- Kuuku Dadzie’s failure models the guild’s current training ceiling: cataloguing, arranging, and pattern-matching within the present data set produces no effect when the required move is to reach outside the present gate entirely.
-- The guild’s internal data now shows a statistically impossible mortality split — all twelve dead are guild-trained — but the guild has no conceptual framework for why. The answer (the missing operation is “what does this resemble?”) is already recorded in the anchor’s pages, which are sitting unread in a file in Accra.
-- The ordinary-life echoes at the end of the chapter are subtle: Yejide, Kwabena, Wanjiku, and Fatou each solve a real-world problem by perceiving what is missing, without acknowledging any connection to their gate experiences. The reader sees the instinct spreading; the characters do not.
-- The junior clerk’s discovery of the five pages is a new macro-mystery milestone. The pages explicitly name the wrong-approach types that the curriculum’s Arc 1 and Arc 2 failure sequences are built around. The terms “executor,” “system builder,” “information gatherer” are now in-world textual artefacts, visible to characters who might eventually understand them.
-- Next chapter: introduce the “confident specialist” and “hypothesis tester” wrong approaches, and give the reader a focal character who experiences the “related problem” instinct. The name may be attached (Touch 1N) if the experience is complete by the chapter’s end — otherwise defer to chapter 009. The sitting down must be fully earned.
-- The “empty hook” physical emblem remains available for reuse in later arcs, but the new structural emblem for Arc 2 is likely to be a recognisable configuration of objects that repeats across gates.
-- African names only. No Arabic names. Continue the established pattern of ordinary-life echoes within the same chapter or the one that follows.
+- Chapter 008 introduces Nantale Namakula, a pharmacist from Kampala, as the new focal character. Her ordinary-life habit of checking the patient record before dispensing — a form of “did you use all the data?” and “can you check the result?” — maps directly onto the gate problem and produces a quiet closure.
+- The gate problem is a Grade 2 pharmacy-dispensary layout: order slip, reference chart, verification panel, and multiple drug containers. The correct solution requires reading the chart (the unused datum) and activating the panel (the verification step) — both steps that the specialist and hypothesis tester ignored.
+- Dr. Akello (the confident specialist) sorted by chemical category, matched the protocol, and stopped when her domain ran out. The gate mirrored her categorisation and dimmed the chart. The gap between clusters widened — the mirror drawing attention to what she was not looking at.
+- The young man (the hypothesis tester) tested twelve configurations systematically but never activated the panel. The gate mirrored each configuration, always showing the panel unactivated. He sat down — but from collapse, not stillness — and the gate did not respond.
+- Nantale sat down deliberately, looked at the room (not the containers), saw the chart and panel, cross-referenced, made the correction, placed the tray on the panel, and waited. The gate closed. The sitting down was earned and quiet.
+- The chapter demonstrates “can you check the result?” (Touch 1, name attached through the ordinary-life echo when the narration mentions “She had learned to check the result. That was what the waiting was for” — a narrator observation, not a lecture).
+- The operation “Do you know a related problem?” is faintly present in Nantale’s recognition of the reference chart as analogous to the cross-reference charts she uses daily, but the chapter’s primary taught operation is “can you check the result?” The related-problem instinct is seeded but not yet given weight.
+- The anchor’s notebook page is the first one a protagonist reads before it vanishes, giving the reader a direct look at the anchor’s format: grade, approach type, mirror content, underlined gap, register log. This is a turning point in how the macro mystery is presented.
+- The ordinary-life echo shows Nantale checking a warfarin interaction by pulling the patient record — a datum the protocol omitted — and another customer going still as the right question forms. The echo is unobtrusive and directly parallels the gate behaviour.
+- The guild’s marginal note “checking” hints that the vocabulary for this operation is trying to surface inside the institution. The anchor’s pages name it already; the guild is still circling.
+- For chapter 009, the next target should shift to “Do you know a related problem?” (Touch 1, possibly Name Attachment), using the confident specialist and hypothesis tester wrong approaches again in a different context to show the operation’s cost and reward. The focal character could be another new person in a different city. The ordinary-life echo would show the character drawing on a past experience to solve a current problem, without naming the move.
