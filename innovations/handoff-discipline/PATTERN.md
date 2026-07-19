@@ -29,6 +29,15 @@ undocumented context is simply gone.
 4. Anyone may update it — recording true state is never out of scope. An
    implementer with a tight write-set logs the finding in its ticket instead,
    and the reviewer carries it over.
+5. **Compact when the ledger stops being a one-hop read** (append-only means
+   it grows; rule of thumb ~10+ dated sections). Write a fresh
+   `*-compacted-state` doc holding ONLY live current truth (state, roles,
+   still-binding facts, open queue, read-first order), **re-verifying every
+   carried-forward fact against its source as you write it** — compaction is
+   the highest-risk moment for copying staleness. Never delete the old ledger;
+   it stays as the archived *why*. Repoint the front door at the compacted
+   file. Keep this by-hand until the by-hand cost hurts; do not pre-build a
+   heavier rotation.
 
 ## Fits projects like
 Anything with disposable AI sessions, long gaps between work sessions,
@@ -53,6 +62,12 @@ from the kit: dated handoff sections live as separate files in `progress/`
 (the host repo's pre-existing convention) instead of appended sections in
 HANDOFF.md itself; HANDOFF.md holds only the banner, read-order, and trust
 map.
+
+Compaction proven 2026-07-19, same host repo: a running ledger reached 14
+dated sections / 426 lines — no longer a one-hop read — and was compacted into
+a 119-line current-state front door, every carried fact re-verified against
+state/code at the compaction commit, the old ledger archived (not deleted).
+That exercise forged the compaction rule (step 5) now in the kit.
 
 ## Kit (deployable files in `kit/`)
 `kit/HANDOFF_RULES.md` + `kit/HANDOFF_TEMPLATE.md` — copy both; start the handoff from the template on day one.

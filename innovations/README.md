@@ -43,16 +43,25 @@ config), none requires restructuring existing code.
 | [trust-ladder-golden-sets/](trust-ladder-golden-sets/PATTERN.md) | Autonomy graduates from logged override rates | Autonomy by schedule or optimism | graduation-rule ledger template |
 | [paid-call-governance/](paid-call-governance/PATTERN.md) | Caps before spend; receipts always | Silent API spend; lost provenance | caps file + wrapper contract |
 | [decision-ledger/](decision-ledger/PATTERN.md) | Append-only owner decisions; propose-and-STOP | Agents deciding taste; relitigated decisions | `decisions_TEMPLATE.md` |
+| [situation-personification/](situation-personification/PATTERN.md) | Cast the system as a household; five fit questions | Structural bad-fits a data-flow view hides | one-page `CAST-AND-FIT.md` lens |
+| [root-cause-laddering/](root-cause-laddering/PATTERN.md) | Climb to the layer that generates the failure | Whack-a-mole on symptoms; fixing instances not classes | one-page `LADDER.md` |
 
 Natural pairings: spec-method + ticket-dispatch (design → dispatch);
 multi-agent + trunk-queue + machine-laws (the working agreement);
 file-state-machine + handoff (surviving session/machine death);
 verify-dont-trust + trust-ladder (evidence before autonomy);
-decision-ledger under all of them (the owner stays sovereign).
+decision-ledger under all of them (the owner stays sovereign);
+situation-personification + root-cause-laddering (which character is at
+fault / which layer it lives in) — a diagnosis pair for when work bounces.
 
 ## Incubating (ideas without evidence yet — no directory rights; see CONTRIBUTING §1)
 
-- (none)
+- **Meta-layer regression net** — regression-test the *tools that change the
+  product* (build tools, code generators, ticket machinery), not just the
+  product. Premise: the product often has tests while the machinery that
+  edits it has none, so a tool change silently regresses a consumer. Graduates
+  to a pattern once the origin host repo's tool-regression suite lands AND is
+  shown going red on a real regression (unbuilt as of 2026-07-19).
 
 ## Origin evidence, in one paragraph
 
@@ -65,3 +74,9 @@ hook that machine-enforces the written conventions (and validated its own
 installing commit); a 1252-test estate (1120 + 132) kept green through all of
 it; and a golden-set evaluation spine where AI verdicts stay provisional until
 a human (or logged override-rate evidence) says otherwise.
+
+Two further patterns — `situation-personification` and `root-cause-laddering`
+— were forged in the transplant host repo (an AI-run content pipeline, human
+owner + senior/junior agents, 2026-07): a diagnosis session that retired a
+mis-onboarded component and traced three ticket bounces to the authoring
+layer. Their `Proven in` sections carry that dated evidence.

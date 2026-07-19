@@ -6,17 +6,16 @@ Worktree: <path + branch — group only; created by the coordinator, not you>
 Write-set: <exact files/globs the implementer may create or modify>
 Hot-files: <shared files this ticket is allowed to touch, or "none">
 Upstream (preconditions — author dry-ran that EACH exists/holds): <the
-  paths, tools, test harnesses, fixtures, and source state-fields this
-  ticket ASSUMES are already present before building — e.g. "the invoke_writer
-  test module exists", "assembled_prompt carries an ANCHOR_REQUIREMENT_JSON
-  block". A precondition you did not personally run is a STOP waiting to
-  happen (see T-008, T-012).>
-Downstream (consumers to re-verify — looked up in field_registry): <for
-  EVERY file/surface in the write-set, who depends on it and must be
-  re-checked AFTER the change — e.g. "invoke_writer.py → re-run T-010 +
-  T-012 acceptance + the tool regression suite". "none" only if the surface
-  is a genuine leaf. A shared surface with an empty Downstream is an
-  authoring error (see T-014).>
+  paths, tools, test harnesses, fixtures, and source fields this ticket
+  ASSUMES are already present before building — e.g. "the `<module>` test
+  suite exists", "`<config file>` carries the `<field>` block". A
+  precondition you did not personally run is a STOP waiting to happen.>
+Downstream (consumers to re-verify — looked up in the producer/consumer
+  registry): <for EVERY file/surface in the write-set, who depends on it and
+  must be re-checked AFTER the change — e.g. "`<shared module>` → re-run
+  `<consumer ticket>`'s acceptance + the regression suite over that surface".
+  "none" only if the surface is a genuine leaf. A shared surface with an empty
+  Downstream is an authoring error.>
 State-access: none | reads <what> | writes <what>
 Paid-calls: forbidden | budgeted via <wrapper + cap key>
 ```
