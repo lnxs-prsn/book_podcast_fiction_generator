@@ -103,12 +103,6 @@ class RevisionOverreachError(Exception):
 REVISION_MAX_DIFF_RATIO = 0.25
 PROMPTS_DIR = Path(__file__).resolve().parents[1] / "prompts"
 DEFAULT_CONFIG_PATH = Path(__file__).with_name("pipeline_config.toml")
-DEFAULT_ASSEMBLED_PROMPT = PROMPTS_DIR / "assembled_prompt.md"
-ANCHOR_REQUIREMENT_RE = re.compile(
-    r"<!-- ANCHOR_REQUIREMENT_JSON -->\s*```json\s*(.*?)\s*```\s*"
-    r"<!-- /ANCHOR_REQUIREMENT_JSON -->",
-    re.DOTALL,
-)
 
 
 def load_forbidden_labels(
@@ -199,77 +193,9 @@ def check_forbidden_labels(text: str) -> None:
         )
 
 
-def _normalize_required_prose(text: str) -> str:
-    """Normalize typography and whitespace without weakening phrase matching."""
-    return " ".join(
-        text.translate(str.maketrans({
-            "\u2018": "'", "\u2019": "'", "\u201c": '"', "\u201d": '"',
-            "\u00a0": " ",
-        })).split()
-    ).casefold()
-
-
-def load_anchor_requirement(
-    prompt_path: Path = DEFAULT_ASSEMBLED_PROMPT,
-) -> tuple[bool, tuple[str, ...]]:
-    """Read the Assembler's fenced anchor requirement contract."""
-    prompt = prompt_path.read_text(encoding="utf-8")
-    matches = ANCHOR_REQUIREMENT_RE.findall(prompt)
-    if len(matches) != 1:
-        raise ValueError(
-            "assembled_prompt.md must contain exactly one "
-            "ANCHOR_REQUIREMENT_JSON block"
-        )
-    requirement = json.loads(matches[0])
-    appears = requirement.get("anchor_appears")
-    phrases = requirement.get("anchor_required_prose")
-    if not isinstance(appears, bool) or not isinstance(phrases, list):
-        raise ValueError(
-            "ANCHOR_REQUIREMENT_JSON requires boolean anchor_appears and "
-            "array anchor_required_prose"
-        )
-    if any(not isinstance(item, str) or not item.strip() for item in phrases):
-        raise ValueError("anchor_required_prose entries must be non-empty strings")
-    if appears and not phrases:
-        raise ValueError(
-            "anchor_required_prose must not be empty when anchor_appears is true"
-        )
-    if not appears and phrases:
-        raise ValueError(
-            "anchor_required_prose must be empty when anchor_appears is false"
-        )
-    return appears, tuple(phrases)
-
-
-def validate_anchor_presence(
-    text: str,
-    prompt_path: Path = DEFAULT_ASSEMBLED_PROMPT,
-) -> list[dict]:
-    """Return whole-scene deficiencies for required anchor prose."""
-    appears, phrases = load_anchor_requirement(prompt_path)
-    if not appears:
-        return []
-    normalized_draft = _normalize_required_prose(text)
-    return [
-        {
-            "check": "anchor_absent",
-            "rule": "HARD RULE 8",
-            "line": None,
-            "detail": f"missing required anchor prose: {phrase}",
-            "excerpt": phrase,
-        }
-        for phrase in phrases
-        if _normalize_required_prose(phrase) not in normalized_draft
-    ]
-
-
-def write_prose_deficiencies(
-    text: str,
-    prompt_path: Path = DEFAULT_ASSEMBLED_PROMPT,
-) -> list[dict]:
+def write_prose_deficiencies(text: str) -> list[dict]:
     """Run prose checks and write their shared transient report."""
     deficiencies = validate_forbidden_labels(text)
-    deficiencies.extend(validate_anchor_presence(text, prompt_path))
     path = PROMPTS_DIR / "prose_deficiencies.json"
     path.write_text(
         json.dumps(deficiencies, ensure_ascii=False, indent=2) + "\n",
@@ -325,9 +251,6 @@ def parse_args() -> argparse.Namespace:
     )
     p.add_argument("--check-prose", metavar="PATH",
                    help="Write structured prose deficiencies; no API call")
-    p.add_argument("--anchor-requirement", metavar="FILE",
-                   help="Assembled prompt containing ANCHOR_REQUIREMENT_JSON "
-                        "(defaults to prompts/assembled_prompt.md)")
     p.add_argument("--revise", metavar="DRAFT",
                    help="Target-revise an existing draft")
     p.add_argument("--deficiencies", metavar="FILE",
@@ -350,16 +273,13 @@ def parse_args() -> argparse.Namespace:
                 args.dry_run, args.ignore_cost_limit)):
             mode = "--check-labels" if args.check_labels else "--check-prose"
             p.error(f"{mode} cannot be combined with generation arguments")
-        if args.check_labels and args.anchor_requirement:
-            p.error("--anchor-requirement requires --check-prose")
     elif args.revise:
         if not args.deficiencies:
             p.error("--revise requires --deficiencies")
-        if any((args.prompt, args.output, args.anchor_requirement)):
+        if any((args.prompt, args.output)):
             p.error("--revise cannot be combined with generation arguments")
-    elif args.deficiencies or args.dry_run or args.anchor_requirement:
-        p.error("--deficiencies and --dry-run require --revise; "
-                "--anchor-requirement requires --check-prose")
+    elif args.deficiencies or args.dry_run:
+        p.error("--deficiencies and --dry-run require --revise")
     elif not all((args.prompt, args.config, args.output)):
         p.error("--prompt, --config, and --output are required for generation")
     return args
@@ -384,13 +304,11 @@ def main() -> None:
                 print(f"Chapter not found: {chapter_path}", file=sys.stderr)
                 sys.exit(1)
             deficiencies = write_prose_deficiencies(
-                chapter_path.read_text(encoding="utf-8"),
-                Path(args.anchor_requirement) if args.anchor_requirement
-                else DEFAULT_ASSEMBLED_PROMPT,
+                chapter_path.read_text(encoding="utf-8")
             )
             if deficiencies:
                 print(
-                    f"ProseCheckError: {len(deficiencies)} prose deficiency "
+                    f"LabelLeakError: {len(deficiencies)} prose deficiency "
                     f"record(s) → {PROMPTS_DIR / 'prose_deficiencies.json'}",
                     file=sys.stderr,
                 )

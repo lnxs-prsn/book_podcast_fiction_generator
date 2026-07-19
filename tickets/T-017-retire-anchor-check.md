@@ -105,3 +105,21 @@ Trailers: `Ticket: T-017` / `Implemented-by: <Codex|Qwen>`.
 - On ANY failure: STOP, revert, record in §6, leave the tree coherent.
 
 ## 6. Implementer log (append below; never delete the ticket body)
+
+- 2026-07-19 — Codex — **IMPLEMENTED.** Removed T-014's
+  `ANCHOR_REQUIREMENT_JSON` producer/consumer contract, CLI flag, parsing and
+  phrase-matching code, field-registry row, and `anchor_absent` routing notes.
+  The pre-existing human-facing anchor guidance and the structural gate were
+  untouched; Orchestrator step 8 still invokes `--check-prose` for label
+  enforcement.
+- Offline acceptance: chapter 007 and ch8 attempt 3 each exited 0 with `[]`;
+  ch8 attempt 2 exited 1 with exactly four `forbidden_label` records and no
+  traceback. Legacy `--check-labels` passed the two clean fixtures and rejected
+  attempt 2 with the same four narration hits. The LAW 4 audit found zero
+  retired-machinery hits across `fiction_loop/`; `git diff --check` passed.
+  The sanctioned serial suite produced the documented baseline:
+  `1 failed, 331 passed` (only
+  `test_default_splitter_engine_passes_openrouter_timeout_seconds`). The first
+  suite invocation hit the known read-only uv-cache harness restriction; the
+  exact command completed after approved cache access. No paid call or
+  state/chapter write was made.
