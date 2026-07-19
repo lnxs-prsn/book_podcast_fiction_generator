@@ -68,7 +68,9 @@ hits.
 2. `grep -rn "16 laws\|sixteen laws" fiction_loop/` → zero stale counts
    under fiction_loop.
 3. Test suite → `1 failed, 331 passed`. `git status --porcelain` → only the
-   write-set; one commit.
+   write-set PLUS this ticket's own implementer-log section (standing
+   exemption, AGENTS.md §1 — the ticket file is not counted against the
+   write-set); one commit.
 4. DOWNSTREAM RE-VERIFY: none (leaf doc).
 
 ## 5. Commit
@@ -83,3 +85,15 @@ Trailers: `Ticket: T-018` / `Implemented-by: <Codex|Qwen>`.
 - LAW 17 is the highest number and yields to all others in conflict.
 
 ## 7. Implementer log (append below; never delete the ticket body)
+
+- 2026-07-19 — implementer — **BLOCKED (valid).** Ticket write-set is only
+  `CONTRIBUTING.md`, but AGENTS.md + §7 require appending here, and §4 said
+  "only the write-set changed" — a contradiction (the ticket file is not in
+  its own write-set).
+- 2026-07-19 — senior — **RESOLVED (class fix; STOP was correct).** This was
+  a template-inherited contradiction affecting EVERY ticket, not a T-018 bug.
+  Added a standing exemption: appending to a ticket's own implementer-log
+  section is always allowed and is excluded from the write-set / "only the
+  write-set changed" check — AGENTS.md §1, TICKET_TEMPLATE §3/§6, and §4 above
+  now say so. No ticket lists itself. **Proceed:** implement LAW 17 into
+  CONTRIBUTING.md per §3; append your log here freely.

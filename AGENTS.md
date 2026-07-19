@@ -12,6 +12,11 @@ Binding rules, in force for every agent regardless of harness:
    implementing a ticket: stay inside its write-set, follow §5 constraints,
    append to its implementer log, STOP on failure — never improvise
    alternative designs. Current role assignments: see the current handoff §0.
+   **Standing exemption:** appending to the ticket's OWN implementer-log
+   section is always permitted and does NOT count against its write-set or
+   any "only the write-set changed" acceptance check — a ticket need not list
+   itself. (This is the ONLY implicit write target; everything else is the
+   literal write-set.)
 2. **Environment:** `.venv/bin/python` from the repo root (uv-managed).
    uv only — never pip install, never create venvs by hand.
 3. **fiction_loop/:** read `fiction_loop/CONTRIBUTING.md` before changing

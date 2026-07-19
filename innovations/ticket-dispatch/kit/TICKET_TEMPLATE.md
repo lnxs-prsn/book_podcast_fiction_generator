@@ -40,7 +40,8 @@ Include code snippets for anything you'd rather not have improvised.>
 
 1. <machine-checkable command → expected result>
 2. <existing test suite → green, with expected count>
-3. <git status shows ONLY the write-set changed>
+3. <git status shows ONLY the write-set changed — the ticket's own
+   implementer-log section is exempt (standing rule) and need not be listed>
 4. <DOWNSTREAM RE-VERIFY — mandatory whenever the write-set touches a shared
    surface: the tool regression suite is green, AND each consumer named in
    the Downstream header has its acceptance re-run green. A downstream
@@ -60,6 +61,10 @@ that step, log it in §6, leave the tree coherent — do not improvise
 alternative designs.>
 
 ## 6. Implementer log (append below; never delete the ticket body)
+
+Appending here is always allowed and is exempt from the write-set / "only the
+write-set changed" acceptance (standing rule) — this section is the one
+implicit write target every ticket has.
 
 - [ ] <step>
 - [ ] acceptance 1–N
