@@ -1,11 +1,12 @@
 # HANDOFF — front door (stable path; content lives in progress/)
 
 > **CURRENT handoff: `progress/handoff-2026-07-19-compacted-state.md` — read its
-> §13 first (latest state), then §12.** As of 2026-07-20: two more pre-build
-> lenses ran (ADVERSARIAL + READER, `progress/factory-adversarial-and-reader-pass-2026-07-20.md`)
-> and **three tickets were DRAFTED (not dispatched): T-019, T-024, T-025**. A
-> ch9-blocking OWNER DECISION surfaced (**ADV-3** — does the arc-2 quota apply to
-> a correct-applying return?). As of latest 2026-07-19: **8 chapters
+> §14 first (latest state), then §13.** As of 2026-07-20: two more pre-build
+> lenses ran (ADVERSARIAL + READER, `progress/factory-adversarial-and-reader-pass-2026-07-20.md`);
+> **three tickets DRAFTED (not dispatched): T-019, T-024, T-025**; and **five
+> Group-B design decisions RULED** (`fiction_loop/human_decision.md` DECISION 11,
+> B1–B5). A ch9-blocking OWNER DECISION remains open (**ADV-3** — does the arc-2
+> quota apply to a correct-applying return?). Group C review is next. As of latest 2026-07-19: **8 chapters
 > committed, arc 2, ch8 landed + accepted** (`8935458`); next = ch9
 > (return_to_character, char_004). T-016 + T-018 landed; **DECISION 10** (arc-2
 > cast quota 3→2, §9 self-contradiction) fixed (`6d15c30`); **factory spec-sync

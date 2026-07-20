@@ -353,3 +353,29 @@ three ticket files added this session, all UNCOMMITTED.
   being a return): resolve **ADV-3** (owner, free) → **T-024** → **T-025** → **T-019**,
   then the remaining clear items. ch9 (paid) should not run until ADV-3 is ruled and
   ideally T-024/T-025 land (they guard the exact return-chapter failure classes).
+
+## 14. Group-B decisions RULED (2026-07-20, LATEST — read this for current state)
+
+Owner walked the five Group-B items (small-design-decision tier) and ruled all five;
+recorded in `fiction_loop/human_decision.md` **DECISION 11** (B1–B5). No code changed;
+these are the design calls that make the Group-B items ticket-ready. Summary:
+
+- **B1 (ADV-5 Updater idempotency):** idempotent steps + a per-chapter "applied" stamp
+  (re-run safe; done steps no-op). Journal/resume rejected (crash-inside-a-step trap).
+- **B2 (P7 collapse 4 re-verify layers):** unify into ONE consumer-map organ, **but**
+  first audit each of the four (registry=ledger, LAW 17=principle, regression=teeth,
+  consumer-map=automation) and preserve every unique mode — unify, never delete-3-keep-1.
+- **B3 (RDR-2 anti-formula):** treat variety as a multi-axis budget; enforce where
+  budget exists, accept pool-forced saturation (arc-1 types), feed the computed budget
+  back to Stage-2 sizing. **Still to design:** the budget formula, per-axis thresholds,
+  enforcement home — so B3 stays partly open (borderline Group-B/C).
+- **B4 (T-020 anchor leak):** remove hardcode; description lives in a reader-observable
+  field of `mystery_anchor.json` (away from `hidden_coherence`); Assembler reads it.
+  Senior may draft this ticket unaided (verify safe placement first).
+- **B5 (F14 null-blind):** null ≡ false; gate fails null-on-return (one-line
+  `is False`→`is not True`); correct the stale `field_registry` open-item note.
+
+**Group B now reduces to:** B1/B4/B5 ticket-ready; B2 ticket-ready after the
+preserve-the-unique-modes audit; B3 needs a short design pass on 3 specifics.
+**Next up (owner's flow):** Group C review (RDR-3 mystery-fairness, P5 substrate,
+"shown" definition, prerequisite graph, RDR-4). ADV-3 still the open ch9 blocker.

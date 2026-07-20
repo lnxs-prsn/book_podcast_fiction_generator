@@ -509,6 +509,58 @@ registry case law, regression freeze) are ordinary work, done in the same sittin
 
 ---
 
+## DECISION 11 — five Group-B design calls from the pre-build review (added 2026-07-20)
+
+**Context.** After the three personifications, two further lenses ran (ADVERSARIAL +
+READER — `progress/factory-adversarial-and-reader-pass-2026-07-20.md`) and the surfaced
+problems were bucketed by understanding (`progress/factory-open-problems-synthesis-2026-07-20.md`).
+"Group B" = problems whose fix needed a small owner decision before a spec/ticket. The
+owner walked all five and ruled. Recorded here because each is a buildable fork.
+
+**B1 — Updater idempotency (ADV-5).** *Issue:* the Updater writes ~10 files by
+appending/incrementing and is non-idempotent; a crash mid-fan-out then a re-run
+double-applies (double-counts touches, corrupts the scheduler silently).
+**DECISION: idempotent steps + a per-chapter "applied" stamp.** Each step checks
+"already applied chapter N here?" before writing; a final stamp closes the chapter;
+resume after a crash = re-run, done steps no-op. (Rejected the journal/resume shape —
+it fails when a crash lands *inside* a step, not just between steps.)
+
+**B2 — collapse the four "re-verify downstream" layers (P7).** *Issue:* one duty
+("a change re-verifies its consumers") is done four ways — field_registry audit, LAW 17,
+the regression suite, the planned Stage-6 consumer map. **DECISION: unify into ONE
+consumer-map organ — but a precondition first.** The four are NOT purely redundant:
+each has a unique mode (registry = the ledger/data; LAW 17 = the binding principle;
+regression suite = actual execution/teeth; consumer map = automation). Before merging,
+**audit each of the four for responsibilities beyond the shared duty** and preserve
+them — collapse = *unify without dropping any unique mode*, never delete-three-keep-one.
+
+**B3 — anti-formula enforcement (RDR-2).** *Issue:* the lead-failure rotation only
+*records* what the Writer did; it cannot force variety (executor led ch1–3).
+**DECISION (direction fixed; 3 specifics remain design work): treat variety as a
+multi-axis budget.** Enforce variety on axes that have budget (lead rotation,
+manifestation, context enum, city, character, naming vehicle); accept saturation where
+the pool mathematically forces it (arc-1: 3-of-3 types → every chapter shows all three);
+and **compute the budget and feed it back to Stage-2 sizing** — if even the multi-axis
+budget is too thin for the planned chapter count, that is a sizing/curriculum signal
+(fewer chapters or a bigger pool), not something to paper over. STILL TO DESIGN: the
+budget formula, the per-axis thresholds, and where enforcement lives.
+
+**B4 — anchor-description leak (T-020).** *Issue:* the anchor's physical description
+("an unremarkable man in a grey coat… black notebook") is hardcoded in `assembler.md:229`
+— book-specific content in a multi-book chassis (LAW-14 leak class, same as QUOTA_BY_ARC).
+**DECISION: remove it; the description lives in a reader-observable field of
+`mystery_anchor.json`** (NOT near `hidden_coherence`, which is walled off from all
+agents); the Assembler reads it from there. Same pack-read pattern as T-019.
+
+**B5 — F14 null-blind gate check.** *Issue:* the gate enforces "a returning focal shows
+visible life progression" but only fires on `life_progression_shown is False`; a `null`
+slips through. **DECISION: only true/false acceptable on a return; null ≡ false.** The
+gate treats null as false and FAILS it — one-line change (`is False` → `is not True`),
+which closes both the producer contract and the gate defense at once. Also correct the
+now-stale `field_registry` open-item note (extractor.md already specifies true/false).
+
+---
+
 ## NOT DECISIONS — content only you can provide
 
 These aren't forks with options; they're blanks only a human should fill (per the
