@@ -1,13 +1,19 @@
 # HANDOFF — front door (stable path; content lives in progress/)
 
 > **CURRENT handoff: `progress/handoff-2026-07-19-compacted-state.md` — read its
-> §11 first (latest state).** As of later 2026-07-19: **8 chapters committed,
-> arc 2, ch8 landed + accepted** (`8935458`); next = ch9 (return_to_character,
-> char_004). T-016 + T-018 landed; **DECISION 10** (arc-2 cast quota 3→2, §9
-> self-contradiction) fixed (`6d15c30`); **factory spec-sync pass** done
-> (`3ff7c43`). A story-treatment on the factory spec (individual + CAST & FIT
-> personifications) is uncommitted, pending owner reaction; a factory Tier-1
-> action queue (leak fixes / pre-writer prompt gate) is proposed, not dispatched.
+> §12 first (latest state), then §11.** As of latest 2026-07-19: **8 chapters
+> committed, arc 2, ch8 landed + accepted** (`8935458`); next = ch9
+> (return_to_character, char_004). T-016 + T-018 landed; **DECISION 10** (arc-2
+> cast quota 3→2, §9 self-contradiction) fixed (`6d15c30`); **factory spec-sync
+> pass** done (`3ff7c43`). Git tag **`starting_factory` → `fe2e20d`** marks the
+> working 1-book flow (local, unpushed). A **pre-build multi-perspective pass**
+> ran a THIRD personification (WIP/part's-eye, uncommitted) and crystallized the
+> **"one-way door"** problem (summary built once from prose, ~10 files trust it,
+> nothing re-reads the story) — fix direction "verify from the fresh source"
+> (free name-presence check → paid meaning re-read), not yet ticketed. The two
+> earlier story-treatments (individual + CAST & FIT) were committed in `fe2e20d`;
+> a factory Tier-1 action queue (leak fixes / pre-writer prompt gate) is proposed,
+> not dispatched.
 > The "govern change" operating model is live (ticket Upstream/Downstream, LAW
 > 16/17, CAST & FIT lens). §§1–5 are the initial-compaction snapshot; §§8–11 are
 > the current addenda (§11 newest). The prior running ledger

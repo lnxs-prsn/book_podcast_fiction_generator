@@ -213,3 +213,73 @@ tool ticket before the product resumes.
 - **QUEUE NOW:** owner deciding between (a) the factory Tier-1 action tickets
   (chapter-independent, zero paid — leads with T-019 or T-022) and (b) **ch9**
   (return_to_character, char_004 — paid, owner-started; pointer already staged).
+
+## 12. Pre-build multi-perspective pass + `starting_factory` tag + the "one-way door" problem (2026-07-19, LATEST — read this for current state)
+
+**Supersedes §11's "QUEUE NOW".** No commits this session except the tag; nothing
+dispatched, no spec edits landed, chapter state untouched (HEAD still `fe2e20d`,
+`chapter_count`=8, next=009). Owner directive this session: **take multiple
+perspectives BEFORE building** — avoid obvious issues, don't let one lens set the
+build agenda.
+
+- **Restore point tagged:** annotated git tag **`starting_factory` → `fe2e20d`**
+  (local only, NOT pushed; branch is 2 commits ahead of origin). Marks the working
+  1-book flow before any factory-build work. Restore: `git reset --hard starting_factory`.
+
+- **THIRD personification run (UNCOMMITTED):**
+  `progress/factory-wip-personification-2026-07-19.md` — the **work-in-progress /
+  part's-eye** angle (a chapter's `update_brief.json` narrating its trip down the
+  line), companion to the individual (spec) and interaction (company) treatments.
+  Findings WIP-1..8, each mechanics-checked. **Shape-fit verdict on the company lens
+  (owner asked):** the firm/org lens fits *partially* — great on overload/blame/
+  redundancy, but native to *roles* not *flow*; its "hire the empty chairs" is an org
+  sentence that the line-native reading translates to "close the belt gap / the part
+  passes one checkpoint that only weighs it." The WIP lens saw three flow facts the
+  org lens structurally couldn't (WIP-1 single bridge, WIP-5 doubled pointer, WIP-6
+  wiped-every-chapter) and credited one built-right positive (WIP-4 receipt seal).
+
+- **THE crystallized problem (plain form) — the "one-way door":** the Extractor
+  (step 11) is the ONLY stage that reads chapter prose after the Writer; it writes
+  the summary `update_brief.json`; the Updater then builds ~10 card/state files from
+  that summary **and is forbidden to re-read prose**. The one downstream guard (the
+  Structural Gate, 11.5) only **counts** (len/booleans) — it never verifies the
+  summary against the story. So a wrong summary field (e.g. a mis-transcribed name,
+  "Nantale"→"Nantare") passes the count-gate and becomes canon in ~10 files, uncaught,
+  because nothing looks at the story again. **Highest-damage class = wrong/lost names
+  on RETURNS** — and **ch9 is a return** (Wanjiku, char_004), where a slipped id/name
+  duplicates or orphans an existing character. This is the WIP-1/WIP-2 finding in
+  concrete terms; it is the single real problem the pre-build pass surfaced.
+
+- **Emerging fix direction (owner instinct, endorsed; NOT yet ticketed):** "verify
+  from the fresh source — the story." Two depths, distinct costs:
+  1. **FREE / deterministic** — a prose text-search that every name/place the summary
+     asserts actually *occurs in the chapter file*. Reads the fresh source (the story),
+     zero tokens, catches transcription/hallucination slips (the Nantale case). The
+     highest-value, cheapest guard; a deterministic *slice* of the unbuilt Stage-5
+     Fidelity Inspector. **Distinct from** an earlier-floated self-consistency check
+     that never reopens the story (weaker — cannot catch a wrong name).
+  2. **PAID** — a second model re-reads the chapter and verifies the summary's *meaning*
+     (operation taught, correct_approach true to scene). The real Stage-5 cross-read;
+     costs a call/chapter; unbuilt.
+
+- **Dropped after scrutiny (do NOT re-raise as problems):** WIP-5 **doubled
+  `next_chapter_pointer`** (brief + master_state) — by-design (single author →
+  canonical store, no drift path), NOT a `QUOTA_BY_ARC`-class leak; worth at most a
+  one-line `field_registry` "not-a-leak" note before any leak-sweep so it isn't
+  false-fixed. WIP-4 receipt seal — a positive, not a problem.
+
+- **Open owner decisions (propose-and-correct; nothing applied):** (1) react to the
+  three treatments — which findings fold into the spec; discipline clarified this
+  session: the **fact-layer folds immediately** (spec-sync already did, e.g.
+  `QUOTA_BY_ARC` PROVEN LIVE), the **judgment/priority/design layer waits** for owner;
+  (2) a possible one-line refinement of the spec-readiness rule (§3 lines 307-312) to
+  say exactly that — offered, not written; (3) the risk-boundary framing for any
+  build: **factory-spec edits are design docs (zero chassis-risk); anything under
+  `fiction_loop/` touches the `starting_factory`-tagged chassis** (CONTRIBUTING-bound,
+  regression-guarded) — so low-regret = spec/doc notes now, chassis changes via ticket.
+
+- **QUEUE NOW (refined):** still (a) factory Tier-1 tickets vs (b) ch9 (paid), **but**
+  the pre-build pass promoted a sharpened lead candidate: a **verify-from-source guard**
+  (free name-presence check first) as the highest-value, lowest-cost protection — most
+  relevant precisely because the next chapter (ch9) is a return. Owner to pick the fix
+  depth; no ticket drafted yet.
