@@ -561,6 +561,63 @@ now-stale `field_registry` open-item note (extractor.md already specifies true/f
 
 ---
 
+## DECISION 12 — Group-C outcomes from the pre-build review (added 2026-07-20)
+
+**Context.** "Group C" = the deep-look tier (`progress/factory-open-problems-synthesis-2026-07-20.md`
++ the adversarial/reader pass). On review, two of the five already had rulings
+(DECISION 8 covers the substrate; DECISION 5 covers the prerequisite graph), so the
+genuinely-open set was three. Owner walked them.
+
+**C1 — mystery-fairness (RDR-3). DECISION: BOTH A and B.** Nothing today checks the
+accumulating clues (7 macro-evidence + 8 anchor observations + 8 reader-suspicions)
+against the hidden solution, because every agent is walled off from `hidden_coherence`.
+Fix = two complementary halves:
+- **B (correct-by-construction, the yardstick):** author a clue SCHEDULE from the
+  secret at authoring time — a Stage-4 artifact. It splits into an **agent-safe half**
+  (*"plant observable clue X in chapter N"* — X is reader-observable, the Assembler
+  executes it without seeing why) and a **privileged half** (*"X supports secret-fact
+  Y"* — walled off with the auditor). This preserves the secrecy wall.
+- **A (running auditor, the measurement):** an out-of-band Stage-5 privileged inspector
+  (isolated from the prose path) that periodically measures reality-vs-plan drift and
+  checks consistency + sufficiency ("could an attentive reader reach the solution?").
+Needed because generation is non-deterministic (A) AND we want a measurable expectation
+to score against (B). **This is a PROCESS-PACK feature, not chassis-universal** — the
+mystery exists because the process is the protagonist and needs the anchor's human-
+shaped personification; a thing-pack carries coherence differently. Shape decided;
+the plan schema + auditor isolation are design work. Precondition already met:
+`hidden_coherence` is authored (verified 2026-07-20 — the old ledger note was stale).
+
+**C2 — deterministic substrate (P5). NOT a new decision — DECISION 8 stands.** The
+code layer is deliberately LAST: run ch9 agent-driven first (it validates/stress-tests
+the chassis on its riskiest path, a return), settle the open design calls, THEN build
+the code layer. Rationale reinforced: building code now would (a) destabilize the
+chassis ch9 runs on, and (b) bake today's unsettled design (ADV-3, leaks, "shown")
+into code. It barely competes with ch9 for the scarce resource (ch9 is paid; the code
+build is offline/free) — the link is the *shared chassis* + attention, so it's a
+sequencing matter, not a fork.
+
+**C3 — "shown" is undefined. STILL OPEN — mandate a dedicated design pass** (not a
+one-line rule). Owner point: later arcs deliberately show COMPOUNDING failures (one
+solver chaining several wrong approaches to teach how a slip at one small stage
+cascades), so "blending" is not always a defect — sometimes it is the pedagogy. The
+definition must therefore be **arc-aware and attribute failure modes to dramatized
+BEATS, not solvers** (a solver carries 1..N beats): early arcs = one clean beat per
+solver; later arcs = deliberate *sequenced, individually-nameable* compound beats. The
+quota counts distinct beats; the rotation tracks each led beat; reject an *ambiguous*
+blend (two approaches mushed into one indistinct beat), never a *sequenced* compound.
+Mirror of DECISION 9's phase-clusters on the success side. **Prerequisite for ADV-2
+(T-024 distinctness) and RDR-2 to be correct in later arcs** — schedule the pass before
+arc 3.
+
+**C4 — world-thinning (RDR-4). Minor; two parts.** (i) The narrow silent thinning of
+world DATA (null ages, default location fields) folds into the calibration/analyst
+organ when built. (ii) The richer "world-flavor without polluting the teaching" need is
+ALREADY designed — `anchor_interlude` + `arc_transition` are that channel — so its real
+action is **firing `anchor_interlude` (item P3)**, which has never run, not building a
+new mechanism.
+
+---
+
 ## NOT DECISIONS — content only you can provide
 
 These aren't forks with options; they're blanks only a human should fill (per the
@@ -571,8 +628,10 @@ you because they're the pedagogical core):
    `master_state.json`. Two-minute job, currently `"[ ]"`.
 2. **The mystery person's secret** — `hidden_coherence` in `mystery_anchor.json`
    (who she really is, what she knows, what her notebook is building toward). The
-   whole macro-mystery steers by this and it is currently `"[ ]"`. Never enters any
-   prompt — but the planning layer can't plant coherent evidence without it.
+   whole macro-mystery steers by this. **UPDATE 2026-07-20: now AUTHORED** (verified
+   filled, a ~2.7k-char dict — this line previously said `"[ ]"` and was stale).
+   Never enters any prompt — but it is the yardstick the DECISION 12 (C1) fairness
+   plan + auditor measure the planted evidence against.
 3. **Physical anchors, per operation** — the bodily gesture that embodies each of the
    24 operations (the sitting down, hands flat on the desk, …). Partial source
    already exists in style_contract §1 Rule 2. Needs authoring + your review.

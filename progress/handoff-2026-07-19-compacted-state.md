@@ -379,3 +379,37 @@ these are the design calls that make the Group-B items ticket-ready. Summary:
 preserve-the-unique-modes audit; B3 needs a short design pass on 3 specifics.
 **Next up (owner's flow):** Group C review (RDR-3 mystery-fairness, P5 substrate,
 "shown" definition, prerequisite graph, RDR-4). ADV-3 still the open ch9 blocker.
+
+## 15. Group-C outcomes RULED (2026-07-20, LATEST — read this for current state)
+
+Owner walked Group C (deep-look tier). **Two of the five already had rulings** —
+DECISION 8 covers the substrate (P5), DECISION 5 covers the prerequisite graph — so
+they were NOT re-opened. The three genuinely-open items are recorded in
+`fiction_loop/human_decision.md` **DECISION 12** (C1–C4). Also fixed a stale ledger
+fact: **`hidden_coherence` is AUTHORED** (~2.7k chars; the NOT-DECISIONS note that
+said `"[ ]"` was stale — corrected). Summary:
+
+- **C1 (RDR-3 mystery-fairness):** **BOTH A + B.** B = a Stage-4 clue schedule authored
+  from the secret (agent-safe "plant observable clue X in ch N" half + privileged
+  "X supports secret-fact Y" half — secrecy wall preserved); A = an out-of-band Stage-5
+  auditor measuring reality-vs-plan drift + consistency/sufficiency. **Process-pack
+  feature, not chassis-universal.** Shape decided; plan-schema + auditor-isolation are
+  design work. Precondition (authored secret) already met.
+- **C2 (P5 substrate):** not a new decision — DECISION 8 stands: the code layer is
+  **deliberately LAST** (ch9 validates the chassis first; don't automate an unsettled
+  design). Scheduling, not a fork.
+- **C3 ("shown" undefined):** **STILL OPEN — a dedicated design pass is mandated**
+  (before arc 3). Attribute failure modes to dramatized **BEATS not solvers**
+  (arc-aware: early = one clean beat/solver; later = deliberate sequenced compound
+  beats teaching cascade). Quota counts distinct beats; rotation tracks led beats;
+  reject ambiguous blends, not sequenced compounds. **Prerequisite for ADV-2 (T-024)
+  and RDR-2 correctness in later arcs.**
+- **C4 (RDR-4 world-thinning):** minor. Data-thinning → folds into calibration/analyst;
+  the "world-flavor" need is already designed (`anchor_interlude`/`arc_transition`) so
+  its real action is **firing `anchor_interlude` (P3)**, never run.
+
+**State after the full A/B/C pre-build review:** Group A — T-019/024/025 drafted
+(undispatched), rest queued; Group B — DECISION 11 (all 5 ruled); Group C — DECISION 12
+(3 ruled, "shown" needs a design pass). **Still open:** ADV-3 (ch9 blocker); the "shown"
+design pass; the B3 anti-formula design specifics; and the RDR-3/B2 design work. Nothing
+dispatched, no chapter run; ch9 (paid) awaits ADV-3 + ideally T-024/T-025 landing.
