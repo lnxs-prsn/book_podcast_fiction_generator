@@ -283,3 +283,73 @@ build agenda.
   (free name-presence check first) as the highest-value, lowest-cost protection — most
   relevant precisely because the next chapter (ch9) is a return. Owner to pick the fix
   depth; no ticket drafted yet.
+
+## 13. Two more lenses (ADVERSARIAL + READER) + first tickets DRAFTED (2026-07-20, LATEST — read this for current state)
+
+**Supersedes §12's "QUEUE NOW".** HEAD is now `9d0966c` "factory specing" —
+**docs-only** (committed the open-problems synthesis + WIP personification + prior
+handoff edits; NO chassis code touched, so §12's dry-run facts still hold). Chapter
+state untouched (`chapter_count`=8, next=009). Nothing dispatched. Two new artifacts +
+three ticket files added this session, all UNCOMMITTED.
+
+- **Two NEW lenses run** (a *different kind* of perspective than the three
+  personifications, which were all one introspective method):
+  `progress/factory-adversarial-and-reader-pass-2026-07-20.md` — **ADVERSARIAL**
+  (ADV-1..5: how to get corruption past the gate) + **READER/product-outcome**
+  (RDR-1..4: rank defects by damage to the person reading the finished novel).
+  Grounded in the real `structural_gate.py`/`extractor.md`/`updater.md` + live
+  `master_state.json`. Found **8 genuinely new problems** (none in the WIP/CH8/Q
+  registers). Key live facts confirmed: `char_008` really is "Nantale Namakula"
+  (the one-way-door example is real); the leftover ch8 brief still returns
+  `--verify` PASS (ADV-4 stale-receipt surface is real and reachable).
+
+- **A ch9-BLOCKING owner decision surfaced — ADV-3:** the gate requires ≥2
+  wrong-approach scenes for `return_to_character` too, but ch9's pointer has the
+  focal showing `failure_mode_to_show: "none"` (Wanjiku returns to correctly apply +
+  name op_separate_condition). So both required failure scenes must be carried by
+  newcomers on the taught op — a clean name-payoff return can be designed straight
+  into a gate FAIL after the paid Writer run. **Needs an owner ruling BEFORE ch9:**
+  does the arc-2 quota apply to a touch-2+ return, and if so how is it satisfied?
+  No ticket resolves this (bucket-C open decision); T-024 explicitly does NOT touch it.
+
+- **Understanding-completeness estimate (owner asked):** excluding implementation
+  and spec-writing, **~75–80% of the surfaced problems have a clear solution
+  direction** (waiting mainly on spec/ticket writing), ~15% need a small design pass
+  first, ~8–10% are genuinely open. The open minority is small in count but heavy:
+  ADV-3 (blocks ch9) and RDR-3 (mystery-fairness — no stage checks planted evidence
+  against the hidden solution, and the design walls the solution off from every agent,
+  so it is structurally unguardable today). Full breakdown in
+  `progress/factory-open-problems-synthesis-2026-07-20.md` (also the consolidated
+  root: *a truth kept in two copies, synced by human memory* — leaks + spec-drift +
+  4-layer re-verify + doubled pointer).
+
+- **THREE tickets DRAFTED (not dispatched; senior dry-ran each STOP-condition
+  against HEAD `fe2e20d`, 2026-07-20):**
+  - **T-024** `gate-cross-field-integrity` — binds brief focal-id / chapter /
+    failure-list to the schedule (ADV-1/2/4). Highest ch9 value, free, no state
+    schema change. Reads population_index + pointer + process_state pools (membership
+    derived from pack, NOT hardcoded — avoids a new leak).
+  - **T-025** `prose-name-presence-guard` — the FREE verify-from-source slice: every
+    name the summary asserts must occur in the chapter prose (the Nantale/Nantare
+    catch). New standalone tool, READ-ONLY. Leaves a senior TODO: wire the Orchestrator
+    step 11.4 (RUN.md is outside the chassis write-set).
+  - **T-019** `retire-quota-by-arc-leak` — the ripest LAW-14 leak: the gate reads the
+    per-arc quota from a new pack manifest `state/arc_quota.json` (init_state emits it;
+    Stage-4 down payment) instead of the hardcoded dict. Scoped to the GATE copy; the
+    two assembler copies are flagged as remaining (follow-on).
+
+- **Remaining CLEAR-bucket items — direction known, each needs its OWN
+  source-verification pass before a dispatch-ready ticket (senior discipline), so NOT
+  written this session:** T-020 anchor-description leak (`assembler.md:229` hardcoded —
+  needs a pack source decided); T-021 mirror-content leak (**may be partly stale** —
+  `assembler.md:44` already fetches §5 mirror rows; verify before ticketing); T-022
+  pre-writer prompt gate (the spec's designated first build — more spec than ticket);
+  T-023 curriculum-consistency regression fixture (rule-5 one-quantity-one-table);
+  **P2** calibration organ (`calibration/` create + archive briefs + backfill ch1–8);
+  **P6** spec-staleness check; **P9** doubled-pointer "not-a-leak" `field_registry` note
+  (do BEFORE any leak sweep so it isn't false-fixed).
+
+- **Suggested dispatch order** (all zero-paid, chapter-independent, sharpened by ch9
+  being a return): resolve **ADV-3** (owner, free) → **T-024** → **T-025** → **T-019**,
+  then the remaining clear items. ch9 (paid) should not run until ADV-3 is ruled and
+  ideally T-024/T-025 land (they guard the exact return-chapter failure classes).
