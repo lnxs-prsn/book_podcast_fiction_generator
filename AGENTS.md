@@ -29,3 +29,8 @@ Binding rules, in force for every agent regardless of harness:
 5. **Paid calls:** forbidden unless the ticket/run explicitly budgets them;
    gates-before-spend always.
 6. **Hardware:** Raspberry Pi — no heavy parallel processes.
+7. **Explaining / deciding:** when a task involves understanding or deciding
+   (not just executing), follow the owner's exploration style in
+   `EXPLORATION_PREFERENCES.md` — problem-space-first, axis-by-axis, applied
+   *situationally* (it says when to scale down or skip). Not binding for pure
+   execution.
