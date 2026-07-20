@@ -618,6 +618,77 @@ new mechanism.
 
 ---
 
+## DECISION 13 — ADV-3 resolved: featured-failure selector earned-pool fallback (added 2026-07-20)
+
+**Context.** ADV-3 was flagged in the adversarial pass as a ch9-blocking design crisis
+("the arc-2 quota forces ≥2 wrong-approach scenes onto a return whose focal correctly
+applies → a designed-in gate FAIL after the paid Writer"). Walked this session via a
+problem-space drill-down; the crisis framing was WRONG and is RETIRED. Two corrections
+came first and stand on their own:
+
+- **The focal is the RESOLVER, never the featured failer.** `assembler.md:118` ("the
+  focal solver performs the anchor gesture at the turning point"); the quota counts
+  "wrong-approach solvers" as a SEPARATE cast (`assembler.md:104-108`). A returning
+  MASTER applying an operation correctly while NEWCOMERS fail it is the *intended
+  engine of the whole back half of the book* — fixed operation difficulty + growing
+  mastery means late-arc gates always pair a master with failing newcomers (§2 difficulty
+  scale is a permanent rating; §7 touch-4 = "combined with other earned terms"). So the
+  gate demanding ≥2 failers on a return is **CORRECT**, not a bug. `failure_mode_to_show`
+  is the chapter's FEATURED failure (carried by a wrong-approach solver), not a mistake
+  the focal makes.
+- **The real defect is narrow and mechanical.** The featured-failure selector
+  (`extractor.md:369-388`) reads ONLY the taught operation's own
+  `failure_modes_not_yet_shown`. `init_state.py:497` seeds each op's pool to its
+  *introduction-arc* failure pool, and each arc's quota equals its pool size (arc 1: 3 of
+  3; arcs 2-4: 2 of 2), so **every operation spends its whole pool at touch 1** and every
+  touch-2 RETURN finds it empty → the selector emits `"none"` (`extractor.md:388`).
+  `"none"` is an OVERLOADED sentinel — the contract reserves it for non-teaching interludes
+  (`extractor.md:248`) — so a teaching return wearing it is an off-contract instruction
+  that risks Assembler under-population (gate FAIL, post-paid) or a strict-agent STOP.
+  ch9 (return of the arc-1 easy op `op_separate_condition`, whose
+  `failure_modes_not_yet_shown` is verified `[]`) is simply the FIRST return to hit it;
+  it is a RECURRING CLASS.
+
+**DECISION.**
+1. **Producer fix — earned-pool fallback.** When the taught operation's own
+   `failure_modes_not_yet_shown` is empty but `operation_due` is non-null (a teaching
+   chapter), the selector falls back to **all EARNED failure types** — the union of every
+   operation's `failure_modes_shown ∪ failure_modes_not_yet_shown` in process_state (=
+   the types the story has introduced up to the current arc; pack-derived, NEVER a
+   hardcoded list — LAW 14). It selects with the **SAME ordering key as the primary path:
+   least-recently-LED, tiebreak least-recently-SHOWN** (fork option **(b)** — one
+   selection philosophy everywhere; SHOWN-as-primary was rejected to preserve the
+   2026-07-04 anti-saturation ruling, and the cross-arc pool has more types than slots so
+   it never saturates anyway). At ch9 both keys pick **"the hypothesis tester"** (never
+   led, never shown) — a fresh arc-2 type for op_separate_condition, so ch9 gets two
+   genuinely fresh newcomer-failers.
+2. **Disambiguate `"none"`.** After the fallback, `"none"` is reserved for its true
+   meaning: `operation_due` is null (anchor_interlude / arc_transition). A teaching gate
+   chapter MUST carry a real featured type.
+3. **Deterministic detection (LAW 16).** The producer is an LLM, so ship a deterministic
+   guard: the structural gate FAILS a teaching chapter whose
+   `next_chapter_pointer.failure_mode_to_show` is `"none"` or non-canonical (membership
+   derived from process_state pools — LAW 14, the same pattern as T-024 §2.2).
+   Regression-tested: a return pointer with `"none"` → FAIL; a real earned type → PASS.
+4. **C3 unit-agnostic constraint (LAW 17).** The fallback and its guard select
+   "least-recently-X *item* from the earned pool", where the item is a failure TYPE today
+   — but the code/prompt MUST NOT hard-bake "type" as the unit. DECISION 12 C3 will swap
+   the rotation unit to *led beats*; recorded as the ticket's Downstream so C3 is a known
+   future consumer.
+
+**Why not just relax the quota for returns (the adversarial pass's framing):** rejected —
+that breaks the intended late-arc engine (newcomers must keep failing the earned ops the
+master owns; that is the productive-failure content). The quota is right; the selector's
+*source* was too narrow.
+
+**Status:** ticket **T-026** drafted (undispatched). Chassis change (extractor.md +
+structural_gate.py + field_registry + regression) touching the same gate/pointer surface
+as T-024 → serialize (T-024 first, or reuse its pointer binding). ch9 (paid) should not
+run until T-026 lands (removes the `"none"` ambiguity deterministically), alongside
+T-024/T-025.
+
+---
+
 ## NOT DECISIONS — content only you can provide
 
 These aren't forks with options; they're blanks only a human should fill (per the

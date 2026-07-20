@@ -413,3 +413,53 @@ said `"[ ]"` was stale — corrected). Summary:
 (3 ruled, "shown" needs a design pass). **Still open:** ADV-3 (ch9 blocker); the "shown"
 design pass; the B3 anti-formula design specifics; and the RDR-3/B2 design work. Nothing
 dispatched, no chapter run; ch9 (paid) awaits ADV-3 + ideally T-024/T-025 landing.
+
+## 16. ADV-3 RULED (DECISION 13) + T-026 drafted (2026-07-20, LATEST — read this for current state)
+
+**Supersedes §15's "Still open: ADV-3 (ch9 blocker)".** ADV-3 was walked this session
+via a problem-space drill-down and RULED (`fiction_loop/human_decision.md` **DECISION
+13**). No chapter run; nothing dispatched; the only files touched are docs + one drafted
+ticket (all committed or to-be-committed as docs — no chassis code changed, so §13/§12
+dry-run facts still hold). Chapter state untouched (`chapter_count`=8, next=009).
+
+- **The adversarial pass's ADV-3 framing was WRONG and is retired.** It was NOT a
+  design crisis ("the quota forces failers onto a mastery return"). Two corrections,
+  both verified from source, settle it:
+  - The **focal is the RESOLVER**, never the featured failer (`assembler.md:118`; the
+    quota counts "wrong-approach solvers" as a separate cast, `assembler.md:104-108`).
+    A returning **master** applying correctly while **newcomers fail** is the *intended
+    engine of the whole back half of the book* (fixed op difficulty + growing mastery →
+    late-arc gates always pair a master with failing newcomers). So the gate demanding
+    ≥2 failers on a return is **correct**.
+  - The real defect is narrow/mechanical: the featured-failure **selector**
+    (`extractor.md:369-388`, purely agent-driven — no `.py` computes it) reads ONLY the
+    taught op's OWN `failure_modes_not_yet_shown`. Each op spends its whole
+    (introduction-arc) pool at touch 1 (`init_state.py:497`; arc quota == pool size), so
+    every touch-2 RETURN finds it empty → selector emits `"none"` (`extractor.md:388`),
+    an OVERLOADED sentinel the contract reserves for interludes (`extractor.md:248`).
+    ch9 (return of arc-1 `op_separate_condition`, pool verified `[]`) is the FIRST hit;
+    recurring class.
+
+- **DECISION 13 (fork option (b)):** (1) selector **earned-pool fallback** — when an
+  op's own pool is empty on a teaching chapter, draw the featured failure from ALL
+  earned types (∪ of every op's shown+not-yet-shown in process_state; pack-derived, LAW
+  14), SAME key as primary (least-recently-**LED**, tiebreak least-recently-**SHOWN** —
+  preserves the 2026-07-04 anti-saturation ruling); (2) **`"none"` reserved** for
+  operation_due-null (interludes) only; (3) **deterministic gate guard** (LAW 16) fails
+  a teaching chapter whose pointer featured-failure is `"none"`/non-canonical; (4)
+  **C3 unit-agnostic** constraint (LAW 17) — the fallback selects "least-recently-led
+  ITEM"; C3 will swap the item type→beat, so don't hard-bake "type". At ch9 the fallback
+  picks **"the hypothesis tester"** (never led/shown) → two fresh newcomer-failers.
+
+- **Ticket T-026 drafted** (`tickets/T-026-selector-earned-pool-fallback.md`,
+  undispatched): write-set `extractor.md` + `structural_gate.py` + `regression/run.py`
+  + `field_registry.md`. **Serialize with T-024** (shared gate + pointer surface).
+  Note: the extractor.md change is a PROMPT edit — validated by review + the guard/
+  regression, not by an offline run.
+
+- **QUEUE NOW:** ADV-3 no longer an open decision. **Drafted & undispatched:** T-024,
+  T-025, T-019, **T-026**. Suggested dispatch order (all zero-paid, chapter-independent):
+  **T-024 → T-026 → T-025 → T-019** (T-024 first because T-026 reuses its gate/pointer
+  binding). **ch9 (paid) should not run until T-026 lands** (removes the `"none"`
+  ambiguity deterministically) alongside T-024/T-025. **Still open (design):** the
+  "shown"/C3 design pass (before arc 3), B3 anti-formula specifics, RDR-3/B2 design work.

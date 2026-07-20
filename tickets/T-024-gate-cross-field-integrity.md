@@ -182,9 +182,10 @@ Trailers: `Ticket: T-024` / `Implemented-by: <Codex|Qwen>`.
 - Raspberry Pi; zero paid calls; stdlib only; no state/chapter writes (only
   prompts/.gate_pass.json as today).
 - Do NOT hardcode the canonical failure-mode names in gate code — derive from
-  process_state pools (LAW 14). Do NOT resolve ADV-3 here (whether the quota
-  should apply to returns at all is an OPEN OWNER DECISION — this ticket keeps
-  the existing quota semantics and only adds orthogonal checks).
+  process_state pools (LAW 14). Do NOT resolve ADV-3 here — it is RULED
+  (DECISION 13) and owned by T-026 (selector earned-pool fallback + gate guard).
+  This ticket keeps the existing quota semantics and only adds orthogonal checks;
+  T-026's gate guard reuses this ticket's pointer binding (serialize: T-024 first).
 - On ANY failure: stop at that step, revert, record in §6; do not improvise.
 
 ## 6. Implementer log (append below; never delete the ticket body)

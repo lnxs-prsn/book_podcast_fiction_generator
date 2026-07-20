@@ -63,6 +63,14 @@ and **RDR-n** (distinct from WIP-n / CH8-n / Q-n so nothing is double-counted).
 - **Severity:** MEDIUM. Free fix (set-length + membership against the closed list).
 
 ### ADV-3 — ch9's arc-2 quota-2 structurally collides with a correct-applying return focal
+
+> **SUPERSEDED 2026-07-20 — see `fiction_loop/human_decision.md` DECISION 13.** This
+> "crisis" framing was retired on drill-down: a return-master + newcomer-failers is the
+> *intended* late-arc engine (the focal is the RESOLVER, not a failer). The real, narrow
+> defect was the featured-failure selector emitting an overloaded `"none"` on a depleted
+> operation pool — RULED + ticketed as T-026 (selector earned-pool fallback + gate guard).
+> The "needs an owner ruling before ch9" claims in this section AND in the recommendations
+> below (items referencing ADV-3) are OBSOLETE; kept as a dated record of the lens.
 - **The break (imminent, ch9-specific):** the gate requires
   `len(failure_modes_shown_this_chapter) >= 2` for `return_to_character` too. But ch9's
   pointer says the **focal** shows `failure_mode_to_show: "none"` — Wanjiku returns to

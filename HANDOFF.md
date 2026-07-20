@@ -1,13 +1,16 @@
 # HANDOFF — front door (stable path; content lives in progress/)
 
 > **CURRENT handoff: `progress/handoff-2026-07-19-compacted-state.md` — read its
-> §15 first (latest state), then §14/§13.** As of 2026-07-20: two more pre-build
+> §16 first (latest state), then §15/§14/§13.** As of 2026-07-20: two more pre-build
 > lenses ran (ADVERSARIAL + READER, `progress/factory-adversarial-and-reader-pass-2026-07-20.md`);
-> **three tickets DRAFTED (not dispatched): T-019, T-024, T-025**; and the full
-> **Group-B + Group-C design review is RULED** (`fiction_loop/human_decision.md`
-> DECISION 11 = B1–B5, DECISION 12 = C1–C4). Still OPEN: **ADV-3** (ch9-blocking —
-> does the arc-2 quota apply to a correct-applying return?), the **"shown" design
-> pass** (before arc 3), and the RDR-3/B2/B3 design work. As of latest 2026-07-19: **8 chapters
+> the full **Group-B + Group-C design review is RULED** (`fiction_loop/human_decision.md`
+> DECISION 11 = B1–B5, DECISION 12 = C1–C4); and **ADV-3 is now RULED (DECISION 13)** —
+> the "crisis" framing was retired (a return-master + newcomer-failers is the intended
+> late-arc engine; the real defect was the featured-failure selector emitting an
+> overloaded `"none"` on a depleted op pool). **FOUR tickets DRAFTED (not dispatched):
+> T-024, T-026, T-019, T-025** (suggested order T-024 → T-026 → T-025 → T-019). Still
+> OPEN: the **"shown"/C3 design pass** (before arc 3), and the RDR-3/B2/B3 design work.
+> As of latest 2026-07-19: **8 chapters
 > committed, arc 2, ch8 landed + accepted** (`8935458`); next = ch9
 > (return_to_character, char_004). T-016 + T-018 landed; **DECISION 10** (arc-2
 > cast quota 3→2, §9 self-contradiction) fixed (`6d15c30`); **factory spec-sync
