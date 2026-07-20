@@ -175,7 +175,7 @@ crafted-bad brief and PASS on the live ch8 brief:
 
 `feat(gate): cross-field integrity — bind brief focal-id/chapter/failure-list to schedule (ADV-1/2/4, T-024)`
 
-Trailers: `Ticket: T-024` / `Implemented-by: <Codex|Qwen>`.
+Trailers: `Ticket: T-024` / `Implemented-by: <implementer>`.
 
 ## 5. Constraints
 

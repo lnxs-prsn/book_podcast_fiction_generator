@@ -122,7 +122,7 @@ law: "gate leak retired (T-019) → arc_quota.json; assembler copies pending."
 
 `refactor(gate): read per-arc quota from pack manifest state/arc_quota.json — retire QUOTA_BY_ARC leak (LAW 14, T-019)`
 
-Trailers: `Ticket: T-019` / `Implemented-by: <Codex|Qwen>`.
+Trailers: `Ticket: T-019` / `Implemented-by: <implementer>`.
 
 ## 5. Constraints
 

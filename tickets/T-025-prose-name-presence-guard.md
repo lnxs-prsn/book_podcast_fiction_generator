@@ -105,7 +105,7 @@ and its evidence-it-fires (the Nantare mutation goes red).
 
 `feat(tools): prose name-presence guard — no summary name enters state absent from the story (T-025)`
 
-Trailers: `Ticket: T-025` / `Implemented-by: <Codex|Qwen>`.
+Trailers: `Ticket: T-025` / `Implemented-by: <implementer>`.
 
 ## 5. Constraints
 

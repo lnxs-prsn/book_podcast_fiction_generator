@@ -441,15 +441,26 @@ dry-run facts still hold). Chapter state untouched (`chapter_count`=8, next=009)
     recurring class.
 
 - **DECISION 13 (fork option (b)):** (1) selector **earned-pool fallback** — when an
-  op's own pool is empty on a teaching chapter, draw the featured failure from ALL
-  earned types (∪ of every op's shown+not-yet-shown in process_state; pack-derived, LAW
-  14), SAME key as primary (least-recently-**LED**, tiebreak least-recently-**SHOWN** —
+  op's own pool is empty on a teaching chapter, draw the featured failure from the earned
+  types (∪ over ops with `arc_introduced ≤ arc_current` of shown+not-yet-shown —
+  **arc-filtered** because init_state pre-seeds future-arc pools; pack-derived, LAW 14),
+  SAME key as primary (least-recently-**LED**, tiebreak least-recently-**SHOWN** —
   preserves the 2026-07-04 anti-saturation ruling); (2) **`"none"` reserved** for
   operation_due-null (interludes) only; (3) **deterministic gate guard** (LAW 16) fails
   a teaching chapter whose pointer featured-failure is `"none"`/non-canonical; (4)
   **C3 unit-agnostic** constraint (LAW 17) — the fallback selects "least-recently-led
-  ITEM"; C3 will swap the item type→beat, so don't hard-bake "type". At ch9 the fallback
-  picks **"the hypothesis tester"** (never led/shown) → two fresh newcomer-failers.
+  ITEM"; C3 will swap the item type→beat, so don't hard-bake "type". At ch9 the unique
+  never-LED earned type is **"the hypothesis tester"** (shown once at ch8, never led), so
+  it is picked → two fresh newcomer-failers.
+
+- **Senior dispatch dry-run (2026-07-20, HEAD 6e5bec0):** run against live state; it
+  CAUGHT a design bug in the first DECISION-13 draft — "union of all process_state pools"
+  is all 14 book-wide failure types (init pre-seeds future arcs), which would leak a
+  future-arc failure into ch9; corrected to the `arc_introduced ≤ arc_current` filter (5
+  types at ch9). Regression 12/12 green; harnesses present; ch9 pick verified unique. All
+  four ready tickets made **implementer-agnostic** (`Implemented-by: <implementer>`), so
+  dispatch needs no implementer name. T-026 **dispatch-ready** pending T-024 (shared
+  gate/pointer surface — serialize).
 
 - **Ticket T-026 drafted** (`tickets/T-026-selector-earned-pool-fallback.md`,
   undispatched): write-set `extractor.md` + `structural_gate.py` + `regression/run.py`

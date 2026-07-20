@@ -652,16 +652,20 @@ came first and stand on their own:
 **DECISION.**
 1. **Producer fix — earned-pool fallback.** When the taught operation's own
    `failure_modes_not_yet_shown` is empty but `operation_due` is non-null (a teaching
-   chapter), the selector falls back to **all EARNED failure types** — the union of every
-   operation's `failure_modes_shown ∪ failure_modes_not_yet_shown` in process_state (=
-   the types the story has introduced up to the current arc; pack-derived, NEVER a
-   hardcoded list — LAW 14). It selects with the **SAME ordering key as the primary path:
-   least-recently-LED, tiebreak least-recently-SHOWN** (fork option **(b)** — one
-   selection philosophy everywhere; SHOWN-as-primary was rejected to preserve the
-   2026-07-04 anti-saturation ruling, and the cross-arc pool has more types than slots so
-   it never saturates anyway). At ch9 both keys pick **"the hypothesis tester"** (never
-   led, never shown) — a fresh arc-2 type for op_separate_condition, so ch9 gets two
-   genuinely fresh newcomer-failers.
+   chapter), the selector falls back to the **EARNED failure types** — the union, over
+   operations whose `arc_introduced ≤ arc_current`, of their `failure_modes_shown ∪
+   failure_modes_not_yet_shown` (equivalently ∪ FAILURE_POOLS[1..arc_current]);
+   pack-derived, NEVER a hardcoded list — LAW 14. **The arc filter is REQUIRED:**
+   `init_state.py:497` pre-seeds EVERY operation's pool at init (including future arcs),
+   so an UN-filtered union is all 14 book-wide types and would leak a future-arc failure
+   into an early chapter (senior dispatch dry-run 2026-07-20 caught this). It selects with
+   the **SAME ordering key as the primary path: least-recently-LED, tiebreak
+   least-recently-SHOWN** (fork option **(b)** — one selection philosophy everywhere;
+   SHOWN-as-primary rejected to preserve the 2026-07-04 anti-saturation ruling). At ch9
+   the arc-filtered earned set is 5 types; **"the hypothesis tester" is the UNIQUE
+   never-LED one** (it was *shown* once at ch8's op_check_result, but never *led*), so the
+   LED-primary key selects it — two fresh-as-lead newcomer-failers for
+   op_separate_condition.
 2. **Disambiguate `"none"`.** After the fallback, `"none"` is reserved for its true
    meaning: `operation_due` is null (anchor_interlude / arc_transition). A teaching gate
    chapter MUST carry a real featured type.

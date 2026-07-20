@@ -28,10 +28,16 @@ Upstream (preconditions — author dry-ran EACH 2026-07-20, HEAD b5e9ff4 — cha
     ["the executor","the system builder","the information gatherer"]`; the ch9
     pointer is {type return_to_character, operation op_separate_condition,
     failure_mode_to_show "none"}. Verified against the live files.
-  - The earned-types union is derivable pack-side: ∪ over process_state
-    operations of (failure_modes_shown ∪ failure_modes_not_yet_shown). At ch9
-    that union contains "the hypothesis tester" (arc-2 type, never in
-    failure_mode_lead_history, never in any op's failure_modes_shown). Verified.
+  - The earned-types set is derivable pack-side: ∪ over operations with
+    `arc_introduced <= arc_current` of (failure_modes_shown ∪
+    failure_modes_not_yet_shown) = 5 types at ch9 {executor, system builder,
+    information gatherer, confident specialist, hypothesis tester}. THE ARC FILTER
+    IS REQUIRED — init_state.py:497 pre-seeds ALL ops' pools (14 types incl. future
+    arcs); an unfiltered union leaks future-arc failures into early chapters
+    (senior dry-run 2026-07-20). "the hypothesis tester" is the UNIQUE never-LED
+    earned type (never in failure_mode_lead_history; it WAS shown once at ch8's
+    op_check_result — so it is picked by the LED-primary key, not by shown-recency).
+    Verified 2026-07-20.
   - At gate time for chapter N, master_state.next_chapter_pointer still describes
     chapter N (Updater overwrites it only at step 12, AFTER the gate) — same
     upstream fact T-024 relies on (updater.md STEP 7 ordering).
@@ -89,11 +95,15 @@ with two distinct cases:
 - **operation_due is null** (anchor_interlude / arc_transition) → `"none"`.
 - **operation_due non-null but the op's `failure_modes_not_yet_shown` is empty**
   (a teaching chapter on a returning/depleted op) → **FALL BACK to the earned
-  pool**: the union across ALL operations in process_state of
+  pool**: the union, over operations whose `arc_introduced <= arc_current`, of
   (`failure_modes_shown ∪ failure_modes_not_yet_shown`); from that set pick by the
   SAME key as the primary path — least-recently-LED (oldest entry in
   `failure_mode_lead_history`; a type that has never led ranks first), tiebreak
-  least-recently-SHOWN. NEVER emit `"none"` for a teaching chapter.
+  least-recently-SHOWN. NEVER emit `"none"` for a teaching chapter. **CRITICAL —
+  the `arc_introduced <= arc_current` filter is mandatory:** init_state.py:497
+  pre-seeds every op's pool including FUTURE arcs, so an unfiltered union would let
+  an early chapter feature a not-yet-introduced failure type. (At ch9 the filtered
+  set is 5 types; the unique never-led one is "the hypothesis tester".)
 Phrase the fallback unit-neutrally ("the least-recently-led ITEM from the earned
 pool", item = failure type today) — see §5. Add a one-line pointer to DECISION 13.
 
@@ -110,8 +120,9 @@ fms = ptr.get("failure_mode_to_show")
 ps = json.loads((R / "state/process_state.json").read_text())
 earned = set()
 for opv in (ps.get("operations") or {}).values():
-    earned |= set(opv.get("failure_modes_shown", []))
-    earned |= set(opv.get("failure_modes_not_yet_shown", []))
+    if opv.get("arc_introduced", 99) <= arc:          # arc filter — init pre-seeds future pools
+        earned |= set(opv.get("failure_modes_shown", []))
+        earned |= set(opv.get("failure_modes_not_yet_shown", []))
 if fms in (None, "none"):
     problems.append("teaching chapter has no featured failure (selector emitted 'none' — earned-pool fallback missing, ADV-3)")
 elif earned and fms not in earned:
@@ -154,7 +165,7 @@ guard as a LAW 15 registered check with LAW 16 evidence.
 
 `feat(selector+gate): earned-pool fallback for featured failure; retire 'none' on teaching chapters (ADV-3, T-026)`
 
-Trailers: `Ticket: T-026` / `Implemented-by: <Codex|Qwen>`.
+Trailers: `Ticket: T-026` / `Implemented-by: <implementer>`.
 
 ## 5. Constraints
 
