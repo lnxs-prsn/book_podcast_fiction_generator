@@ -57,6 +57,21 @@ def verify_receipt() -> int:
         print("hash mismatch — brief changed since gate PASS")
         return 1
 
+    try:
+        brief = json.loads(BRIEF_PATH.read_text())
+        ms = json.loads((R / "state/master_state.json").read_text())
+    except (OSError, json.JSONDecodeError):
+        print("receipt stale — chapter mismatch")
+        return 1
+
+    scheduled_chapter = (ms.get("next_chapter_pointer") or {}).get("chapter")
+    if (
+        receipt.get("chapter") != brief.get("chapter")
+        or brief.get("chapter") != scheduled_chapter
+    ):
+        print("receipt stale — chapter mismatch")
+        return 1
+
     print("gate receipt verified: PASS")
     return 0
 
@@ -71,14 +86,57 @@ def run_gate() -> int:
         problems: list[str] = []
 
         ctype = brief.get("chapter_type")
+        ptr = ms.get("next_chapter_pointer") or {}
+        pop_ids = {c.get("id") for c in (ms.get("population_index") or [])}
+
+        if brief.get("chapter") != ptr.get("chapter"):
+            problems.append(
+                f"brief chapter {brief.get('chapter')} != scheduled "
+                f"{ptr.get('chapter')} (stale or mismatched brief)"
+            )
+
+        fc = brief.get("focal_character") or {}
+        if ctype in ("new_focal_character", "return_to_character"):
+            if ctype == "return_to_character":
+                if fc.get("id") != ptr.get("char_id"):
+                    problems.append(
+                        f"return focal id {fc.get('id')} != scheduled "
+                        f"{ptr.get('char_id')}"
+                    )
+                if fc.get("is_new") is not False:
+                    problems.append("return focal must have is_new=false")
+                if fc.get("id") not in pop_ids:
+                    problems.append(
+                        f"return focal id {fc.get('id')} not in population_index"
+                    )
+            else:
+                if fc.get("is_new") is not True:
+                    problems.append("new_focal_character focal must have is_new=true")
+                if fc.get("id") in pop_ids:
+                    problems.append(
+                        f"new focal id {fc.get('id')} already in population_index "
+                        f"(duplicate)"
+                    )
+
         if ctype in ("new_focal_character", "return_to_character"):
             pu = brief.get("process_updates") or {}
             shown = pu.get("failure_modes_shown_this_chapter") or []
-            if len(shown) < quota:
+            ps = json.loads((R / "state/process_state.json").read_text())
+            op = pu.get("operation")
+            op_pool = (ps.get("operations") or {}).get(op, {})
+            valid = set(op_pool.get("failure_modes_shown", [])) | set(
+                op_pool.get("failure_modes_not_yet_shown", [])
+            )
+            distinct = list(dict.fromkeys(shown))
+            if len(distinct) < quota:
                 problems.append(
-                    f"wrong-approach scenes: {len(shown)} of {quota} "
+                    f"wrong-approach scenes: {len(distinct)} distinct of {quota} "
                     f"required for arc {arc} ({shown})"
                 )
+            if valid:
+                bad = [label for label in shown if label not in valid]
+                if bad:
+                    problems.append(f"non-canonical failure-mode label(s): {bad}")
 
             au = brief.get("anchor_update") or {}
             if not au.get("appeared"):
@@ -87,7 +145,6 @@ def run_gate() -> int:
             if (pu.get("context_demonstrated") or "none") == "none":
                 problems.append("no ordinary-life echo recorded (world rules: echo in same chapter)")
 
-            fc = brief.get("focal_character") or {}
             if fc.get("is_new") is False and fc.get("life_progression_shown") is False:
                 problems.append("returning focal shows no visible life progression (owner rule F14)")
 

@@ -224,7 +224,7 @@ Trailers: `Ticket: T-024` / `Implemented-by: <implementer>`.
 - [ ] 2.4 field_registry + LAW 15 registration
 - [ ] 2.5 regression assertions
 - [ ] acceptance 1–6
-- [ ] commit
+- [x] ticket-required pathspec-limited commit created
 
 Implementer log (2026-07-21): **STOPPED before implementation — acceptance
 precondition drift/contradiction.** The live `prompts/update_brief.json` is chapter
@@ -254,3 +254,21 @@ false binary: BOTH properties belong. Fixed in place:
   test leaves a stale brief/receipt.
 See revised §2.5 + §3 items 1–2 + the CORRECTION precondition. **Cleared to resume
 from the top; nothing you did needs reverting.**
+
+Implementer log (2026-07-21, Codex): **IMPLEMENTED and acceptance passed.**
+- [x] 2.1 schedule/identity binding
+- [x] 2.2 distinct + canonical membership (pool derived from `process_state.json`)
+- [x] 2.3 receipt freshness bind
+- [x] 2.4 field_registry + LAW 15 registration
+- [x] 2.5 regression assertions; prompt brief + receipt restored by snapshot
+- [x] acceptance 1–3, 6: synthetic ch9 PASS; observed crafted FAIL evidence:
+  `brief chapter 008 != scheduled 009`,
+  `return focal id char_005 != scheduled char_004`,
+  `1 distinct of 2`,
+  `non-canonical failure-mode label(s): ['not a pack label']`, and
+  `receipt stale — chapter mismatch`; regression **18/18 PASS**
+- [x] acceptance 4: sanctioned pytest **1 failed, 331 passed**; sole failure remains
+  `test_default_splitter_engine_passes_openrouter_timeout_seconds` (documented baseline)
+- [x] acceptance 5: `git diff --check` clean; only literal write-set plus this ticket's
+  standing-exempt implementer log changed; no paid call
+- [ ] commit

@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+from copy import deepcopy
 import json
 import os
 import subprocess
@@ -96,6 +97,7 @@ def main() -> int:
     artifacts = (
         PROMPTS_DIR / "prose_deficiencies.json",
         PROMPTS_DIR / "revision_prompt.md",
+        PROMPTS_DIR / "update_brief.json",
         PROMPTS_DIR / ".gate_pass.json",
     )
 
@@ -203,6 +205,107 @@ def main() -> int:
                 "structural gate QUOTA_BY_ARC matches curriculum §9 Section 4",
                 QUOTA_BY_ARC == expected_quota,
                 f"observed {QUOTA_BY_ARC}",
+            )
+        )
+
+        brief_path = PROMPTS_DIR / "update_brief.json"
+        live_ch8_brief = json.loads(brief_path.read_text())
+        stale_result = run_command(str(GATE))
+        results.append(
+            check(
+                "structural gate rejects stale live ch8 brief",
+                stale_result.returncode == 1
+                and "brief chapter 008 != scheduled 009" in stale_result.output,
+            )
+        )
+
+        process_state = json.loads(
+            (FICTION_LOOP_DIR / "state/process_state.json").read_text()
+        )
+        ch9_operation = "op_separate_condition"
+        operation_state = process_state["operations"][ch9_operation]
+        canonical_labels = (
+            operation_state.get("failure_modes_shown", [])
+            + operation_state.get("failure_modes_not_yet_shown", [])
+        )
+        ch9_brief = deepcopy(live_ch8_brief)
+        ch9_brief["chapter"] = "009"
+        ch9_brief["chapter_type"] = "return_to_character"
+        ch9_brief["focal_character"]["id"] = "char_004"
+        ch9_brief["focal_character"]["is_new"] = False
+        ch9_brief["focal_character"]["life_progression_shown"] = True
+        ch9_brief["process_updates"]["operation"] = ch9_operation
+        ch9_brief["process_updates"]["failure_modes_shown_this_chapter"] = (
+            canonical_labels[:2]
+        )
+        brief_path.write_text(json.dumps(ch9_brief, indent=2) + "\n")
+
+        gate_pass = run_command(str(GATE))
+        results.append(
+            check(
+                "structural gate accepts gate-time ch9 return fixture",
+                gate_pass.returncode == 0
+                and "STRUCTURAL GATE: PASS (arc 2, quota 2)" in gate_pass.output,
+            )
+        )
+
+        wrong_focal = deepcopy(ch9_brief)
+        wrong_focal["focal_character"]["id"] = "char_005"
+        brief_path.write_text(json.dumps(wrong_focal, indent=2) + "\n")
+        wrong_focal_result = run_command(str(GATE))
+        results.append(
+            check(
+                "structural gate rejects wrong return focal id",
+                wrong_focal_result.returncode == 1
+                and "return focal id char_005 != scheduled char_004"
+                in wrong_focal_result.output,
+            )
+        )
+
+        duplicate_labels = deepcopy(ch9_brief)
+        duplicate_labels["process_updates"]["failure_modes_shown_this_chapter"] = [
+            canonical_labels[0],
+            canonical_labels[0],
+        ]
+        brief_path.write_text(json.dumps(duplicate_labels, indent=2) + "\n")
+        duplicate_result = run_command(str(GATE))
+        results.append(
+            check(
+                "structural gate counts distinct failure-mode labels",
+                duplicate_result.returncode == 1
+                and "1 distinct of 2" in duplicate_result.output,
+            )
+        )
+
+        noncanonical_labels = deepcopy(ch9_brief)
+        noncanonical_labels["process_updates"]["failure_modes_shown_this_chapter"] = [
+            canonical_labels[0],
+            "not a pack label",
+        ]
+        brief_path.write_text(json.dumps(noncanonical_labels, indent=2) + "\n")
+        noncanonical_result = run_command(str(GATE))
+        results.append(
+            check(
+                "structural gate rejects non-canonical failure-mode labels",
+                noncanonical_result.returncode == 1
+                and "non-canonical failure-mode label(s): ['not a pack label']"
+                in noncanonical_result.output,
+            )
+        )
+
+        brief_path.write_text(json.dumps(ch9_brief, indent=2) + "\n")
+        gate_pass = run_command(str(GATE))
+        gate_receipt = PROMPTS_DIR / ".gate_pass.json"
+        stale_receipt = json.loads(gate_receipt.read_text())
+        stale_receipt["chapter"] = "008"
+        gate_receipt.write_text(json.dumps(stale_receipt, indent=2) + "\n")
+        stale_receipt_result = run_command(str(GATE), "--verify")
+        results.append(
+            check(
+                "structural gate rejects receipt chapter mismatch",
+                gate_pass.returncode == 0
+                and stale_receipt_result.returncode == 1
+                and "receipt stale — chapter mismatch" in stale_receipt_result.output,
             )
         )
 
