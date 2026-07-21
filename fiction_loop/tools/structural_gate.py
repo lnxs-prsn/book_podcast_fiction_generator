@@ -122,6 +122,24 @@ def run_gate() -> int:
             pu = brief.get("process_updates") or {}
             shown = pu.get("failure_modes_shown_this_chapter") or []
             ps = json.loads((R / "state/process_state.json").read_text())
+            featured_item = ptr.get("failure_mode_to_show")
+            earned_items: set[str] = set()
+            for operation_state in (ps.get("operations") or {}).values():
+                if operation_state.get("arc_introduced", 99) <= arc:
+                    earned_items.update(operation_state.get("failure_modes_shown", []))
+                    earned_items.update(
+                        operation_state.get("failure_modes_not_yet_shown", [])
+                    )
+            if featured_item in (None, "none"):
+                problems.append(
+                    "teaching chapter has no featured failure (selector emitted "
+                    "'none' — earned-pool fallback missing, ADV-3)"
+                )
+            elif earned_items and featured_item not in earned_items:
+                problems.append(
+                    f"featured failure {featured_item!r} not in earned pool"
+                )
+
             op = pu.get("operation")
             op_pool = (ps.get("operations") or {}).get(op, {})
             valid = set(op_pool.get("failure_modes_shown", [])) | set(

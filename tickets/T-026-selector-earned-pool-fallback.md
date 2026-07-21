@@ -186,10 +186,33 @@ Trailers: `Ticket: T-026` / `Implemented-by: <implementer>`.
 
 ## 6. Implementer log (append below; never delete the ticket body)
 
-- [ ] 2.1 extractor.md earned-pool fallback
-- [ ] 2.2 extractor.md "none" contract tightened
-- [ ] 2.3 structural_gate.py deterministic guard
-- [ ] 2.4 field_registry registration
-- [ ] 2.5 regression assertions
-- [ ] acceptance 1–7
-- [ ] commit
+- [x] 2.1 extractor.md earned-pool fallback
+- [x] 2.2 extractor.md "none" contract tightened
+- [x] 2.3 structural_gate.py deterministic guard
+- [x] 2.4 field_registry registration
+- [x] 2.5 regression assertions
+- [x] acceptance 1–7
+- [x] commit
+
+Implementation record (Codex, 2026-07-21):
+
+- The extractor diff preserves LED-primary / SHOWN-tiebreak, adds the mandatory
+  `arc_introduced <= arc_current` earned-pool filter, names the selected unit
+  `ITEM`, points to DECISION 13, and reserves `"none"` for null
+  `operation_due` only.
+- LAW 15 firing evidence from the isolated real-gate CLI fixtures:
+  teaching `"none"` emitted `earned-pool fallback missing, ADV-3`; invented
+  item emitted `featured failure 'not a pack item' not in earned pool`; the
+  earned `"the hypothesis tester"` return and the null-operation interlude both
+  emitted `STRUCTURAL GATE: PASS (arc 2, quota 2)`.
+- Acceptance item 1's live-ch8 PASS expectation was superseded by landed T-024:
+  the live ch8 brief is now correctly stale against scheduled pointer 009.
+  Regression observed that FAIL and used an isolated gate-time ch9 brief/pointer
+  for PASS evidence without writing state or disturbing the live receipt.
+- Tool regression: `PASS: 21/21 assertions passed`.
+- Sanctioned pytest: known baseline only, `1 failed, 331 passed`
+  (`test_default_splitter_engine_passes_openrouter_timeout_seconds`).
+- Assembler downstream confirmed at its Lead wrong approach binding: it consumes
+  `pointer.failure_mode_to_show` directly and requires no change for a real item.
+- `git diff --check` passed; pre-commit status contained only the literal
+  write-set plus this ticket's standing-exempt implementer log. No paid calls.

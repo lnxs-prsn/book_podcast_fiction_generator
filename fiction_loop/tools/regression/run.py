@@ -6,8 +6,10 @@ from __future__ import annotations
 from copy import deepcopy
 import json
 import os
+import shutil
 import subprocess
 import sys
+import tempfile
 from dataclasses import dataclass
 from pathlib import Path
 
@@ -78,6 +80,28 @@ def check(name: str, condition: bool, detail: str = "") -> bool:
     suffix = f" — {detail}" if detail else ""
     print(f"{verdict}: {name}{suffix}")
     return condition
+
+
+def gate_fixture(
+    brief: dict, master_state: dict, process_state: dict, *args: str
+) -> CommandResult:
+    """Run the real gate CLI against isolated copies of its three inputs."""
+    with tempfile.TemporaryDirectory() as tmp:
+        loop = Path(tmp) / "fiction_loop"
+        (loop / "tools").mkdir(parents=True)
+        (loop / "prompts").mkdir()
+        (loop / "state").mkdir()
+        shutil.copy2(GATE, loop / "tools/structural_gate.py")
+        (loop / "prompts/update_brief.json").write_text(
+            json.dumps(brief, indent=2) + "\n"
+        )
+        (loop / "state/master_state.json").write_text(
+            json.dumps(master_state, indent=2) + "\n"
+        )
+        (loop / "state/process_state.json").write_text(
+            json.dumps(process_state, indent=2) + "\n"
+        )
+        return run_command(str(loop / "tools/structural_gate.py"), *args)
 
 
 def prose_report() -> list[dict] | None:
@@ -219,6 +243,9 @@ def main() -> int:
             )
         )
 
+        master_state = json.loads(
+            (FICTION_LOOP_DIR / "state/master_state.json").read_text()
+        )
         process_state = json.loads(
             (FICTION_LOOP_DIR / "state/process_state.json").read_text()
         )
@@ -238,21 +265,71 @@ def main() -> int:
         ch9_brief["process_updates"]["failure_modes_shown_this_chapter"] = (
             canonical_labels[:2]
         )
-        brief_path.write_text(json.dumps(ch9_brief, indent=2) + "\n")
+        earned_item = "the hypothesis tester"
 
-        gate_pass = run_command(str(GATE))
+        none_pointer = deepcopy(master_state)
+        none_pointer["next_chapter_pointer"]["failure_mode_to_show"] = "none"
+        none_result = gate_fixture(ch9_brief, none_pointer, process_state)
         results.append(
             check(
-                "structural gate accepts gate-time ch9 return fixture",
+                "structural gate rejects teaching pointer with no featured failure",
+                none_result.returncode == 1
+                and "earned-pool fallback missing, ADV-3" in none_result.output,
+            )
+        )
+
+        earned_pointer = deepcopy(master_state)
+        earned_pointer["next_chapter_pointer"]["failure_mode_to_show"] = earned_item
+        gate_pass = gate_fixture(ch9_brief, earned_pointer, process_state)
+        results.append(
+            check(
+                "structural gate accepts earned featured failure on ch9 return",
                 gate_pass.returncode == 0
                 and "STRUCTURAL GATE: PASS (arc 2, quota 2)" in gate_pass.output,
             )
         )
 
+        invented_pointer = deepcopy(master_state)
+        invented_pointer["next_chapter_pointer"]["failure_mode_to_show"] = (
+            "not a pack item"
+        )
+        invented_result = gate_fixture(ch9_brief, invented_pointer, process_state)
+        results.append(
+            check(
+                "structural gate rejects featured item outside earned pool",
+                invented_result.returncode == 1
+                and "featured failure 'not a pack item' not in earned pool"
+                in invented_result.output,
+            )
+        )
+
+        interlude_brief = deepcopy(ch9_brief)
+        interlude_brief["chapter_type"] = "anchor_interlude"
+        interlude_pointer = deepcopy(master_state)
+        interlude_pointer["next_chapter_pointer"].update(
+            {
+                "type": "anchor_interlude",
+                "char_id": None,
+                "operation_due": None,
+                "failure_mode_to_show": "none",
+            }
+        )
+        interlude_result = gate_fixture(
+            interlude_brief, interlude_pointer, process_state
+        )
+        results.append(
+            check(
+                "structural gate permits none on non-teaching interlude",
+                interlude_result.returncode == 0
+                and "earned-pool fallback missing" not in interlude_result.output,
+            )
+        )
+
         wrong_focal = deepcopy(ch9_brief)
         wrong_focal["focal_character"]["id"] = "char_005"
-        brief_path.write_text(json.dumps(wrong_focal, indent=2) + "\n")
-        wrong_focal_result = run_command(str(GATE))
+        wrong_focal_result = gate_fixture(
+            wrong_focal, earned_pointer, process_state
+        )
         results.append(
             check(
                 "structural gate rejects wrong return focal id",
@@ -267,8 +344,9 @@ def main() -> int:
             canonical_labels[0],
             canonical_labels[0],
         ]
-        brief_path.write_text(json.dumps(duplicate_labels, indent=2) + "\n")
-        duplicate_result = run_command(str(GATE))
+        duplicate_result = gate_fixture(
+            duplicate_labels, earned_pointer, process_state
+        )
         results.append(
             check(
                 "structural gate counts distinct failure-mode labels",
@@ -282,8 +360,9 @@ def main() -> int:
             canonical_labels[0],
             "not a pack label",
         ]
-        brief_path.write_text(json.dumps(noncanonical_labels, indent=2) + "\n")
-        noncanonical_result = run_command(str(GATE))
+        noncanonical_result = gate_fixture(
+            noncanonical_labels, earned_pointer, process_state
+        )
         results.append(
             check(
                 "structural gate rejects non-canonical failure-mode labels",
@@ -293,21 +372,37 @@ def main() -> int:
             )
         )
 
-        brief_path.write_text(json.dumps(ch9_brief, indent=2) + "\n")
-        gate_pass = run_command(str(GATE))
-        gate_receipt = PROMPTS_DIR / ".gate_pass.json"
-        stale_receipt = json.loads(gate_receipt.read_text())
-        stale_receipt["chapter"] = "008"
-        gate_receipt.write_text(json.dumps(stale_receipt, indent=2) + "\n")
-        stale_receipt_result = run_command(str(GATE), "--verify")
-        results.append(
-            check(
-                "structural gate rejects receipt chapter mismatch",
-                gate_pass.returncode == 0
-                and stale_receipt_result.returncode == 1
-                and "receipt stale — chapter mismatch" in stale_receipt_result.output,
+        with tempfile.TemporaryDirectory() as tmp:
+            loop = Path(tmp) / "fiction_loop"
+            (loop / "tools").mkdir(parents=True)
+            (loop / "prompts").mkdir()
+            (loop / "state").mkdir()
+            shutil.copy2(GATE, loop / "tools/structural_gate.py")
+            (loop / "prompts/update_brief.json").write_text(
+                json.dumps(ch9_brief, indent=2) + "\n"
             )
-        )
+            (loop / "state/master_state.json").write_text(
+                json.dumps(earned_pointer, indent=2) + "\n"
+            )
+            (loop / "state/process_state.json").write_text(
+                json.dumps(process_state, indent=2) + "\n"
+            )
+            isolated_gate = loop / "tools/structural_gate.py"
+            gate_pass = run_command(str(isolated_gate))
+            isolated_receipt = loop / "prompts/.gate_pass.json"
+            stale_receipt = json.loads(isolated_receipt.read_text())
+            stale_receipt["chapter"] = "008"
+            isolated_receipt.write_text(json.dumps(stale_receipt, indent=2) + "\n")
+            stale_receipt_result = run_command(str(isolated_gate), "--verify")
+            results.append(
+                check(
+                    "structural gate rejects receipt chapter mismatch",
+                    gate_pass.returncode == 0
+                    and stale_receipt_result.returncode == 1
+                    and "receipt stale — chapter mismatch"
+                    in stale_receipt_result.output,
+                )
+            )
 
     failed = len(results) - sum(results)
     print(

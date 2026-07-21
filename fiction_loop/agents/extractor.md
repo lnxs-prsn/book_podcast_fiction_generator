@@ -245,8 +245,9 @@ lead_failure_mode
   → Producer: Extractor. Consumers: Updater STEP 7 (appends it to
     failure_mode_lead_history) and Extractor's failure_mode_to_show selection
     (least-recently-led rotation).
-  → "none" only for anchor_interlude / arc_transition (whose process_updates is
-    null under the section guard above).
+  → "none" only when operation_due is null: anchor_interlude / arc_transition
+    (whose process_updates is null under the section guard above). A teaching
+    chapter uses the earned-pool fallback for failure_mode_to_show instead.
 
 name_attached_this_chapter
   → true if the prose attaches the operation's name (the one-sentence narrator label
@@ -381,7 +382,14 @@ failure_mode_to_show
     failure — the anchor observes it, the notebook entry names it — so rotation
     must track leads (owner rule D4, anti-formula). A useful side effect: a
     newly introduced arc type has never led, so it is auto-featured on arrival.
-  → "none" if operation_due is null or list is empty
+  → If operation_due is non-null but that operation's list is empty, FALL BACK
+    to the earned pool: union failure_modes_shown and
+    failure_modes_not_yet_shown over every operation whose arc_introduced <=
+    master_state.json arc_current. From that set choose the least-recently-led
+    ITEM, with least-recently-shown as the tiebreak, exactly as above. The arc
+    filter is mandatory because future-arc pools are pre-seeded. Never emit
+    "none" for a teaching chapter. (Owner DECISION 13.)
+  → "none" only if operation_due is null
 secondary_touches
   → from decision logic (up to 2; empty list for anchor_interlude/arc_transition)
 echo_touch
