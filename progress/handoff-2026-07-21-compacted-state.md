@@ -141,6 +141,16 @@ T-023 (curriculum rule-5 regression) **now DRAFTED** (2026-07-21, owner un-defer
 fork resolved via DECISION 15 — targeted, not general parser) — ticket
 `tickets/T-023-curriculum-consistency-regression.md`; the DEFERRED marker was replaced.
 
+**Stale-constraint audit (NEW — from the T-024 STOP, 2026-07-21):** T-024's acceptance
+encoded a constraint that assumed **live state == gate-time state** — false once the ch8
+Updater advanced the pointer to 009, so the check the ticket adds correctly rejected the
+"live brief → PASS" acceptance. **The specs (`fiction_loop/specs/*`) and every drafted
+ticket's acceptance/preconditions must be swept for this class:** constraints frozen
+against an earlier project/state shape that has since moved (pointer advanced, arc
+advanced, cast grown, schema renamed). Do this BEFORE dispatching a ticket or building
+from a spec — it is the same "acceptance dry-run against HEAD" discipline extended to
+spec constraints. Not yet a ticket; assign when scheduling the next dispatch batch.
+
 **Open design work (not tickets yet):** the **"shown"/C3 design pass** (before arc 3;
 prerequisite for ADV-2/RDR-2 correctness in later arcs); **B3** anti-formula specifics
 (budget formula, thresholds, enforcement home); **RDR-3** mystery-fairness plan-schema +
