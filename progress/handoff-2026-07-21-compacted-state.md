@@ -62,7 +62,7 @@ harness blocks a step, the senior runs it externally and commits `Implemented-by
 
 ## 4. Decision ledger (rulings live in `fiction_loop/human_decision.md`)
 
-DECISIONS 1–14 recorded there. The ones a cold session most needs:
+DECISIONS 1–15 recorded there. The ones a cold session most needs:
 - **D10** — arc-2 cast quota 3→2 (Section 4 is sole count owner); `QUOTA_BY_ARC`
   freeze in regression.
 - **D11 (B1–B5)** — Updater idempotency stamp; collapse 4 re-verify layers into ONE
@@ -77,6 +77,13 @@ DECISIONS 1–14 recorded there. The ones a cold session most needs:
 - **D14** — **pre-writer gate** = single-source `gate_check_registry` + bidirectional
   parity guard; Phase A (validator) then Phase B (generative, post-ch9); IS the D11-B2
   consumer-map organ. Spec: `fiction_loop/specs/prewriter_gate.spec.md`.
+- **D15** — **single-source is a discipline that must migrate to determinism.** Smell:
+  LAW 2 rests on a maintainer's memory ("human or AI", `CONTRIBUTING.md:9`). Archaeology:
+  original (registry born with fiction_loop), fractal (recurs across the ledgers), on the
+  LAW 3 boundary — the migration frontier, not a defect. Ruling: **eliminate → guard →
+  discipline**; recognition is the irreducible floor, freshness is mechanizable (the
+  `arc_current` invariant is the precedent; use a content hash, not a char-count). Audit:
+  `progress/single-source-smell-registry-audit-2026-07-21.md`. T-023 is its first instance.
 
 ## 5. Open queue
 
@@ -90,11 +97,34 @@ dispatched; senior dry-run status noted):**
 4. **T-019** retire `QUOTA_BY_ARC` leak (Stage-4 down payment).
 5. **T-020** anchor-description leak → `mystery_anchor.json` (D11-B4). **Independent** of
    the chain — dispatch anytime.
+6. **T-023** freeze the DECISION 10 within-curriculum duplication (§9 defers to Section 4,
+   no restated numerals) — first instance of D15's eliminate→guard ladder. **Independent**
+   (senior dry-ran preconditions 2026-07-21; edits only §9 + run.py + field_registry).
 
-Order: **T-024 → T-026 → T-025 → T-019**; T-020 anytime.
-**ch9 (paid) should not run until T-026 lands** (removes the `"none"` ambiguity
-deterministically), ideally with T-024 + T-025 (they guard the exact return-chapter
-failure classes).
+**Implementation order (hard deps vs priority made explicit):**
+
+*Hard dependencies:* T-026 AFTER T-024 (reuses its gate/pointer binding); the T-022
+Phase-A ticket AFTER T-024 + T-026 (they extend the seed check-set its registry consumes,
+D14); T-022 Phase B AFTER ch9; the factory build gated on the **C3 "shown" pass, NOT ch9**
+(§6). *Independent (anytime):* T-020, T-023.
+
+- **Phase 0 — offline, zero-paid, BEFORE the ch9 spend:**
+  1. **T-024** (unblocks T-026; still needs its full acceptance dry-run) →
+  2. **T-026** (**hard gate for ch9**; dispatch-verified) →
+  3. **T-025** (guards the ch9 return-chapter failure class).
+  - **T-020 + T-023** slot in anywhere here (independent, low-risk).
+- **Milestone — ch9 (PAID):** min bar T-026 landed; ideal bar T-024 + T-025 + T-026.
+  Validates the chassis on a return.
+- **Phase 1 — after ch9:**
+  4. **T-019** (Stage-4 down-payment; offline so *could* run in Phase 0, but it guards no
+     ch9 class — no reason to spend attention pre-milestone).
+  5. **T-022 Phase-A ticket** (pre-writer gate validator, `specs/prewriter_gate.spec.md`;
+     writable once T-024 + T-026 land — the factory's designated first build).
+  6. **T-022 Phase B** (generative gate; additive, post-ch9).
+
+**Long-pole (reorders everything downstream):** the **C3 "shown" design pass** gates both
+later-arc ADV-2/RDR-2 correctness AND the *bulk* of the factory — start it in parallel
+with Phase 0; it, not ch9, unblocks the most work.
 
 **Reserved-backlog outcomes** (each holds its slot with a marker file in `tickets/` — no
 gaps in the numbering): T-021 (mirror leak) **STRUCK — not a leak** (Assembler fetches
@@ -102,8 +132,9 @@ from `world_rules §5`; `field_registry` not-a-leak note; marker
 `tickets/T-021-mirror-content-leak-STRUCK.md`). T-022 **spec'd** (D14) —
 `specs/prewriter_gate.spec.md`; marker `tickets/T-022-prewriter-gate-SPECD-ticket-pending.md`;
 Phase-A ticket waits on T-024/T-026 (they extend the seed check-set), Phase B post-ch9.
-T-023 (curriculum rule-5 regression) **DEFERRED by owner** — marker
-`tickets/T-023-curriculum-consistency-regression-DEFERRED.md` (scope fork noted).
+T-023 (curriculum rule-5 regression) **now DRAFTED** (2026-07-21, owner un-deferred; scope
+fork resolved via DECISION 15 — targeted, not general parser) — ticket
+`tickets/T-023-curriculum-consistency-regression.md`; the DEFERRED marker was replaced.
 
 **Open design work (not tickets yet):** the **"shown"/C3 design pass** (before arc 3;
 prerequisite for ADV-2/RDR-2 correctness in later arcs); **B3** anti-formula specifics
@@ -133,8 +164,8 @@ the go-signal to *start*, but:
    `fiction_loop/`.
 4. `fiction_loop/human_decision.md` — design rulings (DECISIONS 1–14).
 5. `fiction_loop/core/agent_conduct.md` — binding during a chapter run.
-6. `tickets/` — drafted work orders (T-019/020/024/025/026) + status markers
-   (T-021 struck · T-022 spec'd/pending · T-023 deferred) so the numbering has no gaps;
+6. `tickets/` — drafted work orders (T-019/020/023/024/025/026) + status markers
+   (T-021 struck · T-022 spec'd/pending) so the numbering has no gaps;
    `fiction_loop/specs/` for
    factory + pre-writer-gate design.
 

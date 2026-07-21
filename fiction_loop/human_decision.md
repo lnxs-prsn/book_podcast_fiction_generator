@@ -720,6 +720,55 @@ rules and the gate checks). It can — and doing so is what makes B cheap.
 
 ---
 
+## DECISION 15 — single-source-of-truth is a discipline that must migrate to determinism (added 2026-07-21)
+
+**The smell (owner-caught).** LAW 2 guarantees "one owning document; every copy listed
+in `field_registry.md`," but the guarantee rests on a *maintainer's memory* — and
+`CONTRIBUTING.md:9` defines "maintainer" as **"human or AI."** Both forget; LAW 2 itself
+names *"forgetting a copy is the bug."* DECISION 10 WAS that bug — a quantity stated
+twice, dormant for an entire arc until it fired.
+
+**Archaeology (asked + answered from git).**
+- **Original, not bolted on.** `field_registry.md` was born in the same commit that
+  created `fiction_loop/` (`a852ec0`, 2026-07-04); LAW 2 formalized day 2 (`8ceb6dc`,
+  2026-07-05).
+- **Fractal, not anomaly.** The same "maintainer remembers / same sitting" shape recurs
+  in `field_aliases.md`, `pipeline_stage_manifest.md`, the RULE-CHANGE AUDIT, and LAW 4.
+- **Where it fits:** on the **LAW 3 determinism boundary** — a value that *could* be
+  machine-checked but still lives on the discipline side.
+- **NOT a defect — the deliberate migration frontier.** T-006 (`arc_current`
+  self-manages) and T-008/T-009 (gate receipt) are prior crossings of exactly this
+  boundary. The discipline ledgers are a staging area, not rot.
+
+**DECISION: eliminate → guard → discipline, in that order, for every single-source value.**
+1. **Eliminate (default).** If a consumer can read the source live, there is no copy to
+   forget. Precedents: `QUOTA_BY_ARC` ("stated once in the pack, chassis READS it"); the
+   forbidden-label set derived at runtime (`field_registry.md:19`).
+2. **Guard.** Only an *irreducible* copy — one that must be a Python value at gate time,
+   a prompt literal, etc. — earns a deterministic assertion, and must justify why it
+   can't be eliminated first.
+3. **Discipline (residual).** What's left splits (owner question 3, 2026-07-21):
+   - **Recognition** — that a value *is* single-source — is irreducibly a maintainer act
+     (human or AI). A machine cannot tell a single-source `2` from an incidental `2`.
+     This is the floor; no cheap mechanism removes it.
+   - **Freshness** — "the copy went stale when the source changed" — IS mechanizable now:
+     store the derived value plus a **fingerprint of its source (a content hash, not a
+     char-count** — char-count trips on unrelated edits and misses length-preserving
+     ones); a fast test fails when the source changed but the copy didn't. **This already
+     exists once** — `arc_current`'s invariant `arc_current == 1 + count(summaries)`,
+     checked by `analyst.py` (`field_registry.md:30`). The owner's proposal generalizes it.
+
+**Factory-era, deferred (D8/D12).** Full mechanical ledger enforcement (a test that fails
+when the chassis references a single-source value with no backing registry row + guard)
+is buildable but waits behind the C3 pass and needs the ledgers machine-readable first.
+
+**Consequence.** T-023 is an *instance* of this ladder, not a new idea: guard the
+irreducible copies (`QUOTA_BY_ARC` class), push the rest toward elimination, extend the
+`arc_current` freshness-invariant where a copy must persist. Row-by-row audit:
+`progress/single-source-smell-registry-audit-2026-07-21.md`.
+
+---
+
 ## NOT DECISIONS — content only you can provide
 
 These aren't forks with options; they're blanks only a human should fill (per the

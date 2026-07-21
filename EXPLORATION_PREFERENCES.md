@@ -58,6 +58,26 @@ carry signal.
   model, surface the gap explicitly ("I thought X — here's why it's actually
   Y") instead of silently correcting.
 
+**6. Trace origin & fit (archaeology)** *(added 2026-07-21, battle-tested on the
+single-source smell — these questions did a lot of work, so they are kept)*
+- **Origin — original or bolted on?** Is this baked into the founding design or added
+  by a later patch? (git-blame the design intent, not just the line.) Original problems
+  are load-bearing; add-ons are often removable.
+- **Fractal or anomaly?** Is the problem's shape the *same as the system's* shape? If it
+  recurs elsewhere, it is a **class** (there is a lot more of it), not a one-off — and
+  the fix should be a principle, not a patch. If it appears once, it is an anomaly.
+- **Where in the whole does it fit?** Which seam / boundary / layer does it sit on? A
+  problem on a known architectural boundary is usually that boundary's central tension,
+  not a defect — locate it before "fixing" it.
+- **Who holds it — human or machine? Can that holder forget?** Name the actor a rule
+  relies on. If the actor is memory ("maintainer remembers"), the rule is only as strong
+  as vigilance — a smell.
+- **Is it me, or could a machine verify it?** Separate the irreducible judgment (what
+  only a human/agent can *recognize*) from what a machine could check fast — e.g. a
+  stored number / content-hash fingerprint that fails a cheap test when the source
+  changed but the derived copy didn't. Push everything downstream of the judgment onto
+  the machine; keep only the recognition manual.
+
 ## Flow
 
 Diverge on the problem (run lenses) → converge (group, quantify, classify) →
