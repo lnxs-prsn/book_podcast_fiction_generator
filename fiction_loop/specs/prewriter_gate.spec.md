@@ -1,6 +1,8 @@
 # PRE-WRITER GATE SPEC — the gate-check registry + prompt-parity validator
 
-Status: DESIGN (2026-07-20). Implements owner DECISION 14. The intake_factory
+Status: DESIGN (2026-07-20). Ticket slot **T-022** (marker:
+`tickets/T-022-prewriter-gate-SPECD-ticket-pending.md`; Phase-A ticket pending
+T-024/T-026). Implements owner DECISION 14. The intake_factory
 build list names this the "FIRST dissolver (Force 3)". Small by intent — this
 defines the durable **contract** (a single registry of gate checks) and **Phase A**
 precisely; Phase B is sketched only.

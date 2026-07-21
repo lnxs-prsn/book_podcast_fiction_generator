@@ -96,8 +96,10 @@ failure classes).
 
 **Reserved-backlog outcomes:** T-021 (mirror leak) **STRUCK — not a leak** (Assembler
 fetches from `world_rules §5`; `field_registry` not-a-leak note left). T-022 **spec'd**
-(D14) — its Phase-A ticket waits on T-024/T-026 (they extend the seed check-set).
-T-023 (curriculum rule-5 regression) **deferred by owner**.
+(D14) — `specs/prewriter_gate.spec.md`; slot held by marker
+`tickets/T-022-prewriter-gate-SPECD-ticket-pending.md`; its Phase-A ticket waits on
+T-024/T-026 (they extend the seed check-set), Phase B post-ch9. T-023 (curriculum
+rule-5 regression) **deferred by owner**.
 
 **Open design work (not tickets yet):** the **"shown"/C3 design pass** (before arc 3;
 prerequisite for ADV-2/RDR-2 correctness in later arcs); **B3** anti-formula specifics
