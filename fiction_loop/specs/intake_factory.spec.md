@@ -255,7 +255,7 @@ type is invented. One memory, two doors: accepted and not-yet.
 | Stage-1 intake agent spec + knowledge-type rubric + accept/queue/defer contract + taxonomy-extension (defer) log | new (SG-2/3) |
 | Redo-rung auto policy in orchestrator | small (SG-4) |
 | Calibration organ format + read path (accepted + deferred, one organ) | new (SG-11) |
-| Pre-writer prompt gate: assembled prompt must carry a hard rule per gate check | FIRST dissolver (Force 3) — zero-token, PREVENTS paid gate failures; would have caught ch6-F15 before the draft |
+| Pre-writer prompt gate: assembled prompt must carry a hard rule per gate check | FIRST dissolver (Force 3) — zero-token, PREVENTS paid gate failures; would have caught ch6-F15 before the draft. **SPEC'd 2026-07-20: `specs/prewriter_gate.spec.md` (DECISION 14)** — single-source `gate_check_registry` + bidirectional parity guard; Phase A (validator) then Phase B (generative); is the B2 consumer-map organ. Phase-A ticket waits on T-024/T-026 (they extend the seed check-set). |
 | Per-model obedience card (probe-measured compliance profile + analyst signatures) | dissolver (Force 1); re-measure on every model swap |
 | Fixture suite: synthetic briefs/states firing every gate check, consistency check, undo rung once, zero tokens | dissolver (Force 2); first customer = arc-1→2 boundary machinery. **PARTIAL 2026-07-19: T-016 (`tools/regression/run.py`) landed** — freezes tool contracts (label / prose / gate-receipt / `QUOTA_BY_ARC` value) with fixtures; still open: firing the gate's quota/anchor/echo/F14/F15 checks against synthetic briefs |
 | Rules-as-data: field_registry becomes source, prose generated from it | dissolver (Force 4); heaviest — after factory v1 |

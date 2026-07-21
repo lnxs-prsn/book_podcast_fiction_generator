@@ -693,6 +693,33 @@ T-024/T-025.
 
 ---
 
+## DECISION 14 — T-022 pre-writer gate: build as a single-source check registry (added 2026-07-20)
+
+**Context.** T-022 (the spec's designated "first dissolver") = a zero-token pre-writer
+gate that checks the assembled prompt carries a hard rule for each post-Writer gate
+check. Owner asked whether option **A** (a literal pre-writer checklist) could be built
+so it **feeds fluently into option B** (a single source that GENERATES both the prompt
+rules and the gate checks). It can — and doing so is what makes B cheap.
+
+**DECISION: build both, as one artifact evolving.**
+- **A single `gate_check_registry`** is the sole home for the gate's check-set (one
+  entry per check: id / applies_to / post_writer_check / prompt_rule / detector /
+  pack-value source). Values (quotas, labels) read from pack data at runtime — LAW 14.
+- **Phase A (descriptive):** a read-only pre-writer validator reads the registry and
+  confirms the assembled prompt carries each prompt-facing rule. Low-regret.
+- **Phase B (generative, post-ch9):** the Assembler and gate GENERATE from the registry;
+  the parity guard becomes tautological. Additive — no rewrite.
+- **The anti-trap (why it can never desync):** a **bidirectional parity guard** ships
+  with A — (a) every gate check is tagged with a registry id and `{gate ids} == {registry
+  ids}`; (b) every prompt-facing entry's detector matches the assembler template. A
+  divergence is a RED regression, not a memory lapse. "Synced by the build."
+- **Scope:** SPEC-worth (a durable contract many future items consume), kept small.
+  Recorded in `fiction_loop/specs/prewriter_gate.spec.md`. This registry **is** the
+  DECISION 11 B2 consumer-map organ — build them as one. Sequencing: the Phase-A ticket
+  lands AFTER T-024/T-026 (they add checks to the seed); Phase B after ch9.
+
+---
+
 ## NOT DECISIONS — content only you can provide
 
 These aren't forks with options; they're blanks only a human should fill (per the

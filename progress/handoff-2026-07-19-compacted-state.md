@@ -493,17 +493,19 @@ chassis code changed.
   nothing hardcoded. Recorded a `field_registry.md` "NOT-A-LEAK" note so it isn't
   re-raised. (Residual, general: `world_rules.md` must become pack-scoped in the factory
   build — a Stage task, not this leak.)
-- **T-022 (pre-writer prompt gate) — SCOPED, owner ruling PENDING.** The spec's
-  designated first build (spec §2:258): a zero-token gate that verifies the assembled
-  prompt carries a hard rule for each post-Writer gate check (prevents paid gate
-  failures). Owner asked whether option A (literal checklist) can be built to feed
-  option B (single-source that generates both prompt rules AND the gate) fluently —
-  answer being designed (build A as a structured check-registry that B later makes
-  generative; same shape as DECISION 11 B2's consumer-map organ). Not yet written.
+- **T-022 (pre-writer prompt gate) — RULED (DECISION 14) + SPEC'd.** Owner ruled build
+  BOTH A and B as one evolving artifact: a single-source `gate_check_registry` (Phase A
+  = descriptive pre-writer validator; Phase B post-ch9 = generative) with a
+  **bidirectional parity guard** that makes prompt/gate drift a RED regression, not a
+  memory lapse (the "third-copy trap" resolution). It IS the DECISION 11 B2 consumer-map
+  organ — build as one. Small spec written: `fiction_loop/specs/prewriter_gate.spec.md`.
+  Phase-A TICKET intentionally NOT written yet — it lands AFTER T-024/T-026 (they extend
+  the seed check-set); Phase B after ch9.
 - **T-023 (curriculum-consistency regression, rule-5) — DEFERRED by owner** ("come back
   later"). Scope fork noted (targeted per-quantity assertions vs a general number-diff
   parser; senior leans targeted, extending the existing QUOTA_BY_ARC freeze).
 
-**Backlog now:** T-020 drafted (dispatch-independent). T-021 struck. T-022 pending the
-A→B design ruling. T-023 deferred. **Dispatch-ready set:** T-024, T-026, T-025, T-019,
+**Backlog now:** T-020 drafted (dispatch-independent). T-021 struck. T-022 RULED
+(DECISION 14) + spec'd (`specs/prewriter_gate.spec.md`); its Phase-A ticket waits on
+T-024/T-026. T-023 deferred. **Dispatch-ready set:** T-024, T-026, T-025, T-019,
 **T-020** (order: T-024 → T-026 → T-025 → T-019; T-020 anytime, independent).

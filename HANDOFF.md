@@ -8,10 +8,12 @@
 > "crisis" framing was retired (a return-master + newcomer-failers is the intended
 > late-arc engine; the real defect was the featured-failure selector emitting an
 > overloaded `"none"` on a depleted op pool); and the **reserved backlog was worked**
-> (T-020 written, T-021 struck as not-a-leak, T-022/T-023 scoped). **FIVE tickets
-> DRAFTED (not dispatched): T-024, T-026, T-025, T-019, T-020** (order T-024 → T-026 →
-> T-025 → T-019; T-020 independent). Still OPEN: the **T-022 A→B design ruling**, the
-> **"shown"/C3 design pass** (before arc 3), and the RDR-3/B2/B3 design work.
+> (T-020 written, T-021 struck as not-a-leak, **T-022 RULED (DECISION 14) + spec'd**
+> — `specs/prewriter_gate.spec.md`, single-source check registry + parity guard —
+> T-023 deferred). **FIVE tickets DRAFTED (not dispatched): T-024, T-026, T-025, T-019,
+> T-020** (order T-024 → T-026 → T-025 → T-019; T-020 independent; T-022 Phase-A ticket
+> waits on T-024/T-026). Still OPEN: the **"shown"/C3 design pass** (before arc 3), and
+> the RDR-3/B2/B3 design work.
 > As of latest 2026-07-19: **8 chapters
 > committed, arc 2, ch8 landed + accepted** (`8935458`); next = ch9
 > (return_to_character, char_004). T-016 + T-018 landed; **DECISION 10** (arc-2
