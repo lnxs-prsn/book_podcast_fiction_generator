@@ -1,37 +1,18 @@
 # HANDOFF — front door (stable path; content lives in progress/)
 
-> **CURRENT handoff: `progress/handoff-2026-07-19-compacted-state.md` — read its
-> §17 first (latest state), then §16/§15/§14/§13.** As of 2026-07-20: two more pre-build
-> lenses ran (ADVERSARIAL + READER, `progress/factory-adversarial-and-reader-pass-2026-07-20.md`);
-> the full **Group-B + Group-C design review is RULED** (`fiction_loop/human_decision.md`
-> DECISION 11 = B1–B5, DECISION 12 = C1–C4); **ADV-3 is RULED (DECISION 13)** — the
-> "crisis" framing was retired (a return-master + newcomer-failers is the intended
-> late-arc engine; the real defect was the featured-failure selector emitting an
-> overloaded `"none"` on a depleted op pool); and the **reserved backlog was worked**
-> (T-020 written, T-021 struck as not-a-leak, **T-022 RULED (DECISION 14) + spec'd**
-> — `specs/prewriter_gate.spec.md`, single-source check registry + parity guard —
-> T-023 deferred). **FIVE tickets DRAFTED (not dispatched): T-024, T-026, T-025, T-019,
-> T-020** (order T-024 → T-026 → T-025 → T-019; T-020 independent; T-022 Phase-A ticket
-> waits on T-024/T-026). Still OPEN: the **"shown"/C3 design pass** (before arc 3), and
-> the RDR-3/B2/B3 design work.
-> As of latest 2026-07-19: **8 chapters
-> committed, arc 2, ch8 landed + accepted** (`8935458`); next = ch9
-> (return_to_character, char_004). T-016 + T-018 landed; **DECISION 10** (arc-2
-> cast quota 3→2, §9 self-contradiction) fixed (`6d15c30`); **factory spec-sync
-> pass** done (`3ff7c43`). Git tag **`starting_factory` → `fe2e20d`** marks the
-> working 1-book flow (local, unpushed). A **pre-build multi-perspective pass**
-> ran a THIRD personification (WIP/part's-eye, uncommitted) and crystallized the
-> **"one-way door"** problem (summary built once from prose, ~10 files trust it,
-> nothing re-reads the story) — fix direction "verify from the fresh source"
-> (free name-presence check → paid meaning re-read), not yet ticketed. The two
-> earlier story-treatments (individual + CAST & FIT) were committed in `fe2e20d`;
-> a factory Tier-1 action queue (leak fixes / pre-writer prompt gate) is proposed,
-> not dispatched.
-> The "govern change" operating model is live (ticket Upstream/Downstream, LAW
-> 16/17, CAST & FIT lens). §§1–5 are the initial-compaction snapshot; §§8–11 are
-> the current addenda (§11 newest). The prior running ledger
-> `handoff-2026-07-18-all-tickets-landed-ch7-next.md` (§§1–14) is ARCHIVED — the
-> detailed *why*, not the front door. Do not orient from any other document.
+> **CURRENT handoff: `progress/handoff-2026-07-21-compacted-state.md` — a fresh
+> COMPACTION; read it first (single-hop current truth).** It supersedes the running
+> `handoff-2026-07-19-compacted-state.md` (§§1–17), now ARCHIVED as the detailed *why*.
+>
+> Current state (2026-07-21, HEAD `2abd2a9`, tree clean): **8 chapters, arc 2, next =
+> ch9** (`return_to_character`, char_004 Wanjiku, op_separate_condition, touch 2,
+> name_due). The full A/B/C pre-build design review is RULED (`fiction_loop/human_decision.md`
+> DECISIONS 10–14); **ADV-3 resolved (D13)**; **pre-writer gate spec'd (D14)** =
+> `specs/prewriter_gate.spec.md`. **FIVE tickets DRAFTED (not dispatched): T-024, T-026,
+> T-025, T-019, T-020** (order T-024 → T-026 → T-025 → T-019; T-020 independent). **ch9
+> (paid) awaits T-026** landing (ideally T-024/T-025 too). Restore tag `starting_factory`
+> → `fe2e20d` — **no chassis code has changed since.** Still open (design): the
+> **"shown"/C3 pass** (before arc 3), B3/RDR-3/B2. Do not orient from any other document.
 
 **Scope: maintainer sessions only.** A session running the fiction_loop
 pipeline (RUN.md kickoff) must NOT orient here — its complete world is
@@ -45,16 +26,16 @@ rules: `innovations/handoff-discipline/kit/HANDOFF_RULES.md`.
 
 ## Read-first order for a cold session
 
-1. `progress/handoff-2026-07-19-compacted-state.md` — current state + open
+1. `progress/handoff-2026-07-21-compacted-state.md` — current state + open
    queue (COMPACTED front door). For the *why* behind any claim, the archived
-   ledger `handoff-2026-07-18-all-tickets-landed-ch7-next.md` §§1–14, then the
-   older 2026-07-18 and 2026-07-17 handoffs
+   running ledger `handoff-2026-07-19-compacted-state.md` §§1–17, then the older
+   2026-07-18 and 2026-07-17 handoffs
 2. `fiction_loop/CONTRIBUTING.md` — the 17 laws; binding BEFORE any change
    under `fiction_loop/`
 3. `fiction_loop/specs/intake_factory.spec.md` — the factory spec (design
    complete, unbuilt; its §2 build list is the work map)
 4. `fiction_loop/core/agent_conduct.md` — binding DURING any chapter run
-5. `tickets/` — dispatched work orders (roles: see current handoff §0)
+5. `tickets/` — drafted work orders (roles: see current handoff §2)
 
 ## Trust map — which documents are live
 
