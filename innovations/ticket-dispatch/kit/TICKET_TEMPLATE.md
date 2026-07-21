@@ -35,14 +35,24 @@ dry-run does not belong here.>
 <Exact changes: which files, what logic, what to preserve, what NOT to do.
 Include code snippets for anything you'd rather not have improvised.>
 
-## 3. Acceptance (numbered; ALL must pass; author has dry-run each one's
-##    preconditions)
+## 3. Acceptance (numbered; ALL must pass. The author has EXECUTED every item
+##    that can run at authoring time and pasted its OBSERVED output — not a
+##    predicted "expected result". Tag each item [RUN@HEAD] or [POST-BUILD].
+##    See `10-how-to-write-tickets.md` T-6/T-7/T-8.)
 
-1. <machine-checkable command → expected result>
-2. <existing test suite → green, with expected count>
-3. <git status shows ONLY the write-set changed — the ticket's own
+1. [RUN@HEAD] <command reading EXISTING artifacts/state → the OBSERVED output,
+   pasted here, run against HEAD before dispatch. If it does not already produce
+   the PASS result, the ticket is NOT ready: fix the premise, or supply a correct
+   fixture the PASS-case needs (T-8) — never predict a PASS you did not observe.
+   Both T-024 and T-025 bounced because this item was predicted, not run.>
+2. [POST-BUILD] <exercises code THIS ticket creates (cannot exist yet) →
+   predicted result + WHY it can't be pre-run. This is the implementer's first
+   checkpoint. A [POST-BUILD] tag must never hide a check that was actually
+   runnable at HEAD.>
+3. [RUN@HEAD] <existing test suite → green, with the OBSERVED count.>
+4. <git status shows ONLY the write-set changed — the ticket's own
    implementer-log section is exempt (standing rule) and need not be listed>
-4. <DOWNSTREAM RE-VERIFY — mandatory whenever the write-set touches a shared
+5. <DOWNSTREAM RE-VERIFY — mandatory whenever the write-set touches a shared
    surface: the tool regression suite is green, AND each consumer named in
    the Downstream header has its acceptance re-run green. A downstream
    regression must fail HERE, in this ticket, not be discovered by the next

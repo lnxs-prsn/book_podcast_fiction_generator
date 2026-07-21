@@ -45,6 +45,7 @@ rules: `innovations/handoff-discipline/kit/HANDOFF_RULES.md`.
 | `fiction_loop/` (CONTRIBUTING, RUN.md, specs/, core/, tools/, state/) | LIVE — the working system |
 | `tickets/`, `innovations/` | LIVE |
 | `09-how-to-write-specs.md` | LIVE — spec-writing method |
+| `10-how-to-write-tickets.md` | LIVE — ticket-writing method (companion to 09; acceptance-execution rule T-6/7/8) |
 | `progress/handoff-2026-07-10-*` and older handoffs | dated records; carry staleness notes |
 | `docs/project_state.md`, `docs/log.md`, `user_manual.md` | **STALE (2026-05 era)** — describe a project shape that no longer exists; banners added 2026-07-17 |
 | `build_specs.md`, `initial_build.md`, `docs/fiction/`, `src/phases/` | historical design/build records; do not implement from them |

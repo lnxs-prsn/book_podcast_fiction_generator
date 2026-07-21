@@ -44,7 +44,13 @@ Paid-calls: forbidden | budgeted via <mechanism>
 Author's discipline — the part that makes it work:
 - **Dry-run every acceptance step's preconditions** (the **Upstream** field):
   does the binary exist, is the dependency declared, does the path resolve,
-  can each step pass without violating §5? Grep first, dispatch second.
+  can each step pass without violating §5? Grep first, dispatch second. Verify
+  against the ARTIFACT at HEAD, never a mental model of it (state moves).
+- **EXECUTE the acceptance itself, don't predict it** (§3): every item that can
+  run at authoring time is tagged `[RUN@HEAD]` and carries its *observed* output;
+  only genuinely not-yet-buildable items (`[POST-BUILD]`) may predict, and must
+  say why. A predicted PASS is the T-024/T-025 bounce. Full method:
+  `10-how-to-write-tickets.md` T-6/T-7/T-8.
 - **Declare the blast radius** (the **Downstream** field): a change to a
   shared surface names its consumers and re-runs their acceptance in its own
   §3. A shared surface with an empty Downstream is an authoring error. A
@@ -77,5 +83,22 @@ hand. That regression forged the **Upstream/Downstream** header fields and the
 "re-verify consumers" acceptance rule above (three consecutive ticket bounces,
 all traced to a change not looking up- or down-stream of its own delta).
 
+Refined 2026-07-21, book-podcast-fiction-generator: two consecutive tickets
+(T-024, T-025) bounced because their §3 acceptance PASS-case was **predicted,
+not executed** — the author dry-ran the *preconditions* (as the rule then said)
+but never ran the acceptance command itself against HEAD. Both premises were
+false on a live artifact (a pointer that had advanced; a city absent from an
+indoor chapter), each a one-command check. The gap: "dry-run" had always meant
+*preconditions*, and acceptance items asked for an "expected result" (a
+prediction), never an *observed* one. Fix forged here: **acceptance is EXECUTED,
+not predicted** — every item that can run at authoring time is tagged
+`[RUN@HEAD]` and carries its observed output; only genuinely not-yet-buildable
+items (`[POST-BUILD]`) may predict, and must say why. Written up as the method
+`10-how-to-write-tickets.md` (T-6/T-7/T-8) and baked into `kit/TICKET_TEMPLATE.md`
+§3. This is LAW-15 "evidence it fires" — the standard tickets impose on code —
+finally turned on the ticket's own claims.
+
 ## Kit (deployable files in `kit/`)
-`kit/TICKET_TEMPLATE.md` — copy per ticket, fill every section, dry-run §3 before dispatch.
+`kit/TICKET_TEMPLATE.md` — copy per ticket, fill every section, EXECUTE §3's
+`[RUN@HEAD]` items (paste observed output, don't predict) before dispatch.
+Method: `10-how-to-write-tickets.md`.
