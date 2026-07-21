@@ -474,3 +474,36 @@ dry-run facts still hold). Chapter state untouched (`chapter_count`=8, next=009)
   binding). **ch9 (paid) should not run until T-026 lands** (removes the `"none"`
   ambiguity deterministically) alongside T-024/T-025. **Still open (design):** the
   "shown"/C3 design pass (before arc 3), B3 anti-formula specifics, RDR-3/B2 design work.
+
+## 17. Reserved-backlog worked: T-020 written, T-021 struck, T-022/T-023 scoped (2026-07-20, LATEST — read this for current state)
+
+The reserved-but-unwritten backlog (T-020..T-023, named in §11/§13, never filed) was
+walked with the owner. Each got its source-verification pass (senior discipline). No
+chassis code changed.
+
+- **T-020 (anchor-description leak) — WRITTEN + drafted** (`tickets/T-020-retire-anchor-description-leak.md`).
+  Verified the hardcode is real and SINGULAR (`assembler.md:229`; every other "grey
+  coat" hit is legitimate prose/derived state). Implements DECISION 11 B4: add an
+  authored `observable_presentation` field to `mystery_anchor.json` (reader-observable
+  region, away from `hidden_coherence`), Assembler reads it. mystery_anchor.json is
+  authored (not init_state-seeded), so this is initialization not state-surgery. Ready
+  to dispatch; independent of the T-024→T-026 chain.
+- **T-021 (mirror-content leak) — STRUCK as stale.** Verified NOT a leak: the Assembler
+  fetches mirror content from `world_rules.md` §5 + rules from §4B (`assembler.md:35,42-44`);
+  nothing hardcoded. Recorded a `field_registry.md` "NOT-A-LEAK" note so it isn't
+  re-raised. (Residual, general: `world_rules.md` must become pack-scoped in the factory
+  build — a Stage task, not this leak.)
+- **T-022 (pre-writer prompt gate) — SCOPED, owner ruling PENDING.** The spec's
+  designated first build (spec §2:258): a zero-token gate that verifies the assembled
+  prompt carries a hard rule for each post-Writer gate check (prevents paid gate
+  failures). Owner asked whether option A (literal checklist) can be built to feed
+  option B (single-source that generates both prompt rules AND the gate) fluently —
+  answer being designed (build A as a structured check-registry that B later makes
+  generative; same shape as DECISION 11 B2's consumer-map organ). Not yet written.
+- **T-023 (curriculum-consistency regression, rule-5) — DEFERRED by owner** ("come back
+  later"). Scope fork noted (targeted per-quantity assertions vs a general number-diff
+  parser; senior leans targeted, extending the existing QUOTA_BY_ARC freeze).
+
+**Backlog now:** T-020 drafted (dispatch-independent). T-021 struck. T-022 pending the
+A→B design ruling. T-023 deferred. **Dispatch-ready set:** T-024, T-026, T-025, T-019,
+**T-020** (order: T-024 → T-026 → T-025 → T-019; T-020 anytime, independent).

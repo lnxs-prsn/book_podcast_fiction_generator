@@ -33,6 +33,13 @@ before merging.
 
 ## Known orphans / open items
 
+- **NOT-A-LEAK: wrong-approach mirror content** (verified 2026-07-20; T-021 struck).
+  The originally-suspected "mirror-content leak" does NOT exist. The Assembler fetches
+  each wrong approach's mirror row from `world_rules.md` §5 "Wrong Approach Mirror
+  Behaviour" (`assembler.md:42-44`) and the mirror rules from §4B (`assembler.md:35`) —
+  no mirror content is hardcoded in any agent prompt. Do not re-raise as a leak.
+  (Separate, general factory concern, NOT this item: `world_rules.md` lives in `core/`
+  and must become pack-scoped in the factory build — a Stage-level task, not a hardcode.)
 - **"Shown" is undefined for `failure_modes_shown_this_chapter`** (found 2026-07-04,
   ch4 v2): the structural gate counts the Extractor's *labels*, not scenes. A solver
   whose behavior blends two approach types gets ONE label (ch4 v2's first solver blended
