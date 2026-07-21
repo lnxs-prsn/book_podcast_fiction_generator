@@ -17,9 +17,17 @@ Upstream (preconditions — author dry-ran EACH 2026-07-20, HEAD 9d0966c — cha
     prose (updater.md CRITICAL RULES); the gate reads counts/booleans, never
     prose (structural_gate.py docstring). Verified — this is the "one-way door".
   - update_brief.json carries the name-bearing fields this guard reads:
-    focal_character.name, focal_character.city, other_entrants[].name (may be
-    null), names_used_this_chapter (list). Verified against the live ch8 brief
+    focal_character.name, other_entrants[].name (may be null),
+    names_used_this_chapter (list). Verified against the live ch8 brief
     (names_used_this_chapter = ["Nantale Namakula","Dr. Akello","Moses"]).
+  - **CORRECTION 2026-07-21 (implementer STOP — scope, not fixture):** the
+    original draft also asserted `focal_character.city` ("Kampala") must appear in
+    prose. It must NOT — a city is a setting attribute, not a name; a chapter need
+    not speak its city (ch8 plays out indoors → `Kampala` occurs 0× in
+    chapter_008.md, verified). That is a FALSE FAIL on a good chapter, which §5
+    forbids. `city` is REMOVED from the asserted set; this guard is personal-names
+    only (its stated invariant). City fidelity, if ever wanted, is the paid
+    Stage-5 meaning inspector, not this free presence check.
   - The chapter prose is committed at fiction_loop/chapters/chapter_[NNN].md by
     step 9 before the Extractor runs at step 11. Verified (chapter_008.md exists).
   - structural_gate.py is the model for a standalone stdlib/zero-token
@@ -57,9 +65,9 @@ existing character — and ch9 is a return (Wanjiku, char_004, name_due).
 only, mirrors structural_gate.py's shape — `R = repo/fiction_loop`, exit 0/1):
 - Read `prompts/update_brief.json`; read
   `chapters/chapter_[brief.chapter].md` (zero-pad from `brief["chapter"]`).
-- Collect ASSERTED strings from the brief:
-  - `focal_character.name` and `focal_character.city` (skip if focal is null —
-    anchor_interlude/arc_transition),
+- Collect ASSERTED strings from the brief (PERSONAL NAMES only — NOT `city`; see
+  the CORRECTION precondition):
+  - `focal_character.name` (skip if focal is null — anchor_interlude/arc_transition),
   - every `other_entrants[].name` that is non-null,
   - every entry in `names_used_this_chapter`.
 - For each asserted personal name, require that it OCCURS in the chapter text.
@@ -68,7 +76,6 @@ only, mirrors structural_gate.py's shape — `R = repo/fiction_loop`, exit 0/1):
     occurs OR every token occurs somewhere in the prose (handles "Dr. Akello"
     referred to later as "Akello", or "Nantale Namakula" then "Nantale"). A
     single-token name must occur as a whole word.
-  - `city` is checked as a plain case-insensitive substring.
 - Any asserted name with NO prose support → collect as a problem.
 - Print one line per missing name (`MISSING FROM PROSE: "<name>" (field)`),
   print a PASS/FAIL summary, exit 1 if any missing else 0. Never read
@@ -76,8 +83,9 @@ only, mirrors structural_gate.py's shape — `R = repo/fiction_loop`, exit 0/1):
 
 **2.2 Regression (tools/regression/run.py):** add assertions using the frozen
 fixtures:
-- the committed ch8 brief + chapters/chapter_008.md → exit 0 (Nantale Namakula,
-  Dr. Akello, Moses, Kampala all present).
+- the committed ch8 brief + chapters/chapter_008.md → exit 0 (personal names
+  Nantale Namakula, Dr. Akello, Moses all present — verified 13/9/4 occurrences;
+  `city` is NOT checked).
 - a copy of the ch8 brief with `focal_character.name` mutated to "Nantare
   Namakula" → exit 1 naming the missing name (the Nantale case). Use an
   in-runner temp copy; do not mutate the committed brief.
@@ -91,7 +99,8 @@ and its evidence-it-fires (the Nantare mutation goes red).
 ## 3. Acceptance (offline; author dry-ran each precondition)
 
 1. `PYTHONPATH=src .venv/bin/python fiction_loop/tools/name_presence_check.py`
-   against the live ch8 brief + chapter_008.md → exit 0, all names present.
+   against the live ch8 brief + chapter_008.md → exit 0, all PERSONAL names
+   present (city not checked — see the CORRECTION precondition).
 2. Red proof: run it against a temp brief with "Nantale"→"Nantare" → exit 1,
    line `MISSING FROM PROSE: "Nantare Namakula" (focal_character.name)`.
    Record the observed red in §6 (LAW 15 evidence-it-fires).
@@ -126,3 +135,22 @@ Trailers: `Ticket: T-025` / `Implemented-by: <implementer>`.
 - [ ] acceptance 1–6
 - [ ] commit
 - [ ] NOTE for senior: RUN.md step-11.4 wiring (out of chassis write-set)
+
+- **STOPPED 2026-07-21:** acceptance item 1 / precondition is false on HEAD.
+  The live ch8 brief asserts `focal_character.city = "Kampala"`, but
+  `chapters/chapter_008.md` contains no case-insensitive `Kampala` substring.
+  Observed live check output:
+  `MISSING FROM PROSE: "Kampala" (focal_character.city)` and exit 1; regression
+  consequently reported 22/23 assertions passed. Reverted all implementation
+  changes per §5; did not weaken the city rule or edit the committed artifact.
+
+- **Senior resolution (2026-07-21): correct STOP — the bug was ticket SCOPE, not
+  your work.** `focal_character.city` should never have been an asserted string:
+  this guard's invariant is personal-name presence, and a city is a setting
+  attribute a chapter need not speak (senior verified ch8 prose: Nantale 13×,
+  Akello 9×, Moses 4×, Kampala 0×). Requiring the city verbatim is exactly the
+  false-FAIL §5 forbids. Fixed in place — `city` REMOVED from §2.1 scope, the
+  city match-rule bullet deleted, §2.2/§3 no longer expect "Kampala", CORRECTION
+  precondition added. The Nantale→Nantare red proof is unaffected. **Cleared to
+  resume from the top; nothing you did needs reverting beyond what you already
+  reverted.** RUN.md step-11.4 wiring note (§6 last box) still stands for the senior.

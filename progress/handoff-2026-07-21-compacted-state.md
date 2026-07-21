@@ -99,6 +99,10 @@ dispatched; senior dry-run status noted):**
 2. **T-026** selector earned-pool fallback + `"none"` guard (ADV-3/D13) —
    **dispatch-verified** (senior dry-run 2026-07-20, arc-filter correction applied).
 3. **T-025** prose name-presence guard (the free verify-from-source slice).
+   **Scope CORRECTED 2026-07-21** after an implementer STOP: the draft wrongly
+   asserted `focal_character.city` ("Kampala") must appear in prose — a city is a
+   setting attribute, not a name (ch8 prose: names present, Kampala 0×), a false
+   FAIL §5 forbids. `city` removed; guard is personal-names only. Re-dispatchable.
 4. **T-019** retire `QUOTA_BY_ARC` leak (Stage-4 down payment).
 5. **T-020** anchor-description leak → `mystery_anchor.json` (D11-B4). **Independent** of
    the chain — dispatch anytime.
