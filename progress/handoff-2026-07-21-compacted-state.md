@@ -90,7 +90,12 @@ DECISIONS 1–15 recorded there. The ones a cold session most needs:
 **Dispatch-ready tickets (all zero-paid, offline, implementer-agnostic, drafted — NOT
 dispatched; senior dry-run status noted):**
 1. **T-024** gate cross-field integrity (ADV-1/2/4) — *first* (T-026 reuses its
-   gate/pointer binding). Full acceptance dry-run NOT yet done.
+   gate/pointer binding). **Acceptance CORRECTED 2026-07-21** after an implementer
+   STOP: original item 1 wrongly expected the live POST-Updater ch8 brief (pointer
+   already 009) to PASS the new chapter bind. Fixed — PASS uses a synthetic
+   gate-time ch9 brief vs live pointer 009; the leftover ch8 brief is now the ADV-4
+   stale-PASS FAIL demo. Re-dispatchable. (Full run-through of every crafted case
+   still pending at implement time.)
 2. **T-026** selector earned-pool fallback + `"none"` guard (ADV-3/D13) —
    **dispatch-verified** (senior dry-run 2026-07-20, arc-filter correction applied).
 3. **T-025** prose name-presence guard (the free verify-from-source slice).

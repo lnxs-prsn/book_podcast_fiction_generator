@@ -23,6 +23,16 @@ Upstream (preconditions — author dry-ran EACH 2026-07-20, HEAD 9d0966c — cha
   - At gate time for chapter N, master_state.next_chapter_pointer still
     describes chapter N (the Updater overwrites it only at step 12, AFTER the
     gate) — verified from updater.md STEP 7 ordering.
+  - **CORRECTION 2026-07-21 (the dry-run gap the handoff flagged):** the on-disk
+    LIVE state is POST-ch8-Updater — `update_brief.json` is chapter 008 but the
+    pointer has already advanced to 009. So "run the gate on the live ch8 brief
+    → PASS" (original acceptance item 1) is INVALID: 008 != 009, and the new
+    §2.1(a) check correctly rejects it. A PASS test MUST use a gate-time state
+    (brief.chapter == pointer.chapter). Because the live pointer is ALREADY 009,
+    the imminent ch9 case is PASS-testable against live state with a synthetic
+    ch9 brief; the leftover ch8 brief is instead the ADV-4 stale-PASS DEMO (it
+    must now FAIL). This is not state corruption — `analyst.py` confirms 8
+    chapters, next 009, healthy.
   - update_brief carries focal_character.{id,is_new,name},
     process_updates.failure_modes_shown_this_chapter, chapter — verified
     against the live ch8 brief.
@@ -149,21 +159,39 @@ mismatch → print "receipt stale — chapter mismatch" and return 1.
 process_state failure pools as gate inputs, with the ADV-1/2/4 case law
 (one-line each). Add the assertions to the LAW 15 evidence.
 
-**2.5 Regression (tools/regression/run.py):** add assertions that FAIL on a
-crafted-bad brief and PASS on the live ch8 brief:
-- ch8 brief (fixture) → gate PASS (all new checks satisfied: chapter 008 ==
-  pointer, new focal char_008 ∉ prior population, 2 distinct canonical labels).
-- a return brief whose focal id ≠ pointer.char_id → FAIL naming the mismatch.
-- a brief with `["the executor","the executor"]` at quota 2 → FAIL
-  "1 distinct of 2".
-- a receipt whose chapter ≠ brief chapter → `--verify` exit 1.
+**2.5 Regression (tools/regression/run.py):** all fixtures are written into
+`prompts/` inside an `ArtifactSnapshot` that ALSO covers
+`prompts/update_brief.json` and `prompts/.gate_pass.json` (so no test leaves a
+stale brief or a bogus receipt a later run would `--verify`); live `state/` is
+NOT swapped — tests run against the LIVE `master_state` (pointer already 009):
+- **PASS (no false positive) — synthetic gate-time ch9 brief fixture:** chapter
+  `"009"`, `focal_character` {id `char_004`, is_new `false`} (char_004 IS in the
+  live population_index), `failure_modes_shown_this_chapter` = 2 DISTINCT labels
+  drawn from the ch9 operation's process_state pool → gate PASS. `brief.chapter
+  == pointer.chapter` holds (both 009) — a real gate-time state, unlike the
+  leftover ch8 brief.
+- **FAIL ADV-4 (live demonstration):** the leftover live ch8 brief (chapter
+  `"008"`) vs live pointer `"009"` → gate FAIL `brief chapter 008 != scheduled
+  009`. This is §1's stale-PASS escape now closed, proven on real state.
+- **FAIL ADV-1:** the ch9 fixture with focal id ≠ `char_004` → FAIL naming the
+  mismatch.
+- **FAIL ADV-2:** the ch9 fixture with a duplicated label at quota 2 → FAIL
+  `1 distinct of 2`.
+- **FAIL ADV-4 receipt:** a receipt whose chapter ≠ brief chapter → `--verify`
+  exit 1.
 
 ## 3. Acceptance (offline; author dry-ran each precondition)
 
-1. `PYTHONPATH=src .venv/bin/python fiction_loop/tools/structural_gate.py` on
-   the live ch8 brief → still PASS (arc 2, quota 2); receipt written.
-2. Each ADV crafted-bad input above → gate/verify exit 1 naming the specific
-   problem (implementer records the observed lines in §6 — LAW 15 evidence).
+1. PASS case — GATE-TIME fixture, NOT the live post-Updater brief (see the
+   CORRECTION precondition): with the synthetic ch9 brief in place (§2.5),
+   `PYTHONPATH=src .venv/bin/python fiction_loop/tools/structural_gate.py` → PASS
+   (arc 2, quota 2, return focal char_004 bound to pointer 009); receipt written;
+   snapshot restores prompts/ after. (The leftover ch8 brief on disk is
+   POST-Updater — pointer already 009 — and is NOT a valid PASS input; see item 2.)
+2. FAIL / demonstration cases → each ADV crafted-bad input above, PLUS the
+   leftover live ch8 brief (chapter 008 vs pointer 009), → gate/`--verify` exit 1
+   naming the specific problem (implementer records the observed lines in §6 —
+   LAW 15 evidence). The live-ch8 FAIL is ADV-4's stale-PASS escape, now closed.
 3. `PYTHONPATH=src .venv/bin/python fiction_loop/tools/regression/run.py` →
    exit 0, all PASS (old + new assertions), tree clean after.
 4. Sanctioned pytest → `1 failed, 331 passed` (unchanged).
@@ -197,3 +225,32 @@ Trailers: `Ticket: T-024` / `Implemented-by: <implementer>`.
 - [ ] 2.5 regression assertions
 - [ ] acceptance 1–6
 - [ ] commit
+
+Implementer log (2026-07-21): **STOPPED before implementation — acceptance
+precondition drift/contradiction.** The live `prompts/update_brief.json` is chapter
+`008`, while `state/master_state.json.next_chapter_pointer.chapter` is `009`
+(`return_to_character`, `char_004`). Therefore the required §2.1 chapter bind must
+make acceptance item 1's live gate command FAIL, although that item requires PASS
+and states `008 == pointer`. `tools/analyst.py` confirms state sync is healthy at 8
+chapters with next `009`; this is not state corruption. No write-set implementation
+file was changed and no paid call was made. Ticket author/owner must clarify whether
+acceptance item 1 should expect the stale live ch8 brief to FAIL, or provide a
+chapter-008 pre-Updater fixture/state root for its PASS case.
+
+Senior resolution (2026-07-21): **You were right to STOP — correct call, no state
+issue.** The contradiction was a ticket-authoring bug (the acceptance dry-run the
+handoff had flagged as not-yet-done). The §2.1(a) check is correct and stays; the
+bug was in acceptance item 1 / §2.5, which wrongly expected the LIVE post-Updater
+ch8 brief to PASS. It cannot — the pointer already advanced to 009. Your a/b was a
+false binary: BOTH properties belong. Fixed in place:
+- **PASS case** now uses a synthetic **gate-time ch9 brief** (chapter 009, focal
+  char_004 is_new=false, 2 distinct canonical labels) tested against the LIVE
+  master_state (pointer already 009) — no state swap needed, and it exercises the
+  imminent ch9 return, the exact ADV-1 risk.
+- **The leftover ch8 brief → now correctly FAILs** (chapter 008 != 009) — this is
+  ADV-4's stale-PASS escape being closed, so it becomes a LAW-15 demonstration, not
+  a contradiction.
+- Snapshot must cover `prompts/update_brief.json` + `prompts/.gate_pass.json` so no
+  test leaves a stale brief/receipt.
+See revised §2.5 + §3 items 1–2 + the CORRECTION precondition. **Cleared to resume
+from the top; nothing you did needs reverting.**
