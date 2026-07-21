@@ -4,7 +4,9 @@
 `handoff-2026-07-19-compacted-state.md` (§§1–17) as the front door. That file is
 ARCHIVED — still the detailed *why* behind any claim here, read this first.
 Compaction method: `innovations/handoff-discipline/kit/HANDOFF_RULES.md` §Compaction.
-All claims below re-verified against git/state/code at **HEAD `2abd2a9`, tree clean**.
+All claims below re-verified against git/state/code at **HEAD `2abd2a9`**; docs-only
+commits since (`a292ba2` this compaction, `7c27c86` the T-022 slot marker) — state
+facts unchanged, tree clean.
 
 ## 1. State (verified against master_state.json + git, 2026-07-21)
 
@@ -129,7 +131,8 @@ the go-signal to *start*, but:
    `fiction_loop/`.
 4. `fiction_loop/human_decision.md` — design rulings (DECISIONS 1–14).
 5. `fiction_loop/core/agent_conduct.md` — binding during a chapter run.
-6. `tickets/` — drafted work orders (T-019/020/024/025/026); `fiction_loop/specs/` for
+6. `tickets/` — drafted work orders (T-019/020/024/025/026) + the **T-022** slot marker
+   (spec'd, ticket pending T-024/T-026); `fiction_loop/specs/` for
    factory + pre-writer-gate design.
 
 Diagnostics (zero tokens): `PYTHONPATH=src .venv/bin/python fiction_loop/tools/analyst.py`
