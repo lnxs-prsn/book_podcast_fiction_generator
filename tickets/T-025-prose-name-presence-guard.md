@@ -154,3 +154,11 @@ Trailers: `Ticket: T-025` / `Implemented-by: <implementer>`.
   precondition added. The Nantale→Nantare red proof is unaffected. **Cleared to
   resume from the top; nothing you did needs reverting beyond what you already
   reverted.** RUN.md step-11.4 wiring note (§6 last box) still stands for the senior.
+
+- **IMPLEMENTED 2026-07-21:** 2.1–2.3 complete. Live ch8 proof observed
+  `NAME PRESENCE CHECK: PASS`; isolated `Nantare Namakula` mutation observed exit
+  1 with `MISSING FROM PROSE: "Nantare Namakula" (focal_character.name)`.
+  Tool regression: 23/23 PASS. Sanctioned pytest: expected baseline unchanged at
+  1 failed, 331 passed (`test_default_splitter_engine_passes_openrouter_timeout_seconds`).
+  Downstream: none (leaf); no paid calls. **Senior follow-up remains:** wire the
+  Orchestrator RUN.md step 11.4 outside this ticket's chassis write-set.

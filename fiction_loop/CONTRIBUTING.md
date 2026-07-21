@@ -206,6 +206,9 @@ not yet been performed — until it is, assume unregistered machinery exists.
 Registered machinery: `tools/regression/run.py` protects the invariant that tool
 contracts do not silently regress; evidence it fires is a red assertion when the
 attempt-2 label-leak fixture is given the clean-fixture expectation.
+Registered machinery: `tools/name_presence_check.py` protects the invariant that no
+personal name enters state when absent from the story; evidence it fires is the
+regression's `Nantale Namakula` → `Nantare Namakula` mutation going red.
 
 **LAW 16 — A NEW HARD RULE SHIPS ITS OWN CHECK OR ITS EXCUSE.** No violation
 may be promoted to a hard rule unless the SAME change either ships a deterministic

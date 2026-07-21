@@ -22,6 +22,7 @@ FIXTURES_DIR = REGRESSION_DIR / "fixtures"
 PROMPTS_DIR = FICTION_LOOP_DIR / "prompts"
 WRITER = TOOLS_DIR / "invoke_writer.py"
 GATE = TOOLS_DIR / "structural_gate.py"
+NAME_PRESENCE_CHECK = TOOLS_DIR / "name_presence_check.py"
 
 
 @dataclass(frozen=True)
@@ -102,6 +103,22 @@ def gate_fixture(
             json.dumps(process_state, indent=2) + "\n"
         )
         return run_command(str(loop / "tools/structural_gate.py"), *args)
+
+
+def name_presence_fixture(brief: dict, chapter_path: Path) -> CommandResult:
+    """Run the real name-presence CLI against isolated brief/prose copies."""
+    with tempfile.TemporaryDirectory() as tmp:
+        loop = Path(tmp) / "fiction_loop"
+        (loop / "tools").mkdir(parents=True)
+        (loop / "prompts").mkdir()
+        (loop / "chapters").mkdir()
+        shutil.copy2(NAME_PRESENCE_CHECK, loop / "tools/name_presence_check.py")
+        (loop / "prompts/update_brief.json").write_text(
+            json.dumps(brief, indent=2) + "\n"
+        )
+        chapter = int(str(brief["chapter"]))
+        shutil.copy2(chapter_path, loop / "chapters" / f"chapter_{chapter:03d}.md")
+        return run_command(str(loop / "tools/name_presence_check.py"))
 
 
 def prose_report() -> list[dict] | None:
@@ -234,6 +251,28 @@ def main() -> int:
 
         brief_path = PROMPTS_DIR / "update_brief.json"
         live_ch8_brief = json.loads(brief_path.read_text())
+        chapter_008 = FICTION_LOOP_DIR / "chapters/chapter_008.md"
+        name_present = name_presence_fixture(live_ch8_brief, chapter_008)
+        results.append(
+            check(
+                "name-presence guard accepts committed ch8 personal names",
+                name_present.returncode == 0
+                and "NAME PRESENCE CHECK: PASS" in name_present.output,
+            )
+        )
+
+        nantare_brief = deepcopy(live_ch8_brief)
+        nantare_brief["focal_character"]["name"] = "Nantare Namakula"
+        name_missing = name_presence_fixture(nantare_brief, chapter_008)
+        results.append(
+            check(
+                "name-presence guard rejects a mis-transcribed focal name",
+                name_missing.returncode == 1
+                and 'MISSING FROM PROSE: "Nantare Namakula" '
+                "(focal_character.name)" in name_missing.output,
+            )
+        )
+
         stale_result = run_command(str(GATE))
         results.append(
             check(
