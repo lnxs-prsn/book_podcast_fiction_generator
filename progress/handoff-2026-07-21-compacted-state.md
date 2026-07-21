@@ -96,12 +96,14 @@ Order: **T-024 → T-026 → T-025 → T-019**; T-020 anytime.
 deterministically), ideally with T-024 + T-025 (they guard the exact return-chapter
 failure classes).
 
-**Reserved-backlog outcomes:** T-021 (mirror leak) **STRUCK — not a leak** (Assembler
-fetches from `world_rules §5`; `field_registry` not-a-leak note left). T-022 **spec'd**
-(D14) — `specs/prewriter_gate.spec.md`; slot held by marker
-`tickets/T-022-prewriter-gate-SPECD-ticket-pending.md`; its Phase-A ticket waits on
-T-024/T-026 (they extend the seed check-set), Phase B post-ch9. T-023 (curriculum
-rule-5 regression) **deferred by owner**.
+**Reserved-backlog outcomes** (each holds its slot with a marker file in `tickets/` — no
+gaps in the numbering): T-021 (mirror leak) **STRUCK — not a leak** (Assembler fetches
+from `world_rules §5`; `field_registry` not-a-leak note; marker
+`tickets/T-021-mirror-content-leak-STRUCK.md`). T-022 **spec'd** (D14) —
+`specs/prewriter_gate.spec.md`; marker `tickets/T-022-prewriter-gate-SPECD-ticket-pending.md`;
+Phase-A ticket waits on T-024/T-026 (they extend the seed check-set), Phase B post-ch9.
+T-023 (curriculum rule-5 regression) **DEFERRED by owner** — marker
+`tickets/T-023-curriculum-consistency-regression-DEFERRED.md` (scope fork noted).
 
 **Open design work (not tickets yet):** the **"shown"/C3 design pass** (before arc 3;
 prerequisite for ADV-2/RDR-2 correctness in later arcs); **B3** anti-formula specifics
@@ -131,8 +133,9 @@ the go-signal to *start*, but:
    `fiction_loop/`.
 4. `fiction_loop/human_decision.md` — design rulings (DECISIONS 1–14).
 5. `fiction_loop/core/agent_conduct.md` — binding during a chapter run.
-6. `tickets/` — drafted work orders (T-019/020/024/025/026) + the **T-022** slot marker
-   (spec'd, ticket pending T-024/T-026); `fiction_loop/specs/` for
+6. `tickets/` — drafted work orders (T-019/020/024/025/026) + status markers
+   (T-021 struck · T-022 spec'd/pending · T-023 deferred) so the numbering has no gaps;
+   `fiction_loop/specs/` for
    factory + pre-writer-gate design.
 
 Diagnostics (zero tokens): `PYTHONPATH=src .venv/bin/python fiction_loop/tools/analyst.py`
