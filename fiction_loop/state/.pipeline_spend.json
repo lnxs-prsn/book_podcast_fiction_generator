@@ -1,6 +1,6 @@
 {
-  "session_total": 0.021454635,
-  "lifetime_total": 3.6036212649999992,
+  "session_total": 0.005205645,
+  "lifetime_total": 3.6168365649999994,
   "session_started_at": "2026-07-02T16:08:48.842766+00:00",
   "entries": [
     {
@@ -297,6 +297,16 @@
       "ts": "2026-07-19T14:56:36.702034+00:00",
       "amount": 0.021455,
       "note": "update_living_doc model=deepseek-v4-pro in=34045 out=7638"
+    },
+    {
+      "ts": "2026-07-21T16:23:47.107815+00:00",
+      "amount": 0.00801,
+      "note": "generate_chapter model=deepseek-v4-pro in=6607 out=5903"
+    },
+    {
+      "ts": "2026-07-21T16:25:53.566213+00:00",
+      "amount": 0.005206,
+      "note": "revise_chapter model=deepseek-v4-pro in=3275 out=4346"
     }
   ]
 }

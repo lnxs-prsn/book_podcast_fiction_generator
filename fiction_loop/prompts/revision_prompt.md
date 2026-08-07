@@ -1,3 +1,14 @@
+# TARGETED REVISION
+
+Return the chapter unchanged EXCEPT for the flagged problems; correct ONLY those; do not rewrite, re-order, or re-invent anything else.
+
+## Correction checklist
+
+- Line 155 — HARD RULE 1 / forbidden_label: narration label 'the hypothesis tester'
+  Excerpt: **Approach 2:** Hypothesis tester (sequential testing without decomposition). Mirror content: room reorganised to match each hypothesis; red indicator pattern identical across all tests except those including audit date clause. Underlined: shape of sequence visible only in aggregate. Solver did not pause to read aggregate. Register flicker throughout. Register 2 not achieved.
+
+## Current draft
+
 # CHAPTER 009
 
 Wanjiku’s desk had a nameplate now. It sat at the edge of the old wooden surface, black lettering on gold—*Records Coordination Lead*—and she still looked at it every morning as if it might have moved in the night.

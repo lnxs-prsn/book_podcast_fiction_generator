@@ -1,4 +1,4 @@
-## FETCHED FIELDS — Chapter 008 — new_focal_character
+## FETCHED FIELDS — Chapter 009 — return_to_character:char_004
 
 ### SOURCE: /state/master_state.json
 
@@ -7,8 +7,18 @@ process_state_summary:
 {
   "op_what_is_missing": "owned",
   "op_identify_unknown": "owned",
-  "op_separate_condition": { "touch": 1, "last_chapter": "004" },
-  "op_look_at_unknown": { "touch": 1, "last_chapter": "005" }
+  "op_separate_condition": {
+    "touch": 1,
+    "last_chapter": "004"
+  },
+  "op_look_at_unknown": {
+    "touch": 1,
+    "last_chapter": "005"
+  },
+  "op_check_result": {
+    "touch": 1,
+    "last_chapter": "008"
+  }
 }
 ```
 
@@ -38,6 +48,10 @@ macro_mystery_evidence:
   {
     "chapter": "007",
     "evidence": "Five torn notebook pages from the anchor, recovered from gates in Achimota, Kumasi, Lagos, and Dakar, are discovered by a junior clerk in the Accra guildhall archives. The pages use consistent diagnostic terminology (executor, system builder, information gatherer) to classify solver approaches across different gates and cities. The pages are photocopied and sent to the senior coordinator, then shelved without review."
+  },
+  {
+    "chapter": "008",
+    "evidence": "The Kampala notebook page records two Arc 2 wrong-approach types (specialist, tester) using the anchor's diagnostic framework, expanding the taxonomy across five cities; the guild files the gate report as an 'anomalous closure' with the word 'checking' written unconsciously in the margin, continuing the pattern of the guild noticing but failing to interpret the anchor's accumulating records."
   }
 ]
 ```
@@ -45,231 +59,147 @@ macro_mystery_evidence:
 next_chapter_pointer:
 ```json
 {
-  "chapter": "008",
-  "type": "new_focal_character",
-  "char_id": null,
-  "operation_due": "op_check_result",
-  "touch_due": 1,
+  "chapter": "009",
+  "type": "return_to_character",
+  "char_id": "char_004",
+  "operation_due": "op_separate_condition",
+  "touch_due": 2,
   "name_due": true,
-  "failure_mode_to_show": "the confident specialist",
+  "failure_mode_to_show": "none",
   "secondary_touches": [],
   "echo_touch": null,
   "anchor_appears": true
 }
 ```
 
-### SOURCE: /state/process_state.json — operations with current_touch 0 or 1
+### SOURCE: /cards/characters/char_004.json — FULL CARD
 
-op_separate_condition:
-  name: "Separate the parts of the condition"
-  current_touch: 1
-  difficulty_rating: 3
-  name_at_touch: 2
-  failure_modes_not_yet_shown: []
-  contexts_not_yet_demonstrated: ["professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
+```json
+{
+  "id": "char_004",
+  "name": "Wanjiku Mwangi",
+  "age": null,
+  "occupation": "medical records clerk at a public hospital in Nairobi",
+  "location_id": "loc_nairobi",
+  "first_appeared": 4,
+  "gate_history": [
+    {
+      "gate_id": "G-004",
+      "grade": 2,
+      "operation_encountered": "op_separate_condition",
+      "approach_taken": "none — applied correctly",
+      "understood": true,
+      "looked_back": true,
+      "transferred_to_life": true
+    }
+  ],
+  "comprehension_state": {
+    "op_separate_condition": "encountered"
+  },
+  "still_gets_wrong": [],
+  "ordinary_life_state": "Back at her hospital desk, Wanjiku faces a fused memo with ten requests and three signatures, then rewrites each requirement separately and solves them one by one.",
+  "life_progression": [],
+  "ordinary_life_transfers": [],
+  "anchor_observed": false,
+  "last_seen": 4,
+  "next_planned_appearance": null
+}
+```
 
-op_use_all_data:
-  name: "Did you use all the data?"
-  current_touch: 0
-  difficulty_rating: 3
-  name_at_touch: 1
-  failure_modes_not_yet_shown: ["the confident specialist", "the hypothesis tester"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
+### SOURCE: /cards/locations/loc_nairobi.json — FULL CARD
 
-op_check_result:
-  name: "Can you check the result?"
-  current_touch: 0
-  difficulty_rating: 3
-  name_at_touch: 1
-  failure_modes_not_yet_shown: ["the confident specialist", "the hypothesis tester"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
+```json
+{
+  "id": "loc_nairobi",
+  "name": "Nairobi, Kenya",
+  "first_appeared": 4,
+  "institutional_response": {
+    "primary_body": "",
+    "approach": "",
+    "failure_mode": ""
+  },
+  "ordinary_life_texture": [
+    "Fused memos stamped URGENT — ACTION REQUIRED land on clerks' desks with multiple supervisor signatures.",
+    "A billing colleague across the aisle notices when someone stops treating the whole memo as one problem and goes still.",
+    "Office noise dips for a breath when a clerk changes register before anyone has spoken."
+  ],
+  "macro_mystery_evidence_here": [],
+  "characters_based_here": [],
+  "chapters_set_here": [
+    4
+  ]
+}
+```
 
-op_derive_differently:
-  name: "Can you derive the result differently?"
-  current_touch: 0
-  difficulty_rating: 3
-  name_at_touch: 1
-  failure_modes_not_yet_shown: ["the executor on complex condition", "the system builder on complex condition"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
+### SOURCE: /core/concept_curriculum.md — Arc 2 SECTION ONLY
 
-op_look_at_unknown:
-  name: "Look at the unknown"
-  current_touch: 1
-  difficulty_rating: 4
-  name_at_touch: 2
-  failure_modes_not_yet_shown: []
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
+#### Section 5 Arc Breakdown — Arc 2 row:
 
-op_related_problem:
-  name: "Do you know a related problem?"
-  current_touch: 0
-  difficulty_rating: 4
-  name_at_touch: 2
-  failure_modes_not_yet_shown: ["the confident specialist", "the hypothesis tester"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
+| Arc | Gate Grade | Hard Operation | Easy Pairing | New Wrong Approach Type | Narrative Engine |
+|---|---|---|---|---|---|
+| 2 | 2-3 | Do you know a related problem? / Here is a problem related to yours (4) | Did you use all the data? (3). Can you check the result? (3). Looking back / transfer (4). | Confident specialist. Hypothesis tester. | Guild methods failing on Grade 2-3. Characters with wide ordinary-life experience solving gates specialists cannot. |
 
-op_use_related_problem:
-  name: "Here is a problem related to yours and solved before"
-  current_touch: 0
-  difficulty_rating: 4
-  name_at_touch: 1
-  failure_modes_not_yet_shown: ["the confident specialist", "the hypothesis tester"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
+#### Section 4 Wrong Approach Sequencing — Arc 2 row:
 
-op_analogy:
-  name: "Analogy — simpler analogous problem"
-  current_touch: 0
-  difficulty_rating: 4
-  name_at_touch: 2
-  failure_modes_not_yet_shown: ["the executor on complex condition", "the system builder on complex condition"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
+| Arc | Wrong Approaches to Show (in sequence) | Gate Signature Sequence | Mirror Content Shown | Right Question That Arrives | Why This Sequence |
+|---|---|---|---|---|---|
+| Arc 2 | 1. The confident specialist (applies domain expertise to wrong problem type) 2. The hypothesis tester (tests systematically without naming what is being tested) | 1. Register 2 touched briefly, then lost — domain runs out. 2. Register flickers rapidly — signal noise. Then Register 2 shift after sitting down. | 1. Room organises by domain boundary. Domain elements grouped. Gap between groups contains the unknown. Solver looks inside the groups. 2. Room mirrors each hypothesis in sequence. Sequence of endings has a shape — visible only if you stop and look at all of them together. | What does this remind me of? What did I do last time the unknown looked like this? | Arc 2 mirrors show domain limits and hypothesis sequences. Reader who can read them sees the gap before the solver does. |
 
-op_looking_back:
-  name: "Looking back / transfer"
-  current_touch: 0
-  difficulty_rating: 4
-  name_at_touch: 2
-  failure_modes_not_yet_shown: ["the confident specialist", "the hypothesis tester"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
+### SOURCE: /state/process_state.json — operation_due (op_separate_condition) FIELDS ONLY
 
-op_decompose_condition:
-  name: "Decompose condition / keep part drop part"
-  current_touch: 0
-  difficulty_rating: 5
-  name_at_touch: 2
-  failure_modes_not_yet_shown: ["the executor on complex condition", "the system builder on complex condition"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
+```json
+{
+  "name": "Separate the parts of the condition",
+  "difficulty_rating": 3,
+  "arc_introduced": 1,
+  "current_touch": 1,
+  "name_attached": false,
+  "name_at_touch": 2,
+  "touch_schedule": {
+    "1": 1,
+    "2": 2
+  },
+  "touch_target": 2,
+  "prerequisite": [
+    "op_identify_unknown"
+  ],
+  "teaching_history": [
+    {
+      "chapter": "004",
+      "char_id": "char_004",
+      "touch": 1,
+      "context": "workplace"
+    }
+  ],
+  "failure_modes_shown": [
+    "the executor",
+    "the system builder",
+    "the information gatherer"
+  ],
+  "failure_modes_not_yet_shown": [],
+  "contexts_demonstrated": [
+    "workplace"
+  ],
+  "contexts_not_yet_demonstrated": [
+    "professional",
+    "family_domestic",
+    "civic_institutional",
+    "teaching_mentoring",
+    "negotiation",
+    "project_management",
+    "creative",
+    "argument_debate"
+  ],
+  "preferred_context": "workplace",
+  "transferred_to_ordinary_life": true,
+  "compressible_at_touch": 2
+}
+```
 
-op_auxiliary_elements:
-  name: "Introduce auxiliary elements"
-  current_touch: 0
-  difficulty_rating: 5
-  name_at_touch: 1
-  failure_modes_not_yet_shown: ["the executor on complex condition", "the system builder on complex condition"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
-
-op_use_result:
-  name: "Can you use the result?"
-  current_touch: 0
-  difficulty_rating: 5
-  name_at_touch: 1
-  failure_modes_not_yet_shown: ["the confident specialist", "the force applier"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
-
-op_auxiliary_problem:
-  name: "Auxiliary problem"
-  current_touch: 0
-  difficulty_rating: 6
-  name_at_touch: 2
-  failure_modes_not_yet_shown: ["the confident specialist", "the force applier"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
-
-op_generalisation:
-  name: "Generalisation"
-  current_touch: 0
-  difficulty_rating: 6
-  name_at_touch: 1
-  failure_modes_not_yet_shown: ["the information gatherer", "the perfectionist"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
-
-op_specialisation:
-  name: "Specialisation"
-  current_touch: 0
-  difficulty_rating: 5
-  name_at_touch: 1
-  failure_modes_not_yet_shown: ["the confident specialist", "the force applier"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
-
-op_working_backwards:
-  name: "Working backwards / analysis"
-  current_touch: 0
-  difficulty_rating: 7
-  name_at_touch: 2
-  failure_modes_not_yet_shown: ["the information gatherer", "the perfectionist"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
-
-op_variation_restatement:
-  name: "Variation of the problem / restatement"
-  current_touch: 0
-  difficulty_rating: 7
-  name_at_touch: 2
-  failure_modes_not_yet_shown: ["the confident specialist", "the variation-tester"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
-
-op_inventors_paradox:
-  name: "Inventor's Paradox"
-  current_touch: 0
-  difficulty_rating: 7
-  name_at_touch: 2
-  failure_modes_not_yet_shown: ["the information gatherer", "the perfectionist"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
-
-op_reductio:
-  name: "Reductio ad absurdum"
-  current_touch: 0
-  difficulty_rating: 7
-  name_at_touch: 1
-  failure_modes_not_yet_shown: ["the information gatherer", "the perfectionist"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
-
-op_heuristic_vs_proof:
-  name: "Heuristic reasoning vs proof distinction"
-  current_touch: 0
-  difficulty_rating: 8
-  name_at_touch: 2
-  failure_modes_not_yet_shown: ["the heuristic-only solver", "the guild verifier"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
-
-op_subconscious_work:
-  name: "Subconscious work"
-  current_touch: 0
-  difficulty_rating: 8
-  name_at_touch: 1
-  failure_modes_not_yet_shown: ["the heuristic-only solver", "the guild verifier"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
-
-op_auxiliary_chains:
-  name: "Auxiliary problem chains"
-  current_touch: 0
-  difficulty_rating: 8
-  name_at_touch: 1
-  failure_modes_not_yet_shown: ["the single-step auxiliary solver", "the planner without synthesis"]
-  contexts_not_yet_demonstrated: ["workplace", "professional", "family_domestic", "civic_institutional", "teaching_mentoring", "negotiation", "project_management", "creative", "argument_debate"]
-
-### SOURCE: /core/concept_curriculum.md — Arc 2 (current arc)
-
-#### Section 5 Arc Breakdown — Arc 2 row
-
-| Field | Value |
-|---|---|
-| Arc | 2 |
-| Gate Grade | 2-3 |
-| Hard Operation | Do you know a related problem? / Here is a problem related to yours (4) |
-| Easy Pairing | Did you use all the data? (3). Can you check the result? (3). Looking back / transfer (4). |
-| New Wrong Approach Type | Confident specialist. Hypothesis tester. |
-| Narrative Engine | Guild methods failing on Grade 2-3. Characters with wide ordinary-life experience solving gates specialists cannot. |
-
-#### Section 4 Wrong Approach Sequencing — Arc 2 row
-
-| Field | Value |
-|---|---|
-| Arc | 2 |
-| Wrong Approaches (in sequence) | 1. The confident specialist (applies domain expertise to wrong problem type). 2. The hypothesis tester (tests systematically without naming what is being tested). |
-| Gate Signature Sequence | 1. Register 2 touched briefly, then lost — domain runs out. 2. Register flickers rapidly — signal noise. Then Register 2 shift after sitting down. |
-| Mirror Content Shown | 1. Room organises by domain boundary. Domain elements grouped. Gap between groups contains the unknown. Solver looks inside the groups. 2. Room mirrors each hypothesis in sequence. Sequence of endings has a shape — visible only if you stop and look at all of them together. |
-| Right Question That Arrives | What does this remind me of? What did I do last time the unknown looked like this? |
-| Why This Sequence | Arc 2 mirrors show domain limits and hypothesis sequences. Reader who can read them sees the gap before the solver does. |
-
-### SOURCE: /state/mystery_anchor.json — observable_log (last 3 entries)
+### SOURCE: /state/mystery_anchor.json — observable_log LAST 3 ENTRIES ONLY
 
 ```json
 [
-  {
-    "chapter": "005",
-    "observation": "Grade 1–2 / executor / room emphasises sequential file order; gap: unstamped envelope (slot L7); Reg 1 throughout; closure attempt min 10 — failed\nGrade 1–2 / system builder / room mirrors categorical grid; gap: categorisation ignores evidentiary type; Reg flicker 1→3→1; closure attempt min 14 — failed\nGrade 1–2 / information gatherer / room yields complete audit; gap: no question asked of data; Reg 1 undisturbed; closure attempt min 18 — failed\nGrade 1–2 / correct / Reg 2 at threshold-standing (min 19:03); Reg 3 at right question (min 19:47); gate closed min 20",
-    "location": "loc_dakar",
-    "manifestation": "seen"
-  },
   {
     "chapter": "006",
     "observation": "Gate G-006 (Grade 2)\nEntrants: four.\nApproach A (executive pattern-match) — Register 1 throughout. Room sorts by colour; hook 4 remains empty, not receding.\nApproach B (grid taxonomy) — Register 1 with false 3 flicker on completion. Room mirrors categorical grid; hook 4 sits in cell 'unmatched'.\nApproach C (full audit) — Register 1 undisturbed. Room yields complete catalogue; item 4 listed as 'empty', no query.\nTimeout at 14:02:17 — no closure.\nApproach D (threshold-standing, gaze-to-gaps) — Register 2 at sit. Hand on hook 4 at 14:03:51. Latch at 14:04:03. Gate closed 14:04:05.\n— Gap: absence unnamed by A, B, C. Named by D.",
@@ -281,27 +211,12 @@ op_auxiliary_chains:
     "observation": "UNDETERMINED — no verbatim notebook entry in chapter prose; a junior clerk at the Accra guildhall discovers five torn notebook pages in a folder labelled 'Unidentified Documents—Gates'. Three share the same notebook stock. Each page records gate events with solver approaches, register timestamps, and missed observations. The terms 'executor', 'system builder', and 'information gatherer' recur across all five pages. The pages were recovered from gates in Achimota, Kumasi, Lagos, and Dakar. The clerk photocopies them and sends them to the senior coordinator, where they are filed without review.",
     "location": "loc_accra",
     "manifestation": "notebook_page"
+  },
+  {
+    "chapter": "008",
+    "observation": "Grade 2. Specialist approach. Room organised by chemical category — all analgesics grouped, all antibiotics grouped, all cardiovascular agents grouped. Reference chart outside groups, dim. Domain boundary visible as gap between analgesic and cardiovascular clusters. Underlined: gap between groups contained the correct formulation. Solver did not look at the gap. Register 2 at minute 8, lost at minute 11. No closure.\n\nGrade 2. Tester approach. Room mirrored each configuration in sequence — twelve arrangements, each ending at panel. Panel present in every configuration, unactivated. Underlined: panel was the test. Solver never asked what was being tested. Register flicker throughout. No sitting down. No closure.",
+    "location": "loc_kampala",
+    "manifestation": "notebook_page"
   }
 ]
 ```
-
-### SOURCE: /cards/concept/op_check_result.json (operation_due)
-
-physical_anchor: "Standing at the gate after the solution, waiting; not assuming closure."
-
-canonical_problem_structure:
-```json
-{
-  "unknown": "Clear, with a plausible solution easy to produce.",
-  "data": ["Supports two candidates — one correct, one method-correct but wrong."],
-  "condition": "Contains a built-in way to test a candidate against the original requirement."
-}
-```
-
-canonical_correct_approach: "Do not stop at 'the method worked'; test the result against the condition itself."
-
-preferred_context: "professional"
-
-name_at_touch: 1
-
-difficulty_rating: 3

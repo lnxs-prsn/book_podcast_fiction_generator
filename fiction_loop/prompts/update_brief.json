@@ -1,39 +1,39 @@
 {
-  "chapter": "008",
-  "chapter_type": "new_focal_character",
+  "chapter": "009",
+  "chapter_type": "return_to_character",
   "focal_character": {
-    "id": "char_008",
-    "is_new": true,
-    "name": "Nantale Namakula",
-    "occupation": "community pharmacist",
-    "city": "Kampala",
+    "id": "char_004",
+    "is_new": false,
+    "name": "Wanjiku Mwangi",
+    "occupation": "Records Coordination Lead at a public hospital in Nairobi",
+    "city": "Nairobi",
     "age": null,
     "gate_visited": {
-      "gate_id": "G-008",
+      "gate_id": "G-009",
       "grade": 2,
-      "operation_encountered": "op_check_result",
+      "operation_encountered": "op_separate_condition",
       "approach_taken": "none — applied correctly",
       "understood": true,
       "looked_back": true,
       "transferred_to_life": true
     },
     "comprehension_changes": {
-      "op_check_result": "understood"
+      "op_separate_condition": "understood"
     },
-    "ordinary_life_state": "Working at her community pharmacy on Nakasero Road, verifying dispensed prescriptions against patient record cards before release.",
-    "life_progression_shown": null
+    "ordinary_life_state": "In a Ministry budget review meeting, Wanjiku separates a fused three-signature motion into individual approval lines, crosses out all but one, and identifies the County Board signature as the binding one — the motion passes in six minutes.",
+    "life_progression_shown": true
   },
   "other_entrants": [
     {
-      "id": "char_008a",
-      "name": "Dr. Akello",
+      "id": "char_009a",
+      "name": "Mr. Okoth",
       "is_new": true,
       "approach_taken": "the confident specialist",
       "operations_applied": []
     },
     {
-      "id": null,
-      "name": null,
+      "id": "char_009b",
+      "name": "Dr. Achieng",
       "is_new": true,
       "approach_taken": "the hypothesis tester",
       "operations_applied": []
@@ -41,26 +41,26 @@
   ],
   "secondary_touch_updates": [],
   "names_used_this_chapter": [
-    "Nantale Namakula",
-    "Dr. Akello",
-    "Moses"
+    "Karimi",
+    "Mr. Okoth",
+    "Dr. Achieng"
   ],
   "gate_details": {
     "problem_structure": {
-      "unknown": "How to fill the order correctly when two candidate solutions both appear to match the written slip",
+      "unknown": "Which of the three fused conditions — seal, stamp, or audit date — is the single binding clause",
       "data": [
-        "Two sets of containers on the shelf, both matching the written order slip — one set matches by standard-formulation protocol, the other matches when cross-referenced against the reference chart",
-        "A written order slip on the counter beside a flat square verification panel",
-        "A reference chart pinned to the wall above the shelves showing formulary cross-references and interaction corrections",
-        "A flat square verification panel on the counter, dark and faintly warm"
+        "A metal panel with engraved text listing three requirements fused as one directive",
+        "Three walls of shelving stacked with brown document boxes grouped by department, year, and audit files",
+        "A filing card stack and the most recent audit date visible on the audit shelf box",
+        "An indicator light system that responds differently to each clause tested individually"
       ],
-      "condition": "The filled order must be placed on the verification panel and the panel must light green — a protocol-only fill that ignores the reference chart will not pass"
+      "condition": "All three requirements are presented as a single fused directive; satisfying all three simultaneously stalls, but only one actually binds — the gate does not reveal which until each clause is isolated and tested alone"
     },
-    "correct_approach": "Read the reference chart to cross-check the order slip against known interactions and corrections; select the chart-correct set rather than the protocol-correct set; place it on the verification panel; press the panel and wait for the green light before assuming closure."
+    "correct_approach": "Separate the fused condition into individual clauses by physically covering each one with a palm, ask whether the gate requires each clause alone, observe which clause triggers the gate's response — the audit date — and satisfy only that clause to close the gate."
   },
   "process_updates": {
-    "operation": "op_check_result",
-    "new_touch": 1,
+    "operation": "op_separate_condition",
+    "new_touch": 2,
     "failure_modes_shown_this_chapter": [
       "the confident specialist",
       "the hypothesis tester"
@@ -71,33 +71,33 @@
     "transferred": true
   },
   "location_updates": {
-    "location_id": "loc_kampala",
-    "new_chapter_added": "008",
+    "location_id": "loc_nairobi",
+    "new_chapter_added": "009",
     "new_texture": [
-      "Community pharmacies on Nakasero Road fill overnight prescriptions left by junior dispensers, with patient record cards stored in a file rack behind the counter for cross-reference during morning verification.",
-      "Pickup trays hold filled prescriptions awaiting final verification before release to patients.",
-      "Regular customers at neighbourhood pharmacies maintain years-long relationships with their pharmacist."
+      "Ministry budget review meetings on Kenyatta Avenue are held in rooms with non-functional projectors where fused multi-signature motions routinely stall until someone separates the requirements into individual approval lines.",
+      "A Records Coordination Lead nameplate — black lettering on gold — marks the desk where memos now land first instead of the third-floor clerk stack, a visible step up in responsibility.",
+      "Inter-departmental budget negotiations stall when each representative waits for another to commit first; naming the single binding signature unblocks the entire group without explanation."
     ]
   },
   "anchor_update": {
     "appeared": true,
-    "manifestation": "notebook_page",
-    "observation": "Grade 2. Specialist approach. Room organised by chemical category — all analgesics grouped, all antibiotics grouped, all cardiovascular agents grouped. Reference chart outside groups, dim. Domain boundary visible as gap between analgesic and cardiovascular clusters. Underlined: gap between groups contained the correct formulation. Solver did not look at the gap. Register 2 at minute 8, lost at minute 11. No closure.\n\nGrade 2. Tester approach. Room mirrored each configuration in sequence — twelve arrangements, each ending at panel. Panel present in every configuration, unactivated. Underlined: panel was the test. Solver never asked what was being tested. Register flicker throughout. No sitting down. No closure.",
-    "location": "loc_kampala",
-    "reader_can_suspect_update": "The anchor's Kampala notebook page omits the correct approach for the first time, recording only the two failed approaches before departing — suggesting the anchor either knew Nantale would succeed or deliberately left the page as a clue rather than a complete record."
+    "manifestation": "seen",
+    "observation": "Grade: 2.\nApproach 1: Specialist (archival domain). Domain-organised room — boxes grouped by lifecycle stage. Mirror content: gap between audit shelf and department shelf. Underlined: gap present from minute 4, never addressed. Register 2 at minute 2, lost at minute 3. Register 1 thereafter.\nApproach 2: Sequential testing (without decomposition). Mirror content: room reorganised to match each hypothesis; red indicator pattern identical across all tests except those including audit date clause. Underlined: shape of sequence visible only in aggregate. Solver did not pause to read aggregate. Register flicker throughout. Register 2 not achieved.\nApproach 3: Condition separator. Gesture: manual occlusion of individual clauses. Mirror content: gap between clusters held from approach 1, still present at sitting down. Underlined: gate registered clause-level question before action (Register 3 at minute 4 of attempt). Closure at minute 5.\nNote: Nairobi. Same gap structure as Kampala Grade 2. Specialist ignored domain boundary. Tester ignored aggregate shape. Separator read the gap directly. Pattern holds across 1,200 km.",
+    "location": "loc_nairobi",
+    "reader_can_suspect_update": "The anchor's Nairobi notebook entry explicitly compares the gate structure to Kampala's Grade 2 and notes the same gap pattern holds across 1,200 km, confirming he is mapping gate problem-types geographically and tracking which structures repeat in which cities — the gates are not random local events but a unified phenomenon with repeating patterns."
   },
   "macro_mystery_update": {
     "evidence_planted": true,
-    "evidence": "The Kampala notebook page records two Arc 2 wrong-approach types (specialist, tester) using the anchor's diagnostic framework, expanding the taxonomy across five cities; the guild files the gate report as an 'anomalous closure' with the word 'checking' written unconsciously in the margin, continuing the pattern of the guild noticing but failing to interpret the anchor's accumulating records."
+    "evidence": "The anchor's Nairobi notebook entry labels the correct approach as 'Condition separator' — a new positive category in his growing taxonomy — and explicitly notes that the same gap structure as Kampala Grade 2 repeats in Nairobi, 1,200 km away, confirming he is mapping gate-type geography and that identical problem structures recur across the continent."
   },
   "next_chapter_pointer": {
-    "chapter": "009",
-    "type": "return_to_character",
-    "char_id": "char_004",
-    "operation_due": "op_separate_condition",
-    "touch_due": 2,
+    "chapter": "010",
+    "type": "new_focal_character",
+    "char_id": null,
+    "operation_due": "op_use_all_data",
+    "touch_due": 1,
     "name_due": true,
-    "failure_mode_to_show": "none",
+    "failure_mode_to_show": "the hypothesis tester",
     "secondary_touches": [],
     "echo_touch": null,
     "anchor_appears": true

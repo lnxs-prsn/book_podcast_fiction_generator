@@ -4,6 +4,9 @@
 .env.*.local
 api_keys.txt
 
+# Personal / job-application documents — never belong in a public repo
+jobposting*.md
+
 # Python-generated files
 __pycache__/
 *.py[oc]

@@ -1,26 +1,26 @@
-## CONSISTENCY REPORT — Chapter 008
+## CONSISTENCY REPORT — Chapter 009
 
 ### VOICE CHECKS
-V1 — Failure mode available before touch: **PASS** — touch_due=1, failure_mode_to_show="the confident specialist" is present (non-null, non-empty) in next_chapter_pointer.
-V2 — Multiple new operations: **PASS** — exactly one operation_due (op_check_result), secondary_touches=[], echo_touch=null. Well within the 4 touch-event/chapter cap.
-V3 — Owned operation re-explained: **SKIP** — POST-ASSEMBLY check only; runs at step 7.5 against assembled_prompt.md.
+V1 — Failure mode available before touch: PASS (touch_due == 2, not 1 — no failure_mode_to_show needed before this operation's touch)
+V2 — Multiple new operations: PASS (exactly one operation_due: op_separate_condition; secondary_touches: 0; echo_touch: null)
+V3 — Owned operation re-explained: POST-ASSEMBLY (step 7.5)
 
 ### CONTINUITY CHECKS
-C1 — Failure mode already shown: **PASS** — op_check_result failure_modes_shown is empty; "the confident specialist" has not been shown for this operation.
-C2 — Character/operation overlap: **SKIP** — chapter_type=new_focal_character, no character card exists yet, nothing to check.
-C3 — Anchor present on gate chapter: **PASS** — chapter_type=new_focal_character (gate chapter), anchor_appears=true.
-C4 — Ordinary life echo context: **SKIP** — POST-ASSEMBLY check only; runs at step 7.5 against assembled_prompt.md.
+C1 — Failure mode already shown: PASS (failure_mode_to_show is "none" — not in failure_modes_shown list)
+C2 — Character/operation overlap: FLAG (char_004 already encountered op_separate_condition at chapter 004, touch 1. This is intentional return for touch_2 — confirm with Assembler.)
+C3 — Anchor present on gate chapter: PASS (anchor_appears = true on return_to_character gate chapter)
+C4 — Ordinary life echo context: POST-ASSEMBLY (step 7.5)
 
 ### CURRICULUM CHECKS
-CR1 — Touch number correct: **PASS** — touch_due=1, op_check_result current_touch=0, expected=1 (0+1).
-CR2 — Grade/arc consistency: **PASS** — op_check_result difficulty_rating=3 falls within Arc 2's gate grade band (2-3) and operation difficulty band (3-4). Listed as an Arc 2 Easy Pairing in concept_curriculum.md.
-CR3 — Prerequisite gate: **PASS** — op_check_result prerequisite "op_identify_unknown" is at current_touch=2 (>=2). Chronological mastery ladder satisfied.
+CR1 — Touch number correct: PASS (touch_due 2 == current_touch 1 + 1)
+CR2 — Grade/arc consistency: PASS (difficulty_rating 3 is within Arc 2 band 2-3)
+CR3 — Prerequisite gate: PASS (prerequisite op_identify_unknown has current_touch 2 >= 2)
 
 ### ANCHOR CHECKS
-A1 — Hidden coherence exposure: **PASS** — no hidden_coherence content (fields or the string itself) found anywhere in fetched_fields.md.
-A2 — Anchor interiority: **PASS** — observable_log entries (chapters 005, 006, 007) are purely observational. No anchor thoughts, motives, or inner state described.
+A1 — Hidden coherence exposure: PASS (no hidden_coherence content found in fetched_fields.md)
+A2 — Anchor interiority: PASS (observable_log entries are observational only — no thoughts, motives, or inner state)
 
 ### SUMMARY
 BLOCK conditions: NONE
-FLAG conditions: NONE
-Recommendation: PROCEED — all step-5 checks pass. Post-assembly checks (V3, C4, A2b, C3b) deferred to step 7.5.
+FLAG conditions: C2 — character already encountered op_separate_condition at chapter 004 (touch 1); intentional return for touch_2
+Recommendation: PROCEED — flag C2 is expected for return_to_character at touch_2

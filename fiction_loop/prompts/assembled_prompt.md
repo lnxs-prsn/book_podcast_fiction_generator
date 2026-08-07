@@ -1,4 +1,4 @@
-# CHAPTER 008 — GENERATION PROMPT
+# CHAPTER 009 — GENERATION PROMPT
 
 ## VOICE RULES
 
@@ -36,100 +36,21 @@ The gap between observation and meaning is the teaching moment. Do not close it.
 *"She did not open the first file. She looked at the problem the way she had looked at the room. What is not here that should be? She found it in four minutes."*
 
 ### Never:
-| Prohibition | Why |
-|---|---|
-| Breaking the fourth wall | The reader's hypotheses must be activated by prose, not instruction. Any direct address to the reader admits the prose is not doing its job. |
-| A wrong approach that looks obviously wrong from the start | The reader must believe in the approach before it fails. Otherwise the failure teaches nothing. |
-| Vague failure | "It didn't work" is not failure. Show exactly what happened when the wrong approach met this gate. |
-| The sitting down arriving before wrong approaches are exhausted | A cheap sitting down produces a cheap right question. The reader must have run out of their own hypotheses first. |
-| The right question arriving as a revelation | It arrives as a relief. Matter-of-fact. Not dramatic. The drama was in the failure sequence. |
-| The solution being dramatic | The gate closes quietly. The emotional weight was in the question, not the answer. |
-| The ordinary life echo being labelled as connected to the gate | Reader makes the connection. Never state it. Never have the character think "just like the gate." The echo scene must show at least one other person's involuntary response to the right question — someone going still, a conversation changing register. This is the ordinary life substitute for gate register behaviour. |
-| The mystery person given interiority or explanation | Observable only. What they see, what they note. Never what they know or why. |
-| An operation named before the cost has been felt | Name arrives after experience. Always. |
-| Re-explaining an operation the character already owns | Use it naturally or do not use it. |
-| Power substituting for understanding on any gate above Grade 1 | The physics of the world forbids this. |
-| The gate explaining itself | Gates contain data. They do not label their own structure. The mirror shows. It does not point. Any sentence that states what the mirror is reflecting — rather than describing what the room looks like — is a violation. |
-| More than two sentences connecting a physical experience to its label | One sentence maximum for the name attachment. |
-| A technique succeeding perfectly the first time | No operation is demonstrated on first use without prior failure. |
+- Breaking the fourth wall — the reader's hypotheses must be activated by prose, not instruction.
+- A wrong approach that looks obviously wrong from the start — the reader must believe in it before it fails.
+- Vague failure — "it didn't work" is not failure. Show exactly what happened when the wrong approach met this gate.
+- The sitting down arriving before wrong approaches are exhausted — a cheap sitting down produces a cheap right question.
+- The right question arriving as a revelation — it arrives as a relief. Matter-of-fact.
+- The solution being dramatic — the gate closes quietly.
+- The ordinary life echo being labelled as connected to the gate — reader makes the connection. Never state it. Never have the character think "just like the gate."
+- The mystery person given interiority or explanation — observable only.
+- An operation named before the cost has been felt — name arrives after experience.
+- Re-explaining an operation the character already owns — use it naturally or do not use it.
+- Power substituting for understanding on any gate above Grade 1.
+- The gate explaining itself — gates contain data. They do not label their own structure. The mirror shows. It does not point.
+- More than two sentences connecting a physical experience to its label.
+- A technique succeeding perfectly the first time — no operation is demonstrated on first use without prior failure.
 
----
-
-## WRITING THE MIRROR
-*The mirror is the hardest element to write correctly. These rules govern every scene where gate mirror behaviour appears.*
-
-### The core constraint: show the arrangement, not the meaning
-The gate's mirror is physical. It is a reorganisation of the room's contents — light, objects, surfaces, spatial relationships. The prose describes what the room looks like. It never states what the room is showing. The reader who has learned to read registers will read the mirror. The reader who has not will experience the room as strange without knowing why. Both responses are correct.
-
-**WRONG — stating the mirror's meaning:**
-*"The room had arranged itself to reflect Kwame's assumption. The boxes were clustered by size, exactly as he had been sorting them, as if the gate were showing him that size was not the relevant property."*
-
-**RIGHT — showing the arrangement:**
-*"The boxes were in three groups now. He had not moved them all. The large ones were together. The medium ones. The small. He looked at the groups. He had done that. But the groups were more distinct than he had left them — edges aligned, spacing even. He had not done that."*
-
-The reader asks: why is the room more organised than he left it? The mirror is operating. The prose does not answer. The reader holds the question.
-
-### The mirror shifts when the approach shifts
-When a solver changes wrong approach — or sits down — the room changes. This change is described physically. It is never attributed to the gate explicitly in early arcs. Later arcs may allow characters to notice the correlation without stating what it means.
-
-**Early arc (Arc 1-2) — no attribution:**
-*"She sat down. The room was different when she looked up. The light was not where it had been. She had been inside for forty minutes."*
-
-**Later arc (Arc 4-5) — noticed but not named:**
-*"He sat down. The room shifted — he had learned to expect this, though he could not have said when he had learned it. Something moved to the foreground. He looked at it the way he had learned to look: not at what it was, but at why it was now visible."*
-
-### The mirror content must match the wrong approach type precisely
-Every wrong approach type has a specific mirror content (see world_rules.md Section 5). The prose must render that specific content — not a generic "the room shifted." The executor's mirror emphasises the obvious pattern. The information gatherer's mirror gives completeness. These are different rooms. Write them as different rooms.
-
-### The mirror in the sitting down is the pivot
-The most important mirror moment is during the sitting down. This is when the mirror becomes readable — because the wrong approach has stopped and the solver is looking at the room rather than acting on it. The prose must show the solver's gaze changing: from operational (looking for what to do next) to structural (looking at what is there).
-
-**The gaze change:**
-*"She stopped sorting. She put the last box down. She looked at the room — not at the boxes but at the room. The way it was arranged. Who had arranged it like that. She had not. Or she had, and had not noticed. She looked at the part she had not touched."*
-
-### Mystery person mirror notation
-The mystery person reads mirror content directly. Their notebook records what the room showed, not what the solver did.
-
-**Notebook format:**
-- Gate grade.
-- Approach type identified (executor / gatherer / etc).
-- Mirror content: one precise physical description of what the room showed.
-- Underlined: the gap — what the mirror showed was missing from the solver's frame.
-- Register at sitting down. Register at right question. Time between.
-
-**Example:**
-*Grade 2. Specialist approach. Room organised by domain category — all chemical markers grouped, all mechanical elements grouped. Domain boundary visible as gap between groups. Underlined: gap between groups contained the unknown. Solver did not look at the gap. Register 2 at minute 31. Register 3 at minute 34. Three minutes from sitting down to right question.*
-
----
-
-## THE MYSTERY PERSON — VOICE RULES
-
-The mystery person is never explained through their own words. They are described through what they do, where they go, what they notice. Their observations are precise. Their conclusions are never stated.
-
-**The mystery person reads mirrors, not solvers.** Solver interiority is invisible. Gate mirror content is observable. The mystery person's notebook tracks what gates show — across many solvers, many cities, many grades. The pattern they are building is a pattern in what the gates keep reflecting. The reader, who has learned to read mirror content, can follow this pattern. Most characters cannot.
-
-When the mystery person's perspective is shown: short. Observational. No interiority. They read the room's arrangement. They note what it showed. They note the gap. They move on.
-
-**WRONG — observing solver behaviour:**
-*"The observer watched the young woman stand still at the gate entrance. She was doing what so few did — looking before entering."*
-
-**WRONG — register only, no mirror content:**
-*"Threshold, four minutes. Gate held Register 1 until minute four. Shifted Register 2 at minute four, eleven seconds — before entry."*
-
-**RIGHT — reading mirror content:**
-*"Grade 1. Executor approach. Room emphasised the size sequence — boxes graduated, spacing increased with size. Obvious pattern made more obvious. Underlined: one box outside the sequence. Solver did not look at it. Register 2 at minute 22. Register 3 at minute 24."*
-
-The mystery person's notebook entries follow this format:
-- Gate grade.
-- Approach type.
-- Mirror content: one precise physical description of what the room showed.
-- Underlined: the gap the mirror was showing that the solver missed or found.
-- Register log: time-stamped transitions.
-- Nothing else. No interpretation of what the gates mean overall.
-
-The hidden coherence layer — what the mystery person is building toward, what the gates are communicating at the macro level — is NEVER present in prose. It exists only in mystery_anchor.json for planning purposes.
-
----
 
 ## WORLD RULES
 
@@ -169,140 +90,228 @@ The gate enters Register 3 before the solver acts on the right question. The gat
 **Rule 12: The mirror is always operating. It is never explained by the gate.**
 The gate reorganises itself to reflect the solver's current mental frame at all times. It does not label what it is showing. It does not indicate that it is showing anything. A solver who cannot read the mirror experiences the gate as inert or arbitrary. A solver who can read it has been given the question by the gate itself. The mirror requires the same mental operations to read as the gate requires to close — a solver without working backwards cannot read a Grade 4 mirror. Violation: the gate indicates, labels, or draws attention to what it is reflecting. The mirror shows. It does not point.
 
----
+
+## WRITING THE MIRROR
+*The mirror is the hardest element to write correctly. These rules govern every scene where gate mirror behaviour appears.*
+
+### The core constraint: show the arrangement, not the meaning
+The gate's mirror is physical. It is a reorganisation of the room's contents — light, objects, surfaces, spatial relationships. The prose describes what the room looks like. It never states what the room is showing. The reader who has learned to read registers will read the mirror. The reader who has not will experience the room as strange without knowing why. Both responses are correct.
+
+**WRONG — stating the mirror's meaning:**
+*"The room had arranged itself to reflect Kwame's assumption. The boxes were clustered by size, exactly as he had been sorting them, as if the gate were showing him that size was not the relevant property."*
+
+**RIGHT — showing the arrangement:**
+*"The boxes were in three groups now. He had not moved them all. The large ones were together. The medium ones. The small. He looked at the groups. He had done that. But the groups were more distinct than he had left them — edges aligned, spacing even. He had not done that."*
+
+The reader asks: why is the room more organised than he left it? The mirror is operating. The prose does not answer. The reader holds the question.
+
+### The mirror shifts when the approach shifts
+When a solver changes wrong approach — or sits down — the room changes. This change is described physically. It is never attributed to the gate explicitly in early arcs. Later arcs may allow characters to notice the correlation without stating what it means.
+
+**Early arc (Arc 1-2) — no attribution:**
+*"She sat down. The room was different when she looked up. The light was not where it had been. She had been inside for forty minutes."*
+
+**Later arc (Arc 4-5) — noticed but not named:**
+*"He sat down. The room shifted — he had learned to expect this, though he could not have said when he had learned it. Something moved to the foreground. He looked at it the way he had learned to look: not at what it was, but at why it was now visible."*
+
+### The mirror content must match the wrong approach type precisely
+Every wrong approach type has a specific mirror content. The prose must render that specific content — not a generic "the room shifted." The executor's mirror emphasises the obvious pattern. The information gatherer's mirror gives completeness. These are different rooms. Write them as different rooms.
+
+### The mirror in the sitting down is the pivot
+The most important mirror moment is during the sitting down. This is when the mirror becomes readable — because the wrong approach has stopped and the solver is looking at the room rather than acting on it. The prose must show the solver's gaze changing: from operational (looking for what to do next) to structural (looking at what is there).
+
+**The gaze change:**
+*"She stopped sorting. She put the last box down. She looked at the room — not at the boxes but at the room. The way it was arranged. Who had arranged it like that. She had not. Or she had, and had not noticed. She looked at the part she had not touched."*
+
+### Wrong Approach Mirror Behaviour — this chapter's types
+
+**The confident specialist:**
+Gate signature: Register 2 touched briefly, then lost — domain runs out.
+Mirror content: Room organises by domain boundary. Domain elements grouped. Gap between groups contains the unknown. Solver looks inside the groups.
+What a mirror-reader sees: Your expertise organised part of the room. The rest did not organise. The part that did not organise is the gate.
+
+**The hypothesis tester:**
+Gate signature: Register flickers rapidly — signal noise. Each test briefly held, then dropped.
+Mirror content: Room mirrors each hypothesis in sequence. Sequence of endings has a shape — visible only if you stop and look at all of them together.
+What a mirror-reader sees: You have been shown many mirrors in sequence. Each showed you what you assumed that time. Looked at together, they show what you have not yet assumed.
+
+
+## THE MYSTERY PERSON — VOICE RULES
+
+The mystery person is never explained through their own words. They are described through what they do, where they go, what they notice. Their observations are precise. Their conclusions are never stated.
+
+**The mystery person reads mirrors, not solvers.** Solver interiority is invisible. Gate mirror content is observable. The mystery person's notebook tracks what gates show — across many solvers, many cities, many grades. The pattern they are building is a pattern in what the gates keep reflecting. The reader, who has learned to read mirror content, can follow this pattern. Most characters cannot.
+
+When the mystery person's perspective is shown: short. Observational. No interiority. They read the room's arrangement. They note what it showed. They note the gap. They move on.
+
+**WRONG — observing solver behaviour:**
+*"The observer watched the young woman stand still at the gate entrance. She was doing what so few did — looking before entering."*
+
+**WRONG — register only, no mirror content:**
+*"Threshold, four minutes. Gate held Register 1 until minute four. Shifted Register 2 at minute four, eleven seconds — before entry."*
+
+**RIGHT — reading mirror content:**
+*"Grade 1. Executor approach. Room emphasised the size sequence — boxes graduated, spacing increased with size. Obvious pattern made more obvious. Underlined: one box outside the sequence. Solver did not look at it. Register 2 at minute 22. Register 3 at minute 24."*
+
+The mystery person's notebook entries follow this format:
+- Gate grade.
+- Approach type.
+- Mirror content: one precise physical description of what the room showed.
+- Underlined: the gap the mirror was showing that the solver missed or found.
+- Register log: time-stamped transitions.
+- Nothing else. No interpretation of what the gates mean overall.
+
+The hidden coherence layer — what the mystery person is building toward, what the gates are communicating at the macro level — is NEVER present in prose. It exists only in mystery_anchor.json for planning purposes.
+
 
 ## THIS CHAPTER
 
-**Chapter type:** new_focal_character
-**Chapter number:** 008
+**Chapter type:** return_to_character
+**Chapter number:** 009
 
 **Focal character:**
-Nantale Namakula, community pharmacist, Kampala, Uganda. She is thirty-six, runs a small pharmacy in the Nakasero neighbourhood, and has done so for twelve years. She is methodical, precise, and trusted — her regular customers bring her prescriptions from three different clinics because she is the one who catches the interactions the clinics miss. She is unmarried, lives alone in a flat above the pharmacy, and has never entered a gate. Her work has taught her a specific habit: she does not hand a filled prescription across the counter without reading the patient's chart. She knows — from twelve years of catching errors — that a correct protocol and a correct result are not the same thing. She does not call this a skill. It is just how she works.
+Wanjiku Mwangi — medical records clerk at a public hospital in Nairobi, Kenya. She first appeared in chapter 004, where she encountered the gate operation "separate the parts of the condition" (touch 1) and transferred it to ordinary life when she rewrote a fused hospital memo — separating ten fused requests with three signatures into individual requirements and solving them one by one.
 
-**Situation at chapter open:** A gate opens near the Nakasero market on a Tuesday morning. Nantale is pulled in along with several others. The gate interior looks nothing like a pharmacy but its structure — a problem with two candidate solutions, one method-correct and one actually correct — is familiar to her in a way she cannot yet name.
+Her gate history: G-004 (Grade 2). She applied the operation correctly. She understood it. She looked back after closure. She transferred it to ordinary life.
 
-**Cast — BEAT QUOTA (Arc 2):**
-This chapter requires EXACTLY TWO (2) wrong-approach solver scenes: the confident specialist and the hypothesis tester. Each requires a full dramatized scene (approach feels competent → its mirror shift → its specific physical failure). The labels are internal (rule 1 of HARD RULES): show each behaviour, never the label. Before returning, COUNT your fully dramatized wrong-approach scenes; a chapter with fewer scenes than the quota FAILS regardless of word count.
+Her comprehension state for this operation is "encountered" — this chapter is touch 2, where she applies it to a new context and earns ownership.
 
-The gate shows multiple solvers. AT LEAST ONE must be a fully improvised newcomer — a brand-new walk-in, appearing for the first time in the book. The confident specialist should be this newcomer. Name only solvers who matter — every named solver enters the permanent record.
+Her ordinary_life_state after chapter 004: *Back at her hospital desk, Wanjiku faces a fused memo with ten requests and three signatures, then rewrites each requirement separately and solves them one by one.*
 
-**Wrong-approach solvers to dramatize:**
+**LIFE PROGRESSION (owner rule F14):** Wanjiku's life has visibly moved forward since chapter 004. Her previous ordinary_life_state was the fused-memo breakthrough. Show tangible forward movement: a promotion, increased responsibility, new authority over records processes, or recognition from hospital administration — something nameable that the reader can see. Never attribute this progress to the gate. The reader makes the connection.
 
-**Solver 1 — INTERNAL LABEL "the confident specialist" (never in prose):** A trained guild solver — the improvised newcomer. This is their first appearance in the book. They are a senior chemist or laboratory analyst from another city, someone whose professional domain overlaps with the gate's surface appearance. BEHAVIOR TO SHOW (from correspondence_map §3): Moves with authority. References past gate successes. Dismisses elements that do not fit their frame. Applies deep expertise from one domain to a problem that is not in that domain. GATE SIGNATURE (from world_rules §5): Register 2 touched briefly, then lost — the domain runs out. MIRROR CONTENT: Room organises by domain boundary. Domain elements grouped. Gap between groups contains the unknown. Solver looks inside the groups.
+**City:** Nairobi, Kenya. Ordinary life texture includes: fused memos stamped URGENT — ACTION REQUIRED landing on clerks' desks with multiple supervisor signatures; a billing colleague across the aisle noticing when someone stops treating the whole memo as one problem and goes still; office noise dipping for a breath when a clerk changes register before anyone has spoken.
 
-**Solver 2 — INTERNAL LABEL "the hypothesis tester" (never in prose):** A second solver — local, unaffiliated, perhaps a university student or a market trader with an analytical bent. BEHAVIOR TO SHOW (from correspondence_map §3): Tries one thing, observes, tries another. Rapid iteration. Scientific-looking. Generates and tests alternatives systematically. Never stops to ask what is actually being tested. GATE SIGNATURE (from world_rules §5): Register flickers rapidly — signal noise. Each test briefly held, then dropped. MIRROR CONTENT: Room mirrors each hypothesis in sequence. Each is shown clearly. Each is also shown ending. The sequence of endings has a shape — visible only if you stop and look at all of them together.
+**Cast (owner rules D6/D7/F15) — BEAT QUOTA: Arc 2 requires EXACTLY TWO (2) wrong-approach solver scenes: the confident specialist / the hypothesis tester.**
 
-**Secondary touches:** None this chapter. (pointer.secondary_touches is empty.)
+EACH requires a full dramatized scene: the approach shown feeling competent → its specific mirror shift → its specific physical failure.
 
-**Echo touch:** None this chapter. (pointer.echo_touch is null.)
+The gate shows multiple solvers. **AT LEAST ONE must be a fully improvised newcomer** — a brand-new walk-in appearing for the first time in the book, never seen or named in any previous chapter. Since Wanjiku is a returning focal, the newcomer must be one of the OTHER entrants. Name the newcomer only if they matter — every named solver enters the permanent record.
+
+**Wrong approach 1 — INTERNAL LABEL (never in prose): the confident specialist.**
+BEHAVIOR TO DRAMATIZE: Applies deep expertise from one domain to a problem that is not in that domain. Moves with authority. References past successes. Dismisses elements that do not fit their frame. Their expertise organises part of the room — for as long as it applies. When the domain runs out, the room stops mirroring. What remains is the part that was never in the domain. Gate signature: Register 2 touched briefly, then lost.
+
+**Wrong approach 2 — INTERNAL LABEL (never in prose): the hypothesis tester.**
+BEHAVIOR TO DRAMATIZE: Generates and tests alternatives systematically. Never stops to ask what is actually being tested. Tries one thing, observes, tries another. Rapid iteration. Scientific-looking. The room mirrors each hypothesis in sequence — each shown clearly, each shown ending. The sequence of endings has a shape visible only if you stop and look at all of them together. Gate signature: Register flickers rapidly, signal noise. Then Register 2 shift after sitting down.
+
+**Secondary touches:** None.
+
+**Echo touch:** None — the ordinary life echo belongs to Wanjiku alone.
 
 **Gate this chapter:**
-**Grade:** 2 (Arc 2 gate grade band is 2-3; op_check_result difficulty_rating is 3, within the band).
-**Setting:** The gate interior presents as a small dispensary — counter, shelves, labeled containers, a written order slip, a reference chart pinned to the wall, and a small verification device on the counter: a flat square panel that lights green or red when activated. The apparent task is to fill the order correctly from the available stock.
-**Problem structure (from op_check_result canonical_problem_structure, dressed in this gate's objects):**
-- Unknown: Clear. The gate asks for a correctly filled order. A plausible solution is easy to produce.
-- Data: Two sets of containers sit on the shelf. Both match the written order slip — one set matches by standard-formulation protocol, the other matches when cross-referenced against the reference chart. Both look correct at a glance. Both would pass a protocol-only inspection.
-- Condition: The verification panel on the counter is the built-in test. The gate will not close unless the filled order is placed on the panel and the panel lights green. A solver who fills the order by protocol alone, without consulting the reference chart and without activating the panel, has produced a method-correct but wrong result. The gate contains everything needed to distinguish the two candidates. No element is decorative.
+Gate grade: 2-3 (Arc 2 band). Set in Nairobi — ground the gate in details from the hospital records world or a nearby Nairobi location that Wanjiku would encounter in her daily life.
 
-**Correct approach that closes gate (from canonical_correct_approach):** Do not stop at "the method worked." Test the result against the condition itself. Nantale — after watching both wrong approaches fail — sits down, reads the reference chart, cross-checks the filled order against the chart (not just the slip), selects the chart-correct set, places it on the verification panel, and waits. The panel lights green. The gate closes.
+Problem structure: Compound condition — several clauses fused into what reads as one requirement. Taken whole, it stalls. The unknown is clear; the data is clear; the condition is the trap. The gate presents a problem whose condition has multiple parts — all of them visible, all of them seeming to need simultaneous satisfaction. Only one clause actually binds. The solver who treats all clauses as equally essential cannot move. The solver who separates them and tests each alone finds the one that matters.
 
-**The sitting down:** Nantale sits on the floor of the gate after the hypothesis tester's final configuration fails. She has watched two competent people exhaust their approaches. She does not sit to rest. She sits because she has stopped trying to solve the problem the way they solved it. She looks at the room — not at the containers but at the room. The reference chart is on the wall. The verification panel is on the counter. Both have been there the entire time. She reads the chart. She activates the panel. The sitting down is fully earned: both wrong approaches have exhausted themselves. The reader has nothing left.
+Wrong approaches:
+- The confident specialist applies domain expertise to the wrong problem type. Organises the room by their domain's categories. The room mirrors the domain precisely — then stops. The gap between domain clusters contains the part that was never in the domain.
+- The hypothesis tester tests configurations systematically without naming what is being tested. Each hypothesis mirrored in sequence; each shown ending. The panel or verification element present in every configuration, unactivated. The solver never asks what is being tested.
+
+Correct approach that closes the gate: Split the condition into clauses. Test each alone. Find which one actually binds. Then satisfy only that clause — the gate closes.
 
 **Operation being taught:**
-- **Operation name:** "Can you check the result?"
-- **Touch number:** 1 (first occurrence — experience before name)
-- **Name due:** TRUE (name_at_touch is 1 — attach the name this chapter, AFTER the ordinary-life echo, in AT MOST two sentences)
-- **Name delivery vehicle:** PHYSICAL-ANCHOR NAMING. The gesture the reader has already seen — standing at the gate after the solution, waiting; not assuming closure — receives its name. The narrator attaches the name flatly, briefly. One sentence. FORBIDDEN in the naming line: the word "operation", any "X is/was the Y of Z" definition shape, restating the concept's components as a list. Example of permitted form: "She had learned to check the result. That was what the waiting was for."
-- **Physical anchor:** Standing at the gate after the solution, waiting; not assuming closure. Nantale places the order on the verification panel, presses it, and then pauses — a deliberate second of stillness, eyes on the panel, waiting for the light. She does not push the tray toward closure. She does not assume. The panel lights. Then she moves. This gesture is the physical anchor. The reader will recognise it when the operation reappears.
-- **Canonical problem structure:** Unknown clear with a plausible solution easy to produce. Data supports two candidates — one correct, one method-correct but wrong. Condition contains a built-in way to test a candidate against the original requirement.
-- **Canonical correct approach:** Do not stop at "the method worked"; test the result against the condition itself.
+Separate the parts of the condition.
 
-**Wrong-approach mirror behaviours (from world_rules.md §5, rendered in this gate's objects):**
+Touch number: 2 (current_touch 1 + 1).
 
-For THE CONFIDENT SPECIALIST:
-- Gate signature: Register 2 touched briefly, then lost.
-- Mirror content: The room mirrors the specialist's domain precisely — the containers grouping themselves by chemical category, standard formulation, protocol family. For as long as the domain applies, the room is a perfect model of the specialist's expertise. When the domain ends — at the reference chart, which sits outside the chemical categories — the room stops mirroring. The gap between the groupings is where the correct answer lives. The specialist looks inside the groups.
+Name due: YES. The operation's name is attached this chapter, AFTER the ordinary life echo, in AT MOST two sentences.
 
-For THE HYPOTHESIS TESTER:
-- Gate signature: Register flickers rapidly. Each test briefly held, then dropped.
-- Mirror content: The room mirrors each hypothesis in sequence. Container set A in the tray — shown clearly, then ending. Container set B — shown clearly, then ending. Half the containers — shown, ending. Different arrangement — shown, ending. Each configuration is mirrored with precision. The sequence of endings accumulates. After twelve configurations, the room holds a composite image: a faint after-image of every arrangement tried, each ending at the same point — the verification panel, which appears in every single configuration, untouched. The constant the solver never tested is visible in the composite. The solver does not stop to look at the composite.
+Delivery vehicle: PLAIN NARRATOR LABEL (option d). Flat, brief, no elaboration. The name arrives after the experience is complete — after the gate closes, after the ordinary life echo lands.
+
+FORBIDDEN in the naming lines: the word "operation", any "X is/was the Y of Z" definition shape, restating the concept's components as a list.
+
+Physical anchor: Reading the condition clause by clause, a pause between clauses; covering part of it with a hand to see one part alone. Wanjiku visibly performs this gesture at the turning point inside the gate.
+
+Problem structure + correct approach (canonical, dress in this chapter's concrete objects):
+- Problem: Compound condition — several clauses fused into what reads as one requirement. Taken whole, it stalls.
+- Correct approach: Split the condition into clauses; test each alone; find which one actually binds.
 
 **Operations to use naturally (no re-explanation):**
-None. Nantale is a new character — no operations are yet owned. However, the prerequisite operation op_identify_unknown ("identify the unknown / data / condition") is at touch 2 globally. Nantale should demonstrate it as instinct: she looks at the room before acting, separates what is wanted from what is given, without knowing she is performing a named operation. Show it physically — the pause at the entrance, the slow survey of the room. Do not name it.
+None — Wanjiku's character card comprehension_state has only op_separate_condition at "encountered". No other operations are yet owned by this character.
 
 **Ordinary life echo:**
-**Domain:** Professional (preferred_context from op_check_result concept card).
-**Real-world problem with the same structure:** Nantale is back at her pharmacy in Nakasero. A prescription sits in the pickup tray — filled by Moses, her junior dispenser, during her absence. He filled it correctly by protocol: every dosage checked against the written order, every drug confirmed against the standard formulary. It is ready for the patient. Nantale does not assume it is correct. She pulls the patient's record card from the file rack behind the counter. She checks the filled order against the card — not against the prescription alone. The drug is correct by name. It is correct by dosage. It interacts with another medication the patient is taking — a medication not listed on this prescription but recorded on the patient's card. Moses followed the protocol. The protocol did not ask the question the patient's card answers. Nantale replaces the drug with a non-interacting alternative. A customer waiting at the counter — an elderly woman who has been coming to this pharmacy for years — goes still mid-sentence when Nantale reaches for the card. The pharmacy goes quiet for three seconds. The customer does not know why she stopped talking. Moses watches Nantale re-check. He does not argue. He writes something on a scrap of paper. Nantale does not notice any of this.
-**ISOLATION RULE:** Write the echo scene as if the gate chapter did not exist. The character does not remember, mention, or think about the gate, the room, or that day. The structural resemblance is visible to the reader alone. No sentence may state what the experience meant. At least one other person in the echo scene goes still, or the conversation changes register, when the right question forms — without explanation. This is the ordinary-life substitute for gate register behaviour.
+Operation: Separate the parts of the condition.
+Context: professional. Pick from contexts_not_yet_demonstrated: professional — distinct from the workplace context used at touch 1. This should be a different, more formal professional setting: a meeting with hospital administration, a regulatory filing, a budget review, or an inter-departmental negotiation — something where the problem wears a suit rather than a clerk's desk.
 
-**Anchor character appearance:**
-**Yes** — anchor_appears is true. Every gate chapter.
-**Observable presentation — FIXED CANON since chapter 001:** an unremarkable man in a grey coat, carrying a small black notebook. Never described in more detail, never named, never aged.
-**Manifestation for this chapter:** already gone, traces left. This is DIFFERENT from the last three observable_log manifestations: seen (ch005), notebook_page (ch006), notebook_page (ch007). The anchor was present during the confident specialist's and hypothesis tester's attempts. He observed both, recorded them in his notebook, and left before Nantale entered. The evidence of his presence: a single torn notebook page is wedged between the counter and the wall, in his handwriting. The stool behind the counter is warm. The verification panel's surface has been wiped clean — no dust, while the rest of the counter carries a thin film. Someone sat here. Someone used this panel. Nantale does not know who. The reader does.
+The ordinary-life problem has the same structure: a project or decision stalled because the whole brief is being treated as a single unit. The solver writes down each requirement separately. Crosses out all but one. Solves that one. Returns to the rest. At least one other person in the echo scene goes still, or the conversation changes register, when the right question forms — without explanation.
 
-**Notebook page content (anchor format, from style_contract §5):** The torn page contains two entries, one for each wrong approach observed:
+**ISOLATION RULE:** Write the echo scene as if the gate chapter did not exist. The character does not remember, mention, or think about the gate, the room, or that day. The structural resemblance is visible to the reader alone. No sentence may state what the experience meant.
 
-*Grade 2. Specialist approach. Room organised by chemical category — all analgesics grouped, all antibiotics grouped, all cardiovascular agents grouped. Reference chart outside groups, dim. Domain boundary visible as gap between analgesic and cardiovascular clusters. Underlined: gap between groups contained the correct formulation. Solver did not look at the gap. Register 2 at minute 8, lost at minute 11. No closure.*
+**Anchor character appearance:** Yes — every gate chapter per owner rule D3.
 
-*Grade 2. Tester approach. Room mirrored each configuration in sequence — twelve arrangements, each ending at panel. Panel present in every configuration, unactivated. Underlined: panel was the test. Solver never asked what was being tested. Register flicker throughout. No sitting down. No closure.*
+Observable presentation — FIXED CANON since chapter 001: an unremarkable man in a grey coat, carrying a small black notebook. Never described in more detail, never named, never aged.
 
-That is the entire page. No interpretation. No conclusions. No deviation from the anchor's established format. The page vanishes when the gate closes — it was inside the gate. The evidence exists only in the reader's memory. The reader, who has seen the anchor's notebook pages in chapters 002, 006, and 007, recognises the handwriting, the format, the diagnostic terms. No character does.
+Manifestation this chapter: SEEN DIRECTLY — pick a form DIFFERENT from the last three observable_log entries (all "notebook_page"). The anchor is physically present: observed by someone (a bystander, a gate entrant, a guild responder) standing near the gate — before, during, or after the event. The observation is external only: what they see him doing, where he is standing, what he is holding. No interiority. Use the §5 notebook format for any written observation attributed to him.
 
-**Observable_log continuity (last 3 entries, from mystery_anchor.json):**
-- Ch005: Dakar. Manifestation: seen. Three wrong approaches (executor, system builder, information gatherer) + correct. Register timestamps recorded.
-- Ch006: Lagos. Manifestation: notebook_page. Four entrants, three wrong approaches + correct. Anchor diagnostic terms used.
-- Ch007: Accra. Manifestation: notebook_page. Five torn pages discovered by junior clerk. Pages from Achimota, Kumasi, Lagos, Dakar. Photocopied, filed without review.
+Continuity with observable_log: The anchor has now been recorded observing gates in Achimota, Kumasi, Lagos, Dakar, Accra, and Kampala — always noting solver approaches, register timestamps, mirror content, and the specific gap each wrong approach missed. His pages use consistent diagnostic terminology (executor, system builder, information gatherer, specialist, tester). The pattern continues — the anchor is building a taxonomy of wrong approaches across cities and grades.
 
-This chapter's manifestation — "already gone, traces left" — varies the pattern. The page is present but the anchor is not. The reader sees the page; no character retains it. The pattern of the anchor leaving physical records that the guild fails to interpret continues.
+**Failure mode to demonstrate:** None — this is a touch 2 chapter. Wanjiku already owns the operation. She applies it correctly. The wrong approaches belong to OTHER solvers in the gate, not to the focal character.
 
-**Macro mystery:**
-Evidence to plant: A seventh piece of macro-mystery evidence — the Kampala notebook page, which the reader sees but which vanishes with the gate. The page demonstrates that the anchor is now observing Arc 2's new wrong-approach types (specialist, tester) using the same diagnostic framework he applied to Arc 1's types (executor, system builder, information gatherer). The taxonomy is expanding. The pattern the reader sees: the anchor has been present at gate events across five cities now (Lagos, Achimota, Kumasi, Dakar, Kampala), leaving physical records that the guild either does not find or files without review. The guild's institutional blind spot is the macro-mystery subplot. The reader alone tracks the accumulation.
+**Macro mystery — evidence to plant:**
+Continue the pattern: the anchor's notebook page records this gate with the same diagnostic precision. Include one new detail — the anchor is now using a more refined vocabulary or noting a pattern that spans cities (e.g., "Nairobi: same specialist gap as Kampala — domain boundary ignored across 1,200 km"). Present without explanation. The evidence accumulates. The reader sees the pattern deepening.
 
 **Emotional beat:**
-Nantale's internal arc: She is competent but invisible. Twelve years of catching errors at a community pharmacy have made her methodical in a way no one celebrates — it is just thoroughness, just the way she is. She enters a gate for the first time with no training and no vocabulary. She watches a guild-trained specialist fail with authority — someone who speaks the language she does not speak and still gets it wrong. She watches a second solver fail systematically — someone who tries everything and still misses. She is the last one standing. The thing that saves her is not new knowledge. It is the old habit: read the chart, check the panel, wait for the light. She does not feel triumphant. She feels recognition — the quiet shock of discovering that what she already does is what the gate wanted. The name, when it arrives after the echo, names something she already lived.
+Wanjiku returns to a gate for the first time since chapter 004. She has applied the operation once — in a workplace context — and it worked. Now she faces a gate where OTHER solvers are failing in ways she recognises. She remembers what worked last time. She applies it to a different gate structure. The emotional beat is quiet confidence — not triumph, not fear. The relief of recognition: I have done this before. I know what to do. She sits down because she knows sitting down is what comes before the right question. It is no longer an accident.
 
 **Foreshadowing:**
-- The guild's Kampala coordinator receives a report of an "anomalous closure" — a gate solved by an untrained civilian (Nantale) whose method cannot be accounted for by guild taxonomy. The report is filed.
-- The word "checking" circulates among the Kampala gate-response crew as a curiosity, not yet a recognised operation: "She just stood there. Waited for something to light up. Then it closed."
-- The anchor's expanding taxonomy — now covering both Arc 1 and Arc 2 wrong-approach types across five cities — continues to accumulate in pages that the guild files without reading. The reader knows what is in those pages. The guild does not.
-
----
+The guild response team in Nairobi — or whatever institutional gate-response infrastructure exists — should register that Wanjiku is not guild-trained and yet closes the gate. A guild coordinator or responder makes a note. The institutional reaction to "anomalous closure" continues to build. The vocabulary the guild lacks is the vocabulary the anchor's pages contain — and the guild is still not reading them.
 
 ## CONSTRAINTS
-- Do not name the operation before the character has suffered its absence
+- Do not re-explain the operation — Wanjiku already encountered it. She applies it. The name arrives after the echo.
 - Do not close the gap between observation and meaning
 - The anchor character's hidden coherence is never surfaced
-- Failure before success always
+- Failure before success always — the wrong-approach solvers fail before Wanjiku acts
 - Ordinary life echo must feel inevitable not surprising
 - Chapter ends when the gate closes and the ordinary life echo lands
 - Target length: 1800-2600 words; complete beats matter more than count; never pad
 
----
-
 ## HARD RULES — a violation of any rule fails the chapter
 
-1. FORBIDDEN STRINGS: these internal planning labels must not appear anywhere in the prose: "the confident specialist", "the hypothesis tester", "the executor", "the system builder", "the information gatherer", "the force applier", "the perfectionist", "the variation-tester", "the single-step auxiliary solver", "the planner without synthesis", "the heuristic-only solver", "the guild verifier", "the executor on complex condition", "the system builder on complex condition". Show the behavior. Never the label.
-
-2. ECHO ISOLATION: in the ordinary-life scene the character does not remember, mention, or think about the gate, the room, or that day. Write it as if the gate scene did not exist. The reader alone sees the connection.
-
-3. NO LESSON SENTENCES: never write a sentence whose job is to state what an experience meant or what the method is. The ONE exception — the name is attached in AT MOST two sentences, after the echo, using the physical-anchor naming vehicle: the gesture of standing at the gate after the solution, waiting, receives its name. The word "operation" and any definition shape ("X is/was the Y of Z") are forbidden in those sentences.
-
-4. THE MIRROR SHOWS, NEVER POINTS: describe the room's arrangement; never state what it reflects or that it reflects anything. The gate NEVER displays words, labels, or instructions that name or hint at the operation — gates do not explain themselves; a panel may light, shift, or open, never speak.
-
-5. THE OBSERVER: exterior only — position, actions, notebook. No thoughts, no motives, no explanation of who they are.
-
+1. FORBIDDEN STRINGS: these internal planning labels must not appear anywhere in
+   the prose: the confident specialist, the hypothesis tester. Show the
+   behavior. Never the label.
+2. ECHO ISOLATION: in the ordinary-life scene the character does not remember,
+   mention, or think about the gate, the room, or that day. Write it as if the
+   gate scene did not exist. The reader alone sees the connection.
+3. NO LESSON SENTENCES: never write a sentence whose job is to state what an
+   experience meant or what the method is. The ONE exception — the name is
+   attached in AT MOST two sentences, after the echo, using the PLAIN NARRATOR
+   LABEL delivery vehicle. The word "operation" and any definition shape
+   ("X is/was the Y of Z") are forbidden in those sentences.
+4. THE MIRROR SHOWS, NEVER POINTS: describe the room's arrangement; never state
+   what it reflects or that it reflects anything. The gate NEVER displays words,
+   labels, or instructions that name or hint at the operation — gates do not
+   explain themselves; a panel may light, shift, or open, never speak.
+5. THE OBSERVER: exterior only — position, actions, notebook. No thoughts, no
+   motives, no explanation of who they are.
 6. Never address the reader. The word "you" appears only inside dialogue.
+7. THE CAST QUOTA IS A HARD REQUIREMENT: this chapter requires EXACTLY TWO (2)
+   wrong-approach solver scenes: the confident specialist / the hypothesis tester.
+   EACH requires a full dramatized scene (approach feels competent → its mirror shift →
+   its specific failure). The labels are internal (rule 1): show each behavior, never
+   the label. Before returning, COUNT your fully dramatized wrong-approach scenes; a
+   chapter with fewer scenes than the quota FAILS regardless of word count.
+8. THE OBSERVER APPEARS: the grey-coat man is present in some form in every gate
+   chapter (seen / traces / mentioned / a notebook page). Omitting him fails the
+   chapter.
+9. THE ECHO EXISTS: the ordinary-life scene is present and complete. A chapter
+   without it fails.
+10. THE GESTURE APPEARS: the focal solver visibly performs this brief's physical
+    anchor gesture at the turning point — reading the condition clause by clause,
+    a pause between clauses; covering part of it with a hand to see one part alone.
+    Wanjiku's life shows nameable forward movement since chapter 004 — promotion,
+    increased responsibility, or other visible progression — never credited to the gate.
+11. NO REFLECTIVE CODA: after the name attachment (or, if no name is due, after the
+    final anchor beat), the chapter ends within TWO sentences. Reflection is where
+    lesson sentences breed. (The in-gate "looking back" beat — a solver lingering
+    after closure — is a SCENE and is allowed; this rule governs only the tail
+    after the echo/name.)
+12. THE IMPROVISED NEWCOMER: at least ONE solver present in the gate is a
+    brand-new walk-in — appearing for the first time in the book, never seen or
+    named in any previous chapter. Wanjiku is returning, so the newcomer must be
+    one of the OTHER entrants. A gate containing only familiar faces FAILS the
+    chapter. Name the newcomer only if they matter — every named solver enters
+    the permanent record.
 
-7. THE CAST QUOTA IS A HARD REQUIREMENT: this chapter requires EXACTLY TWO (2) wrong-approach solver scenes: the confident specialist / the hypothesis tester. EACH requires a full dramatized scene (approach feels competent → its mirror shift → its specific failure). The labels are internal (rule 1): show each behavior, never the label. Before returning, COUNT your fully dramatized wrong-approach scenes; a chapter with fewer scenes than the quota FAILS regardless of word count.
-
-8. THE OBSERVER APPEARS: the grey-coat man is present in some form in every gate chapter (seen / traces / mentioned / a notebook page). Omitting him fails the chapter. Manifestation for this chapter: already gone, traces left — warm stool, torn notebook page, wiped-clean panel surface.
-
-9. THE ECHO EXISTS: the ordinary-life scene is present and complete. A chapter without it fails.
-
-10. THE GESTURE APPEARS: the focal solver visibly performs this brief's physical anchor gesture at the turning point. Physical anchor: standing at the gate after the solution, waiting; not assuming closure. Nantale places the order on the verification panel, presses it, pauses — a deliberate second of stillness, eyes on the panel, waiting for it to light. She does not assume.
-
-11. NO REFLECTIVE CODA: after the name attachment (physical-anchor naming, at most two sentences), the chapter ends within TWO sentences. Reflection is where lesson sentences breed. (The in-gate "looking back" beat — a solver lingering after closure — is a SCENE and is allowed; this rule governs only the tail after the echo/name.)
-
-12. THE IMPROVISED NEWCOMER: at least ONE solver present in the gate is a brand-new walk-in — appearing for the first time in the book, never seen or named in any previous chapter. On chapters whose focal character is returning, the newcomer must be one of the OTHER entrants. A gate containing only familiar faces FAILS the chapter. Name the newcomer only if they matter — every named solver enters the permanent record.
-
-Before finishing: re-read your draft against rules 1–12, fix every violation, then output only the corrected chapter.
+Before finishing: re-read your draft against rules 1–12, fix every violation,
+then output only the corrected chapter.
