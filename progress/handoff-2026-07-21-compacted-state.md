@@ -46,7 +46,12 @@ chassis code changed since `fe2e20d`", the §1 UPDATE overrides it.
       yet worked out — check whether the T-026 selector (`c0dcade`), `analyst.py --repair`,
       or re-running ch8's Updater step is the sanctioned path. Do NOT hand-edit the pointer
       [[no-hand-surgery-system-self-manages]].
-    - **(B) Write up cause (2) as a DECISION for the owner — NOT yet drafted.** The
+    - ~~**(B) Write up cause (2) as a DECISION for the owner — NOT yet drafted.**~~
+      **STALE — (B) is DONE 2026-08-10:** filed as `2026-08-10 — Featured wrong approach
+      on a return … [PROPOSED]` in `human_decision.md`, with THREE options (a union
+      fallback is the default), because live state showed every failure pool is
+      exhausted. Also: the "(A) and (B) are independent" claim below is now
+      **provisional** — see `handoff-2026-08-10-decision-protocol.md` §2. Original text: The
       arc-vs-operation wrong-approach conflict (Section-4 arc-2 approaches
       `confident specialist`/`hypothesis tester` vs `op_separate_condition`'s process_state
       pool `executor`/`system builder`/`information gatherer`). Present the options
