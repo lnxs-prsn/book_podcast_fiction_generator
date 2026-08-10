@@ -39,6 +39,19 @@ chassis code changed since `fe2e20d`", the §1 UPDATE overrides it.
     return). Do NOT redo generation/from-brief (both causes are upstream of the Writer →
     reproduces the FAIL + burns paid tokens).** Clear a single re-run only after (1) is
     re-derived and (2) is ruled.
+  - **PENDING SENIOR ACTIONS (offline, zero-paid — NOT started; pick up here):**
+    - **(A) Pin the re-derivation mechanism for cause (1) — NOT yet found.** The *fix* is
+      known (re-derive ch9's pointer through the landed T-026 selector so `"none"` becomes
+      a real arc-filtered earned featured failure), but the exact deterministic HOW is not
+      yet worked out — check whether the T-026 selector (`c0dcade`), `analyst.py --repair`,
+      or re-running ch8's Updater step is the sanctioned path. Do NOT hand-edit the pointer
+      [[no-hand-surgery-system-self-manages]].
+    - **(B) Write up cause (2) as a DECISION for the owner — NOT yet drafted.** The
+      arc-vs-operation wrong-approach conflict (Section-4 arc-2 approaches
+      `confident specialist`/`hypothesis tester` vs `op_separate_condition`'s process_state
+      pool `executor`/`system builder`/`information gatherer`). Present the options
+      (arc-tied vs operation-tied), recommend, record in `human_decision.md` on the ruling.
+    - Both must complete before ch9 clears; (A) and (B) are independent of each other.
 - Restore point: annotated tag **`starting_factory` → `fe2e20d`** (local, unpushed)
   marks the working 1-book flow before factory work.
 
