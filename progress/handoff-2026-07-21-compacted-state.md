@@ -4,20 +4,43 @@
 `handoff-2026-07-19-compacted-state.md` (§§1–17) as the front door. That file is
 ARCHIVED — still the detailed *why* behind any claim here, read this first.
 Compaction method: `innovations/handoff-discipline/kit/HANDOFF_RULES.md` §Compaction.
-All claims below re-verified against git/state/code at **HEAD `2abd2a9`**; docs-only
-commits since (`a292ba2` this compaction, `7c27c86` the T-022 slot marker) — state
-facts unchanged, tree clean.
+All claims below were verified at compaction time **HEAD `2abd2a9`**. **SUPERSEDED BY
+EVENTS 2026-07-21** — since this compaction, T-024/T-026/T-025 LANDED and a PAID ch9 run
+was attempted and is BLOCKED at the gate. See the **UPDATE** and **ch9-block** bullets in
+§1; where older prose below still says these tickets are "drafted, NOT dispatched" or "no
+chassis code changed since `fe2e20d`", the §1 UPDATE overrides it.
 
 ## 1. State (verified against master_state.json + git, 2026-07-21)
 
 - **8 chapters committed, `arc_current` = 2.** Next pointer = **ch9 `009`**:
   `return_to_character`, `char_004` (Wanjiku Mwangi), `op_separate_condition`,
-  `touch_due 2`, **`name_due true`**, `failure_mode_to_show "none"`, `anchor_appears true`.
-- ch8 committed + accepted (`8935458`). No chapter run since. **ch9 is the next
-  product step — PAID, owner-started** (see §5 for what must land first).
+  `touch_due 2`, **`name_due true`**, `anchor_appears true`, and
+  **`failure_mode_to_show "none"` — a STALE value; see the ch9-block bullet.**
+- **UPDATE 2026-07-21 (post-compaction; supersedes this doc's HEAD `2abd2a9`):**
+  **T-024 (`7dbc237`), T-026 (`c0dcade`), T-025 (`f8225f7`) are LANDED**, not drafts —
+  anywhere below (incl. §5) that calls them "drafted, NOT dispatched" is STALE.
+  The **"no chassis code changed since `fe2e20d`" claim is now FALSE**: the structural
+  gate changed (T-024 cross-field checks + T-026 selector/gate guard). Also DECISION 15
+  recorded, T-023 drafted, ticket-writing method added (`10-how-to-write-tickets.md`).
+- **ch9-block: ch9 was run (PAID, owner-started) and is BLOCKED at the structural gate
+  (step 11.5). Safe state — nothing mutated, no paid refresh.** Two distinct causes:
+  1. **Stale pointer.** `failure_mode_to_show="none"` was written by ch8's Updater
+     (`8935458`) BEFORE T-026 landed (`8935458` is an ancestor of `c0dcade`). T-026 fixes
+     pointer *generation*, not a pointer already frozen on disk, so the T-026 gate guard
+     correctly rejects the stale "none". Fix = **deterministic re-derivation via the landed
+     selector, NOT hand-editing** [[no-hand-surgery-system-self-manages]].
+  2. **Arc-vs-operation label conflict (needs an owner ruling).** The brief's wrong
+     approaches `['the confident specialist','the hypothesis tester']` (arc-2 Section-4)
+     are NOT in `op_separate_condition`'s process_state pool `['the executor','the system
+     builder','the information gatherer']`; T-024's canonicity check correctly flags them.
+     A DECISION-10-class Section-4-vs-process_state contradiction (are wrong approaches
+     arc-tied or operation-tied?). No re-run fixes it.
+  - **Decision standing: HOLD. Do NOT override (corrupts canon + rotation on Wanjiku's
+    return). Do NOT redo generation/from-brief (both causes are upstream of the Writer →
+    reproduces the FAIL + burns paid tokens).** Clear a single re-run only after (1) is
+    re-derived and (2) is ruled.
 - Restore point: annotated tag **`starting_factory` → `fe2e20d`** (local, unpushed)
-  marks the working 1-book flow before factory work. All commits since are docs/
-  tickets/spec only — **no chassis code has changed since `fe2e20d`.**
+  marks the working 1-book flow before factory work.
 
 ## 2. Roles (unchanged)
 
@@ -87,22 +110,19 @@ DECISIONS 1–15 recorded there. The ones a cold session most needs:
 
 ## 5. Open queue
 
-**Dispatch-ready tickets (all zero-paid, offline, implementer-agnostic, drafted — NOT
-dispatched; senior dry-run status noted):**
-1. **T-024** gate cross-field integrity (ADV-1/2/4) — *first* (T-026 reuses its
-   gate/pointer binding). **Acceptance CORRECTED 2026-07-21** after an implementer
-   STOP: original item 1 wrongly expected the live POST-Updater ch8 brief (pointer
-   already 009) to PASS the new chapter bind. Fixed — PASS uses a synthetic
-   gate-time ch9 brief vs live pointer 009; the leftover ch8 brief is now the ADV-4
-   stale-PASS FAIL demo. Re-dispatchable. (Full run-through of every crafted case
-   still pending at implement time.)
-2. **T-026** selector earned-pool fallback + `"none"` guard (ADV-3/D13) —
-   **dispatch-verified** (senior dry-run 2026-07-20, arc-filter correction applied).
-3. **T-025** prose name-presence guard (the free verify-from-source slice).
-   **Scope CORRECTED 2026-07-21** after an implementer STOP: the draft wrongly
-   asserted `focal_character.city` ("Kampala") must appear in prose — a city is a
-   setting attribute, not a name (ch8 prose: names present, Kampala 0×), a false
-   FAIL §5 forbids. `city` removed; guard is personal-names only. Re-dispatchable.
+**LANDED this session (committed — NO LONGER in the queue):**
+1. **T-024** gate cross-field integrity (ADV-1/2/4) — **LANDED `7dbc237`.** (Acceptance
+   was corrected mid-session after an implementer STOP: the PASS case uses a synthetic
+   gate-time ch9 brief, not the stale post-Updater ch8 brief.) Its canonicity check is
+   what flagged ch9's arc-vs-op labels (§1 ch9-block cause 2).
+2. **T-026** selector earned-pool fallback + `"none"` guard (ADV-3/D13) — **LANDED
+   `c0dcade`.** Fixes pointer *generation*; its gate guard is what flagged ch9's stale
+   `"none"` (§1 ch9-block cause 1). Does NOT retroactively re-derive a pointer frozen
+   before it landed.
+3. **T-025** prose name-presence guard — **LANDED `f8225f7`.** (Scope corrected
+   mid-session: `city` dropped — a setting attribute, not a name; personal-names only.)
+
+**Still DRAFTED — dispatch-ready (zero-paid, offline, implementer-agnostic):**
 4. **T-019** retire `QUOTA_BY_ARC` leak (Stage-4 down payment).
 5. **T-020** anchor-description leak → `mystery_anchor.json` (D11-B4). **Independent** of
    the chain — dispatch anytime.
@@ -117,14 +137,12 @@ Phase-A ticket AFTER T-024 + T-026 (they extend the seed check-set its registry 
 D14); T-022 Phase B AFTER ch9; the factory build gated on the **C3 "shown" pass, NOT ch9**
 (§6). *Independent (anytime):* T-020, T-023.
 
-- **Phase 0 — offline, zero-paid, BEFORE the ch9 spend:**
-  1. **T-024** (unblocks T-026; still needs its full acceptance dry-run) →
-  2. **T-026** (**hard gate for ch9**; dispatch-verified) →
-  3. **T-025** (guards the ch9 return-chapter failure class).
-  - **T-020 + T-023** slot in anywhere here (independent, low-risk).
-- **Milestone — ch9 (PAID):** min bar T-026 landed; ideal bar T-024 + T-025 + T-026.
-  Validates the chassis on a return.
-- **Phase 1 — after ch9:**
+- **Phase 0 — DONE:** T-024 (`7dbc237`) → T-026 (`c0dcade`) → T-025 (`f8225f7`) all landed.
+- **Milestone — ch9 (PAID): ATTEMPTED → BLOCKED at the gate (see §1 ch9-block).** Two
+  causes must clear before a re-run: **(1)** re-derive ch9's stale `"none"` pointer via the
+  landed T-026 selector (deterministic, senior/offline); **(2)** OWNER RULING on the
+  arc-vs-operation wrong-approach label conflict. HOLD — no override, no blind redo.
+- **Phase 1 — after ch9 clears:**
   4. **T-019** (Stage-4 down-payment; offline so *could* run in Phase 0, but it guards no
      ch9 class — no reason to spend attention pre-milestone).
   5. **T-022 Phase-A ticket** (pre-writer gate validator, `specs/prewriter_gate.spec.md`;
@@ -132,8 +150,8 @@ D14); T-022 Phase B AFTER ch9; the factory build gated on the **C3 "shown" pass,
   6. **T-022 Phase B** (generative gate; additive, post-ch9).
 
 **Long-pole (reorders everything downstream):** the **C3 "shown" design pass** gates both
-later-arc ADV-2/RDR-2 correctness AND the *bulk* of the factory — start it in parallel
-with Phase 0; it, not ch9, unblocks the most work.
+later-arc ADV-2/RDR-2 correctness AND the *bulk* of the factory — it, not ch9, unblocks
+the most work; worth starting now while ch9 is held.
 
 **Reserved-backlog outcomes** (each holds its slot with a marker file in `tickets/` — no
 gaps in the numbering): T-021 (mirror leak) **STRUCK — not a leak** (Assembler fetches

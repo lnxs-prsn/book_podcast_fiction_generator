@@ -4,15 +4,17 @@
 > COMPACTION; read it first (single-hop current truth).** It supersedes the running
 > `handoff-2026-07-19-compacted-state.md` (§§1–17), now ARCHIVED as the detailed *why*.
 >
-> Current state (2026-07-21, HEAD `2abd2a9`, tree clean): **8 chapters, arc 2, next =
-> ch9** (`return_to_character`, char_004 Wanjiku, op_separate_condition, touch 2,
-> name_due). The full A/B/C pre-build design review is RULED (`fiction_loop/human_decision.md`
-> DECISIONS 10–14); **ADV-3 resolved (D13)**; **pre-writer gate spec'd (D14)** =
-> `specs/prewriter_gate.spec.md`. **FIVE tickets DRAFTED (not dispatched): T-024, T-026,
-> T-025, T-019, T-020** (order T-024 → T-026 → T-025 → T-019; T-020 independent). **ch9
-> (paid) awaits T-026** landing (ideally T-024/T-025 too). Restore tag `starting_factory`
-> → `fe2e20d` — **no chassis code has changed since.** Still open (design): the
-> **"shown"/C3 pass** (before arc 3), B3/RDR-3/B2. Do not orient from any other document.
+> Current state (2026-07-21): **8 chapters, arc 2, next = ch9** (`return_to_character`,
+> char_004 Wanjiku, op_separate_condition, touch 2, name_due). Design review RULED
+> (`fiction_loop/human_decision.md` DECISIONS 10–15). **T-024, T-026, T-025 are LANDED**
+> (`7dbc237`, `c0dcade`, `f8225f7`) — the "no chassis code changed since `fe2e20d`" claim
+> is now FALSE (the gate changed). Still DRAFTED: T-019, T-020, T-023. **ch9 (PAID) was run
+> and is BLOCKED at the structural gate — HOLD**: a stale pre-T-026 pointer (`"none"`) needs
+> deterministic re-derivation, and an arc-vs-operation wrong-approach label conflict needs
+> an owner ruling (do NOT override/redo). Ticket-writing now has a method
+> (`10-how-to-write-tickets.md`). Still open (design): **"shown"/C3 pass**, B3/RDR-3/B2.
+> **Read the dated handoff §1 (UPDATE + ch9-block) for the authoritative current truth** —
+> do not orient from any other document.
 
 **Scope: maintainer sessions only.** A session running the fiction_loop
 pipeline (RUN.md kickoff) must NOT orient here — its complete world is
