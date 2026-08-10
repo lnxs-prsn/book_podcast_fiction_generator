@@ -10,10 +10,52 @@ For each decision: what the issue is, why it exists, why it's yours to make, wha
 affects, and the two most likely options. Write your choice on the `DECISION:` line.
 Recommendations are marked, but they're defaults, not pressure.
 
-> **STATUS: ALL 8 DECISIONS RESOLVED — 2026-07-02.** Answers recorded on the
-> `DECISION:` lines below, each with the implementable translation. The resulting
-> work items live in `specs/pipeline_fixes.spec.md` (F5/F7/F8/F13 amended; F14–F17
-> added). This file is now a record, not an open questionnaire.
+> ~~**STATUS: ALL 8 DECISIONS RESOLVED — 2026-07-02.** … This file is now a record,
+> not an open questionnaire.~~ **STALE — that banner described the 2026-07-02 state
+> (8 decisions).** True as of 2026-08-10: **DECISIONS 1–15 are all ruled and recorded**
+> below (the 1–8 answers still live on their `DECISION:` lines, with work items in
+> `specs/pipeline_fixes.spec.md`). The file is BOTH a record *and* an open
+> questionnaire again — see §0.
+
+---
+
+## §0. How to find what is waiting on you
+
+**Open forks are appended to the END of this file** in the schema below, marked
+`[PROPOSED]`. They stay where they are for life — when you rule, the status flips to
+`[ACCEPTED]` or `[REJECTED]` in place. Nothing moves, nothing is copied to a second
+file, so nothing can drift.
+
+**Find everything waiting on you:**
+
+```
+grep -n "^## .*\[PROPOSED\]" fiction_loop/human_decision.md
+```
+
+**Entry schema** (LAW 13's "options and a marked default", made concrete):
+
+```
+## <ISO8601> — <short title>  [PROPOSED | ACCEPTED | REJECTED]
+Essence: <what is being decided, in plain terms>
+Analogy: <one analogy that makes the trade-off graspable — only when it genuinely helps>
+Impact & reversibility: <how far it reaches; whether/how it can be undone, and whether
+                        the cost of undoing grows over time>
+Architecture points at: <which built principle/pattern this coheres with, or breaks>
+Context: <what forced the decision, with the verified facts inline>
+Options:
+  A) <option>   ← DEFAULT
+  B) <option>
+Decision: <your choice, once made>
+```
+
+DECISIONS 1–15 below predate the schema and keep their original prose form; they are
+already ruled, so there is nothing to migrate.
+
+**Known open design work that is NOT yet proposable** — real forks, but the options
+cannot be honestly costed until senior design work lands, so they are not filed as
+`[PROPOSED]`: **C3** "shown" arc-aware definition (DECISION 12-C3), **B3** anti-formula
+budget specifics (DECISION 11-B3), **RDR-3** mystery-fairness schema + auditor isolation
+(DECISION 12-C1).
 
 ---
 
@@ -797,3 +839,97 @@ you because they're the pedagogical core):
 
 *Once the DECISION lines are filled in, everything above collapses into ordinary
 implementation work — no further judgment calls are hiding behind any of them.*
+
+---
+
+# OPEN FORKS (appended; `[PROPOSED]` = waiting on you)
+
+## 2026-08-10 — Featured wrong approach on a return: operation-tied or arc-tied?  [PROPOSED]
+
+**Essence:** When a chapter returns to an operation taught earlier, where does its
+featured wrong approach come from — the operation's own recorded set of failures, or the
+arc's current cast of wrong approaches? Two authorities each legitimately name "the wrong
+approaches for this chapter," and nothing has ever ruled which one wins.
+
+**Analogy:** A driving instructor revisiting parallel parking. Do you demonstrate the
+mistakes *that manoeuvre* provokes — kerbing the wheel, wrong reference point — or the
+mistakes *this stage of the course* is about, like over-reliance on mirrors? The first is
+precise but replays the same three errors at every revisit. The second keeps pace with
+the learner but gradually stops being about parking.
+
+**Impact & reversibility:** Reaches **every future return chapter**, and returns are the
+engine of the back half of the book. Cheap to reverse *now* — state fields plus one gate
+check, no prose written against it. Expensive later: each chapter written under the rule
+bakes it into prose that cannot be re-derived, so the cost of changing your mind grows by
+one chapter at a time.
+*Blocked by this:* the ch9 re-run (paid), and widening T-024's canonicity check — the
+shape of that fix differs per option. *Not blocked:* T-019, T-020, T-023, the T-022
+Phase-A ticket, the C3 design pass. *Provisional:* re-deriving ch9's stale pointer — it
+is offline and cheap, but if you rule B the selector's source may change and the
+re-derived value would need redoing.
+
+**Architecture points at:** **DECISION 13's featured-failure selector** — earned-pool
+fallback, arc-filtered, LED-primary with a SHOWN tiebreak. Option A is that same shape
+generalised from one field to the rule, so it coheres with a pattern already built and
+ruled. B and C each contradict one limb of it: B ignores the fallback, C ignores the
+pool. It also points at **T-024's canonicity check, which currently encodes B
+implicitly** — it validates the brief's approaches against the operation's pool alone,
+which is what flagged ch9. That position was never ruled; it was built in.
+
+**Context:** ch9 (paid, owner-started) stopped at structural gate 11.5. Safe — nothing
+mutated, no paid refresh. T-024's canonicity check flagged the brief's wrong approaches
+`['the confident specialist','the hypothesis tester']` (the arc-2 pair) as absent from
+the operation's own set. Verified state at HEAD `b07a736`:
+
+```
+next_chapter_pointer     009 · return_to_character · char_004 · op_separate_condition
+                         touch_due 2 · name_due true · failure_mode_to_show "none"
+
+op_separate_condition    arc_introduced 1   (an ARC-1 operation returning during arc 2)
+  failure_modes_shown          ["the executor","the system builder","the information gatherer"]
+  failure_modes_not_yet_shown  []          ← EXHAUSTED
+  teaching_history             ch004, char_004, workplace, touch 1
+
+master_state.failure_modes_not_yet_shown  []   ← book-wide, ALSO exhausted
+master_state.failure_mode_lead_history    ch008 led with "the confident specialist"
+```
+
+Two of those reframe the question. First, **no unshown failures remain anywhere** — for
+this operation or any other — so "pick one that hasn't been used" is not an available
+answer, and this is a general rule, not a ch9 patch. Second, **the arc-2 cast is already
+live**: ch8 led with the confident specialist. So this is not about admitting something
+new; it is only about which authority governs a *return*. Reproduce:
+
+```
+.venv/bin/python -c "import json;d=json.load(open('fiction_loop/state/process_state.json'));print(d['operations']['op_separate_condition'])"
+.venv/bin/python -c "import json;m=json.load(open('fiction_loop/state/master_state.json'));print(m['failure_modes_not_yet_shown'], m['failure_mode_lead_history'])"
+```
+
+**Options:**
+
+  **A) Union, operation-preferred** — draw from the operation's unshown pool first; when
+  it is exhausted, fall back to the arc's earned cast, arc-filtered.   **← DEFAULT**
+  Precision while the pool lasts, freshness once it runs out, and the exhausted-pool case
+  becomes explicit instead of accidental. ch9 resolves cleanly: the pool is empty, so the
+  arc cast applies and the brief stands. The only option that answers the general case.
+  Cost: T-024's check widens to "operation pool ∪ arc-filtered earned cast".
+
+  **B) Operation-tied** — the featured approach must come from the operation being
+  taught; ch9 re-features one of executor / system builder / information gatherer. Most
+  precise teaching claim, keeps the per-operation `failure_modes_*` fields authoritative.
+  Cost: with the pool empty, *every* return now repeats an earlier failure, and arc-1
+  operations keep re-featuring arc-1 failures for the rest of the book — the exact
+  formula pressure DECISION 11-B3 exists to fight.
+
+  **C) Arc-tied** — the featured approach comes from the arc's current cast; ch9's brief
+  stands as written. Matches what the book already did at ch8, keeps later chapters
+  progressing rather than recycling. Cost: the per-operation `failure_modes_shown` /
+  `not_yet_shown` fields stop meaning much, and T-024's check is relaxed rather than
+  widened.
+
+**Unverified, stated rather than assumed:** whether T-026's landed selector already
+implements A for `failure_mode_to_show`. It governs a different field than the one T-024
+flagged, so the two ch9 causes still look independent. If you pick A, check that first —
+it may shrink the follow-on work to widening T-024's check alone.
+
+**Decision:**

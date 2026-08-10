@@ -34,3 +34,20 @@ Binding rules, in force for every agent regardless of harness:
    `EXPLORATION_PREFERENCES.md` — problem-space-first, axis-by-axis, applied
    *situationally* (it says when to scale down or skip). Not binding for pure
    execution.
+8. **Owner decisions — file, don't page.** (Maintainer sessions only; a run
+   session stops and reports per `fiction_loop/RUN.md`.) When you hit a
+   blocker only the owner can decide: do not guess, do not stop to ask —
+   append it to `fiction_loop/human_decision.md` in that file's §0 schema,
+   marked `[PROPOSED]`, then continue with other tasks. If nothing else is
+   unblocked, stop and tell the owner a decision is waiting there. When unsure
+   whether a task depends on the ruling, treat it as blocked; never spend paid
+   calls on work the ruling could invalidate. (LAW 13 governs what qualifies.)
+9. **Your own judgment calls are auditable.** Decisions you make WITHOUT the
+   owner — what to do next, what to defer, a scope you narrowed, a ticket you
+   struck, a handoff claim you doubted — go in `NEXT_ACTIONS.md` §3 with the
+   reasoning, in the same sitting. The owner cannot object to reasoning they
+   cannot see, and an objection now is cheaper than discovering a bad call
+   three chapters later. `NEXT_ACTIONS.md` also carries the ordered queue and
+   why each item is next or deferred. It keeps only the newest 5 per section;
+   when a 6th arrives, MOVE (never copy) the oldest to the append-only ledger
+   `progress/agent-decisions.jsonl`, one JSON object per line.

@@ -174,7 +174,11 @@ what the finished book feels like (pedagogy, pacing, cast, mystery, naming) is a
 DECISION, recorded in `human_decision.md` with options and a marked default —
 presented propose-and-correct style (a visible proposal to react to), never as an
 open interview question. Mechanical consequences of a recorded decision are
-ordinary work and need no new ask.
+ordinary work and need no new ask. Open forks are APPENDED to that file in its §0
+schema and marked `[PROPOSED]`; the status flips in place when ruled, so
+`grep "^## .*\[PROPOSED\]"` is the complete list of what is waiting on the owner. Never
+file a half-proposal: if the options cannot be honestly costed yet, the design work
+is owed first — say so rather than asking the owner to choose between unknowns.
 
 **LAW 14 — CHASSIS AND PACK STAY SEPARATE (the generic-tool law).** The machinery
 (agents' procedures, tools, contracts, these laws) is the chassis; everything
@@ -260,8 +264,14 @@ label-only contract; caught only by hand re-verification, handoff 2026-07-19
    Paid verification happens only via the normal pipeline, cheapest rung.
 6. Commit pathspec-limited, governance separate from chapter transactions,
    message stating the law/incident that motivated it.
-7. Hitting taste, ambiguity, or an undocumented fork → stop, write the DECISION
-   proposal with a marked default (LAW 13). Do not pick silently.
+7. Hitting taste, ambiguity, or an undocumented fork → write the DECISION proposal
+   with a marked default (LAW 13), then CONTINUE with other tasks that do not
+   depend on the ruling; stop and tell the owner only if nothing else is
+   unblocked. Do not pick silently. When unsure whether a task depends on the
+   ruling, treat it as blocked, and never spend paid calls on work the ruling
+   could invalidate. *(Owner rule, 2026-08-10: this formerly said "stop" — one
+   unruled fork idled a whole session while the owner was away. The proposal is
+   what unblocks the owner; stopping as well helps nobody.)*
 
 ## 5. EXTENSION PROCEDURE
 
