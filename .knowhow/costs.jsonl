@@ -1,0 +1,11 @@
+{"at":1793902785.661781,"catalogue_sha256":null,"ids":[],"ingest":null,"operation":"init","output_bytes":264,"seconds":0.008241,"status":0}
+{"at":1793902785.7532918,"catalogue_sha256":"1cf2b7e73471b9a767c51becf34d096a94a97006c68a5f0956d5c3c41053fa5e","ids":[],"ingest":null,"operation":"ask","output_bytes":309,"seconds":0.010923,"status":0}
+{"at":1793902785.835902,"catalogue_sha256":"1cf2b7e73471b9a767c51becf34d096a94a97006c68a5f0956d5c3c41053fa5e","ids":[],"ingest":null,"operation":"ask","output_bytes":309,"seconds":0.009288,"status":0}
+{"at":1793902786.0290747,"catalogue_sha256":null,"ids":[],"ingest":null,"operation":"self-check","output_bytes":247,"seconds":0.118732,"status":0}
+{"at":1793902865.394405,"catalogue_sha256":null,"ids":[],"ingest":null,"operation":"check","output_bytes":1581,"seconds":0.009123,"status":1}
+{"at":1793902865.546251,"catalogue_sha256":null,"ids":[],"ingest":null,"operation":"check","output_bytes":1587,"seconds":0.013561,"status":1}
+{"at":1793902869.817887,"catalogue_sha256":null,"ids":[],"ingest":null,"operation":"check","output_bytes":2049,"seconds":0.010015,"status":1}
+{"at":1793902879.5462637,"catalogue_sha256":null,"ids":[],"ingest":null,"operation":"check","output_bytes":1744,"seconds":0.009897,"status":0}
+{"at":1793902879.654108,"catalogue_sha256":null,"ids":[],"ingest":null,"operation":"check","output_bytes":1744,"seconds":0.009669,"status":0}
+{"at":1793902892.0196307,"catalogue_sha256":null,"ids":[],"ingest":null,"operation":"offer","output_bytes":417,"seconds":0.01785,"status":0}
+{"at":1793902892.1191642,"catalogue_sha256":null,"ids":[],"ingest":null,"operation":"offer","output_bytes":417,"seconds":0.017699,"status":0}
