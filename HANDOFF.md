@@ -63,6 +63,7 @@ rules: `innovations/handoff-discipline/kit/HANDOFF_RULES.md`.
 | `progress/handoff-2026-07-17-*` and newer | LIVE |
 | `fiction_loop/` (CONTRIBUTING, RUN.md, specs/, core/, tools/, state/) | LIVE — the working system |
 | `tickets/`, `innovations/` | LIVE |
+| `published/`, `.knowhow/` | LIVE — know-how capability (`capability-002`, 2026-11-05): frozen offers + this project's identity and records; never hand-edit. Why: `NEXT_ACTIONS.md` §3 |
 | `09-how-to-write-specs.md` | LIVE — spec-writing method |
 | `10-how-to-write-tickets.md` | LIVE — ticket-writing method (companion to 09; acceptance-execution rule T-6/7/8) |
 | `progress/handoff-2026-07-10-*` and older handoffs | dated records; carry staleness notes |

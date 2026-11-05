@@ -82,6 +82,21 @@ Record fields: `date · id · type · by · summary · reasoning · reversible �
 `scope-corrected`, `ticket-struck`, `contradicts-handoff`, `assumption-falsified`,
 `sequencing`, `schema-change`.
 
+**2026-11-05 — Took the know-how capability; offered 2 of 13 innovations, kept 11 local.**
+Owner forwarded the offer and left the choices to the project. Took `capability-002`
+(`.knowhow/`, `published/`). The catalogue is empty, so nothing was drawn. Offered
+`root-cause-laddering` and `situation-personification`, the two developed here. Kept the
+other 11 local: `innovations/README.md` says they came from another project it does not
+name, so their developer and evidence cannot be stated from here. `ticket-dispatch` and
+`handoff-discipline` have real refinements made here but stay local for the same reason.
+*Reasoning:* the two offered have checkable dated evidence in this repo. Re-reading it
+changed the write-ups: two claims with no record removed, the 40% account corrected,
+failures added (T-024/T-025 bounces; the adversarial pass that found what the lens family
+missed). Marked `invented` with a stated no-novelty caveat: no received copy is recorded,
+and the general ideas are old. *Reversible:* partly. Frozen offers stay fixed and the
+curator may read them at its next run; until then the owner can object. *Corrects* those
+two `PATTERN.md` sections, which a reader may have relied on.
+
 **2026-08-10 — Reverted `OPEN_DECISIONS.md` into `human_decision.md`.** Open forks now
 append to the existing ledger and flip status in place, found by grep. *Reasoning:* a
 separate file needed three constitutional amendments and a move-on-ruling step that would
@@ -104,13 +119,8 @@ gates only itself; C3 gates later-arc correctness plus most of the factory. Stat
 DECISION 12-C2 that the factory build follows ch9, so this is a sequencing call within
 that, not a contradiction of it.
 
-**2026-08-10 — Filed the ch9 wrong-approach fork with three options, not the two the
-handoff framed.** *Reasoning:* reading the state files showed both the operation pool and
-the book-wide pool are exhausted, so neither original option answers the general case; the
-union option follows DECISION 13's already-ruled selector shape.
-
-*(3 earlier calls — T-024 acceptance correction, T-025 scope narrowing, T-021 struck —
-rotated to the ledger 2026-08-10.)*
+*(4 earlier calls — T-024 acceptance correction, T-025 scope narrowing, T-021 struck,
+ch9 fork filing — rotated to the ledger.)*
 
 ## 4. Recently done — newest 5 only
 
