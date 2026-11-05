@@ -9,3 +9,6 @@
 {"at":1793902879.654108,"catalogue_sha256":null,"ids":[],"ingest":null,"operation":"check","output_bytes":1744,"seconds":0.009669,"status":0}
 {"at":1793902892.0196307,"catalogue_sha256":null,"ids":[],"ingest":null,"operation":"offer","output_bytes":417,"seconds":0.01785,"status":0}
 {"at":1793902892.1191642,"catalogue_sha256":null,"ids":[],"ingest":null,"operation":"offer","output_bytes":417,"seconds":0.017699,"status":0}
+{"at":1793903525.870414,"catalogue_sha256":null,"ids":[],"ingest":null,"operation":"check","output_bytes":1744,"seconds":0.010872,"status":0}
+{"at":1793903554.1485157,"catalogue_sha256":null,"ids":[],"ingest":null,"operation":"offer","output_bytes":417,"seconds":0.02252,"status":0}
+{"at":1793903554.2646334,"catalogue_sha256":null,"ids":[],"ingest":null,"operation":"offer","output_bytes":417,"seconds":0.022073,"status":0}
