@@ -19,7 +19,7 @@ Asked 2026-11-05 about edition `capability-002`. Central's `published/INDEX.md` 
 ### 3. Should a taking project commit `.knowhow/` to version control?
 
 - **Tried:** following `USE.md`: "Preserve it with your project."
-- **Happened:** I committed it. The edition's own `.gitignore` excludes `.knowhow/`, though that file may apply only to a clone of the capability. `catalogues.jsonl` holds an absolute local path, and `costs.jsonl` changes on every command, including read-only checks, which leaves the working tree modified.
+- **Happened:** I committed it. The edition's own `.gitignore` excludes `.knowhow/`, though that file may apply only to a clone of the capability. `PUBLICATION.md` calls these records "private state", and this repository has a GitHub remote, so a push would expose them. Nothing has been pushed. `catalogues.jsonl` holds an absolute local path, and `costs.jsonl` changes on every command, including read-only checks, which leaves the working tree modified.
 - **Needed:** whether to commit it, ignore it or preserve it another way, and whether the answer differs for `project.json` and the JSONL records.
 
 ### 4. Should `assets[].path` include the `kit/` prefix?
